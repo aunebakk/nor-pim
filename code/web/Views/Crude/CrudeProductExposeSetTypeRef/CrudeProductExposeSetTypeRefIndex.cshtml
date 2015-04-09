@@ -1,0 +1,33 @@
+@model IEnumerable<norpim.BusinessLogicLayer.CrudeProductExposeSetTypeRefContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductExposeSetTypeRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Expose Set Type</th>
+        <th>Product Expose Set Type Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductExposeSetTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductExposeSetTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.ActionLink("Details", "CrudeProductExposeSetTypeRefDetails", new { productExposeSetTypeRcd = item.ProductExposeSetTypeRcd }) |
+                @Html.ActionLink("Edit", "CrudeProductExposeSetTypeRefEdit", new { productExposeSetTypeRcd = item.ProductExposeSetTypeRcd }) |
+                @Html.ActionLink("New", "CrudeProductExposeSetTypeRefCreate", new { })
+            </td>
+        </tr>
+    }
+
+</table>

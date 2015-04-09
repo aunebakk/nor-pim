@@ -1,0 +1,19 @@
+@model norpim.BusinessLogicLayer.CrudeProductChangeSetContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productChangeSetId = Model.ProductChangeSetId }) |
+    @Html.ActionLink("New", "CrudeProductChangeSetCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductChangeSetIndex")
+</p>

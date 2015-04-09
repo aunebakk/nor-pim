@@ -1,0 +1,70 @@
+
+<html>
+    <head>
+        <title>UserActivity</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>UserActivity Contract Members</h1>
+              <label>Namespace: norpim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeUserActivityService</label>
+        <br /><label>Contract name: CrudeUserActivityContract</label>
+        <br /><label>Fetcher: FetchByUserActivityId</label>
+        <br /><label>Id: UserActivityId, System.Guid</label>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>User Activity Id            </td><td>System.Guid</td></tr>
+            <tr><td>User Activity Type            </td><td>System.String</td></tr>
+            <tr><td>User Activity Note            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Originating Address            </td><td>System.String</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />UserActivityContract<b> FetchByUserActivityId </b>(System.Guid userActivityId);
+        <br />
+        <br />List&lt;UserActivityContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;UserActivityContract&gt;<b> FetchWithFilter </b>(System.Guid userActivityId,System.String userActivityTypeRcd,System.String userActivityNote,System.Guid userId,System.DateTime dateTime,System.String originatingAddress,);
+        <br />
+        <br />List&lt;UserActivityContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;UserActivityContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;UserActivityContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset,);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(UserActivityContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(UserActivityContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid id);
+        <br />
+        <br />
+    </body>
+</html>
+

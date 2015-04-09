@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c0fcfaaa-298c-4359-85d4-5ef3fd964c68" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DiagnosticsService.disco" MetadataType="Disco" ID="36973e66-edd6-426f-9e59-332febb735c3" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc?disco" />
+    <MetadataFile FileName="DiagnosticsService.wsdl" MetadataType="Wsdl" ID="768a8cde-3c12-4610-b194-4ed8667612ca" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc?wsdl" />
+    <MetadataFile FileName="DiagnosticsService.xsd" MetadataType="Schema" ID="c27b968c-2755-4459-a7da-3e06d7ddca82" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DiagnosticsService1.xsd" MetadataType="Schema" ID="b7129b04-96e4-4dbe-822a-cffe658deb0e" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="268569b6-7463-4d77-9395-e50fbfb62d61" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://norpimws.azurewebsites.net/User/ActivityService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ActivityService.disco" MetadataType="Disco" ID="95b3fd58-90e3-4746-84b4-77e95947e7be" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/User/ActivityService.svc?disco" />
+    <MetadataFile FileName="ActivityService.wsdl" MetadataType="Wsdl" ID="6a567750-ba94-4b27-bd42-356693b10b86" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/User/ActivityService.svc?wsdl" />
+    <MetadataFile FileName="ActivityService1.xsd" MetadataType="Schema" ID="47819cfb-35e4-40f1-9a16-6296b3917a03" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/User/ActivityService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ActivityService.xsd" MetadataType="Schema" ID="1cba9787-1129-42e7-b95b-6cb9b8bff700" SourceId="1" SourceUrl="http://norpimws.azurewebsites.net/User/ActivityService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

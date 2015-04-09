@@ -1,0 +1,21 @@
+@model norpim.BusinessLogicLayer.CrudeProductCategoryDocumentationTypeRefContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Category Documentation Type</dt> <dd>@Html.DisplayFor(model => model.ProductCategoryDocumentationTypeRcd)</dd>
+        <dt>Product Category Documentation Type Name</dt> <dd>@Html.DisplayFor(model => model.ProductCategoryDocumentationTypeName)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productCategoryDocumentationTypeRcd = Model.ProductCategoryDocumentationTypeRcd }) |
+    @Html.ActionLink("New", "CrudeProductCategoryDocumentationTypeRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductCategoryDocumentationTypeRefIndex")
+</p>

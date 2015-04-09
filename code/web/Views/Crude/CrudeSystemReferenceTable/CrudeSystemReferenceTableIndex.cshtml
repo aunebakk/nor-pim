@@ -1,0 +1,33 @@
+@model IEnumerable<norpim.BusinessLogicLayer.CrudeSystemReferenceTableContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeSystemReferenceTableCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>System Reference Table Name</th>
+        <th>System Reference Display Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.SystemReferenceTableName) </td>
+            <td>@Html.DisplayFor(modelItem => item.SystemReferenceDisplayName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.ActionLink("Details", "CrudeSystemReferenceTableDetails", new { systemReferenceTableId = item.SystemReferenceTableId }) |
+                @Html.ActionLink("Edit", "CrudeSystemReferenceTableEdit", new { systemReferenceTableId = item.SystemReferenceTableId }) |
+                @Html.ActionLink("New", "CrudeSystemReferenceTableCreate", new { })
+            </td>
+        </tr>
+    }
+
+</table>

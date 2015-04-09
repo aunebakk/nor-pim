@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/norpim.BusinessLogicLayer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/norpim.BusinessLogicLayer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://norpimws.azurewebsites.net/Product/ProductCategoryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ProductCategoryContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="tns:CrudeProductCategoryContract" />
+      <xs:element minOccurs="0" name="ProductCategoryDocumentation" nillable="true" type="tns:ArrayOfCrudeProductCategoryDocumentationContract" />
+      <xs:element minOccurs="0" name="ProductCategoryImage" nillable="true" type="tns:ArrayOfCrudeProductCategoryImageContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductCategoryContract" nillable="true" type="tns:ProductCategoryContract" />
+  <xs:complexType name="CrudeProductCategoryContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProductCategoryBecameId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductCategoryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductCategoryId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductCategoryParentId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductCategoryPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="StateRcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemOwnerId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrudeProductCategoryContract" nillable="true" type="tns:CrudeProductCategoryContract" />
+  <xs:complexType name="ArrayOfCrudeProductCategoryDocumentationContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CrudeProductCategoryDocumentationContract" nillable="true" type="tns:CrudeProductCategoryDocumentationContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCrudeProductCategoryDocumentationContract" nillable="true" type="tns:ArrayOfCrudeProductCategoryDocumentationContract" />
+  <xs:complexType name="CrudeProductCategoryDocumentationContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Documentation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductCategoryDocumentationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductCategoryDocumentationTypeRcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductCategoryId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrudeProductCategoryDocumentationContract" nillable="true" type="tns:CrudeProductCategoryDocumentationContract" />
+  <xs:complexType name="ArrayOfCrudeProductCategoryImageContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CrudeProductCategoryImageContract" nillable="true" type="tns:CrudeProductCategoryImageContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCrudeProductCategoryImageContract" nillable="true" type="tns:ArrayOfCrudeProductCategoryImageContract" />
+  <xs:complexType name="CrudeProductCategoryImageContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ProductCategoryId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductCategoryImageId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductCategoryImageTypeRcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrudeProductCategoryImageContract" nillable="true" type="tns:CrudeProductCategoryImageContract" />
+</xs:schema>

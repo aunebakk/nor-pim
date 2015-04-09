@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2E702AD-461B-4065-A728-2E322BF43121}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NorPimProxy</RootNamespace>
+    <AssemblyName>NorPimProxy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="crude\CrudeProductAttributeRefService.cs" />
+    <Compile Include="crude\CrudeProductAttributeService.cs" />
+    <Compile Include="crude\CrudeProductAttributeUnitRefService.cs" />
+    <Compile Include="crude\CrudeProductCategoryDocumentationService.cs" />
+    <Compile Include="crude\CrudeProductCategoryDocumentationTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductCategoryImageService.cs" />
+    <Compile Include="crude\CrudeProductCategoryImageTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductCategoryMappingService.cs" />
+    <Compile Include="crude\CrudeProductCategoryService.cs" />
+    <Compile Include="crude\CrudeProductChangeSetService.cs" />
+    <Compile Include="crude\CrudeProductDocumentationService.cs" />
+    <Compile Include="crude\CrudeProductDocumentationTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductExposedSelectionService.cs" />
+    <Compile Include="crude\CrudeProductExposePlanService.cs" />
+    <Compile Include="crude\CrudeProductExposeService.cs" />
+    <Compile Include="crude\CrudeProductExposeSetService.cs" />
+    <Compile Include="crude\CrudeProductExposeSetTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductFieldSetMappingService.cs" />
+    <Compile Include="crude\CrudeProductFieldSetService.cs" />
+    <Compile Include="crude\CrudeProductGatherAttributeService.cs" />
+    <Compile Include="crude\CrudeProductGatherAttributeTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductGatherKeyService.cs" />
+    <Compile Include="crude\CrudeProductGatherService.cs" />
+    <Compile Include="crude\CrudeProductGatherSourceService.cs" />
+    <Compile Include="crude\CrudeProductGatherSourceTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductIdentifierRefService.cs" />
+    <Compile Include="crude\CrudeProductIdentifierService.cs" />
+    <Compile Include="crude\CrudeProductImageService.cs" />
+    <Compile Include="crude\CrudeProductImageTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductInfoRefService.cs" />
+    <Compile Include="crude\CrudeProductInformationSourceService.cs" />
+    <Compile Include="crude\CrudeProductInformationSourceTypeRefService.cs" />
+    <Compile Include="crude\CrudeProductInfoService.cs" />
+    <Compile Include="crude\CrudeProductService.cs" />
+    <Compile Include="crude\CrudeProductSupplierService.cs" />
+    <Compile Include="crude\CrudeStateRefService.cs" />
+    <Compile Include="crude\CrudeSystemReferenceTableService.cs" />
+    <Compile Include="crude\CrudeSystemSettingRefService.cs" />
+    <Compile Include="crude\CrudeSystemSettingService.cs" />
+    <Compile Include="crude\CrudeUserActivityService.cs" />
+    <Compile Include="crude\CrudeUserActivityTypeRefService.cs" />
+    <Compile Include="crude\CrudeUserService.cs" />
+    <Compile Include="durian\CategorySearch\CategoryFindContract.cs" />
+    <Compile Include="durian\CategorySearch\CategorySearchService.cs" />
+    <Compile Include="durian\CategorySearch\CategoryTreeContract.cs" />
+    <Compile Include="durian\ExposeSearch\ExposeProductDetailsContract.cs" />
+    <Compile Include="durian\ExposeSearch\ExposeSearchService.cs" />
+    <Compile Include="durian\GatherSearch\GatherOverviewContract.cs" />
+    <Compile Include="durian\GatherSearch\GatherProductDetailsContract.cs" />
+    <Compile Include="durian\GatherSearch\GatherSearchService.cs" />
+    <Compile Include="durian\ProductSearch\ProductHistoryContract.cs" />
+    <Compile Include="durian\ProductSearch\ProductSearchByCategoryContract.cs" />
+    <Compile Include="durian\ProductSearch\ProductSearchByCategoryType1Contract.cs" />
+    <Compile Include="durian\ProductSearch\ProductSearchByCategoryType2Contract.cs" />
+    <Compile Include="durian\ProductSearch\ProductSearchByCategoryType3Contract.cs" />
+    <Compile Include="durian\ProductSearch\ProductSearchByIdContract.cs" />
+    <Compile Include="durian\ProductSearch\ProductSearchByNameContract.cs" />
+    <Compile Include="durian\ProductSearch\ProductSearchService.cs" />
+    <Compile Include="durian\StatisticsSearch\ProductStatisticsByMonthContract.cs" />
+    <Compile Include="durian\StatisticsSearch\ProductStatisticsContract.cs" />
+    <Compile Include="durian\StatisticsSearch\ProductStatisticsTop5Contract.cs" />
+    <Compile Include="durian\StatisticsSearch\StatisticsSearchService.cs" />
+    <Compile Include="durian\UserActivitySearch\UserActivityGroupedByAddressContract.cs" />
+    <Compile Include="durian\UserActivitySearch\UserActivityGroupedContract.cs" />
+    <Compile Include="durian\UserActivitySearch\UserActivityRecentContract.cs" />
+    <Compile Include="durian\UserActivitySearch\UserActivitySearchService.cs" />
+    <Compile Include="other\ActivityService.cs" />
+    <Compile Include="other\DiagnosticsService.cs" />
+    <Compile Include="other\GatherService.cs" />
+    <Compile Include="other\ProductService.cs" />
+    <Compile Include="other\ProductCategoryService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="other\all.bat" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

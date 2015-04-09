@@ -1,0 +1,1 @@
+<%@ ServiceHost Language="C#" Debug="true" Service="norpim.BusinessLogicLayer.CrudeUserActivityTypeRefService" CodeBehind="C:\projects\nor-star\nor-product\version8\code\BusinessLogicLayer\Crude\\CrudeUserActivityTypeRef.cs"%>

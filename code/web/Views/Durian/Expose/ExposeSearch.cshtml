@@ -1,0 +1,26 @@
+﻿@model IEnumerable<norpim.BusinessLogicLayer.ExposeProductDetailsContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Category Name</th>
+        <th>Product User Name</th>
+        <th>Date Time</th>
+        <th>State Name</th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductCategoryName)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductUserName)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductDateTime)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductStateName)</td>
+        </tr>
+    }
+
+</table>

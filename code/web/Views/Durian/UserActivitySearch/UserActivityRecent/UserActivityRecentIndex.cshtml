@@ -1,0 +1,28 @@
+@model IEnumerable<norpim.BusinessLogicLayer.UserActivityRecentContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>Date Time</th>
+        <th>User Activity Type Name</th>
+        <th>Originating Address</th>
+        <th>User Activity Note</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.UserActivityTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.OriginatingAddress) </td>
+            <td>@Html.DisplayFor(modelItem => item.UserActivityNote) </td>
+            <td><a href=@Html.Raw("http://www.whois.com/whois/" + item.OriginatingAddress) }>whois</a></td>
+        </tr>
+    }
+
+</table>

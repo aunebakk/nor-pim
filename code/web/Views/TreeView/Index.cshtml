@@ -1,0 +1,23 @@
+﻿@model MVCJsTree.Models.TreeView
+@using MVCJsTree.Controls;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/Content/jsTreeTheams/style.min.css" />
+<script src="~/Scripts/libs/jquery.js"></script>
+<script src="~/Scripts/jstree.min.js"></script>
+
+<div id="jstree_demo_div">
+    <ul>
+        @Html.RenderJsTreeNodes(Model.Nodes)
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    $('#jstree_demo_div').jstree();
+
+</script>
+

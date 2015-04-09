@@ -1,0 +1,68 @@
+
+<html>
+    <head>
+        <title>ProductExposeSetTypeRef</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ProductExposeSetTypeRef Contract Members</h1>
+              <label>Namespace: norpim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeProductExposeSetTypeRefService</label>
+        <br /><label>Contract name: CrudeProductExposeSetTypeRefContract</label>
+        <br /><label>Fetcher: FetchByProductExposeSetTypeRcd</label>
+        <br /><label>Id: ProductExposeSetTypeRcd, System.String</label>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Product Expose Set Type            </td><td>System.String</td></tr>
+            <tr><td>Product Expose Set Type Name            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />ProductExposeSetTypeRefContract<b> FetchByProductExposeSetTypeRcd </b>(System.String productExposeSetTypeRcd);
+        <br />
+        <br />List&lt;ProductExposeSetTypeRefContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;ProductExposeSetTypeRefContract&gt;<b> FetchWithFilter </b>(System.String productExposeSetTypeRcd,System.String productExposeSetTypeName,System.Guid userId,System.DateTime dateTime,);
+        <br />
+        <br />List&lt;ProductExposeSetTypeRefContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;ProductExposeSetTypeRefContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;ProductExposeSetTypeRefContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset,);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(ProductExposeSetTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(ProductExposeSetTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid id);
+        <br />
+        <br />
+    </body>
+</html>
+

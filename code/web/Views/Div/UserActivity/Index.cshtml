@@ -1,0 +1,35 @@
+﻿@model IEnumerable<norpim.BusinessLogicLayer.CrudeUserActivityContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            User Activity Type Code
+        </th>
+        <th>
+            User Activity Type Name
+        </th>
+        <th>
+            Date Time
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserActivityTypeRcd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserActivityNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTime)
+            </td>
+        </tr>
+    }
+
+</table>

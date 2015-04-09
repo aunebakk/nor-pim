@@ -1,0 +1,22 @@
+﻿@model norpim.BusinessLogicLayer.CrudeProductCategoryImageContract
+
+@{
+    ViewBag.Title = "Organize Image Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Image Type</dt> <dd>@Html.DisplayFor(model => model.ProductCategoryImageTypeRcd)</dd>
+        <dt>Image</dt>      <dd>@Html.Raw("<img src=\"/Handlers/ImageTextHandler.ashx?id=" + Model.ProductCategoryImageId + "\">")</dd>
+        <dt>Date Time</dt>  <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productCategoryImageId = Model.ProductCategoryImageId }) |
+    @Html.ActionLink("New", "Create", new { }) |
+    @Html.ActionLink("Back to List", "Index") 
+</p>

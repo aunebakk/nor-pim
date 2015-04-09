@@ -1,0 +1,21 @@
+@model norpim.BusinessLogicLayer.CrudeProductExposeSetContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Expose Set Type</dt> <dd>@Html.DisplayFor(model => model.ProductExposeSetTypeRcd)</dd>
+        <dt>Product Expose Set Name</dt> <dd>@Html.DisplayFor(model => model.ProductExposeSetName)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productExposeSetId = Model.ProductExposeSetId }) |
+    @Html.ActionLink("New", "CrudeProductExposeSetCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductExposeSetIndex")
+</p>

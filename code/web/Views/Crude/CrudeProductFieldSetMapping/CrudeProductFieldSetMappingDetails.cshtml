@@ -1,0 +1,24 @@
+@model norpim.BusinessLogicLayer.CrudeProductFieldSetMappingContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Identifier</dt> <dd>@Html.DisplayFor(model => model.ProductIdentifierRcd)</dd>
+        <dt>Product Attribute</dt> <dd>@Html.DisplayFor(model => model.ProductAttributeRcd)</dd>
+        <dt>Product Info</dt> <dd>@Html.DisplayFor(model => model.ProductInfoRcd)</dd>
+        <dt>Product Image Type</dt> <dd>@Html.DisplayFor(model => model.ProductImageTypeRcd)</dd>
+        <dt>Product Documentation Type</dt> <dd>@Html.DisplayFor(model => model.ProductDocumentationTypeRcd)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productFieldSetMappingId = Model.ProductFieldSetMappingId }) |
+    @Html.ActionLink("New", "CrudeProductFieldSetMappingCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductFieldSetMappingIndex")
+</p>

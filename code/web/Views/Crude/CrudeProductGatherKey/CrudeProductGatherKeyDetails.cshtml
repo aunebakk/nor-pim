@@ -1,0 +1,20 @@
+@model norpim.BusinessLogicLayer.CrudeProductGatherKeyContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Gather Key Value</dt> <dd>@Html.DisplayFor(model => model.ProductGatherKeyValue)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productGatherKeyId = Model.ProductGatherKeyId }) |
+    @Html.ActionLink("New", "CrudeProductGatherKeyCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductGatherKeyIndex")
+</p>

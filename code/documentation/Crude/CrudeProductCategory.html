@@ -1,0 +1,75 @@
+
+<html>
+    <head>
+        <title>ProductCategory</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ProductCategory Contract Members</h1>
+              <label>Namespace: norpim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeProductCategoryService</label>
+        <br /><label>Contract name: CrudeProductCategoryContract</label>
+        <br /><label>Fetcher: FetchByProductCategoryId</label>
+        <br /><label>Id: ProductCategoryId, System.Guid</label>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Product Category Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Became Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Parent Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Code            </td><td>System.String</td></tr>
+            <tr><td>Product Category Name            </td><td>System.String</td></tr>
+            <tr><td>Product Category Position            </td><td>System.Int32</td></tr>
+            <tr><td>State            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />ProductCategoryContract<b> FetchByProductCategoryId </b>(System.Guid productCategoryId);
+        <br />
+        <br />List&lt;ProductCategoryContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />ProductCategoryContract<b> FetchByProductCategoryCode </b>(System.String productCategoryCode);
+        <br />
+        <br />List&lt;ProductCategoryContract&gt;<b> FetchWithFilter </b>(System.Guid productCategoryId,System.String productCategoryCode,System.String productCategoryName,System.Int32 productCategoryPosition,System.String stateRcd,System.Guid userId,System.DateTime dateTime,);
+        <br />
+        <br />List&lt;ProductCategoryContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;ProductCategoryContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;ProductCategoryContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset,);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(ProductCategoryContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(ProductCategoryContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid id);
+        <br />
+        <br />
+    </body>
+</html>
+

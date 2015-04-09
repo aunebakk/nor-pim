@@ -1,0 +1,23 @@
+@model norpim.BusinessLogicLayer.CrudeProductCategoryContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Category Code</dt> <dd>@Html.DisplayFor(model => model.ProductCategoryCode)</dd>
+        <dt>Product Category Name</dt> <dd>@Html.DisplayFor(model => model.ProductCategoryName)</dd>
+        <dt>Product Category Position</dt> <dd>@Html.DisplayFor(model => model.ProductCategoryPosition)</dd>
+        <dt>State</dt> <dd>@Html.DisplayFor(model => model.StateRcd)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productCategoryId = Model.ProductCategoryId }) |
+    @Html.ActionLink("New", "CrudeProductCategoryCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductCategoryIndex")
+</p>

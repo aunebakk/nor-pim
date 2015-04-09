@@ -1,0 +1,1 @@
+<%@ ServiceHost Language="C#" Debug="true" Service="norpim.BusinessLogicLayer.StatisticsSearchService" CodeBehind="C:\projects\nor-star\nor-product\version3\code\BusinessLogicLayer\Statistics\\StatisticsSearchService.cs"%>

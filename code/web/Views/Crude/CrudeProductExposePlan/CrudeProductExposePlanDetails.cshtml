@@ -1,0 +1,20 @@
+@model norpim.BusinessLogicLayer.CrudeProductExposePlanContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Expose Set Type</dt> <dd>@Html.DisplayFor(model => model.ProductExposeSetTypeRcd)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productExposePlanId = Model.ProductExposePlanId }) |
+    @Html.ActionLink("New", "CrudeProductExposePlanCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductExposePlanIndex")
+</p>

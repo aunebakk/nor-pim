@@ -1,0 +1,30 @@
+﻿@model IEnumerable<norpim.BusinessLogicLayer.GatherOverviewContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>Start</th>
+        <th>Finish</th>
+        <th>Source Type</th>
+        <th>Source Name</th>
+        <th>Key Count</th>
+        <th>User Name</th>
+        <th>Date time</th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.StartDateTime)</td>
+            <td>@Html.DisplayFor(modelItem => item.FinishDateTime)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductGatherSourceTypeRcd)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductGatherSourceTypeName)</td>
+            <td>@Html.DisplayFor(modelItem => item.KeyCount)</td>
+            <td>@Html.DisplayFor(modelItem => item.UserName )</td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime)</td>
+        </tr>
+    }
+
+</table>

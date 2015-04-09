@@ -1,0 +1,21 @@
+﻿@model norpim.BusinessLogicLayer.CrudeSystemSettingContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>System Setting Code</dt>  <dd>@Html.DisplayFor(model => model.SystemSettingRcd)</dd>
+        <dt>System Setting Value</dt> <dd>@Html.DisplayFor(model => model.SystemSettingValue)</dd>
+        <dt>Date Time</dt>            <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { SystemSettingId = Model.SystemSettingId }) |
+    @Html.ActionLink("New", "Create", new { }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

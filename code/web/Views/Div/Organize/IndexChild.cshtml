@@ -1,0 +1,52 @@
+﻿@model IEnumerable<norpim.BusinessLogicLayer.CategoryTreeContract>
+
+@{
+    ViewBag.Title = "Organize";
+}
+
+@Html.ActionLink("Main Categories", "Index") 
+
+<table class="table">
+    <tr>
+        <th>
+            Category Code Child
+        </th>
+        <th>
+            Category Name Child
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        if (item.ProductCategoryId == item.ProductCategoryParentId) { 
+            continue;
+        }
+
+        if (item.ProductCategoryParentId == (Guid) ViewData["productCategoryParentId"]) { 
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategoryCode)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategoryName)
+                </td>
+
+                <td>
+                    @Html.ActionLink(   linkText:"Details", 
+                                        actionName:"Details", 
+                                        controllerName:"ProductCategory",
+                                        routeValues:new { productCategoryId = item.ProductCategoryId },
+                                        htmlAttributes:null
+                                        ) |
+
+                    @Html.ActionLink(   "Images", 
+                                        "ProductCategoryImageDetails", 
+                                        new { productCategoryId = item.ProductCategoryId }
+                                        )
+                </td>
+            </tr>
+        }
+    }
+
+</table>

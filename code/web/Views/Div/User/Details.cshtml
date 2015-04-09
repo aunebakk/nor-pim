@@ -1,0 +1,24 @@
+﻿@model norpim.BusinessLogicLayer.CrudeUserContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>User Code</dt>  <dd>@Html.DisplayFor(model => model.UserCode)</dd>
+        <dt>User Name</dt>  <dd>@Html.DisplayFor(model => model.UserName)</dd>
+        <dt>eMail</dt>      <dd>@Html.DisplayFor(model => model.Email)</dd>
+        <dt>Password</dt>   <dd>@Html.DisplayFor(model => model.Password)</dd>
+        <dt>State</dt>      <dd>@Html.DisplayFor(model => model.StateRcd)</dd>
+        <dt>Date Time</dt>  <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { UserId = Model.UserId }) |
+    @Html.ActionLink("New", "Create", new { }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

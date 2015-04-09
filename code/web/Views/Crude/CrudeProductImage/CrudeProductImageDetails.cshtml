@@ -1,0 +1,22 @@
+@model norpim.BusinessLogicLayer.CrudeProductImageContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Image Type</dt> <dd>@Html.DisplayFor(model => model.ProductImageTypeRcd)</dd>
+        <dt>Image</dt> <dd>@Html.DisplayFor(model => model.Image)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+        <dt>Image File Name</dt> <dd>@Html.DisplayFor(model => model.ImageFileName)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productImageId = Model.ProductImageId }) |
+    @Html.ActionLink("New", "CrudeProductImageCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductImageIndex")
+</p>

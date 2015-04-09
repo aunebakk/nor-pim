@@ -1,0 +1,21 @@
+@model norpim.BusinessLogicLayer.CrudeStateRefContract
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>State</dt> <dd>@Html.DisplayFor(model => model.StateRcd)</dd>
+        <dt>State Name</dt> <dd>@Html.DisplayFor(model => model.StateName)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { stateRcd = Model.StateRcd }) |
+    @Html.ActionLink("New", "CrudeStateRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeStateRefIndex")
+</p>

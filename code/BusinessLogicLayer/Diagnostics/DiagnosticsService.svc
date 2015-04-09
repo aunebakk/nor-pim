@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="norpim.BusinessLogicLayer.DiagnosticsService" CodeBehind="C:\Development\norpim\code\BusinessLogicLayer\Diagnostics\DiagnosticsService.cs"%>

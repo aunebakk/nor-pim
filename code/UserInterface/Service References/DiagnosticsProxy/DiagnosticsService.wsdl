@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DiagnosticsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDiagnosticsService_PingTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:PingTest" />
+  </wsdl:message>
+  <wsdl:message name="IDiagnosticsService_PingTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiagnosticsService_UserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserId" />
+  </wsdl:message>
+  <wsdl:message name="IDiagnosticsService_UserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiagnosticsService_Database_InputMessage">
+    <wsdl:part name="parameters" element="tns:Database" />
+  </wsdl:message>
+  <wsdl:message name="IDiagnosticsService_Database_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiagnosticsService_ComputerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComputerName" />
+  </wsdl:message>
+  <wsdl:message name="IDiagnosticsService_ComputerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComputerNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDiagnosticsService">
+    <wsdl:operation name="PingTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiagnosticsService/PingTest" message="tns:IDiagnosticsService_PingTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiagnosticsService/PingTestResponse" message="tns:IDiagnosticsService_PingTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiagnosticsService/UserId" message="tns:IDiagnosticsService_UserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiagnosticsService/UserIdResponse" message="tns:IDiagnosticsService_UserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Database">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiagnosticsService/Database" message="tns:IDiagnosticsService_Database_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiagnosticsService/DatabaseResponse" message="tns:IDiagnosticsService_Database_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ComputerName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiagnosticsService/ComputerName" message="tns:IDiagnosticsService_ComputerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiagnosticsService/ComputerNameResponse" message="tns:IDiagnosticsService_ComputerName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDiagnosticsService" type="tns:IDiagnosticsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PingTest">
+      <soap:operation soapAction="http://tempuri.org/IDiagnosticsService/PingTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserId">
+      <soap:operation soapAction="http://tempuri.org/IDiagnosticsService/UserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Database">
+      <soap:operation soapAction="http://tempuri.org/IDiagnosticsService/Database" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComputerName">
+      <soap:operation soapAction="http://tempuri.org/IDiagnosticsService/ComputerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DiagnosticsService">
+    <wsdl:port name="BasicHttpBinding_IDiagnosticsService" binding="tns:BasicHttpBinding_IDiagnosticsService">
+      <soap:address location="http://norpimws.azurewebsites.net/Diagnostics/DiagnosticsService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,33 @@
+@model IEnumerable<norpim.BusinessLogicLayer.CrudeProductIdentifierContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductIdentifierCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Identifier</th>
+        <th>Identifier</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductIdentifierRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Identifier) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.ActionLink("Details", "CrudeProductIdentifierDetails", new { productIdentifierId = item.ProductIdentifierId }) |
+                @Html.ActionLink("Edit", "CrudeProductIdentifierEdit", new { productIdentifierId = item.ProductIdentifierId }) |
+                @Html.ActionLink("New", "CrudeProductIdentifierCreate", new { })
+            </td>
+        </tr>
+    }
+
+</table>

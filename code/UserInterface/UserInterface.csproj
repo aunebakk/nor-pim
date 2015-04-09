@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25F530F6-127F-451D-B1EA-F4C0CAB245D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>norpim.UserInterface</RootNamespace>
+    <AssemblyName>UserInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\projects\nor-star\nor-product\version8\code\web\install\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://www.aunebakk.com</SupportUrl>
+    <ProductName>Product Information Manager</ProductName>
+    <PublisherName>norpim</PublisherName>
+    <SuiteName>Product Information Manager</SuiteName>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>95AB8360565749DE19CE5FD978755F38CCB7837F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UserInterface_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Combo\ProductAttributeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductAttributeRefCombo.designer.cs">
+      <DependentUpon>ProductAttributeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductAttributeUnitRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductAttributeUnitRefCombo.designer.cs">
+      <DependentUpon>ProductAttributeUnitRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductCategoryDocumentationTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductCategoryDocumentationTypeRefCombo.designer.cs">
+      <DependentUpon>ProductCategoryDocumentationTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductCategoryImageTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductCategoryImageTypeRefCombo.designer.cs">
+      <DependentUpon>ProductCategoryImageTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductDocumentationTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductDocumentationTypeRefCombo.designer.cs">
+      <DependentUpon>ProductDocumentationTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductExposeSetTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductExposeSetTypeRefCombo.designer.cs">
+      <DependentUpon>ProductExposeSetTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductGatherAttributeTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductGatherAttributeTypeRefCombo.designer.cs">
+      <DependentUpon>ProductGatherAttributeTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductGatherSourceTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductGatherSourceTypeRefCombo.designer.cs">
+      <DependentUpon>ProductGatherSourceTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductIdentifierRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductIdentifierRefCombo.designer.cs">
+      <DependentUpon>ProductIdentifierRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductImageTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductImageTypeRefCombo.designer.cs">
+      <DependentUpon>ProductImageTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductInfoRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductInfoRefCombo.designer.cs">
+      <DependentUpon>ProductInfoRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\ProductInformationSourceTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\ProductInformationSourceTypeRefCombo.designer.cs">
+      <DependentUpon>ProductInformationSourceTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\StateRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\StateRefCombo.designer.cs">
+      <DependentUpon>StateRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\SystemSettingRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\SystemSettingRefCombo.designer.cs">
+      <DependentUpon>SystemSettingRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combo\UserActivityTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combo\UserActivityTypeRefCombo.designer.cs">
+      <DependentUpon>UserActivityTypeRefCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeEdit.designer.cs">
+      <DependentUpon>CrudeProductAttributeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductAttributeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductAttributeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeSearch.designer.cs">
+      <DependentUpon>CrudeProductAttributeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeUnitRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeUnitRefEdit.designer.cs">
+      <DependentUpon>CrudeProductAttributeUnitRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeUnitRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductAttributeUnitRefSearch.designer.cs">
+      <DependentUpon>CrudeProductAttributeUnitRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationEdit.designer.cs">
+      <DependentUpon>CrudeProductCategoryDocumentationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationSearch.designer.cs">
+      <DependentUpon>CrudeProductCategoryDocumentationSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductCategoryDocumentationTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryDocumentationTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductCategoryDocumentationTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryEdit.designer.cs">
+      <DependentUpon>CrudeProductCategoryEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageEdit.designer.cs">
+      <DependentUpon>CrudeProductCategoryImageEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageSearch.designer.cs">
+      <DependentUpon>CrudeProductCategoryImageSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductCategoryImageTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryImageTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductCategoryImageTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryMappingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryMappingEdit.designer.cs">
+      <DependentUpon>CrudeProductCategoryMappingEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryMappingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategoryMappingSearch.designer.cs">
+      <DependentUpon>CrudeProductCategoryMappingSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductCategorySearch.designer.cs">
+      <DependentUpon>CrudeProductCategorySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductChangeSetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductChangeSetEdit.designer.cs">
+      <DependentUpon>CrudeProductChangeSetEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductChangeSetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductChangeSetSearch.designer.cs">
+      <DependentUpon>CrudeProductChangeSetSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationEdit.designer.cs">
+      <DependentUpon>CrudeProductDocumentationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationSearch.designer.cs">
+      <DependentUpon>CrudeProductDocumentationSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductDocumentationTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductDocumentationTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductDocumentationTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductEdit.designer.cs">
+      <DependentUpon>CrudeProductEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposedSelectionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposedSelectionEdit.designer.cs">
+      <DependentUpon>CrudeProductExposedSelectionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposedSelectionSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposedSelectionSearch.designer.cs">
+      <DependentUpon>CrudeProductExposedSelectionSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeEdit.designer.cs">
+      <DependentUpon>CrudeProductExposeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposePlanEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposePlanEdit.designer.cs">
+      <DependentUpon>CrudeProductExposePlanEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposePlanSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposePlanSearch.designer.cs">
+      <DependentUpon>CrudeProductExposePlanSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSearch.designer.cs">
+      <DependentUpon>CrudeProductExposeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetEdit.designer.cs">
+      <DependentUpon>CrudeProductExposeSetEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetSearch.designer.cs">
+      <DependentUpon>CrudeProductExposeSetSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductExposeSetTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductExposeSetTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductExposeSetTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetEdit.designer.cs">
+      <DependentUpon>CrudeProductFieldSetEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetMappingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetMappingEdit.designer.cs">
+      <DependentUpon>CrudeProductFieldSetMappingEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetMappingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetMappingSearch.designer.cs">
+      <DependentUpon>CrudeProductFieldSetMappingSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductFieldSetSearch.designer.cs">
+      <DependentUpon>CrudeProductFieldSetSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeEdit.designer.cs">
+      <DependentUpon>CrudeProductGatherAttributeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeSearch.designer.cs">
+      <DependentUpon>CrudeProductGatherAttributeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductGatherAttributeTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherAttributeTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductGatherAttributeTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherEdit.designer.cs">
+      <DependentUpon>CrudeProductGatherEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherKeyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherKeyEdit.designer.cs">
+      <DependentUpon>CrudeProductGatherKeyEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherKeySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherKeySearch.designer.cs">
+      <DependentUpon>CrudeProductGatherKeySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSearch.designer.cs">
+      <DependentUpon>CrudeProductGatherSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceEdit.designer.cs">
+      <DependentUpon>CrudeProductGatherSourceEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceSearch.designer.cs">
+      <DependentUpon>CrudeProductGatherSourceSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductGatherSourceTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductGatherSourceTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductGatherSourceTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierEdit.designer.cs">
+      <DependentUpon>CrudeProductIdentifierEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierRefEdit.designer.cs">
+      <DependentUpon>CrudeProductIdentifierRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierRefSearch.designer.cs">
+      <DependentUpon>CrudeProductIdentifierRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductIdentifierSearch.designer.cs">
+      <DependentUpon>CrudeProductIdentifierSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageEdit.designer.cs">
+      <DependentUpon>CrudeProductImageEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageSearch.designer.cs">
+      <DependentUpon>CrudeProductImageSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductImageTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductImageTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductImageTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoEdit.designer.cs">
+      <DependentUpon>CrudeProductInfoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoRefEdit.designer.cs">
+      <DependentUpon>CrudeProductInfoRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoRefSearch.designer.cs">
+      <DependentUpon>CrudeProductInfoRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceEdit.designer.cs">
+      <DependentUpon>CrudeProductInformationSourceEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceSearch.designer.cs">
+      <DependentUpon>CrudeProductInformationSourceSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeProductInformationSourceTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInformationSourceTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeProductInformationSourceTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductInfoSearch.designer.cs">
+      <DependentUpon>CrudeProductInfoSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductSearch.designer.cs">
+      <DependentUpon>CrudeProductSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductSupplierEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductSupplierEdit.designer.cs">
+      <DependentUpon>CrudeProductSupplierEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeProductSupplierSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeProductSupplierSearch.designer.cs">
+      <DependentUpon>CrudeProductSupplierSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeStateRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeStateRefEdit.designer.cs">
+      <DependentUpon>CrudeStateRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeStateRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeStateRefSearch.designer.cs">
+      <DependentUpon>CrudeStateRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemReferenceTableEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemReferenceTableEdit.designer.cs">
+      <DependentUpon>CrudeSystemReferenceTableEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemReferenceTableSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemReferenceTableSearch.designer.cs">
+      <DependentUpon>CrudeSystemReferenceTableSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingEdit.designer.cs">
+      <DependentUpon>CrudeSystemSettingEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingRefEdit.designer.cs">
+      <DependentUpon>CrudeSystemSettingRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingRefSearch.designer.cs">
+      <DependentUpon>CrudeSystemSettingRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeSystemSettingSearch.designer.cs">
+      <DependentUpon>CrudeSystemSettingSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivityEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivityEdit.designer.cs">
+      <DependentUpon>CrudeUserActivityEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivitySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivitySearch.designer.cs">
+      <DependentUpon>CrudeUserActivitySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivityTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivityTypeRefEdit.designer.cs">
+      <DependentUpon>CrudeUserActivityTypeRefEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivityTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeUserActivityTypeRefSearch.designer.cs">
+      <DependentUpon>CrudeUserActivityTypeRefSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeUserEdit.designer.cs">
+      <DependentUpon>CrudeUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crude\CrudeUserSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\CrudeUserSearch.designer.cs">
+      <DependentUpon>CrudeUserSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryFindSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryFindSearch.designer.cs">
+      <DependentUpon>CategoryFindSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryTreeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryTreeSearch.designer.cs">
+      <DependentUpon>CategoryTreeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ExposeSearch\ExposeProductDetailsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ExposeSearch\ExposeProductDetailsSearch.designer.cs">
+      <DependentUpon>ExposeProductDetailsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\StatisticsSearch\ProductStatisticsByMonthSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\StatisticsSearch\ProductStatisticsByMonthSearch.designer.cs">
+      <DependentUpon>ProductStatisticsByMonthSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\UserActivitySearch\UserActivityGroupedByAddressSearch.cs" />
+    <Compile Include="Durian\UserActivitySearch\UserActivityGroupedByAddressSearch.designer.cs">
+      <DependentUpon>UserActivityGroupedByAddressSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\UserActivitySearch\UserActivityGroupedSearch.cs" />
+    <Compile Include="Durian\UserActivitySearch\UserActivityGroupedSearch.designer.cs">
+      <DependentUpon>UserActivityGroupedSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\UserActivitySearch\UserActivityRecentSearch.cs" />
+    <Compile Include="Durian\UserActivitySearch\UserActivityRecentSearch.designer.cs">
+      <DependentUpon>UserActivityRecentSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gather\GatherOverviewSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gather\GatherOverviewSearch.designer.cs">
+      <DependentUpon>GatherOverviewSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gather\GatherProductDetailsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gather\GatherProductDetailsSearch.designer.cs">
+      <DependentUpon>GatherProductDetailsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductHistorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductHistorySearch.designer.cs">
+      <DependentUpon>ProductHistorySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategorySearch.designer.cs">
+      <DependentUpon>ProductSearchByCategorySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1Search.designer.cs">
+      <DependentUpon>ProductSearchByCategoryType1Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Search.designer.cs">
+      <DependentUpon>ProductSearchByCategoryType2Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3Search.designer.cs">
+      <DependentUpon>ProductSearchByCategoryType3Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdSearch.designer.cs">
+      <DependentUpon>ProductSearchByIdSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameSearch.designer.cs">
+      <DependentUpon>ProductSearchByNameSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\StatisticsSearch\ProductStatisticsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\StatisticsSearch\ProductStatisticsSearch.designer.cs">
+      <DependentUpon>ProductStatisticsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Durian\StatisticsSearch\ProductStatisticsTop5Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\StatisticsSearch\ProductStatisticsTop5Search.designer.cs">
+      <DependentUpon>ProductStatisticsTop5Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Picker\ProductCategoryPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Picker\ProductCategoryPicker.designer.cs">
+      <DependentUpon>ProductCategoryPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Picker\ProductPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Picker\ProductPicker.designer.cs">
+      <DependentUpon>ProductPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductPreview.Designer.cs">
+      <DependentUpon>ProductPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unsorted\Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unsorted\Statistics.designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Picker\UserPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Picker\UserPicker.designer.cs">
+      <DependentUpon>UserPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductHistorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductHistorySearch.designer.cs">
+      <DependentUpon>ProductHistorySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unsorted\Global.cs" />
+    <Compile Include="Category\ProductCategoryDocumentationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\ProductCategoryDocumentationEdit.Designer.cs">
+      <DependentUpon>ProductCategoryDocumentationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\ProductCategoryImageEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\ProductCategoryImageEdit.designer.cs">
+      <DependentUpon>ProductCategoryImageEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\SystemReferenceTableSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\SystemReferenceTableSearch.designer.cs">
+      <DependentUpon>SystemReferenceTableSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unsorted\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unsorted\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unsorted\Engine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unsorted\Engine.Designer.cs">
+      <DependentUpon>Engine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductWhiteboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductWhiteboard.Designer.cs">
+      <DependentUpon>ProductWhiteboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Configuration\SystemReferenceTableSearch.resx">
+      <DependentUpon>SystemReferenceTableSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductAttributeEdit.resx">
+      <DependentUpon>CrudeProductAttributeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductAttributeRefEdit.resx">
+      <DependentUpon>CrudeProductAttributeRefEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductAttributeSearch.resx">
+      <DependentUpon>CrudeProductAttributeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductCategoryDocumentationEdit.resx">
+      <DependentUpon>CrudeProductCategoryDocumentationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductCategoryDocumentationSearch.resx">
+      <DependentUpon>CrudeProductCategoryDocumentationSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductCategoryDocumentationTypeRefEdit.resx">
+      <DependentUpon>CrudeProductCategoryDocumentationTypeRefEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductCategoryImageEdit.resx">
+      <DependentUpon>CrudeProductCategoryImageEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crude\CrudeProductCategoryMappingEdit.resx">
+      <DependentUpon>CrudeProductCategoryMappingEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gather\GatherOverviewSearch.resx">
+      <DependentUpon>GatherOverviewSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gather\GatherProductDetailsSearch.resx">
+      <DependentUpon>GatherProductDetailsSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductPreview.resx">
+      <DependentUpon>ProductPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unsorted\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\ProductCategoryDocumentationEdit.resx">
+      <DependentUpon>ProductCategoryDocumentationEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\ProductCategoryImageEdit.resx">
+      <DependentUpon>ProductCategoryImageEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unsorted\Engine.resx">
+      <DependentUpon>Engine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductHistorySearch.resx">
+      <DependentUpon>ProductHistorySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductWhiteboard.resx">
+      <DependentUpon>ProductWhiteboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unsorted\Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UserInterface_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\background.png" />
+    <Content Include="info.txt" />
+    <Content Include="Properties\down-32.png" />
+    <Content Include="Properties\left_arrow-32.png" />
+    <Content Include="Properties\right_arrow-32.png" />
+    <Content Include="Properties\up-32.png" />
+    <Content Include="todo.txt" />
+    <Content Include="Properties\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\proxy\proxy.csproj">
+      <Project>{a2e702ad-461b-4065-a728-2e322bf43121}</Project>
+      <Name>proxy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Durian\GatherSearch\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

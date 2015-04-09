@@ -1,0 +1,29 @@
+﻿@model IEnumerable<norpim.BusinessLogicLayer.ProductStatisticsContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Activity Date
+        </th>
+        <th>
+            Activity Log Entries
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivityDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DayCount)
+            </td>
+        </tr>
+    }
+
+</table>

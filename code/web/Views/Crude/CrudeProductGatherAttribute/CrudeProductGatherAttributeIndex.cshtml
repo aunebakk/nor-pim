@@ -1,0 +1,33 @@
+@model IEnumerable<norpim.BusinessLogicLayer.CrudeProductGatherAttributeContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductGatherAttributeCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Gather Attribute Value</th>
+        <th>Product Gather Attribute Type</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductGatherAttributeValue) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductGatherAttributeTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.ActionLink("Details", "CrudeProductGatherAttributeDetails", new { productGatherAttributeId = item.ProductGatherAttributeId }) |
+                @Html.ActionLink("Edit", "CrudeProductGatherAttributeEdit", new { productGatherAttributeId = item.ProductGatherAttributeId }) |
+                @Html.ActionLink("New", "CrudeProductGatherAttributeCreate", new { })
+            </td>
+        </tr>
+    }
+
+</table>

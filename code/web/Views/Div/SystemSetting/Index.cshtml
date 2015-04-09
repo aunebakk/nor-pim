@@ -1,0 +1,30 @@
+﻿@model IEnumerable<norpim.BusinessLogicLayer.CrudeSystemSettingContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>System Setting Code</th><th>System Setting Value</th><th>Date time</th><th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.SystemSettingRcd)    </td>
+            <td>@Html.DisplayFor(modelItem => item.SystemSettingValue)  </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime)            </td>
+            <td>@Html.ActionLink("Details", "Details", new { systemSettingId = item.SystemSettingId }) |
+                @Html.ActionLink("Edit", "Edit", new { systemSettingId = item.SystemSettingId }) |
+                @Html.ActionLink("New", "Create", new { })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title nor-pim</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/highchart")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="~/images/nor-gate.png" alt="nor-gate" id="nor-gate" width="60" height="50" />
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gather</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Product Gather Source", "CrudeProductGatherSourceIndex", "CrudeProductGatherSource")</li>
+                            <li>@Html.ActionLink("Product Gather", "CrudeProductGatherIndex", "CrudeProductGather")</li>
+                            <li>@Html.ActionLink("Product Gather Key", "CrudeProductGatherKeyIndex", "CrudeProductGatherKey")</li>
+                            <li>@Html.ActionLink("Product Gather Attribute", "CrudeProductGatherAttributeIndex", "CrudeProductGatherAttribute")</li>
+                            <li>@Html.ActionLink("Product Change Set", "CrudeProductChangeSetIndex", "CrudeProductChangeSet")</li>
+                            <li>@Html.ActionLink("---------------------------------", "Index", "Message")</li>
+                            <li>@Html.ActionLink("Gather Search", "GatherSearch", "Gather")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Product Category", "CrudeProductCategoryIndex", "CrudeProductCategory")</li>
+                            <li>@Html.ActionLink("Product Category Documentation", "CrudeProductCategoryDocumentationIndex", "CrudeProductCategoryDocumentation")</li>
+                            <li>@Html.ActionLink("Product Category Image", "CrudeProductCategoryImageIndex", "CrudeProductCategoryImage")</li>
+                            <li>@Html.ActionLink("---------------------------------------------", "Index", "Message")</li>
+                            <li>@Html.ActionLink("Product Organize", "Index", "Organize")</li>
+                            <li>@Html.ActionLink("Structure", "Index", "TreeView")</li>
+                       </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Product</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Product", "CrudeProductIndex", "CrudeProduct")</li>
+                            <li>@Html.ActionLink("Product Attribute", "CrudeProductAttributeIndex", "CrudeProductAttribute")</li>
+                            <li>@Html.ActionLink("Product Identifier", "CrudeProductIdentifierIndex", "CrudeProductIdentifier")</li>
+                            <li>@Html.ActionLink("Product Info", "CrudeProductInfoIndex", "CrudeProductInfo")</li>
+                            <li>@Html.ActionLink("Product Documentation", "CrudeProductDocumentationIndex", "CrudeProductDocumentation")</li>
+                            <li>@Html.ActionLink("Product Image", "CrudeProductImageIndex", "CrudeProductImage")</li>
+                            <li>@Html.ActionLink("Product Supplier", "CrudeProductSupplierIndex", "CrudeProductSupplier")</li>
+                            <li>@Html.ActionLink("---------------------------------", "Index", "Message")</li>
+                            <li>@Html.ActionLink("Product Search", "Search", "Product")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Expose</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Product Expose Plan", "CrudeProductExposePlanIndex", "CrudeProductExposePlan")</li>
+                            <li>@Html.ActionLink("Product Expose", "CrudeProductExposeIndex", "CrudeProductExpose")</li>
+                            <li>@Html.ActionLink("Product Expose Set", "CrudeProductExposeSetIndex", "CrudeProductExposeSet")</li>
+                            <li>@Html.ActionLink("Product Exposed Selection", "CrudeProductExposedSelectionIndex", "CrudeProductExposedSelection")</li>
+                            <li>@Html.ActionLink("------------------------------------", "Index", "Message")</li>
+                            <li>@Html.ActionLink("Expose Search", "ExposeSearch", "Expose")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maintenance</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("User", "Index", "User")</li>
+                            <li>@Html.ActionLink("System Setting", "Index", "SystemSetting")</li>
+                            <li>@Html.ActionLink("Reference", "Index", "SystemReferenceTable")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">System Status</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("General Statistics", "Index", "StatisticsTop5")</li>
+                            <li>@Html.ActionLink("Activity Overview", "Index", "Statistics")</li>
+                            <li>@Html.ActionLink("Recent User Activity", "UserActivityRecentIndex", "UserActivityRecent")</li>
+                            <li>@Html.ActionLink("User Activity Grouped", "UserActivityGroupedIndex", "UserActivityGrouped")</li>
+                            <li>@Html.ActionLink("User Activity By Address", "UserActivityGroupedByAddressIndex", "UserActivityGroupedByAddress")</li>
+                            <li>@Html.ActionLink("Activity Chart", "Index", "Chart")</li>
+                        </ul>
+                    </li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; nor-pim @DateTime.UtcNow (UTC)</p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
