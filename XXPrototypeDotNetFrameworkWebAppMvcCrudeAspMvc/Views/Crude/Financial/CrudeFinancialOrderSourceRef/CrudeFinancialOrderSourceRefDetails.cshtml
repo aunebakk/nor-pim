@@ -1,0 +1,32 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:51 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialOrderSourceRefContract
+
+@{
+    ViewBag.Title = "Details Financial Order Source Ref";
+}
+
+<h2>Details for Financial Order Source Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Financial Order Source Name</dt> <dd>@Html.DisplayFor(model => model.FinancialOrderSourceName)</dd>
+        <dt>Financial Order Source Code</dt> <dd>@Html.DisplayFor(model => model.FinancialOrderSourceCode)</dd>
+        <dt>Sort Sequence Number</dt> <dd>@Html.DisplayFor(model => model.SortSequenceNumber)</dd>
+        <dt>Change Flag</dt> <dd>@Html.DisplayFor(model => model.ChangeFlag)</dd>
+        <dt>Status Code</dt> <dd>@Html.DisplayFor(model => model.StatusCode)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeFinancialOrderSourceRefEdit", new { financialOrderSourceRcd = Model.FinancialOrderSourceRcd }) |
+    @Html.ActionLink("New", "CrudeFinancialOrderSourceRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeFinancialOrderSourceRefIndex")
+</p>

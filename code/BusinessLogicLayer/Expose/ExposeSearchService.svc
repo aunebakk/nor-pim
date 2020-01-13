@@ -1,1 +1,0 @@
-<%@ ServiceHost Language="C#" Debug="true" Service="norpim.BusinessLogicLayer.ExposeSearchService" CodeBehind="C:\projects\norpim\version2\code\BusinessLogicLayer\Expose\\ExposeSearchService.cs"%>

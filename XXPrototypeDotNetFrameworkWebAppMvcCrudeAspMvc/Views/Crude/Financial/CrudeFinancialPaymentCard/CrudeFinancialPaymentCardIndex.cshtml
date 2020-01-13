@@ -1,0 +1,56 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:58 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialPaymentCardContract>
+
+@{
+    ViewBag.Title = "Index Financial Payment Card";
+}
+
+<h2>Index for Financial Payment Card</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeFinancialPaymentCardCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Date Time</th>
+        <th>Card Number</th>
+        <th>Name On Card</th>
+        <th>Expiry Year</th>
+        <th>Expiry Month</th>
+        <th>Financial Card Type</th>
+        <th>Card Verification Value</th>
+        <th>Issued Month</th>
+        <th>Issued Year</th>
+        <th>Address Verification Code</th>
+        <th>Amount</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.CardNumber) </td>
+            <td>@Html.DisplayFor(modelItem => item.NameOnCard) </td>
+            <td>@Html.DisplayFor(modelItem => item.ExpiryYear) </td>
+            <td>@Html.DisplayFor(modelItem => item.ExpiryMonth) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCardTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.CardVerificationValue) </td>
+            <td>@Html.DisplayFor(modelItem => item.IssuedMonth) </td>
+            <td>@Html.DisplayFor(modelItem => item.IssuedYear) </td>
+            <td>@Html.DisplayFor(modelItem => item.AddressVerificationCode) </td>
+            <td>@Html.DisplayFor(modelItem => item.Amount) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeFinancialPaymentCardEdit", new { financialPaymentCardId = item.FinancialPaymentCardId })
+                | @Html.ActionLink("Delete", "CrudeFinancialPaymentCardDelete", new { financialPaymentCardId = item.FinancialPaymentCardId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeSoap",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Product"
+  },
+  "parent": {
+    "tablename": "product_category_image",
+    "overridenice": "CrudeProductCategoryImage",
+    "overridecamel": "productCategoryImage",
+    "autoupdatescheme": "autoupdatenormal",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

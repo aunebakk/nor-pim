@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeSoap",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_user_activity_type_ref",
+    "overridenice": "CrudeDefaultUserActivityTypeRef",
+    "overridecamel": "defaultUserActivityTypeRef",
+    "autoupdatescheme": "autoupdatedefaultreference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

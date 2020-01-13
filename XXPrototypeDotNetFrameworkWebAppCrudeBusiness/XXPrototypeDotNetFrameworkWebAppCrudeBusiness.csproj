@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C403AEC5-C94A-4A2A-BC16-F2414C165665}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XXPrototypeDotNetFrameworkWebAppCrudeBusiness</RootNamespace>
+    <AssemblyName>XXPrototypeDotNetFrameworkWebAppCrudeBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BusinessWCFSoap\Templates\Cart\CrudeCartProduct.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Cart\CrudeCartProductPrice.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClient.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientAddress.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientAddressTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethod.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethodRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientDocument.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientDocumentTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientEvent.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientEventTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientGenderRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifier.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifierTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientLink.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientLinkTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientNationalityRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientTitleRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLog.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLogTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultError.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorLayerRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssue.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueStatusRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceIssue.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTime.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTimeRollup.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultResourceMeasurement.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRule.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRuleTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultStateRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemReferenceTable.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSetting.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSettingRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTest.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRun.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRunResultRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUser.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivity.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivityTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultVersion.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustment.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustmentTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialBankAccountNumberTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCardTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCompany.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCostcentre.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCoupon.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCouponTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrency.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrencyTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFee.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFeeTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrder.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEvent.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEventTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifier.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifierTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderLine.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderSourceRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransaction.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransactionTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPayment.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentAccounting.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentBank.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCard.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCash.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCoupon.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentVoucher.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTax.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTaxTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialUnitOfMeasurementRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucher.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucherTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddress.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddressTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationCity.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationCountry.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProduct.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductAttribute.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeUnitRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategory.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentation.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentationTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImage.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImageTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryMapping.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductChangeSet.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentation.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentationTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductEntityTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExpose.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposedSelection.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposePlan.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSet.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSetTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSet.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSetMapping.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGather.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttribute.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttributeTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherKey.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSource.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSourceTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifier.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifierRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductImage.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductImageTypeRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductInfo.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductInfoRef.svc" />
+    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductSupplier.svc" />
+    <Content Include="Cart\CartProductService.svc" />
+    <Content Include="Cart\CartSearchService.svc" />
+    <Content Include="Category\CategorySearchService.svc" />
+    <Content Include="Client\ClientSearchService.svc" />
+    <Content Include="Default\DefaultSearchService.svc" />
+    <Content Include="Default\DefaultUserActivityService.svc" />
+    <Content Include="Default\DiagnosticsService.svc" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="connection.config" />
+    <Content Include="ProductMaintenance\ProductMaintenanceSearchService.svc" />
+    <Content Include="ProductReference\ProductReferenceAttributeSearchService.svc" />
+    <Content Include="ProductReference\ProductReferenceAttributeService.svc" />
+    <Content Include="ProductReference\ProductReferenceAttributeUnitSearchService.svc" />
+    <Content Include="ProductReference\ProductReferenceAttributeUnitService.svc" />
+    <Content Include="ProductReference\ProductReferenceCategoryDocumentationTypeService.svc" />
+    <Content Include="ProductReference\ProductReferenceCategoryService.svc" />
+    <Content Include="ProductReference\ProductReferenceDocumentationTypeService.svc" />
+    <Content Include="ProductReference\ProductReferenceIdentifierService.svc" />
+    <Content Include="ProductReference\ProductReferenceImageTypeService.svc" />
+    <Content Include="ProductReference\ProductReferenceInfoService.svc" />
+    <Content Include="Product\ProductCategoryService.svc" />
+    <Content Include="Product\ProductSearchService.svc" />
+    <Content Include="Product\ProductService.svc" />
+    <Content Include="Properties\PublishProfiles\XXPrototypeDotNetFrameworkWebAppCrudeBusiness - Web Deploy.pubxml.user" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessWCFSoap\Templates\Cart\CrudeCartProduct.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Cart\CrudeCartProductPrice.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClient.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientAddress.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientAddressTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethod.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethodRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientDocument.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientDocumentTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientEvent.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientEventTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientGenderRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifier.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifierTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientLink.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientLinkTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientNationalityRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientTitleRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLog.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLogTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultError.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorLayerRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssue.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueStatusRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceIssue.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTime.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTimeRollup.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultResourceMeasurement.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRule.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRuleTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultStateRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemReferenceTable.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSetting.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSettingRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTest.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRun.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRunResultRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUser.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivity.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivityTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultVersion.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustment.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustmentTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialBankAccountNumberTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCardTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCompany.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCostcentre.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCoupon.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCouponTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrency.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrencyTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFee.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFeeTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrder.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEvent.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEventTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifier.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifierTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderLine.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderSourceRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransaction.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransactionTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPayment.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentAccounting.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentBank.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCard.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCash.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCoupon.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentVoucher.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTax.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTaxTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialUnitOfMeasurementRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucher.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucherTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddress.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddressTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationCity.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationCountry.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProduct.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductAttribute.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeUnitRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategory.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentation.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentationTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImage.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImageTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryMapping.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductChangeSet.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentation.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentationTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductEntityTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExpose.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposedSelection.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposePlan.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSet.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSetTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSet.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSetMapping.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGather.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttribute.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttributeTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherKey.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSource.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSourceTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifier.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifierRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductImage.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductImageTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfo.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfoRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductSupplier.cs" />
+    <Compile Include="Cart\CartProductService.cs" />
+    <Compile Include="Cart\CartSearchService.cs" />
+    <Compile Include="Category\CategorySearchService.cs" />
+    <Compile Include="Client\ClientSearchService.cs" />
+    <Compile Include="Default\DefaultSearchService.cs" />
+    <Compile Include="Default\DefaultUserActivityService.cs" />
+    <Compile Include="Default\DiagnosticsService.cs" />
+    <Compile Include="Durian\CartSearch\GetCartProductWithFilter.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryFind.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryTree.cs" />
+    <Compile Include="Durian\ClientSearch\GetClientWithFilter.cs" />
+    <Compile Include="Durian\DefaultSearch\DashboardCounts.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultErrorOverview.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultIssueWithFilter.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIndicators.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilter.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommands.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimes.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceDatabaseStatistics.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceStatistics.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatistics.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonth.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsTop5.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultTestOverview.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityByHour.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGrouped.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddress.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityOnAddress.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecent.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserList.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboard.cs" />
+    <Compile Include="Durian\DefaultSearch\GetDefaultChangeLog.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilter.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilter.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilter.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilter.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIndex.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilter.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilter.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilter.cs" />
+    <Compile Include="Durian\ProductSearch\ProductHistory.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategory.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryCode.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType4.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchById.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByName.cs" />
+    <Compile Include="ProductMaintenance\ProductMaintenanceSearchService.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeSearchService.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeService.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeUnitSearchService.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeUnitService.cs" />
+    <Compile Include="ProductReference\ProductReferenceCategoryDocumentationTypeService.cs" />
+    <Compile Include="ProductReference\ProductReferenceCategoryService.cs" />
+    <Compile Include="ProductReference\ProductReferenceDocumentationTypeService.cs" />
+    <Compile Include="ProductReference\ProductReferenceIdentifierService.cs" />
+    <Compile Include="ProductReference\ProductReferenceImageTypeService.cs" />
+    <Compile Include="ProductReference\ProductReferenceInfoService.cs" />
+    <Compile Include="Product\ProductCategoryService.cs" />
+    <Compile Include="Product\ProductSearchService.cs" />
+    <Compile Include="Product\ProductService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cart\json\Cart.json" />
+    <Content Include="Client\__client.json" />
+    <Content Include="ProductMaintenance\json\_product.json" />
+    <Content Include="ProductMaintenance\json\_productattribute.json" />
+    <Content Include="ProductMaintenance\json\_productdocumentation.json" />
+    <Content Include="ProductMaintenance\json\_productidentifier.json" />
+    <Content Include="ProductMaintenance\json\_productimage.json" />
+    <Content Include="ProductMaintenance\json\_productinfo.json" />
+    <Content Include="ProductReference\json\ProductReferenceAttribute.json" />
+    <Content Include="ProductReference\json\ProductReferenceAttributeUnit.json" />
+    <Content Include="ProductReference\json\ProductReferenceCategory.json" />
+    <Content Include="ProductReference\json\ProductReferenceCategoryDocumentationType.json" />
+    <Content Include="ProductReference\json\ProductReferenceDocumentationType.json" />
+    <Content Include="ProductReference\json\ProductReferenceIdentifier.json" />
+    <Content Include="ProductReference\json\ProductReferenceImageType.json" />
+    <Content Include="ProductReference\json\ProductReferenceInfo.json" />
+    <None Include="Properties\PublishProfiles\XXPrototypeDotNetFrameworkWebAppCrudeBusiness - Web Deploy.pubxml" />
+    <Content Include="Prototype.json" />
+    <Content Include="publish.bat" />
+    <None Include="Template\Cart\CartProduct.json" />
+    <None Include="Template\Cart\CartProductPrice.json" />
+    <None Include="Template\Client\Client.json" />
+    <None Include="Template\Client\ClientAddress.json" />
+    <None Include="Template\Client\ClientAddressTypeRef.json" />
+    <None Include="Template\Client\ClientContactMethod.json" />
+    <None Include="Template\Client\ClientContactMethodRef.json" />
+    <None Include="Template\Client\ClientDocument.json" />
+    <None Include="Template\Client\ClientDocumentTypeRef.json" />
+    <None Include="Template\Client\ClientEvent.json" />
+    <None Include="Template\Client\ClientEventTypeRef.json" />
+    <None Include="Template\Client\ClientGenderRef.json" />
+    <None Include="Template\Client\ClientIdentifier.json" />
+    <None Include="Template\Client\ClientIdentifierTypeRef.json" />
+    <None Include="Template\Client\ClientLink.json" />
+    <None Include="Template\Client\ClientLinkTypeRef.json" />
+    <None Include="Template\Client\ClientNationalityRef.json" />
+    <None Include="Template\Client\ClientTitleRef.json" />
+    <None Include="Template\Client\ClientTypeRef.json" />
+    <None Include="Template\Default\DefaultChangeLog.json" />
+    <None Include="Template\Default\DefaultChangeLogTypeRef.json" />
+    <None Include="Template\Default\DefaultError.json" />
+    <None Include="Template\Default\DefaultErrorLayerRef.json" />
+    <None Include="Template\Default\DefaultErrorTypeRef.json" />
+    <None Include="Template\Default\DefaultIssue.json" />
+    <None Include="Template\Default\DefaultIssueStatusRef.json" />
+    <None Include="Template\Default\DefaultIssueTypeRef.json" />
+    <None Include="Template\Default\DefaultPerformanceIssue.json" />
+    <None Include="Template\Default\DefaultPerformanceTime.json" />
+    <None Include="Template\Default\DefaultPerformanceTimeRollup.json" />
+    <None Include="Template\Default\DefaultResourceMeasurement.json" />
+    <None Include="Template\Default\DefaultRule.json" />
+    <None Include="Template\Default\DefaultRuleTypeRef.json" />
+    <None Include="Template\Default\DefaultStateRef.json" />
+    <None Include="Template\Default\DefaultSystemReferenceTable.json" />
+    <None Include="Template\Default\DefaultSystemSetting.json" />
+    <None Include="Template\Default\DefaultSystemSettingRef.json" />
+    <None Include="Template\Default\DefaultTest.json" />
+    <None Include="Template\Default\DefaultTestRun.json" />
+    <None Include="Template\Default\DefaultTestRunResultRef.json" />
+    <None Include="Template\Default\DefaultUser.json" />
+    <None Include="Template\Default\DefaultUserActivity.json" />
+    <None Include="Template\Default\DefaultUserActivityTypeRef.json" />
+    <None Include="Template\Default\DefaultVersion.json" />
+    <None Include="Template\Financial\FinancialAdjustment.json" />
+    <None Include="Template\Financial\FinancialAdjustmentTypeRef.json" />
+    <None Include="Template\Financial\FinancialBankAccountNumberTypeRef.json" />
+    <None Include="Template\Financial\FinancialCardTypeRef.json" />
+    <None Include="Template\Financial\FinancialCompany.json" />
+    <None Include="Template\Financial\FinancialCostcentre.json" />
+    <None Include="Template\Financial\FinancialCoupon.json" />
+    <None Include="Template\Financial\FinancialCouponTypeRef.json" />
+    <None Include="Template\Financial\FinancialCurrency.json" />
+    <None Include="Template\Financial\FinancialCurrencyTypeRef.json" />
+    <None Include="Template\Financial\FinancialFee.json" />
+    <None Include="Template\Financial\FinancialFeeTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrder.json" />
+    <None Include="Template\Financial\FinancialOrderEvent.json" />
+    <None Include="Template\Financial\FinancialOrderEventTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrderIdentifier.json" />
+    <None Include="Template\Financial\FinancialOrderIdentifierTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrderLine.json" />
+    <None Include="Template\Financial\FinancialOrderSourceRef.json" />
+    <None Include="Template\Financial\FinancialOrderTransaction.json" />
+    <None Include="Template\Financial\FinancialOrderTransactionTypeRef.json" />
+    <None Include="Template\Financial\FinancialPayment.json" />
+    <None Include="Template\Financial\FinancialPaymentAccounting.json" />
+    <None Include="Template\Financial\FinancialPaymentBank.json" />
+    <None Include="Template\Financial\FinancialPaymentCard.json" />
+    <None Include="Template\Financial\FinancialPaymentCash.json" />
+    <None Include="Template\Financial\FinancialPaymentCoupon.json" />
+    <None Include="Template\Financial\FinancialPaymentTypeRef.json" />
+    <None Include="Template\Financial\FinancialPaymentVoucher.json" />
+    <None Include="Template\Financial\FinancialTax.json" />
+    <None Include="Template\Financial\FinancialTaxTypeRef.json" />
+    <None Include="Template\Financial\FinancialUnitOfMeasurementRef.json" />
+    <None Include="Template\Financial\FinancialVoucher.json" />
+    <None Include="Template\Financial\FinancialVoucherTypeRef.json" />
+    <None Include="Template\Location\LocationAddress.json" />
+    <None Include="Template\Location\LocationAddressTypeRef.json" />
+    <None Include="Template\Location\LocationCity.json" />
+    <None Include="Template\Location\LocationCountry.json" />
+    <None Include="Template\Product\Product.json" />
+    <None Include="Template\Product\ProductAttribute.json" />
+    <None Include="Template\Product\ProductAttributeRef.json" />
+    <None Include="Template\Product\ProductAttributeUnitRef.json" />
+    <None Include="Template\Product\ProductCategory.json" />
+    <None Include="Template\Product\ProductCategoryDocumentation.json" />
+    <None Include="Template\Product\ProductCategoryDocumentationTypeRef.json" />
+    <None Include="Template\Product\ProductCategoryImage.json" />
+    <None Include="Template\Product\ProductCategoryImageTypeRef.json" />
+    <None Include="Template\Product\ProductCategoryMapping.json" />
+    <None Include="Template\Product\ProductChangeSet.json" />
+    <None Include="Template\Product\ProductDocumentation.json" />
+    <None Include="Template\Product\ProductDocumentationTypeRef.json" />
+    <None Include="Template\Product\ProductEntityTypeRef.json" />
+    <None Include="Template\Product\ProductExpose.json" />
+    <None Include="Template\Product\ProductExposePlan.json" />
+    <None Include="Template\Product\ProductExposeSet.json" />
+    <None Include="Template\Product\ProductExposeSetTypeRef.json" />
+    <None Include="Template\Product\ProductExposedSelection.json" />
+    <None Include="Template\Product\ProductFieldSet.json" />
+    <None Include="Template\Product\ProductFieldSetMapping.json" />
+    <None Include="Template\Product\ProductGather.json" />
+    <None Include="Template\Product\ProductGatherAttribute.json" />
+    <None Include="Template\Product\ProductGatherAttributeTypeRef.json" />
+    <None Include="Template\Product\ProductGatherKey.json" />
+    <None Include="Template\Product\ProductGatherSource.json" />
+    <None Include="Template\Product\ProductGatherSourceTypeRef.json" />
+    <None Include="Template\Product\ProductIdentifier.json" />
+    <None Include="Template\Product\ProductIdentifierRef.json" />
+    <None Include="Template\Product\ProductImage.json" />
+    <None Include="Template\Product\ProductImageTypeRef.json" />
+    <None Include="Template\Product\ProductInfo.json" />
+    <None Include="Template\Product\ProductInfoRef.json" />
+    <None Include="Template\Product\ProductSupplier.json" />
+    <None Include="Information\architecture.txt" />
+    <None Include="Information\description.txt" />
+    <None Include="..\sql2x.config" />
+    <None Include="..\sql2x.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj">
+      <Project>{f7d54b03-bcae-444d-9d21-3969e4e5206e}</Project>
+      <Name>PrototypeDatabaseTemplateEmpty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
+      <Project>{b83512cf-abdb-45a0-a34a-19ac14e9bf2d}</Project>
+      <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj">
+      <Project>{b4da779e-70dd-45c1-8827-b583af885c2c}</Project>
+      <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64804</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64804/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

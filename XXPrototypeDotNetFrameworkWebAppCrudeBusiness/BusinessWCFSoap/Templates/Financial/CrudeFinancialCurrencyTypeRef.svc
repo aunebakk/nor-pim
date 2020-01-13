@@ -1,0 +1,1 @@
+<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialCurrencyTypeRefService" CodeBehind="C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkWebAppCrudeBusiness\BusinessWCFSoap\Templates\Financial\\\CrudeFinancialCurrencyTypeRef.cs"%>

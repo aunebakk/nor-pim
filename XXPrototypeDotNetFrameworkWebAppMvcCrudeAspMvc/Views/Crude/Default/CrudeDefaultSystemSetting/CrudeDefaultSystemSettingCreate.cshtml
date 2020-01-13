@@ -1,0 +1,69 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:14 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewCreate
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultSystemSettingContract
+
+@{
+    ViewBag.Title = "Create Default System Setting";
+}
+
+<h2>Create Default System Setting</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.DefaultSystemSettingId)
+        @Html.HiddenFor(model => model.DefaultUserId)
+
+        <div class="form-group">
+            @Html.Label("Default System Setting", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("DefaultSystemSettingRcd", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Default System Setting Value", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DefaultSystemSettingValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DefaultSystemSettingValue, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Date Time", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateTime, new { htmlAttributes = new { @class = "form-control date-picker", @Value = @Model.DateTime.ToString("yyyy-MM-dd") } })
+                @Html.ValidationMessageFor(model => model.DateTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "CrudeDefaultSystemSettingIndex")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/themes/base/all.css")
+    <script type="text/javascript">
+        $(function () {
+            // This will make every element with the class "date-picker" into a DatePicker element
+            $('.date-picker').datepicker(({ dateFormat: "yy-mm-dd" }));
+        })
+    </script>
+}

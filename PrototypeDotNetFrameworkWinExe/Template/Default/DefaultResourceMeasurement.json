@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeWinForm",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_resource_measurement",
+    "overridenice": "CrudeDefaultResourceMeasurement",
+    "overridecamel": "defaultResourceMeasurement",
+    "autoupdatescheme": "autoupdatedefault",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

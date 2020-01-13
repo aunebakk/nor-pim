@@ -1,0 +1,28 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:04 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialPaymentVoucherContract
+
+@{
+    ViewBag.Title = "Details Financial Payment Voucher";
+}
+
+<h2>Details for Financial Payment Voucher</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+        <dt>Amount</dt> <dd>@Html.DisplayFor(model => model.Amount)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeFinancialPaymentVoucherEdit", new { financialPaymentVoucherId = Model.FinancialPaymentVoucherId }) |
+    @Html.ActionLink("New", "CrudeFinancialPaymentVoucherCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeFinancialPaymentVoucherIndex")
+</p>

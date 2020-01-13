@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2621973-9FF9-4861-B3DA-7FC044EBD128}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</RootNamespace>
+    <AssemblyName>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Durian\CartSearch\CartSearchProxy.cs" />
+    <Compile Include="Durian\CategorySearch\CategorySearchProxy.cs" />
+    <Compile Include="Durian\ClientSearch\ClientSearchProxy.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultSearchProxy.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceSearchProxy.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchProxy.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchProxy.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyWCF\Templates\Cart\CrudeCartProductPriceService.cs" />
+    <Compile Include="ProxyWCF\Templates\Cart\CrudeCartProductService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientAddressService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientAddressTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientContactMethodRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientContactMethodService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientDocumentService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientDocumentTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientEventService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientEventTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientGenderRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientIdentifierService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientIdentifierTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientLinkService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientLinkTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientNationalityRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientTitleRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultChangeLogService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultChangeLogTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultErrorLayerRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultErrorService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultErrorTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultIssueService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultIssueStatusRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultIssueTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultPerformanceIssueService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultPerformanceTimeRollupService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultPerformanceTimeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultResourceMeasurementService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultRuleService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultRuleTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultStateRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultSystemReferenceTableService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultSystemSettingRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultSystemSettingService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestRunResultRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestRunService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultUserActivityService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultUserActivityTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultUserService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultVersionService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialAdjustmentService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialAdjustmentTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialBankAccountNumberTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCardTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCompanyService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCostcentreService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCouponService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCouponTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCurrencyService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCurrencyTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialFeeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialFeeTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderEventService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderEventTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderIdentifierService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderIdentifierTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderLineService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderSourceRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderTransactionService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderTransactionTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentAccountingService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentBankService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentCardService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentCashService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentCouponService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentVoucherService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialTaxService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialTaxTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialUnitOfMeasurementRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialVoucherService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialVoucherTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Location\CrudeLocationAddressService.cs" />
+    <Compile Include="ProxyWCF\Templates\Location\CrudeLocationAddressTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Location\CrudeLocationCityService.cs" />
+    <Compile Include="ProxyWCF\Templates\Location\CrudeLocationCountryService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductAttributeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductAttributeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductAttributeUnitRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryDocumentationService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryDocumentationTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryImageService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryImageTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryMappingService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductChangeSetService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductDocumentationService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductDocumentationTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductEntityTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposedSelectionService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposePlanService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposeSetService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposeSetTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductFieldSetMappingService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductFieldSetService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherAttributeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherAttributeTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherKeyService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherSourceService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherSourceTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductIdentifierRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductIdentifierService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductImageService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductImageTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductInfoRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductInfoService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductSupplierService.cs" />
+    <Compile Include="Service\Cart\CartProductProxy.cs" />
+    <Compile Include="Service\DefaultUserActivityProxy.cs" />
+    <Compile Include="Service\DefaultUserActivityService.cs" />
+    <Compile Include="Service\DiagnosticsProxy.cs" />
+    <Compile Include="Service\DiagnosticsService.cs" />
+    <Compile Include="Service\ProductCategoryProxy.cs" />
+    <Compile Include="Service\ProductCategoryService.cs" />
+    <Compile Include="Service\ProductProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttributeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttributeUnitProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategoryDocumentationTypeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategoryProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceDocumentationTypeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceIdentifierProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceImageTypeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceInfoProxy.cs" />
+    <Compile Include="Service\ProductService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Prototype.json" />
+    <None Include="Service\all.bat" />
+    <None Include="Template\Cart\CartProduct.json" />
+    <None Include="Template\Cart\CartProductPrice.json" />
+    <None Include="Template\Client\Client.json" />
+    <None Include="Template\Client\ClientAddress.json" />
+    <None Include="Template\Client\ClientAddressTypeRef.json" />
+    <None Include="Template\Client\ClientContactMethod.json" />
+    <None Include="Template\Client\ClientContactMethodRef.json" />
+    <None Include="Template\Client\ClientDocument.json" />
+    <None Include="Template\Client\ClientDocumentTypeRef.json" />
+    <None Include="Template\Client\ClientEvent.json" />
+    <None Include="Template\Client\ClientEventTypeRef.json" />
+    <None Include="Template\Client\ClientGenderRef.json" />
+    <None Include="Template\Client\ClientIdentifier.json" />
+    <None Include="Template\Client\ClientIdentifierTypeRef.json" />
+    <None Include="Template\Client\ClientLink.json" />
+    <None Include="Template\Client\ClientLinkTypeRef.json" />
+    <None Include="Template\Client\ClientNationalityRef.json" />
+    <None Include="Template\Client\ClientTitleRef.json" />
+    <None Include="Template\Client\ClientTypeRef.json" />
+    <None Include="Template\Default\DefaultChangeLog.json" />
+    <None Include="Template\Default\DefaultChangeLogTypeRef.json" />
+    <None Include="Template\Default\DefaultError.json" />
+    <None Include="Template\Default\DefaultErrorLayerRef.json" />
+    <None Include="Template\Default\DefaultErrorTypeRef.json" />
+    <None Include="Template\Default\DefaultIssue.json" />
+    <None Include="Template\Default\DefaultIssueStatusRef.json" />
+    <None Include="Template\Default\DefaultIssueTypeRef.json" />
+    <None Include="Template\Default\DefaultPerformanceIssue.json" />
+    <None Include="Template\Default\DefaultPerformanceTime.json" />
+    <None Include="Template\Default\DefaultPerformanceTimeRollup.json" />
+    <None Include="Template\Default\DefaultResourceMeasurement.json" />
+    <None Include="Template\Default\DefaultRule.json" />
+    <None Include="Template\Default\DefaultRuleTypeRef.json" />
+    <None Include="Template\Default\DefaultStateRef.json" />
+    <None Include="Template\Default\DefaultSystemReferenceTable.json" />
+    <None Include="Template\Default\DefaultSystemSetting.json" />
+    <None Include="Template\Default\DefaultSystemSettingRef.json" />
+    <None Include="Template\Default\DefaultTest.json" />
+    <None Include="Template\Default\DefaultTestRun.json" />
+    <None Include="Template\Default\DefaultTestRunResultRef.json" />
+    <None Include="Template\Default\DefaultUser.json" />
+    <None Include="Template\Default\DefaultUserActivity.json" />
+    <None Include="Template\Default\DefaultUserActivityTypeRef.json" />
+    <None Include="Template\Default\DefaultVersion.json" />
+    <None Include="Template\Financial\FinancialAdjustment.json" />
+    <None Include="Template\Financial\FinancialAdjustmentTypeRef.json" />
+    <None Include="Template\Financial\FinancialBankAccountNumberTypeRef.json" />
+    <None Include="Template\Financial\FinancialCardTypeRef.json" />
+    <None Include="Template\Financial\FinancialCompany.json" />
+    <None Include="Template\Financial\FinancialCostcentre.json" />
+    <None Include="Template\Financial\FinancialCoupon.json" />
+    <None Include="Template\Financial\FinancialCouponTypeRef.json" />
+    <None Include="Template\Financial\FinancialCurrency.json" />
+    <None Include="Template\Financial\FinancialCurrencyTypeRef.json" />
+    <None Include="Template\Financial\FinancialFee.json" />
+    <None Include="Template\Financial\FinancialFeeTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrder.json" />
+    <None Include="Template\Financial\FinancialOrderEvent.json" />
+    <None Include="Template\Financial\FinancialOrderEventTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrderIdentifier.json" />
+    <None Include="Template\Financial\FinancialOrderIdentifierTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrderLine.json" />
+    <None Include="Template\Financial\FinancialOrderSourceRef.json" />
+    <None Include="Template\Financial\FinancialOrderTransaction.json" />
+    <None Include="Template\Financial\FinancialOrderTransactionTypeRef.json" />
+    <None Include="Template\Financial\FinancialPayment.json" />
+    <None Include="Template\Financial\FinancialPaymentAccounting.json" />
+    <None Include="Template\Financial\FinancialPaymentBank.json" />
+    <None Include="Template\Financial\FinancialPaymentCard.json" />
+    <None Include="Template\Financial\FinancialPaymentCash.json" />
+    <None Include="Template\Financial\FinancialPaymentCoupon.json" />
+    <None Include="Template\Financial\FinancialPaymentTypeRef.json" />
+    <None Include="Template\Financial\FinancialPaymentVoucher.json" />
+    <None Include="Template\Financial\FinancialTax.json" />
+    <None Include="Template\Financial\FinancialTaxTypeRef.json" />
+    <None Include="Template\Financial\FinancialUnitOfMeasurementRef.json" />
+    <None Include="Template\Financial\FinancialVoucher.json" />
+    <None Include="Template\Financial\FinancialVoucherTypeRef.json" />
+    <None Include="Template\Location\LocationAddress.json" />
+    <None Include="Template\Location\LocationAddressTypeRef.json" />
+    <None Include="Template\Location\LocationCity.json" />
+    <None Include="Template\Location\LocationCountry.json" />
+    <None Include="Template\Product\Product.json" />
+    <None Include="Template\Product\ProductAttribute.json" />
+    <None Include="Template\Product\ProductAttributeRef.json" />
+    <None Include="Template\Product\ProductAttributeUnitRef.json" />
+    <None Include="Template\Product\ProductCategory.json" />
+    <None Include="Template\Product\ProductCategoryDocumentation.json" />
+    <None Include="Template\Product\ProductCategoryDocumentationTypeRef.json" />
+    <None Include="Template\Product\ProductCategoryImage.json" />
+    <None Include="Template\Product\ProductCategoryImageTypeRef.json" />
+    <None Include="Template\Product\ProductCategoryMapping.json" />
+    <None Include="Template\Product\ProductChangeSet.json" />
+    <None Include="Template\Product\ProductDocumentation.json" />
+    <None Include="Template\Product\ProductDocumentationTypeRef.json" />
+    <None Include="Template\Product\ProductEntityTypeRef.json" />
+    <None Include="Template\Product\ProductExpose.json" />
+    <None Include="Template\Product\ProductExposePlan.json" />
+    <None Include="Template\Product\ProductExposeSet.json" />
+    <None Include="Template\Product\ProductExposeSetTypeRef.json" />
+    <None Include="Template\Product\ProductExposedSelection.json" />
+    <None Include="Template\Product\ProductFieldSet.json" />
+    <None Include="Template\Product\ProductFieldSetMapping.json" />
+    <None Include="Template\Product\ProductGather.json" />
+    <None Include="Template\Product\ProductGatherAttribute.json" />
+    <None Include="Template\Product\ProductGatherAttributeTypeRef.json" />
+    <None Include="Template\Product\ProductGatherKey.json" />
+    <None Include="Template\Product\ProductGatherSource.json" />
+    <None Include="Template\Product\ProductGatherSourceTypeRef.json" />
+    <None Include="Template\Product\ProductIdentifier.json" />
+    <None Include="Template\Product\ProductIdentifierRef.json" />
+    <None Include="Template\Product\ProductImage.json" />
+    <None Include="Template\Product\ProductImageTypeRef.json" />
+    <None Include="Template\Product\ProductInfo.json" />
+    <None Include="Template\Product\ProductInfoRef.json" />
+    <None Include="Template\Product\ProductSupplier.json" />
+    <None Include="Information\architecture.txt" />
+    <None Include="Information\description.txt" />
+    <None Include="..\sql2x.config" />
+    <None Include="..\sql2x.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
+      <Project>{b83512cf-abdb-45a0-a34a-19ac14e9bf2d}</Project>
+      <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="address binding contract.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

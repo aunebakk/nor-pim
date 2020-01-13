@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeSoap",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Client"
+  },
+  "parent": {
+    "tablename": "client_address",
+    "overridenice": "CrudeClientAddress",
+    "overridecamel": "clientAddress",
+    "autoupdatescheme": "autoupdatenormal",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

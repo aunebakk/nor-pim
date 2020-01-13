@@ -1,0 +1,46 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:40:40 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientGenderRefContract>
+
+@{
+    ViewBag.Title = "Index Client Gender Ref";
+}
+
+<h2>Index for Client Gender Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeClientGenderRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Client Gender</th>
+        <th>Client Gender Name</th>
+        <th>Client Gender Description</th>
+        <th>Active Flag</th>
+        <th>Sort Order</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ClientGenderRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientGenderName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientGenderDescription) </td>
+            <td>@Html.DisplayFor(modelItem => item.ActiveFlag) </td>
+            <td>@Html.DisplayFor(modelItem => item.SortOrder) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeClientGenderRefEdit", new { clientGenderRcd = item.ClientGenderRcd })
+                | @Html.ActionLink("Delete", "CrudeClientGenderRefDelete", new { clientGenderRcd = item.ClientGenderRcd })
+            </td>
+        </tr>
+    }
+
+</table>

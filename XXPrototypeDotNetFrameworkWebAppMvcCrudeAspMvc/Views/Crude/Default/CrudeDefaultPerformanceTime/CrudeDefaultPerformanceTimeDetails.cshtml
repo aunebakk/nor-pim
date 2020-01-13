@@ -1,0 +1,28 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:05 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultPerformanceTimeContract
+
+@{
+    ViewBag.Title = "Details Default Performance Time";
+}
+
+<h2>Details for Default Performance Time</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Command Name</dt> <dd>@Html.DisplayFor(model => model.CommandName)</dd>
+        <dt>Milliseconds</dt> <dd>@Html.DisplayFor(model => model.Milliseconds)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeDefaultPerformanceTimeEdit", new { defaultPerformanceTimeId = Model.DefaultPerformanceTimeId }) |
+    @Html.ActionLink("New", "CrudeDefaultPerformanceTimeCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeDefaultPerformanceTimeIndex")
+</p>

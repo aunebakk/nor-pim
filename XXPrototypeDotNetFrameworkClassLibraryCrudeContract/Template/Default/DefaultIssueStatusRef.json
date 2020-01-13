@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeContract",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_issue_status_ref",
+    "overridenice": "CrudeDefaultIssueStatusRef",
+    "overridecamel": "defaultIssueStatusRef",
+    "autoupdatescheme": "autoupdatedefaultreference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "DotNetCoreApi",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Financial"
+  },
+  "parent": {
+    "tablename": "financial_unit_of_measurement_ref",
+    "overridenice": "CrudeFinancialUnitOfMeasurementRef",
+    "overridecamel": "financialUnitOfMeasurementRef",
+    "autoupdatescheme": "autoupdatereference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeSoap",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Financial"
+  },
+  "parent": {
+    "tablename": "financial_tax_type_ref",
+    "overridenice": "CrudeFinancialTaxTypeRef",
+    "overridecamel": "financialTaxTypeRef",
+    "autoupdatescheme": "autoupdatereference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

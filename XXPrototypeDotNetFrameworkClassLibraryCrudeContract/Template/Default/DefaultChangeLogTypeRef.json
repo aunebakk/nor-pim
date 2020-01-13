@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeContract",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_change_log_type_ref",
+    "overridenice": "CrudeDefaultChangeLogTypeRef",
+    "overridecamel": "defaultChangeLogTypeRef",
+    "autoupdatescheme": "autoupdatedefaultreference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

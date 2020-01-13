@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeContract",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Product"
+  },
+  "parent": {
+    "tablename": "product_entity_type_ref",
+    "overridenice": "CrudeProductEntityTypeRef",
+    "overridecamel": "productEntityTypeRef",
+    "autoupdatescheme": "autoupdatereference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

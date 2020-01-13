@@ -1,0 +1,83 @@
+﻿
+<html>
+    <head>
+        <title>FinancialPaymentCard</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>FinancialPaymentCard Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeFinancialPaymentCardService</label>
+        <br /><label>Contract name: CrudeFinancialPaymentCardContract</label>
+        <br /><label>Fetcher: FetchByFinancialPaymentCardId</label>
+        <br /><label>Id: FinancialPaymentCardId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Financial/CrudeFinancialPaymentCard.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Financial Payment Card Id            </td><td>System.Guid</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Card Number            </td><td>System.String</td></tr>
+            <tr><td>Name On Card            </td><td>System.String</td></tr>
+            <tr><td>Expiry Year            </td><td>System.Int32</td></tr>
+            <tr><td>Expiry Month            </td><td>System.Int32</td></tr>
+            <tr><td>Financial Card Type            </td><td>System.String</td></tr>
+            <tr><td>Card Verification Value            </td><td>System.Int32</td></tr>
+            <tr><td>Issued Month            </td><td>System.Int32</td></tr>
+            <tr><td>Issued Year            </td><td>System.Int32</td></tr>
+            <tr><td>Address Verification Code            </td><td>System.String</td></tr>
+            <tr><td>Amount            </td><td>System.Decimal</td></tr>
+            <tr><td>Financial Currency Id            </td><td>System.Guid</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeFinancialPaymentCardContract<b> FetchByFinancialPaymentCardId </b>(System.Guid financialPaymentCardId);
+        <br />
+        <br />List&lt;CrudeFinancialPaymentCardContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeFinancialPaymentCardContract&gt;<b> FetchByFinancialCurrencyId </b>(System.Guid financialCurrencyId);
+        <br />
+        <br />List&lt;CrudeFinancialPaymentCardContract&gt;<b> FetchByFinancialCardTypeRcd </b>(System.String financialCardTypeRcd);
+        <br />
+        <br />List&lt;CrudeFinancialPaymentCardContract&gt;<b> FetchWithFilter </b>(System.Guid financialPaymentCardId,System.Guid userId,System.DateTime dateTime,System.String cardNumber,System.String nameOnCard,System.Int32 expiryYear,System.Int32 expiryMonth,System.String financialCardTypeRcd,System.Int32 cardVerificationValue,System.Int32 issuedMonth,System.Int32 issuedYear,System.String addressVerificationCode,System.Decimal amount,System.Guid financialCurrencyId);
+        <br />
+        <br />List&lt;CrudeFinancialPaymentCardContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeFinancialPaymentCardContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeFinancialPaymentCardContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeFinancialPaymentCardContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeFinancialPaymentCardContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid financialPaymentCardId);
+        <br />
+        <br />
+    </body>
+</html>
+

@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:51:38 PM
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceInfoIndexWithFilterContract>
+
+@{
+    ViewBag.Title = "Product Maintenance Info Index With Filter";
+}
+
+<h2>Product Maintenance Info Index With Filter</h2>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>State</th>
+        <th>Product Info Name</th>
+        <th>Default User Name</th>
+        <th>Product Info</th>
+        <th>Product Info Value</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductInfoName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductInfoRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductInfoValue) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+        </tr>
+    }
+
+</table>

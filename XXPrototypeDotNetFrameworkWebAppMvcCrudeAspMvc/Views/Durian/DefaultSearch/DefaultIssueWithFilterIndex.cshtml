@@ -1,0 +1,46 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:52:48 PM
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.DefaultIssueWithFilterContract>
+
+@{
+    ViewBag.Title = "Default Issue With Filter";
+}
+
+<h2>Default Issue With Filter</h2>
+
+<table class="table">
+    <tr>
+        <th>Default Issue Type</th>
+        <th>Default Issue Type Name</th>
+        <th>Default Issue Status</th>
+        <th>Default Issue Status Name</th>
+        <th>Method Name</th>
+        <th>Issue Name</th>
+        <th>Issue Description</th>
+        <th>Steps To Reproduce</th>
+        <th>Link</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultIssueTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultIssueTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultIssueStatusRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultIssueStatusName) </td>
+            <td>@Html.DisplayFor(modelItem => item.MethodName) </td>
+            <td>@Html.DisplayFor(modelItem => item.IssueName) </td>
+            <td>@Html.DisplayFor(modelItem => item.IssueDescription) </td>
+            <td>@Html.DisplayFor(modelItem => item.StepsToReproduce) </td>
+            <td>@Html.DisplayFor(modelItem => item.Link) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+        </tr>
+    }
+
+</table>

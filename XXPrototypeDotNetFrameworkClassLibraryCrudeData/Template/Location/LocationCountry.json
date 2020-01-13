@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeData",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Location"
+  },
+  "parent": {
+    "tablename": "location_country",
+    "overridenice": "CrudeLocationCountry",
+    "overridecamel": "locationCountry",
+    "autoupdatescheme": "autoupdatenormal",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

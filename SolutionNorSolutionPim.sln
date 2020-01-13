@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B382604-C6DA-414F-897F-492A50E6BFC3}"
+	ProjectSection(SolutionItems) = preProject
+		Global.json = Global.json
+		History.txt = History.txt
+		sql2x.config = sql2x.config
+		sql2x.json = sql2x.json
+		testPoints.html = testPoints.html
+		Version.json = Version.json
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PrototypeDatabaseTemplateEmpty", "PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj", "{F7D54B03-BCAE-444D-9D21-3969E4E5206E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeContract", "XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj", "{B83512CF-ABDB-45A0-A34A-19AC14E9BF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeData", "XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj", "{B4DA779E-70DD-45C1-8827-B583AF885C2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkWebAppCrudeBusiness", "XXPrototypeDotNetFrameworkWebAppCrudeBusiness\XXPrototypeDotNetFrameworkWebAppCrudeBusiness.csproj", "{C403AEC5-C94A-4A2A-BC16-F2414C165665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy", "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj", "{C2621973-9FF9-4861-B3DA-7FC044EBD128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeDotNetFrameworkWinExe", "PrototypeDotNetFrameworkWinExe\PrototypeDotNetFrameworkWinExe.csproj", "{BECFDF9B-C9D4-435A-B91B-C4F6FBEC0B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc", "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc\XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc.csproj", "{43B7E274-4822-4EA9-AA26-A4C6D145B9B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeASPNetCoreTemplateWebApplicationWithCrude", "PrototypeASPNetCoreTemplateWebApplicationWithCrude\PrototypeASPNetCoreTemplateWebApplicationWithCrude.csproj", "{07ACAD81-5473-4DB7-A1D6-524E08C6F80F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeASPNetCoreConsoleDatabaseManager", "PrototypeASPNetCoreConsoleDatabaseManager\PrototypeASPNetCoreConsoleDatabaseManager.csproj", "{0DD06E07-B018-4F76-9475-4B20EF11248C}"
+EndProject
+Project("{978C614F-708E-4E1A-B201-565925725DBA}") = "PrototypeDotNetFrameWorkSetup", "PrototypeDotNetFrameWorkSetup\PrototypeDotNetFrameWorkSetup.vdproj", "{A4DEE2DC-EEF1-4B1B-9905-1EE06BDF9A4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7D54B03-BCAE-444D-9D21-3969E4E5206E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D54B03-BCAE-444D-9D21-3969E4E5206E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D54B03-BCAE-444D-9D21-3969E4E5206E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D54B03-BCAE-444D-9D21-3969E4E5206E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D54B03-BCAE-444D-9D21-3969E4E5206E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B83512CF-ABDB-45A0-A34A-19AC14E9BF2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83512CF-ABDB-45A0-A34A-19AC14E9BF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83512CF-ABDB-45A0-A34A-19AC14E9BF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83512CF-ABDB-45A0-A34A-19AC14E9BF2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DA779E-70DD-45C1-8827-B583AF885C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DA779E-70DD-45C1-8827-B583AF885C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DA779E-70DD-45C1-8827-B583AF885C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DA779E-70DD-45C1-8827-B583AF885C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C403AEC5-C94A-4A2A-BC16-F2414C165665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C403AEC5-C94A-4A2A-BC16-F2414C165665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C403AEC5-C94A-4A2A-BC16-F2414C165665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C403AEC5-C94A-4A2A-BC16-F2414C165665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2621973-9FF9-4861-B3DA-7FC044EBD128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2621973-9FF9-4861-B3DA-7FC044EBD128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2621973-9FF9-4861-B3DA-7FC044EBD128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2621973-9FF9-4861-B3DA-7FC044EBD128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECFDF9B-C9D4-435A-B91B-C4F6FBEC0B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECFDF9B-C9D4-435A-B91B-C4F6FBEC0B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECFDF9B-C9D4-435A-B91B-C4F6FBEC0B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECFDF9B-C9D4-435A-B91B-C4F6FBEC0B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B7E274-4822-4EA9-AA26-A4C6D145B9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B7E274-4822-4EA9-AA26-A4C6D145B9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B7E274-4822-4EA9-AA26-A4C6D145B9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B7E274-4822-4EA9-AA26-A4C6D145B9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07ACAD81-5473-4DB7-A1D6-524E08C6F80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07ACAD81-5473-4DB7-A1D6-524E08C6F80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07ACAD81-5473-4DB7-A1D6-524E08C6F80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07ACAD81-5473-4DB7-A1D6-524E08C6F80F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD06E07-B018-4F76-9475-4B20EF11248C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD06E07-B018-4F76-9475-4B20EF11248C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD06E07-B018-4F76-9475-4B20EF11248C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD06E07-B018-4F76-9475-4B20EF11248C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D658020-8015-432F-959A-7BA7661A7394}
+	EndGlobalSection
+EndGlobal

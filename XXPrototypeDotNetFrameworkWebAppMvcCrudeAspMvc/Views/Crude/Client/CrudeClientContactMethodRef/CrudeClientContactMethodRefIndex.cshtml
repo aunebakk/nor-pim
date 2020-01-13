@@ -1,0 +1,46 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:40:33 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientContactMethodRefContract>
+
+@{
+    ViewBag.Title = "Index Client Contact Method Ref";
+}
+
+<h2>Index for Client Contact Method Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeClientContactMethodRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Client Contact Method</th>
+        <th>Client Contact Method Name</th>
+        <th>Client Contact Method Description</th>
+        <th>Active Flag</th>
+        <th>Sort Order</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ClientContactMethodRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientContactMethodName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientContactMethodDescription) </td>
+            <td>@Html.DisplayFor(modelItem => item.ActiveFlag) </td>
+            <td>@Html.DisplayFor(modelItem => item.SortOrder) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeClientContactMethodRefEdit", new { clientContactMethodRcd = item.ClientContactMethodRcd })
+                | @Html.ActionLink("Delete", "CrudeClientContactMethodRefDelete", new { clientContactMethodRcd = item.ClientContactMethodRcd })
+            </td>
+        </tr>
+    }
+
+</table>

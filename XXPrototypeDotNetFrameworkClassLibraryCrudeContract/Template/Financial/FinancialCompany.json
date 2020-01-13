@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeContract",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Financial"
+  },
+  "parent": {
+    "tablename": "financial_company",
+    "overridenice": "CrudeFinancialCompany",
+    "overridecamel": "financialCompany",
+    "autoupdatescheme": "autoupdatenormal",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

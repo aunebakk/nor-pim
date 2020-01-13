@@ -1,0 +1,24 @@
+{
+    "overall": {
+        "style": "WithDurian"
+    },
+    "domain": {
+        "name": "ProductMaintenance",
+        "style": "tabular"
+    },
+    "parent": {
+        "tablename": "product_identifier",
+        "overridenice": "ProductIdentifier",
+        "overridecamel": "productIdentifier",
+        "autoupdatescheme": "autoupdatenormal",
+        "ownertable": "product",
+        "durianparametertoowner": "true",
+        "durianclass": "ProductMaintenanceSearch",
+        "durianmethod": "ProductMaintenanceIdentifierIndexWithFilter"
+    },
+    "children": { },
+    "autofill": {
+        "name": "user_id",
+        "type": "uniqueidentifier"
+    }
+}

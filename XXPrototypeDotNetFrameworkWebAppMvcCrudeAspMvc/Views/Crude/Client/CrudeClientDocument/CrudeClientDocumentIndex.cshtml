@@ -1,0 +1,44 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:40:35 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientDocumentContract>
+
+@{
+    ViewBag.Title = "Index Client Document";
+}
+
+<h2>Index for Client Document</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeClientDocumentCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Client Document Type</th>
+        <th>Document Name</th>
+        <th>Document Date Time</th>
+        <th>Expiry Date Time</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ClientDocumentTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DocumentName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DocumentDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.ExpiryDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeClientDocumentEdit", new { clientDocumentId = item.ClientDocumentId })
+                | @Html.ActionLink("Delete", "CrudeClientDocumentDelete", new { clientDocumentId = item.ClientDocumentId })
+            </td>
+        </tr>
+    }
+
+</table>

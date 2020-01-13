@@ -1,1 +1,0 @@
-<%@ ServiceHost Language="C#" Debug="true" Service="norpim.BusinessLogicLayer.CrudeProductInformationSourceService" CodeBehind="C:\Development\norpimvs\code\BusinessLogicLayer\Crude\\CrudeProductInformationSource.cs"%>

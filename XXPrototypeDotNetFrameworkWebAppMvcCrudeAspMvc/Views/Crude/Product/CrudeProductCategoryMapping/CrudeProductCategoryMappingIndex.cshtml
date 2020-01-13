@@ -1,0 +1,36 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:28 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductCategoryMappingContract>
+
+@{
+    ViewBag.Title = "Index Product Category Mapping";
+}
+
+<h2>Index for Product Category Mapping</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductCategoryMappingCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeProductCategoryMappingEdit", new { productCategoryMappingId = item.ProductCategoryMappingId })
+                | @Html.ActionLink("Delete", "CrudeProductCategoryMappingDelete", new { productCategoryMappingId = item.ProductCategoryMappingId })
+            </td>
+        </tr>
+    }
+
+</table>

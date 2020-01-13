@@ -1,0 +1,32 @@
+<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 0.d
+  http://sql2x.azurewebsites.net/
+  Generated Date: 8/11/2018 3:33:50 PM
+  Template: sql2x.PrototypeASPNetCoreWebApplication.Content_ViewsShared_LayoutDOTcshtml
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - "NorSolutionPim"</title>
+</head>
+<body>
+    <nav>
+        <!--ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+        </ul>-->
+        <div class="container body-content">
+            @RenderBody()
+            <!--hr />-->
+            <!--footer>
+                <p>&copy; "PrototypeASPNetCoreTemplateWebApplicationWithCrude"</p>
+            </footer>-->
+        </div>
+    </nav>
+    @RenderSection("scripts", required: false )
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿
+<html>
+    <head>
+        <title>ClientAddress</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ClientAddress Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeClientAddressService</label>
+        <br /><label>Contract name: CrudeClientAddressContract</label>
+        <br /><label>Fetcher: FetchByClientAddressId</label>
+        <br /><label>Id: ClientAddressId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Client/CrudeClientAddress.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Client Address Id            </td><td>System.Guid</td></tr>
+            <tr><td>Client Id            </td><td>System.Guid</td></tr>
+            <tr><td>Client Address Type            </td><td>System.String</td></tr>
+            <tr><td>Address Line One Name            </td><td>System.String</td></tr>
+            <tr><td>Address Line Two Name            </td><td>System.String</td></tr>
+            <tr><td>Address Line Three Name            </td><td>System.String</td></tr>
+            <tr><td>City Name            </td><td>System.String</td></tr>
+            <tr><td>Street Name            </td><td>System.String</td></tr>
+            <tr><td>State Name            </td><td>System.String</td></tr>
+            <tr><td>District Name            </td><td>System.String</td></tr>
+            <tr><td>Province Name            </td><td>System.String</td></tr>
+            <tr><td>Zip Code            </td><td>System.String</td></tr>
+            <tr><td>Po Box            </td><td>System.String</td></tr>
+            <tr><td>Comment            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeClientAddressContract<b> FetchByClientAddressId </b>(System.Guid clientAddressId);
+        <br />
+        <br />List&lt;CrudeClientAddressContract&gt;<b> FetchByClientId </b>(System.Guid clientId);
+        <br />
+        <br />List&lt;CrudeClientAddressContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeClientAddressContract&gt;<b> FetchByClientAddressTypeRcd </b>(System.String clientAddressTypeRcd);
+        <br />
+        <br />CrudeClientAddressContract<b> FetchByAddressLineOneName </b>(System.String addressLineOneName);
+        <br />
+        <br />List&lt;CrudeClientAddressContract&gt;<b> FetchWithFilter </b>(System.Guid clientAddressId,System.Guid clientId,System.String clientAddressTypeRcd,System.String addressLineOneName,System.String addressLineTwoName,System.String addressLineThreeName,System.String cityName,System.String streetName,System.String stateName,System.String districtName,System.String provinceName,System.String zipCode,System.String poBox,System.String comment,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeClientAddressContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeClientAddressContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeClientAddressContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeClientAddressContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeClientAddressContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid clientAddressId);
+        <br />
+        <br />
+    </body>
+</html>
+

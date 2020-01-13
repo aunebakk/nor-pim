@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:46 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductGatherAttributeTypeRefContract>
+
+@{
+    ViewBag.Title = "Index Product Gather Attribute Type Ref";
+}
+
+<h2>Index for Product Gather Attribute Type Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductGatherAttributeTypeRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Gather Attribute Type</th>
+        <th>Product Gather Attribute Type Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductGatherAttributeTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductGatherAttributeTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeProductGatherAttributeTypeRefEdit", new { productGatherAttributeTypeRcd = item.ProductGatherAttributeTypeRcd })
+                | @Html.ActionLink("Delete", "CrudeProductGatherAttributeTypeRefDelete", new { productGatherAttributeTypeRcd = item.ProductGatherAttributeTypeRcd })
+            </td>
+        </tr>
+    }
+
+</table>

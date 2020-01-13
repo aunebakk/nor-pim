@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "DotNetCoreApi",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Product"
+  },
+  "parent": {
+    "tablename": "product_documentation_type_ref",
+    "overridenice": "CrudeProductDocumentationTypeRef",
+    "overridecamel": "productDocumentationTypeRef",
+    "autoupdatescheme": "autoupdatereference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

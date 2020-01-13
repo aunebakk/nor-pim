@@ -1,0 +1,27 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:35 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductExposeContract
+
+@{
+    ViewBag.Title = "Details Product Expose";
+}
+
+<h2>Details for Product Expose</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeProductExposeEdit", new { productExposeId = Model.ProductExposeId }) |
+    @Html.ActionLink("New", "CrudeProductExposeCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductExposeIndex")
+</p>

@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeAspMvc",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_state_ref",
+    "overridenice": "CrudeDefaultStateRef",
+    "overridecamel": "defaultStateRef",
+    "autoupdatescheme": "autoupdatedefaultreference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

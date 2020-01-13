@@ -1,0 +1,10 @@
+﻿Deployable as Azure Web App
+Deployable as IIS Web Site ( not tested )
+
+Uses Bootstrap 3.0 ( npm install bootstrap 3 )
+Uses modernizr ( npm install modernizr )
+Uses modernizr ( bower install modernizr --save )
+
+Uses OAuth
+
+Links: https://oauth.net/

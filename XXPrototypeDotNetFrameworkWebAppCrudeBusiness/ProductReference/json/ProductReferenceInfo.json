@@ -1,0 +1,39 @@
+{
+    "overall": {
+        "style": "ByServiceTableCrud"
+    },
+    "domain": {
+        "name": "ProductReference"
+    },
+    "parent": {
+        "tablename": "product_info_ref",
+        "overridenice": "ProductReferenceInfo",
+        "overridecamel": "product",
+        "autoupdatescheme": "autoupdatenormal",
+        "showprimary": "true",
+        "durianclass": "",
+        "durianmethod": ""
+    },
+    "children": { },
+    "autofill": {
+        "name": "user_id",
+        "type": "uniqueidentifier"
+    },
+    "actions": {
+        "index": {
+            "text": "references",
+            "controller": "Dashboard",
+            "action": "DashboardPIMReference"
+        },
+        "refresh": {
+            "text": "refresh",
+            "controller": "ProductReferenceInfo",
+            "action": "ProductReferenceInfoEdit"
+        },
+        "add": {
+            "text": "add new",
+            "controller": "ProductReferenceInfo",
+            "action": "ProductReferenceInfoCreate"
+        }
+    }
+}

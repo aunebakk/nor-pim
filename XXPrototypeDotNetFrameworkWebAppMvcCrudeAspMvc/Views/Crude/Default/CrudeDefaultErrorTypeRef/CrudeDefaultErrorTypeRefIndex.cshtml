@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:40:57 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultErrorTypeRefContract>
+
+@{
+    ViewBag.Title = "Index Default Error Type Ref";
+}
+
+<h2>Index for Default Error Type Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultErrorTypeRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default Error Type</th>
+        <th>Default Error Type Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultErrorTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultErrorTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultErrorTypeRefEdit", new { defaultErrorTypeRcd = item.DefaultErrorTypeRcd })
+                | @Html.ActionLink("Delete", "CrudeDefaultErrorTypeRefDelete", new { defaultErrorTypeRcd = item.DefaultErrorTypeRcd })
+            </td>
+        </tr>
+    }
+
+</table>

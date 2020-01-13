@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeProxy",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Product"
+  },
+  "parent": {
+    "tablename": "product_gather",
+    "overridenice": "CrudeProductGather",
+    "overridecamel": "productGather",
+    "autoupdatescheme": "autoupdatenormal",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

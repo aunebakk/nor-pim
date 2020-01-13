@@ -1,0 +1,75 @@
+﻿
+<html>
+    <head>
+        <title>FinancialOrderSourceRef</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>FinancialOrderSourceRef Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeFinancialOrderSourceRefService</label>
+        <br /><label>Contract name: CrudeFinancialOrderSourceRefContract</label>
+        <br /><label>Fetcher: FetchByFinancialOrderSourceRcd</label>
+        <br /><label>Id: FinancialOrderSourceRcd, System.String</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Financial/CrudeFinancialOrderSourceRef.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Financial Order Source            </td><td>System.String</td></tr>
+            <tr><td>Financial Order Source Name            </td><td>System.String</td></tr>
+            <tr><td>Financial Order Source Code            </td><td>System.String</td></tr>
+            <tr><td>Sort Sequence Number            </td><td>System.Int32</td></tr>
+            <tr><td>Change Flag            </td><td>System.Boolean</td></tr>
+            <tr><td>Status Code            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeFinancialOrderSourceRefContract<b> FetchByFinancialOrderSourceRcd </b>(System.String financialOrderSourceRcd);
+        <br />
+        <br />List&lt;CrudeFinancialOrderSourceRefContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />CrudeFinancialOrderSourceRefContract<b> FetchByFinancialOrderSourceName </b>(System.String financialOrderSourceName);
+        <br />
+        <br />List&lt;CrudeFinancialOrderSourceRefContract&gt;<b> FetchWithFilter </b>(System.String financialOrderSourceRcd,System.String financialOrderSourceName,System.String financialOrderSourceCode,System.Int32 sortSequenceNumber,System.Boolean changeFlag,System.String statusCode,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeFinancialOrderSourceRefContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeFinancialOrderSourceRefContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeFinancialOrderSourceRefContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeFinancialOrderSourceRefContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeFinancialOrderSourceRefContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.String financialOrderSourceRcd);
+        <br />
+        <br />
+    </body>
+</html>
+

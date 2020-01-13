@@ -1,0 +1,41 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:56:21 PM
+  Template: sql2x.TemplateWithDurianGenerator.ParentViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceIndexContract>
+
+@{
+    ViewBag.Title = "Index Product";
+}
+
+<h2>Index for Product</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ProductMaintenanceCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>State</th>
+        <th>Date Time</th>
+        <th>Default User Name</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>
+                @Html.ActionLink("Edit", "ProductMaintenanceEdit", new { productId = item.ProductId })
+            </td>
+        </tr>
+    }
+
+</table>

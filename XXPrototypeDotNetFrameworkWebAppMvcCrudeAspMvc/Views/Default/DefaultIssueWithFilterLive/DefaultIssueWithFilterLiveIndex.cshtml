@@ -1,0 +1,77 @@
+@using SolutionNorSolutionPim.BusinessLogicLayer
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.DefaultIssueWithFilterContract>
+
+@{
+    ViewBag.Title = "Default Issue With Filter";
+}
+
+<h2>Default Issue With Filter</h2>
+
+<p>
+    @Html.ActionLink("Create New", "DefaultIssueCreate", "DefaultIssue")
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.Label("Status", new {@class = "control-label col-md-2", style = "display:inline-block;width:100px"})
+        @Html.DropDownList(
+            "DefaultIssueStatusRcd",
+            null,
+            new
+            {
+                @class = "form-control",
+                style = "display:inline-block;width:400px",
+                onchange = "form.submit();"
+            }
+            )
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Issue Name</th>
+            <th>Type</th>
+            <!--th>Status</th-->
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.IssueName) </td>
+                <td>@Html.DisplayFor(modelItem => item.DefaultIssueTypeName) </td>
+                <!--td>@Html.DisplayFor(modelItem => item.DefaultIssueStatusName) </td-->
+                <td>
+                    @Html.ActionLink(
+                        "Edit",
+                        "DefaultIssueEdit",
+                        "DefaultIssue",
+                        new {defaultIssueId = item.DefaultIssueId},
+                        null
+                        )
+                    | @Html.ActionLink(
+                          "Resolved",
+                          "DefaultIssueSetStatus",
+                          "DefaultIssue",
+                          new
+                          {
+                              defaultIssueId = item.DefaultIssueId,
+                              defaultIssueStatusRcd = DefaultIssueStatusRef.Resolved
+                          },
+                          null
+                          )
+                    @if (!string.IsNullOrEmpty(item.Link))
+                    {
+                        @Html.Raw("| <a href=\"" + item.Link + "\">GoTo</a>")
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/themes/base/all.css")
+}

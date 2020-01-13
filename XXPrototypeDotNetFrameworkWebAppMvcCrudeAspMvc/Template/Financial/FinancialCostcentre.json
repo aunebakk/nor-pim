@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeAspMvc",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Financial"
+  },
+  "parent": {
+    "tablename": "financial_costcentre",
+    "overridenice": "CrudeFinancialCostcentre",
+    "overridecamel": "financialCostcentre",
+    "autoupdatescheme": "autoupdatenormal",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

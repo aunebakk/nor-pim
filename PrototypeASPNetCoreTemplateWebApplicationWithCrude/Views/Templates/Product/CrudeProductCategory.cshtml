@@ -1,0 +1,101 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:44:45 PM
+  Filename: C:\SQL2XProjects\SolutionNorSolutionPim\PrototypeASPNetCoreTemplateWebApplicationWithCrude\Template\Product\ProductCategory.json
+  Template: sql2x.TemplateDotNetCoreApiGenerator.View
+  Style: DotNetCoreApi
+-->
+
+<style>
+    a {
+        color: lightgray;
+    } 
+
+    html {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    table {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        border-color: red;
+        font-weight: 100;
+        margin: 0px;
+        max-width: 100%;
+        align-content: flex-start
+    }
+
+    th {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        text-align: left;
+    }
+
+    tr {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    td {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+
+    h3 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+<h2><a id="CrudeProductCategory">CrudeProductCategory</a> ( DotNetCoreApi )</h2><br>
+<br>
+        <table>
+            <tr><td>Product Category Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Became Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Parent Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Code            </td><td>System.String</td></tr>
+            <tr><td>Product Category Name            </td><td>System.String</td></tr>
+            <tr><td>Product Category Position            </td><td>System.Int32</td></tr>
+            <tr><td>State            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+<br>
+<br>
+<i>GET</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchAll'>FetchAll</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchAllCount'>FetchAllCount</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchAllWithLimit' asp-route-limit='1'>FetchAllWithLimit</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchAllWithLimitAndOffset' asp-route-limit='1' asp-route-offset='1'>FetchAllWithLimitAndOffset</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchByProductCategoryId' asp-route-productcategoryid=00000000-0000-0000-0000-000000000001>FetchByProductCategoryId</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchByProductCategoryBecameId' asp-route-productcategorybecameid=00000000-0000-0000-0000-000000000001>FetchByProductCategoryBecameId</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchByProductCategoryParentId' asp-route-productcategoryparentid=00000000-0000-0000-0000-000000000001>FetchByProductCategoryParentId</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryFetchByProductCategoryName' asp-route-productcategoryname=String.Empty>FetchByProductCategoryName</a><br>
+<br>
+<br>
+<i>POST</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryCreate'>CrudeProductCategoryCreate</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryCreateTest'>Create Test (GET)</a><br>
+<br>
+<br>
+<i>PUT</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryUpdate'>CrudeProductCategoryUpdate</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryUpdateTest'>Update Test (GET)</a><br>
+<br>
+<br>
+<i>DELETE</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryDelete'>CrudeProductCategoryDelete</a><br>
+<a asp-area='' asp-controller='CrudeProductCategory' asp-action='CrudeProductCategoryDeleteTest'>Delete Test (GET)</a><br>

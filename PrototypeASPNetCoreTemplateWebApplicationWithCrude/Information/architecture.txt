@@ -1,0 +1,40 @@
+﻿Deployable as Azure Web App
+Deployable as IIS Web Site ( not tested )
+Deployable to Linux ( not tested )
+No other dependencies other than .NET Core 2.0
+
+Added dependencies on DotNetCore 2.1
+
+Directory Structure:
+    bin
+    bin\azure
+    bin\Debug
+    bin\Debug\netcoreapp2.1
+    obj
+    obj\Debug
+    obj\Debug\netcoreapp2.1
+    Controllers
+    Information
+    Library
+    Operational
+    Properties
+    Pages
+    Pages\Shared
+    Views
+    Views\Cifude
+    Views\PowerShellGit
+    Views\sql2x
+    Views\sql2x\Documentation
+    wwwroot
+    wwwroot\css
+    wwwroot\images
+    wwwroot\js
+    wwwroot\images\design
+    wwwroot\images\nor-pim
+    wwwroot\images\powerShell
+    wwwroot\images\sql2x
+    wwwroot\lib
+    wwwroot\lib\bootstrap
+    wwwroot\lib\jquery
+    wwwroot\lib\jquery-validation
+    wwwroot\lib\jquery-validation-unobtrusive

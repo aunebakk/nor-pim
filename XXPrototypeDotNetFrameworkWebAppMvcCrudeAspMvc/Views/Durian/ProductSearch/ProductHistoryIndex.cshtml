@@ -1,0 +1,34 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:54:41 PM
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductHistoryContract>
+
+@{
+    ViewBag.Title = "Product History";
+}
+
+<h2>Product History</h2>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>State Name</th>
+        <th>Date Time</th>
+        <th>User Name</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.UserName) </td>
+        </tr>
+    }
+
+</table>

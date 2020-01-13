@@ -1,0 +1,48 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:34 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialCouponContract>
+
+@{
+    ViewBag.Title = "Index Financial Coupon";
+}
+
+<h2>Index for Financial Coupon</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeFinancialCouponCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Coupon Number</th>
+        <th>Value Amount</th>
+        <th>Valid From Date Time</th>
+        <th>Valid Until Date Time</th>
+        <th>Coupon Description</th>
+        <th>Date Time</th>
+        <th>Financial Coupon Type</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.CouponNumber) </td>
+            <td>@Html.DisplayFor(modelItem => item.ValueAmount) </td>
+            <td>@Html.DisplayFor(modelItem => item.ValidFromDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.ValidUntilDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.CouponDescription) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCouponTypeRcd) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeFinancialCouponEdit", new { financialCouponId = item.FinancialCouponId })
+                | @Html.ActionLink("Delete", "CrudeFinancialCouponDelete", new { financialCouponId = item.FinancialCouponId })
+            </td>
+        </tr>
+    }
+
+</table>

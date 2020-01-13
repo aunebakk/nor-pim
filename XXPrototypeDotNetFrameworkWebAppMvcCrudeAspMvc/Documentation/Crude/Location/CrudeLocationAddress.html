@@ -1,0 +1,85 @@
+﻿
+<html>
+    <head>
+        <title>LocationAddress</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>LocationAddress Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeLocationAddressService</label>
+        <br /><label>Contract name: CrudeLocationAddressContract</label>
+        <br /><label>Fetcher: FetchByLocationAddressId</label>
+        <br /><label>Id: LocationAddressId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Location/CrudeLocationAddress.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Location Address Id            </td><td>System.Guid</td></tr>
+            <tr><td>Location Address Type            </td><td>System.String</td></tr>
+            <tr><td>Location Country Id            </td><td>System.Guid</td></tr>
+            <tr><td>Address One            </td><td>System.String</td></tr>
+            <tr><td>Address Two            </td><td>System.String</td></tr>
+            <tr><td>Address Three            </td><td>System.String</td></tr>
+            <tr><td>City            </td><td>System.String</td></tr>
+            <tr><td>Street            </td><td>System.String</td></tr>
+            <tr><td>State            </td><td>System.String</td></tr>
+            <tr><td>District            </td><td>System.String</td></tr>
+            <tr><td>Province            </td><td>System.String</td></tr>
+            <tr><td>Zip Code            </td><td>System.String</td></tr>
+            <tr><td>Po Box            </td><td>System.String</td></tr>
+            <tr><td>Comment            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeLocationAddressContract<b> FetchByLocationAddressId </b>(System.Guid locationAddressId);
+        <br />
+        <br />List&lt;CrudeLocationAddressContract&gt;<b> FetchByLocationCountryId </b>(System.Guid locationCountryId);
+        <br />
+        <br />List&lt;CrudeLocationAddressContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeLocationAddressContract&gt;<b> FetchByLocationAddressTypeRcd </b>(System.String locationAddressTypeRcd);
+        <br />
+        <br />List&lt;CrudeLocationAddressContract&gt;<b> FetchWithFilter </b>(System.Guid locationAddressId,System.String locationAddressTypeRcd,System.Guid locationCountryId,System.String addressOne,System.String addressTwo,System.String addressThree,System.String city,System.String street,System.String state,System.String district,System.String province,System.String zipCode,System.String poBox,System.String comment,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeLocationAddressContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeLocationAddressContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeLocationAddressContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeLocationAddressContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeLocationAddressContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid locationAddressId);
+        <br />
+        <br />
+    </body>
+</html>
+

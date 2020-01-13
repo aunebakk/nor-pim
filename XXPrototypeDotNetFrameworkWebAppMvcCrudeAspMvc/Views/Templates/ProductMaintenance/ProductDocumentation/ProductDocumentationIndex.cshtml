@@ -1,0 +1,51 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:56:44 PM
+  Template: sql2x.TemplateWithDurianGenerator.ParentViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceDocumentationIndexWithFilterContract>
+
+@{
+    ViewBag.Title = "Index Product Documentation";
+}
+
+<h2>Index for Product Documentation</h2>
+
+<br />
+@Html.Partial("~/Views/Templates/ProductMaintenance/_tab.cshtml")
+<br />
+
+<p>
+    @Html.ActionLink("Create New", "ProductDocumentationCreate", new { productId = ViewBag.ProductId })
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>State</th>
+        <th>Product Documentation Type Name</th>
+        <th>Default User Name</th>
+        <th>Product Documentation Type</th>
+        <th>Documentation</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductDocumentationTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductDocumentationTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Documentation) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "ProductDocumentationEdit", new { productDocumentationId = item.ProductDocumentationId })
+            </td>
+        </tr>
+    }
+
+</table>

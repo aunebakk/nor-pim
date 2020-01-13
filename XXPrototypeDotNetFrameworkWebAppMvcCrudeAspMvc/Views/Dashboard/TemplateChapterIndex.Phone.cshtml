@@ -1,0 +1,23 @@
+@{
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductCategoryContract> 
+    ViewBag.Title = "nor-pim";
+    Layout = "../Shared/_Layout.TypeScript.Phone.cshtml";
+    }
+
+<div style="display: none;"></div>
+<meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0 , maximum-scale=1.0"/>
+
+<canvas id="myCanvas">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<br/>
+<div id="content"></div>
+<br/>
+
+@section Scripts {
+    <script type="text/javascript">
+        var productCategories = @Html.Raw(Json.Encode(Model));
+    </script>
+    <script src="~/Scripts/Dashboard/chapterIndex.js"></script>
+}

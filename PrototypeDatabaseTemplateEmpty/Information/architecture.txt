@@ -1,0 +1,5 @@
+﻿Deployable as Azure Web App
+Deployable as IIS Web Site ( not tested )
+Deployable to Linux ( not tested )
+No other dependencies other than .NET Core 2.0
+

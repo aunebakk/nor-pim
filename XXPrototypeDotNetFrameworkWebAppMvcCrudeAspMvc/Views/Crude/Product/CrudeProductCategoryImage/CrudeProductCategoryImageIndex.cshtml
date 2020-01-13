@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:26 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductCategoryImageContract>
+
+@{
+    ViewBag.Title = "Index Product Category Image";
+}
+
+<h2>Index for Product Category Image</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductCategoryImageCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Category Image Type</th>
+        <th>Image</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductCategoryImageTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Image) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeProductCategoryImageEdit", new { productCategoryImageId = item.ProductCategoryImageId })
+                | @Html.ActionLink("Delete", "CrudeProductCategoryImageDelete", new { productCategoryImageId = item.ProductCategoryImageId })
+            </td>
+        </tr>
+    }
+
+</table>

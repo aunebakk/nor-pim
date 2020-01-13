@@ -1,0 +1,71 @@
+﻿
+<html>
+    <head>
+        <title>FinancialCouponTypeRef</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>FinancialCouponTypeRef Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeFinancialCouponTypeRefService</label>
+        <br /><label>Contract name: CrudeFinancialCouponTypeRefContract</label>
+        <br /><label>Fetcher: FetchByFinancialCouponTypeRcd</label>
+        <br /><label>Id: FinancialCouponTypeRcd, System.String</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Financial/CrudeFinancialCouponTypeRef.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Financial Coupon Type            </td><td>System.String</td></tr>
+            <tr><td>Financial Coupon Type Name            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeFinancialCouponTypeRefContract<b> FetchByFinancialCouponTypeRcd </b>(System.String financialCouponTypeRcd);
+        <br />
+        <br />List&lt;CrudeFinancialCouponTypeRefContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />CrudeFinancialCouponTypeRefContract<b> FetchByFinancialCouponTypeName </b>(System.String financialCouponTypeName);
+        <br />
+        <br />List&lt;CrudeFinancialCouponTypeRefContract&gt;<b> FetchWithFilter </b>(System.String financialCouponTypeRcd,System.String financialCouponTypeName,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeFinancialCouponTypeRefContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeFinancialCouponTypeRefContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeFinancialCouponTypeRefContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeFinancialCouponTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeFinancialCouponTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.String financialCouponTypeRcd);
+        <br />
+        <br />
+    </body>
+</html>
+

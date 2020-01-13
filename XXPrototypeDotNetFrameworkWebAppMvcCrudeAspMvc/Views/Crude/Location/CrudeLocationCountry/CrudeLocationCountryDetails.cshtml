@@ -1,0 +1,29 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:16 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeLocationCountryContract
+
+@{
+    ViewBag.Title = "Details Location Country";
+}
+
+<h2>Details for Location Country</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Location Country Code</dt> <dd>@Html.DisplayFor(model => model.LocationCountryCode)</dd>
+        <dt>Location Country Name</dt> <dd>@Html.DisplayFor(model => model.LocationCountryName)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeLocationCountryEdit", new { locationCountryId = Model.LocationCountryId }) |
+    @Html.ActionLink("New", "CrudeLocationCountryCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeLocationCountryIndex")
+</p>

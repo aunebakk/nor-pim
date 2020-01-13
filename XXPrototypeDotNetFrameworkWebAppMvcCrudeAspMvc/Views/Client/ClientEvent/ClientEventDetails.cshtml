@@ -1,0 +1,20 @@
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientEventContract
+
+@{
+    ViewBag.Title = "Details Client Event";
+}
+
+<h2>Details for Client Event</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "ClientEventEdit", new { clientEventId = Model.ClientEventId }) |
+    @Html.ActionLink("New", "ClientEventCreate", new { }) |
+    @Html.ActionLink("Back to List", "ClientEventIndex")
+</p>

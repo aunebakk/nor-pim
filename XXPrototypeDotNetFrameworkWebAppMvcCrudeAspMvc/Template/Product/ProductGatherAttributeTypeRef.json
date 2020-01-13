@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeAspMvc",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Product"
+  },
+  "parent": {
+    "tablename": "product_gather_attribute_type_ref",
+    "overridenice": "CrudeProductGatherAttributeTypeRef",
+    "overridecamel": "productGatherAttributeTypeRef",
+    "autoupdatescheme": "autoupdatereference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

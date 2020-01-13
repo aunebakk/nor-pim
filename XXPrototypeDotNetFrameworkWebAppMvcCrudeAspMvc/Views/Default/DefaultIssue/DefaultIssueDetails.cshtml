@@ -1,0 +1,23 @@
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultIssueContract
+
+@{
+    ViewBag.Title = "Details Default Issue";
+}
+
+<h2>Details for Default Issue</h2>
+
+<div>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>Issue Name</dt> <dd>@Html.DisplayFor(model => model.IssueName)</dd>
+        <dt>Issue Description</dt> <dd>@Html.DisplayFor(model => model.IssueDescription)</dd>
+        <dt>Steps To Reproduce</dt> <dd>@Html.DisplayFor(model => model.StepsToReproduce)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Index", "DefaultIssueIndex", "DefaultIssue") |
+    @Html.ActionLink("Edit", "DefaultIssueEdit", "DefaultIssue", null, new { defaultIssueId = Model.DefaultIssueId } ) |
+    @Html.ActionLink("New", "DefaultIssueCreate" , "DefaultIssue" , null, new {}) |
+    @Html.ActionLink("Back to List", "DefaultIssueWithFilterLiveIndex", "DefaultIssueWithFilterLive")
+</p>

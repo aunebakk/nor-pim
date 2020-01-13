@@ -1,0 +1,31 @@
+<div>
+    @if (ViewBag.Title == "EditClient") {
+        <b>@Html.ActionLink("Client", "ClientEdit", "Client", new { clientId = ViewBag.ClientId }, null)</b>
+    } else {
+        @Html.ActionLink("Client", "ClientEdit", "Client", new { clientId = ViewBag.ClientId }, null)
+    }
+    |
+    @if (ViewBag.Title == "ClientAddress") {
+        <b>@Html.ActionLink("Address", "ClientAddressEdit", "Client", new { clientId = ViewBag.ClientId }, null)</b>
+    } else {
+        @Html.ActionLink("Address", "ClientAddressEdit", "Client", new { clientId = ViewBag.ClientId }, null)
+    }
+    |
+    @if (ViewBag.Title == "ClientLink") {
+        <b>@Html.ActionLink("Link", "ClientLinkByClientIndex", "ClientLink", new { clientId = ViewBag.ClientId }, null)</b>
+    } else {
+        @Html.ActionLink("Link", "ClientLinkByClientIndex", "ClientLink", new { clientId = ViewBag.ClientId }, null)
+    }
+    |
+    @if (ViewBag.Title == "ClientContactMethod") {
+        <b>@Html.ActionLink("Contact Method", "ClientContactMethodByClientIndex", "ClientContactMethod", new { clientId = ViewBag.ClientId }, null)</b>
+    } else {
+        @Html.ActionLink("Contact Method", "ClientContactMethodByClientIndex", "ClientContactMethod", new { clientId = ViewBag.ClientId }, null)
+    }
+    |
+    @if (ViewBag.Title == "ClientEvent") {
+        <b>@Html.ActionLink("Event", "ClientEventByClientIndex", "ClientEvent", new { clientId = ViewBag.ClientId }, null)</b>
+    } else {
+        @Html.ActionLink("Event", "ClientEventByClientIndex", "ClientEvent", new { clientId = ViewBag.ClientId }, null)
+    }
+</div>

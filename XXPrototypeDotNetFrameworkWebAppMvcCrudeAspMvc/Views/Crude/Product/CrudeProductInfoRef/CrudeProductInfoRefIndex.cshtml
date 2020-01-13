@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:57 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductInfoRefContract>
+
+@{
+    ViewBag.Title = "Index Product Info Ref";
+}
+
+<h2>Index for Product Info Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductInfoRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Info</th>
+        <th>Product Info Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductInfoRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductInfoName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeProductInfoRefEdit", new { productInfoRcd = item.ProductInfoRcd })
+                | @Html.ActionLink("Delete", "CrudeProductInfoRefDelete", new { productInfoRcd = item.ProductInfoRcd })
+            </td>
+        </tr>
+    }
+
+</table>

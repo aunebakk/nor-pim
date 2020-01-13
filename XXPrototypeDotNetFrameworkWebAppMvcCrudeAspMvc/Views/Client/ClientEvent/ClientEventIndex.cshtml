@@ -1,0 +1,31 @@
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientEventContract>
+
+@{
+    ViewBag.Title = "ClientEvent";
+}
+
+<h2>Client Event</h2>
+
+@Html.Partial("~/Views/Client/_tab.cshtml")
+
+<table class="table">
+    <tr>
+        <th>Client Event Type</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ClientEventTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "ClientEventEdit", new { clientEventId = item.ClientEventId })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Add New", "ClientEventCreate", new { clientId = ViewBag.ClientId }, null)
+</p>
+

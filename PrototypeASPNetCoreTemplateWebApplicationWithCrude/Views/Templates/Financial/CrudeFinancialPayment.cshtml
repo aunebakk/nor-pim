@@ -1,0 +1,107 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:44:41 PM
+  Filename: C:\SQL2XProjects\SolutionNorSolutionPim\PrototypeASPNetCoreTemplateWebApplicationWithCrude\Template\Financial\FinancialPayment.json
+  Template: sql2x.TemplateDotNetCoreApiGenerator.View
+  Style: DotNetCoreApi
+-->
+
+<style>
+    a {
+        color: lightgray;
+    } 
+
+    html {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    table {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        border-color: red;
+        font-weight: 100;
+        margin: 0px;
+        max-width: 100%;
+        align-content: flex-start
+    }
+
+    th {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        text-align: left;
+    }
+
+    tr {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    td {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+
+    h3 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+<h2><a id="CrudeFinancialPayment">CrudeFinancialPayment</a> ( DotNetCoreApi )</h2><br>
+<br>
+        <table>
+            <tr><td>Financial Payment Id            </td><td>System.Guid</td></tr>
+            <tr><td>Financial Payment Type            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Financial Payment Accounting Id            </td><td>System.Guid</td></tr>
+            <tr><td>Financial Payment Bank Id            </td><td>System.Guid</td></tr>
+            <tr><td>Financial Payment Voucher Id            </td><td>System.Guid</td></tr>
+            <tr><td>Financial Payment Card Id            </td><td>System.Guid</td></tr>
+            <tr><td>Financial Payment Cash Id            </td><td>System.Guid</td></tr>
+            <tr><td>Financial Payment Coupon Id            </td><td>System.Guid</td></tr>
+        </table>
+<br>
+<br>
+<i>GET</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchAll'>FetchAll</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchAllCount'>FetchAllCount</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchAllWithLimit' asp-route-limit='1'>FetchAllWithLimit</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchAllWithLimitAndOffset' asp-route-limit='1' asp-route-offset='1'>FetchAllWithLimitAndOffset</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentId' asp-route-financialpaymentid=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentTypeRcd' asp-route-financialpaymenttypercd=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentTypeRcd</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentAccountingId' asp-route-financialpaymentaccountingid=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentAccountingId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentBankId' asp-route-financialpaymentbankid=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentBankId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentVoucherId' asp-route-financialpaymentvoucherid=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentVoucherId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentCardId' asp-route-financialpaymentcardid=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentCardId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentCashId' asp-route-financialpaymentcashid=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentCashId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentCouponId' asp-route-financialpaymentcouponid=00000000-0000-0000-0000-000000000001>FetchByFinancialPaymentCouponId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentFetchByFinancialPaymentId' asp-route-financialpaymentid=Guid.Empty>FetchByFinancialPaymentId</a><br>
+<br>
+<br>
+<i>POST</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentCreate'>CrudeFinancialPaymentCreate</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentCreateTest'>Create Test (GET)</a><br>
+<br>
+<br>
+<i>PUT</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentUpdate'>CrudeFinancialPaymentUpdate</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentUpdateTest'>Update Test (GET)</a><br>
+<br>
+<br>
+<i>DELETE</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentDelete'>CrudeFinancialPaymentDelete</a><br>
+<a asp-area='' asp-controller='CrudeFinancialPayment' asp-action='CrudeFinancialPaymentDeleteTest'>Delete Test (GET)</a><br>

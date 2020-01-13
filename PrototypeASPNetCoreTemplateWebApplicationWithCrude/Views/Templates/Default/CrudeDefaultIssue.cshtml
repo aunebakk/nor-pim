@@ -1,0 +1,105 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:44:35 PM
+  Filename: C:\SQL2XProjects\SolutionNorSolutionPim\PrototypeASPNetCoreTemplateWebApplicationWithCrude\Template\Default\DefaultIssue.json
+  Template: sql2x.TemplateDotNetCoreApiGenerator.View
+  Style: DotNetCoreApi
+-->
+
+<style>
+    a {
+        color: lightgray;
+    } 
+
+    html {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    table {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        border-color: red;
+        font-weight: 100;
+        margin: 0px;
+        max-width: 100%;
+        align-content: flex-start
+    }
+
+    th {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        text-align: left;
+    }
+
+    tr {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    td {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+
+    h3 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+<h2><a id="CrudeDefaultIssue">CrudeDefaultIssue</a> ( DotNetCoreApi )</h2><br>
+<br>
+        <table>
+            <tr><td>Default Issue Id            </td><td>System.Guid</td></tr>
+            <tr><td>Default Issue Type            </td><td>System.String</td></tr>
+            <tr><td>Default Issue Status            </td><td>System.String</td></tr>
+            <tr><td>Default Error Id            </td><td>System.Guid</td></tr>
+            <tr><td>Issue Name            </td><td>System.String</td></tr>
+            <tr><td>Issue Description            </td><td>System.String</td></tr>
+            <tr><td>Steps To Reproduce            </td><td>System.String</td></tr>
+            <tr><td>Link            </td><td>System.String</td></tr>
+            <tr><td>Default User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Fixed Note            </td><td>System.String</td></tr>
+        </table>
+<br>
+<br>
+<i>GET</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchAll'>FetchAll</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchAllCount'>FetchAllCount</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchAllWithLimit' asp-route-limit='1'>FetchAllWithLimit</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchAllWithLimitAndOffset' asp-route-limit='1' asp-route-offset='1'>FetchAllWithLimitAndOffset</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchByDefaultIssueId' asp-route-defaultissueid=00000000-0000-0000-0000-000000000001>FetchByDefaultIssueId</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchByDefaultIssueTypeRcd' asp-route-defaultissuetypercd=00000000-0000-0000-0000-000000000001>FetchByDefaultIssueTypeRcd</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchByDefaultIssueStatusRcd' asp-route-defaultissuestatusrcd=00000000-0000-0000-0000-000000000001>FetchByDefaultIssueStatusRcd</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchByDefaultErrorId' asp-route-defaulterrorid=00000000-0000-0000-0000-000000000001>FetchByDefaultErrorId</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchByDefaultUserId' asp-route-defaultuserid=00000000-0000-0000-0000-000000000001>FetchByDefaultUserId</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueFetchByIssueName' asp-route-issuename=String.Empty>FetchByIssueName</a><br>
+<br>
+<br>
+<i>POST</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueCreate'>CrudeDefaultIssueCreate</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueCreateTest'>Create Test (GET)</a><br>
+<br>
+<br>
+<i>PUT</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueUpdate'>CrudeDefaultIssueUpdate</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueUpdateTest'>Update Test (GET)</a><br>
+<br>
+<br>
+<i>DELETE</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueDelete'>CrudeDefaultIssueDelete</a><br>
+<a asp-area='' asp-controller='CrudeDefaultIssue' asp-action='CrudeDefaultIssueDeleteTest'>Delete Test (GET)</a><br>

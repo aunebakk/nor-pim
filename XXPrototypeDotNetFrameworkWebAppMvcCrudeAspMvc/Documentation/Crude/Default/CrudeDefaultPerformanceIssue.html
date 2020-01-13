@@ -1,0 +1,73 @@
+﻿
+<html>
+    <head>
+        <title>DefaultPerformanceIssue</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>DefaultPerformanceIssue Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeDefaultPerformanceIssueService</label>
+        <br /><label>Contract name: CrudeDefaultPerformanceIssueContract</label>
+        <br /><label>Fetcher: FetchByDefaultPerformanceIssueId</label>
+        <br /><label>Id: DefaultPerformanceIssueId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Default/CrudeDefaultPerformanceIssue.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Default Performance Issue Id            </td><td>System.Guid</td></tr>
+            <tr><td>Command Name            </td><td>System.String</td></tr>
+            <tr><td>Command Text            </td><td>System.String</td></tr>
+            <tr><td>Milliseconds            </td><td>System.Int32</td></tr>
+            <tr><td>Default User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeDefaultPerformanceIssueContract<b> FetchByDefaultPerformanceIssueId </b>(System.Guid defaultPerformanceIssueId);
+        <br />
+        <br />List&lt;CrudeDefaultPerformanceIssueContract&gt;<b> FetchByDefaultUserId </b>(System.Guid defaultUserId);
+        <br />
+        <br />CrudeDefaultPerformanceIssueContract<b> FetchByCommandName </b>(System.String commandName);
+        <br />
+        <br />List&lt;CrudeDefaultPerformanceIssueContract&gt;<b> FetchWithFilter </b>(System.Guid defaultPerformanceIssueId,System.String commandName,System.String commandText,System.Int32 milliseconds,System.Guid defaultUserId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeDefaultPerformanceIssueContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeDefaultPerformanceIssueContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeDefaultPerformanceIssueContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeDefaultPerformanceIssueContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeDefaultPerformanceIssueContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid defaultPerformanceIssueId);
+        <br />
+        <br />
+    </body>
+</html>
+

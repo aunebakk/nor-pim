@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:09 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultRuleContract>
+
+@{
+    ViewBag.Title = "Index Default Rule";
+}
+
+<h2>Index for Default Rule</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultRuleCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default Rule Type</th>
+        <th>Address</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultRuleTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Address) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultRuleEdit", new { defaultRuleId = item.DefaultRuleId })
+                | @Html.ActionLink("Delete", "CrudeDefaultRuleDelete", new { defaultRuleId = item.DefaultRuleId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,8 @@
+﻿sql2x config files
+Links
+https://blogs.msdn.microsoft.com/luisdem/2016/10/11/net-core-how-to-publish-a-self-contained-application-exe/
+
+Same project:
+    .NET Core bare bone Database Project
+    Batch files for Visual Studio Project creation 
+    Azure deployment PowerShell scripts

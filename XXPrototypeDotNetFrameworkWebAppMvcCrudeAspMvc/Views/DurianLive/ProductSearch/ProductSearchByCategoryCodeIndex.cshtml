@@ -1,0 +1,25 @@
+<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 0.d
+  http://sql2x.azurewebsites.net/
+  Generated Date: 2/21/2019 6:07:29 AM
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductSearchByCategoryCodeContract>
+
+<div style="display:none;"></div><meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0 , maximum-scale=1.0" />
+
+<canvas id="myCanvas">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<br />
+<div id="content"></div>
+<br />
+
+@section Scripts {
+    <script type="text/javascript">
+        var products = @Html.Raw(Json.Encode(Model));
+    </script>
+    <script src="~/Scripts/Templates\ProductSearch\\ProductSearch.js"></script>
+}

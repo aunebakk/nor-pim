@@ -1,0 +1,34 @@
+{
+    "overall": {
+        "style": "ByServiceTableCrud"
+    },
+    "domain": {
+        "name": "Cart"
+    },
+    "parent": {
+        "tablename": "cart_product",
+        "overridenice": "CartProduct",
+        "overridecamel": "cartProduct",
+        "autoupdatescheme": "autoupdatenormal",
+        "showprimary": "false",
+        "durianclass": "CartSearch",
+        "durianmethod": "GetCartProductWithFilter"
+    },
+    "children": { },
+    "autofill": {
+        "name": "user_id",
+        "type": "uniqueidentifier"
+    },
+    "actions": {
+        "refresh": {
+            "text": "refresh",
+            "controller": "Cart",
+            "action": "CartIndex"
+        },
+        "add": {
+            "text": "add new",
+            "controller": "Cart",
+            "action": "CartCreate"
+        }
+    }
+}

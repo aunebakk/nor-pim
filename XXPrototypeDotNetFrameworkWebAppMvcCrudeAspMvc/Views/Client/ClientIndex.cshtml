@@ -1,0 +1,40 @@
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.GetClientWithFilterContract>
+
+@{
+    ViewBag.Title = "Get Client With Filter";
+}
+
+<h2>Clients</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ClientCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Nationality</th>
+        <th>Gender</th>
+        <th>Title</th>
+        <th>User Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.Raw(item.FirstName + ' ' + item.MiddleName + ' ' + item.LastName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientNationalityName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientGenderName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientTitleName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "ClientEdit", new { clientId = item.ClientId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeAspMvc",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_change_log",
+    "overridenice": "CrudeDefaultChangeLog",
+    "overridecamel": "defaultChangeLog",
+    "autoupdatescheme": "autoupdatedefault",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

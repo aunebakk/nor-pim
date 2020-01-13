@@ -1,0 +1,28 @@
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.DefaultUserActivityGroupedByAddressContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index for Default User Activity Grouped By Address</h2>
+
+<table class="table">
+    <tr>
+        <th>Originating Address</th>
+        <th>Occurrences</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.OriginatingAddress) </td>
+            <td>@Html.DisplayFor(modelItem => item.Occurrences) </td>
+            <td>
+                <a href=@Html.Raw("http://www.whois.com/whois/" + item.OriginatingAddress) } target="_blank">whois</a> |
+                @Html.ActionLink("Filter Address", "DefaultUserActivityOnAddressIndex", "DefaultUserActivityOnAddress", new {originatingAddress = item.OriginatingAddress}, null)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:42:06 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialTaxTypeRefContract>
+
+@{
+    ViewBag.Title = "Index Financial Tax Type Ref";
+}
+
+<h2>Index for Financial Tax Type Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeFinancialTaxTypeRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Financial Tax Type Name</th>
+        <th>Financial Tax Type</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.FinancialTaxTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialTaxTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeFinancialTaxTypeRefEdit", new { financialTaxTypeRcd = item.FinancialTaxTypeRcd })
+                | @Html.ActionLink("Delete", "CrudeFinancialTaxTypeRefDelete", new { financialTaxTypeRcd = item.FinancialTaxTypeRcd })
+            </td>
+        </tr>
+    }
+
+</table>

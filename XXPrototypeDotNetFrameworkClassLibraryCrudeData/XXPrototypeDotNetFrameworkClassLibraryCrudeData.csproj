@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4DA779E-70DD-45C1-8827-B583AF885C2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeData</RootNamespace>
+    <AssemblyName>XXPrototypeDotNetFrameworkClassLibraryCrudeData</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cart\CartSearch.cs" />
+    <Compile Include="Client\ClientSearch.cs" />
+    <Compile Include="DataDNF\Templates\Cart\CrudeCartProductData.cs" />
+    <Compile Include="DataDNF\Templates\Cart\CrudeCartProductPriceData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientAddressData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientAddressTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientContactMethodData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientContactMethodRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientDocumentData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientDocumentTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientEventData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientEventTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientGenderRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientIdentifierData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientIdentifierTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientLinkData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientLinkTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientNationalityRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientTitleRefData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultChangeLogData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultChangeLogTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultErrorData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultErrorLayerRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultErrorTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultIssueData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultIssueStatusRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultIssueTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultPerformanceIssueData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultPerformanceTimeData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultPerformanceTimeRollupData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultResourceMeasurementData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultRuleData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultRuleTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultStateRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultSystemReferenceTableData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultSystemSettingData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultSystemSettingRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultTestData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultTestRunData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultTestRunResultRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultUserActivityData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultUserActivityTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultUserData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultVersionData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialAdjustmentData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialAdjustmentTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialBankAccountNumberTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialCardTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialCompanyData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialCostcentreData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialCouponData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialCouponTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialCurrencyData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialCurrencyTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialFeeData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialFeeTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderEventData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderEventTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderIdentifierData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderIdentifierTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderLineData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderSourceRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderTransactionData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderTransactionTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentAccountingData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentBankData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentCardData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentCashData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentCouponData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentVoucherData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialTaxData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialTaxTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialUnitOfMeasurementRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialVoucherData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialVoucherTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Location\CrudeLocationAddressData.cs" />
+    <Compile Include="DataDNF\Templates\Location\CrudeLocationAddressTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Location\CrudeLocationCityData.cs" />
+    <Compile Include="DataDNF\Templates\Location\CrudeLocationCountryData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductAttributeData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductAttributeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductAttributeUnitRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryDocumentationData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryDocumentationTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryImageData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryImageTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryMappingData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductChangeSetData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductDocumentationData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductDocumentationTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductEntityTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductExposeData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductExposedSelectionData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductExposePlanData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductExposeSetData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductExposeSetTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductFieldSetData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductFieldSetMappingData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherAttributeData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherAttributeTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherKeyData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherSourceData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherSourceTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductIdentifierData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductIdentifierRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductImageData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductImageTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductInfoData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductInfoRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductSupplierData.cs" />
+    <Compile Include="Default\DefaultSearch.cs" />
+    <Compile Include="Default\Div.cs" />
+    <Compile Include="Default\Logging.cs" />
+    <Compile Include="Default\Reporting.cs" />
+    <Compile Include="Durian\CartSearch\GetCartProductWithFilterData.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryFindData.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryTreeData.cs" />
+    <Compile Include="Durian\ClientSearch\GetClientWithFilterData.cs" />
+    <Compile Include="Durian\DefaultSearch\DashboardCountsData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultIssueWithFilterData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIndicatorsData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimesData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceDatabaseStatisticsData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsTop5Data.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultTestOverviewData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityByHourData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityOnAddressData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListData.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardData.cs" />
+    <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogData.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterData.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterData.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterData.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilterData.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIndexData.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterData.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterData.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterData.cs" />
+    <Compile Include="Durian\ProductSearch\ProductHistoryData.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryCodeData.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryData.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1Data.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Data.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3Data.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType4Data.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdData.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameData.cs" />
+    <Compile Include="ProductMaintenanceSearch.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeSearch.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeUnitSearch.cs" />
+    <Compile Include="Product\Category.cs" />
+    <Compile Include="Product\durian\CategorySearch.cs" />
+    <Compile Include="Product\durian\ProductSearch.cs" />
+    <Compile Include="Product\durian\ProductSearchSeperate.cs" />
+    <Compile Include="Product\Product.cs" />
+    <Compile Include="Product\ProductPartial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Prototype.json" />
+    <None Include="Template\Cart\CartProduct.json" />
+    <None Include="Template\Cart\CartProductPrice.json" />
+    <None Include="Template\Client\Client.json" />
+    <None Include="Template\Client\ClientAddress.json" />
+    <None Include="Template\Client\ClientAddressTypeRef.json" />
+    <None Include="Template\Client\ClientContactMethod.json" />
+    <None Include="Template\Client\ClientContactMethodRef.json" />
+    <None Include="Template\Client\ClientDocument.json" />
+    <None Include="Template\Client\ClientDocumentTypeRef.json" />
+    <None Include="Template\Client\ClientEvent.json" />
+    <None Include="Template\Client\ClientEventTypeRef.json" />
+    <None Include="Template\Client\ClientGenderRef.json" />
+    <None Include="Template\Client\ClientIdentifier.json" />
+    <None Include="Template\Client\ClientIdentifierTypeRef.json" />
+    <None Include="Template\Client\ClientLink.json" />
+    <None Include="Template\Client\ClientLinkTypeRef.json" />
+    <None Include="Template\Client\ClientNationalityRef.json" />
+    <None Include="Template\Client\ClientTitleRef.json" />
+    <None Include="Template\Client\ClientTypeRef.json" />
+    <None Include="Template\Default\DefaultChangeLog.json" />
+    <None Include="Template\Default\DefaultChangeLogTypeRef.json" />
+    <None Include="Template\Default\DefaultError.json" />
+    <None Include="Template\Default\DefaultErrorLayerRef.json" />
+    <None Include="Template\Default\DefaultErrorTypeRef.json" />
+    <None Include="Template\Default\DefaultIssue.json" />
+    <None Include="Template\Default\DefaultIssueStatusRef.json" />
+    <None Include="Template\Default\DefaultIssueTypeRef.json" />
+    <None Include="Template\Default\DefaultPerformanceIssue.json" />
+    <None Include="Template\Default\DefaultPerformanceTime.json" />
+    <None Include="Template\Default\DefaultPerformanceTimeRollup.json" />
+    <None Include="Template\Default\DefaultResourceMeasurement.json" />
+    <None Include="Template\Default\DefaultRule.json" />
+    <None Include="Template\Default\DefaultRuleTypeRef.json" />
+    <None Include="Template\Default\DefaultStateRef.json" />
+    <None Include="Template\Default\DefaultSystemReferenceTable.json" />
+    <None Include="Template\Default\DefaultSystemSetting.json" />
+    <None Include="Template\Default\DefaultSystemSettingRef.json" />
+    <None Include="Template\Default\DefaultTest.json" />
+    <None Include="Template\Default\DefaultTestRun.json" />
+    <None Include="Template\Default\DefaultTestRunResultRef.json" />
+    <None Include="Template\Default\DefaultUser.json" />
+    <None Include="Template\Default\DefaultUserActivity.json" />
+    <None Include="Template\Default\DefaultUserActivityTypeRef.json" />
+    <None Include="Template\Default\DefaultVersion.json" />
+    <None Include="Template\Financial\FinancialAdjustment.json" />
+    <None Include="Template\Financial\FinancialAdjustmentTypeRef.json" />
+    <None Include="Template\Financial\FinancialBankAccountNumberTypeRef.json" />
+    <None Include="Template\Financial\FinancialCardTypeRef.json" />
+    <None Include="Template\Financial\FinancialCompany.json" />
+    <None Include="Template\Financial\FinancialCostcentre.json" />
+    <None Include="Template\Financial\FinancialCoupon.json" />
+    <None Include="Template\Financial\FinancialCouponTypeRef.json" />
+    <None Include="Template\Financial\FinancialCurrency.json" />
+    <None Include="Template\Financial\FinancialCurrencyTypeRef.json" />
+    <None Include="Template\Financial\FinancialFee.json" />
+    <None Include="Template\Financial\FinancialFeeTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrder.json" />
+    <None Include="Template\Financial\FinancialOrderEvent.json" />
+    <None Include="Template\Financial\FinancialOrderEventTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrderIdentifier.json" />
+    <None Include="Template\Financial\FinancialOrderIdentifierTypeRef.json" />
+    <None Include="Template\Financial\FinancialOrderLine.json" />
+    <None Include="Template\Financial\FinancialOrderSourceRef.json" />
+    <None Include="Template\Financial\FinancialOrderTransaction.json" />
+    <None Include="Template\Financial\FinancialOrderTransactionTypeRef.json" />
+    <None Include="Template\Financial\FinancialPayment.json" />
+    <None Include="Template\Financial\FinancialPaymentAccounting.json" />
+    <None Include="Template\Financial\FinancialPaymentBank.json" />
+    <None Include="Template\Financial\FinancialPaymentCard.json" />
+    <None Include="Template\Financial\FinancialPaymentCash.json" />
+    <None Include="Template\Financial\FinancialPaymentCoupon.json" />
+    <None Include="Template\Financial\FinancialPaymentTypeRef.json" />
+    <None Include="Template\Financial\FinancialPaymentVoucher.json" />
+    <None Include="Template\Financial\FinancialTax.json" />
+    <None Include="Template\Financial\FinancialTaxTypeRef.json" />
+    <None Include="Template\Financial\FinancialUnitOfMeasurementRef.json" />
+    <None Include="Template\Financial\FinancialVoucher.json" />
+    <None Include="Template\Financial\FinancialVoucherTypeRef.json" />
+    <None Include="Template\Location\LocationAddress.json" />
+    <None Include="Template\Location\LocationAddressTypeRef.json" />
+    <None Include="Template\Location\LocationCity.json" />
+    <None Include="Template\Location\LocationCountry.json" />
+    <None Include="Template\Product\Product.json" />
+    <None Include="Template\Product\ProductAttribute.json" />
+    <None Include="Template\Product\ProductAttributeRef.json" />
+    <None Include="Template\Product\ProductAttributeUnitRef.json" />
+    <None Include="Template\Product\ProductCategory.json" />
+    <None Include="Template\Product\ProductCategoryDocumentation.json" />
+    <None Include="Template\Product\ProductCategoryDocumentationTypeRef.json" />
+    <None Include="Template\Product\ProductCategoryImage.json" />
+    <None Include="Template\Product\ProductCategoryImageTypeRef.json" />
+    <None Include="Template\Product\ProductCategoryMapping.json" />
+    <None Include="Template\Product\ProductChangeSet.json" />
+    <None Include="Template\Product\ProductDocumentation.json" />
+    <None Include="Template\Product\ProductDocumentationTypeRef.json" />
+    <None Include="Template\Product\ProductEntityTypeRef.json" />
+    <None Include="Template\Product\ProductExpose.json" />
+    <None Include="Template\Product\ProductExposePlan.json" />
+    <None Include="Template\Product\ProductExposeSet.json" />
+    <None Include="Template\Product\ProductExposeSetTypeRef.json" />
+    <None Include="Template\Product\ProductExposedSelection.json" />
+    <None Include="Template\Product\ProductFieldSet.json" />
+    <None Include="Template\Product\ProductFieldSetMapping.json" />
+    <None Include="Template\Product\ProductGather.json" />
+    <None Include="Template\Product\ProductGatherAttribute.json" />
+    <None Include="Template\Product\ProductGatherAttributeTypeRef.json" />
+    <None Include="Template\Product\ProductGatherKey.json" />
+    <None Include="Template\Product\ProductGatherSource.json" />
+    <None Include="Template\Product\ProductGatherSourceTypeRef.json" />
+    <None Include="Template\Product\ProductIdentifier.json" />
+    <None Include="Template\Product\ProductIdentifierRef.json" />
+    <None Include="Template\Product\ProductImage.json" />
+    <None Include="Template\Product\ProductImageTypeRef.json" />
+    <None Include="Template\Product\ProductInfo.json" />
+    <None Include="Template\Product\ProductInfoRef.json" />
+    <None Include="Template\Product\ProductSupplier.json" />
+    <None Include="Information\architecture.txt" />
+    <None Include="Information\description.txt" />
+    <None Include="..\sql2x.config" />
+    <None Include="..\sql2x.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
+      <Project>{b83512cf-abdb-45a0-a34a-19ac14e9bf2d}</Project>
+      <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

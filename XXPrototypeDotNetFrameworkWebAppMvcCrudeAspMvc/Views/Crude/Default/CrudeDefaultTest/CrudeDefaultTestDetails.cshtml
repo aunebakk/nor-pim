@@ -1,0 +1,31 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:18 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultTestContract
+
+@{
+    ViewBag.Title = "Details Default Test";
+}
+
+<h2>Details for Default Test</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>System Name</dt> <dd>@Html.DisplayFor(model => model.SystemName)</dd>
+        <dt>Test Area</dt> <dd>@Html.DisplayFor(model => model.TestArea)</dd>
+        <dt>Test Sub Area</dt> <dd>@Html.DisplayFor(model => model.TestSubArea)</dd>
+        <dt>Test Address</dt> <dd>@Html.DisplayFor(model => model.TestAddress)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeDefaultTestEdit", new { defaultTestId = Model.DefaultTestId }) |
+    @Html.ActionLink("New", "CrudeDefaultTestCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeDefaultTestIndex")
+</p>

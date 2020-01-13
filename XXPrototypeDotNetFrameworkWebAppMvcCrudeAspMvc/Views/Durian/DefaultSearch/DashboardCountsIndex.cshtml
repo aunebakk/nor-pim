@@ -1,0 +1,48 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:52:37 PM
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.DashboardCountsContract>
+
+@{
+    ViewBag.Title = "Dashboard Counts";
+}
+
+<h2>Dashboard Counts</h2>
+
+<table class="table">
+    <tr>
+        <th>Dashboard Item</th>
+        <th>Dashboard Item Name</th>
+        <th>Image Source</th>
+        <th>Value</th>
+        <th>Last 24 Hours Count</th>
+        <th>Last Date Time</th>
+        <th>Last User Name</th>
+        <th>Url</th>
+        <th>Position Left</th>
+        <th>Position Top</th>
+        <th>Position Offset</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DashboardItemRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DashboardItemName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ImageSource) </td>
+            <td>@Html.DisplayFor(modelItem => item.Value) </td>
+            <td>@Html.DisplayFor(modelItem => item.Last24HoursCount) </td>
+            <td>@Html.DisplayFor(modelItem => item.LastDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.LastUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.Url) </td>
+            <td>@Html.DisplayFor(modelItem => item.PositionLeft) </td>
+            <td>@Html.DisplayFor(modelItem => item.PositionTop) </td>
+            <td>@Html.DisplayFor(modelItem => item.PositionOffset) </td>
+        </tr>
+    }
+
+</table>

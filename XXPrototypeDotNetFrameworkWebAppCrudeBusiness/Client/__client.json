@@ -1,0 +1,124 @@
+{
+    "subject": {
+        "name": "client",
+        "references": {
+            "client_type": {
+                "data": {
+                    "Private": { },
+                    "Business": { }
+                }
+            },
+            "client_nationality": {
+                "null": "true",
+                "data": {
+                    "European": { },
+                    "Asian": { },
+                    "American": { }
+                }
+            },
+            "gender": {
+                "null": "true",
+                "data": {
+                    "Male": { },
+                    "Female": { }
+                }
+            },
+            "title": {
+                "null": "true",
+                "data": {
+                    "Mr": { },
+                    "Mrs": { },
+                    "Child": { }
+                }
+            },
+            "passenger_type": { 
+                "null": "true",
+                "data": {
+                    "Adult": { },
+                    "Child": { },
+                    "Infant": { }
+                }
+            }
+        },
+        "attributes": {
+            "first_name": { "type": "name" },
+            "middle_name": { "type": "name", "null": "true" },
+            "last_name": { "type": "name" },
+            "address": { "type": "reference", "null": "true" }
+        }
+    },
+    "members": {
+        "client_link": {
+            "cardinality": "1:m",
+            "references": {
+                "client_link_type": {
+                    "data": {
+                        "Web Page": { }
+                    }
+                }
+            },
+            "attributes": {
+                "link_name": { "type": "name", "null": "true" },
+                "link": { "type": "name" }
+            }
+        },
+        "client_identifier": {
+            "cardinality": "1:m",
+            "references": {
+                "client_identifier_type": {
+                    "data": {
+                        "Passport Number": { },
+                        "Employee Number": { }
+                    }
+                }
+            },
+            "attributes": {
+                "client_identifier_code": { "type": "code" }
+            }
+        },
+        "client_event": {
+            "cardinality": "1:m",
+            "references": {
+                "client_event_type": {
+                    "data": {
+                        "Sent Introduction Mail": { },
+                        "Introduction Mail Confirmed": { },
+                        "Package Mail Sent": { },
+                        "Package Site Viewed": { },
+                        "Package Ordered": { }
+                    }
+                }
+            }
+        },
+        "client_document": {
+            "cardinality": "1:m",
+            "references": {
+                "client_document_type": {
+                    "data": {
+                        "Passport First Page": { }
+                    }
+                }
+            },
+            "attributes": {
+                "document_name": { "type": "name" },
+                "document_date_time": { "type": "datetime" },
+                "expiry_date_time": { "type": "datetime" }
+            }
+        },
+        "client_contact_method": {
+            "cardinality": "1:m",
+            "references": {
+                "client_contact_method": {
+                    "data": {
+                        "EMail": { },
+                        "Telephone": { }
+                    }
+                }
+            },
+            "attributes": {
+                "contact_method_way": { "type": "name" },
+                "comment": { "type": "text" }
+            }
+        }
+    }
+}

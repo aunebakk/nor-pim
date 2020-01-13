@@ -1,1 +1,0 @@
-<%@ ServiceHost Language="C#" Debug="true" Service="norpim.BusinessLogicLayer.CategorySearchService" CodeBehind="C:\projects\norpim\version2\code\BusinessLogicLayer\Category\\CategorySearchService.cs"%>

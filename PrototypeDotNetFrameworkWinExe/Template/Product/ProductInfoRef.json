@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeWinForm",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Product"
+  },
+  "parent": {
+    "tablename": "product_info_ref",
+    "overridenice": "CrudeProductInfoRef",
+    "overridecamel": "productInfoRef",
+    "autoupdatescheme": "autoupdatereference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

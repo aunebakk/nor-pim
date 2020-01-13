@@ -1,0 +1,23 @@
+﻿{
+    "overall": {
+        "style": "WithDurianByTypeScript",
+        "project": "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc",
+        "design": "TypeScriptTine",
+        "azureappname": "NorPimTest"
+    },
+    "domain": {
+        "name": "ProductSearch"
+    },
+    "parent": {
+        "tablename": "product",
+        "overridenice": "ProductSearch",
+        "overridecamel": "productSearch",
+        "autoupdatescheme": "",
+        "durianclass": "ProductSearch",
+        "durianmethod": "ProductSearchByCategory"
+    },
+    "children": {
+    },
+    "autofill": {
+    }
+}

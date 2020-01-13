@@ -1,0 +1,97 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:44:38 PM
+  Filename: C:\SQL2XProjects\SolutionNorSolutionPim\PrototypeASPNetCoreTemplateWebApplicationWithCrude\Template\Default\DefaultTest.json
+  Template: sql2x.TemplateDotNetCoreApiGenerator.View
+  Style: DotNetCoreApi
+-->
+
+<style>
+    a {
+        color: lightgray;
+    } 
+
+    html {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    table {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        border-color: red;
+        font-weight: 100;
+        margin: 0px;
+        max-width: 100%;
+        align-content: flex-start
+    }
+
+    th {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        text-align: left;
+    }
+
+    tr {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    td {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+
+    h3 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+<h2><a id="CrudeDefaultTest">CrudeDefaultTest</a> ( DotNetCoreApi )</h2><br>
+<br>
+        <table>
+            <tr><td>Default Test Id            </td><td>System.Guid</td></tr>
+            <tr><td>System Name            </td><td>System.String</td></tr>
+            <tr><td>Test Area            </td><td>System.String</td></tr>
+            <tr><td>Test Sub Area            </td><td>System.String</td></tr>
+            <tr><td>Test Address            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+<br>
+<br>
+<i>GET</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestFetchAll'>FetchAll</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestFetchAllCount'>FetchAllCount</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestFetchAllWithLimit' asp-route-limit='1'>FetchAllWithLimit</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestFetchAllWithLimitAndOffset' asp-route-limit='1' asp-route-offset='1'>FetchAllWithLimitAndOffset</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestFetchByDefaultTestId' asp-route-defaulttestid=00000000-0000-0000-0000-000000000001>FetchByDefaultTestId</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestFetchBySystemName' asp-route-systemname=String.Empty>FetchBySystemName</a><br>
+<br>
+<br>
+<i>POST</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestCreate'>CrudeDefaultTestCreate</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestCreateTest'>Create Test (GET)</a><br>
+<br>
+<br>
+<i>PUT</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestUpdate'>CrudeDefaultTestUpdate</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestUpdateTest'>Update Test (GET)</a><br>
+<br>
+<br>
+<i>DELETE</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestDelete'>CrudeDefaultTestDelete</a><br>
+<a asp-area='' asp-controller='CrudeDefaultTest' asp-action='CrudeDefaultTestDeleteTest'>Delete Test (GET)</a><br>

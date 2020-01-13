@@ -1,0 +1,75 @@
+﻿
+<html>
+    <head>
+        <title>FinancialAdjustment</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>FinancialAdjustment Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeFinancialAdjustmentService</label>
+        <br /><label>Contract name: CrudeFinancialAdjustmentContract</label>
+        <br /><label>Fetcher: FetchByFinancialAdjustmentId</label>
+        <br /><label>Id: FinancialAdjustmentId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Financial/CrudeFinancialAdjustment.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Financial Adjustment Id            </td><td>System.Guid</td></tr>
+            <tr><td>Amount            </td><td>System.Decimal</td></tr>
+            <tr><td>Financial Currency Id            </td><td>System.Guid</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Financial Adjustment Type            </td><td>System.String</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeFinancialAdjustmentContract<b> FetchByFinancialAdjustmentId </b>(System.Guid financialAdjustmentId);
+        <br />
+        <br />List&lt;CrudeFinancialAdjustmentContract&gt;<b> FetchByFinancialCurrencyId </b>(System.Guid financialCurrencyId);
+        <br />
+        <br />List&lt;CrudeFinancialAdjustmentContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeFinancialAdjustmentContract&gt;<b> FetchByFinancialAdjustmentTypeRcd </b>(System.String financialAdjustmentTypeRcd);
+        <br />
+        <br />List&lt;CrudeFinancialAdjustmentContract&gt;<b> FetchWithFilter </b>(System.Guid financialAdjustmentId,System.Decimal amount,System.Guid financialCurrencyId,System.Guid userId,System.DateTime dateTime,System.String financialAdjustmentTypeRcd);
+        <br />
+        <br />List&lt;CrudeFinancialAdjustmentContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeFinancialAdjustmentContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeFinancialAdjustmentContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeFinancialAdjustmentContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeFinancialAdjustmentContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid financialAdjustmentId);
+        <br />
+        <br />
+    </body>
+</html>
+

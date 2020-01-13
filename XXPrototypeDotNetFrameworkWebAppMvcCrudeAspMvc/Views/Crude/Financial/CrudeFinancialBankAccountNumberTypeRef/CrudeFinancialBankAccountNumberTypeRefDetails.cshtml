@@ -1,0 +1,28 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:30 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialBankAccountNumberTypeRefContract
+
+@{
+    ViewBag.Title = "Details Financial Bank Account Number Type Ref";
+}
+
+<h2>Details for Financial Bank Account Number Type Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Financial Bank Account Number Type Name</dt> <dd>@Html.DisplayFor(model => model.FinancialBankAccountNumberTypeName)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeFinancialBankAccountNumberTypeRefEdit", new { financialBankAccountNumberTypeRcd = Model.FinancialBankAccountNumberTypeRcd }) |
+    @Html.ActionLink("New", "CrudeFinancialBankAccountNumberTypeRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeFinancialBankAccountNumberTypeRefIndex")
+</p>

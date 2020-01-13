@@ -1,0 +1,32 @@
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientLinkContract>
+
+@{
+    ViewBag.Title = "ClientLink";
+}
+
+<h2>Client Link</h2>
+
+@Html.Partial("~/Views/Client/_tab.cshtml")
+
+<table class="table">
+    <tr>
+        <th>Link Type</th>
+        <th>Link</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ClientLinkTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Link) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "ClientLinkEdit", new { clientLinkId = item.ClientLinkId })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Add New", "ClientLinkCreate", "ClientLink", new { clientId = ViewBag.ClientId }, null)
+</p>

@@ -1,0 +1,1 @@
+<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductFieldSetService" CodeBehind="C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkWebAppCrudeBusiness\BusinessWCFSoap\Templates\Product\\\CrudeProductFieldSet.cs"%>

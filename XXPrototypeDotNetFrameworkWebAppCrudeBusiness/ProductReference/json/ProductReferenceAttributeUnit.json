@@ -1,0 +1,39 @@
+{
+  "overall": {
+    "style": "ByServiceTableCrud"
+  },
+  "domain": {
+    "name": "ProductReference"
+  },
+  "parent": {
+    "tablename": "product_attribute_unit_ref",
+    "overridenice": "ProductReferenceAttributeUnit",
+    "overridecamel": "product",
+    "autoupdatescheme": "autoupdatenormal",
+    "showprimary": "true",
+    "durianclass": "ProductReferenceAttributeUnitSearch",
+    "durianmethod": "ProductReferenceAttributeUnitSearchWithFilter"
+  },
+  "children": {},
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  },
+  "actions": {
+    "index": {
+      "text": "references",
+      "controller": "Dashboard",
+      "action": "DashboardPIMReference"
+    },
+    "refresh": {
+      "text": "refresh",
+      "controller": "ProductReferenceAttributeUnit",
+      "action": "ProductReferenceAttributeUnitEdit"
+    },
+    "add": {
+      "text": "add new",
+      "controller": "ProductReferenceAttributeUnit",
+      "action": "ProductReferenceAttributeUnitCreate"
+    }
+  }
+}

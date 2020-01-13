@@ -1,0 +1,60 @@
+﻿{
+  "database": {
+    "connectionstring": "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;",
+    "connectionstringazuretable": "",
+    "locallink": "",
+    "deploylink": "Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;"
+  },
+  "solution": {
+    "path": ""
+  },
+  "defaults": {
+    "userid": "{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}"
+  },
+  "general": {
+    "endpoint": "http://localhost:64804/",
+    "fetcherforreference": "true"
+  },
+  "durian": {
+    "usecontrol": "true",
+    "beautifysql": "true"
+  },
+      "contracts": {
+        "friendlyname": "Contracts",
+        "projectname": "XXPrototypeDotNetFrameworkClassLibraryCrudeContract",
+        "namespace": "SolutionNorSolutionPim.BusinessLogicLayer",
+        "path": ".\\ContractDNF\\"
+      },
+      "data": {
+        "friendlyname": "Data Access Layer (dotNET Framework)",
+        "projectname": "XXPrototypeDotNetFrameworkClassLibraryCrudeData",
+        "namespace": "SolutionNorSolutionPim.DataAccessLayer",
+        "path": ".\\DataDNF\\"
+      },
+      "soap": {
+        "friendlyname": "Business Logic Layer",
+        "projectname": "XXPrototypeDotNetFrameworkWebAppCrudeBusiness",
+        "namespace": "SolutionNorSolutionPim.BusinessLogicLayer",
+        "path": ".\\BusinessWCFSoap\\"
+      },
+      "proxy": {
+        "friendlyname": "Client Proxy",
+        "projectname": "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy",
+        "namespace": "SolutionNorSolutionPim.BusinessLogicLayer",
+        "path": ".\\ProxyWCF\\",
+        "arraystyle": "List",
+        "servicesuffix": "Client"
+      },
+      "winform": {
+        "friendlyname": "Win Form User Interface",
+        "projectname": "PrototypeDotNetFrameworkWinExe",
+        "namespace": "SolutionNorSolutionPim.UserInterface",
+        "path": ".\\WinForm\\"
+      },
+      "mvc": {
+        "friendlyname": "ASP Model View Controller",
+        "projectname": "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc",
+        "namespace": "SolutionNorSolutionPim.AspMvc",
+        "path": ""
+      }
+}

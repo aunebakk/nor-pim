@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeSoap",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_system_setting_ref",
+    "overridenice": "CrudeDefaultSystemSettingRef",
+    "overridecamel": "defaultSystemSettingRef",
+    "autoupdatescheme": "autoupdatedefaultreference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

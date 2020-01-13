@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeAspMvc",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_error_layer_ref",
+    "overridenice": "CrudeDefaultErrorLayerRef",
+    "overridecamel": "defaultErrorLayerRef",
+    "autoupdatescheme": "autoupdatedefaultreference",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

@@ -1,0 +1,155 @@
+@model SolutionNorSolutionPim.BusinessLogicLayer.ProductDetailsContract
+<!--
+@{
+    ViewBag.Title = "PIM: Details";
+}
+-->
+<style>
+    table {
+        background-color: white;
+        border-color: red;
+        font-weight: 100;
+        margin: 0px;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 20px;
+    }
+
+    h3 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 15px;
+    }
+</style>
+
+<h2>
+    <b>
+        <font color="DarkBlue">@Html.Raw(Model.Product.ProductName)</font>
+    </b>
+</h2>
+
+<br />
+<img src="~/images/efo/1082853_thumb_300x300.png" width="200" height="90" />
+<br />
+
+<h3>
+    <b>
+        <font color="DarkBlue">Product Attributes</font>
+    </b>
+</h3>
+
+<table class="table">
+    <tr style="background-color: aliceblue; font-weight: bold;">
+        <th width="2000">Type</th>
+        <th width="3000">Value</th>
+    </tr>
+    @foreach (var item in Model.ProductMaintenanceAttributeIndexWithFilter)
+    {
+        <tr style="background-color: aliceblue; font-weight: normal;">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductAttributeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+        </tr>
+    }
+</table>
+
+<h3>
+    <b>
+        <font color="DarkBlue">Product Documents</font>
+    </b>
+</h3>
+<table class="table">
+    <tr style="background-color: aliceblue; font-weight: bold;">
+        <th width="2000">Type</th>
+        <th width="3000">Value</th>
+    </tr>
+    @foreach (var item in Model.ProductMaintenanceDocumentationIndexWithFilter)
+    {
+        <tr style="background-color: aliceblue; font-weight: normal;">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDocumentationTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Documentation)
+            </td>
+        </tr>
+    }
+</table>
+
+<h3>
+    <b>
+        <font color="DarkBlue">Product Identifiers</font>
+    </b>
+</h3>
+<table class="table">
+    <tr style="background-color: aliceblue; font-weight: bold;">
+        <th width="2000">Type</th>
+        <th width="3000">Value</th>
+    </tr>
+    @foreach (var item in Model.ProductMaintenanceIdentifierIndexWithFilter)
+    {
+        <tr style="background-color: aliceblue; font-weight: normal;">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductIdentifierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Identifier)
+                <a href="http://efobasen.efo.no/produkt-detaljer?pn=1000132">EFO</a>
+                | <a href="http://draka.no/cables/tslf-o-24kv/">FDV</a>
+<!--                <a href="@Model.EFOLink@Html.DisplayFor(modelItem => item.Identifier)">EFO</a>
+                | <a href="@Model.FVDLink@Html.DisplayFor(modelItem => item.Identifier)">FDV</a>-->
+            </td>
+        </tr>
+    }
+</table>
+
+<h3>
+    <b>
+        <font color="DarkBlue">Product Images</font>
+    </b>
+</h3>
+<table class="table">
+    <tr style="background-color: aliceblue; font-weight: bold;">
+        <th width="2000">Type</th>
+        <th width="3000">Value</th>
+    </tr>
+    @foreach (var item in Model.ProductMaintenanceImageIndexWithFilter)
+    {
+        <tr style="background-color: aliceblue; font-weight: normal;">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductImageTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageFileName)
+            </td>
+        </tr>
+    }
+</table>
+
+<h3>
+    <b>
+        <font color="DarkBlue">Product Info</font>
+    </b>
+</h3>
+<table class="table">
+    <tr style="background-color: aliceblue; font-weight: bold;">
+        <th width="2000">Type</th>
+        <th width="3000">Value</th>
+    </tr>
+    @foreach (var item in Model.ProductMaintenanceInfoIndexWithFilter)
+    {
+        <tr style="background-color: aliceblue; font-weight: normal;">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductInfoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductInfoValue)
+            </td>
+        </tr>
+    }
+</table>

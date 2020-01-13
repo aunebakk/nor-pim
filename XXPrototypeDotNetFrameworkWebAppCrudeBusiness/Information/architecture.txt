@@ -1,0 +1,2 @@
+﻿Deployable as Azure Web App
+Deployable as IIS Web Site ( not tested )

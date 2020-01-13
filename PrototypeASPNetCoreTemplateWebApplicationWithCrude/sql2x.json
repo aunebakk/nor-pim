@@ -1,0 +1,58 @@
+﻿{
+  "database": {
+    "connectionstring": "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;",
+    "connectionstringazuretable": "",
+    "locallink": "",
+    "deploylink": "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+  },
+  "solution": {
+    "path": ""
+  },
+  "defaults": {
+    "userid": "{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}"
+  },
+  "general": {
+    "endpoint": "http://.azurewebsites.net/",
+    "fetcherforreference": "true"
+  },
+  "durian": {
+    "usecontrol": "true",
+    "beautifysql": "true"
+  },
+      "datadotnetcore": {
+        "friendlyname": "Data Access Layer (dotNET Core)",
+        "projectname": "PrototypeASPNetCoreTemplateWebApplicationWithCrude",
+        "namespace": "SolutionNorSolutionPim.BusinessLogicLayer",
+        "path": ".\\DataDNC\\"
+      },
+      "modeldotnetcore": {
+        "friendlyname": "Model for Dot Net Core ( MVC )",
+        "projectname": "PrototypeASPNetCoreTemplateWebApplicationWithCrude",
+        "namespace": "SolutionNorSolutionPim.BusinessLogicLayer",
+        "path": ".\\Models\\"
+      },
+      "businessdotnetcore": {
+        "friendlyname": "BusinessDotNetCore",
+        "projectname": "PrototypeASPNetCoreTemplateWebApplicationWithCrude",
+        "namespace": "SolutionNorSolutionPim.BusinessLogicLayer",
+        "path": ".\\BusinessDNC\\"
+      },
+      "restdotnetcore": {
+        "friendlyname": "Representational State Transfer (dotNET Core)",
+        "projectname": "PrototypeASPNetCoreTemplateWebApplicationWithCrude",
+        "namespace": "SolutionNorSolutionPim.BusinessLogicLayer",
+        "path": ".\\Controllers\\"
+      },
+      "typescript": {
+        "friendlyname": "TypeScript Tile",
+        "projectname": "PrototypeASPNetCoreTemplateWebApplicationWithCrude",
+        "namespace": "SolutionNorSolutionPim.AspMvc",
+        "path": "",
+        "scriptspath": "\\Scripts\\sql2x_gen\\"
+      },
+      "documentation": {
+        "friendlyname": "Documentation",
+        "projectname": "PrototypeASPNetCoreTemplateWebApplicationWithCrude",
+        "path": ".\\Documentation"
+      }
+}

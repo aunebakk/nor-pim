@@ -1,0 +1,7 @@
+﻿sql2x config files
+Links
+https://blogs.msdn.microsoft.com/luisdem/2016/10/11/net-core-how-to-publish-a-self-contained-application-exe/
+
+Same project:
+    .NET Framework v4.6.1 bare bone C# exe project
+    Meant for publishing inside Azure WebApp, or IIS Site

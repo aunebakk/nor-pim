@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "CrudeProxy",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Financial"
+  },
+  "parent": {
+    "tablename": "financial_payment_cash",
+    "overridenice": "CrudeFinancialPaymentCash",
+    "overridecamel": "financialPaymentCash",
+    "autoupdatescheme": "autoupdatenormal",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

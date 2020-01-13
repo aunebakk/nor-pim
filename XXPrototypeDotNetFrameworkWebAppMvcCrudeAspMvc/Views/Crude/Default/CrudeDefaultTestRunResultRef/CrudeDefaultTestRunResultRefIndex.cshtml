@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:19 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultTestRunResultRefContract>
+
+@{
+    ViewBag.Title = "Index Default Test Run Result Ref";
+}
+
+<h2>Index for Default Test Run Result Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultTestRunResultRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default Test Run Result</th>
+        <th>Default Test Run Result Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultTestRunResultRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultTestRunResultName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultTestRunResultRefEdit", new { defaultTestRunResultRcd = item.DefaultTestRunResultRcd })
+                | @Html.ActionLink("Delete", "CrudeDefaultTestRunResultRefDelete", new { defaultTestRunResultRcd = item.DefaultTestRunResultRcd })
+            </td>
+        </tr>
+    }
+
+</table>

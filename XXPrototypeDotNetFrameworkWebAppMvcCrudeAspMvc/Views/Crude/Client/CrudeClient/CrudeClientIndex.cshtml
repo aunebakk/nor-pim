@@ -1,0 +1,54 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:40:27 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientContract>
+
+@{
+    ViewBag.Title = "Index Client";
+}
+
+<h2>Index for Client</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeClientCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Client Type</th>
+        <th>Client Nationality</th>
+        <th>Client Gender</th>
+        <th>Client Title</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Image</th>
+        <th>Image Blob Filename</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ClientTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientNationalityRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientGenderRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientTitleRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.FirstName) </td>
+            <td>@Html.DisplayFor(modelItem => item.MiddleName) </td>
+            <td>@Html.DisplayFor(modelItem => item.LastName) </td>
+            <td>@Html.DisplayFor(modelItem => item.Image) </td>
+            <td>@Html.DisplayFor(modelItem => item.ImageBlobFilename) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeClientEdit", new { clientId = item.ClientId })
+                | @Html.ActionLink("Delete", "CrudeClientDelete", new { clientId = item.ClientId })
+            </td>
+        </tr>
+    }
+
+</table>

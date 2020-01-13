@@ -1,0 +1,26 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:59:02 PM
+  Template: sql2x.GenerateDurian.FromCrudeViewIndexTypeScript
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.Models.GetFinancialOrderModel>
+
+<div style="display:none;"></div>
+<meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0 , maximum-scale=1.0"/>
+
+<canvas id="myCanvas">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<br />
+  <div id="content"></div>
+<br />
+
+@section Scripts {
+    <script type="text/javascript">
+        var getFinancialOrderList = @Html.Raw(Json.Serialize(Model));
+    </script>
+    <script src="~/js\Durian\Cart\\CartFinancialOrder.js"></script>
+}

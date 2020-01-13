@@ -1,0 +1,23 @@
+﻿{
+  "overall": {
+    "style": "DotNetCoreApi",
+    "design": "TypeScriptHagtorn"
+  },
+  "domain": {
+    "name": "Default"
+  },
+  "parent": {
+    "tablename": "default_system_setting",
+    "overridenice": "CrudeDefaultSystemSetting",
+    "overridecamel": "defaultSystemSetting",
+    "autoupdatescheme": "autoupdatedefault",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  }
+}

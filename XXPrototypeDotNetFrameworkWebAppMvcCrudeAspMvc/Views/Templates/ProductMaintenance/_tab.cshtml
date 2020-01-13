@@ -1,0 +1,37 @@
+<div>
+    @if (ViewBag.Title.EndsWith("Product")) {
+        <b>@Html.ActionLink("Product", "ProductMaintenanceEdit", "ProductMaintenance", new { productId = ViewBag.ProductId }, null)</b>
+    } else {
+        @Html.ActionLink("Product", "ProductMaintenanceEdit", "ProductMaintenance", new { productId = ViewBag.ProductId }, null)
+    }
+    |
+    @if (ViewBag.Title.Contains("Info")) {
+        <b>@Html.ActionLink("Info", "ProductInfoIndex", "ProductInfo", new { productId = ViewBag.ProductId }, null)</b>
+    } else {
+        @Html.ActionLink("Info", "ProductInfoIndex", "ProductInfo", new { productId = ViewBag.ProductId }, null)
+    }
+    |
+    @if (ViewBag.Title.Contains("Attribute")) {
+        <b>@Html.ActionLink("Attribute", "ProductAttributeIndex", "ProductAttribute", new { productId = ViewBag.ProductId }, null)</b>
+    } else {
+        @Html.ActionLink("Attribute", "ProductAttributeIndex", "ProductAttribute", new { productId = ViewBag.ProductId }, null)
+    }
+    |
+    @if (ViewBag.Title.Contains("Identifier")) {
+        <b>@Html.ActionLink("Identifier", "ProductIdentifierIndex", "ProductIdentifier", new { productId = ViewBag.ProductId }, null)</b>
+    } else {
+        @Html.ActionLink("Identifier", "ProductIdentifierIndex", "ProductIdentifier", new { productId = ViewBag.ProductId }, null)
+    }
+    |
+    @if (ViewBag.Title.Contains("Documentation")) {
+        <b>@Html.ActionLink("Documentation", "ProductDocumentationIndex", "ProductDocumentation", new { productId = ViewBag.ProductId }, null)</b>
+    } else {
+        @Html.ActionLink("Documentation", "ProductDocumentationIndex", "ProductDocumentation", new { productId = ViewBag.ProductId }, null)
+    }
+    |
+    @if (ViewBag.Title.Contains("Image")) {
+        <b>@Html.ActionLink("Image", "ProductImageIndex", "ProductImage", new { productId = ViewBag.ProductId }, null)</b>
+    } else {
+        @Html.ActionLink("Image", "ProductImageIndex", "ProductImage", new { productId = ViewBag.ProductId }, null)
+    }
+</div>

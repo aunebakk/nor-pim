@@ -1,0 +1,32 @@
+﻿{
+  "overall": {
+    "style": "DotNetCoreApiDurianWithTypeScript",
+    "design": "TypeScriptHagtorn",
+    "primarykey": "financial_order_id",
+    "azureappname": "NorSolutionPim"
+  },
+  "domain": {
+    "name": "Cart"
+  },
+  "parent": {
+    "tablename": "financial_order",
+    "overridenice": "FinancialOrder",
+    "overridecamel": "financial_order",
+    "autoupdatescheme": "",
+    "durianclass": "",
+    "durianmethod": ""
+  },
+  "children": {
+  },
+  "autofill": {
+    "name": "user_id",
+    "type": "uniqueidentifier"
+  },
+  "result": {
+    "rundatetime": "2020.01.13 17:59:02",
+    "urls": [
+      "api/1/financialordersearchservice/getfinancialorder",
+      "api/1/financialordersearchservice/getfinancialordertypescript"
+    ]
+  }
+}

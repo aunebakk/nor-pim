@@ -1,0 +1,40 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:53 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialOrderTransactionTypeRefContract>
+
+@{
+    ViewBag.Title = "Index Financial Order Transaction Type Ref";
+}
+
+<h2>Index for Financial Order Transaction Type Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeFinancialOrderTransactionTypeRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Financial Order Transaction Type</th>
+        <th>Financial Order Transaction Type Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.FinancialOrderTransactionTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialOrderTransactionTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeFinancialOrderTransactionTypeRefEdit", new { financialOrderTransactionTypeRcd = item.FinancialOrderTransactionTypeRcd })
+                | @Html.ActionLink("Delete", "CrudeFinancialOrderTransactionTypeRefDelete", new { financialOrderTransactionTypeRcd = item.FinancialOrderTransactionTypeRcd })
+            </td>
+        </tr>
+    }
+
+</table>

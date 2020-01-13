@@ -1,0 +1,21 @@
+      <service name="SolutionNorClientRedone.BusinessLogicLayer.DiagnosticsService" behaviorConfiguration="soapBehaviorService">
+        <endpoint address="" binding="basicHttpBinding" contract="SolutionNorClientRedone.BusinessLogicLayer.IDiagnosticsService" />
+        <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+      </service>
+      <service name="SolutionNorClientRedone.BusinessLogicLayer.DefaultUserActivityService" behaviorConfiguration="soapBehaviorService">
+        <endpoint address="" binding="basicHttpBinding" contract="SolutionNorClientRedone.BusinessLogicLayer.IDefaultUserActivityService" />
+        <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+      </service>
+      <service name="SolutionNorClientRedone.BusinessLogicLayer.ProductCategoryService" behaviorConfiguration="soapBehaviorService">
+        <endpoint address="" binding="basicHttpBinding" contract="SolutionNorClientRedone.BusinessLogicLayer.IProductCategoryService" />
+        <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+      </service>
+      <service name="SolutionNorClientRedone.BusinessLogicLayer.ProductService" behaviorConfiguration="soapBehaviorService">
+        <endpoint address="" binding="basicHttpBinding" contract="SolutionNorClientRedone.BusinessLogicLayer.IProductService" />
+        <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+      </service>
+
+      <endpoint address="http://XXPrototypeDotNetFrameworkWebAppCrudeBusiness.azurewebsites.net/Product/ProductService.svc" binding="basicHttpBinding" bindingConfiguration="basicHttpBinding" contract="IProductService" name="BasicHttpBinding_IProductService" />
+      <endpoint address="http://XXPrototypeDotNetFrameworkWebAppCrudeBusiness.azurewebsites.net/Product/ProductCategoryService.svc" binding="basicHttpBinding" bindingConfiguration="basicHttpBinding" contract="IProductCategoryService" name="BasicHttpBinding_IProductCategoryService" />
+      <endpoint address="http://XXPrototypeDotNetFrameworkWebAppCrudeBusiness.azurewebsites.net/Default/DefaultUserActivityService.svc" binding="basicHttpBinding" bindingConfiguration="basicHttpBinding" contract="IDefaultUserActivityService" name="BasicHttpBinding_IDefaultUserActivityService" />
+      <endpoint address="http://XXPrototypeDotNetFrameworkWebAppCrudeBusiness.azurewebsites.net/Default/DiagnosticsService.svc" binding="basicHttpBinding" bindingConfiguration="basicHttpBinding" contract="IDiagnosticsService" name="BasicHttpBinding_IDiagnosticsService" />

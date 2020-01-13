@@ -1,0 +1,82 @@
+﻿
+<html>
+    <head>
+        <title>ProductCategory</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ProductCategory Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeProductCategoryService</label>
+        <br /><label>Contract name: CrudeProductCategoryContract</label>
+        <br /><label>Fetcher: FetchByProductCategoryId</label>
+        <br /><label>Id: ProductCategoryId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://localhost:64804/BusinessWCFSoap\Templates\Product/CrudeProductCategory.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Product Category Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Became Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Parent Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Code            </td><td>System.String</td></tr>
+            <tr><td>Product Category Name            </td><td>System.String</td></tr>
+            <tr><td>Product Category Position            </td><td>System.Int32</td></tr>
+            <tr><td>State            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeProductCategoryContract<b> FetchByProductCategoryId </b>(System.Guid productCategoryId);
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchByProductCategoryBecameId </b>(System.Guid productCategoryBecameId);
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchByProductCategoryParentId </b>(System.Guid productCategoryParentId);
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchByStateRcd </b>(System.String stateRcd);
+        <br />
+        <br />CrudeProductCategoryContract<b> FetchByProductCategoryName </b>(System.String productCategoryName);
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchWithFilter </b>(System.Guid productCategoryId,System.Guid productCategoryBecameId,System.Guid productCategoryParentId,System.String productCategoryCode,System.String productCategoryName,System.Int32 productCategoryPosition,System.String stateRcd,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeProductCategoryContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeProductCategoryContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeProductCategoryContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid productCategoryId);
+        <br />
+        <br />
+    </body>
+</html>
+

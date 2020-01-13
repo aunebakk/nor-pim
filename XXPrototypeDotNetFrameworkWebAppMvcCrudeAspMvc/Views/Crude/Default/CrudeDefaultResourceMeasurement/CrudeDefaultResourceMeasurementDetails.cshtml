@@ -1,0 +1,30 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:41:08 PM
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultResourceMeasurementContract
+
+@{
+    ViewBag.Title = "Details Default Resource Measurement";
+}
+
+<h2>Details for Default Resource Measurement</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Client Workingset Bytes</dt> <dd>@Html.DisplayFor(model => model.ClientWorkingsetBytes)</dd>
+        <dt>Business Workingset Bytes</dt> <dd>@Html.DisplayFor(model => model.BusinessWorkingsetBytes)</dd>
+        <dt>Database Size Bytes</dt> <dd>@Html.DisplayFor(model => model.DatabaseSizeBytes)</dd>
+        <dt>Default User Id</dt> <dd>@Html.DisplayFor(model => model.DefaultUserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeDefaultResourceMeasurementEdit", new { defaultResourceMeasurementId = Model.DefaultResourceMeasurementId }) |
+    @Html.ActionLink("New", "CrudeDefaultResourceMeasurementCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeDefaultResourceMeasurementIndex")
+</p>

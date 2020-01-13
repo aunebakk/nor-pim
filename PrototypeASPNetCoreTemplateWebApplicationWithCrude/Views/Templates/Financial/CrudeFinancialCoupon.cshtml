@@ -1,0 +1,102 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 1/13/2020 5:44:39 PM
+  Filename: C:\SQL2XProjects\SolutionNorSolutionPim\PrototypeASPNetCoreTemplateWebApplicationWithCrude\Template\Financial\FinancialCoupon.json
+  Template: sql2x.TemplateDotNetCoreApiGenerator.View
+  Style: DotNetCoreApi
+-->
+
+<style>
+    a {
+        color: lightgray;
+    } 
+
+    html {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    table {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        border-color: red;
+        font-weight: 100;
+        margin: 0px;
+        max-width: 100%;
+        align-content: flex-start
+    }
+
+    th {
+        background-color: rgb(20, 18, 18);
+        color: white;
+        text-align: left;
+    }
+
+    tr {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    td {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+
+    h3 {
+        font-family: 'Product Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+<h2><a id="CrudeFinancialCoupon">CrudeFinancialCoupon</a> ( DotNetCoreApi )</h2><br>
+<br>
+        <table>
+            <tr><td>Financial Coupon Id            </td><td>System.Guid</td></tr>
+            <tr><td>Coupon Number            </td><td>System.Int32</td></tr>
+            <tr><td>Value Amount            </td><td>System.Decimal</td></tr>
+            <tr><td>Valid From Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Valid Until Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Coupon Description            </td><td>System.String</td></tr>
+            <tr><td>Financial Currency Id            </td><td>System.Guid</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Financial Coupon Type            </td><td>System.String</td></tr>
+        </table>
+<br>
+<br>
+<i>GET</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchAll'>FetchAll</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchAllCount'>FetchAllCount</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchAllWithLimit' asp-route-limit='1'>FetchAllWithLimit</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchAllWithLimitAndOffset' asp-route-limit='1' asp-route-offset='1'>FetchAllWithLimitAndOffset</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchByFinancialCouponId' asp-route-financialcouponid=00000000-0000-0000-0000-000000000001>FetchByFinancialCouponId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchByFinancialCurrencyId' asp-route-financialcurrencyid=00000000-0000-0000-0000-000000000001>FetchByFinancialCurrencyId</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchByFinancialCouponTypeRcd' asp-route-financialcoupontypercd=00000000-0000-0000-0000-000000000001>FetchByFinancialCouponTypeRcd</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponFetchByFinancialCouponId' asp-route-financialcouponid=Guid.Empty>FetchByFinancialCouponId</a><br>
+<br>
+<br>
+<i>POST</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponCreate'>CrudeFinancialCouponCreate</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponCreateTest'>Create Test (GET)</a><br>
+<br>
+<br>
+<i>PUT</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponUpdate'>CrudeFinancialCouponUpdate</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponUpdateTest'>Update Test (GET)</a><br>
+<br>
+<br>
+<i>DELETE</i><br>
+<br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponDelete'>CrudeFinancialCouponDelete</a><br>
+<a asp-area='' asp-controller='CrudeFinancialCoupon' asp-action='CrudeFinancialCouponDeleteTest'>Delete Test (GET)</a><br>
