@@ -598,7 +598,7 @@ module DashboardFirst {
                         true, false));
 
                 Dashboard.tiles.push(
-                    new Tile("USER", "box", "Cart", 6, 260, 0, sizeFactor, false, "http://localhost:5000/api/1/cartproductsearchservice/getcartproducttypescript",
+                    new Tile("USER", "box", "Cart", 6, 260, 0, sizeFactor, false, "http://NorSolutionPimCore.azurewebsites.net/api/1/cartproductsearchservice/getcartproducttypescript",
                         true, false));
                 Dashboard.tiles.push(
                     new Tile("USER", "apps", "Apps", 6, 260, 220, sizeFactor, false, "../install/publish.htm",  // http

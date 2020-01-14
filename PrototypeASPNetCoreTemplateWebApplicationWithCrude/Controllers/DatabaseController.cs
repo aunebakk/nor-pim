@@ -122,10 +122,10 @@ select 'Created database: " + databaseName + @"'
         private static SqlManagementClient AzureSqlClient() {
             SqlManagementClient sqlClient;
             try {
-                var clientId = "c45a5d5d-719e-4e13-8338-4d49c1cc03f1"; // Principal Id | Application ID | Client ID 
-                var secret = "TineyOrg";
-                var tenantId = "1f5acd75-dad1-4df9-80e5-5f1204aabeb5";  // Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
-                var subscriptionId = "2198cdff-50cd-47d4-81c4-341c840313da"; // Environment.GetEnvironmentVariable("AZURE_SUBSCRIPTION_ID");
+                var clientId = "";        // Principal Id | Application ID | Client ID
+                var secret = "";
+                var tenantId = "";        // Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
+                var subscriptionId = "";  // Environment.GetEnvironmentVariable("AZURE_SUBSCRIPTION_ID");
 
                 ServiceClientCredentials serviceCreds = Task.Run(() => ApplicationTokenProvider.LoginSilentAsync(domain: tenantId, clientId: clientId, secret: secret)).Result;
 
@@ -153,7 +153,7 @@ select 'Created database: " + databaseName + @"'
 
                 sqlClient.Databases.CreateOrUpdate(
                     resourceGroupName: "Default-SQL-EastUS2",
-                    serverName: "hri0nhlzkl",
+                    serverName: "azureSQLServerName",
                     databaseName: "NorSolutionPim",
                     parameters: newDb
                     );
@@ -175,7 +175,7 @@ select 'Created database: " + databaseName + @"'
 
                 sqlClient.Databases.Delete(
                     resourceGroupName: "Default-SQL-EastUS2",
-                    serverName: "hri0nhlzkl",
+                    serverName: "azureSQLServerName",
                     databaseName: "NorSolutionPim"
                     );
             }
@@ -540,3 +540,4 @@ select 'Created database: " + databaseName + @"'
         }
     }
 }
+

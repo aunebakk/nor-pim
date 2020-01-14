@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:35:36 PM
+  Generated Date: 1/14/2020 7:24:40 AM
   Filename: C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\Template\Client\ClientEvent.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy

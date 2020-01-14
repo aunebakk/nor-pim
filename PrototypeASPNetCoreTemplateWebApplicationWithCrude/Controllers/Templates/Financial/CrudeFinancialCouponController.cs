@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:44:39 PM
+  Generated Date: 1/14/2020 7:29:03 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -105,17 +105,17 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponNumber" , "1" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/13/2020 5:44:39 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/13/2020 5:44:39 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/14/2020 7:29:03 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/14/2020 7:29:03 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponDescription" , "create" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:39 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:03 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCouponTypeRcd" , "create" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // POST model to myself
                 var client = new HttpClient ();
                 var response = client.PostAsync("http://.azurewebsites.net//api/1/CrudeFinancialCoupon/CrudeFinancialCouponCreate/", content).Result;
-                // todo var response = client.PostAsync("http://localhost:5000/api/1/CrudeFinancialCoupon/CrudeFinancialCouponCreate/", content).Result;
+                // todo var response = client.PostAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeFinancialCoupon/CrudeFinancialCouponCreate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )
@@ -145,17 +145,17 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponNumber" , "1" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/13/2020 5:44:39 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/13/2020 5:44:39 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/14/2020 7:29:03 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/14/2020 7:29:03 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponDescription" , "update" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:39 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:03 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCouponTypeRcd" , "update" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // PUT model to myself
                 var client = new HttpClient ();
                 var response = client.PutAsync("http://.azurewebsites.net//api/1/CrudeFinancialCoupon/CrudeFinancialCouponUpdate/", content).Result;
-                // todo var response = client.PutAsync("http://localhost:5000/api/1/CrudeFinancialCoupon/CrudeFinancialCouponUpdate/", content).Result;
+                // todo var response = client.PutAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeFinancialCoupon/CrudeFinancialCouponUpdate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )

@@ -20,7 +20,7 @@ namespace XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc.Controllers {
         }
 
         public ActionResult Splash () {
-            // Redirect ( "https://localhost:44341/Documentation/Splash.html" );
+            // Redirect ( "https://NorSolutionPim.azurewebsites.net/Documentation/Splash.html" );
             Response.Redirect ( "~/Documentation/Splash2.html", true );
 
             return null;

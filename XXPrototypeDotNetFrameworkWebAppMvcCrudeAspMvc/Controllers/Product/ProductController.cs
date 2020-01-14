@@ -17,7 +17,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
 
             new CrudeCartProductServiceClient().Update(cartProductContract);
 
-            Response.Redirect("http://localhost:5000/api/1/cartproductsearchservice/getcartproducttypescript");
+            Response.Redirect("http://NorSolutionPimCore.azurewebsites.net/api/1/cartproductsearchservice/getcartproducttypescript");
         }
 
         [HttpGet]
@@ -41,7 +41,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
 
             new CrudeCartProductServiceClient ( ).Insert ( cartProductContract );
 
-            Response.Redirect ( "http://localhost:5000/api/1/cartproductsearchservice/getcartproducttypescript", true );
+            Response.Redirect ( "http://NorSolutionPimCore.azurewebsites.net/api/1/cartproductsearchservice/getcartproducttypescript", true );
 
             return null; 
         }

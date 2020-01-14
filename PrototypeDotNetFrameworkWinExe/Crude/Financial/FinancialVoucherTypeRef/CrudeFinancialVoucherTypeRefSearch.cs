@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:38:51 PM
+  Generated Date: 1/14/2020 7:25:43 AM
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
 using System;

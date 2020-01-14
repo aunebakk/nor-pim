@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:50:54 PM
+  Generated Date: 1/14/2020 7:33:33 AM
   Template: sql2x.ProxyGenerator.ProxyForMethod
 */
 using System.Collections.Generic;
@@ -12,7 +12,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductReferenceAttributeSearchService")]
-    public interface IProductReferenceAttributeSearchService {
+    public interface IProductReferenceAttributeSearchService
+    {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductReferenceAttributeSearchService/ProductReferenceAttributeSearchWithFilter", ReplyAction = "http://tempuri.org/IProductReferenceAttributeSearchService/ProductReferenceAttributeSearchWithFilterResponse")]
         List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter();
     }
@@ -42,7 +43,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter() {
+        public List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter()
+        {
             return base.Channel.ProductReferenceAttributeSearchWithFilter();
         }
     }

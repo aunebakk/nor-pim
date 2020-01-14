@@ -1,9 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <StartupScript>(Blank)</StartupScript>
     <StartAction>StartNone</StartAction>
-    <TargetConnectionString>XXXData Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;</TargetConnectionString>
+    <TargetConnectionString>XXXData Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;</TargetConnectionString>
     <TargetDatabase>NorSolutionPim</TargetDatabase>
   </PropertyGroup>
 </Project>
+

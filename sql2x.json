@@ -1,9 +1,9 @@
-﻿{
+{
   "database": {
-    "connectionstring": "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;",
+    "connectionstring": "Data Source=(localdb)\\MSSQLLocalDB;",
     "connectionstringazuretable": "",
     "locallink": "",
-    "deploylink": "Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;"
+    "deploylink": "Data Source=(localdb)\\MSSQLLocalDB;"
   },
   "solution": {
     "path": ""
@@ -12,7 +12,7 @@
     "userid": "{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}"
   },
   "general": {
-    "endpoint": "http://localhost:64804/",
+    "endpoint": "http://NorSolutionPimBusiness.azurewebsites.net/",
     "fetcherforreference": "true"
   },
   "durian": {
@@ -58,3 +58,4 @@
         "path": ""
       }
 }
+

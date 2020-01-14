@@ -7,7 +7,7 @@
     <Name>PrototypeDatabaseTemplateEmpty</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{f7d54b03-bcae-444d-9d21-3969e4e5206e}</ProjectGuid>
+    <ProjectGuid>{9135d205-bc24-460d-b78d-9be9a7d4b3b2}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>

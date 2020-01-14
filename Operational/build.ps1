@@ -313,13 +313,13 @@ try {
         $SMTPClient.UseDefaultCredentials = $false
 
         $SMTPClient.Credentials = New-Object System.Net.NetworkCredential( `
-            'norgate5@outlook.com' , `
-            'en8to3FIRE2' `
+            'emailLog' , `
+            'passwordPersonalStyleLargeEndingTwo' `
             );
 
         $emailMessage = New-Object System.Net.Mail.MailMessage
-        $emailMessage.From = 'norgate5@outlook.com'
-        $emailMessage.To.Add('aunebakk@hotmail.com')
+        $emailMessage.From = 'emailLog'
+        $emailMessage.To.Add('emailPersonal@first.com')
         $emailMessage.Subject = ($env:computername + ' : ' + $MyInvocation.MyCommand.Name)
         $emailMessage.Body = $htmlLog
         $emailMessage.IsBodyHtml = $true
@@ -378,3 +378,4 @@ if ($returnHtml -and $htmlLog) {
 elseif ($htmlLog) { 
     try { Remove-Variable -Name htmlLog } catch {} }
 #endregion
+

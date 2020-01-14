@@ -1,7 +1,7 @@
 ﻿// SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 1/13/2020 5:58:52 PM
+// Generated Date: 1/14/2020 7:37:26 AM
 // Template: sql2x.CrudeTypeScriptGenerator.DesignHagtorn
 module SQL2XTemplateCrudeTableGetCartProduct {
     "use strict";
@@ -441,13 +441,13 @@ module SQL2XTemplateCrudeTableGetCartProduct {
             if (this.url !== "") {
                 // details
                 this.detailLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 1);
-                this.detailLink.linkUrl = "https://localhost:44341/controller/action?id=";
+                this.detailLink.linkUrl = "http://NorSolutionPim.azurewebsites.net/controller/action?id=";
                 this.detailLink.draw(this.tileFontSize + "px Arial", "D", this.textTop(this.name));
                 context.stroke();
 
                 // un Order                                                                                 
                 this.unOrderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 2);                          
-                this.unOrderLink.linkUrl = "https://localhost:44341/controller/action?id=";
+                this.unOrderLink.linkUrl = "http://NorSolutionPim.azurewebsites.net/controller/action?id=";
                 this.unOrderLink.draw(this.tileFontSize + "px Arial", "U", this.textTop(this.name));        
                 context.stroke();                                                                           
             }

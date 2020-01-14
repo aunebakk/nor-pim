@@ -77,12 +77,12 @@ class Splash {
             );
 
             setTimeout(function (): void {
-                window.location.href = 'https://localhost:44341/home/index';
+                window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
                 }, 2000
             );
 
         } else {
-            window.location.href = 'https://localhost:44341/home/index';
+            window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
         }
 
         sessionStorage.setItem('splashShown', "true");
@@ -129,7 +129,7 @@ class Splash {
         } //else {
         //    setTimeout(function (): void {
         //        // go to norpim desktop
-        //        window.location.href = 'https://localhost:44341/home/index';
+        //        window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
         //        //window.location.href = '/home/index';
         //    }, 500
         //    );

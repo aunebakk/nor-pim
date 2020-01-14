@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{43B7E274-4822-4EA9-AA26-A4C6D145B9B9}</ProjectGuid>
+    <ProjectGuid>{B4FFD7CE-0140-4A55-9905-4F49DD299704}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -27,7 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -545,8 +545,24 @@
     <Content Include="images\favicon\S__4743267.jpg" />
     <Content Include="install\maybe\publish.htm" />
     <Content Include="install\maybe\setup.exe" />
+    <Content Include="install\PrototypeDotNetFrameworkWinExe.exe" />
+    <Content Include="install\PrototypeDotNetFrameworkWinExe.pdb" />
     <Content Include="install\publish.htm" />
+    <Content Include="install\setup.exe" />
+    <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.dll" />
+    <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.pdb" />
+    <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.dll" />
+    <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.pdb" />
     <Content Include="Prototype.json" />
+    <Content Include="install\PrototypeDotNetFrameworkWinExe.application" />
+    <Content Include="install\PrototypeDotNetFrameworkWinExe.exe.config" />
+    <Content Include="install\PrototypeDotNetFrameworkWinExe.exe.manifest" />
+    <Content Include="install\Application Files\PrototypeDotNetFrameworkWinExe_0_1_1_17\PrototypeDotNetFrameworkWinExe.exe.config.deploy" />
+    <Content Include="install\Application Files\PrototypeDotNetFrameworkWinExe_0_1_1_17\PrototypeDotNetFrameworkWinExe.exe.deploy" />
+    <Content Include="install\Application Files\PrototypeDotNetFrameworkWinExe_0_1_1_17\PrototypeDotNetFrameworkWinExe.exe.manifest" />
+    <Content Include="install\Application Files\PrototypeDotNetFrameworkWinExe_0_1_1_17\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.dll.deploy" />
+    <Content Include="install\Application Files\PrototypeDotNetFrameworkWinExe_0_1_1_17\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.dll.deploy" />
+    <Content Include="install\Application Files\PrototypeDotNetFrameworkWinExe_0_1_1_17\Main\pimlogo.png.deploy" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -1335,11 +1351,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{b83512cf-abdb-45a0-a34a-19ac14e9bf2d}</Project>
+      <Project>{abc1aa7b-0d20-4edc-b984-10c27b96e0b0}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{c2621973-9ff9-4861-b3da-7fc044ebd128}</Project>
+      <Project>{a322cbab-7e04-4ad8-92ef-8f9023c452e4}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>

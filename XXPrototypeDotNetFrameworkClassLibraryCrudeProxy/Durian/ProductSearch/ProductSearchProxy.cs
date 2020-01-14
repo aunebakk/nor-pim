@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:50:51 PM
+  Generated Date: 1/14/2020 7:33:32 AM
   Template: sql2x.ProxyGenerator.ProxyForMethod
 */
 using System.Collections.Generic;
@@ -12,7 +12,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductSearchService")]
-    public interface IProductSearchService {
+    public interface IProductSearchService
+    {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductSearchService/ProductHistory", ReplyAction = "http://tempuri.org/IProductSearchService/ProductHistoryResponse")]
         List<ProductHistoryContract> ProductHistory(System.Guid productId);
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductSearchService/ProductSearchByName", ReplyAction = "http://tempuri.org/IProductSearchService/ProductSearchByNameResponse")]
@@ -58,39 +59,48 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<ProductHistoryContract> ProductHistory(System.Guid productId) {
+        public List<ProductHistoryContract> ProductHistory(System.Guid productId)
+        {
             return base.Channel.ProductHistory(productId);
         }
 
-        public List<ProductSearchByNameContract> ProductSearchByName(string productName) {
+        public List<ProductSearchByNameContract> ProductSearchByName(string productName)
+        {
             return base.Channel.ProductSearchByName(productName);
         }
 
-        public ProductSearchByIdContract ProductSearchById(System.Guid productId) {
+        public ProductSearchByIdContract ProductSearchById(System.Guid productId)
+        {
             return base.Channel.ProductSearchById(productId);
         }
 
-        public List<ProductSearchByCategoryContract> ProductSearchByCategory(System.Guid productCategoryId, bool onParent) {
+        public List<ProductSearchByCategoryContract> ProductSearchByCategory(System.Guid productCategoryId, bool onParent)
+        {
             return base.Channel.ProductSearchByCategory(productCategoryId, onParent);
         }
 
-        public List<ProductSearchByCategoryCodeContract> ProductSearchByCategoryCode(string productCategoryCode, bool onParent) {
+        public List<ProductSearchByCategoryCodeContract> ProductSearchByCategoryCode(string productCategoryCode, bool onParent)
+        {
             return base.Channel.ProductSearchByCategoryCode(productCategoryCode, onParent);
         }
 
-        public List<ProductSearchByCategoryType1Contract> ProductSearchByCategoryType1(System.Guid productCategoryId, bool onParent) {
+        public List<ProductSearchByCategoryType1Contract> ProductSearchByCategoryType1(System.Guid productCategoryId, bool onParent)
+        {
             return base.Channel.ProductSearchByCategoryType1(productCategoryId, onParent);
         }
 
-        public List<ProductSearchByCategoryType2Contract> ProductSearchByCategoryType2(System.Guid productCategoryId, bool onParent) {
+        public List<ProductSearchByCategoryType2Contract> ProductSearchByCategoryType2(System.Guid productCategoryId, bool onParent)
+        {
             return base.Channel.ProductSearchByCategoryType2(productCategoryId, onParent);
         }
 
-        public List<ProductSearchByCategoryType3Contract> ProductSearchByCategoryType3(System.Guid productCategoryId, bool onParent) {
+        public List<ProductSearchByCategoryType3Contract> ProductSearchByCategoryType3(System.Guid productCategoryId, bool onParent)
+        {
             return base.Channel.ProductSearchByCategoryType3(productCategoryId, onParent);
         }
 
-        public List<ProductSearchByCategoryType4Contract> ProductSearchByCategoryType4(System.Guid productCategoryId, bool onParent) {
+        public List<ProductSearchByCategoryType4Contract> ProductSearchByCategoryType4(System.Guid productCategoryId, bool onParent)
+        {
             return base.Channel.ProductSearchByCategoryType4(productCategoryId, onParent);
         }
     }

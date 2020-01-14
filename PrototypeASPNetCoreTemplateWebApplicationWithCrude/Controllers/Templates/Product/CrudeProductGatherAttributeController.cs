@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:44:48 PM
+  Generated Date: 1/14/2020 7:29:06 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -106,13 +106,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "ProductGatherAttributeValue" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "ProductGatherAttributeTypeRcd" , "create" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:48 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:06 AM" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // POST model to myself
                 var client = new HttpClient ();
                 var response = client.PostAsync("http://.azurewebsites.net//api/1/CrudeProductGatherAttribute/CrudeProductGatherAttributeCreate/", content).Result;
-                // todo var response = client.PostAsync("http://localhost:5000/api/1/CrudeProductGatherAttribute/CrudeProductGatherAttributeCreate/", content).Result;
+                // todo var response = client.PostAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeProductGatherAttribute/CrudeProductGatherAttributeCreate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )
@@ -143,13 +143,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "ProductGatherAttributeValue" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "ProductGatherAttributeTypeRcd" , "update" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:48 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:06 AM" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // PUT model to myself
                 var client = new HttpClient ();
                 var response = client.PutAsync("http://.azurewebsites.net//api/1/CrudeProductGatherAttribute/CrudeProductGatherAttributeUpdate/", content).Result;
-                // todo var response = client.PutAsync("http://localhost:5000/api/1/CrudeProductGatherAttribute/CrudeProductGatherAttributeUpdate/", content).Result;
+                // todo var response = client.PutAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeProductGatherAttribute/CrudeProductGatherAttributeUpdate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )

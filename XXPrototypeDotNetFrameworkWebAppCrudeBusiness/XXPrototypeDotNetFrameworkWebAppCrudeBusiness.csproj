@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C403AEC5-C94A-4A2A-BC16-F2414C165665}</ProjectGuid>
+    <ProjectGuid>{65F48B65-D3F7-45E0-9183-6B88F3843E33}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -420,6 +420,9 @@
     <Content Include="ProductReference\json\ProductReferenceIdentifier.json" />
     <Content Include="ProductReference\json\ProductReferenceImageType.json" />
     <Content Include="ProductReference\json\ProductReferenceInfo.json" />
+    <Content Include="Operational\Build package to disk.bat" />
+    <Content Include="Operational\Publish To Azure.bat" />
+    <Content Include="Operational\Get-Web-App-PublishingProfile.ps1" />
     <None Include="Properties\PublishProfiles\XXPrototypeDotNetFrameworkWebAppCrudeBusiness - Web Deploy.pubxml" />
     <Content Include="Prototype.json" />
     <Content Include="publish.bat" />
@@ -546,15 +549,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj">
-      <Project>{f7d54b03-bcae-444d-9d21-3969e4e5206e}</Project>
+      <Project>{9135d205-bc24-460d-b78d-9be9a7d4b3b2}</Project>
       <Name>PrototypeDatabaseTemplateEmpty</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{b83512cf-abdb-45a0-a34a-19ac14e9bf2d}</Project>
+      <Project>{abc1aa7b-0d20-4edc-b984-10c27b96e0b0}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj">
-      <Project>{b4da779e-70dd-45c1-8827-b583af885c2c}</Project>
+      <Project>{6703df8d-833a-4570-96aa-4f21623b136f}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeData</Name>
     </ProjectReference>
   </ItemGroup>

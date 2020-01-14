@@ -3,8 +3,8 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:45087",
-      "sslPort": 44340
+      "applicationUrl": "http://localhost:60647",
+      "sslPort": 44331
     }
   },
   "profiles": {
@@ -18,7 +18,7 @@
     "PrototypeASPNetCoreTemplateWebApplicationWithCrude": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "applicationUrl": "https://localhost:5001;http://NorSolutionPimCore.azurewebsites.net",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

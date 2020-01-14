@@ -1,4 +1,4 @@
-﻿{
+{
   "SQL2X": {
     "Version": "0.1.0"
   },
@@ -19,9 +19,9 @@
     "GitHubImports": []
   },
   "Database": {
-    "ConnectionStringLocal": "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;",
+    "ConnectionStringLocal": "Data Source=(localdb)\\MSSQLLocalDB;",
     "ConnectionStringAzureTable": null,
-    "ConnectionStringRemote": "Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;",
+    "ConnectionStringRemote": "Data Source=(localdb)\\MSSQLLocalDB;",
     "InitialSchema": null,
     "TargetDatabase": null
   },

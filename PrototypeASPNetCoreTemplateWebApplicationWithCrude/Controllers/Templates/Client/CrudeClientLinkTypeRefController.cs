@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:44:33 PM
+  Generated Date: 1/14/2020 7:29:01 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -90,13 +90,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 pairs.Add ( new KeyValuePair<string , string> ( "ClientLinkTypeName" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "ClientLinkTypeDescription" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "SortOrder" , "1" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:33 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:01 AM" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // POST model to myself
                 var client = new HttpClient ();
                 var response = client.PostAsync("http://.azurewebsites.net//api/1/CrudeClientLinkTypeRef/CrudeClientLinkTypeRefCreate/", content).Result;
-                // todo var response = client.PostAsync("http://localhost:5000/api/1/CrudeClientLinkTypeRef/CrudeClientLinkTypeRefCreate/", content).Result;
+                // todo var response = client.PostAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeClientLinkTypeRef/CrudeClientLinkTypeRefCreate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )
@@ -129,13 +129,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 pairs.Add ( new KeyValuePair<string , string> ( "ClientLinkTypeName" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "ClientLinkTypeDescription" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "SortOrder" , "1" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:33 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:01 AM" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // PUT model to myself
                 var client = new HttpClient ();
                 var response = client.PutAsync("http://.azurewebsites.net//api/1/CrudeClientLinkTypeRef/CrudeClientLinkTypeRefUpdate/", content).Result;
-                // todo var response = client.PutAsync("http://localhost:5000/api/1/CrudeClientLinkTypeRef/CrudeClientLinkTypeRefUpdate/", content).Result;
+                // todo var response = client.PutAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeClientLinkTypeRef/CrudeClientLinkTypeRefUpdate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )

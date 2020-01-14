@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:44:40 PM
+  Generated Date: 1/14/2020 7:29:04 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -113,7 +113,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:40 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:04 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "Comment" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "LineNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialUnitOfMeasurementRcd" , "create" ) );
@@ -123,7 +123,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 // POST model to myself
                 var client = new HttpClient ();
                 var response = client.PostAsync("http://.azurewebsites.net//api/1/CrudeFinancialOrderLine/CrudeFinancialOrderLineCreate/", content).Result;
-                // todo var response = client.PostAsync("http://localhost:5000/api/1/CrudeFinancialOrderLine/CrudeFinancialOrderLineCreate/", content).Result;
+                // todo var response = client.PostAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeFinancialOrderLine/CrudeFinancialOrderLineCreate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )
@@ -152,7 +152,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:40 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:04 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "Comment" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "LineNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialUnitOfMeasurementRcd" , "update" ) );
@@ -162,7 +162,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 // PUT model to myself
                 var client = new HttpClient ();
                 var response = client.PutAsync("http://.azurewebsites.net//api/1/CrudeFinancialOrderLine/CrudeFinancialOrderLineUpdate/", content).Result;
-                // todo var response = client.PutAsync("http://localhost:5000/api/1/CrudeFinancialOrderLine/CrudeFinancialOrderLineUpdate/", content).Result;
+                // todo var response = client.PutAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeFinancialOrderLine/CrudeFinancialOrderLineUpdate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )

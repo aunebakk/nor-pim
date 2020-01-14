@@ -500,20 +500,20 @@ module SQL2XTemplateCrudeTableDurian {
                 // edit link
                 this.editLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 1);
                 this.editLink
-                    .linkUrl = 'https://localhost:44341/ProductMaintenance/ProductMaintenanceEdit?productId=';
+                    .linkUrl = 'http://NorSolutionPim.azurewebsites.net/ProductMaintenance/ProductMaintenanceEdit?productId=';
                 this.editLink.draw(this.tileFont(), 'E', this.textTop(this.name));
                 context.stroke();
 
                 // detail link
                 this.detailLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 2);
                 this.detailLink
-                    .linkUrl = 'https://localhost:44341/Product/PIMDetails?productId=';
+                    .linkUrl = 'http://NorSolutionPim.azurewebsites.net/Product/PIMDetails?productId=';
                 this.detailLink.draw(this.tileFont(), 'D', this.textTop(this.name));
 
                 // order link                                                           //here
                 this.orderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 3);        //here
                 this.orderLink                                                          //here
-                    .linkUrl = 'https://localhost:44341/Product/Order?productId=';       //here 
+                    .linkUrl = 'http://NorSolutionPim.azurewebsites.net/Product/Order?productId=';       //here 
                 this.orderLink.draw(this.tileFont(), 'O', this.textTop(this.name));     //here
             }
 

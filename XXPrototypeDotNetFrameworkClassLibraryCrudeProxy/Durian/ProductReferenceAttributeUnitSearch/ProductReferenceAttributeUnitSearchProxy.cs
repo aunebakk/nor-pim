@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:50:56 PM
+  Generated Date: 1/14/2020 7:33:34 AM
   Template: sql2x.ProxyGenerator.ProxyForMethod
 */
 using System.Collections.Generic;
@@ -12,7 +12,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductReferenceAttributeUnitSearchService")]
-    public interface IProductReferenceAttributeUnitSearchService {
+    public interface IProductReferenceAttributeUnitSearchService
+    {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductReferenceAttributeUnitSearchService/ProductReferenceAttributeUnitSearchWithFilter", ReplyAction = "http://tempuri.org/IProductReferenceAttributeUnitSearchService/ProductReferenceAttributeUnitSearchWithFilterResponse")]
         List<ProductReferenceAttributeUnitSearchWithFilterContract> ProductReferenceAttributeUnitSearchWithFilter();
     }
@@ -42,7 +43,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<ProductReferenceAttributeUnitSearchWithFilterContract> ProductReferenceAttributeUnitSearchWithFilter() {
+        public List<ProductReferenceAttributeUnitSearchWithFilterContract> ProductReferenceAttributeUnitSearchWithFilter()
+        {
             return base.Channel.ProductReferenceAttributeUnitSearchWithFilter();
         }
     }

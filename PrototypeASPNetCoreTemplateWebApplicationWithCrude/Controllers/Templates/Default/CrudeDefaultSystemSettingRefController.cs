@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:44:38 PM
+  Generated Date: 1/14/2020 7:29:02 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -88,13 +88,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "DefaultSystemSettingRcd" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "DefaultSystemSettingName" , "create" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:38 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:02 AM" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // POST model to myself
                 var client = new HttpClient ();
                 var response = client.PostAsync("http://.azurewebsites.net//api/1/CrudeDefaultSystemSettingRef/CrudeDefaultSystemSettingRefCreate/", content).Result;
-                // todo var response = client.PostAsync("http://localhost:5000/api/1/CrudeDefaultSystemSettingRef/CrudeDefaultSystemSettingRefCreate/", content).Result;
+                // todo var response = client.PostAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeDefaultSystemSettingRef/CrudeDefaultSystemSettingRefCreate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )
@@ -125,13 +125,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "DefaultSystemSettingRcd" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "DefaultSystemSettingName" , "update" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/13/2020 5:44:38 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 7:29:02 AM" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
                 // PUT model to myself
                 var client = new HttpClient ();
                 var response = client.PutAsync("http://.azurewebsites.net//api/1/CrudeDefaultSystemSettingRef/CrudeDefaultSystemSettingRefUpdate/", content).Result;
-                // todo var response = client.PutAsync("http://localhost:5000/api/1/CrudeDefaultSystemSettingRef/CrudeDefaultSystemSettingRefUpdate/", content).Result;
+                // todo var response = client.PutAsync("http://NorSolutionPimCore.azurewebsites.net/api/1/CrudeDefaultSystemSettingRef/CrudeDefaultSystemSettingRefUpdate/", content).Result;
 
                 // read/return reply
                 if ( response.IsSuccessStatusCode )

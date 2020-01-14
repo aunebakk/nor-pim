@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/13/2020 5:54:25 PM
+  Generated Date: 1/14/2020 7:35:31 AM
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -32,7 +32,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return businessLogicLayer.CategoryTreeFromDal(dataAccessLayer.CategoryTree());
         }
 
-        public List<CategoryFindContract> CategoryFind(string findWhat) {
+        public List<CategoryFindContract> CategoryFind(string findWhat)
+        {
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.CategorySearch();
             var businessLogicLayer = new CategoryFind();
             return businessLogicLayer.CategoryFindFromDal(dataAccessLayer.CategoryFind(findWhat));

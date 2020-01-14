@@ -1,9 +1,9 @@
-﻿{
+{
   "database": {
-    "connectionstring": "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;",
+    "connectionstring": "Data Source=(localdb)\\MSSQLLocalDB;",
     "connectionstringazuretable": "",
     "locallink": "",
-    "deploylink": "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+    "deploylink": "Data Source=(localdb)\\MSSQLLocalDB;"
   },
   "solution": {
     "path": ""
@@ -56,3 +56,4 @@
         "path": ".\\Documentation"
       }
 }
+
