@@ -444,7 +444,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                             insert into client ( client_id, first_name, middle_name, last_name, client_nationality_rcd, client_gender_rcd, client_title_rcd, client_type_rcd, user_id, date_time)
 			                            values (@client_id,	'Test', '', 'Data', dbo.ref('client_nationality_ref.OCA'), dbo.ref('client_gender_ref.MAA'), dbo.ref('client_title_ref.MR'), dbo.ref('client_type_ref.BUA'), '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
                             insert into client_contact_method ( client_contact_method_id, client_id, client_contact_method_rcd, contact_method_way, comment, user_id, date_time)
-			                            values ( newid(), @client_id, dbo.ref('client_contact_method_ref.EMA'), 'norgate5@outlook.com', '', '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+			                            values ( newid(), @client_id, dbo.ref('client_contact_method_ref.EMA'), 'email@outlook.com', '', '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
                             insert into client_contact_method ( client_contact_method_id, client_id, client_contact_method_rcd, contact_method_way, comment, user_id, date_time)
 			                            values ( newid(), @client_id, dbo.ref('client_contact_method_ref.MOA'), '+1 987 654321', '', '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
                             insert into client_link ( client_link_id, client_id, client_link_type_rcd, link, user_id, date_time)

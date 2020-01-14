@@ -1,4 +1,4 @@
-﻿// (c) www.aunebakk.com aunebakk@hotmail.com
+﻿// (c) sql2x.org
 "use strict";
 module ChapterIndex {
     type ProductCategoriesType = {
