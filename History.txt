@@ -77,4 +77,8 @@
 2020.01.14 15:13:39  , OpenMajorWebSites                                          , 78 , 15:13:39 , 15:13:40 , True , False, False, False,         1,      ,    1,      0,          0, , 
 2020.01.14 15:13:41  , TestsAddToTableStorage                                     , 79 , 15:13:41 , 15:15:02 , True , False, False, False,        82,      ,  913,      0,         -1, , 
 2020.01.14 15:15:04  , CreateSolutionGroupProjects                                , 80 , 15:15:04 , 15:15:08 , True , False, False, False,         4,      ,    5,      0,          0, , 
-2020.01.14 15:15:09  , DistributeCreation                                         , 81 , 15:15:09 
+2020.01.14 15:15:09  , DistributeCreation                                         , 81 , 15:15:09 , 15:19:21 , True , False, False, False,       253,      , 1014,      2,         -1, , 
+2020.01.14 15:19:25  , TimeUsedForCreatePart                                      , 82 , 15:19:25 , 15:19:25 , True , False, False, False,      1316,     2, 1819,      5,         20, , 
+2020.01.14 15:19:26  , SendMailReport                                             , 83 , 15:19:26 , 15:19:29 , True , False, False, False,         3,      ,    1,      0,          0, , 
+2020.01.14 15:19:30  , LastInCreatePart                                           , 84 , 15:19:30 , 15:19:31 , True , False, False, False,         0,      ,    1,      0,          0, , 
+2020.01.14 15:32:17  , DistributeCreation                                         , 81 , 15:32:17 
