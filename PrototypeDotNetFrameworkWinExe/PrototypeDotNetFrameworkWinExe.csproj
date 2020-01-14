@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6AFA8212-8697-4353-A65C-DB6E6FD6B648}</ProjectGuid>
+    <ProjectGuid>{8DD4EE28-C8BB-461B-8F0D-8CF49E2E3683}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PrototypeDotNetFrameworkWinExe</RootNamespace>
@@ -2459,7 +2459,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Operational\Publish WinForm layer to ASP site install directory.bat" />
     <None Include="Prototype.json" />
     <None Include="Template\Cart\CartProduct.json" />
     <None Include="Template\Cart\CartProductPrice.json" />
@@ -2586,11 +2585,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{38cc40dc-00aa-495a-b735-d07e7e7dca9b}</Project>
+      <Project>{e874f590-1f76-4a9f-ab21-96a6299990d2}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{4dc2c52e-92fc-42de-8917-c56d2bac81e1}</Project>
+      <Project>{3e3d860d-2b2d-4090-af7e-4c8e110d0169}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -2609,7 +2608,6 @@
   <ItemGroup>
     <Content Include="Main\pimlogo.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

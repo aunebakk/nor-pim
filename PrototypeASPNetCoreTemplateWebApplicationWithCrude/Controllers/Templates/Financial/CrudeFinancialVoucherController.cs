@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/14/2020 9:46:28 AM
+  Generated Date: 1/14/2020 10:47:55 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -104,9 +104,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 9:46:28 AM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/14/2020 9:46:28 AM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/14/2020 9:46:28 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 10:47:55 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/14/2020 10:47:55 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/14/2020 10:47:55 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "VoucherNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "VoucherDescription" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialVoucherTypeRcd" , "create" ) );
@@ -144,9 +144,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 9:46:28 AM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/14/2020 9:46:28 AM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/14/2020 9:46:28 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "1/14/2020 10:47:55 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "1/14/2020 10:47:55 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "1/14/2020 10:47:55 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "VoucherNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "VoucherDescription" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialVoucherTypeRcd" , "update" ) );
