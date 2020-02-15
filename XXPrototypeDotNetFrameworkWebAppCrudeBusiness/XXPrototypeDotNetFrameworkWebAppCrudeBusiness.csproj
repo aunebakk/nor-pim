@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B6F448A5-37BB-440C-BCB2-BE9AA289781F}</ProjectGuid>
+    <ProjectGuid>{C59FA48C-4797-447A-B516-BD573E2C21E2}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -420,9 +420,9 @@
     <Content Include="ProductReference\json\ProductReferenceIdentifier.json" />
     <Content Include="ProductReference\json\ProductReferenceImageType.json" />
     <Content Include="ProductReference\json\ProductReferenceInfo.json" />
+    <Content Include="Operational\Build package to disk.bat" />
+    <Content Include="Operational\Get-Web-App-PublishingProfile.ps1" />
     <None Include="Properties\PublishProfiles\XXPrototypeDotNetFrameworkWebAppCrudeBusiness - Web Deploy.pubxml" />
-    <Content Include="Prototype.json" />
-    <Content Include="publish.bat" />
     <None Include="Template\Cart\CartProduct.json" />
     <None Include="Template\Cart\CartProductPrice.json" />
     <None Include="Template\Client\Client.json" />
@@ -546,15 +546,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj">
-      <Project>{cc9b4732-ff3e-4467-adc0-359b98c0534c}</Project>
+      <Project>{9e1da022-f096-4e1a-bf8c-22b5139bd820}</Project>
       <Name>PrototypeDatabaseTemplateEmpty</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{ada9ee4b-41e6-42b2-9dde-8a05661ad4e9}</Project>
+      <Project>{f66cdf45-eb4b-4414-9e40-e218ae616539}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj">
-      <Project>{36e6ae89-ba39-4489-9469-c5392481f7b1}</Project>
+      <Project>{95f7bde4-362f-4bab-b33b-736f6f231205}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeData</Name>
     </ProjectReference>
   </ItemGroup>

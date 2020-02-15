@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 1/14/2020 8:18:55 PM
+  Generated Date: 2/15/2020 3:39:34 AM
   Filename: C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\Template\Product\ProductGatherAttributeTypeRef.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy

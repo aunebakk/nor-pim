@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0DCE9692-95E5-4117-B248-AD7ECA2AC57B}</ProjectGuid>
+    <ProjectGuid>{6703623B-CACF-4EE3-865B-6D473D0BABE3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</RootNamespace>
@@ -185,7 +185,6 @@
     <Compile Include="Service\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Prototype.json" />
     <None Include="Service\all.bat" />
     <None Include="Template\Cart\CartProduct.json" />
     <None Include="Template\Cart\CartProductPrice.json" />
@@ -310,7 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{ada9ee4b-41e6-42b2-9dde-8a05661ad4e9}</Project>
+      <Project>{f66cdf45-eb4b-4414-9e40-e218ae616539}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
   </ItemGroup>
