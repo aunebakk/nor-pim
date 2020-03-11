@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 3/11/2020 1:37:50 PM
+  Generated Date: 3/11/2020 9:27:32 PM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -115,9 +115,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyTypeRcd" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyAgainstFinancialCurrencyTypeRcd" , "create" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/11/2020 1:37:50 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/11/2020 1:37:50 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/11/2020 1:37:50 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/11/2020 9:27:32 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/11/2020 9:27:32 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/11/2020 9:27:32 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "DecimalCount" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyTypeCode" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyTypeName" , "create" ) );
@@ -157,9 +157,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyTypeRcd" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyAgainstFinancialCurrencyTypeRcd" , "update" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/11/2020 1:37:50 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/11/2020 1:37:50 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/11/2020 1:37:50 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/11/2020 9:27:32 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/11/2020 9:27:32 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/11/2020 9:27:32 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "DecimalCount" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyTypeCode" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCurrencyTypeName" , "update" ) );
