@@ -23,7 +23,7 @@
     "type": "uniqueidentifier"
   },
   "result": {
-    "rundatetime": "2020.03.11 22:17:15",
+    "rundatetime": "2020.03.12 12:52:47",
     "urls": [
       "api/1/cartproductsearchservice/getcartproduct",
       "api/1/cartproductsearchservice/getcartproducttypescript"

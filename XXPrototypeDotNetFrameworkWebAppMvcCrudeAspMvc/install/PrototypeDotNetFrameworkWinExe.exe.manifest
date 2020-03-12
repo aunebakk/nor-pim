@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+x/lMN4FWj6Ec3xp0lNXI0lGLb1T+dre2kvnn5GEqns=</dsig:DigestValue>
+        <dsig:DigestValue>sBwvwwzIK+kyMEBtn85H90Xj2LRcCEZXW2aRe/0GqAw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0HzIRHpPpA+QcxSKkOoO7xlXBoI5HRoFafHOTEaCtdM=</dsig:DigestValue>
+        <dsig:DigestValue>D7neBsJbDMSyojGEHyrlRwsctirGRp7M2dxMS4KdjO0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/pYt4OEt97B7ayWzgvrBsXacCuhuyd1ZkuX49DnWCL0=</dsig:DigestValue>
+        <dsig:DigestValue>oCFF+PGPXNQXusaXCPpqjy3BfhdMkPFwG2DGCdUlWNI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42748">
+  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42749">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Q6nboCY74fVb8HK4XwDncYcP8vj2Gm4ozVpSZyEn4hc=</dsig:DigestValue>
+      <dsig:DigestValue>IO8XvadMrW4NGZ621klwGSMlX0TA28PIDhCNAOMd40k=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

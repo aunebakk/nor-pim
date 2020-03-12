@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 3/11/2020 9:07:11 PM
+  Generated Date: 3/12/2020 12:42:07 PM
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
