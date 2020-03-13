@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 3/12/2020 12:44:06 PM
+  Generated Date: 3/13/2020 10:45:48 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -105,10 +105,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponNumber" , "1" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/12/2020 12:44:06 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/12/2020 12:44:06 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/13/2020 10:45:48 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/13/2020 10:45:48 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponDescription" , "create" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/12/2020 12:44:06 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/13/2020 10:45:48 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCouponTypeRcd" , "create" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
@@ -145,10 +145,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponNumber" , "1" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/12/2020 12:44:06 PM" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/12/2020 12:44:06 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidFromDateTime" , "3/13/2020 10:45:48 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "ValidUntilDateTime" , "3/13/2020 10:45:48 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "CouponDescription" , "update" ) );
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/12/2020 12:44:06 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/13/2020 10:45:48 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialCouponTypeRcd" , "update" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 

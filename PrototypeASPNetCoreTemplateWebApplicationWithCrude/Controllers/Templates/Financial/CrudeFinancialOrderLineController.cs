@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 3/12/2020 12:44:07 PM
+  Generated Date: 3/13/2020 10:45:49 AM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -113,7 +113,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/12/2020 12:44:07 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/13/2020 10:45:49 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "Comment" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "LineNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialUnitOfMeasurementRcd" , "create" ) );
@@ -152,7 +152,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/12/2020 12:44:07 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "3/13/2020 10:45:49 AM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "Comment" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "LineNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialUnitOfMeasurementRcd" , "update" ) );
