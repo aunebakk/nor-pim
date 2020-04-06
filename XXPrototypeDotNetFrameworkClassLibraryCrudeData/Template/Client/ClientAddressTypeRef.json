@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeData",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Client"
-  },
-  "parent": {
-    "tablename": "client_address_type_ref",
-    "overridenice": "CrudeClientAddressTypeRef",
-    "overridecamel": "clientAddressTypeRef",
-    "autoupdatescheme": "autoupdatereference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeData",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Client"
+          },
+          "parent": {
+            "tablename": "client_address_type_ref",
+            "overridenice": "CrudeClientAddressTypeRef",
+            "overridecamel": "clientAddressTypeRef",
+            "autoupdatescheme": "autoupdatereference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

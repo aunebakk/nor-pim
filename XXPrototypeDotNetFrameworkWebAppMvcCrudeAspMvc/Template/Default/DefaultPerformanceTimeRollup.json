@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeAspMvc",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Default"
-  },
-  "parent": {
-    "tablename": "default_performance_time_rollup",
-    "overridenice": "CrudeDefaultPerformanceTimeRollup",
-    "overridecamel": "defaultPerformanceTimeRollup",
-    "autoupdatescheme": "autoupdatedefault",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeAspMvc",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Default"
+          },
+          "parent": {
+            "tablename": "default_performance_time_rollup",
+            "overridenice": "CrudeDefaultPerformanceTimeRollup",
+            "overridecamel": "defaultPerformanceTimeRollup",
+            "autoupdatescheme": "autoupdatedefault",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

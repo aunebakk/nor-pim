@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "None",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Financial"
-  },
-  "parent": {
-    "tablename": "financial_voucher_type_ref",
-    "overridenice": "CrudeFinancialVoucherTypeRef",
-    "overridecamel": "financialVoucherTypeRef",
-    "autoupdatescheme": "autoupdatereference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "None",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Financial"
+          },
+          "parent": {
+            "tablename": "financial_voucher_type_ref",
+            "overridenice": "CrudeFinancialVoucherTypeRef",
+            "overridecamel": "financialVoucherTypeRef",
+            "autoupdatescheme": "autoupdatereference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "DotNetCoreApi",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Financial"
-  },
-  "parent": {
-    "tablename": "financial_order_event",
-    "overridenice": "CrudeFinancialOrderEvent",
-    "overridecamel": "financialOrderEvent",
-    "autoupdatescheme": "autoupdatenormal",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "DotNetCoreApi",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Financial"
+          },
+          "parent": {
+            "tablename": "financial_order_event",
+            "overridenice": "CrudeFinancialOrderEvent",
+            "overridecamel": "financialOrderEvent",
+            "autoupdatescheme": "autoupdatenormal",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

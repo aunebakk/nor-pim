@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "DotNetCoreApi",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Client"
-  },
-  "parent": {
-    "tablename": "client_event_type_ref",
-    "overridenice": "CrudeClientEventTypeRef",
-    "overridecamel": "clientEventTypeRef",
-    "autoupdatescheme": "autoupdatereference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "DotNetCoreApi",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Client"
+          },
+          "parent": {
+            "tablename": "client_event_type_ref",
+            "overridenice": "CrudeClientEventTypeRef",
+            "overridecamel": "clientEventTypeRef",
+            "autoupdatescheme": "autoupdatereference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

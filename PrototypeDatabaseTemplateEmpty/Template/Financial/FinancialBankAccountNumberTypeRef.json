@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "None",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Financial"
-  },
-  "parent": {
-    "tablename": "financial_bank_account_number_type_ref",
-    "overridenice": "CrudeFinancialBankAccountNumberTypeRef",
-    "overridecamel": "financialBankAccountNumberTypeRef",
-    "autoupdatescheme": "autoupdatereference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "None",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Financial"
+          },
+          "parent": {
+            "tablename": "financial_bank_account_number_type_ref",
+            "overridenice": "CrudeFinancialBankAccountNumberTypeRef",
+            "overridecamel": "financialBankAccountNumberTypeRef",
+            "autoupdatescheme": "autoupdatereference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

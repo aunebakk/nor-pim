@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeAspMvc",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Product"
-  },
-  "parent": {
-    "tablename": "product_expose_set",
-    "overridenice": "CrudeProductExposeSet",
-    "overridecamel": "productExposeSet",
-    "autoupdatescheme": "autoupdatenormal",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeAspMvc",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Product"
+          },
+          "parent": {
+            "tablename": "product_expose_set",
+            "overridenice": "CrudeProductExposeSet",
+            "overridecamel": "productExposeSet",
+            "autoupdatescheme": "autoupdatenormal",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

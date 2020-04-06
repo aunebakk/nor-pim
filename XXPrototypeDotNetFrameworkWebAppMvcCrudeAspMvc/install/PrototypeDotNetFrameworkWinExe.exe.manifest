@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>e+38DkcvEwtu+M4WHOUw+GdmVGBiwBWJe3NRVSuxsUU=</dsig:DigestValue>
+        <dsig:DigestValue>NInF5fiFOcdraaETA0jrOuOQH+3VQcuNWId0NI7z4t0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5TPO3mYgfo+lg2yXzAihg49U5HU0vhMIdLoQ/gwv1H8=</dsig:DigestValue>
+        <dsig:DigestValue>rA6d5cqyRXYrIBGEBkOLk7j+Z0U7lHqdYGC5sf3hvu8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bL0ziwZXjsZLusPEMgFvYTVeUq98/z65zez1LDrCjgM=</dsig:DigestValue>
+        <dsig:DigestValue>6fd0Akf7bRV1to+uPY1p0aLuAfPHW+tzcZhxfhnAWmc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42749">
+  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42748">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jmL6JOHF6/oxNUnCRGmj9icfQz3+/3s4v/7afo6yzhU=</dsig:DigestValue>
+      <dsig:DigestValue>W/paLhnzg53ymM5hYBONv+BZcs9/lNwCE3Syo+zrmoo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

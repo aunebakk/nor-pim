@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "None",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Default"
-  },
-  "parent": {
-    "tablename": "default_test_run_result_ref",
-    "overridenice": "CrudeDefaultTestRunResultRef",
-    "overridecamel": "defaultTestRunResultRef",
-    "autoupdatescheme": "autoupdatedefaultreference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "None",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Default"
+          },
+          "parent": {
+            "tablename": "default_test_run_result_ref",
+            "overridenice": "CrudeDefaultTestRunResultRef",
+            "overridecamel": "defaultTestRunResultRef",
+            "autoupdatescheme": "autoupdatedefaultreference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

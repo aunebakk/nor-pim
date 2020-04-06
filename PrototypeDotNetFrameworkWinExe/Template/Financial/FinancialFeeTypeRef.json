@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeWinForm",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Financial"
-  },
-  "parent": {
-    "tablename": "financial_fee_type_ref",
-    "overridenice": "CrudeFinancialFeeTypeRef",
-    "overridecamel": "financialFeeTypeRef",
-    "autoupdatescheme": "autoupdatereference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeWinForm",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Financial"
+          },
+          "parent": {
+            "tablename": "financial_fee_type_ref",
+            "overridenice": "CrudeFinancialFeeTypeRef",
+            "overridecamel": "financialFeeTypeRef",
+            "autoupdatescheme": "autoupdatereference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

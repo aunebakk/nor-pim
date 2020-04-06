@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeSoap",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Financial"
-  },
-  "parent": {
-    "tablename": "financial_payment_card",
-    "overridenice": "CrudeFinancialPaymentCard",
-    "overridecamel": "financialPaymentCard",
-    "autoupdatescheme": "autoupdatenormal",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeSoap",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Financial"
+          },
+          "parent": {
+            "tablename": "financial_payment_card",
+            "overridenice": "CrudeFinancialPaymentCard",
+            "overridecamel": "financialPaymentCard",
+            "autoupdatescheme": "autoupdatenormal",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

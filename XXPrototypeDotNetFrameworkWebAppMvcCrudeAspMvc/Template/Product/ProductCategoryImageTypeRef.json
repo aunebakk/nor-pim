@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeAspMvc",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Product"
-  },
-  "parent": {
-    "tablename": "product_category_image_type_ref",
-    "overridenice": "CrudeProductCategoryImageTypeRef",
-    "overridecamel": "productCategoryImageTypeRef",
-    "autoupdatescheme": "autoupdatereference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeAspMvc",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Product"
+          },
+          "parent": {
+            "tablename": "product_category_image_type_ref",
+            "overridenice": "CrudeProductCategoryImageTypeRef",
+            "overridecamel": "productCategoryImageTypeRef",
+            "autoupdatescheme": "autoupdatereference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

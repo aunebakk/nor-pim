@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeData",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Product"
-  },
-  "parent": {
-    "tablename": "product_category_documentation_type_ref",
-    "overridenice": "CrudeProductCategoryDocumentationTypeRef",
-    "overridecamel": "productCategoryDocumentationTypeRef",
-    "autoupdatescheme": "autoupdatereference",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeData",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Product"
+          },
+          "parent": {
+            "tablename": "product_category_documentation_type_ref",
+            "overridenice": "CrudeProductCategoryDocumentationTypeRef",
+            "overridecamel": "productCategoryDocumentationTypeRef",
+            "autoupdatescheme": "autoupdatereference",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 3/13/2020 11:02:54 AM
+# Generated Date: 4/6/2020 1:02:11 PM
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
 param(
@@ -143,9 +143,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContent = Get-Content $file -Raw
     [string] $fileContentOriginal = $fileContent
 
-    # replace ado data sources
+    # replace ado data sources ( 'Data Source="' +  )
     [string] $find = 'Data Source.+' 
-    [string] $replace = 'Data Source="' + $connectionStringSQLServerLocal + '"/>'
+    [string] $replace = $connectionStringSQLServerLocal + '"/>'
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
 
     # replace azure storage data sources

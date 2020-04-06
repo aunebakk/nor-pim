@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeWinForm",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Location"
-  },
-  "parent": {
-    "tablename": "location_city",
-    "overridenice": "CrudeLocationCity",
-    "overridecamel": "locationCity",
-    "autoupdatescheme": "autoupdatenormal",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeWinForm",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Location"
+          },
+          "parent": {
+            "tablename": "location_city",
+            "overridenice": "CrudeLocationCity",
+            "overridecamel": "locationCity",
+            "autoupdatescheme": "autoupdatenormal",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

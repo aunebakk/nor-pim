@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeContract",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Financial"
-  },
-  "parent": {
-    "tablename": "financial_order_line",
-    "overridenice": "CrudeFinancialOrderLine",
-    "overridecamel": "financialOrderLine",
-    "autoupdatescheme": "autoupdatenormal",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeContract",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Financial"
+          },
+          "parent": {
+            "tablename": "financial_order_line",
+            "overridenice": "CrudeFinancialOrderLine",
+            "overridecamel": "financialOrderLine",
+            "autoupdatescheme": "autoupdatenormal",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

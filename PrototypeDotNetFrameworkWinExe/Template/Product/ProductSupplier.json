@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeWinForm",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Product"
-  },
-  "parent": {
-    "tablename": "product_supplier",
-    "overridenice": "CrudeProductSupplier",
-    "overridecamel": "productSupplier",
-    "autoupdatescheme": "autoupdatenormal",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeWinForm",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Product"
+          },
+          "parent": {
+            "tablename": "product_supplier",
+            "overridenice": "CrudeProductSupplier",
+            "overridecamel": "productSupplier",
+            "autoupdatescheme": "autoupdatenormal",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }

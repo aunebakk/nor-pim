@@ -1,23 +1,23 @@
 ﻿{
-  "overall": {
-    "style": "CrudeProxy",
-    "design": "TypeScriptHagtorn"
-  },
-  "domain": {
-    "name": "Cart"
-  },
-  "parent": {
-    "tablename": "cart_product",
-    "overridenice": "CrudeCartProduct",
-    "overridecamel": "cartProduct",
-    "autoupdatescheme": "autoupdatenormal",
-    "durianclass": "",
-    "durianmethod": ""
-  },
-  "children": {
-  },
-  "autofill": {
-    "name": "user_id",
-    "type": "uniqueidentifier"
-  }
-}
+          "overall": {
+            "style": "CrudeProxy",
+            "design": "TypeScriptHagtorn"
+          },
+          "domain": {
+            "name": "Cart"
+          },
+          "parent": {
+            "tablename": "cart_product",
+            "overridenice": "CrudeCartProduct",
+            "overridecamel": "cartProduct",
+            "autoupdatescheme": "autoupdatenormal",
+            "durianclass": "",
+            "durianmethod": ""
+          },
+          "children": {
+          },
+          "autofill": {
+            "name": "user_id",
+            "type": "uniqueidentifier"
+          }
+        }
