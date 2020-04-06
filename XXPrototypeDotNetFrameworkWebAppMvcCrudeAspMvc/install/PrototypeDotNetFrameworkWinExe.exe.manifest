@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NInF5fiFOcdraaETA0jrOuOQH+3VQcuNWId0NI7z4t0=</dsig:DigestValue>
+        <dsig:DigestValue>Hyv+pKU4vV6u07Zpwn08CMyuN1S5vuUY/ejZNriZD0M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rA6d5cqyRXYrIBGEBkOLk7j+Z0U7lHqdYGC5sf3hvu8=</dsig:DigestValue>
+        <dsig:DigestValue>UDrqjC5rfurKmeMwu6PLOa3aJQrQg6QUkedXdTY4w08=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6fd0Akf7bRV1to+uPY1p0aLuAfPHW+tzcZhxfhnAWmc=</dsig:DigestValue>
+        <dsig:DigestValue>1mlNjoNo3E4L8Knmcp6YXlh6M4Vgy6pHGmAbvhuG7xw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42748">
+  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42747">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>W/paLhnzg53ymM5hYBONv+BZcs9/lNwCE3Syo+zrmoo=</dsig:DigestValue>
+      <dsig:DigestValue>uNGDj1swHjQBLXFj/p7YRicLzswqxRYTPu0qQ/vFuRo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

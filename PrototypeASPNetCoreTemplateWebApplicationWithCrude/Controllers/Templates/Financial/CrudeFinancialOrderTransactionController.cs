@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/6/2020 12:33:43 PM
+  Generated Date: 4/6/2020 4:41:22 PM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -158,7 +158,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/6/2020 12:33:43 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/6/2020 4:41:22 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "TransactionNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialOrderTransactionTypeRcd" , "create" ) );
                 var content = new FormUrlEncodedContent ( pairs );
@@ -195,7 +195,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/6/2020 12:33:43 PM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/6/2020 4:41:22 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "TransactionNumber" , "1" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialOrderTransactionTypeRcd" , "update" ) );
                 var content = new FormUrlEncodedContent ( pairs );

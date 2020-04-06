@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0C7ED7C2-A8AE-4D79-80F9-7B42C9C63300}</ProjectGuid>
+    <ProjectGuid>{B14FC6CC-0933-4F47-A8F2-AFB81F71B2EC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -545,15 +545,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj">
-      <Project>{a5ba67b2-0ec6-429a-a28e-dd8b219d7e64}</Project>
+      <Project>{1e55ae62-2f68-4415-9dca-b5901b184ac9}</Project>
       <Name>PrototypeDatabaseTemplateEmpty</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{f6ee91d8-94d8-44d3-b72e-1bda413be311}</Project>
+      <Project>{a015a5f9-b3bd-4e45-8f68-27aaf56b0ad5}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj">
-      <Project>{0a1bdc60-bc81-4c78-a49e-83388f2a2660}</Project>
+      <Project>{6db0c462-f909-40c5-ac7a-3e781dde0090}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeData</Name>
     </ProjectReference>
   </ItemGroup>
