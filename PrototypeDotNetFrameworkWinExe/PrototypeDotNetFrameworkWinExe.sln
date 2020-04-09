@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeDotNetFrameworkWinExe", "PrototypeDotNetFrameworkWinExe.csproj", "{E97D8BB2-48CA-435C-9039-10708BBD4CB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeDotNetFrameworkWinExe", "PrototypeDotNetFrameworkWinExe.csproj", "{D2A818EA-1526-48E7-B280-F0F94F9F2D9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E97D8BB2-48CA-435C-9039-10708BBD4CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E97D8BB2-48CA-435C-9039-10708BBD4CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E97D8BB2-48CA-435C-9039-10708BBD4CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E97D8BB2-48CA-435C-9039-10708BBD4CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A818EA-1526-48E7-B280-F0F94F9F2D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A818EA-1526-48E7-B280-F0F94F9F2D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A818EA-1526-48E7-B280-F0F94F9F2D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A818EA-1526-48E7-B280-F0F94F9F2D9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6D9A22EE-9E45-40E7-BA75-5AA3B26DB4B9}
+		SolutionGuid = {EE947F60-4DBF-4D65-BD4B-0A978A527334}
 	EndGlobalSection
 EndGlobal

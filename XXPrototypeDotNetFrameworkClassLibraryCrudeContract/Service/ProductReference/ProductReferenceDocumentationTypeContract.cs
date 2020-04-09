@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/6/2020 4:49:41 PM
+  Generated Date: 4/9/2020 10:17:36 AM
   Template: sql2x.TemplateByServiceTableCrudGenerator.ContractUsing
 */
 using System.Collections.Generic;

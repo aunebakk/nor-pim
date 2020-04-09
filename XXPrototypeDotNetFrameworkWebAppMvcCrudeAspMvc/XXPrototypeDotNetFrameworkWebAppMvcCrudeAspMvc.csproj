@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CE2487E3-A460-4B70-9357-936B275FC1EA}</ProjectGuid>
+    <ProjectGuid>{5E651ACC-D5B9-42ED-8608-ECAAAF8DB93B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -564,6 +564,11 @@
     <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.pdb" />
     <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.dll" />
     <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.pdb" />
+    <Content Include="Scripts\Dashboard\chapterIndex.js" />
+    <Content Include="Scripts\Dashboard\dashboard.js" />
+    <Content Include="Scripts\Dashboard\dashboardInfo.js" />
+    <Content Include="Scripts\Dashboard\dashboardWhiteboard.js" />
+    <Content Include="Scripts\Dashboard\splash.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
@@ -579,6 +584,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Templates\ProductSearch\ProductSearch.js" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap.css" />
@@ -619,23 +625,22 @@
     <Content Include="Views\Shared\_Layout.TypeScript.Phone.cshtml" />
     <Content Include="Views\Shared\_LayoutWithCrud.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterIndex.cshtml" />
-    <Content Include="Views\Durian\ProductMaintenanceSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceSearch.cshtml" />
-    <Content Include="Views\Home\Durians.cshtml" />
+    <Content Include="Views\Home\Durian\ProductMaintenanceSearch\ProductMaintenanceSearchDurians.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceIndexIndex.cshtml" />
     <Content Include="Views\Durian\CartSearch\GetCartProductWithFilterIndex.cshtml" />
-    <Content Include="Views\Durian\CartSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\CartSearch\CartSearch.cshtml" />
+    <Content Include="Views\Home\Durian\CartSearch\CartSearchDurians.cshtml" />
     <Content Include="Views\Durian\ClientSearch\GetClientWithFilterIndex.cshtml" />
-    <Content Include="Views\Durian\ClientSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ClientSearch\ClientSearch.cshtml" />
+    <Content Include="Views\Home\Durian\ClientSearch\ClientSearchDurians.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultTestOverviewIndex.cshtml" />
-    <Content Include="Views\Durian\DefaultSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultSearch.cshtml" />
+    <Content Include="Views\Home\Durian\DefaultSearch\DefaultSearchDurians.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DashboardCountsIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultIssueWithFilterIndex.cshtml" />
@@ -657,12 +662,12 @@
     <Content Include="Views\Durian\DefaultSearch\DefaultResourceStatisticsIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultResourceDatabaseStatisticsIndex.cshtml" />
     <Content Include="Views\Durian\CategorySearch\CategoryTreeIndex.cshtml" />
-    <Content Include="Views\Durian\CategorySearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\CategorySearch\CategorySearch.cshtml" />
+    <Content Include="Views\Home\Durian\CategorySearch\CategorySearchDurians.cshtml" />
     <Content Include="Views\Durian\CategorySearch\CategoryFindIndex.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductHistoryIndex.cshtml" />
-    <Content Include="Views\Durian\ProductSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearch.cshtml" />
+    <Content Include="Views\Home\Durian\ProductSearch\ProductSearchDurians.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByNameIndex.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByIdIndex.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryType1Index.cshtml" />
@@ -670,11 +675,11 @@
     <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryType3Index.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryType4Index.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterIndex.cshtml" />
-    <Content Include="Views\Durian\ProductReferenceAttributeSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearch.cshtml" />
+    <Content Include="Views\Home\Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchDurians.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterIndex.cshtml" />
-    <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearch.cshtml" />
+    <Content Include="Views\Home\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchDurians.cshtml" />
     <Content Include="Views\Templates\Cart\CartProduct\CartProductCreate.cshtml" />
     <Content Include="Views\Templates\Cart\CartProduct\CartProductEdit.cshtml" />
     <Content Include="Views\Templates\ProductMaintenance\ProductMaintenance\ProductMaintenanceIndex.cshtml" />
@@ -1350,11 +1355,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{a015a5f9-b3bd-4e45-8f68-27aaf56b0ad5}</Project>
+      <Project>{1e9ff1c4-0386-4d0d-88bb-8d35791a4e58}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{7d12f6b8-7ddd-4979-a027-2b59fe234e11}</Project>
+      <Project>{ee2f4c5f-84a6-4490-9367-ad31a9cf55d2}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>

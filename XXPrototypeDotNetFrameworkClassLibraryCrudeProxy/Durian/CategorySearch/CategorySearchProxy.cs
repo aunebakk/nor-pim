@@ -1,12 +1,11 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/6/2020 4:45:47 PM
-  Template: sql2x.ProxyGenerator.ProxyForMethod
+  Generated Date: 4/9/2020 10:04:06 AM
+  Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
-
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     
