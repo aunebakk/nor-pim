@@ -1,7 +1,7 @@
 rem SQL2X Generated code based on a SQL Server Schema
 rem SQL2X Version: 1.0
 rem http://sql2x.org/
-rem Generated Date: 4/9/2020 11:45:52 AM
+rem Generated Date: 4/9/2020 5:51:24 PM
 rem Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Builder
 cd C:\SQL2XProjects\SolutionNorSolutionPim\PrototypeASPNetCoreTemplateWebApplicationWithCrude
 dotnet restore PrototypeASPNetCoreTemplateWebApplicationWithCrude.csproj

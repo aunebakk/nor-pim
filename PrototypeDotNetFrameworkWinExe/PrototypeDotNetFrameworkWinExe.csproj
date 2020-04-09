@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D2A818EA-1526-48E7-B280-F0F94F9F2D9A}</ProjectGuid>
+    <ProjectGuid>{6C37D3DA-3445-4781-82F1-D412F54494F7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PrototypeDotNetFrameworkWinExe</RootNamespace>
@@ -1773,6 +1773,342 @@
     <Compile Include="Div\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Durian\CartSearch\GetCartProductWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\CartSearch\GetCartProductWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\CartSearch\GetCartProductWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\CartSearch\GetCartProductWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryFindDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryFindDurian.Designer.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryFindSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryFindSearch.Designer.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryTreeDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryTreeDurian.Designer.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryTreeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\CategorySearch\CategoryTreeSearch.Designer.cs" />
+    <Compile Include="Durian\ClientSearch\GetClientWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ClientSearch\GetClientWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ClientSearch\GetClientWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ClientSearch\GetClientWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DashboardCountsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DashboardCountsDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DashboardCountsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DashboardCountsSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultIssueWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultIssueWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultIssueWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultIssueWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIndicatorsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIndicatorsDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIndicatorsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIndicatorsSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimesDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimesDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimesSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimesSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceDatabaseStatisticsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultResourceDatabaseStatisticsDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceDatabaseStatisticsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultResourceDatabaseStatisticsSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsTop5Durian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsTop5Durian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsTop5Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsTop5Search.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultTestOverviewDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultTestOverviewDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultTestOverviewSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultTestOverviewSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityByHourDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityByHourDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityByHourSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityByHourSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityOnAddressDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityOnAddressDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityOnAddressSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityOnAddressSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserListDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\DefaultUserListSearch.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogDurian.Designer.cs" />
+    <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogSearch.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIndexDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIndexDurian.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIndexSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIndexSearch.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterDurian.Designer.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterSearch.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductHistoryDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductHistoryDurian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductHistorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductHistorySearch.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryCodeDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryCodeDurian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryCodeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryCodeSearch.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryDurian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategorySearch.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1Durian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1Durian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType1Search.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Durian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Durian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Search.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3Durian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3Durian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType3Search.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType4Durian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType4Durian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType4Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType4Search.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdDurian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdSearch.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameDurian.Designer.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameSearch.Designer.cs" />
     <Compile Include="Main\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2080,11 +2416,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{1e9ff1c4-0386-4d0d-88bb-8d35791a4e58}</Project>
+      <Project>{3e8185d8-0d5b-43cd-aa3f-870c39dda47d}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{ee2f4c5f-84a6-4490-9367-ad31a9cf55d2}</Project>
+      <Project>{420e0c05-6071-4db5-8cf1-cd2f2a949ae9}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>

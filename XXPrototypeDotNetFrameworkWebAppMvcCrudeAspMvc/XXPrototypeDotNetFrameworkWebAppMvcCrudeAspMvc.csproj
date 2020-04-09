@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5E651ACC-D5B9-42ED-8608-ECAAAF8DB93B}</ProjectGuid>
+    <ProjectGuid>{D90E31D5-66A2-4E11-94F6-639F8648ECA3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -564,11 +564,6 @@
     <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.pdb" />
     <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.dll" />
     <Content Include="install\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.pdb" />
-    <Content Include="Scripts\Dashboard\chapterIndex.js" />
-    <Content Include="Scripts\Dashboard\dashboard.js" />
-    <Content Include="Scripts\Dashboard\dashboardInfo.js" />
-    <Content Include="Scripts\Dashboard\dashboardWhiteboard.js" />
-    <Content Include="Scripts\Dashboard\splash.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
@@ -584,7 +579,6 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\Templates\ProductSearch\ProductSearch.js" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1355,11 +1349,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{1e9ff1c4-0386-4d0d-88bb-8d35791a4e58}</Project>
+      <Project>{3e8185d8-0d5b-43cd-aa3f-870c39dda47d}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{ee2f4c5f-84a6-4490-9367-ad31a9cf55d2}</Project>
+      <Project>{420e0c05-6071-4db5-8cf1-cd2f2a949ae9}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>

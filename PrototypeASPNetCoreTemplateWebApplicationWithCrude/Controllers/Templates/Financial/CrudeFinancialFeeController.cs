@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 7:26:49 AM
+  Generated Date: 4/9/2020 5:38:53 PM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -104,7 +104,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/9/2020 7:26:49 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/9/2020 5:38:53 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialFeeTypeRcd" , "create" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 
@@ -140,7 +140,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/9/2020 7:26:49 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/9/2020 5:38:53 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "FinancialFeeTypeRcd" , "update" ) );
                 var content = new FormUrlEncodedContent ( pairs );
 

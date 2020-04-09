@@ -203,10 +203,10 @@ namespace SolutionNorSolutionPim.UserInterface
             try {
                 FormOpened("DefaultUserActivityRecentSearch");
 
-                //var mdiChild = new DefaultUserActivityRecentSearch();
-                //CheckForm(mdiChild);
-                //mdiChild.MdiParent = this;
-                //mdiChild.Show();
+                var mdiChild = new DefaultUserActivityRecentSearch();
+                CheckForm(mdiChild);
+                mdiChild.MdiParent = this;
+                mdiChild.Show();
             } catch ( Exception ex ) {
                 Error(ex);
             }
@@ -218,10 +218,10 @@ namespace SolutionNorSolutionPim.UserInterface
             try {
                 FormOpened("LogCountMonth");
 
-                //var mdiChild = new DefaultStatisticsByMonthSearch();
-                //CheckForm(mdiChild);
-                //mdiChild.MdiParent = this;
-                //mdiChild.Show();
+                var mdiChild = new DefaultStatisticsByMonthSearch();
+                CheckForm(mdiChild);
+                mdiChild.MdiParent = this;
+                mdiChild.Show();
             } catch ( Exception ex ) {
                 Error(ex);
             }
