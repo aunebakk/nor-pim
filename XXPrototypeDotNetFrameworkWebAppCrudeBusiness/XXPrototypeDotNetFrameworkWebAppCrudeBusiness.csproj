@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DCC47524-AD8F-4EB9-8C12-6EEB93340292}</ProjectGuid>
+    <ProjectGuid>{26CE5791-3BA0-4D20-AF6D-69EFBBF63004}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -71,123 +71,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BusinessWCFSoap\Templates\Cart\CrudeCartProduct.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Cart\CrudeCartProductPrice.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClient.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientAddress.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientAddressTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethod.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethodRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientDocument.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientDocumentTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientEvent.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientEventTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientGenderRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifier.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifierTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientLink.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientLinkTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientNationalityRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientTitleRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Client\CrudeClientTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLog.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLogTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultError.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorLayerRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssue.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueStatusRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceIssue.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTime.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTimeRollup.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultResourceMeasurement.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRule.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRuleTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultStateRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemReferenceTable.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSetting.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSettingRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTest.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRun.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRunResultRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUser.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivity.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivityTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Default\CrudeDefaultVersion.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustment.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustmentTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialBankAccountNumberTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCardTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCompany.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCostcentre.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCoupon.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCouponTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrency.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrencyTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFee.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFeeTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrder.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEvent.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEventTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifier.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifierTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderLine.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderSourceRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransaction.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransactionTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPayment.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentAccounting.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentBank.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCard.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCash.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCoupon.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentVoucher.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTax.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTaxTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialUnitOfMeasurementRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucher.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucherTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddress.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddressTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationCity.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Location\CrudeLocationCountry.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProduct.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductAttribute.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeUnitRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategory.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentation.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentationTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImage.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImageTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryMapping.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductChangeSet.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentation.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentationTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductEntityTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExpose.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposedSelection.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposePlan.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSet.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSetTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSet.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSetMapping.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGather.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttribute.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttributeTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherKey.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSource.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSourceTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifier.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifierRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductImage.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductImageTypeRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductInfo.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductInfoRef.svc" />
-    <Content Include="BusinessWCFSoap\Templates\Product\CrudeProductSupplier.svc" />
-    <Content Include="Cart\CartProductService.svc" />
     <Content Include="Cart\CartSearchService.svc" />
     <Content Include="Category\CategorySearchService.svc" />
     <Content Include="Client\ClientSearchService.svc" />
@@ -200,15 +83,7 @@
     <Content Include="connection.config" />
     <Content Include="ProductMaintenance\ProductMaintenanceSearchService.svc" />
     <Content Include="ProductReference\ProductReferenceAttributeSearchService.svc" />
-    <Content Include="ProductReference\ProductReferenceAttributeService.svc" />
     <Content Include="ProductReference\ProductReferenceAttributeUnitSearchService.svc" />
-    <Content Include="ProductReference\ProductReferenceAttributeUnitService.svc" />
-    <Content Include="ProductReference\ProductReferenceCategoryDocumentationTypeService.svc" />
-    <Content Include="ProductReference\ProductReferenceCategoryService.svc" />
-    <Content Include="ProductReference\ProductReferenceDocumentationTypeService.svc" />
-    <Content Include="ProductReference\ProductReferenceIdentifierService.svc" />
-    <Content Include="ProductReference\ProductReferenceImageTypeService.svc" />
-    <Content Include="ProductReference\ProductReferenceInfoService.svc" />
     <Content Include="Product\ProductCategoryService.svc" />
     <Content Include="Product\ProductSearchService.svc" />
     <Content Include="Product\ProductService.svc" />
@@ -338,7 +213,6 @@
     <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfo.cs" />
     <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfoRef.cs" />
     <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductSupplier.cs" />
-    <Compile Include="Cart\CartProductService.cs" />
     <Compile Include="Cart\CartSearchService.cs" />
     <Compile Include="Category\CategorySearchService.cs" />
     <Compile Include="Client\ClientSearchService.cs" />
@@ -389,15 +263,7 @@
     <Compile Include="Durian\ProductSearch\ProductSearchByName.cs" />
     <Compile Include="ProductMaintenance\ProductMaintenanceSearchService.cs" />
     <Compile Include="ProductReference\ProductReferenceAttributeSearchService.cs" />
-    <Compile Include="ProductReference\ProductReferenceAttributeService.cs" />
     <Compile Include="ProductReference\ProductReferenceAttributeUnitSearchService.cs" />
-    <Compile Include="ProductReference\ProductReferenceAttributeUnitService.cs" />
-    <Compile Include="ProductReference\ProductReferenceCategoryDocumentationTypeService.cs" />
-    <Compile Include="ProductReference\ProductReferenceCategoryService.cs" />
-    <Compile Include="ProductReference\ProductReferenceDocumentationTypeService.cs" />
-    <Compile Include="ProductReference\ProductReferenceIdentifierService.cs" />
-    <Compile Include="ProductReference\ProductReferenceImageTypeService.cs" />
-    <Compile Include="ProductReference\ProductReferenceInfoService.cs" />
     <Compile Include="Product\ProductCategoryService.cs" />
     <Compile Include="Product\ProductSearchService.cs" />
     <Compile Include="Product\ProductService.cs" />
@@ -545,15 +411,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj">
-      <Project>{bb4291b1-486d-4c1e-9296-f0a67d11f268}</Project>
+      <Project>{42299df2-a1f7-4237-afd7-cea1add268d3}</Project>
       <Name>PrototypeDatabaseTemplateEmpty</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{3e8185d8-0d5b-43cd-aa3f-870c39dda47d}</Project>
+      <Project>{98d460f5-6849-4232-92cf-710745d4bf78}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj">
-      <Project>{c8c2eeb2-593e-41d4-9c97-35bc9c10a1d5}</Project>
+      <Project>{1c0f32bf-0721-40e2-a6a7-ade2e922f5f5}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeData</Name>
     </ProjectReference>
   </ItemGroup>

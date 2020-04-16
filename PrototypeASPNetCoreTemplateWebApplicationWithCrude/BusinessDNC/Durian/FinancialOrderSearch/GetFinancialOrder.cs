@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:47:28 PM
+  Generated Date: 4/16/2020 8:46:08 PM
   Template: sql2x.DotNetCoreGenerateBusinessLogicLayer.DefaultUsing
 */
 
@@ -30,21 +30,38 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             dataModel.FirstName = dalGetFinancialOrder.FirstName;
             dataModel.MiddleName = dalGetFinancialOrder.MiddleName;
             dataModel.LastName = dalGetFinancialOrder.LastName;
-            dataModel.ImageBlobFilename = dalGetFinancialOrder.ImageBlobFilename;
-            dataModel.DefaultUserName = dalGetFinancialOrder.DefaultUserName;
-            dataModel.FinancialCurrencyTypeName = dalGetFinancialOrder.FinancialCurrencyTypeName;
-            dataModel.FinancialOrderSourceName = dalGetFinancialOrder.FinancialOrderSourceName;
-            dataModel.UserId = dalGetFinancialOrder.UserId;
-            dataModel.DateTime = dalGetFinancialOrder.DateTime;
-            dataModel.Comment = dalGetFinancialOrder.Comment;
+            dataModel.ClientNationalityRcd = dalGetFinancialOrder.ClientNationalityRcd;
+            dataModel.ClientGenderRcd = dalGetFinancialOrder.ClientGenderRcd;
+            dataModel.ClientTitleRcd = dalGetFinancialOrder.ClientTitleRcd;
+            dataModel.ClientTypeRcd = dalGetFinancialOrder.ClientTypeRcd;
+            dataModel.ClientId = dalGetFinancialOrder.ClientId;
             dataModel.FinancialCurrencyTypeRcd = dalGetFinancialOrder.FinancialCurrencyTypeRcd;
             dataModel.FinancialCurrencyAgainstFinancialCurrencyTypeRcd = dalGetFinancialOrder.FinancialCurrencyAgainstFinancialCurrencyTypeRcd;
             dataModel.FinancialCurrencyTypeCode = dalGetFinancialOrder.FinancialCurrencyTypeCode;
+            dataModel.FinancialCurrencyTypeName = dalGetFinancialOrder.FinancialCurrencyTypeName;
             dataModel.FinancialCurrencyId = dalGetFinancialOrder.FinancialCurrencyId;
-            dataModel.FinancialOrderSourceRcd = dalGetFinancialOrder.FinancialOrderSourceRcd;
-            dataModel.ClientId = dalGetFinancialOrder.ClientId;
-            dataModel.FinancialOrderId = dalGetFinancialOrder.FinancialOrderId;
+            dataModel.LocationAddressTypeRcd = dalGetFinancialOrder.LocationAddressTypeRcd;
+            dataModel.AddressOne = dalGetFinancialOrder.AddressOne;
+            dataModel.AddressTwo = dalGetFinancialOrder.AddressTwo;
+            dataModel.AddressThree = dalGetFinancialOrder.AddressThree;
+            dataModel.City = dalGetFinancialOrder.City;
+            dataModel.Street = dalGetFinancialOrder.Street;
+            dataModel.State = dalGetFinancialOrder.State;
+            dataModel.District = dalGetFinancialOrder.District;
+            dataModel.Province = dalGetFinancialOrder.Province;
+            dataModel.ZipCode = dalGetFinancialOrder.ZipCode;
+            dataModel.PoBox = dalGetFinancialOrder.PoBox;
+            dataModel.LocationAddressComment = dalGetFinancialOrder.LocationAddressComment;
             dataModel.LocationAddressId = dalGetFinancialOrder.LocationAddressId;
+            dataModel.FinancialOrderSourceRcd = dalGetFinancialOrder.FinancialOrderSourceRcd;
+            dataModel.ImageBlobFilename = dalGetFinancialOrder.ImageBlobFilename;
+            dataModel.FinancialOrderSourceName = dalGetFinancialOrder.FinancialOrderSourceName;
+            dataModel.Comment = dalGetFinancialOrder.Comment;
+            dataModel.FinancialOrderComment = dalGetFinancialOrder.FinancialOrderComment;
+            dataModel.UserId = dalGetFinancialOrder.UserId;
+            dataModel.DefaultUserName = dalGetFinancialOrder.DefaultUserName;
+            dataModel.DateTime = dalGetFinancialOrder.DateTime;
+            dataModel.FinancialOrderId = dalGetFinancialOrder.FinancialOrderId;
         }
     }
 }

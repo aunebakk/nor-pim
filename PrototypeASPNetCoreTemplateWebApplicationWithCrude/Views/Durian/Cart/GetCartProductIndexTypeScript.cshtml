@@ -1,13 +1,18 @@
-﻿<!--
-  SQL2X Generated code based on a SQL Server Schema
-  SQL2X Version: 1.0
-  http://sql2x.org/
-  Generated Date: 4/9/2020 5:47:27 PM
-  Template: sql2x.GenerateDurian.FromCrudeViewIndexTypeScript
+<!--
+  SQL2X Generated ASP .NET Core View code based on a SQL Server Schema
+  SQL2X Version: 0.c
+  http://sql2x.azurewebsites.net/
+  Generated Date: 10/11/2017 11:25:18 AM 
+  Template ClassName: GenerateDurian
 -->
 @model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.Models.GetCartProductModel>
-
-<div style="display:none;"></div>
+<input type="button" value="Home" onclick="location.href='http://NorSolutionPim.azurewebsites.net/'" />
+<input type="button" value="Cart" disabled="disabled" onclick="location.href='@Url.Action("GetCartProductTypeScript", "GetCartProduct")'" />
+<input type="button" value="Order" onclick="location.href='@Url.Action("OrderMake", "Financial")'" />
+<input type="button" value="Orders" onclick="location.href='@Url.Action("GetFinancialOrderTypeScript", "GetFinancialOrder")'" />
+<input type="button" value="About" onclick="location.href='http://NorSolutionPim.azurewebsites.net/Home/About'" />
+<hr />
+<div style="display:none;"></div> 
 <meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0 , maximum-scale=1.0"/>
 
 <canvas id="myCanvas">

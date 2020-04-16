@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:46:35 PM
+  Generated Date: 4/16/2020 8:45:53 PM
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -31,8 +31,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         public void DataToContract(ProductReferenceAttributeSearchWithFilterData dalProductReferenceAttributeSearchWithFilter, ProductReferenceAttributeSearchWithFilterContract dataContract) {
             dataContract.ProductAttributeName = dalProductReferenceAttributeSearchWithFilter.ProductAttributeName;
-            dataContract.DefaultUserName = dalProductReferenceAttributeSearchWithFilter.DefaultUserName;
             dataContract.UserId = dalProductReferenceAttributeSearchWithFilter.UserId;
+            dataContract.DefaultUserName = dalProductReferenceAttributeSearchWithFilter.DefaultUserName;
             dataContract.DateTime = dalProductReferenceAttributeSearchWithFilter.DateTime;
             dataContract.ProductAttributeRcd = dalProductReferenceAttributeSearchWithFilter.ProductAttributeRcd;
         }

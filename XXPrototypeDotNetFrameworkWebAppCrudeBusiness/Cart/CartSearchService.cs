@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:43:30 PM
+  Generated Date: 4/16/2020 8:43:42 PM
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -17,12 +17,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [ServiceContract()]
     public partial interface ICartSearchService {
+        
         [OperationContract()]
         List<GetCartProductWithFilterContract> GetCartProductWithFilter();
     }
-
+    
     public partial class CartSearchService : ICartSearchService {
-        public List<GetCartProductWithFilterContract> GetCartProductWithFilter() {
+        
+        public virtual List<GetCartProductWithFilterContract> GetCartProductWithFilter() {
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.CartSearch();
             var businessLogicLayer = new GetCartProductWithFilter();
             return businessLogicLayer.GetCartProductWithFilterFromDal(dataAccessLayer.GetCartProductWithFilter());

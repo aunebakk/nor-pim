@@ -1,8 +1,9 @@
-﻿// SQL2X Generated code based on a SQL Server Schema
-// SQL2X Version: 1.0
-// http://sql2x.org/
-// Generated Date: 4/9/2020 5:47:30 PM
-// Template: sql2x.CrudeTypeScriptGenerator.DesignHagtorn
+// sql2x Generated TypeScript code based on a SQL Server Schema
+// sql2x Version: 0.c
+// http://sql2x.azurewebsites.net/
+// generated Date: 12/19/2017 18:58:00
+// template: DesignHagtorn 
+// updated: 2017.12.06 
 module SQL2XTemplateCrudeTableGetCartProduct {
     "use strict";
 
@@ -10,21 +11,36 @@ module SQL2XTemplateCrudeTableGetCartProduct {
         firstName: string,
         middleName: string,
         lastName: string,
-        imageBlobFilename: string,
-        defaultUserName: string,
-        financialCurrencyTypeName: string,
-        financialOrderSourceName: string,
-        userId: string,
-        dateTime: string,
-        comment: string,
+        clientNationalityRcd: string,
+        clientGenderRcd: string,
+        clientTitleRcd: string,
+        clientTypeRcd: string,
+        clientId: string,
         financialCurrencyTypeRcd: string,
         financialCurrencyAgainstFinancialCurrencyTypeRcd: string,
         financialCurrencyTypeCode: string,
+        financialCurrencyTypeName: string,
         financialCurrencyId: string,
+        locationAddressTypeRcd: string,
+        addressOne: string,
+        addressTwo: string,
+        addressThree: string,
+        city: string,
+        street: string,
+        state: string,
+        district: string,
+        province: string,
+        zipCode: string,
+        poBox: string,
+        locationAddressComment: string,
+        locationAddressId: string,
         financialOrderSourceRcd: string,
-        clientId: string,
-        financialOrderId: string,
-        locationAddressId: string
+        financialOrderSourceName: string,
+        financialOrderComment: string,
+        userId: string,
+        defaultUserName: string,
+        dateTime: string,
+        financialOrderId: string
     };
 
     // declaration
@@ -115,11 +131,11 @@ module SQL2XTemplateCrudeTableGetCartProduct {
 
                 lastTile =
                     new Tile(
-                             getFinancialOrderList [i].firstName
+                                  getFinancialOrderList [i].firstName
                           + " " + getFinancialOrderList [i].middleName
                           + " " + getFinancialOrderList [i].lastName
-                          + " " + getFinancialOrderList [i].imageBlobFilename
-                          + " " + getFinancialOrderList [i].defaultUserName
+                          + " " + getFinancialOrderList [i].financialCurrencyTypeCode
+                          + " " + getFinancialOrderList [i].financialCurrencyTypeName
                           + " " + getFinancialOrderList [i].dateTime
                         ,40,
                         line,
@@ -226,12 +242,12 @@ module SQL2XTemplateCrudeTableGetCartProduct {
                                     // show all info
                                     tile.drawDurian();
 
-                                } else if (event.offsetX > tile.unOrderLink.linkLeft) {         
+                                } else if (event.offsetX > tile.orderLink.linkLeft) {         
                                     // indicate that the tile link was clicked                  
-                                    tile.unOrderLink.frame(tile.lineWidth, true);               
+                                    tile.orderLink.frame(tile.lineWidth, true);               
                                     
                                     // go to url                                                
-                                    window.location.href = tile.unOrderLink.linkUrl + tile.url; 
+                                    window.location.href = tile.orderLink.linkUrl + tile.url; 
 
                                 } else {
                                     // indicate that the tile link was clicked
@@ -260,7 +276,6 @@ module SQL2XTemplateCrudeTableGetCartProduct {
             let canvas: HTMLCanvasElement = (<HTMLCanvasElement>document.getElementById("myCanvas"));
             let context: CanvasRenderingContext2D = canvas.getContext("2d");
 
-            // set vertical size
             if (GetFinancialOrderTileList.tileListHeight != 0) {
                 canvas.height = GetFinancialOrderTileList.tileListHeight;
             }
@@ -376,7 +391,7 @@ module SQL2XTemplateCrudeTableGetCartProduct {
         textLeft = 0;
 
         detailLink: Link;
-        unOrderLink: Link;
+        orderLink: Link;
 
         constructor(
             public name: string,
@@ -393,7 +408,7 @@ module SQL2XTemplateCrudeTableGetCartProduct {
             private getFinancialOrder: GetFinancialOrderType
         ) {
             this.detailLink = new Link();
-            this.unOrderLink = new Link();
+            this.orderLink = new Link();
             this.tileTop = tileSpaceVertical + ((this.tileHeight + tileSpaceVertical) * this.tileTop);
             this.textLeft = this.tileLeft + this.textReposLeft + (this.tileBorder * 1.5);
         }
@@ -433,21 +448,21 @@ module SQL2XTemplateCrudeTableGetCartProduct {
                 boxTop,
                 boxWidth,
                 boxHeight
-            );
+            ); 
             context.stroke();
 
-            // empty url gets a detail link indicator
+            // empty url gets a detail link indicator  
             if (this.url !== "") {
                 // details
                 this.detailLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 1);
-                this.detailLink.linkUrl = "http://NorSolutionPim.azurewebsites.net/controller/action?id=";
+                this.detailLink.linkUrl = "http://NorPimRedoneCore.azurewebsites.net/api/1/financial/orderview/";
                 this.detailLink.draw(this.tileFontSize + "px Arial", "D", this.textTop(this.name));
                 context.stroke();
 
                 // un Order                                                                                 
-                this.unOrderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 2);                          
-                this.unOrderLink.linkUrl = "http://NorSolutionPim.azurewebsites.net/controller/action?id=";
-                this.unOrderLink.draw(this.tileFontSize + "px Arial", "U", this.textTop(this.name));        
+                this.orderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 2);                          
+                this.orderLink.linkUrl = "http://NorPimRedoneCore.azurewebsites.net/api/1/financial/orderview/";
+                this.orderLink.draw(this.tileFontSize + "px Arial", "O", this.textTop(this.name));        
                 context.stroke();                                                                           
             }
 
@@ -462,7 +477,7 @@ module SQL2XTemplateCrudeTableGetCartProduct {
             // cap text until it fits inside the tile
             let name: string = this.name;
             while (
-                context.measureText(name).width > (this.unOrderLink.linkLeft - this.textLeft - this.tileBorder)
+                context.measureText(name).width > (this.orderLink.linkLeft - this.textLeft - this.tileBorder)
                 && name.length > 2
             ) {
                 name = name.substr(0, name.length - 1);
@@ -555,7 +570,7 @@ module SQL2XTemplateCrudeTableGetCartProduct {
             let context: CanvasRenderingContext2D = canvas.getContext ( "2d" );
 
             // resize canvas to fit all columns 
-            canvas.height = window.scrollY + 240 + 15;
+            canvas.height = window.scrollY + 440 + 15;
 
             // clear background
             context.beginPath ();
@@ -600,45 +615,105 @@ module SQL2XTemplateCrudeTableGetCartProduct {
             );
             context.fillStyle = "white";
             context.fillText(
-                "Image Blob Filename: " + this.getFinancialOrder.imageBlobFilename,
+                "Financial Currency Type Code: " + this.getFinancialOrder.financialCurrencyTypeCode,
                 20,
                 window.scrollY + 100
             );
             context.fillStyle = "lightgray";
             context.fillText(
-                "Default User Name: " + this.getFinancialOrder.defaultUserName,
+                "Financial Currency Type Name: " + this.getFinancialOrder.financialCurrencyTypeName,
                 20,
                 window.scrollY + 120
             );
             context.fillStyle = "white";
             context.fillText(
-                "Financial Currency Type Name: " + this.getFinancialOrder.financialCurrencyTypeName,
+                "Address One: " + this.getFinancialOrder.addressOne,
                 20,
                 window.scrollY + 140
             );
             context.fillStyle = "lightgray";
             context.fillText(
-                "Financial Order Source Name: " + this.getFinancialOrder.financialOrderSourceName,
+                "Address Two: " + this.getFinancialOrder.addressTwo,
                 20,
                 window.scrollY + 160
             );
             context.fillStyle = "white";
             context.fillText(
-                "Date Time: " + this.getFinancialOrder.dateTime,
+                "Address Three: " + this.getFinancialOrder.addressThree,
                 20,
                 window.scrollY + 180
             );
             context.fillStyle = "lightgray";
             context.fillText(
-                "Comment: " + this.getFinancialOrder.comment,
+                "City: " + this.getFinancialOrder.city,
                 20,
                 window.scrollY + 200
             );
             context.fillStyle = "white";
             context.fillText(
-                "Financial Currency Type Code: " + this.getFinancialOrder.financialCurrencyTypeCode,
+                "Street: " + this.getFinancialOrder.street,
                 20,
                 window.scrollY + 220
+            );
+            context.fillStyle = "lightgray";
+            context.fillText(
+                "State: " + this.getFinancialOrder.state,
+                20,
+                window.scrollY + 240
+            );
+            context.fillStyle = "white";
+            context.fillText(
+                "District: " + this.getFinancialOrder.district,
+                20,
+                window.scrollY + 260
+            );
+            context.fillStyle = "lightgray";
+            context.fillText(
+                "Province: " + this.getFinancialOrder.province,
+                20,
+                window.scrollY + 280
+            );
+            context.fillStyle = "white";
+            context.fillText(
+                "Zip Code: " + this.getFinancialOrder.zipCode,
+                20,
+                window.scrollY + 300
+            );
+            context.fillStyle = "lightgray";
+            context.fillText(
+                "Po Box: " + this.getFinancialOrder.poBox,
+                20,
+                window.scrollY + 320
+            );
+            context.fillStyle = "white";
+            context.fillText(
+                "Location Address Comment: " + this.getFinancialOrder.locationAddressComment,
+                20,
+                window.scrollY + 340
+            );
+            context.fillStyle = "lightgray";
+            context.fillText(
+                "Financial Order Source Name: " + this.getFinancialOrder.financialOrderSourceName,
+                20,
+                window.scrollY + 360
+            );
+            context.fillStyle = "white";
+            context.fillText(
+                "Financial Order Comment: " + this.getFinancialOrder.financialOrderComment,
+                20,
+                window.scrollY + 380
+            );
+            context.fillStyle = "lightgray";
+            context.fillText(
+                "Default User Name: " + this.getFinancialOrder.defaultUserName,
+                20,
+                window.scrollY + 400
+            );
+            context.fillStyle = "white";
+            context.fillText(
+                "Date Time: " + this.getFinancialOrder.dateTime,
+                20,
+                window.scrollY + 420
             );
 
             context.stroke ();

@@ -1,1 +1,0 @@
-<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialOrderLineService" CodeBehind="C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkWebAppCrudeBusiness\BusinessWCFSoap\Templates\Financial\\\CrudeFinancialOrderLine.cs"%>

@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:45:48 PM
+  Generated Date: 4/16/2020 8:45:53 PM
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -17,12 +17,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [ServiceContract()]
     public partial interface IProductReferenceAttributeSearchService {
+        
         [OperationContract()]
         List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter();
     }
-
+    
     public partial class ProductReferenceAttributeSearchService : IProductReferenceAttributeSearchService {
-        public List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter() {
+        
+        public virtual List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter() {
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductReferenceAttributeSearch();
             var businessLogicLayer = new ProductReferenceAttributeSearchWithFilter();
             return businessLogicLayer.ProductReferenceAttributeSearchWithFilterFromDal(dataAccessLayer.ProductReferenceAttributeSearchWithFilter());

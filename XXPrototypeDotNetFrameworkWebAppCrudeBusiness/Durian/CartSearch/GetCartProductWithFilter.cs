@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:46:04 PM
+  Generated Date: 4/16/2020 8:43:42 PM
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -30,23 +30,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         }
         
         public void DataToContract(GetCartProductWithFilterData dalGetCartProductWithFilter, GetCartProductWithFilterContract dataContract) {
-            dataContract.FirstName = dalGetCartProductWithFilter.FirstName;
-            dataContract.MiddleName = dalGetCartProductWithFilter.MiddleName;
-            dataContract.LastName = dalGetCartProductWithFilter.LastName;
-            dataContract.ProductName = dalGetCartProductWithFilter.ProductName;
-            dataContract.ImageBlobFilename = dalGetCartProductWithFilter.ImageBlobFilename;
-            dataContract.ProductStateRcd = dalGetCartProductWithFilter.ProductStateRcd;
-            dataContract.FinancialCurrencyTypeName = dalGetCartProductWithFilter.FinancialCurrencyTypeName;
-            dataContract.DefaultUserName = dalGetCartProductWithFilter.DefaultUserName;
-            dataContract.ClientId = dalGetCartProductWithFilter.ClientId;
             dataContract.ProductId = dalGetCartProductWithFilter.ProductId;
-            dataContract.FinancialCurrencyTypeRcd = dalGetCartProductWithFilter.FinancialCurrencyTypeRcd;
-            dataContract.FinancialCurrencyAgainstFinancialCurrencyTypeRcd = dalGetCartProductWithFilter.FinancialCurrencyAgainstFinancialCurrencyTypeRcd;
-            dataContract.FinancialCurrencyTypeCode = dalGetCartProductWithFilter.FinancialCurrencyTypeCode;
-            dataContract.FinancialCurrencyId = dalGetCartProductWithFilter.FinancialCurrencyId;
+            dataContract.ProductName = dalGetCartProductWithFilter.ProductName;
             dataContract.Amount = dalGetCartProductWithFilter.Amount;
-            dataContract.CartProductStateRcd = dalGetCartProductWithFilter.CartProductStateRcd;
+            dataContract.FinancialCurrencyId = dalGetCartProductWithFilter.FinancialCurrencyId;
+            dataContract.FinancialCurrencyTypeName = dalGetCartProductWithFilter.FinancialCurrencyTypeName;
+            dataContract.StateRcd = dalGetCartProductWithFilter.StateRcd;
             dataContract.UserId = dalGetCartProductWithFilter.UserId;
+            dataContract.DefaultUserName = dalGetCartProductWithFilter.DefaultUserName;
             dataContract.DateTime = dalGetCartProductWithFilter.DateTime;
             dataContract.CartProductId = dalGetCartProductWithFilter.CartProductId;
         }

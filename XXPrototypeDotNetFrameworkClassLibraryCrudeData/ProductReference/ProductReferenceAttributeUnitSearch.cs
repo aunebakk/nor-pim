@@ -18,10 +18,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         public List<ProductReferenceAttributeUnitSearchWithFilterData> ProductReferenceAttributeUnitSearchWithFilter() {
             var ret = new List<ProductReferenceAttributeUnitSearchWithFilterData>();
             string sql = @"
-select 
+select
      paur.product_attribute_unit_name
-    ,du.default_user_name
     ,paur.user_id
+    ,du.default_user_name
     ,paur.date_time
     ,paur.product_attribute_unit_rcd
 from product_attribute_unit_ref as paur

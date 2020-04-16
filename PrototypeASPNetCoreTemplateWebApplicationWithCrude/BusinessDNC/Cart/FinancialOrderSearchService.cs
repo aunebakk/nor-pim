@@ -13,10 +13,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     
     public partial class FinancialOrderSearchService {
-        public List<GetFinancialOrderModel> GetFinancialOrder(System.Guid userId, System.Guid financialCurrencyId, string financialOrderSourceRcd, System.Guid clientId, System.Guid financialOrderId, System.Guid locationAddressId) {
-            var dataAccessLayer = new SolutionNorSolutionPim.BusinessLogicLayer.FinancialOrderSearch();
-            var businessLogicLayer = new GetFinancialOrder();
-            return businessLogicLayer.GetFinancialOrderFromDal(dataAccessLayer.GetFinancialOrder(userId, financialCurrencyId, financialOrderSourceRcd, clientId, financialOrderId, locationAddressId));
+        public List<GetFinancialOrderModel> GetFinancialOrder(System.Guid clientId, System.Guid financialCurrencyId, System.Guid locationAddressId, string financialOrderSourceRcd, System.Guid userId, System.Guid financialOrderId) {
+            var dataAccessLayer = new SolutionNorSolutionPim.BusinessLogicLayer.FinancialOrderSearch();            
+            var businessLogicLayer = new GetFinancialOrder();            
+            return businessLogicLayer.GetFinancialOrderFromDal(dataAccessLayer.GetFinancialOrder(clientId, financialCurrencyId, locationAddressId, financialOrderSourceRcd, userId, financialOrderId));
         }
     }
 }

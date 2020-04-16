@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:47:25 PM
+  Generated Date: 4/16/2020 8:46:05 PM
   Template: sql2x.DotNetCoreGenerateBusinessLogicLayer.DefaultUsing
 */
 
@@ -30,20 +30,24 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             dataModel.FirstName = dalGetCartProduct.FirstName;
             dataModel.MiddleName = dalGetCartProduct.MiddleName;
             dataModel.LastName = dalGetCartProduct.LastName;
-            dataModel.ProductName = dalGetCartProduct.ProductName;
-            dataModel.ImageBlobFilename = dalGetCartProduct.ImageBlobFilename;
-            dataModel.ProductStateRcd = dalGetCartProduct.ProductStateRcd;
-            dataModel.FinancialCurrencyTypeName = dalGetCartProduct.FinancialCurrencyTypeName;
-            dataModel.DefaultUserName = dalGetCartProduct.DefaultUserName;
+            dataModel.ClientNationalityRcd = dalGetCartProduct.ClientNationalityRcd;
+            dataModel.ClientGenderRcd = dalGetCartProduct.ClientGenderRcd;
+            dataModel.ClientTitleRcd = dalGetCartProduct.ClientTitleRcd;
+            dataModel.ClientTypeRcd = dalGetCartProduct.ClientTypeRcd;
             dataModel.ClientId = dalGetCartProduct.ClientId;
+            dataModel.ProductName = dalGetCartProduct.ProductName;
+            dataModel.ProductStateRcd = dalGetCartProduct.ProductStateRcd;
             dataModel.ProductId = dalGetCartProduct.ProductId;
             dataModel.FinancialCurrencyTypeRcd = dalGetCartProduct.FinancialCurrencyTypeRcd;
             dataModel.FinancialCurrencyAgainstFinancialCurrencyTypeRcd = dalGetCartProduct.FinancialCurrencyAgainstFinancialCurrencyTypeRcd;
             dataModel.FinancialCurrencyTypeCode = dalGetCartProduct.FinancialCurrencyTypeCode;
+            dataModel.FinancialCurrencyTypeName = dalGetCartProduct.FinancialCurrencyTypeName;
             dataModel.FinancialCurrencyId = dalGetCartProduct.FinancialCurrencyId;
             dataModel.Amount = dalGetCartProduct.Amount;
             dataModel.CartProductStateRcd = dalGetCartProduct.CartProductStateRcd;
+            dataModel.ImageBlobFilename = dalGetCartProduct.ImageBlobFilename;
             dataModel.UserId = dalGetCartProduct.UserId;
+            dataModel.DefaultUserName = dalGetCartProduct.DefaultUserName;
             dataModel.DateTime = dalGetCartProduct.DateTime;
             dataModel.CartProductId = dalGetCartProduct.CartProductId;
         }

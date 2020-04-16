@@ -1,4 +1,4 @@
-namespace SolutionNorSolutionPim.UserInterface {
+﻿namespace SolutionNorSolutionPim.UserInterface {
     
     
     public partial class CrudeDefaultSystemReferenceTableEdit {

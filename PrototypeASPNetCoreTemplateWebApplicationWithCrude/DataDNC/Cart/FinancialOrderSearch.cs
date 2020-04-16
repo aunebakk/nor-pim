@@ -1,9 +1,9 @@
-﻿/*
-  SQL2X Generated code based on a SQL Server Schema
-  SQL2X Version: 1.0
-  http://sql2x.org/
-  Generated Date: 4/9/2020 5:47:28 PM
-  Template: sql2x.TemplateDotNetCoreApiDurianWithTypeScript.DataBeginning
+/*  
+  SQL2X Generated ASP .NET Core C# Data Access code based on a SQL Server Schema
+  SQL2X Version: 0.d
+  http://sql2x.azurewebsites.net/
+  Generated Date: 12/20/2017 19:41:36
+  Template: TemplateDotNetCoreGeneratorApiDurian
 */
 using System;
 using System.Collections.Generic;
@@ -18,12 +18,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         /// <cardinality>Many</cardinality>
         /// <template>DotNetCoreApiDurian</template>
         public List<GetFinancialOrderData> GetFinancialOrder(
-             System.Guid userId
+             System.Guid clientId
             ,System.Guid financialCurrencyId
-            ,System.String financialOrderSourceRcd
-            ,System.Guid clientId
-            ,System.Guid financialOrderId
             ,System.Guid locationAddressId
+            ,System.String financialOrderSourceRcd
+            ,System.Guid userId
+            ,System.Guid financialOrderId
             ) {
             var ret = new List<GetFinancialOrderData>();
             string sql = @"
@@ -31,57 +31,78 @@ select
      c.first_name
     ,c.middle_name
     ,c.last_name
-    ,c.image_blob_filename
-    ,du.default_user_name
-    ,fc.financial_currency_type_name
-    ,fosr.financial_order_source_name
-    ,fo.user_id
-    ,fo.date_time
-    ,fo.comment
+    ,c.client_nationality_rcd
+    ,c.client_gender_rcd
+    ,c.client_title_rcd
+    ,c.client_type_rcd
+    ,fo.client_id
     ,fc.financial_currency_type_rcd
     ,fc.financial_currency_against_financial_currency_type_rcd
     ,fc.financial_currency_type_code
+    ,fc.financial_currency_type_name
     ,fo.financial_currency_id
-    ,fo.financial_order_source_rcd
-    ,fo.client_id
-    ,fo.financial_order_id
+    ,la.location_address_type_rcd
+    ,la.address_one
+    ,la.address_two
+    ,la.address_three
+    ,la.city
+    ,la.street
+    ,la.state
+    ,la.district
+    ,la.province
+    ,la.zip_code
+    ,la.po_box
+    ,la.comment as location_address_comment
     ,fo.location_address_id
+    ,fo.financial_order_source_rcd
+    ,c.image_blob_filename
+    ,fosr.financial_order_source_name
+    ,fo.comment
+    ,fo.comment as financial_order_comment
+    ,fo.user_id
+    ,du.default_user_name
+    ,fo.date_time
+    ,fo.financial_order_id
 from financial_order as fo
-inner join default_user as du on du.default_user_id = fo.user_id
-inner join financial_currency as fc on fc.financial_currency_id = fo.financial_currency_id
-inner join financial_order_source_ref as fosr on fosr.financial_order_source_rcd = fo.financial_order_source_rcd
 inner join client as c on c.client_id = fo.client_id
+inner join financial_currency as fc on fc.financial_currency_id = fo.financial_currency_id
+left join location_address as la on la.location_address_id = fo.location_address_id
+inner join financial_order_source_ref as fosr on fosr.financial_order_source_rcd = fo.financial_order_source_rcd
+inner join default_user as du on du.default_user_id = fo.user_id
 
 where 1 = 1
+
+order by fo.date_time desc
+
 ";
 
             using (var conn = new SqlConnection(Conn.ConnectionString)) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
-                    if (userId != Guid.Empty) {
-                        command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) userId;
-                        sql += " and fo.user_id = @user_id";
+                    if (clientId != Guid.Empty) {
+                        command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) clientId;
+                        sql += " and fo.client_id = @client_id";
                     }
                     if (financialCurrencyId != Guid.Empty) {
                         command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) financialCurrencyId;
                         sql += " and fo.financial_currency_id = @financial_currency_id";
                     }
+                    if (locationAddressId != Guid.Empty) {
+                        command.Parameters.Add("@location_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) locationAddressId;
+                        sql += " and fo.location_address_id = @location_address_id";
+                    }
                     if (!String.IsNullOrEmpty(financialOrderSourceRcd)) {
                         command.Parameters.Add("@financial_order_source_rcd",SqlDbType.NVarChar).Value = (System.String) financialOrderSourceRcd;
                         sql += " and fo.financial_order_source_rcd = @financial_order_source_rcd";
                     }
-                    if (clientId != Guid.Empty) {
-                        command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) clientId;
-                        sql += " and fo.client_id = @client_id";
+                    if (userId != Guid.Empty) {
+                        command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) userId;
+                        sql += " and fo.user_id = @user_id";
                     }
                     if (financialOrderId != Guid.Empty) {
                         command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) financialOrderId;
                         sql += " and fo.financial_order_id = @financial_order_id";
-                    }
-                    if (locationAddressId != Guid.Empty) {
-                        command.Parameters.Add("@location_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) locationAddressId;
-                        sql += " and fo.location_address_id = @location_address_id";
                     }
 
                     command.CommandText = sql;

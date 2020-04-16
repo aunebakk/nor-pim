@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer.Models {
     
@@ -17,29 +17,33 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Models {
         [Required()]
         public string LastName { get; set; } //;
         
-        [Display(Name="Product Name")]
+        [Display(Name="Client Nationality")]
         [Required()]
-        public string ProductName { get; set; } //;
+        public string ClientNationalityRcd { get; set; } //;
         
-        [Display(Name="Image Blob Filename")]
+        [Display(Name="Client Gender")]
         [Required()]
-        public string ImageBlobFilename { get; set; } //;
+        public string ClientGenderRcd { get; set; } //;
         
-        [Display(Name="Product State")]
+        [Display(Name="Client Title")]
         [Required()]
-        public string ProductStateRcd { get; set; } //;
+        public string ClientTitleRcd { get; set; } //;
         
-        [Display(Name="Financial Currency Type Name")]
+        [Display(Name="Client Type")]
         [Required()]
-        public string FinancialCurrencyTypeName { get; set; } //;
-        
-        [Display(Name="Default User Name")]
-        [Required()]
-        public string DefaultUserName { get; set; } //;
+        public string ClientTypeRcd { get; set; } //;
         
         [Display(Name="Client Id")]
         [Required()]
         public System.Guid ClientId { get; set; } //;
+        
+        [Display(Name="Product Name")]
+        [Required()]
+        public string ProductName { get; set; } //;
+        
+        [Display(Name="Product State")]
+        [Required()]
+        public string ProductStateRcd { get; set; } //;
         
         [Display(Name="Product Id")]
         [Required()]
@@ -57,6 +61,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Models {
         [Required()]
         public string FinancialCurrencyTypeCode { get; set; } //;
         
+        [Display(Name="Financial Currency Type Name")]
+        [Required()]
+        public string FinancialCurrencyTypeName { get; set; } //;
+        
         [Display(Name="Financial Currency Id")]
         [Required()]
         public System.Guid FinancialCurrencyId { get; set; } //;
@@ -69,9 +77,17 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Models {
         [Required()]
         public string CartProductStateRcd { get; set; } //;
         
+        [Display(Name="Image Blob Filename")]
+        [Required()]
+        public string ImageBlobFilename { get; set; } //;
+        
         [Display(Name="User Id")]
         [Required()]
         public System.Guid UserId { get; set; } //;
+        
+        [Display(Name="Default User Name")]
+        [Required()]
+        public string DefaultUserName { get; set; } //;
         
         [Display(Name="Date Time")]
         [Required()]

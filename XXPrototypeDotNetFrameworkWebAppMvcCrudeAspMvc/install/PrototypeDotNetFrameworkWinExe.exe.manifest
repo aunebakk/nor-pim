@@ -49,31 +49,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1VhGo4OZTnWiv3r8C4fWxZaBA30UJQ3q/k/DPK/K9uA=</dsig:DigestValue>
+        <dsig:DigestValue>YR1NshAJ95JYY5oQcfO5r4bQR/hJamdoqOE+B6FWcCE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XXPrototypeDotNetFrameworkClassLibraryCrudeContract.dll" size="174592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XXPrototypeDotNetFrameworkClassLibraryCrudeContract.dll" size="156672">
       <assemblyIdentity name="XXPrototypeDotNetFrameworkClassLibraryCrudeContract" version="0.1.1.17" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>au/kozcGkXrtpj9yRLkjnAhSMl2s2OGT07C43uq+7j8=</dsig:DigestValue>
+        <dsig:DigestValue>RbTR2jLWpeAEWB8cqLwhPyTA2K9w8ZQDGPBesOikA7s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.dll" size="478720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.dll" size="467456">
       <assemblyIdentity name="XXPrototypeDotNetFrameworkClassLibraryCrudeProxy" version="0.1.1.17" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rFrINujlHudbWk9/PD/O2Lf6hMUu8JV7l3EJ3rw64XE=</dsig:DigestValue>
+        <dsig:DigestValue>AymYhuHB0wIxABJGsqbEEorft3U0K4eE7jdfd949eAw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42747">
+  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="39235">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>QFNtG7P81EQyhonBf0vdhMb4Oh+sOOEGFGJAoA7JNPU=</dsig:DigestValue>
+      <dsig:DigestValue>K5PKRP4HI98QrIrvnub6WbkFJeofJCN02tyM339O8ys=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

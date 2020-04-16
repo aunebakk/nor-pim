@@ -1,7 +1,7 @@
 rem SQL2X Generated code based on a SQL Server Schema
 rem SQL2X Version: 1.0
 rem http://sql2x.org/
-rem Generated Date: 4/9/2020 5:51:35 PM
+rem Generated Date: 4/16/2020 8:51:04 PM
 rem Template: sql2x.AzureBase.ExecuteDOSIncognito
 rem From: SQL2XExtension.SQL2XExtensionCreatorCoreV0.PublishDotNetCoreLayerToAzure
 "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" ^

@@ -1,1 +1,0 @@
-<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultSystemReferenceTableService" CodeBehind="C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkWebAppCrudeBusiness\BusinessWCFSoap\Templates\Default\\\CrudeDefaultSystemReferenceTable.cs"%>

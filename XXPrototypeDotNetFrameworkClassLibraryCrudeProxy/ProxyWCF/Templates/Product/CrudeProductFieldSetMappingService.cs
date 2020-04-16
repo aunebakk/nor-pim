@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:34:33 PM
+  Generated Date: 4/16/2020 8:31:04 PM
   Filename: C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\Template\Product\ProductFieldSetMapping.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy

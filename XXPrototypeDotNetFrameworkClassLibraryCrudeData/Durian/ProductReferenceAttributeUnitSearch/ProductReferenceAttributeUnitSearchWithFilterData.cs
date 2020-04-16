@@ -1,8 +1,8 @@
-/*
+﻿/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/9/2020 5:46:42 PM
+  Generated Date: 4/16/2020 8:45:57 PM
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -19,9 +19,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public string ProductAttributeUnitName { get; set; } //;
         
-        public string DefaultUserName { get; set; } //;
-        
         public System.Guid UserId { get; set; } //;
+        
+        public string DefaultUserName { get; set; } //;
         
         public System.DateTime DateTime { get; set; } //;
         
@@ -29,8 +29,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public void Populate(IDataReader reader, ProductReferenceAttributeUnitSearchWithFilterDataOrdinals ordinals) {
             if (!reader.IsDBNull(ordinals.ProductAttributeUnitName)) ProductAttributeUnitName = reader.GetString(ordinals.ProductAttributeUnitName);
-            if (!reader.IsDBNull(ordinals.DefaultUserName)) DefaultUserName = reader.GetString(ordinals.DefaultUserName);
             if (!reader.IsDBNull(ordinals.UserId)) UserId = reader.GetGuid(ordinals.UserId);
+            if (!reader.IsDBNull(ordinals.DefaultUserName)) DefaultUserName = reader.GetString(ordinals.DefaultUserName);
             if (!reader.IsDBNull(ordinals.DateTime)) DateTime = reader.GetDateTime(ordinals.DateTime);
             if (!reader.IsDBNull(ordinals.ProductAttributeUnitRcd)) ProductAttributeUnitRcd = reader.GetString(ordinals.ProductAttributeUnitRcd);
         }
@@ -40,9 +40,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public int ProductAttributeUnitName;
         
-        public int DefaultUserName;
-        
         public int UserId;
+        
+        public int DefaultUserName;
         
         public int DateTime;
         
@@ -50,8 +50,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public ProductReferenceAttributeUnitSearchWithFilterDataOrdinals(IDataReader reader) {
             ProductAttributeUnitName = reader.GetOrdinal("product_attribute_unit_name");
-            DefaultUserName = reader.GetOrdinal("default_user_name");
             UserId = reader.GetOrdinal("user_id");
+            DefaultUserName = reader.GetOrdinal("default_user_name");
             DateTime = reader.GetOrdinal("date_time");
             ProductAttributeUnitRcd = reader.GetOrdinal("product_attribute_unit_rcd");
         }

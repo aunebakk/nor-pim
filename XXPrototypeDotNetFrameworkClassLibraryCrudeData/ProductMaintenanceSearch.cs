@@ -10,7 +10,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     /// </summary>
     /// <domain>ProductMaintenance</domain>
     public class ProductMaintenanceSearch {
-                                                                            
+                                                    
         /// <summary>Get Product Info</summary>
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>
