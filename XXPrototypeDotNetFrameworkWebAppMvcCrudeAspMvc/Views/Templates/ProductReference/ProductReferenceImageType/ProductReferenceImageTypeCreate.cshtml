@@ -1,0 +1,74 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 4/22/2020 5:54:53 AM
+  Template: sql2x.TemplateByServiceTableCrudGenerator.ParentViewCreate
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceImageTypeContract
+
+@{
+    ViewBag.Title = "Create Product Image Type Ref";
+}
+
+<h3>Create Product Image Type Ref</h3>
+    <div>
+        @Html.ActionLink("references", "DashboardPIMReference", "Dashboard") | 
+        @Html.ActionLink("refresh", "ProductReferenceImageTypeEdit", "ProductReferenceImageType") | 
+        @Html.ActionLink("add new", "ProductReferenceImageTypeCreate", "ProductReferenceImageType")
+    </div>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ProductImageTypeRefNew.UserId)
+        @Html.HiddenFor(model => model.ProductImageTypeRefNew.DateTime)
+
+        <div class="form-group">
+            @Html.Label("Product Image Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductImageTypeRefNew.ProductImageTypeRcd, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductImageTypeRefNew.ProductImageTypeRcd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Product Image Type Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductImageTypeRefNew.ProductImageTypeName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductImageTypeRefNew.ProductImageTypeName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Date Time", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayText("DateTime")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ProductReferenceImageTypeEdit")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/themes/base/all.css")
+    <script type="text/javascript">
+        $(function () {
+            // This will make every element with the class "date-picker" into a DatePicker element
+            $('.date-picker').datepicker(({ dateFormat: "yy-mm-dd" }));
+        })
+    </script>
+}

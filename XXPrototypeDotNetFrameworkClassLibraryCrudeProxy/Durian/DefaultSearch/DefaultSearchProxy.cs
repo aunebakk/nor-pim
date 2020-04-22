@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/16/2020 8:42:27 PM
+  Generated Date: 4/22/2020 5:48:48 AM
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
@@ -83,86 +83,107 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
         public List<DefaultTestOverviewContract> DefaultTestOverview(string commandName) {
             return base.Channel.DefaultTestOverview(commandName);
+
         }
 
         public List<DashboardCountsContract> DashboardCounts(string dashboardLayoutRcd) {
             return base.Channel.DashboardCounts(dashboardLayoutRcd);
+
         }
 
         public List<DefaultPerformanceIssueFetchWithFilterContract> DefaultPerformanceIssueFetchWithFilter(string commandName) {
             return base.Channel.DefaultPerformanceIssueFetchWithFilter(commandName);
+
         }
 
         public List<DefaultIssueWithFilterContract> DefaultIssueWithFilter(string defaultIssueTypeRcd, string defaultIssueStatusRcd) {
             return base.Channel.DefaultIssueWithFilter(defaultIssueTypeRcd, defaultIssueStatusRcd);
+
         }
 
         public List<DefaultErrorOverviewContract> DefaultErrorOverview() {
             return base.Channel.DefaultErrorOverview();
+
         }
 
         public List<DefaultPerformanceIndicatorsContract> DefaultPerformanceIndicators() {
             return base.Channel.DefaultPerformanceIndicators();
+
         }
 
         public List<DefaultStatisticsContract> DefaultStatistics() {
             return base.Channel.DefaultStatistics();
+
         }
 
         public List<DefaultUserActivityByHourContract> DefaultUserActivityByHour() {
             return base.Channel.DefaultUserActivityByHour();
+
         }
 
         public List<DefaultStatisticsByMonthContract> DefaultStatisticsByMonth() {
             return base.Channel.DefaultStatisticsByMonth();
+
         }
 
         public List<DefaultStatisticsTop5Contract> DefaultStatisticsTop5() {
             return base.Channel.DefaultStatisticsTop5();
+
         }
 
         public List<DefaultPerformanceTimesContract> DefaultPerformanceTimes(string commandName) {
             return base.Channel.DefaultPerformanceTimes(commandName);
+
         }
 
         public List<DefaultPerformanceTimeCommandsContract> DefaultPerformanceTimeCommands() {
             return base.Channel.DefaultPerformanceTimeCommands();
+
         }
 
         public List<DefaultUserActivityRecentContract> DefaultUserActivityRecent(System.Guid defaultUserId) {
             return base.Channel.DefaultUserActivityRecent(defaultUserId);
+
         }
 
         public List<DefaultUserActivityOnAddressContract> DefaultUserActivityOnAddress(string originatingAddress) {
             return base.Channel.DefaultUserActivityOnAddress(originatingAddress);
+
         }
 
         public List<DefaultUserActivityGroupedContract> DefaultUserActivityGrouped() {
             return base.Channel.DefaultUserActivityGrouped();
+
         }
 
         public List<DefaultUserActivityGroupedByAddressContract> DefaultUserActivityGroupedByAddress() {
             return base.Channel.DefaultUserActivityGroupedByAddress();
+
         }
 
         public List<DefaultUserListContract> DefaultUserList() {
             return base.Channel.DefaultUserList();
+
         }
 
         public List<DefaultUserListForDashboardContract> DefaultUserListForDashboard() {
             return base.Channel.DefaultUserListForDashboard();
+
         }
 
         public List<GetDefaultChangeLogContract> GetDefaultChangeLog(string defaultChangeName, string defaultChangeLogTypeRcd, System.Guid defaultIssueId, System.Guid defaultChangeLogId) {
             return base.Channel.GetDefaultChangeLog(defaultChangeName, defaultChangeLogTypeRcd, defaultIssueId, defaultChangeLogId);
+
         }
 
         public List<DefaultResourceStatisticsContract> DefaultResourceStatistics() {
             return base.Channel.DefaultResourceStatistics();
+
         }
 
         public List<DefaultResourceDatabaseStatisticsContract> DefaultResourceDatabaseStatistics() {
             return base.Channel.DefaultResourceDatabaseStatistics();
+
         }
     }
 }

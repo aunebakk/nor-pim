@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/16/2020 8:45:53 PM
+  Generated Date: 4/22/2020 5:54:08 AM
   Template: sql2x.ContractsGenerator.MethodNewStyle
 */
 using System.Runtime.Serialization;
@@ -16,15 +16,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         public string ProductAttributeName { get; set; } //;
         
         [DataMember()]
-        public System.Guid UserId { get; set; } //;
-        
-        [DataMember()]
-        public string DefaultUserName { get; set; } //;
+        public string ProductAttributeRcd { get; set; } //;
         
         [DataMember()]
         public System.DateTime DateTime { get; set; } //;
-        
-        [DataMember()]
-        public string ProductAttributeRcd { get; set; } //;
     }
 }

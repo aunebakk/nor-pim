@@ -1,7 +1,7 @@
 # SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 4/16/2020 8:50:15 PM
+# Generated Date: 4/22/2020 6:00:15 AM
 # Template: sql2x.AzureBase.ExecutePowerShell
 # From: sql2x.Azure.ExtractPassword
 $username = 'emailPersonal@Second.com';

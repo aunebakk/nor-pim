@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeData", "XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj", "{1C0F32BF-0721-40E2-A6A7-ADE2E922F5F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeData", "XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj", "{844FDFD8-1C2F-4D79-951D-42E8A64D867C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C0F32BF-0721-40E2-A6A7-ADE2E922F5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C0F32BF-0721-40E2-A6A7-ADE2E922F5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C0F32BF-0721-40E2-A6A7-ADE2E922F5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C0F32BF-0721-40E2-A6A7-ADE2E922F5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{844FDFD8-1C2F-4D79-951D-42E8A64D867C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844FDFD8-1C2F-4D79-951D-42E8A64D867C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844FDFD8-1C2F-4D79-951D-42E8A64D867C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844FDFD8-1C2F-4D79-951D-42E8A64D867C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7269DD9E-45AF-4B5D-8588-EA1CBD9AB2CC}
+		SolutionGuid = {FFB3E764-BC03-4A34-BB52-5D0B33652411}
 	EndGlobalSection
 EndGlobal

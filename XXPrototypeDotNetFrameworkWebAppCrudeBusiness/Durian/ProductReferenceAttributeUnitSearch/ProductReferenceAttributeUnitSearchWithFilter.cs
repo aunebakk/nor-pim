@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/16/2020 8:45:58 PM
+  Generated Date: 4/22/2020 5:54:15 AM
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -31,10 +31,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         public void DataToContract(ProductReferenceAttributeUnitSearchWithFilterData dalProductReferenceAttributeUnitSearchWithFilter, ProductReferenceAttributeUnitSearchWithFilterContract dataContract) {
             dataContract.ProductAttributeUnitName = dalProductReferenceAttributeUnitSearchWithFilter.ProductAttributeUnitName;
-            dataContract.UserId = dalProductReferenceAttributeUnitSearchWithFilter.UserId;
-            dataContract.DefaultUserName = dalProductReferenceAttributeUnitSearchWithFilter.DefaultUserName;
-            dataContract.DateTime = dalProductReferenceAttributeUnitSearchWithFilter.DateTime;
             dataContract.ProductAttributeUnitRcd = dalProductReferenceAttributeUnitSearchWithFilter.ProductAttributeUnitRcd;
+            dataContract.DateTime = dalProductReferenceAttributeUnitSearchWithFilter.DateTime;
         }
     }
 }

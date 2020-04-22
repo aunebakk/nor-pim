@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C972B438-C615-44F7-B025-29C822F1A055}</ProjectGuid>
+    <ProjectGuid>{8855661D-E32A-497A-A546-8B37C8D6B8FF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -356,12 +356,21 @@
     <Compile Include="Controllers\mvcHelper.cs" />
     <Compile Include="Controllers\norpimController.cs" />
     <Compile Include="Controllers\Product\ProductController.cs" />
+    <Compile Include="Controllers\Templates\Cart\CartProductController.cs" />
     <Compile Include="Controllers\Templates\ProductMaintenance\ProductAttributeController.cs" />
     <Compile Include="Controllers\Templates\ProductMaintenance\ProductDocumentationController.cs" />
     <Compile Include="Controllers\Templates\ProductMaintenance\ProductIdentifierController.cs" />
     <Compile Include="Controllers\Templates\ProductMaintenance\ProductImageController.cs" />
     <Compile Include="Controllers\Templates\ProductMaintenance\ProductInfoController.cs" />
     <Compile Include="Controllers\Templates\ProductMaintenance\ProductMaintenanceController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceAttributeController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceAttributeUnitController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceCategoryController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceCategoryDocumentationTypeController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceDocumentationTypeController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceIdentifierController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceImageTypeController.cs" />
+    <Compile Include="Controllers\Templates\ProductReference\ProductReferenceInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -665,6 +674,8 @@
     <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearch.cshtml" />
     <Content Include="Views\Home\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchDurians.cshtml" />
+    <Content Include="Views\Templates\Cart\CartProduct\CartProductCreate.cshtml" />
+    <Content Include="Views\Templates\Cart\CartProduct\CartProductEdit.cshtml" />
     <Content Include="Views\Templates\ProductMaintenance\ProductMaintenance\ProductMaintenanceIndex.cshtml" />
     <Content Include="Views\Templates\ProductMaintenance\ProductMaintenance\ProductMaintenanceCreate.cshtml" />
     <Content Include="Views\Templates\ProductMaintenance\ProductMaintenance\ProductMaintenanceEdit.cshtml" />
@@ -683,6 +694,22 @@
     <Content Include="Views\Templates\ProductMaintenance\ProductInfo\ProductInfoIndex.cshtml" />
     <Content Include="Views\Templates\ProductMaintenance\ProductInfo\ProductInfoCreate.cshtml" />
     <Content Include="Views\Templates\ProductMaintenance\ProductInfo\ProductInfoEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceAttribute\ProductReferenceAttributeCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceAttribute\ProductReferenceAttributeEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceAttributeUnit\ProductReferenceAttributeUnitCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceAttributeUnit\ProductReferenceAttributeUnitEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceCategory\ProductReferenceCategoryCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceCategory\ProductReferenceCategoryEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceCategoryDocumentationType\ProductReferenceCategoryDocumentationTypeCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceCategoryDocumentationType\ProductReferenceCategoryDocumentationTypeEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceDocumentationType\ProductReferenceDocumentationTypeCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceDocumentationType\ProductReferenceDocumentationTypeEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceIdentifier\ProductReferenceIdentifierCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceIdentifier\ProductReferenceIdentifierEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceImageType\ProductReferenceImageTypeCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceImageType\ProductReferenceImageTypeEdit.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceInfo\ProductReferenceInfoCreate.cshtml" />
+    <Content Include="Views\Templates\ProductReference\ProductReferenceInfo\ProductReferenceInfoEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1322,11 +1349,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{98d460f5-6849-4232-92cf-710745d4bf78}</Project>
+      <Project>{4ad2fa8e-dcca-456d-994a-29fff100492f}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{963db7a6-bf91-46ef-8eb6-781cc054a712}</Project>
+      <Project>{61eda069-5572-41f8-a923-20ed79a36164}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1358,7 +1385,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63224</DevelopmentServerPort>
+          <DevelopmentServerPort>58514</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -11,21 +11,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
     /// <domain>ProductReference</domain>
     public class ProductReferenceAttributeSearch
     {
-        
+
         /// <summary>Get Product Attribute Ref</summary>
         /// <cardinality>Many</cardinality>
         /// <template>ByServiceTableCrud</template>
         public List<ProductReferenceAttributeSearchWithFilterData> ProductReferenceAttributeSearchWithFilter() {
             var ret = new List<ProductReferenceAttributeSearchWithFilterData>();
             string sql = @"
-select
+select 
      par.product_attribute_name
-    ,par.user_id
-    ,du.default_user_name
-    ,par.date_time
     ,par.product_attribute_rcd
+    ,par.date_time
 from product_attribute_ref as par
-inner join default_user as du on du.default_user_id = par.user_id
 
 where 1 = 1
 ";

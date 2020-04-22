@@ -17,6 +17,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             var dataAccessLayer = new SolutionNorSolutionPim.BusinessLogicLayer.FinancialOrderSearch();            
             var businessLogicLayer = new GetFinancialOrder();            
             return businessLogicLayer.GetFinancialOrderFromDal(dataAccessLayer.GetFinancialOrder(clientId, financialCurrencyId, locationAddressId, financialOrderSourceRcd, userId, financialOrderId));
+
         }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98D460F5-6849-4232-92CF-710745D4BF78}</ProjectGuid>
+    <ProjectGuid>{4AD2FA8E-DCCA-456D-994A-29FFF100492F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</RootNamespace>
@@ -202,12 +202,21 @@
     <Compile Include="Product\Product.cs" />
     <Compile Include="Product\ProductCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Cart\CartProductContract.cs" />
     <Compile Include="Service\ProductMaintenance\ProductAttributeContract.cs" />
     <Compile Include="Service\ProductMaintenance\ProductDocumentationContract.cs" />
     <Compile Include="Service\ProductMaintenance\ProductIdentifierContract.cs" />
     <Compile Include="Service\ProductMaintenance\ProductImageContract.cs" />
     <Compile Include="Service\ProductMaintenance\ProductInfoContract.cs" />
     <Compile Include="Service\ProductMaintenance\ProductMaintenanceContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttributeContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttributeUnitContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategoryContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategoryDocumentationTypeContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceDocumentationTypeContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceIdentifierContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceImageTypeContract.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceInfoContract.cs" />
     <Compile Include="Service\Product\ProductContract.cs" />
   </ItemGroup>
   <ItemGroup>

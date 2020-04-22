@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{26CE5791-3BA0-4D20-AF6D-69EFBBF63004}</ProjectGuid>
+    <ProjectGuid>{7DF19FDC-45B4-4EA7-8825-C78804D1B793}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -71,6 +71,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cart\CartProductService.svc" />
     <Content Include="Cart\CartSearchService.svc" />
     <Content Include="Category\CategorySearchService.svc" />
     <Content Include="Client\ClientSearchService.svc" />
@@ -83,7 +84,15 @@
     <Content Include="connection.config" />
     <Content Include="ProductMaintenance\ProductMaintenanceSearchService.svc" />
     <Content Include="ProductReference\ProductReferenceAttributeSearchService.svc" />
+    <Content Include="ProductReference\ProductReferenceAttributeService.svc" />
     <Content Include="ProductReference\ProductReferenceAttributeUnitSearchService.svc" />
+    <Content Include="ProductReference\ProductReferenceAttributeUnitService.svc" />
+    <Content Include="ProductReference\ProductReferenceCategoryDocumentationTypeService.svc" />
+    <Content Include="ProductReference\ProductReferenceCategoryService.svc" />
+    <Content Include="ProductReference\ProductReferenceDocumentationTypeService.svc" />
+    <Content Include="ProductReference\ProductReferenceIdentifierService.svc" />
+    <Content Include="ProductReference\ProductReferenceImageTypeService.svc" />
+    <Content Include="ProductReference\ProductReferenceInfoService.svc" />
     <Content Include="Product\ProductCategoryService.svc" />
     <Content Include="Product\ProductSearchService.svc" />
     <Content Include="Product\ProductService.svc" />
@@ -213,6 +222,7 @@
     <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfo.cs" />
     <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfoRef.cs" />
     <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductSupplier.cs" />
+    <Compile Include="Cart\CartProductService.cs" />
     <Compile Include="Cart\CartSearchService.cs" />
     <Compile Include="Category\CategorySearchService.cs" />
     <Compile Include="Client\ClientSearchService.cs" />
@@ -263,7 +273,15 @@
     <Compile Include="Durian\ProductSearch\ProductSearchByName.cs" />
     <Compile Include="ProductMaintenance\ProductMaintenanceSearchService.cs" />
     <Compile Include="ProductReference\ProductReferenceAttributeSearchService.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeService.cs" />
     <Compile Include="ProductReference\ProductReferenceAttributeUnitSearchService.cs" />
+    <Compile Include="ProductReference\ProductReferenceAttributeUnitService.cs" />
+    <Compile Include="ProductReference\ProductReferenceCategoryDocumentationTypeService.cs" />
+    <Compile Include="ProductReference\ProductReferenceCategoryService.cs" />
+    <Compile Include="ProductReference\ProductReferenceDocumentationTypeService.cs" />
+    <Compile Include="ProductReference\ProductReferenceIdentifierService.cs" />
+    <Compile Include="ProductReference\ProductReferenceImageTypeService.cs" />
+    <Compile Include="ProductReference\ProductReferenceInfoService.cs" />
     <Compile Include="Product\ProductCategoryService.cs" />
     <Compile Include="Product\ProductSearchService.cs" />
     <Compile Include="Product\ProductService.cs" />
@@ -411,15 +429,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj">
-      <Project>{42299df2-a1f7-4237-afd7-cea1add268d3}</Project>
+      <Project>{e7dbe64f-57f4-4673-875a-efe80da61085}</Project>
       <Name>PrototypeDatabaseTemplateEmpty</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{98d460f5-6849-4232-92cf-710745d4bf78}</Project>
+      <Project>{4ad2fa8e-dcca-456d-994a-29fff100492f}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj">
-      <Project>{1c0f32bf-0721-40e2-a6a7-ade2e922f5f5}</Project>
+      <Project>{844fdfd8-1c2f-4d79-951d-42e8a64d867c}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeData</Name>
     </ProjectReference>
   </ItemGroup>

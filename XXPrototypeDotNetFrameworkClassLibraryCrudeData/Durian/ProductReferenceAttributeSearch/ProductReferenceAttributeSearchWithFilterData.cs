@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/16/2020 8:45:52 PM
+  Generated Date: 4/22/2020 5:54:08 AM
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -19,20 +19,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public string ProductAttributeName { get; set; } //;
         
-        public System.Guid UserId { get; set; } //;
-        
-        public string DefaultUserName { get; set; } //;
+        public string ProductAttributeRcd { get; set; } //;
         
         public System.DateTime DateTime { get; set; } //;
         
-        public string ProductAttributeRcd { get; set; } //;
-        
         public void Populate(IDataReader reader, ProductReferenceAttributeSearchWithFilterDataOrdinals ordinals) {
             if (!reader.IsDBNull(ordinals.ProductAttributeName)) ProductAttributeName = reader.GetString(ordinals.ProductAttributeName);
-            if (!reader.IsDBNull(ordinals.UserId)) UserId = reader.GetGuid(ordinals.UserId);
-            if (!reader.IsDBNull(ordinals.DefaultUserName)) DefaultUserName = reader.GetString(ordinals.DefaultUserName);
-            if (!reader.IsDBNull(ordinals.DateTime)) DateTime = reader.GetDateTime(ordinals.DateTime);
             if (!reader.IsDBNull(ordinals.ProductAttributeRcd)) ProductAttributeRcd = reader.GetString(ordinals.ProductAttributeRcd);
+            if (!reader.IsDBNull(ordinals.DateTime)) DateTime = reader.GetDateTime(ordinals.DateTime);
         }
     }
     
@@ -40,20 +34,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public int ProductAttributeName;
         
-        public int UserId;
-        
-        public int DefaultUserName;
+        public int ProductAttributeRcd;
         
         public int DateTime;
         
-        public int ProductAttributeRcd;
-        
         public ProductReferenceAttributeSearchWithFilterDataOrdinals(IDataReader reader) {
             ProductAttributeName = reader.GetOrdinal("product_attribute_name");
-            UserId = reader.GetOrdinal("user_id");
-            DefaultUserName = reader.GetOrdinal("default_user_name");
-            DateTime = reader.GetOrdinal("date_time");
             ProductAttributeRcd = reader.GetOrdinal("product_attribute_rcd");
+            DateTime = reader.GetOrdinal("date_time");
         }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{963DB7A6-BF91-46EF-8EB6-781CC054A712}</ProjectGuid>
+    <ProjectGuid>{61EDA069-5572-41F8-A923-20ED79A36164}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</RootNamespace>
@@ -166,6 +166,7 @@
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductInfoService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductSupplierService.cs" />
+    <Compile Include="Service\Cart\CartProductProxy.cs" />
     <Compile Include="Service\DefaultUserActivityProxy.cs" />
     <Compile Include="Service\DefaultUserActivityService.cs" />
     <Compile Include="Service\DiagnosticsProxy.cs" />
@@ -173,6 +174,14 @@
     <Compile Include="Service\ProductCategoryProxy.cs" />
     <Compile Include="Service\ProductCategoryService.cs" />
     <Compile Include="Service\ProductProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttributeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttributeUnitProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategoryDocumentationTypeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategoryProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceDocumentationTypeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceIdentifierProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceImageTypeProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceInfoProxy.cs" />
     <Compile Include="Service\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -300,7 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{98d460f5-6849-4232-92cf-710745d4bf78}</Project>
+      <Project>{4ad2fa8e-dcca-456d-994a-29fff100492f}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,7 +10,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     /// </summary>
     /// <domain>ProductMaintenance</domain>
     public class ProductMaintenanceSearch {
-                                                    
+
         /// <summary>Get Product Info</summary>
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>
@@ -67,7 +67,7 @@ where 1 = 1
                 return ret;
             }
         }
-    
+
         /// <summary>Get Product Image</summary>
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>
@@ -125,7 +125,7 @@ where 1 = 1
                 return ret;
             }
         }
-    
+
         /// <summary>Get Product Identifier</summary>
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>
@@ -182,7 +182,7 @@ where 1 = 1
                 return ret;
             }
         }
-    
+
         /// <summary>Get Product Documentation</summary>
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>
@@ -239,7 +239,7 @@ where 1 = 1
                 return ret;
             }
         }
-    
+
         /// <summary>Get Product Attribute</summary>
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>
@@ -299,7 +299,7 @@ where 1 = 1
                 return ret;
             }
         }
-    
+
         /// <summary>Get Product</summary>
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>

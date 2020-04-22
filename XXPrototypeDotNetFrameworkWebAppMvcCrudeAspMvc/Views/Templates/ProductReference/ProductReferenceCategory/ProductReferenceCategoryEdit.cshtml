@@ -1,0 +1,73 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 4/22/2020 5:54:23 AM
+  Template: sql2x.TemplateByServiceTableCrudGenerator.ParentViewEdit
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceCategoryContract
+
+@{
+    ViewBag.Title = "Edit Product Category";
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ChecksumAfterGet)
+
+        @for (int i = 0; i < @Model.ProductCategory.Count; i++) {
+            @Html.HiddenFor(model => model.ProductCategory[i].ProductCategoryId)
+            @Html.HiddenFor(model => model.ProductCategory[i].ProductCategoryBecameId)
+            @Html.HiddenFor(model => model.ProductCategory[i].ProductCategoryParentId)
+            @Html.HiddenFor(model => model.ProductCategory[i].UserId)
+            @Html.HiddenFor(model => model.ProductCategory[i].DateTime)
+        }
+
+    </div>
+    <h3>Product Category</h3>
+    <div>
+        @Html.ActionLink("references", "DashboardPIMReference", "Dashboard") | 
+        @Html.ActionLink("refresh", "ProductReferenceCategoryEdit", "ProductReferenceCategory") | 
+        @Html.ActionLink("add new", "ProductReferenceCategoryCreate", "ProductReferenceCategory")
+    </div>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>Product Category Code</th>
+            <th>Product Category Name</th>
+            <th>Product Category Position</th>
+            <th>State</th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < @Model.ProductCategory.Count; i++) {
+            <tr>
+                <td>@Html.EditorFor(modelItem => Model.ProductCategory[i].ProductCategoryCode, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(modelItem => Model.ProductCategory[i].ProductCategoryName, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(modelItem => Model.ProductCategory[i].ProductCategoryPosition, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(modelItem => Model.ProductCategory[i].StateRcd, new { htmlAttributes = new { @class = "form-control" } })</td>
+            </tr>
+        }
+
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/themes/base/all.css")
+    <script type="text/javascript">
+        $(function () {
+            // This will make every element with the class "date-picker" into a DatePicker element
+            $('.date-picker').datepicker(({ dateFormat: "yy-mm-dd" }));
+        })
+    </script>
+}
