@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8855661D-E32A-497A-A546-8B37C8D6B8FF}</ProjectGuid>
+    <ProjectGuid>{26C5483C-553E-4E92-BBAC-14AEEFB1951A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -1349,11 +1349,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{4ad2fa8e-dcca-456d-994a-29fff100492f}</Project>
+      <Project>{d280c897-12a7-4e72-99f8-de93c7434579}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{61eda069-5572-41f8-a923-20ed79a36164}</Project>
+      <Project>{f3458ae5-d6ad-4f5e-a818-f7a429cd5dde}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1385,7 +1385,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58514</DevelopmentServerPort>
+          <DevelopmentServerPort>54257</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
