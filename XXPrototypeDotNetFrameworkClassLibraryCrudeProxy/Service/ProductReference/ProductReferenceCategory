@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:36:34 AM
-  Template: sql2x.Template.ProxyUsing
+  Generated Date: 4/23/2020 12:04:11 PM
+  Template: sql2x.TemplateReturnInstructions.ProxyUsing
 */
 using System;
 namespace SolutionNorSolutionPim.BusinessLogicLayer {

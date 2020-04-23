@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy", "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj", "{F3458AE5-D6AD-4F5E-A818-F7A429CD5DDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy", "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj", "{1EE6E0D2-88B8-4002-AFAC-E271D1CBB4E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3458AE5-D6AD-4F5E-A818-F7A429CD5DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3458AE5-D6AD-4F5E-A818-F7A429CD5DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3458AE5-D6AD-4F5E-A818-F7A429CD5DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3458AE5-D6AD-4F5E-A818-F7A429CD5DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE6E0D2-88B8-4002-AFAC-E271D1CBB4E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE6E0D2-88B8-4002-AFAC-E271D1CBB4E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE6E0D2-88B8-4002-AFAC-E271D1CBB4E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE6E0D2-88B8-4002-AFAC-E271D1CBB4E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {193D5846-0287-48D9-8502-5CD5B26D2379}
+		SolutionGuid = {42375807-4777-4B28-8EAC-76ABA8013BC8}
 	EndGlobalSection
 EndGlobal

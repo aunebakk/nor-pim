@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3458AE5-D6AD-4F5E-A818-F7A429CD5DDE}</ProjectGuid>
+    <ProjectGuid>{1EE6E0D2-88B8-4002-AFAC-E271D1CBB4E2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</RootNamespace>
@@ -166,7 +166,6 @@
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductInfoService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductSupplierService.cs" />
-    <Compile Include="Service\Cart\CartProductProxy.cs" />
     <Compile Include="Service\DefaultUserActivityProxy.cs" />
     <Compile Include="Service\DefaultUserActivityService.cs" />
     <Compile Include="Service\DiagnosticsProxy.cs" />
@@ -174,18 +173,19 @@
     <Compile Include="Service\ProductCategoryProxy.cs" />
     <Compile Include="Service\ProductCategoryService.cs" />
     <Compile Include="Service\ProductProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceAttributeProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceAttributeUnitProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceCategoryDocumentationTypeProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceCategoryProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceDocumentationTypeProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceIdentifierProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceImageTypeProxy.cs" />
-    <Compile Include="Service\ProductReference\ProductReferenceInfoProxy.cs" />
     <Compile Include="Service\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service\all.bat" />
+    <None Include="Service\Cart\CartProduct" />
+    <None Include="Service\ProductReference\ProductReferenceAttribute" />
+    <None Include="Service\ProductReference\ProductReferenceAttributeUnit" />
+    <None Include="Service\ProductReference\ProductReferenceCategory" />
+    <None Include="Service\ProductReference\ProductReferenceCategoryDocumentationType" />
+    <None Include="Service\ProductReference\ProductReferenceDocumentationType" />
+    <None Include="Service\ProductReference\ProductReferenceIdentifier" />
+    <None Include="Service\ProductReference\ProductReferenceImageType" />
+    <None Include="Service\ProductReference\ProductReferenceInfo" />
     <None Include="Template\Cart\CartProduct.json" />
     <None Include="Template\Cart\CartProductPrice.json" />
     <None Include="Template\Client\Client.json" />
@@ -309,7 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{d280c897-12a7-4e72-99f8-de93c7434579}</Project>
+      <Project>{0e0858ee-05d6-4e51-89d9-376a5be30953}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
   </ItemGroup>

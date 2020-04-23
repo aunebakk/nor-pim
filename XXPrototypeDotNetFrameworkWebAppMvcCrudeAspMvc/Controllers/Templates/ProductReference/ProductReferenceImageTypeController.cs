@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:38:00 AM
+  Generated Date: 4/23/2020 12:04:40 PM
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,42 +18,6 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
             return RedirectToAction(
                     "ProductReferenceImageTypeEdit",
                     new {    productImageTypeRcd = String.Empty    }
-                    );
-        }
-
-        [HttpGet]
-        public ActionResult ProductReferenceImageTypeEdit(
-            ) {
-
-            ProductReferenceImageTypeContract productContract =
-                new ProductReferenceImageTypeServiceClient().
-                        ProductReferenceImageTypeCompleteGet(
-                            String.Empty,
-                            new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                            );
-
-
-            return View(
-                "~/Views/Templates/ProductReference/ProductReferenceImageType/ProductReferenceImageTypeEdit.cshtml",
-                productContract
-                );
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ProductReferenceImageTypeEdit(
-            [Bind()] ProductReferenceImageTypeContract productContract
-            ) {
-            new ProductReferenceImageTypeServiceClient().
-                    ProductReferenceImageTypeCompleteUpdate(
-                        String.Empty,
-                        productContract,
-                        new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                        );
-
-            return RedirectToAction(
-                    "ProductReferenceImageTypeEdit",
-                    new {    productImageTypeRcd = String.Empty}
                     );
         }
 

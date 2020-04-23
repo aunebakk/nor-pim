@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:36:31 AM
+  Generated Date: 4/23/2020 12:04:10 PM
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,42 +18,6 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
             return RedirectToAction(
                     "ProductReferenceCategoryEdit",
                     new {    productCategoryId = Guid.Empty    }
-                    );
-        }
-
-        [HttpGet]
-        public ActionResult ProductReferenceCategoryEdit(
-            ) {
-
-            ProductReferenceCategoryContract productContract =
-                new ProductReferenceCategoryServiceClient().
-                        ProductReferenceCategoryCompleteGet(
-                            Guid.Empty,
-                            new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                            );
-
-
-            return View(
-                "~/Views/Templates/ProductReference/ProductReferenceCategory/ProductReferenceCategoryEdit.cshtml",
-                productContract
-                );
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ProductReferenceCategoryEdit(
-            [Bind()] ProductReferenceCategoryContract productContract
-            ) {
-            new ProductReferenceCategoryServiceClient().
-                    ProductReferenceCategoryCompleteUpdate(
-                        Guid.Empty,
-                        productContract,
-                        new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                        );
-
-            return RedirectToAction(
-                    "ProductReferenceCategoryEdit",
-                    new {    productCategoryId = Guid.Empty}
                     );
         }
 

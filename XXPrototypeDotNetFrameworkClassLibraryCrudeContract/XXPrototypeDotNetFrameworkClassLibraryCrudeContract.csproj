@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D280C897-12A7-4E72-99F8-DE93C7434579}</ProjectGuid>
+    <ProjectGuid>{0E0858EE-05D6-4E51-89D9-376A5BE30953}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</RootNamespace>

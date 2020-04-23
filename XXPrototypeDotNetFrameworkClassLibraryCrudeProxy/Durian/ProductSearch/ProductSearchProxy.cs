@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:28:52 AM
+  Generated Date: 4/23/2020 12:02:32 PM
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;

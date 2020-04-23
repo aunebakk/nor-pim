@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:35:55 AM
+  Generated Date: 4/23/2020 12:04:02 PM
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,42 +18,6 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
             return RedirectToAction(
                     "ProductReferenceAttributeUnitEdit",
                     new {    productAttributeUnitRcd = String.Empty    }
-                    );
-        }
-
-        [HttpGet]
-        public ActionResult ProductReferenceAttributeUnitEdit(
-            ) {
-
-            ProductReferenceAttributeUnitContract productContract =
-                new ProductReferenceAttributeUnitServiceClient().
-                        ProductReferenceAttributeUnitCompleteGet(
-                            String.Empty,
-                            new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                            );
-
-
-            return View(
-                "~/Views/Templates/ProductReference/ProductReferenceAttributeUnit/ProductReferenceAttributeUnitEdit.cshtml",
-                productContract
-                );
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ProductReferenceAttributeUnitEdit(
-            [Bind()] ProductReferenceAttributeUnitContract productContract
-            ) {
-            new ProductReferenceAttributeUnitServiceClient().
-                    ProductReferenceAttributeUnitCompleteUpdate(
-                        String.Empty,
-                        productContract,
-                        new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                        );
-
-            return RedirectToAction(
-                    "ProductReferenceAttributeUnitEdit",
-                    new {    productAttributeUnitRcd = String.Empty}
                     );
         }
 

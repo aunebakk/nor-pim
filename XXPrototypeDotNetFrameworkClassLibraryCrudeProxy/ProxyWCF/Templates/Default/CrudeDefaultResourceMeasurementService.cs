@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 6:51:52 AM
+  Generated Date: 4/23/2020 11:44:04 AM
   Filename: C:\SQL2XProjects\SolutionNorSolutionPim\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\Template\Default\DefaultResourceMeasurement.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy

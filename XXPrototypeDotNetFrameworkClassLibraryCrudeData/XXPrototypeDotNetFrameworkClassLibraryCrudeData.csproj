@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0912009-265E-48C5-930A-C111A1A33F06}</ProjectGuid>
+    <ProjectGuid>{915587FB-CA71-4439-ACA3-05CAFE0EBCBC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeData</RootNamespace>
@@ -340,7 +340,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{d280c897-12a7-4e72-99f8-de93c7434579}</Project>
+      <Project>{0e0858ee-05d6-4e51-89d9-376a5be30953}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
   </ItemGroup>

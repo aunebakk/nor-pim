@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:32:38 AM
+  Generated Date: 4/23/2020 12:03:19 PM
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,42 +18,6 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
             return RedirectToAction(
                     "CartProductEdit",
                     new {    cartProductId = Guid.Empty    }
-                    );
-        }
-
-        [HttpGet]
-        public ActionResult CartProductEdit(
-            ) {
-
-            CartProductContract cartProductContract =
-                new CartProductServiceClient().
-                        CartProductCompleteGet(
-                            Guid.Empty,
-                            new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                            );
-
-
-            return View(
-                "~/Views/Templates/Cart/CartProduct/CartProductEdit.cshtml",
-                cartProductContract
-                );
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CartProductEdit(
-            [Bind()] CartProductContract cartProductContract
-            ) {
-            new CartProductServiceClient().
-                    CartProductCompleteUpdate(
-                        Guid.Empty,
-                        cartProductContract,
-                        new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                        );
-
-            return RedirectToAction(
-                    "CartProductEdit",
-                    new {    cartProductId = Guid.Empty}
                     );
         }
 

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:37:09 AM
+  Generated Date: 4/23/2020 12:04:25 PM
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,42 +18,6 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
             return RedirectToAction(
                     "ProductReferenceDocumentationTypeEdit",
                     new {    productDocumentationTypeRcd = String.Empty    }
-                    );
-        }
-
-        [HttpGet]
-        public ActionResult ProductReferenceDocumentationTypeEdit(
-            ) {
-
-            ProductReferenceDocumentationTypeContract productContract =
-                new ProductReferenceDocumentationTypeServiceClient().
-                        ProductReferenceDocumentationTypeCompleteGet(
-                            String.Empty,
-                            new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                            );
-
-
-            return View(
-                "~/Views/Templates/ProductReference/ProductReferenceDocumentationType/ProductReferenceDocumentationTypeEdit.cshtml",
-                productContract
-                );
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ProductReferenceDocumentationTypeEdit(
-            [Bind()] ProductReferenceDocumentationTypeContract productContract
-            ) {
-            new ProductReferenceDocumentationTypeServiceClient().
-                    ProductReferenceDocumentationTypeCompleteUpdate(
-                        String.Empty,
-                        productContract,
-                        new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                        );
-
-            return RedirectToAction(
-                    "ProductReferenceDocumentationTypeEdit",
-                    new {    productDocumentationTypeRcd = String.Empty}
                     );
         }
 

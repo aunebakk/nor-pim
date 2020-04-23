@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/22/2020 7:36:43 AM
+  Generated Date: 4/23/2020 12:04:17 PM
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,42 +18,6 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
             return RedirectToAction(
                     "ProductReferenceCategoryDocumentationTypeEdit",
                     new {    productCategoryDocumentationTypeRcd = String.Empty    }
-                    );
-        }
-
-        [HttpGet]
-        public ActionResult ProductReferenceCategoryDocumentationTypeEdit(
-            ) {
-
-            ProductReferenceCategoryDocumentationTypeContract productContract =
-                new ProductReferenceCategoryDocumentationTypeServiceClient().
-                        ProductReferenceCategoryDocumentationTypeCompleteGet(
-                            String.Empty,
-                            new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                            );
-
-
-            return View(
-                "~/Views/Templates/ProductReference/ProductReferenceCategoryDocumentationType/ProductReferenceCategoryDocumentationTypeEdit.cshtml",
-                productContract
-                );
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ProductReferenceCategoryDocumentationTypeEdit(
-            [Bind()] ProductReferenceCategoryDocumentationTypeContract productContract
-            ) {
-            new ProductReferenceCategoryDocumentationTypeServiceClient().
-                    ProductReferenceCategoryDocumentationTypeCompleteUpdate(
-                        String.Empty,
-                        productContract,
-                        new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}")
-                        );
-
-            return RedirectToAction(
-                    "ProductReferenceCategoryDocumentationTypeEdit",
-                    new {    productCategoryDocumentationTypeRcd = String.Empty}
                     );
         }
 
