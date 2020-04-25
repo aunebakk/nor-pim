@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EE6E0D2-88B8-4002-AFAC-E271D1CBB4E2}</ProjectGuid>
+    <ProjectGuid>{7D3C9272-1ABB-4788-8A74-73FEA2E771C0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</RootNamespace>
@@ -30,6 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Durian\CartSearch\CartSearchProxy.cs" />
+    <Compile Include="Durian\CategorySearch\CategorySearchProxy.cs" />
+    <Compile Include="Durian\ClientSearch\ClientSearchProxy.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultSearchProxy.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceSearchProxy.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchProxy.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchProxy.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchProxy.cs" />
+    <Compile Include="Service\DefaultUserActivityProxy.cs" />
+    <Compile Include="Service\DefaultUserActivityService.cs" />
+    <Compile Include="Service\DiagnosticsProxy.cs" />
+    <Compile Include="Service\DiagnosticsService.cs" />
+    <Compile Include="Service\ProductCategoryProxy.cs" />
+    <Compile Include="Service\ProductCategoryService.cs" />
+    <Compile Include="Service\ProductProxy.cs" />
+    <Compile Include="Service\ProductService.cs" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -39,23 +55,13 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Durian\CartSearch\CartSearchProxy.cs" />
-    <Compile Include="Durian\CategorySearch\CategorySearchProxy.cs" />
-    <Compile Include="Durian\ClientSearch\ClientSearchProxy.cs" />
-    <Compile Include="Durian\DefaultSearch\DefaultSearchProxy.cs" />
-    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceSearchProxy.cs" />
-    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchProxy.cs" />
-    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchProxy.cs" />
-    <Compile Include="Durian\ProductSearch\ProductSearchProxy.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProxyWCF\Templates\Cart\CrudeCartProductPriceService.cs" />
     <Compile Include="ProxyWCF\Templates\Cart\CrudeCartProductService.cs" />
+    <Compile Include="ProxyWCF\Templates\Cart\CrudeCartProductPriceService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientAddressService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientAddressTypeRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Client\CrudeClientContactMethodRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientContactMethodService.cs" />
+    <Compile Include="ProxyWCF\Templates\Client\CrudeClientContactMethodRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientDocumentService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientDocumentTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientEventService.cs" />
@@ -66,33 +72,32 @@
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientLinkService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientLinkTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientNationalityRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Client\CrudeClientService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientTitleRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Client\CrudeClientTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultChangeLogService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultChangeLogTypeRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultErrorLayerRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultErrorService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultErrorLayerRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultErrorTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultIssueService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultIssueStatusRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultIssueTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultPerformanceIssueService.cs" />
-    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultPerformanceTimeRollupService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultPerformanceTimeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultPerformanceTimeRollupService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultResourceMeasurementService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultRuleService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultRuleTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultStateRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultSystemReferenceTableService.cs" />
-    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultSystemSettingRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultSystemSettingService.cs" />
-    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestRunResultRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestRunService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultSystemSettingRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestRunService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultTestRunResultRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultUserService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultUserActivityService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultUserActivityTypeRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultUserService.cs" />
     <Compile Include="ProxyWCF\Templates\Default\CrudeDefaultVersionService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialAdjustmentService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialAdjustmentTypeRefService.cs" />
@@ -106,21 +111,21 @@
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialCurrencyTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialFeeService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialFeeTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderEventService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderEventTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderIdentifierService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderIdentifierTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderLineService.cs" />
-    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderSourceRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderTransactionService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialOrderTransactionTypeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentAccountingService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentBankService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentCardService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentCashService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentCouponService.cs" />
-    <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialPaymentVoucherService.cs" />
     <Compile Include="ProxyWCF\Templates\Financial\CrudeFinancialTaxService.cs" />
@@ -132,48 +137,43 @@
     <Compile Include="ProxyWCF\Templates\Location\CrudeLocationAddressTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Location\CrudeLocationCityService.cs" />
     <Compile Include="ProxyWCF\Templates\Location\CrudeLocationCountryService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductAttributeRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductAttributeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductAttributeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductAttributeUnitRefService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryDocumentationService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryDocumentationTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryImageService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryImageTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryMappingService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductCategoryService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductChangeSetService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductDocumentationService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductDocumentationTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductEntityTypeRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposedSelectionService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposePlanService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposeService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposePlanService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposeSetService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposeSetTypeRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductFieldSetMappingService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductExposedSelectionService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductFieldSetService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductFieldSetMappingService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherAttributeService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherAttributeTypeRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherKeyService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherSourceService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductGatherSourceTypeRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductIdentifierRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductIdentifierService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductIdentifierRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductImageService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductImageTypeRefService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductInfoRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductInfoService.cs" />
-    <Compile Include="ProxyWCF\Templates\Product\CrudeProductService.cs" />
+    <Compile Include="ProxyWCF\Templates\Product\CrudeProductInfoRefService.cs" />
     <Compile Include="ProxyWCF\Templates\Product\CrudeProductSupplierService.cs" />
-    <Compile Include="Service\DefaultUserActivityProxy.cs" />
-    <Compile Include="Service\DefaultUserActivityService.cs" />
-    <Compile Include="Service\DiagnosticsProxy.cs" />
-    <Compile Include="Service\DiagnosticsService.cs" />
-    <Compile Include="Service\ProductCategoryProxy.cs" />
-    <Compile Include="Service\ProductCategoryService.cs" />
-    <Compile Include="Service\ProductProxy.cs" />
-    <Compile Include="Service\ProductService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service\all.bat" />
@@ -309,7 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{0e0858ee-05d6-4e51-89d9-376a5be30953}</Project>
+      <Project>{1be0a5c0-d001-4713-83ea-8efbc93b3e4d}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
   </ItemGroup>

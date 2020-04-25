@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeASPNetCoreTemplateWebApplicationWithCrude", "PrototypeASPNetCoreTemplateWebApplicationWithCrude.csproj", "{B4687806-C863-4273-ABD1-5B151F82F033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeASPNetCoreTemplateWebApplicationWithCrude", "PrototypeASPNetCoreTemplateWebApplicationWithCrude.csproj", "{60AD5D26-86E5-4DFB-A8DD-21B7E8C69C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B4687806-C863-4273-ABD1-5B151F82F033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4687806-C863-4273-ABD1-5B151F82F033}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4687806-C863-4273-ABD1-5B151F82F033}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4687806-C863-4273-ABD1-5B151F82F033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60AD5D26-86E5-4DFB-A8DD-21B7E8C69C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AD5D26-86E5-4DFB-A8DD-21B7E8C69C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AD5D26-86E5-4DFB-A8DD-21B7E8C69C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AD5D26-86E5-4DFB-A8DD-21B7E8C69C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FC69FF89-C573-4B19-9126-FEBDF1704F8F}
+		SolutionGuid = {5E9C306D-1918-411C-A4F8-A4512CDB2DB4}
 	EndGlobalSection
 EndGlobal

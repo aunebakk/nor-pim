@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AA014F46-66CF-43CA-9883-89C2CBE2A043}</ProjectGuid>
+    <ProjectGuid>{318931D3-9449-4E3A-B548-2D384460D17D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -69,6 +69,122 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Compile Include="BusinessWCFSoap\Templates\Cart\\CrudeCartProduct.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Cart\\CrudeCartProductPrice.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClient.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientAddress.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientAddressTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientContactMethod.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientContactMethodRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientDocument.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientDocumentTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientEvent.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientEventTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientGenderRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientIdentifier.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientIdentifierTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientLink.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientLinkTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientNationalityRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientTitleRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Client\\CrudeClientTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultChangeLog.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultChangeLogTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultError.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultErrorLayerRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultErrorTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultIssue.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultIssueStatusRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultIssueTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultPerformanceIssue.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultPerformanceTime.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultPerformanceTimeRollup.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultResourceMeasurement.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultRule.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultRuleTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultStateRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultSystemReferenceTable.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultSystemSetting.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultSystemSettingRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultTest.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultTestRun.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultTestRunResultRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultUser.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultUserActivity.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultUserActivityTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Default\\CrudeDefaultVersion.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialAdjustment.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialAdjustmentTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialBankAccountNumberTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialCardTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialCompany.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialCostcentre.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialCoupon.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialCouponTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialCurrency.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialCurrencyTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialFee.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialFeeTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrder.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderEvent.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderEventTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderIdentifier.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderIdentifierTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderLine.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderSourceRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderTransaction.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialOrderTransactionTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPayment.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPaymentAccounting.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPaymentBank.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPaymentCard.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPaymentCash.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPaymentCoupon.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPaymentTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialPaymentVoucher.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialTax.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialTaxTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialUnitOfMeasurementRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialVoucher.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Financial\\CrudeFinancialVoucherTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\\CrudeLocationAddress.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\\CrudeLocationAddressTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\\CrudeLocationCity.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Location\\CrudeLocationCountry.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProduct.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductAttribute.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductAttributeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductAttributeUnitRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductCategory.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductCategoryDocumentation.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductCategoryDocumentationTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductCategoryImage.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductCategoryImageTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductCategoryMapping.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductChangeSet.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductDocumentation.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductDocumentationTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductEntityTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductExpose.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductExposePlan.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductExposeSet.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductExposeSetTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductExposedSelection.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductFieldSet.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductFieldSetMapping.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductGather.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductGatherAttribute.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductGatherAttributeTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductGatherKey.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductGatherSource.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductGatherSourceTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductIdentifier.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductIdentifierRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductImage.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductImageTypeRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductInfo.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductInfoRef.cs" />
+    <Compile Include="BusinessWCFSoap\Templates\Product\\CrudeProductSupplier.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cart\CartProductService.svc" />
@@ -106,122 +222,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessWCFSoap\Templates\Cart\CrudeCartProduct.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Cart\CrudeCartProductPrice.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClient.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientAddress.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientAddressTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethod.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientContactMethodRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientDocument.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientDocumentTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientEvent.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientEventTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientGenderRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifier.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientIdentifierTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientLink.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientLinkTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientNationalityRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientTitleRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Client\CrudeClientTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLog.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultChangeLogTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultError.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorLayerRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultErrorTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssue.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueStatusRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultIssueTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceIssue.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTime.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultPerformanceTimeRollup.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultResourceMeasurement.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRule.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultRuleTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultStateRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemReferenceTable.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSetting.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultSystemSettingRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTest.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRun.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultTestRunResultRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUser.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivity.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultUserActivityTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Default\CrudeDefaultVersion.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustment.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialAdjustmentTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialBankAccountNumberTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCardTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCompany.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCostcentre.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCoupon.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCouponTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrency.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialCurrencyTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFee.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialFeeTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrder.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEvent.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderEventTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifier.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderIdentifierTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderLine.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderSourceRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransaction.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialOrderTransactionTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPayment.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentAccounting.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentBank.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCard.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCash.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentCoupon.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialPaymentVoucher.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTax.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialTaxTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialUnitOfMeasurementRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucher.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Financial\CrudeFinancialVoucherTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddress.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationAddressTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationCity.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Location\CrudeLocationCountry.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProduct.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductAttribute.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductAttributeUnitRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategory.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentation.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryDocumentationTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImage.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryImageTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductCategoryMapping.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductChangeSet.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentation.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductDocumentationTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductEntityTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExpose.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposedSelection.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposePlan.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSet.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductExposeSetTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSet.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductFieldSetMapping.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGather.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttribute.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherAttributeTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherKey.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSource.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductGatherSourceTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifier.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductIdentifierRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductImage.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductImageTypeRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfo.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductInfoRef.cs" />
-    <Compile Include="BusinessWCFSoap\Templates\Product\CrudeProductSupplier.cs" />
     <Compile Include="Cart\CartProductService.cs" />
     <Compile Include="Cart\CartSearchService.cs" />
     <Compile Include="Category\CategorySearchService.cs" />
@@ -429,15 +429,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PrototypeDatabaseTemplateEmpty\PrototypeDatabaseTemplateEmpty.sqlproj">
-      <Project>{fb78b4e3-4971-4080-b642-af1fc2866303}</Project>
+      <Project>{43dfb2be-4037-4c3b-b8b9-871c36a20f10}</Project>
       <Name>PrototypeDatabaseTemplateEmpty</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{0e0858ee-05d6-4e51-89d9-376a5be30953}</Project>
+      <Project>{1be0a5c0-d001-4713-83ea-8efbc93b3e4d}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeData\XXPrototypeDotNetFrameworkClassLibraryCrudeData.csproj">
-      <Project>{915587fb-ca71-4439-aca3-05cafe0ebcbc}</Project>
+      <Project>{fcd1b030-4350-496e-b6d2-a2c56ed9d905}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeData</Name>
     </ProjectReference>
   </ItemGroup>

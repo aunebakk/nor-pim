@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{915587FB-CA71-4439-ACA3-05CAFE0EBCBC}</ProjectGuid>
+    <ProjectGuid>{FCD1B030-4350-496E-B6D2-A2C56ED9D905}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XXPrototypeDotNetFrameworkClassLibraryCrudeData</RootNamespace>
@@ -39,17 +39,15 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Cart\CartSearch.cs" />
     <Compile Include="Client\ClientSearch.cs" />
     <Compile Include="DataDNF\Templates\Cart\CrudeCartProductData.cs" />
     <Compile Include="DataDNF\Templates\Cart\CrudeCartProductPriceData.cs" />
+    <Compile Include="DataDNF\Templates\Client\CrudeClientData.cs" />
     <Compile Include="DataDNF\Templates\Client\CrudeClientAddressData.cs" />
     <Compile Include="DataDNF\Templates\Client\CrudeClientAddressTypeRefData.cs" />
     <Compile Include="DataDNF\Templates\Client\CrudeClientContactMethodData.cs" />
     <Compile Include="DataDNF\Templates\Client\CrudeClientContactMethodRefData.cs" />
-    <Compile Include="DataDNF\Templates\Client\CrudeClientData.cs" />
     <Compile Include="DataDNF\Templates\Client\CrudeClientDocumentData.cs" />
     <Compile Include="DataDNF\Templates\Client\CrudeClientDocumentTypeRefData.cs" />
     <Compile Include="DataDNF\Templates\Client\CrudeClientEventData.cs" />
@@ -83,9 +81,9 @@
     <Compile Include="DataDNF\Templates\Default\CrudeDefaultTestData.cs" />
     <Compile Include="DataDNF\Templates\Default\CrudeDefaultTestRunData.cs" />
     <Compile Include="DataDNF\Templates\Default\CrudeDefaultTestRunResultRefData.cs" />
+    <Compile Include="DataDNF\Templates\Default\CrudeDefaultUserData.cs" />
     <Compile Include="DataDNF\Templates\Default\CrudeDefaultUserActivityData.cs" />
     <Compile Include="DataDNF\Templates\Default\CrudeDefaultUserActivityTypeRefData.cs" />
-    <Compile Include="DataDNF\Templates\Default\CrudeDefaultUserData.cs" />
     <Compile Include="DataDNF\Templates\Default\CrudeDefaultVersionData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialAdjustmentData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialAdjustmentTypeRefData.cs" />
@@ -108,12 +106,12 @@
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderSourceRefData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderTransactionData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialOrderTransactionTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentAccountingData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentBankData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentCardData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentCashData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentCouponData.cs" />
-    <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentTypeRefData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialPaymentVoucherData.cs" />
     <Compile Include="DataDNF\Templates\Financial\CrudeFinancialTaxData.cs" />
@@ -125,6 +123,7 @@
     <Compile Include="DataDNF\Templates\Location\CrudeLocationAddressTypeRefData.cs" />
     <Compile Include="DataDNF\Templates\Location\CrudeLocationCityData.cs" />
     <Compile Include="DataDNF\Templates\Location\CrudeLocationCountryData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductAttributeData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductAttributeRefData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductAttributeUnitRefData.cs" />
@@ -135,20 +134,19 @@
     <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryImageTypeRefData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductCategoryMappingData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductChangeSetData.cs" />
-    <Compile Include="DataDNF\Templates\Product\CrudeProductData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductDocumentationData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductDocumentationTypeRefData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductEntityTypeRefData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductExposeData.cs" />
-    <Compile Include="DataDNF\Templates\Product\CrudeProductExposedSelectionData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductExposePlanData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductExposeSetData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductExposeSetTypeRefData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductExposedSelectionData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductFieldSetData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductFieldSetMappingData.cs" />
+    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductGatherAttributeData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductGatherAttributeTypeRefData.cs" />
-    <Compile Include="DataDNF\Templates\Product\CrudeProductGatherData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductGatherKeyData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductGatherSourceData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductGatherSourceTypeRefData.cs" />
@@ -159,6 +157,8 @@
     <Compile Include="DataDNF\Templates\Product\CrudeProductInfoData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductInfoRefData.cs" />
     <Compile Include="DataDNF\Templates\Product\CrudeProductSupplierData.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Default\DefaultSearch.cs" />
     <Compile Include="Default\Div.cs" />
     <Compile Include="Default\Logging.cs" />
@@ -340,7 +340,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{0e0858ee-05d6-4e51-89d9-376a5be30953}</Project>
+      <Project>{1be0a5c0-d001-4713-83ea-8efbc93b3e4d}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
   </ItemGroup>

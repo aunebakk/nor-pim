@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc", "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc.csproj", "{8FE5B7B3-B46B-4B93-B5BA-318FB1B6F06D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc", "XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc.csproj", "{5CD62655-1590-41FF-80BD-339365C9F973}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8FE5B7B3-B46B-4B93-B5BA-318FB1B6F06D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FE5B7B3-B46B-4B93-B5BA-318FB1B6F06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FE5B7B3-B46B-4B93-B5BA-318FB1B6F06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FE5B7B3-B46B-4B93-B5BA-318FB1B6F06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CD62655-1590-41FF-80BD-339365C9F973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD62655-1590-41FF-80BD-339365C9F973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD62655-1590-41FF-80BD-339365C9F973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD62655-1590-41FF-80BD-339365C9F973}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C4A11BA9-FFE8-4D1E-BE37-4F11EF07CACE}
+		SolutionGuid = {7530DD9D-7C41-4051-8388-8CE279BBB128}
 	EndGlobalSection
 EndGlobal

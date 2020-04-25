@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PrototypeDotNetFrameworkWinExe.exe" size="1779712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PrototypeDotNetFrameworkWinExe.exe" size="1780224">
       <assemblyIdentity name="PrototypeDotNetFrameworkWinExe" version="0.1.1.17" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aJskQxaY7YZBPaTAoBAFV0Mf03ASMlyZiHxf3VTemGY=</dsig:DigestValue>
+        <dsig:DigestValue>99RFcEB/OcYfi31D2HAX2ixwiFMdSvV4qLInjYE13rU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OrJXrc1hUaOG2lQPqgsH4JpRMGNECbRlfpgjOZicgak=</dsig:DigestValue>
+        <dsig:DigestValue>ORnIr+omzX9xqRETnZbOKB7jNHkk7os26IgVCWFyHMk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>T/VAgX650aJwhYCS2+sriGd4GyPQ/34KHiII4lI9jNI=</dsig:DigestValue>
+        <dsig:DigestValue>cEyUU8hXEEGqYkdQsWUlvBlQQM1Jm8BwlXEzAQslUn4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42596">
+  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42595">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>p//vDdK9wtJzbEqcJVD59cad0Qhuz8ev890CmNuKf38=</dsig:DigestValue>
+      <dsig:DigestValue>mtYSwH7G+3yHtNmp18SvvM6Tcd3tAc3dSVYBuQ8uGZ4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

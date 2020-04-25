@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/23/2020 12:01:55 PM
+  Generated Date: 4/25/2020 8:35:07 AM
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;

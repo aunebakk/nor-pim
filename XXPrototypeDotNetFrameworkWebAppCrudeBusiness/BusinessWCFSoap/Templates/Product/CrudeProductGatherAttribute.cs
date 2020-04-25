@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/23/2020 11:43:30 AM
+  Generated Date: 4/25/2020 8:19:51 AM
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;

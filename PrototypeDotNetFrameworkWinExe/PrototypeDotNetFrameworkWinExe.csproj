@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7E690D5B-DC81-4119-8AE3-B12CB4A2FA81}</ProjectGuid>
+    <ProjectGuid>{C4644B0E-D28C-489F-B4AE-DA335CE7E6B9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PrototypeDotNetFrameworkWinExe</RootNamespace>
@@ -81,1365 +81,1133 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceEdit.Designer.cs">
-      <DependentUpon>CrudeCartProductPriceEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceSearch.Designer.cs" />
-    <Compile Include="Crude\Cart\CartProduct\CrudeCartProductEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Cart\CartProduct\CrudeCartProductEdit.Designer.cs">
-      <DependentUpon>CrudeCartProductEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Cart\CartProduct\CrudeCartProductSearch.Designer.cs" />
     <Compile Include="Crude\Cart\CartProduct\CrudeCartProductSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Cart\CartProduct\CrudeCartProductSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientAddressTypeRef\ClientAddressTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientAddressTypeRef\ClientAddressTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefEdit.cs">
+    <Compile Include="Crude\Cart\CartProduct\CrudeCartProductEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientAddressTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefSearch.cs">
+    <Compile Include="Crude\Cart\CartProduct\CrudeCartProductEdit.Designer.cs" />
+    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceSearch.Designer.cs" />
+    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressEdit.cs">
+    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressEdit.Designer.cs">
-      <DependentUpon>CrudeClientAddressEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientContactMethodRef\ClientContactMethodRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientContactMethodRef\ClientContactMethodRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientContactMethodRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodEdit.Designer.cs">
-      <DependentUpon>CrudeClientContactMethodEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientDocumentTypeRef\ClientDocumentTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientDocumentTypeRef\ClientDocumentTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientDocumentTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentEdit.Designer.cs">
-      <DependentUpon>CrudeClientDocumentEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientEventTypeRef\ClientEventTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientEventTypeRef\ClientEventTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientEventTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventEdit.Designer.cs">
-      <DependentUpon>CrudeClientEventEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientGenderRef\ClientGenderRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientGenderRef\ClientGenderRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientGenderRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientIdentifierTypeRef\ClientIdentifierTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientIdentifierTypeRef\ClientIdentifierTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientIdentifierTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierEdit.Designer.cs">
-      <DependentUpon>CrudeClientIdentifierEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientLinkTypeRef\ClientLinkTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientLinkTypeRef\ClientLinkTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientLinkTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkEdit.Designer.cs">
-      <DependentUpon>CrudeClientLinkEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientNationalityRef\ClientNationalityRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientNationalityRef\ClientNationalityRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientNationalityRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientTitleRef\ClientTitleRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTitleRef\ClientTitleRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientTitleRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\ClientTypeRef\ClientTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTypeRef\ClientTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeClientTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Client\Client\CrudeClientEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Client\Client\CrudeClientEdit.Designer.cs">
-      <DependentUpon>CrudeClientEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Cart\CartProductPrice\CrudeCartProductPriceEdit.Designer.cs" />
+    <Compile Include="Crude\Client\Client\CrudeClientSearch.Designer.cs" />
     <Compile Include="Crude\Client\Client\CrudeClientSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Client\Client\CrudeClientSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefEdit.cs">
+    <Compile Include="Crude\Client\Client\CrudeClientEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultChangeLogTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefSearch.cs">
+    <Compile Include="Crude\Client\Client\CrudeClientEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\DefaultChangeLogTypeRefCombo.cs">
+    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientAddress\CrudeClientAddressEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientAddressTypeRef\CrudeClientAddressTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientAddressTypeRef\ClientAddressTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientAddressTypeRef\ClientAddressTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\DefaultChangeLogTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultChangeLog\CrudeDefaultChangeLogEdit.cs">
+    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultChangeLog\CrudeDefaultChangeLogEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultChangeLogEdit.cs</DependentUpon>
+    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodEdit.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Client\ClientContactMethod\CrudeClientContactMethodEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientContactMethodRef\CrudeClientContactMethodRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientContactMethodRef\ClientContactMethodRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientContactMethodRef\ClientContactMethodRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientDocument\CrudeClientDocumentEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientDocumentTypeRef\CrudeClientDocumentTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientDocumentTypeRef\ClientDocumentTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientDocumentTypeRef\ClientDocumentTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientEvent\CrudeClientEventEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientEventTypeRef\CrudeClientEventTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientEventTypeRef\ClientEventTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientEventTypeRef\ClientEventTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientGenderRef\CrudeClientGenderRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientGenderRef\ClientGenderRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientGenderRef\ClientGenderRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientIdentifier\CrudeClientIdentifierEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientIdentifierTypeRef\CrudeClientIdentifierTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientIdentifierTypeRef\ClientIdentifierTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientIdentifierTypeRef\ClientIdentifierTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientLink\CrudeClientLinkEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientLinkTypeRef\CrudeClientLinkTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientLinkTypeRef\ClientLinkTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientLinkTypeRef\ClientLinkTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientNationalityRef\CrudeClientNationalityRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientNationalityRef\ClientNationalityRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientNationalityRef\ClientNationalityRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientTitleRef\CrudeClientTitleRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientTitleRef\ClientTitleRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientTitleRef\ClientTitleRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Client\ClientTypeRef\CrudeClientTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Client\ClientTypeRef\ClientTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Client\ClientTypeRef\ClientTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultChangeLog\CrudeDefaultChangeLogSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultChangeLog\CrudeDefaultChangeLogSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultChangeLog\CrudeDefaultChangeLogSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultChangeLog\CrudeDefaultChangeLogEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultErrorLayerRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefSearch.cs">
+    <Compile Include="Crude\Default\DefaultChangeLog\CrudeDefaultChangeLogEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultErrorLayerRef\DefaultErrorLayerRefCombo.cs">
+    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\CrudeDefaultChangeLogTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\DefaultChangeLogTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultChangeLogTypeRef\DefaultChangeLogTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultErrorLayerRef\DefaultErrorLayerRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultErrorTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultErrorTypeRef\DefaultErrorTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultErrorTypeRef\DefaultErrorTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultError\CrudeDefaultErrorEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultError\CrudeDefaultErrorEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultErrorEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultError\CrudeDefaultErrorSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultError\CrudeDefaultErrorSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultError\CrudeDefaultErrorSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultError\CrudeDefaultErrorEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultIssueStatusRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefSearch.cs">
+    <Compile Include="Crude\Default\DefaultError\CrudeDefaultErrorEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultIssueStatusRef\DefaultIssueStatusRefCombo.cs">
+    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultErrorLayerRef\CrudeDefaultErrorLayerRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultErrorLayerRef\DefaultErrorLayerRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultErrorLayerRef\DefaultErrorLayerRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultIssueStatusRef\DefaultIssueStatusRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultIssueTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefSearch.cs">
+    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultIssueTypeRef\DefaultIssueTypeRefCombo.cs">
+    <Compile Include="Crude\Default\DefaultErrorTypeRef\CrudeDefaultErrorTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultErrorTypeRef\DefaultErrorTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultErrorTypeRef\DefaultErrorTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultIssueTypeRef\DefaultIssueTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultIssue\CrudeDefaultIssueEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultIssue\CrudeDefaultIssueEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultIssueEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultIssue\CrudeDefaultIssueSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultIssue\CrudeDefaultIssueSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultIssue\CrudeDefaultIssueSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultPerformanceIssue\CrudeDefaultPerformanceIssueEdit.cs">
+    <Compile Include="Crude\Default\DefaultIssue\CrudeDefaultIssueEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultPerformanceIssue\CrudeDefaultPerformanceIssueEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultPerformanceIssueEdit.cs</DependentUpon>
+    <Compile Include="Crude\Default\DefaultIssue\CrudeDefaultIssueEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefSearch.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultIssueStatusRef\CrudeDefaultIssueStatusRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultIssueStatusRef\DefaultIssueStatusRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultIssueStatusRef\DefaultIssueStatusRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultIssueTypeRef\CrudeDefaultIssueTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultIssueTypeRef\DefaultIssueTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultIssueTypeRef\DefaultIssueTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultPerformanceIssue\CrudeDefaultPerformanceIssueSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultPerformanceIssue\CrudeDefaultPerformanceIssueSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultPerformanceIssue\CrudeDefaultPerformanceIssueSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupEdit.cs">
+    <Compile Include="Crude\Default\DefaultPerformanceIssue\CrudeDefaultPerformanceIssueEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultPerformanceTimeRollupEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultPerformanceTime\CrudeDefaultPerformanceTimeEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultPerformanceTime\CrudeDefaultPerformanceTimeEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultPerformanceTimeEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultPerformanceIssue\CrudeDefaultPerformanceIssueEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultPerformanceTime\CrudeDefaultPerformanceTimeSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultPerformanceTime\CrudeDefaultPerformanceTimeSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultPerformanceTime\CrudeDefaultPerformanceTimeSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultResourceMeasurement\CrudeDefaultResourceMeasurementEdit.cs">
+    <Compile Include="Crude\Default\DefaultPerformanceTime\CrudeDefaultPerformanceTimeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultResourceMeasurement\CrudeDefaultResourceMeasurementEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultResourceMeasurementEdit.cs</DependentUpon>
+    <Compile Include="Crude\Default\DefaultPerformanceTime\CrudeDefaultPerformanceTimeEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupSearch.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultPerformanceTimeRollup\CrudeDefaultPerformanceTimeRollupEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultResourceMeasurement\CrudeDefaultResourceMeasurementSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultResourceMeasurement\CrudeDefaultResourceMeasurementSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultResourceMeasurement\CrudeDefaultResourceMeasurementSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultResourceMeasurement\CrudeDefaultResourceMeasurementEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultRuleTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultRuleTypeRef\DefaultRuleTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultRuleTypeRef\DefaultRuleTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultRule\CrudeDefaultRuleEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultRule\CrudeDefaultRuleEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultRuleEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultResourceMeasurement\CrudeDefaultResourceMeasurementEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultRule\CrudeDefaultRuleSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultRule\CrudeDefaultRuleSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultRule\CrudeDefaultRuleSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultStateRef\CrudeDefaultStateRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultRule\CrudeDefaultRuleEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultStateRef\CrudeDefaultStateRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultStateRefEdit.cs</DependentUpon>
+    <Compile Include="Crude\Default\DefaultRule\CrudeDefaultRuleEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefSearch.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultRuleTypeRef\CrudeDefaultRuleTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultRuleTypeRef\DefaultRuleTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultRuleTypeRef\DefaultRuleTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultStateRef\CrudeDefaultStateRefSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultStateRef\CrudeDefaultStateRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultStateRef\CrudeDefaultStateRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultStateRef\CrudeDefaultStateRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultStateRef\CrudeDefaultStateRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultStateRef\DefaultStateRefCombo.Designer.cs" />
     <Compile Include="Crude\Default\DefaultStateRef\DefaultStateRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultStateRef\DefaultStateRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultSystemReferenceTable\CrudeDefaultSystemReferenceTableEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultSystemReferenceTable\CrudeDefaultSystemReferenceTableEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultSystemReferenceTableEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultSystemReferenceTable\CrudeDefaultSystemReferenceTableSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultSystemReferenceTable\CrudeDefaultSystemReferenceTableSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultSystemReferenceTable\CrudeDefaultSystemReferenceTableSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultSystemReferenceTable\CrudeDefaultSystemReferenceTableEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultSystemSettingRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultSystemSettingRef\DefaultSystemSettingRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultSystemSettingRef\DefaultSystemSettingRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultSystemSetting\CrudeDefaultSystemSettingEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultSystemSetting\CrudeDefaultSystemSettingEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultSystemSettingEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultSystemReferenceTable\CrudeDefaultSystemReferenceTableEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultSystemSetting\CrudeDefaultSystemSettingSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultSystemSetting\CrudeDefaultSystemSettingSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultSystemSetting\CrudeDefaultSystemSettingSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultSystemSetting\CrudeDefaultSystemSettingEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultTestRunResultRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefSearch.cs">
+    <Compile Include="Crude\Default\DefaultSystemSetting\CrudeDefaultSystemSettingEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultTestRunResultRef\DefaultTestRunResultRefCombo.cs">
+    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultSystemSettingRef\CrudeDefaultSystemSettingRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultSystemSettingRef\DefaultSystemSettingRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultSystemSettingRef\DefaultSystemSettingRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultTestRunResultRef\DefaultTestRunResultRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultTestRunEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultTest\CrudeDefaultTestEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultTest\CrudeDefaultTestEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultTestEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultTest\CrudeDefaultTestSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultTest\CrudeDefaultTestSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultTest\CrudeDefaultTestSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultTest\CrudeDefaultTestEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultUserActivityTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefSearch.cs">
+    <Compile Include="Crude\Default\DefaultTest\CrudeDefaultTestEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\DefaultUserActivityTypeRefCombo.cs">
+    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultTestRun\CrudeDefaultTestRunEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultTestRunResultRef\CrudeDefaultTestRunResultRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultTestRunResultRef\DefaultTestRunResultRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultTestRunResultRef\DefaultTestRunResultRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\DefaultUserActivityTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivityEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivityEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultUserActivityEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivitySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivitySearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultUserPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Crude\Default\DefaultUserPicker.designer.cs">
       <DependentUpon>DefaultUserPicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Crude\Default\DefaultUser\CrudeDefaultUserEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Default\DefaultUser\CrudeDefaultUserEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultUserEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultUser\CrudeDefaultUserSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultUser\CrudeDefaultUserSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultUser\CrudeDefaultUserSearch.Designer.cs" />
-    <Compile Include="Crude\Default\DefaultVersion\CrudeDefaultVersionEdit.cs">
+    <Compile Include="Crude\Default\DefaultUser\CrudeDefaultUserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultVersion\CrudeDefaultVersionEdit.Designer.cs">
-      <DependentUpon>CrudeDefaultVersionEdit.cs</DependentUpon>
+    <Compile Include="Crude\Default\DefaultUser\CrudeDefaultUserEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivitySearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivitySearch.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivityEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultUserActivity\CrudeDefaultUserActivityEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\CrudeDefaultUserActivityTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\DefaultUserActivityTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Default\DefaultUserActivityTypeRef\DefaultUserActivityTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Default\DefaultVersion\CrudeDefaultVersionSearch.Designer.cs" />
     <Compile Include="Crude\Default\DefaultVersion\CrudeDefaultVersionSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Default\DefaultVersion\CrudeDefaultVersionSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefEdit.cs">
+    <Compile Include="Crude\Default\DefaultVersion\CrudeDefaultVersionEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialAdjustmentTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\FinancialAdjustmentTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\FinancialAdjustmentTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialAdjustment\CrudeFinancialAdjustmentEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialAdjustment\CrudeFinancialAdjustmentEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialAdjustmentEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Default\DefaultVersion\CrudeDefaultVersionEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialAdjustment\CrudeFinancialAdjustmentSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialAdjustment\CrudeFinancialAdjustmentSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialAdjustment\CrudeFinancialAdjustmentSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\CrudeFinancialBankAccountNumberTypeRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialAdjustment\CrudeFinancialAdjustmentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\CrudeFinancialBankAccountNumberTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialBankAccountNumberTypeRefEdit.cs</DependentUpon>
+    <Compile Include="Crude\Financial\FinancialAdjustment\CrudeFinancialAdjustmentEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefSearch.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\CrudeFinancialAdjustmentTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\FinancialAdjustmentTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialAdjustmentTypeRef\FinancialAdjustmentTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\CrudeFinancialBankAccountNumberTypeRefSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\CrudeFinancialBankAccountNumberTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\CrudeFinancialBankAccountNumberTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\CrudeFinancialBankAccountNumberTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\CrudeFinancialBankAccountNumberTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\FinancialBankAccountNumberTypeRefCombo.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\FinancialBankAccountNumberTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialBankAccountNumberTypeRef\FinancialBankAccountNumberTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCardTypeRef\CrudeFinancialCardTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCardTypeRef\CrudeFinancialCardTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialCardTypeRefEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialCardTypeRef\CrudeFinancialCardTypeRefSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialCardTypeRef\CrudeFinancialCardTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCardTypeRef\CrudeFinancialCardTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCardTypeRef\CrudeFinancialCardTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialCardTypeRef\CrudeFinancialCardTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCardTypeRef\FinancialCardTypeRefCombo.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialCardTypeRef\FinancialCardTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCardTypeRef\FinancialCardTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCompany\CrudeFinancialCompanyEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCompany\CrudeFinancialCompanyEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialCompanyEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialCompany\CrudeFinancialCompanySearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialCompany\CrudeFinancialCompanySearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCompany\CrudeFinancialCompanySearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCostcentre\CrudeFinancialCostcentreEdit.cs">
+    <Compile Include="Crude\Financial\FinancialCompany\CrudeFinancialCompanyEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCostcentre\CrudeFinancialCostcentreEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialCostcentreEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialCompany\CrudeFinancialCompanyEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCostcentre\CrudeFinancialCostcentreSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialCostcentre\CrudeFinancialCostcentreSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCostcentre\CrudeFinancialCostcentreSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialCostcentre\CrudeFinancialCostcentreEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialCouponTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCouponTypeRef\FinancialCouponTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCouponTypeRef\FinancialCouponTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCoupon\CrudeFinancialCouponEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCoupon\CrudeFinancialCouponEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialCouponEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialCostcentre\CrudeFinancialCostcentreEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCoupon\CrudeFinancialCouponSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialCoupon\CrudeFinancialCouponSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCoupon\CrudeFinancialCouponSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialCoupon\CrudeFinancialCouponEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialCurrencyTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefSearch.cs">
+    <Compile Include="Crude\Financial\FinancialCoupon\CrudeFinancialCouponEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\FinancialCurrencyTypeRefCombo.cs">
+    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialCouponTypeRef\CrudeFinancialCouponTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCouponTypeRef\FinancialCouponTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCouponTypeRef\FinancialCouponTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\FinancialCurrencyTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialCurrency\CrudeFinancialCurrencyEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialCurrency\CrudeFinancialCurrencyEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialCurrencyEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialCurrency\CrudeFinancialCurrencySearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialCurrency\CrudeFinancialCurrencySearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialCurrency\CrudeFinancialCurrencySearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialCurrency\CrudeFinancialCurrencyEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialFeeTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefSearch.cs">
+    <Compile Include="Crude\Financial\FinancialCurrency\CrudeFinancialCurrencyEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialFeeTypeRef\FinancialFeeTypeRefCombo.cs">
+    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\CrudeFinancialCurrencyTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\FinancialCurrencyTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialCurrencyTypeRef\FinancialCurrencyTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialFeeTypeRef\FinancialFeeTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialFee\CrudeFinancialFeeEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialFee\CrudeFinancialFeeEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialFeeEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialFee\CrudeFinancialFeeSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialFee\CrudeFinancialFeeSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialFee\CrudeFinancialFeeSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialFee\CrudeFinancialFeeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderEventTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefSearch.cs">
+    <Compile Include="Crude\Financial\FinancialFee\CrudeFinancialFeeEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\FinancialOrderEventTypeRefCombo.cs">
+    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialFeeTypeRef\CrudeFinancialFeeTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialFeeTypeRef\FinancialFeeTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialFeeTypeRef\FinancialFeeTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\FinancialOrderEventTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderEventEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderIdentifierTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\FinancialOrderIdentifierTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\FinancialOrderIdentifierTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderIdentifierEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderLineEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderSourceRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderSourceRef\FinancialOrderSourceRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderSourceRef\FinancialOrderSourceRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderTransactionTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\FinancialOrderTransactionTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\FinancialOrderTransactionTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderTransactionEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialOrder\CrudeFinancialOrderEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialOrder\CrudeFinancialOrderEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialOrderEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrder\CrudeFinancialOrderSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialOrder\CrudeFinancialOrderSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialOrder\CrudeFinancialOrderSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingEdit.cs">
+    <Compile Include="Crude\Financial\FinancialOrder\CrudeFinancialOrderEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentAccountingEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingSearch.cs">
+    <Compile Include="Crude\Financial\FinancialOrder\CrudeFinancialOrderEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankEdit.cs">
+    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentBankEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankSearch.cs">
+    <Compile Include="Crude\Financial\FinancialOrderEvent\CrudeFinancialOrderEventEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardEdit.cs">
+    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentCardEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentCashEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentCouponEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\FinancialPaymentTypeRefCombo.cs">
+    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\CrudeFinancialOrderEventTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\FinancialOrderEventTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderEventTypeRef\FinancialOrderEventTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\FinancialPaymentTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherEdit.cs">
+    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentVoucherEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherSearch.cs">
+    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialPayment\CrudeFinancialPaymentEdit.cs">
+    <Compile Include="Crude\Financial\FinancialOrderIdentifier\CrudeFinancialOrderIdentifierEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPayment\CrudeFinancialPaymentEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialPaymentEdit.cs</DependentUpon>
+    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefEdit.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\CrudeFinancialOrderIdentifierTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\FinancialOrderIdentifierTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderIdentifierTypeRef\FinancialOrderIdentifierTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderLine\CrudeFinancialOrderLineEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderSourceRef\CrudeFinancialOrderSourceRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderSourceRef\FinancialOrderSourceRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderSourceRef\FinancialOrderSourceRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderTransaction\CrudeFinancialOrderTransactionEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\CrudeFinancialOrderTransactionTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\FinancialOrderTransactionTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialOrderTransactionTypeRef\FinancialOrderTransactionTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPayment\CrudeFinancialPaymentSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialPayment\CrudeFinancialPaymentSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialPayment\CrudeFinancialPaymentSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialPayment\CrudeFinancialPaymentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialTaxTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefSearch.cs">
+    <Compile Include="Crude\Financial\FinancialPayment\CrudeFinancialPaymentEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialTaxTypeRef\FinancialTaxTypeRefCombo.cs">
+    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentAccounting\CrudeFinancialPaymentAccountingEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentBank\CrudeFinancialPaymentBankEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentCard\CrudeFinancialPaymentCardEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentCash\CrudeFinancialPaymentCashEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentCoupon\CrudeFinancialPaymentCouponEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\CrudeFinancialPaymentTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\FinancialPaymentTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentTypeRef\FinancialPaymentTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialTaxTypeRef\FinancialTaxTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialTax\CrudeFinancialTaxEdit.cs">
+    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialTax\CrudeFinancialTaxEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialTaxEdit.cs</DependentUpon>
+    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherEdit.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Financial\FinancialPaymentVoucher\CrudeFinancialPaymentVoucherEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialTax\CrudeFinancialTaxSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialTax\CrudeFinancialTaxSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialTax\CrudeFinancialTaxSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\CrudeFinancialUnitOfMeasurementRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialTax\CrudeFinancialTaxEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\CrudeFinancialUnitOfMeasurementRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialUnitOfMeasurementRefEdit.cs</DependentUpon>
+    <Compile Include="Crude\Financial\FinancialTax\CrudeFinancialTaxEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefSearch.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialTaxTypeRef\CrudeFinancialTaxTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialTaxTypeRef\FinancialTaxTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialTaxTypeRef\FinancialTaxTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\CrudeFinancialUnitOfMeasurementRefSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\CrudeFinancialUnitOfMeasurementRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\CrudeFinancialUnitOfMeasurementRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\CrudeFinancialUnitOfMeasurementRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\CrudeFinancialUnitOfMeasurementRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\FinancialUnitOfMeasurementRefCombo.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\FinancialUnitOfMeasurementRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialUnitOfMeasurementRef\FinancialUnitOfMeasurementRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialVoucherTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\FinancialVoucherTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\FinancialVoucherTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Financial\FinancialVoucher\CrudeFinancialVoucherEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Financial\FinancialVoucher\CrudeFinancialVoucherEdit.Designer.cs">
-      <DependentUpon>CrudeFinancialVoucherEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Financial\FinancialVoucher\CrudeFinancialVoucherSearch.Designer.cs" />
     <Compile Include="Crude\Financial\FinancialVoucher\CrudeFinancialVoucherSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Financial\FinancialVoucher\CrudeFinancialVoucherSearch.Designer.cs" />
-    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefEdit.cs">
+    <Compile Include="Crude\Financial\FinancialVoucher\CrudeFinancialVoucherEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeLocationAddressTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefSearch.cs">
+    <Compile Include="Crude\Financial\FinancialVoucher\CrudeFinancialVoucherEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Location\LocationAddressTypeRef\LocationAddressTypeRefCombo.cs">
+    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\CrudeFinancialVoucherTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\FinancialVoucherTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Financial\FinancialVoucherTypeRef\FinancialVoucherTypeRefCombo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationAddressTypeRef\LocationAddressTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Location\LocationAddress\CrudeLocationAddressEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Location\LocationAddress\CrudeLocationAddressEdit.Designer.cs">
-      <DependentUpon>CrudeLocationAddressEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Location\LocationAddress\CrudeLocationAddressSearch.Designer.cs" />
     <Compile Include="Crude\Location\LocationAddress\CrudeLocationAddressSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationAddress\CrudeLocationAddressSearch.Designer.cs" />
-    <Compile Include="Crude\Location\LocationCity\CrudeLocationCityEdit.cs">
+    <Compile Include="Crude\Location\LocationAddress\CrudeLocationAddressEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationCity\CrudeLocationCityEdit.Designer.cs">
-      <DependentUpon>CrudeLocationCityEdit.cs</DependentUpon>
+    <Compile Include="Crude\Location\LocationAddress\CrudeLocationAddressEdit.Designer.cs" />
+    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefSearch.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Location\LocationAddressTypeRef\CrudeLocationAddressTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Location\LocationAddressTypeRef\LocationAddressTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Location\LocationAddressTypeRef\LocationAddressTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Location\LocationCity\CrudeLocationCitySearch.Designer.cs" />
     <Compile Include="Crude\Location\LocationCity\CrudeLocationCitySearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationCity\CrudeLocationCitySearch.Designer.cs" />
-    <Compile Include="Crude\Location\LocationCountry\CrudeLocationCountryEdit.cs">
+    <Compile Include="Crude\Location\LocationCity\CrudeLocationCityEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationCountry\CrudeLocationCountryEdit.Designer.cs">
-      <DependentUpon>CrudeLocationCountryEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Location\LocationCity\CrudeLocationCityEdit.Designer.cs" />
+    <Compile Include="Crude\Location\LocationCountry\CrudeLocationCountrySearch.Designer.cs" />
     <Compile Include="Crude\Location\LocationCountry\CrudeLocationCountrySearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Location\LocationCountry\CrudeLocationCountrySearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefEdit.cs">
+    <Compile Include="Crude\Location\LocationCountry\CrudeLocationCountryEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductAttributeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductAttributeRef\ProductAttributeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttributeRef\ProductAttributeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductAttributeUnitRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductAttributeUnitRef\ProductAttributeUnitRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttributeUnitRef\ProductAttributeUnitRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeEdit.Designer.cs">
-      <DependentUpon>CrudeProductAttributeEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductCategoryDocumentationTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\ProductCategoryDocumentationTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\ProductCategoryDocumentationTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationEdit.Designer.cs">
-      <DependentUpon>CrudeProductCategoryDocumentationEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductCategoryImageTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\ProductCategoryImageTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\ProductCategoryImageTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageEdit.Designer.cs">
-      <DependentUpon>CrudeProductCategoryImageEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingEdit.Designer.cs">
-      <DependentUpon>CrudeProductCategoryMappingEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategoryEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategoryEdit.Designer.cs">
-      <DependentUpon>CrudeProductCategoryEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategorySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategorySearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetEdit.Designer.cs">
-      <DependentUpon>CrudeProductChangeSetEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductDocumentationTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductDocumentationTypeRef\ProductDocumentationTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductDocumentationTypeRef\ProductDocumentationTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationEdit.Designer.cs">
-      <DependentUpon>CrudeProductDocumentationEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductEntityTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductEntityTypeRef\ProductEntityTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductEntityTypeRef\ProductEntityTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionEdit.Designer.cs">
-      <DependentUpon>CrudeProductExposedSelectionEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanEdit.Designer.cs">
-      <DependentUpon>CrudeProductExposePlanEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductExposeSetTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductExposeSetTypeRef\ProductExposeSetTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposeSetTypeRef\ProductExposeSetTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetEdit.Designer.cs">
-      <DependentUpon>CrudeProductExposeSetEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeEdit.Designer.cs">
-      <DependentUpon>CrudeProductExposeEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingEdit.Designer.cs">
-      <DependentUpon>CrudeProductFieldSetMappingEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetEdit.Designer.cs">
-      <DependentUpon>CrudeProductFieldSetEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductGatherAttributeTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\ProductGatherAttributeTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\ProductGatherAttributeTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeEdit.Designer.cs">
-      <DependentUpon>CrudeProductGatherAttributeEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeyEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeyEdit.Designer.cs">
-      <DependentUpon>CrudeProductGatherKeyEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeySearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductGatherSourceTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\ProductGatherSourceTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\ProductGatherSourceTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceEdit.Designer.cs">
-      <DependentUpon>CrudeProductGatherSourceEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherEdit.Designer.cs">
-      <DependentUpon>CrudeProductGatherEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductIdentifierRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductIdentifierRef\ProductIdentifierRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductIdentifierRef\ProductIdentifierRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierEdit.Designer.cs">
-      <DependentUpon>CrudeProductIdentifierEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductImageTypeRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductImageTypeRef\ProductImageTypeRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductImageTypeRef\ProductImageTypeRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductImage\CrudeProductImageEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductImage\CrudeProductImageEdit.Designer.cs">
-      <DependentUpon>CrudeProductImageEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductImage\CrudeProductImageSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductImage\CrudeProductImageSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefEdit.Designer.cs">
-      <DependentUpon>CrudeProductInfoRefEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductInfoRef\ProductInfoRefCombo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductInfoRef\ProductInfoRefCombo.Designer.cs" />
-    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoEdit.Designer.cs">
-      <DependentUpon>CrudeProductInfoEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoSearch.Designer.cs" />
-    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierEdit.Designer.cs">
-      <DependentUpon>CrudeProductSupplierEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierSearch.Designer.cs" />
-    <Compile Include="Crude\Product\Product\CrudeProductEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crude\Product\Product\CrudeProductEdit.Designer.cs">
-      <DependentUpon>CrudeProductEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Crude\Location\LocationCountry\CrudeLocationCountryEdit.Designer.cs" />
+    <Compile Include="Crude\Product\Product\CrudeProductSearch.Designer.cs" />
     <Compile Include="Crude\Product\Product\CrudeProductSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crude\Product\Product\CrudeProductSearch.Designer.cs" />
+    <Compile Include="Crude\Product\Product\CrudeProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\Product\CrudeProductEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductAttribute\CrudeProductAttributeEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductAttributeRef\CrudeProductAttributeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttributeRef\ProductAttributeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttributeRef\ProductAttributeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductAttributeUnitRef\CrudeProductAttributeUnitRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttributeUnitRef\ProductAttributeUnitRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductAttributeUnitRef\ProductAttributeUnitRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategorySearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategoryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategory\CrudeProductCategoryEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryDocumentation\CrudeProductCategoryDocumentationEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\CrudeProductCategoryDocumentationTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\ProductCategoryDocumentationTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryDocumentationTypeRef\ProductCategoryDocumentationTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryImage\CrudeProductCategoryImageEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\CrudeProductCategoryImageTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\ProductCategoryImageTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryImageTypeRef\ProductCategoryImageTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductCategoryMapping\CrudeProductCategoryMappingEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductChangeSet\CrudeProductChangeSetEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductDocumentation\CrudeProductDocumentationEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductDocumentationTypeRef\CrudeProductDocumentationTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductDocumentationTypeRef\ProductDocumentationTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductDocumentationTypeRef\ProductDocumentationTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductEntityTypeRef\CrudeProductEntityTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductEntityTypeRef\ProductEntityTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductEntityTypeRef\ProductEntityTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExpose\CrudeProductExposeEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposePlan\CrudeProductExposePlanEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposeSet\CrudeProductExposeSetEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposeSetTypeRef\CrudeProductExposeSetTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposeSetTypeRef\ProductExposeSetTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposeSetTypeRef\ProductExposeSetTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductExposedSelection\CrudeProductExposedSelectionEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductFieldSet\CrudeProductFieldSetEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductFieldSetMapping\CrudeProductFieldSetMappingEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGather\CrudeProductGatherEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherAttribute\CrudeProductGatherAttributeEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\CrudeProductGatherAttributeTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\ProductGatherAttributeTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherAttributeTypeRef\ProductGatherAttributeTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeySearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherKey\CrudeProductGatherKeyEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherSource\CrudeProductGatherSourceEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\CrudeProductGatherSourceTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\ProductGatherSourceTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductGatherSourceTypeRef\ProductGatherSourceTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductIdentifier\CrudeProductIdentifierEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductIdentifierRef\CrudeProductIdentifierRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductIdentifierRef\ProductIdentifierRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductIdentifierRef\ProductIdentifierRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductImage\CrudeProductImageSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductImage\CrudeProductImageSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductImage\CrudeProductImageEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductImage\CrudeProductImageEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductImageTypeRef\CrudeProductImageTypeRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductImageTypeRef\ProductImageTypeRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductImageTypeRef\ProductImageTypeRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductInfo\CrudeProductInfoEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductInfoRef\CrudeProductInfoRefEdit.Designer.cs" />
+    <Compile Include="Crude\Product\ProductInfoRef\ProductInfoRefCombo.Designer.cs" />
+    <Compile Include="Crude\Product\ProductInfoRef\ProductInfoRefCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierSearch.Designer.cs" />
+    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crude\Product\ProductSupplier\CrudeProductSupplierEdit.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Div\Global.cs" />
     <Compile Include="Div\Login.cs">
       <SubType>Form</SubType>
@@ -2090,11 +1858,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeContract\XXPrototypeDotNetFrameworkClassLibraryCrudeContract.csproj">
-      <Project>{0e0858ee-05d6-4e51-89d9-376a5be30953}</Project>
+      <Project>{1be0a5c0-d001-4713-83ea-8efbc93b3e4d}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy\XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj">
-      <Project>{1ee6e0d2-88b8-4002-afac-e271d1cbb4e2}</Project>
+      <Project>{7d3c9272-1abb-4788-8a74-73fea2e771c0}</Project>
       <Name>XXPrototypeDotNetFrameworkClassLibraryCrudeProxy</Name>
     </ProjectReference>
   </ItemGroup>
