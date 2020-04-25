@@ -1,7 +1,7 @@
 ﻿rem SQL2X Generated code based on a SQL Server Schema
 rem SQL2X Version: 1.0
 rem http://sql2x.org/
-rem Generated Date: 4/25/2020 9:44:59 AM
+rem Generated Date: 4/25/2020 12:24:41 PM
 rem Template: sql2x.PrototypeDotNetCoreTwoOoneV3.Content_publishCreateDOTbat
 type publish-start.bat > publish.bat
 type WebAppPassword.txt >> publish.bat

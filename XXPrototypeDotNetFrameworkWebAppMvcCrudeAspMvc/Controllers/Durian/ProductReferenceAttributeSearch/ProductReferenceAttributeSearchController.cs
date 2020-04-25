@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/25/2020 9:52:46 AM
+  Generated Date: 4/25/2020 12:32:23 PM
   Template: sql2x.GenerateDurian.DurianController
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;

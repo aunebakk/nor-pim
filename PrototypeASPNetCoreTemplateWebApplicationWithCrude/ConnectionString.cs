@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/25/2020 9:45:38 AM
+  Generated Date: 4/25/2020 12:25:14 PM
   Template: sql2x.PrototypeDotNetCoreTwoOoneV3.Content_ConnectionStringDOTcs
 */
 static class Conn { 

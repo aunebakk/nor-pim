@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 4/25/2020 9:45:43 AM
+  Generated Date: 4/25/2020 12:25:17 PM
   Template: sql2x.TemplateDotNetCoreApiGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -104,7 +104,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/25/2020 9:45:43 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/25/2020 12:25:17 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "CardNumber" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "NameOnCard" , "create" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "ExpiryYear" , "1" ) );
@@ -148,7 +148,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer.Controllers {
             try {
                 // pair name and value from model
                 var pairs = new List<KeyValuePair<string , string>> ();
-                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/25/2020 9:45:43 AM" ) );
+                pairs.Add ( new KeyValuePair<string , string> ( "DateTime" , "4/25/2020 12:25:17 PM" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "CardNumber" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "NameOnCard" , "update" ) );
                 pairs.Add ( new KeyValuePair<string , string> ( "ExpiryYear" , "1" ) );
