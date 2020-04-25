@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkWebAppCrudeBusiness", "XXPrototypeDotNetFrameworkWebAppCrudeBusiness.csproj", "{318931D3-9449-4E3A-B548-2D384460D17D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkWebAppCrudeBusiness", "XXPrototypeDotNetFrameworkWebAppCrudeBusiness.csproj", "{FA1688C7-A228-4A26-A921-098E62CB2BD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{318931D3-9449-4E3A-B548-2D384460D17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{318931D3-9449-4E3A-B548-2D384460D17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{318931D3-9449-4E3A-B548-2D384460D17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{318931D3-9449-4E3A-B548-2D384460D17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1688C7-A228-4A26-A921-098E62CB2BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1688C7-A228-4A26-A921-098E62CB2BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1688C7-A228-4A26-A921-098E62CB2BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1688C7-A228-4A26-A921-098E62CB2BD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BD5ACF4B-1E3A-4405-A2C6-887DB781204F}
+		SolutionGuid = {4804817B-42D3-4AD3-AC1E-E8E93614A208}
 	EndGlobalSection
 EndGlobal

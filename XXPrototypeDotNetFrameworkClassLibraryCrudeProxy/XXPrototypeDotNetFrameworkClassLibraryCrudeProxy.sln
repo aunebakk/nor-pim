@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy", "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj", "{7D3C9272-1ABB-4788-8A74-73FEA2E771C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy", "XXPrototypeDotNetFrameworkClassLibraryCrudeProxy.csproj", "{FBE82D31-3672-443E-91FF-BC590AA79A16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7D3C9272-1ABB-4788-8A74-73FEA2E771C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D3C9272-1ABB-4788-8A74-73FEA2E771C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D3C9272-1ABB-4788-8A74-73FEA2E771C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D3C9272-1ABB-4788-8A74-73FEA2E771C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBE82D31-3672-443E-91FF-BC590AA79A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE82D31-3672-443E-91FF-BC590AA79A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE82D31-3672-443E-91FF-BC590AA79A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE82D31-3672-443E-91FF-BC590AA79A16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DECDC23C-C45F-4255-B024-1E8654158B78}
+		SolutionGuid = {8969D413-D532-415B-A77E-37596FD58BFF}
 	EndGlobalSection
 EndGlobal
