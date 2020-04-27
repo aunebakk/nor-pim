@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iyqIFeUAw8YNgzqkNWbDoB97dB1dxDagmnNECPl7nxM=</dsig:DigestValue>
+        <dsig:DigestValue>o8agBxZ1W8gp9wbIKuv33P0x8Yhn+Bm5206TK8s0k6I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jjAIzsbsiyBNV6IMzCRp7hjr8TWVK17WxKw2pvhwE4k=</dsig:DigestValue>
+        <dsig:DigestValue>0eIGSl2GGjMvAOCwyVSpeVxsAqmUbWlSAqt7g7Zn2L0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>L6RDTMAxE1sxrjOPv8jLqxR434RmhcVsoX6zdqe8Mbc=</dsig:DigestValue>
+        <dsig:DigestValue>QKk3qvqQCk3L1DLEjby7A6ENTY+UQgR4XAcyGGJzGvI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42596">
+  <file name="PrototypeDotNetFrameworkWinExe.exe.config" size="42595">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RQZn8CbCGKzZb5eUBbR+EOXSJECdiuoIF0rflx6iynY=</dsig:DigestValue>
+      <dsig:DigestValue>ZB/OFN+NM2snkLQOLzJ9zYTrVlSLDYeLK88NDeHfPY0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

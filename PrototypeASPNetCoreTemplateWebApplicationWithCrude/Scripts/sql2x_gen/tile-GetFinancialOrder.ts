@@ -1,7 +1,7 @@
 ﻿// SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 4/25/2020 12:32:35 PM
+// Generated Date: 4/27/2020 3:56:46 PM
 // Template: sql2x.TypeScriptDurianGenerator.MethodViewIndexCode
     /// <reference path="tile.ts"/>
     // GetFinancialOrder Type
