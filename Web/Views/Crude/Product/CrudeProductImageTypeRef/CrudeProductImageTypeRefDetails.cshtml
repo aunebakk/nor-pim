@@ -1,0 +1,29 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:27:27 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductImageTypeRefContract
+
+@{
+    ViewBag.Title = "Details Product Image Type Ref";
+}
+
+<h2>Details for Product Image Type Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Image Type Name</dt> <dd>@Html.DisplayFor(model => model.ProductImageTypeName)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeProductImageTypeRefEdit", new { productImageTypeRcd = Model.ProductImageTypeRcd }) |
+    @Html.ActionLink("New", "CrudeProductImageTypeRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductImageTypeRefIndex")
+</p>

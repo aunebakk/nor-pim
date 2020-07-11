@@ -1,0 +1,29 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:55 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultUserActivityTypeRefContract
+
+@{
+    ViewBag.Title = "Details Default User Activity Type Ref";
+}
+
+<h2>Details for Default User Activity Type Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Default User Activity Type Name</dt> <dd>@Html.DisplayFor(model => model.DefaultUserActivityTypeName)</dd>
+        <dt>Default User Id</dt> <dd>@Html.DisplayFor(model => model.DefaultUserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeDefaultUserActivityTypeRefEdit", new { defaultUserActivityTypeRcd = Model.DefaultUserActivityTypeRcd }) |
+    @Html.ActionLink("New", "CrudeDefaultUserActivityTypeRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeDefaultUserActivityTypeRefIndex")
+</p>

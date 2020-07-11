@@ -1,0 +1,71 @@
+﻿
+<html>
+    <head>
+        <title>DefaultResourceMeasurement</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>DefaultResourceMeasurement Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeDefaultResourceMeasurementService</label>
+        <br /><label>Contract name: CrudeDefaultResourceMeasurementContract</label>
+        <br /><label>Fetcher: FetchByDefaultResourceMeasurementId</label>
+        <br /><label>Id: DefaultResourceMeasurementId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Default/CrudeDefaultResourceMeasurement.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Default Resource Measurement Id            </td><td>System.Guid</td></tr>
+            <tr><td>Client Workingset Bytes            </td><td>System.Int32</td></tr>
+            <tr><td>Business Workingset Bytes            </td><td>System.Int32</td></tr>
+            <tr><td>Database Size Bytes            </td><td>System.Int32</td></tr>
+            <tr><td>Default User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeDefaultResourceMeasurementContract<b> FetchByDefaultResourceMeasurementId </b>(System.Guid defaultResourceMeasurementId);
+        <br />
+        <br />List&lt;CrudeDefaultResourceMeasurementContract&gt;<b> FetchByDefaultUserId </b>(System.Guid defaultUserId);
+        <br />
+        <br />List&lt;CrudeDefaultResourceMeasurementContract&gt;<b> FetchWithFilter </b>(System.Guid defaultResourceMeasurementId,System.Int32 clientWorkingsetBytes,System.Int32 businessWorkingsetBytes,System.Int32 databaseSizeBytes,System.Guid defaultUserId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeDefaultResourceMeasurementContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeDefaultResourceMeasurementContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeDefaultResourceMeasurementContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeDefaultResourceMeasurementContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeDefaultResourceMeasurementContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid defaultResourceMeasurementId);
+        <br />
+        <br />
+    </body>
+</html>
+

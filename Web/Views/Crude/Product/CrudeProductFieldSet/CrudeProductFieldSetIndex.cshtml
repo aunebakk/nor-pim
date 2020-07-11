@@ -1,0 +1,39 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:27:16 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductFieldSetContract>
+
+@{
+    ViewBag.Title = "Index Product Field Set";
+}
+
+<h2>Index for Product Field Set</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductFieldSetCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Field Set Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductFieldSetName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeProductFieldSetEdit", new { productFieldSetId = item.ProductFieldSetId })
+                | @Html.ActionLink("Delete", "CrudeProductFieldSetDelete", new { productFieldSetId = item.ProductFieldSetId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,29 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:27:01 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductAttributeUnitRefContract
+
+@{
+    ViewBag.Title = "Details Product Attribute Unit Ref";
+}
+
+<h2>Details for Product Attribute Unit Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Attribute Unit Name</dt> <dd>@Html.DisplayFor(model => model.ProductAttributeUnitName)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeProductAttributeUnitRefEdit", new { productAttributeUnitRcd = Model.ProductAttributeUnitRcd }) |
+    @Html.ActionLink("New", "CrudeProductAttributeUnitRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductAttributeUnitRefIndex")
+</p>

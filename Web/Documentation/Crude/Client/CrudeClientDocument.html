@@ -1,0 +1,79 @@
+﻿
+<html>
+    <head>
+        <title>ClientDocument</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ClientDocument Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeClientDocumentService</label>
+        <br /><label>Contract name: CrudeClientDocumentContract</label>
+        <br /><label>Fetcher: FetchByClientDocumentId</label>
+        <br /><label>Id: ClientDocumentId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Client/CrudeClientDocument.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Client Document Id            </td><td>System.Guid</td></tr>
+            <tr><td>Client Id            </td><td>System.Guid</td></tr>
+            <tr><td>Client Document Type            </td><td>System.String</td></tr>
+            <tr><td>Document Name            </td><td>System.String</td></tr>
+            <tr><td>Document Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Expiry Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeClientDocumentContract<b> FetchByClientDocumentId </b>(System.Guid clientDocumentId);
+        <br />
+        <br />List&lt;CrudeClientDocumentContract&gt;<b> FetchByClientId </b>(System.Guid clientId);
+        <br />
+        <br />List&lt;CrudeClientDocumentContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeClientDocumentContract&gt;<b> FetchByClientDocumentTypeRcd </b>(System.String clientDocumentTypeRcd);
+        <br />
+        <br />CrudeClientDocumentContract<b> FetchByDocumentName </b>(System.String documentName);
+        <br />
+        <br />List&lt;CrudeClientDocumentContract&gt;<b> FetchWithFilter </b>(System.Guid clientDocumentId,System.Guid clientId,System.String clientDocumentTypeRcd,System.String documentName,System.DateTime documentDateTime,System.DateTime expiryDateTime,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeClientDocumentContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeClientDocumentContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeClientDocumentContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeClientDocumentContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeClientDocumentContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid clientDocumentId);
+        <br />
+        <br />
+    </body>
+</html>
+

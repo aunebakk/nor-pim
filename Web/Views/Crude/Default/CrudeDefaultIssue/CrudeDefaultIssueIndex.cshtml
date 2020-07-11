@@ -1,0 +1,51 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:39 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultIssueContract>
+
+@{
+    ViewBag.Title = "Index Default Issue";
+}
+
+<h2>Index for Default Issue</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultIssueCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default Issue Type</th>
+        <th>Default Issue Status</th>
+        <th>Issue Name</th>
+        <th>Issue Description</th>
+        <th>Steps To Reproduce</th>
+        <th>Link</th>
+        <th>Date Time</th>
+        <th>Fixed Note</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultIssueTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultIssueStatusRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.IssueName) </td>
+            <td>@Html.DisplayFor(modelItem => item.IssueDescription) </td>
+            <td>@Html.DisplayFor(modelItem => item.StepsToReproduce) </td>
+            <td>@Html.DisplayFor(modelItem => item.Link) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.FixedNote) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultIssueEdit", new { defaultIssueId = item.DefaultIssueId })
+                | @Html.ActionLink("Delete", "CrudeDefaultIssueDelete", new { defaultIssueId = item.DefaultIssueId })
+            </td>
+        </tr>
+    }
+
+</table>

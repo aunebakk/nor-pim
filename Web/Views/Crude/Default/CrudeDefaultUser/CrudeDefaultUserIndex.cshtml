@@ -1,0 +1,49 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:53 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultUserContract>
+
+@{
+    ViewBag.Title = "Index Default User";
+}
+
+<h2>Index for Default User</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultUserCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default User Code</th>
+        <th>Default User Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Default State</th>
+        <th>Date Time</th>
+        <th>Last Activity Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserCode) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.Email) </td>
+            <td>@Html.DisplayFor(modelItem => item.Password) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultStateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.LastActivityDateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultUserEdit", new { defaultUserId = item.DefaultUserId })
+                | @Html.ActionLink("Delete", "CrudeDefaultUserDelete", new { defaultUserId = item.DefaultUserId })
+            </td>
+        </tr>
+    }
+
+</table>

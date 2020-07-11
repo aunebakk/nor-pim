@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceImageTypeService" CodeBehind="C:\SQL2XProjects\SolutionNorSolutionPim\Business\ProductReference\\ProductReferenceImageTypeService.cs"%>

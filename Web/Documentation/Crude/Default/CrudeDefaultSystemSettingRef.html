@@ -1,0 +1,71 @@
+﻿
+<html>
+    <head>
+        <title>DefaultSystemSettingRef</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>DefaultSystemSettingRef Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeDefaultSystemSettingRefService</label>
+        <br /><label>Contract name: CrudeDefaultSystemSettingRefContract</label>
+        <br /><label>Fetcher: FetchByDefaultSystemSettingRcd</label>
+        <br /><label>Id: DefaultSystemSettingRcd, System.String</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Default/CrudeDefaultSystemSettingRef.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Default System Setting            </td><td>System.String</td></tr>
+            <tr><td>Default System Setting Name            </td><td>System.String</td></tr>
+            <tr><td>Default User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeDefaultSystemSettingRefContract<b> FetchByDefaultSystemSettingRcd </b>(System.String defaultSystemSettingRcd);
+        <br />
+        <br />List&lt;CrudeDefaultSystemSettingRefContract&gt;<b> FetchByDefaultUserId </b>(System.Guid defaultUserId);
+        <br />
+        <br />CrudeDefaultSystemSettingRefContract<b> FetchByDefaultSystemSettingName </b>(System.String defaultSystemSettingName);
+        <br />
+        <br />List&lt;CrudeDefaultSystemSettingRefContract&gt;<b> FetchWithFilter </b>(System.String defaultSystemSettingRcd,System.String defaultSystemSettingName,System.Guid defaultUserId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeDefaultSystemSettingRefContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeDefaultSystemSettingRefContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeDefaultSystemSettingRefContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeDefaultSystemSettingRefContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeDefaultSystemSettingRefContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.String defaultSystemSettingRcd);
+        <br />
+        <br />
+    </body>
+</html>
+

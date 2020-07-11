@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductAttributeService" CodeBehind="Crude\Templates\Product\\\CrudeProductAttribute.cs"%>

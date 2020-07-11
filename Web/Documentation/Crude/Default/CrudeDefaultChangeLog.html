@@ -1,0 +1,78 @@
+﻿
+<html>
+    <head>
+        <title>DefaultChangeLog</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>DefaultChangeLog Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeDefaultChangeLogService</label>
+        <br /><label>Contract name: CrudeDefaultChangeLogContract</label>
+        <br /><label>Fetcher: FetchByDefaultChangeLogId</label>
+        <br /><label>Id: DefaultChangeLogId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Default/CrudeDefaultChangeLog.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Default Change Log Id            </td><td>System.Guid</td></tr>
+            <tr><td>Default Change Name            </td><td>System.String</td></tr>
+            <tr><td>Default Change Description            </td><td>System.String</td></tr>
+            <tr><td>Default User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Default Change Log Type            </td><td>System.String</td></tr>
+            <tr><td>Default Issue Id            </td><td>System.Guid</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeDefaultChangeLogContract<b> FetchByDefaultChangeLogId </b>(System.Guid defaultChangeLogId);
+        <br />
+        <br />List&lt;CrudeDefaultChangeLogContract&gt;<b> FetchByDefaultUserId </b>(System.Guid defaultUserId);
+        <br />
+        <br />List&lt;CrudeDefaultChangeLogContract&gt;<b> FetchByDefaultIssueId </b>(System.Guid defaultIssueId);
+        <br />
+        <br />List&lt;CrudeDefaultChangeLogContract&gt;<b> FetchByDefaultChangeLogTypeRcd </b>(System.String defaultChangeLogTypeRcd);
+        <br />
+        <br />CrudeDefaultChangeLogContract<b> FetchByDefaultChangeName </b>(System.String defaultChangeName);
+        <br />
+        <br />List&lt;CrudeDefaultChangeLogContract&gt;<b> FetchWithFilter </b>(System.Guid defaultChangeLogId,System.String defaultChangeName,System.String defaultChangeDescription,System.Guid defaultUserId,System.DateTime dateTime,System.String defaultChangeLogTypeRcd,System.Guid defaultIssueId);
+        <br />
+        <br />List&lt;CrudeDefaultChangeLogContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeDefaultChangeLogContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeDefaultChangeLogContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeDefaultChangeLogContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeDefaultChangeLogContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid defaultChangeLogId);
+        <br />
+        <br />
+    </body>
+</html>
+

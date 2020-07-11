@@ -1,0 +1,41 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:35 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultChangeLogTypeRefContract>
+
+@{
+    ViewBag.Title = "Index Default Change Log Type Ref";
+}
+
+<h2>Index for Default Change Log Type Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultChangeLogTypeRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default Change Log Type</th>
+        <th>Default Change Log Type Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultChangeLogTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultChangeLogTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultChangeLogTypeRefEdit", new { defaultChangeLogTypeRcd = item.DefaultChangeLogTypeRcd })
+                | @Html.ActionLink("Delete", "CrudeDefaultChangeLogTypeRefDelete", new { defaultChangeLogTypeRcd = item.DefaultChangeLogTypeRcd })
+            </td>
+        </tr>
+    }
+
+</table>

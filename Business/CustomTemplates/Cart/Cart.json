@@ -1,0 +1,38 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateManual",
+  "Filename": "Cart.json",
+  "Table": {
+    "DomainName": "Cart",
+    "ParentTableName": "cart_product",
+    "ParentNameOverrideNice": "CartProduct",
+    "ParentNameOverrideCamel": "cartProduct",
+    "ParentNice": "CartProduct",
+    "ParentCamel": "cartProduct",
+    "ParentAutoUpdateScheme": "autoupdatenormal",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": "",
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "ByServiceTableCrud",
+    "OverallStyleName": "ByServiceTableCrud",
+    "OverallStyleDesign": "None",
+    "OverallStylePrimaryKey": "",
+    "OverallStyleAzureAppName": "",
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "CartSearch",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": "GetCartProductWithFilter"
+  },
+  "Header": [],
+  "RefreshLink": "",
+  "Injection": "",
+  "Result": null
+}

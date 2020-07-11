@@ -1,0 +1,47 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:32 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientNationalityRefContract>
+
+@{
+    ViewBag.Title = "Index Client Nationality Ref";
+}
+
+<h2>Index for Client Nationality Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeClientNationalityRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Client Nationality</th>
+        <th>Client Nationality Name</th>
+        <th>Client Nationality Description</th>
+        <th>Active Flag</th>
+        <th>Sort Order</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ClientNationalityRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientNationalityName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientNationalityDescription) </td>
+            <td>@Html.DisplayFor(modelItem => item.ActiveFlag) </td>
+            <td>@Html.DisplayFor(modelItem => item.SortOrder) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeClientNationalityRefEdit", new { clientNationalityRcd = item.ClientNationalityRcd })
+                | @Html.ActionLink("Delete", "CrudeClientNationalityRefDelete", new { clientNationalityRcd = item.ClientNationalityRcd })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,28 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:41 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultIssueTypeRefContract
+
+@{
+    ViewBag.Title = "Details Default Issue Type Ref";
+}
+
+<h2>Details for Default Issue Type Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Default Issue Type Name</dt> <dd>@Html.DisplayFor(model => model.DefaultIssueTypeName)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeDefaultIssueTypeRefEdit", new { defaultIssueTypeRcd = Model.DefaultIssueTypeRcd }) |
+    @Html.ActionLink("New", "CrudeDefaultIssueTypeRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeDefaultIssueTypeRefIndex")
+</p>

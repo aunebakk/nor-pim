@@ -1,0 +1,38 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateManual",
+  "Filename": "_productattribute.json",
+  "Table": {
+    "DomainName": "ProductMaintenance",
+    "ParentTableName": "product_attribute",
+    "ParentNameOverrideNice": "ProductAttribute",
+    "ParentNameOverrideCamel": "productAttribute",
+    "ParentNice": "ProductAttribute",
+    "ParentCamel": "productAttribute",
+    "ParentAutoUpdateScheme": "autoupdatenormal",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": "product",
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "WithDurian",
+    "OverallStyleName": "WithDurian",
+    "OverallStyleDesign": "",
+    "OverallStylePrimaryKey": "",
+    "OverallStyleAzureAppName": "",
+    "WebStyle": "Tabular",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "ProductMaintenanceSearch",
+    "DurianParameterToOwner": true,
+    "DurianParameters": true,
+    "DurianMethod": "ProductMaintenanceAttributeIndexWithFilter"
+  },
+  "Header": [],
+  "RefreshLink": "",
+  "Injection": "",
+  "Result": null
+}

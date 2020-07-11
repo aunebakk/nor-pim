@@ -1,0 +1,35 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:33:05 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceIndexContract>
+
+@{
+    ViewBag.Title = "Product Maintenance Index";
+}
+
+<h2>Product Maintenance Index</h2>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>State</th>
+        <th>Date Time</th>
+        <th>Default User Name</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+        </tr>
+    }
+
+</table>

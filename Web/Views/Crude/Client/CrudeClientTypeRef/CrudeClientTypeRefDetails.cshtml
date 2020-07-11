@@ -1,0 +1,32 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:34 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientTypeRefContract
+
+@{
+    ViewBag.Title = "Details Client Type Ref";
+}
+
+<h2>Details for Client Type Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Client Type Name</dt> <dd>@Html.DisplayFor(model => model.ClientTypeName)</dd>
+        <dt>Client Type Description</dt> <dd>@Html.DisplayFor(model => model.ClientTypeDescription)</dd>
+        <dt>Active Flag</dt> <dd>@Html.DisplayFor(model => model.ActiveFlag)</dd>
+        <dt>Sort Order</dt> <dd>@Html.DisplayFor(model => model.SortOrder)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeClientTypeRefEdit", new { clientTypeRcd = Model.ClientTypeRcd }) |
+    @Html.ActionLink("New", "CrudeClientTypeRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeClientTypeRefIndex")
+</p>

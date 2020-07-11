@@ -1,0 +1,43 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:34 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultChangeLogContract>
+
+@{
+    ViewBag.Title = "Index Default Change Log";
+}
+
+<h2>Index for Default Change Log</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultChangeLogCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default Change Name</th>
+        <th>Default Change Description</th>
+        <th>Date Time</th>
+        <th>Default Change Log Type</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultChangeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultChangeDescription) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultChangeLogTypeRcd) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultChangeLogEdit", new { defaultChangeLogId = item.DefaultChangeLogId })
+                | @Html.ActionLink("Delete", "CrudeDefaultChangeLogDelete", new { defaultChangeLogId = item.DefaultChangeLogId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,32 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:32 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientNationalityRefContract
+
+@{
+    ViewBag.Title = "Details Client Nationality Ref";
+}
+
+<h2>Details for Client Nationality Ref</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Client Nationality Name</dt> <dd>@Html.DisplayFor(model => model.ClientNationalityName)</dd>
+        <dt>Client Nationality Description</dt> <dd>@Html.DisplayFor(model => model.ClientNationalityDescription)</dd>
+        <dt>Active Flag</dt> <dd>@Html.DisplayFor(model => model.ActiveFlag)</dd>
+        <dt>Sort Order</dt> <dd>@Html.DisplayFor(model => model.SortOrder)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeClientNationalityRefEdit", new { clientNationalityRcd = Model.ClientNationalityRcd }) |
+    @Html.ActionLink("New", "CrudeClientNationalityRefCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeClientNationalityRefIndex")
+</p>

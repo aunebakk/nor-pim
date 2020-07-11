@@ -1,0 +1,71 @@
+﻿
+<html>
+    <head>
+        <title>ProductEntityTypeRef</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ProductEntityTypeRef Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeProductEntityTypeRefService</label>
+        <br /><label>Contract name: CrudeProductEntityTypeRefContract</label>
+        <br /><label>Fetcher: FetchByProductEntityTypeRcd</label>
+        <br /><label>Id: ProductEntityTypeRcd, System.String</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Product/CrudeProductEntityTypeRef.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Product Entity Type            </td><td>System.String</td></tr>
+            <tr><td>Product Entity Type Name            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeProductEntityTypeRefContract<b> FetchByProductEntityTypeRcd </b>(System.String productEntityTypeRcd);
+        <br />
+        <br />List&lt;CrudeProductEntityTypeRefContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />CrudeProductEntityTypeRefContract<b> FetchByProductEntityTypeName </b>(System.String productEntityTypeName);
+        <br />
+        <br />List&lt;CrudeProductEntityTypeRefContract&gt;<b> FetchWithFilter </b>(System.String productEntityTypeRcd,System.String productEntityTypeName,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeProductEntityTypeRefContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeProductEntityTypeRefContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeProductEntityTypeRefContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeProductEntityTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeProductEntityTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.String productEntityTypeRcd);
+        <br />
+        <br />
+    </body>
+</html>
+

@@ -1,0 +1,41 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateFromSchema",
+  "Filename": "ProductGatherSourceTypeRef.json",
+  "Table": {
+    "DomainName": "Product",
+    "ParentTableName": "product_gather_source_type_ref",
+    "ParentNameOverrideNice": "CrudeProductGatherSourceTypeRef",
+    "ParentNameOverrideCamel": "productGatherSourceTypeRef",
+    "ParentNice": "CrudeProductGatherSourceTypeRef",
+    "ParentCamel": "productGatherSourceTypeRef",
+    "ParentAutoUpdateScheme": "autoupdatereference",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": null,
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "CrudeSoap",
+    "OverallStyleName": "CrudeSoap",
+    "OverallStyleDesign": "TypeScriptHagtorn",
+    "OverallStylePrimaryKey": null,
+    "OverallStyleAzureAppName": null,
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": ""
+  },
+  "Header": [],
+  "RefreshLink": null,
+  "Injection": null,
+  "Result": {
+    "RunDateTime": null,
+    "Urls": null
+  }
+}

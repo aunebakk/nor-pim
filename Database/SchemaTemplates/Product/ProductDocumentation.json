@@ -1,0 +1,41 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateFromSchema",
+  "Filename": "ProductDocumentation.json",
+  "Table": {
+    "DomainName": "Product",
+    "ParentTableName": "product_documentation",
+    "ParentNameOverrideNice": "CrudeProductDocumentation",
+    "ParentNameOverrideCamel": "productDocumentation",
+    "ParentNice": "CrudeProductDocumentation",
+    "ParentCamel": "productDocumentation",
+    "ParentAutoUpdateScheme": "autoupdatenormal",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": null,
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "None",
+    "OverallStyleName": "None",
+    "OverallStyleDesign": "TypeScriptHagtorn",
+    "OverallStylePrimaryKey": null,
+    "OverallStyleAzureAppName": null,
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": ""
+  },
+  "Header": [],
+  "RefreshLink": null,
+  "Injection": null,
+  "Result": {
+    "RunDateTime": null,
+    "Urls": null
+  }
+}

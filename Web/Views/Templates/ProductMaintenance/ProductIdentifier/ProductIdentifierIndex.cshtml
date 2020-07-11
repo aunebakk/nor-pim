@@ -1,0 +1,52 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:36:13 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateWithDurianGenerator.ParentViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceIdentifierIndexWithFilterContract>
+
+@{
+    ViewBag.Title = "Index Product Identifier";
+}
+
+<h2>Index for Product Identifier</h2>
+
+<br />
+@Html.Partial("~/Views/Templates/ProductMaintenance/_tab.cshtml")
+<br />
+
+<p>
+    @Html.ActionLink("Create New", "ProductIdentifierCreate", new { productId = ViewBag.ProductId })
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>State</th>
+        <th>Product Identifier Name</th>
+        <th>Default User Name</th>
+        <th>Product Identifier</th>
+        <th>Identifier</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductIdentifierName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductIdentifierRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Identifier) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "ProductIdentifierEdit", new { productIdentifierId = item.ProductIdentifierId })
+            </td>
+        </tr>
+    }
+
+</table>

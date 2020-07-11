@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.CrudeClientContactMethodRefService" CodeBehind="Crude\Templates\Client\\\CrudeClientContactMethodRef.cs"%>

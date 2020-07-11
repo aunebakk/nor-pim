@@ -1,0 +1,41 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:27:10 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductDocumentationTypeRefContract>
+
+@{
+    ViewBag.Title = "Index Product Documentation Type Ref";
+}
+
+<h2>Index for Product Documentation Type Ref</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductDocumentationTypeRefCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Documentation Type</th>
+        <th>Product Documentation Type Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductDocumentationTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductDocumentationTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeProductDocumentationTypeRefEdit", new { productDocumentationTypeRcd = item.ProductDocumentationTypeRcd })
+                | @Html.ActionLink("Delete", "CrudeProductDocumentationTypeRefDelete", new { productDocumentationTypeRcd = item.ProductDocumentationTypeRcd })
+            </td>
+        </tr>
+    }
+
+</table>

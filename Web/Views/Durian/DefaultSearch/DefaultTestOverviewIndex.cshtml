@@ -1,0 +1,33 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:33:26 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.DefaultTestOverviewContract>
+
+@{
+    ViewBag.Title = "Default Test Overview";
+}
+
+<h2>Default Test Overview</h2>
+
+<table class="table">
+    <tr>
+        <th>Test Area</th>
+        <th>Start Date Time</th>
+        <th>Default Test Run Result</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.TestArea) </td>
+            <td>@Html.DisplayFor(modelItem => item.StartDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultTestRunResultRcd) </td>
+        </tr>
+    }
+
+</table>

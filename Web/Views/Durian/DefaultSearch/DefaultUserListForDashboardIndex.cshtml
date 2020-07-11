@@ -1,0 +1,45 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:34:30 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.DefaultUserListForDashboardContract>
+
+@{
+    ViewBag.Title = "Default User List For Dashboard";
+}
+
+<h2>Default User List For Dashboard</h2>
+
+<table class="table">
+    <tr>
+        <th>Default User Code</th>
+        <th>Default User Name</th>
+        <th>Email</th>
+        <th>Default State Name</th>
+        <th>Activity Count</th>
+        <th>Last Activity Date Time</th>
+        <th>Created Date Time</th>
+        <th>Created By Default User Code</th>
+        <th>Created By Default User Name</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserCode) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.Email) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultStateName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ActivityCount) </td>
+            <td>@Html.DisplayFor(modelItem => item.LastActivityDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedByDefaultUserCode) </td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedByDefaultUserName) </td>
+        </tr>
+    }
+
+</table>

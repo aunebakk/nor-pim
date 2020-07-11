@@ -1,0 +1,33 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:56 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultVersionContract
+
+@{
+    ViewBag.Title = "Details Default Version";
+}
+
+<h2>Details for Default Version</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Fun Version</dt> <dd>@Html.DisplayFor(model => model.FunVersion)</dd>
+        <dt>Number</dt> <dd>@Html.DisplayFor(model => model.Number)</dd>
+        <dt>Major Number</dt> <dd>@Html.DisplayFor(model => model.MajorNumber)</dd>
+        <dt>Minor Number</dt> <dd>@Html.DisplayFor(model => model.MinorNumber)</dd>
+        <dt>Sequence Number</dt> <dd>@Html.DisplayFor(model => model.SequenceNumber)</dd>
+        <dt>Default User Id</dt> <dd>@Html.DisplayFor(model => model.DefaultUserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeDefaultVersionEdit", new { defaultVersionId = Model.DefaultVersionId }) |
+    @Html.ActionLink("New", "CrudeDefaultVersionCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeDefaultVersionIndex")
+</p>

@@ -1,0 +1,46 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:32:52 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceImageIndexWithFilterContract>
+
+@{
+    ViewBag.Title = "Product Maintenance Image Index With Filter";
+}
+
+<h2>Product Maintenance Image Index With Filter</h2>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>State</th>
+        <th>Product Image Type Name</th>
+        <th>Image File Name</th>
+        <th>Default User Name</th>
+        <th>Product Image Type</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductImageTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ImageFileName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductImageTypeRcd) </td>
+            <td>
+                @if (item.Image != null) {
+                    <img src="data:image/png;base64,@Convert.ToBase64String(item.Image)" alt="html_inline_image.png" title="html_inline_image.png">
+                }
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+        </tr>
+    }
+
+</table>

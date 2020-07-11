@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseDefault.cs" Link="DatabaseDefault.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseIpsum.cs" Link="DatabaseIpsum.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseEmpty.cs" Link="DatabaseEmpty.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseFinancial.cs" Link="DatabaseFinancial.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseJSONClient.cs" Link="DatabaseJSONClient.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseManager.cs" Link="DatabaseManager.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseOAuth.cs" Link="DatabaseOAuth.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseProduct.cs" Link="DatabaseProduct.cs" />
+    <Compile Include="..\Web\Controllers\DatabaseManager\DatabaseVersion.cs" Link="DatabaseVersion.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.2" />
+  </ItemGroup>
+
+</Project>

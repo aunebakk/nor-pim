@@ -1,0 +1,74 @@
+﻿
+<html>
+    <head>
+        <title>ClientGenderRef</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ClientGenderRef Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeClientGenderRefService</label>
+        <br /><label>Contract name: CrudeClientGenderRefContract</label>
+        <br /><label>Fetcher: FetchByClientGenderRcd</label>
+        <br /><label>Id: ClientGenderRcd, System.String</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Client/CrudeClientGenderRef.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Client Gender            </td><td>System.String</td></tr>
+            <tr><td>Client Gender Name            </td><td>System.String</td></tr>
+            <tr><td>Client Gender Description            </td><td>System.String</td></tr>
+            <tr><td>Active Flag            </td><td>System.Boolean</td></tr>
+            <tr><td>Sort Order            </td><td>System.Int32</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeClientGenderRefContract<b> FetchByClientGenderRcd </b>(System.String clientGenderRcd);
+        <br />
+        <br />List&lt;CrudeClientGenderRefContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />CrudeClientGenderRefContract<b> FetchByClientGenderName </b>(System.String clientGenderName);
+        <br />
+        <br />List&lt;CrudeClientGenderRefContract&gt;<b> FetchWithFilter </b>(System.String clientGenderRcd,System.String clientGenderName,System.String clientGenderDescription,System.Boolean activeFlag,System.Int32 sortOrder,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeClientGenderRefContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeClientGenderRefContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeClientGenderRefContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeClientGenderRefContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeClientGenderRefContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.String clientGenderRcd);
+        <br />
+        <br />
+    </body>
+</html>
+

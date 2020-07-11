@@ -1,0 +1,71 @@
+﻿
+<html>
+    <head>
+        <title>DefaultErrorTypeRef</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>DefaultErrorTypeRef Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeDefaultErrorTypeRefService</label>
+        <br /><label>Contract name: CrudeDefaultErrorTypeRefContract</label>
+        <br /><label>Fetcher: FetchByDefaultErrorTypeRcd</label>
+        <br /><label>Id: DefaultErrorTypeRcd, System.String</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Default/CrudeDefaultErrorTypeRef.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Default Error Type            </td><td>System.String</td></tr>
+            <tr><td>Default Error Type Name            </td><td>System.String</td></tr>
+            <tr><td>Default User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeDefaultErrorTypeRefContract<b> FetchByDefaultErrorTypeRcd </b>(System.String defaultErrorTypeRcd);
+        <br />
+        <br />List&lt;CrudeDefaultErrorTypeRefContract&gt;<b> FetchByDefaultUserId </b>(System.Guid defaultUserId);
+        <br />
+        <br />CrudeDefaultErrorTypeRefContract<b> FetchByDefaultErrorTypeName </b>(System.String defaultErrorTypeName);
+        <br />
+        <br />List&lt;CrudeDefaultErrorTypeRefContract&gt;<b> FetchWithFilter </b>(System.String defaultErrorTypeRcd,System.String defaultErrorTypeName,System.Guid defaultUserId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeDefaultErrorTypeRefContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeDefaultErrorTypeRefContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeDefaultErrorTypeRefContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeDefaultErrorTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeDefaultErrorTypeRefContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.String defaultErrorTypeRcd);
+        <br />
+        <br />
+    </body>
+</html>
+

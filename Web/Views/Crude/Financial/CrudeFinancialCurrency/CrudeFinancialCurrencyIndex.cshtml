@@ -1,0 +1,55 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:57 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeFinancialCurrencyContract>
+
+@{
+    ViewBag.Title = "Index Financial Currency";
+}
+
+<h2>Index for Financial Currency</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeFinancialCurrencyCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Financial Currency Type</th>
+        <th>Financial Currency Against Financial Currency Type</th>
+        <th>Date Time</th>
+        <th>Valid From Date Time</th>
+        <th>Valid Until Date Time</th>
+        <th>Amount</th>
+        <th>Equals Amount</th>
+        <th>Decimal Count</th>
+        <th>Financial Currency Type Code</th>
+        <th>Financial Currency Type Name</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyAgainstFinancialCurrencyTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.ValidFromDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.ValidUntilDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.Amount) </td>
+            <td>@Html.DisplayFor(modelItem => item.EqualsAmount) </td>
+            <td>@Html.DisplayFor(modelItem => item.DecimalCount) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyTypeCode) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyTypeName) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeFinancialCurrencyEdit", new { financialCurrencyId = item.FinancialCurrencyId })
+                | @Html.ActionLink("Delete", "CrudeFinancialCurrencyDelete", new { financialCurrencyId = item.FinancialCurrencyId })
+            </td>
+        </tr>
+    }
+
+</table>

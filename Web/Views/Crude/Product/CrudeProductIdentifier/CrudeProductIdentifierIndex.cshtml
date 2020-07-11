@@ -1,0 +1,41 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:27:24 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductIdentifierContract>
+
+@{
+    ViewBag.Title = "Index Product Identifier";
+}
+
+<h2>Index for Product Identifier</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeProductIdentifierCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Product Identifier</th>
+        <th>Identifier</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductIdentifierRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Identifier) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeProductIdentifierEdit", new { productIdentifierId = item.ProductIdentifierId })
+                | @Html.ActionLink("Delete", "CrudeProductIdentifierDelete", new { productIdentifierId = item.ProductIdentifierId })
+            </td>
+        </tr>
+    }
+
+</table>

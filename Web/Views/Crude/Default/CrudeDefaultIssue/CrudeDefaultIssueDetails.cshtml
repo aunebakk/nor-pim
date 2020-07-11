@@ -1,0 +1,32 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:39 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultIssueContract
+
+@{
+    ViewBag.Title = "Details Default Issue";
+}
+
+<h2>Details for Default Issue</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Issue Name</dt> <dd>@Html.DisplayFor(model => model.IssueName)</dd>
+        <dt>Issue Description</dt> <dd>@Html.DisplayFor(model => model.IssueDescription)</dd>
+        <dt>Steps To Reproduce</dt> <dd>@Html.DisplayFor(model => model.StepsToReproduce)</dd>
+        <dt>Link</dt> <dd>@Html.DisplayFor(model => model.Link)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+        <dt>Fixed Note</dt> <dd>@Html.DisplayFor(model => model.FixedNote)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeDefaultIssueEdit", new { defaultIssueId = Model.DefaultIssueId }) |
+    @Html.ActionLink("New", "CrudeDefaultIssueCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeDefaultIssueIndex")
+</p>

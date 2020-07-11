@@ -1,0 +1,38 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateManual",
+  "Filename": "ProductSearch.json",
+  "Table": {
+    "DomainName": "Product",
+    "ParentTableName": "product",
+    "ParentNameOverrideNice": "ProductSearch",
+    "ParentNameOverrideCamel": "productSearch",
+    "ParentNice": "ProductSearch",
+    "ParentCamel": "productSearch",
+    "ParentAutoUpdateScheme": "",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": "",
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "WithDurianByTypeScript",
+    "OverallStyleName": "WithDurianByTypeScript",
+    "OverallStyleDesign": "TypeScriptTine",
+    "OverallStylePrimaryKey": "",
+    "OverallStyleAzureAppName": "NorSolutionPim",
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "ProductSearch",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": "ProductSearchByCategory"
+  },
+  "Header": [],
+  "RefreshLink": "",
+  "Injection": "",
+  "Result": null
+}

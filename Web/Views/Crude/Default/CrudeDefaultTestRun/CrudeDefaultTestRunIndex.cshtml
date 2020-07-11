@@ -1,0 +1,47 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:51 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeDefaultTestRunContract>
+
+@{
+    ViewBag.Title = "Index Default Test Run";
+}
+
+<h2>Index for Default Test Run</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeDefaultTestRunCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Default Test Run Result</th>
+        <th>Result</th>
+        <th>Start Date Time</th>
+        <th>End Date Time</th>
+        <th>Elapsed Milliseconds</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DefaultTestRunResultRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.Result) </td>
+            <td>@Html.DisplayFor(modelItem => item.StartDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.EndDateTime) </td>
+            <td>@Html.DisplayFor(modelItem => item.ElapsedMilliseconds) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeDefaultTestRunEdit", new { defaultTestRunId = item.DefaultTestRunId })
+                | @Html.ActionLink("Delete", "CrudeDefaultTestRunDelete", new { defaultTestRunId = item.DefaultTestRunId })
+            </td>
+        </tr>
+    }
+
+</table>

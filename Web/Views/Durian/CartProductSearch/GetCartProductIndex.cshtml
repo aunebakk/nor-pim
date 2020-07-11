@@ -1,0 +1,63 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:33:08 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.GetCartProductContract>
+
+@{
+    ViewBag.Title = "Get Cart Product";
+}
+
+<h2>Get Cart Product</h2>
+
+<table class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Client Nationality</th>
+        <th>Client Gender</th>
+        <th>Client Title</th>
+        <th>Client Type</th>
+        <th>Product Name</th>
+        <th>Product State</th>
+        <th>Financial Currency Type</th>
+        <th>Financial Currency Against Financial Currency Type</th>
+        <th>Financial Currency Type Code</th>
+        <th>Financial Currency Type Name</th>
+        <th>Amount</th>
+        <th>Cart Product State</th>
+        <th>Image Blob Filename</th>
+        <th>Default User Name</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.FirstName) </td>
+            <td>@Html.DisplayFor(modelItem => item.MiddleName) </td>
+            <td>@Html.DisplayFor(modelItem => item.LastName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientNationalityRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientGenderRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientTitleRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ClientTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
+            <td>@Html.DisplayFor(modelItem => item.ProductStateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyAgainstFinancialCurrencyTypeRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyTypeCode) </td>
+            <td>@Html.DisplayFor(modelItem => item.FinancialCurrencyTypeName) </td>
+            <td>@Html.DisplayFor(modelItem => item.Amount) </td>
+            <td>@Html.DisplayFor(modelItem => item.CartProductStateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.ImageBlobFilename) </td>
+            <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+        </tr>
+    }
+
+</table>

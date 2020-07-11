@@ -1,0 +1,41 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateFromSchema",
+  "Filename": "DefaultError.json",
+  "Table": {
+    "DomainName": "Default",
+    "ParentTableName": "default_error",
+    "ParentNameOverrideNice": "CrudeDefaultError",
+    "ParentNameOverrideCamel": "defaultError",
+    "ParentNice": "CrudeDefaultError",
+    "ParentCamel": "defaultError",
+    "ParentAutoUpdateScheme": "autoupdatedefault",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": null,
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "CrudeContract",
+    "OverallStyleName": "CrudeContract",
+    "OverallStyleDesign": "TypeScriptHagtorn",
+    "OverallStylePrimaryKey": null,
+    "OverallStyleAzureAppName": null,
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": ""
+  },
+  "Header": [],
+  "RefreshLink": null,
+  "Injection": null,
+  "Result": {
+    "RunDateTime": null,
+    "Urls": null
+  }
+}

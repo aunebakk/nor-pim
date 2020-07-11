@@ -1,0 +1,57 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateManual",
+  "Filename": "ProductReferenceDocumentationType.json",
+  "Table": {
+    "DomainName": "ProductReference",
+    "ParentTableName": "product_documentation_type_ref",
+    "ParentNameOverrideNice": "ProductReferenceDocumentationType",
+    "ParentNameOverrideCamel": "product",
+    "ParentNice": "ProductReferenceDocumentationType",
+    "ParentCamel": "product",
+    "ParentAutoUpdateScheme": "autoupdatenormal",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": "",
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "ByServiceTableCrud",
+    "OverallStyleName": "ByServiceTableCrud",
+    "OverallStyleDesign": "",
+    "OverallStylePrimaryKey": "",
+    "OverallStyleAzureAppName": "",
+    "WebStyle": "None",
+    "Actions": [
+      {
+        "Name": "index",
+        "Text": "references",
+        "Controller": "Dashboard",
+        "Action": "DashboardPIMReference"
+      },
+      {
+        "Name": "refresh",
+        "Text": "refresh",
+        "Controller": "ProductReferenceDocumentationType",
+        "Action": "ProductReferenceDocumentationTypeEdit"
+      },
+      {
+        "Name": "add",
+        "Text": "add new",
+        "Controller": "ProductReferenceDocumentationType",
+        "Action": "ProductReferenceDocumentationTypeCreate"
+      }
+    ],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": ""
+  },
+  "Header": [],
+  "RefreshLink": "",
+  "Injection": "",
+  "Result": null
+}

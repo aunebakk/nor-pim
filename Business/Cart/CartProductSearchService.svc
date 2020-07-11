@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SolutionNorSolutionPim.BusinessLogicLayer.CartProductSearchService" CodeBehind="C:\SQL2XProjects\SolutionNorSolutionPim\Business\Cart\\CartProductSearchService.cs"%>

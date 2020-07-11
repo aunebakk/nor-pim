@@ -1,0 +1,75 @@
+﻿
+<html>
+    <head>
+        <title>ProductCategoryDocumentation</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ProductCategoryDocumentation Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeProductCategoryDocumentationService</label>
+        <br /><label>Contract name: CrudeProductCategoryDocumentationContract</label>
+        <br /><label>Fetcher: FetchByProductCategoryDocumentationId</label>
+        <br /><label>Id: ProductCategoryDocumentationId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Product/CrudeProductCategoryDocumentation.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Product Category Documentation Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Category Documentation Type            </td><td>System.String</td></tr>
+            <tr><td>Product Category Id            </td><td>System.Guid</td></tr>
+            <tr><td>Documentation            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeProductCategoryDocumentationContract<b> FetchByProductCategoryDocumentationId </b>(System.Guid productCategoryDocumentationId);
+        <br />
+        <br />List&lt;CrudeProductCategoryDocumentationContract&gt;<b> FetchByProductCategoryId </b>(System.Guid productCategoryId);
+        <br />
+        <br />List&lt;CrudeProductCategoryDocumentationContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeProductCategoryDocumentationContract&gt;<b> FetchByProductCategoryDocumentationTypeRcd </b>(System.String productCategoryDocumentationTypeRcd);
+        <br />
+        <br />List&lt;CrudeProductCategoryDocumentationContract&gt;<b> FetchWithFilter </b>(System.Guid productCategoryDocumentationId,System.String productCategoryDocumentationTypeRcd,System.Guid productCategoryId,System.String documentation,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeProductCategoryDocumentationContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeProductCategoryDocumentationContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeProductCategoryDocumentationContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeProductCategoryDocumentationContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeProductCategoryDocumentationContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid productCategoryDocumentationId);
+        <br />
+        <br />
+    </body>
+</html>
+

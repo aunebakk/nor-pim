@@ -1,0 +1,41 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:26:17 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract>
+
+@{
+    ViewBag.Title = "Index Cart Product";
+}
+
+<h2>Index for Cart Product</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CrudeCartProductCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Amount</th>
+        <th>State</th>
+        <th>Date Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Amount) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
+            <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
+            <td>
+                @Html.ActionLink("Edit", "CrudeCartProductEdit", new { cartProductId = item.CartProductId })
+                | @Html.ActionLink("Delete", "CrudeCartProductDelete", new { cartProductId = item.CartProductId })
+            </td>
+        </tr>
+    }
+
+</table>

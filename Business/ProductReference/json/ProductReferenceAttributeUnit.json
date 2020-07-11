@@ -1,0 +1,50 @@
+{
+  "Filename": null,
+  "TemplateStyle": 0,
+  "ParentTableName": "product_attribute_unit_ref",
+  "AutoFillName": "user_id",
+  "AutoFillType": "uniqueidentifier",
+  "DurianClass": "ProductReferenceAttributeUnitSearch",
+  "DurianParameterToOwner": false,
+  "DurianParameters": false,
+  "DurianMethod": "ProductReferenceAttributeUnitSearchWithFilter",
+  "DomainName": "ProductReference",
+  "WebStyle": 0,
+  "ParentNameOverrideNice": "ProductReferenceAttributeUnit",
+  "ParentNameOverrideCamel": "product",
+  "ParentAutoUpdateScheme": "autoupdatenormal",
+  "ParentOwnerTable": null,
+  "DefaultUserId": "34085140-0d95-4beb-bbc9-a5bc1da5b3f3",
+  "ShowPrimary": false,
+  "Injection": null,
+  "OverallStyleAzureAppName": null,
+  "OverallStyleDesign": "tabular",
+  "OverallStyleName": "ByServiceTableCrud",
+  "OverallStylePrimaryKey": null,
+  "RefreshLink": null,
+  "Header": null,
+  "Children": null,
+  "Actions": [
+    {
+      "Name": "index",
+      "Text": "references",
+      "Controller": "Dashboard",
+      "Action": "DashboardPIMReference"
+    },
+    {
+      "Name": "refresh",
+      "Text": "refresh",
+      "Controller": "ProductReferenceAttributeUnit",
+      "Action": "ProductReferenceAttributeUnitEdit"
+    },
+    {
+      "Name": "add",
+      "Text": "add new",
+      "Controller": "ProductReferenceAttributeUnit",
+      "Action": "ProductReferenceAttributeUnitCreate"
+    }
+  ],
+  "Result": null,
+  "ParentNice": "ProductReferenceAttributeUnit",
+  "ParentCamel": "product"
+}

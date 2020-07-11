@@ -1,0 +1,45 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateManual",
+  "Filename": "TemplateCartProduct.json",
+  "Table": {
+    "DomainName": "Cart",
+    "ParentTableName": "cart_product",
+    "ParentNameOverrideNice": "CartProduct",
+    "ParentNameOverrideCamel": "cart_product",
+    "ParentNice": "CartProduct",
+    "ParentCamel": "cart_product",
+    "ParentAutoUpdateScheme": "",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": "",
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "WithDurianByTypeScript",
+    "OverallStyleName": "WithDurianByTypeScript",
+    "OverallStyleDesign": "TypeScriptVestreVikenDurian",
+    "OverallStylePrimaryKey": "cart_product_id",
+    "OverallStyleAzureAppName": "NorSolutionPim",
+    "WebStyle": "None",
+    "Actions": [
+      {
+        "Name": "un_order",
+        "Text": "U",
+        "Controller": "Product",
+        "Action": "UnOrder"
+      }
+    ],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "CartProductSearch",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": "GetCartProduct"
+  },
+  "Header": [],
+  "RefreshLink": "",
+  "Injection": "",
+  "Result": null
+}

@@ -1,0 +1,84 @@
+﻿
+<html>
+    <head>
+        <title>DefaultIssue</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>DefaultIssue Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeDefaultIssueService</label>
+        <br /><label>Contract name: CrudeDefaultIssueContract</label>
+        <br /><label>Fetcher: FetchByDefaultIssueId</label>
+        <br /><label>Id: DefaultIssueId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Default/CrudeDefaultIssue.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Default Issue Id            </td><td>System.Guid</td></tr>
+            <tr><td>Default Issue Type            </td><td>System.String</td></tr>
+            <tr><td>Default Issue Status            </td><td>System.String</td></tr>
+            <tr><td>Default Error Id            </td><td>System.Guid</td></tr>
+            <tr><td>Issue Name            </td><td>System.String</td></tr>
+            <tr><td>Issue Description            </td><td>System.String</td></tr>
+            <tr><td>Steps To Reproduce            </td><td>System.String</td></tr>
+            <tr><td>Link            </td><td>System.String</td></tr>
+            <tr><td>Default User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+            <tr><td>Fixed Note            </td><td>System.String</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeDefaultIssueContract<b> FetchByDefaultIssueId </b>(System.Guid defaultIssueId);
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchByDefaultErrorId </b>(System.Guid defaultErrorId);
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchByDefaultUserId </b>(System.Guid defaultUserId);
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchByDefaultIssueTypeRcd </b>(System.String defaultIssueTypeRcd);
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchByDefaultIssueStatusRcd </b>(System.String defaultIssueStatusRcd);
+        <br />
+        <br />CrudeDefaultIssueContract<b> FetchByIssueName </b>(System.String issueName);
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchWithFilter </b>(System.Guid defaultIssueId,System.String defaultIssueTypeRcd,System.String defaultIssueStatusRcd,System.Guid defaultErrorId,System.String issueName,System.String issueDescription,System.String stepsToReproduce,System.String link,System.Guid defaultUserId,System.DateTime dateTime,System.String fixedNote);
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeDefaultIssueContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeDefaultIssueContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeDefaultIssueContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid defaultIssueId);
+        <br />
+        <br />
+    </body>
+</html>
+

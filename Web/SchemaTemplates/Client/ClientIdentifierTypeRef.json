@@ -1,0 +1,41 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateFromSchema",
+  "Filename": "ClientIdentifierTypeRef.json",
+  "Table": {
+    "DomainName": "Client",
+    "ParentTableName": "client_identifier_type_ref",
+    "ParentNameOverrideNice": "CrudeClientIdentifierTypeRef",
+    "ParentNameOverrideCamel": "clientIdentifierTypeRef",
+    "ParentNice": "CrudeClientIdentifierTypeRef",
+    "ParentCamel": "clientIdentifierTypeRef",
+    "ParentAutoUpdateScheme": "autoupdatereference",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": null,
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "CrudeAspMvc",
+    "OverallStyleName": "CrudeAspMvc",
+    "OverallStyleDesign": "TypeScriptHagtorn",
+    "OverallStylePrimaryKey": null,
+    "OverallStyleAzureAppName": null,
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": ""
+  },
+  "Header": [],
+  "RefreshLink": null,
+  "Injection": null,
+  "Result": {
+    "RunDateTime": null,
+    "Urls": null
+  }
+}

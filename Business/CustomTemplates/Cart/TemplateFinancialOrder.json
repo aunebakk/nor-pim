@@ -1,0 +1,38 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateManual",
+  "Filename": "TemplateFinancialOrder.json",
+  "Table": {
+    "DomainName": "Cart",
+    "ParentTableName": "financial_order",
+    "ParentNameOverrideNice": "FinancialOrder",
+    "ParentNameOverrideCamel": "financial_order",
+    "ParentNice": "FinancialOrder",
+    "ParentCamel": "financial_order",
+    "ParentAutoUpdateScheme": "",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": "",
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "WithDurianByTypeScript",
+    "OverallStyleName": "WithDurianByTypeScript",
+    "OverallStyleDesign": "TypeScriptHagtorn",
+    "OverallStylePrimaryKey": "financial_order_id",
+    "OverallStyleAzureAppName": "NorSolutionPim",
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": ""
+  },
+  "Header": [],
+  "RefreshLink": "",
+  "Injection": "",
+  "Result": null
+}

@@ -1,0 +1,29 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:27:19 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewDetails
+-->
+@model SolutionNorSolutionPim.BusinessLogicLayer.CrudeProductGatherAttributeContract
+
+@{
+    ViewBag.Title = "Details Product Gather Attribute";
+}
+
+<h2>Details for Product Gather Attribute</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Gather Attribute Value</dt> <dd>@Html.DisplayFor(model => model.ProductGatherAttributeValue)</dd>
+        <dt>User Id</dt> <dd>@Html.DisplayFor(model => model.UserId)</dd>
+        <dt>Date Time</dt> <dd>@Html.DisplayFor(model => model.DateTime)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CrudeProductGatherAttributeEdit", new { productGatherAttributeId = Model.ProductGatherAttributeId }) |
+    @Html.ActionLink("New", "CrudeProductGatherAttributeCreate", new { }) |
+    @Html.ActionLink("Back to List", "CrudeProductGatherAttributeIndex")
+</p>

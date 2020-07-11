@@ -1,0 +1,41 @@
+﻿{
+  "Version": 4,
+  "JsonType": "TemplateFromSchema",
+  "Filename": "DefaultIssueTypeRef.json",
+  "Table": {
+    "DomainName": "Default",
+    "ParentTableName": "default_issue_type_ref",
+    "ParentNameOverrideNice": "CrudeDefaultIssueTypeRef",
+    "ParentNameOverrideCamel": "defaultIssueTypeRef",
+    "ParentNice": "CrudeDefaultIssueTypeRef",
+    "ParentCamel": "defaultIssueTypeRef",
+    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillName": "user_id",
+    "AutoFillType": "uniqueidentifier",
+    "ParentOwnerTable": null,
+    "Children": []
+  },
+  "Style": {
+    "TemplateStyle": "CrudeProxy",
+    "OverallStyleName": "CrudeProxy",
+    "OverallStyleDesign": "TypeScriptHagtorn",
+    "OverallStylePrimaryKey": null,
+    "OverallStyleAzureAppName": null,
+    "WebStyle": "None",
+    "Actions": [],
+    "ShowPrimary": false
+  },
+  "Durian": {
+    "DurianClass": "",
+    "DurianParameterToOwner": false,
+    "DurianParameters": false,
+    "DurianMethod": ""
+  },
+  "Header": [],
+  "RefreshLink": null,
+  "Injection": null,
+  "Result": {
+    "RunDateTime": null,
+    "Urls": null
+  }
+}

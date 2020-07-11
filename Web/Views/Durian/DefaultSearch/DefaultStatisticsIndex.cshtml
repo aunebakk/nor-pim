@@ -1,0 +1,31 @@
+﻿<!--
+  SQL2X Generated code based on a SQL Server Schema
+  SQL2X Version: 1.0
+  http://sql2x.org/
+  Generated Date: 7/11/2020 11:33:48 AM
+  From Machine: DESKTOP-517I8BU
+  Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
+-->
+@model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.DefaultStatisticsContract>
+
+@{
+    ViewBag.Title = "Default Statistics";
+}
+
+<h2>Default Statistics</h2>
+
+<table class="table">
+    <tr>
+        <th>Activity Date</th>
+        <th>Day Count</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ActivityDate) </td>
+            <td>@Html.DisplayFor(modelItem => item.DayCount) </td>
+        </tr>
+    }
+
+</table>

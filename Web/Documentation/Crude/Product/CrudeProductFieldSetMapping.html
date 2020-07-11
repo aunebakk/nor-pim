@@ -1,0 +1,86 @@
+﻿
+<html>
+    <head>
+        <title>ProductFieldSetMapping</title>
+        <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $('table tr:even').addClass('even');
+            });
+        </script>
+        <style>
+            body {
+              background-color: #ffffff; 
+              margin-left: 40px; 
+              margin-top: 40px; 
+              margin-right: 40px; 
+              margin-bottom: 40px; 
+              font-family: Tahoma; 
+              font-size: small; 
+            }
+            h1   {color:blue}
+            p    {color:green}
+        </style>
+    </head>
+    <body>
+        <h1>ProductFieldSetMapping Contract Members</h1>
+              <label>Namespace: SolutionNorSolutionPim.BusinessLogicLayer</label>
+        <br /><label>Service name: CrudeProductFieldSetMappingService</label>
+        <br /><label>Contract name: CrudeProductFieldSetMappingContract</label>
+        <br /><label>Fetcher: FetchByProductFieldSetMappingId</label>
+        <br /><label>Id: ProductFieldSetMappingId, System.Guid</label>
+        <br /><label>SOAP Interface: </label><a href="http://NorSolutionPimBusiness.azurewebsites.net/Crude\Templates\Product/CrudeProductFieldSetMapping.svc?singleWsdl">&nbsp;Live Link</a>
+        <br />
+        <br /><label>Create Read Update Delete (CRUD) members, operators for database table</label>
+        <br />
+        <br />
+        <table>
+            <tr><td>Product Field Set Mapping Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Field Set Id            </td><td>System.Guid</td></tr>
+            <tr><td>Product Identifier            </td><td>System.String</td></tr>
+            <tr><td>Product Attribute            </td><td>System.String</td></tr>
+            <tr><td>Product Info            </td><td>System.String</td></tr>
+            <tr><td>Product Image Type            </td><td>System.String</td></tr>
+            <tr><td>Product Documentation Type            </td><td>System.String</td></tr>
+            <tr><td>User Id            </td><td>System.Guid</td></tr>
+            <tr><td>Date Time            </td><td>System.DateTime</td></tr>
+        </table>
+        <br />
+        <h2>Service Operations</h2>
+        <br />CrudeProductFieldSetMappingContract<b> FetchByProductFieldSetMappingId </b>(System.Guid productFieldSetMappingId);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchByProductFieldSetId </b>(System.Guid productFieldSetId);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchByUserId </b>(System.Guid userId);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchByProductIdentifierRcd </b>(System.String productIdentifierRcd);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchByProductAttributeRcd </b>(System.String productAttributeRcd);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchByProductInfoRcd </b>(System.String productInfoRcd);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchByProductImageTypeRcd </b>(System.String productImageTypeRcd);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchByProductDocumentationTypeRcd </b>(System.String productDocumentationTypeRcd);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchWithFilter </b>(System.Guid productFieldSetMappingId,System.Guid productFieldSetId,System.String productIdentifierRcd,System.String productAttributeRcd,System.String productInfoRcd,System.String productImageTypeRcd,System.String productDocumentationTypeRcd,System.Guid userId,System.DateTime dateTime);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchAll </b>();
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchAllWithLimit </b>(System.Int32 limit);
+        <br />
+        <br />List&lt;CrudeProductFieldSetMappingContract&gt;<b> FetchAllWithLimitAndOffset </b>(System.Int32 limit,System.Int32 offset);
+        <br />
+        <br />System.Int32<b> FetchAllCount </b>();
+        <br />
+        <br />System.Void<b> Insert </b>(CrudeProductFieldSetMappingContract contract);
+        <br />
+        <br />System.Void<b> Update </b>(CrudeProductFieldSetMappingContract contract);
+        <br />
+        <br />System.Void<b> Delete </b>(System.Guid productFieldSetMappingId);
+        <br />
+        <br />
+    </body>
+</html>
+
