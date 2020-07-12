@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:41:15 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:40:51 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -34,13 +34,19 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         List<CrudeCartProductContract> FetchByFinancialCurrencyId(System.Guid financialCurrencyId);
         
         [OperationContract()]
+        List<CrudeCartProductContract> FetchBySessionId(System.Guid sessionId);
+        
+        [OperationContract()]
+        List<CrudeCartProductContract> FetchByAspId(System.Guid aspId);
+        
+        [OperationContract()]
         List<CrudeCartProductContract> FetchByUserId(System.Guid userId);
         
         [OperationContract()]
         List<CrudeCartProductContract> FetchByStateRcd(string stateRcd);
         
         [OperationContract()]
-        List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, string stateRcd, System.Guid userId, System.DateTime dateTime);
+        List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime);
         
         [OperationContract()]
         List<CrudeCartProductContract> FetchAll();
@@ -86,6 +92,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         public List<CrudeCartProductContract> FetchByFinancialCurrencyId(System.Guid financialCurrencyId) {
             return DataListToContractList(CrudeCartProductData.FetchByFinancialCurrencyId(financialCurrencyId));
+        }
+        
+        public List<CrudeCartProductContract> FetchBySessionId(System.Guid sessionId) {
+            return DataListToContractList(CrudeCartProductData.FetchBySessionId(sessionId));
+        }
+        
+        public List<CrudeCartProductContract> FetchByAspId(System.Guid aspId) {
+            return DataListToContractList(CrudeCartProductData.FetchByAspId(aspId));
         }
         
         public List<CrudeCartProductContract> FetchByUserId(System.Guid userId) {
@@ -159,7 +173,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return CrudeCartProductData.FetchAllCount();
         }
         
-        public List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, string stateRcd, System.Guid userId, System.DateTime dateTime) {
+        public List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime) {
             var list = new List<CrudeCartProductContract>();
             List<CrudeCartProductData> dataList = CrudeCartProductData.FetchWithFilter(
                 cartProductId: cartProductId,
@@ -167,6 +181,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 productId: productId,
                 financialCurrencyId: financialCurrencyId,
                 amount: amount,
+                sessionId: sessionId,
+                aspId: aspId,
                 stateRcd: stateRcd,
                 userId: userId,
                 dateTime: dateTime
@@ -215,6 +231,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.ProductId = contract.ProductId;
             data.FinancialCurrencyId = contract.FinancialCurrencyId;
             data.Amount = contract.Amount;
+            data.SessionId = contract.SessionId;
+            data.AspId = contract.AspId;
             data.StateRcd = contract.StateRcd;
             data.UserId = contract.UserId;
             data.DateTime = contract.DateTime;
@@ -226,6 +244,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             contract.ProductId = data.ProductId;
             contract.FinancialCurrencyId = data.FinancialCurrencyId;
             contract.Amount = data.Amount;
+            contract.SessionId = data.SessionId;
+            contract.AspId = data.AspId;
             contract.StateRcd = data.StateRcd;
             contract.UserId = data.UserId;
             contract.DateTime = data.DateTime;

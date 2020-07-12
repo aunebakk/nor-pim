@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:41:06 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:40:40 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeContract.CrudeContract
 */
 using System.Runtime.Serialization;
@@ -27,6 +27,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         [DataMember()]
         public decimal Amount { get; set; }
+        
+        [DataMember()]
+        public System.Guid SessionId { get; set; }
+        
+        [DataMember()]
+        public System.Guid AspId { get; set; }
         
         [DataMember()]
         public string StateRcd { get; set; }

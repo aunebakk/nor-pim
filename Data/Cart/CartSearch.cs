@@ -38,6 +38,8 @@ select
     ,cp.user_id
     ,cp.date_time
     ,cp.cart_product_id
+    ,cp.session_id
+    ,cp.asp_id
 from cart_product as cp
 inner join client as c on c.client_id = cp.client_id
 inner join product as p on p.product_id = cp.product_id

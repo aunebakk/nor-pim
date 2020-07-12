@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:41:49 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:41:31 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -116,11 +116,13 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         }
 
         [HttpGet]
-        public ActionResult CrudeCartProductCreate(System.Guid? clientId, System.Guid? productId, System.Guid? financialCurrencyId, System.Guid? userId) {
+        public ActionResult CrudeCartProductCreate(System.Guid? clientId, System.Guid? productId, System.Guid? financialCurrencyId, System.Guid? sessionId, System.Guid? aspId, System.Guid? userId) {
             var contract = new CrudeCartProductContract();
             if (clientId != null) contract.ClientId = (System.Guid) clientId;
             if (productId != null) contract.ProductId = (System.Guid) productId;
             if (financialCurrencyId != null) contract.FinancialCurrencyId = (System.Guid) financialCurrencyId;
+            if (sessionId != null) contract.SessionId = (System.Guid) sessionId;
+            if (aspId != null) contract.AspId = (System.Guid) aspId;
             if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ClientId =

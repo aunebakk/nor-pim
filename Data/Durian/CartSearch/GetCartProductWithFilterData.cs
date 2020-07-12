@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:50:41 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:50:56 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -55,6 +55,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public System.Guid CartProductId { get; set; }
         
+        public System.Guid SessionId { get; set; }
+        
+        public System.Guid AspId { get; set; }
+        
         public void Populate(IDataReader reader, GetCartProductWithFilterDataOrdinals ordinals) {
             if (!reader.IsDBNull(ordinals.FirstName)) FirstName = reader.GetString(ordinals.FirstName);
             if (!reader.IsDBNull(ordinals.MiddleName)) MiddleName = reader.GetString(ordinals.MiddleName);
@@ -75,6 +79,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (!reader.IsDBNull(ordinals.UserId)) UserId = reader.GetGuid(ordinals.UserId);
             if (!reader.IsDBNull(ordinals.DateTime)) DateTime = reader.GetDateTime(ordinals.DateTime);
             if (!reader.IsDBNull(ordinals.CartProductId)) CartProductId = reader.GetGuid(ordinals.CartProductId);
+            if (!reader.IsDBNull(ordinals.SessionId)) SessionId = reader.GetGuid(ordinals.SessionId);
+            if (!reader.IsDBNull(ordinals.AspId)) AspId = reader.GetGuid(ordinals.AspId);
         }
     }
     
@@ -118,6 +124,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public int CartProductId;
         
+        public int SessionId;
+        
+        public int AspId;
+        
         public GetCartProductWithFilterDataOrdinals(IDataReader reader) {
             FirstName = reader.GetOrdinal("first_name");
             MiddleName = reader.GetOrdinal("middle_name");
@@ -138,6 +148,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             UserId = reader.GetOrdinal("user_id");
             DateTime = reader.GetOrdinal("date_time");
             CartProductId = reader.GetOrdinal("cart_product_id");
+            SessionId = reader.GetOrdinal("session_id");
+            AspId = reader.GetOrdinal("asp_id");
         }
     }
 }

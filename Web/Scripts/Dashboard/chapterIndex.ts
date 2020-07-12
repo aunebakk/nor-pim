@@ -305,7 +305,7 @@ module ChapterIndex {
             const boxLeft = this.tileLeft + 1;
             const boxTop = this.tileTop;
             const boxWidth = this.tileWidth() - 2;
-            const boxHeight = tileHeight;
+            const boxHeight = tileHeight - 1;
             context.beginPath();
             context.lineWidth = tileLineWidth;
             context.strokeStyle = htmlBackgroundColor;

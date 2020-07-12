@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:41:38 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:41:19 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
 using System;
@@ -111,6 +111,8 @@ namespace SolutionNorSolutionPim.UserInterface {
                             ,Guid.Empty
                             ,Guid.Empty
                             ,maskedTextBoxAmount.Text == String.Empty ? 0 : Convert.ToDecimal(maskedTextBoxAmount.Text)
+                            ,Guid.Empty
+                            ,Guid.Empty
                             ,textBoxState.Text
                             ,Guid.Empty
                             ,DateTime.MinValue
@@ -151,6 +153,12 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewCrudeCartProduct.Columns.Add("FinancialCurrencyId","Financial Currency");
                 dataGridViewCrudeCartProduct.Columns["FinancialCurrencyId"].DataPropertyName = "FinancialCurrencyId";
                 dataGridViewCrudeCartProduct.Columns["FinancialCurrencyId"].Visible = false;
+                dataGridViewCrudeCartProduct.Columns.Add("SessionId","Session");
+                dataGridViewCrudeCartProduct.Columns["SessionId"].DataPropertyName = "SessionId";
+                dataGridViewCrudeCartProduct.Columns["SessionId"].Visible = false;
+                dataGridViewCrudeCartProduct.Columns.Add("AspId","Asp");
+                dataGridViewCrudeCartProduct.Columns["AspId"].DataPropertyName = "AspId";
+                dataGridViewCrudeCartProduct.Columns["AspId"].Visible = false;
                 dataGridViewCrudeCartProduct.Columns.Add("ExtensionData", "");
                 dataGridViewCrudeCartProduct.Columns["ExtensionData"].Visible = false;
 

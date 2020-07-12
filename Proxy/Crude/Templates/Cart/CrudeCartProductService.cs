@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:41:34 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:41:15 AM
+  From Machine: DESKTOP-517I8BU
   Filename: CartProduct.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy
@@ -33,6 +33,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudeCartProductService/FetchByFinancialCurrencyId", ReplyAction="http://tempuri.org/ICrudeCartProductService/FetchByFinancialCurrencyIdResponse")]
         List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchByFinancialCurrencyId(System.Guid financialCurrencyId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudeCartProductService/FetchBySessionId", ReplyAction="http://tempuri.org/ICrudeCartProductService/FetchBySessionIdResponse")]
+        List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchBySessionId(System.Guid sessionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudeCartProductService/FetchByAspId", ReplyAction="http://tempuri.org/ICrudeCartProductService/FetchByAspIdResponse")]
+        List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchByAspId(System.Guid aspId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudeCartProductService/FetchByUserId", ReplyAction="http://tempuri.org/ICrudeCartProductService/FetchByUserIdResponse")]
         List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchByUserId(System.Guid userId);
         
@@ -61,7 +67,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         int FetchAllCount();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudeCartProductService/FetchWithFilter", ReplyAction="http://tempuri.org/ICrudeCartProductService/FetchWithFilterResponse")]
-        List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, string stateRcd, System.Guid userId, System.DateTime dateTime);
+        List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,6 +111,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return base.Channel.FetchByFinancialCurrencyId(financialCurrencyId);
         }
         
+        public List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchBySessionId(System.Guid sessionId) {
+            return base.Channel.FetchBySessionId(sessionId);
+        }
+        
+        public List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchByAspId(System.Guid aspId) {
+            return base.Channel.FetchByAspId(aspId);
+        }
+        
         public List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchByUserId(System.Guid userId) {
             return base.Channel.FetchByUserId(userId);
         }
@@ -141,13 +155,15 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return base.Channel.FetchAllCount();
         }
         
-        public List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, string stateRcd, System.Guid userId, System.DateTime dateTime) {
+        public List<SolutionNorSolutionPim.BusinessLogicLayer.CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime) {
             return base.Channel.FetchWithFilter(
                 cartProductId: cartProductId,
                 clientId: clientId,
                 productId: productId,
                 financialCurrencyId: financialCurrencyId,
                 amount: amount,
+                sessionId: sessionId,
+                aspId: aspId,
                 stateRcd: stateRcd,
                 userId: userId,
                 dateTime: dateTime

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:41:38 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:41:19 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateEditStyle3
 */
 using System;
@@ -108,7 +108,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
-        public void ShowAsAdd(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, string stateRcd, System.Guid userId) {
+        public void ShowAsAdd(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId) {
             try {
                 _contract = new CrudeCartProductContract();
                 _isNew = true;
@@ -117,6 +117,8 @@ namespace SolutionNorSolutionPim.UserInterface {
                 _contract.FinancialCurrencyId = financialCurrencyId;
                 _contract.Amount = amount;
                 maskedTextBoxAmount.Text = _contract.Amount.ToString();
+                _contract.SessionId = sessionId;
+                _contract.AspId = aspId;
                 _contract.StateRcd = stateRcd;
                 textBoxState.Text = _contract.StateRcd;
                 _contract.UserId = userId;

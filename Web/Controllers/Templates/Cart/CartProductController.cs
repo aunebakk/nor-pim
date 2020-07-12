@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:50:41 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:50:56 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -23,12 +23,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         }
 
         [HttpGet]
-        public ActionResult CartProductCreate(System.Guid? clientId, System.Guid? productId, System.Guid? financialCurrencyId, System.Guid? userId) {
+        public ActionResult CartProductCreate(System.Guid? clientId, System.Guid? productId, System.Guid? financialCurrencyId, System.Guid? sessionId, System.Guid? aspId, System.Guid? userId) {
             var cartProductContract = new CartProductContract();
             cartProductContract.CartProductNew = new CrudeCartProductContract();
             if (clientId != null) cartProductContract.CartProductNew.ClientId = (System.Guid) clientId;
             if (productId != null) cartProductContract.CartProductNew.ProductId = (System.Guid) productId;
             if (financialCurrencyId != null) cartProductContract.CartProductNew.FinancialCurrencyId = (System.Guid) financialCurrencyId;
+            if (sessionId != null) cartProductContract.CartProductNew.SessionId = (System.Guid) sessionId;
+            if (aspId != null) cartProductContract.CartProductNew.AspId = (System.Guid) aspId;
             if (userId != null) cartProductContract.CartProductNew.UserId = (System.Guid) userId;
 
             ViewBag.ClientId =

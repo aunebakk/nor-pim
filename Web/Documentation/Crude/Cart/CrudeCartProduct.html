@@ -41,6 +41,8 @@
             <tr><td>Product Id            </td><td>System.Guid</td></tr>
             <tr><td>Financial Currency Id            </td><td>System.Guid</td></tr>
             <tr><td>Amount            </td><td>System.Decimal</td></tr>
+            <tr><td>Session Id            </td><td>System.Guid</td></tr>
+            <tr><td>Asp Id            </td><td>System.Guid</td></tr>
             <tr><td>State            </td><td>System.String</td></tr>
             <tr><td>User Id            </td><td>System.Guid</td></tr>
             <tr><td>Date Time            </td><td>System.DateTime</td></tr>
@@ -55,11 +57,15 @@
         <br />
         <br />List&lt;CrudeCartProductContract&gt;<b> FetchByFinancialCurrencyId </b>(System.Guid financialCurrencyId);
         <br />
+        <br />List&lt;CrudeCartProductContract&gt;<b> FetchBySessionId </b>(System.Guid sessionId);
+        <br />
+        <br />List&lt;CrudeCartProductContract&gt;<b> FetchByAspId </b>(System.Guid aspId);
+        <br />
         <br />List&lt;CrudeCartProductContract&gt;<b> FetchByUserId </b>(System.Guid userId);
         <br />
         <br />List&lt;CrudeCartProductContract&gt;<b> FetchByStateRcd </b>(System.String stateRcd);
         <br />
-        <br />List&lt;CrudeCartProductContract&gt;<b> FetchWithFilter </b>(System.Guid cartProductId,System.Guid clientId,System.Guid productId,System.Guid financialCurrencyId,System.Decimal amount,System.String stateRcd,System.Guid userId,System.DateTime dateTime);
+        <br />List&lt;CrudeCartProductContract&gt;<b> FetchWithFilter </b>(System.Guid cartProductId,System.Guid clientId,System.Guid productId,System.Guid financialCurrencyId,System.Decimal amount,System.Guid sessionId,System.Guid aspId,System.String stateRcd,System.Guid userId,System.DateTime dateTime);
         <br />
         <br />List&lt;CrudeCartProductContract&gt;<b> FetchAll </b>();
         <br />

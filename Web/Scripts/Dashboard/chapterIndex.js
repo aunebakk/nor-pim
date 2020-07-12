@@ -227,7 +227,7 @@ var ChapterIndex;
             var boxLeft = this.tileLeft + 1;
             var boxTop = this.tileTop;
             var boxWidth = this.tileWidth() - 2;
-            var boxHeight = tileHeight;
+            var boxHeight = tileHeight - 1;
             context.beginPath();
             context.lineWidth = tileLineWidth;
             context.strokeStyle = htmlBackgroundColor;

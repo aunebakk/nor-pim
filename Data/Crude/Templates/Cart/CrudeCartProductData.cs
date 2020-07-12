@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/11/2020 12:41:11 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/12/2020 10:40:46 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -27,6 +27,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public decimal Amount { get; set; }
         
+        public System.Guid SessionId { get; set; }
+        
+        public System.Guid AspId { get; set; }
+        
         public string StateRcd { get; set; }
         
         public System.Guid UserId { get; set; }
@@ -34,7 +38,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public System.DateTime DateTime { get; set; }
         
         public void FetchByCartProductId(System.Guid cartProductId) {
-            string sql = @" select top 1 cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select top 1 cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where cart_product_id = @cart_product_id";
 
@@ -59,7 +63,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         public static CrudeCartProductData GetByCartProductId(System.Guid cartProductId) {
-            string sql = @" select top 1 cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select top 1 cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where cart_product_id = @cart_product_id";
 
@@ -83,7 +87,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeCartProductData> FetchByClientId(System.Guid clientId) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where client_id = @client_id
                               ";
@@ -111,7 +115,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeCartProductData> FetchByProductId(System.Guid productId) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where product_id = @product_id
                               ";
@@ -139,7 +143,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeCartProductData> FetchByFinancialCurrencyId(System.Guid financialCurrencyId) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where financial_currency_id = @financial_currency_id
                               ";
@@ -164,10 +168,66 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        public static List<CrudeCartProductData> FetchBySessionId(System.Guid sessionId) {
+            var dataList = new List<CrudeCartProductData>();
+
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
+                            from [cart_product]
+                            where session_id = @session_id
+                              ";
+
+            // open standard connection
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+                conn.Open();
+
+                using (var command = new SqlCommand(sql, conn)) {
+                    command.Parameters.Add("@session_id", SqlDbType.UniqueIdentifier).Value = sessionId;
+
+                    IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
+
+                    while (reader.Read()) {
+                        var data = new CrudeCartProductData();
+                        data.Populate(reader);
+                        dataList.Add(data);
+                    }
+                }
+                
+                return dataList;
+            }
+        }
+        
+        public static List<CrudeCartProductData> FetchByAspId(System.Guid aspId) {
+            var dataList = new List<CrudeCartProductData>();
+
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
+                            from [cart_product]
+                            where asp_id = @asp_id
+                              ";
+
+            // open standard connection
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+                conn.Open();
+
+                using (var command = new SqlCommand(sql, conn)) {
+                    command.Parameters.Add("@asp_id", SqlDbType.UniqueIdentifier).Value = aspId;
+
+                    IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
+
+                    while (reader.Read()) {
+                        var data = new CrudeCartProductData();
+                        data.Populate(reader);
+                        dataList.Add(data);
+                    }
+                }
+                
+                return dataList;
+            }
+        }
+        
         public static List<CrudeCartProductData> FetchByUserId(System.Guid userId) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where user_id = @user_id
                               ";
@@ -195,7 +255,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeCartProductData> FetchByStateRcd(string stateRcd) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where state_rcd = @state_rcd
                               ";
@@ -223,7 +283,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeCartProductData> FetchAll() {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]";
 
             // open standard connection
@@ -248,7 +308,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeCartProductData> FetchAllWithLimit(int limit) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select top " + limit.ToString() + @" cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select top " + limit.ToString() + @" cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]";
 
             // open standard connection
@@ -273,7 +333,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeCartProductData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]";
 
             // open standard connection
@@ -321,10 +381,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
-        public static List<CrudeCartProductData> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, string stateRcd, System.Guid userId, System.DateTime dateTime) {
+        public static List<CrudeCartProductData> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime) {
             var dataList = new List<CrudeCartProductData>();
 
-            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time
+            string sql = @" select cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time
                             from [cart_product]
                             where 1 = 1";
 
@@ -352,6 +412,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     if (amount != 0) {
                         sql += "  and amount = @amount";
                         command.Parameters.Add("@amount", SqlDbType.Decimal).Value = amount;
+                    }
+                    if (sessionId != Guid.Empty) {
+                        sql += "  and session_id = @session_id";
+                        command.Parameters.Add("@session_id", SqlDbType.UniqueIdentifier).Value = sessionId;
+                    }
+                    if (aspId != Guid.Empty) {
+                        sql += "  and asp_id = @asp_id";
+                        command.Parameters.Add("@asp_id", SqlDbType.UniqueIdentifier).Value = aspId;
                     }
                     if (!string.IsNullOrEmpty(stateRcd)) {
                         sql += "  and state_rcd like '%' + @state_rcd + '%'";
@@ -386,6 +454,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (reader["product_id"] != System.DBNull.Value) ProductId = (System.Guid) reader["product_id"];
             if (reader["financial_currency_id"] != System.DBNull.Value) FinancialCurrencyId = (System.Guid) reader["financial_currency_id"];
             if (reader["amount"] != System.DBNull.Value) Amount = (System.Decimal) reader["amount"];
+            if (reader["session_id"] != System.DBNull.Value) SessionId = (System.Guid) reader["session_id"];
+            if (reader["asp_id"] != System.DBNull.Value) AspId = (System.Guid) reader["asp_id"];
             if (reader["state_rcd"] != System.DBNull.Value) StateRcd = (System.String) reader["state_rcd"];
             if (reader["user_id"] != System.DBNull.Value) UserId = (System.Guid) reader["user_id"];
             if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
@@ -396,8 +466,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (CartProductId == Guid.Empty)
                 CartProductId = Guid.NewGuid();
 
-            string sql = "insert into [cart_product] (cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time)";
-            sql += "            values (@cart_product_id, @client_id, @product_id, @financial_currency_id, @amount, @state_rcd, @user_id, @date_time)";
+            string sql = "insert into [cart_product] (cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time)";
+            sql += "            values (@cart_product_id, @client_id, @product_id, @financial_currency_id, @amount, @session_id, @asp_id, @state_rcd, @user_id, @date_time)";
 
             // open standard connection
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
@@ -409,6 +479,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                     command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                     command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                    command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                    command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
                     command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
@@ -422,8 +494,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (CartProductId == Guid.Empty)
                 CartProductId = Guid.NewGuid();
 
-            string sql = "insert into [cart_product] (cart_product_id, client_id, product_id, financial_currency_id, amount, state_rcd, user_id, date_time)";
-            sql += "            values (@cart_product_id, @client_id, @product_id, @financial_currency_id, @amount, @state_rcd, @user_id, @date_time)";
+            string sql = "insert into [cart_product] (cart_product_id, client_id, product_id, financial_currency_id, amount, session_id, asp_id, state_rcd, user_id, date_time)";
+            sql += "            values (@cart_product_id, @client_id, @product_id, @financial_currency_id, @amount, @session_id, @asp_id, @state_rcd, @user_id, @date_time)";
 
             // open standard connection
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
@@ -432,6 +504,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                 command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                 command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
                 command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
@@ -446,6 +520,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 ,product_id = @product_id
                 ,financial_currency_id = @financial_currency_id
                 ,amount = @amount
+                ,session_id = @session_id
+                ,asp_id = @asp_id
                 ,state_rcd = @state_rcd
                 ,user_id = @user_id
                 ,date_time = @date_time
@@ -462,6 +538,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                     command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                     command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                    command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                    command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
                     command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
@@ -477,6 +555,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 ,product_id = @product_id
                 ,financial_currency_id = @financial_currency_id
                 ,amount = @amount
+                ,session_id = @session_id
+                ,asp_id = @asp_id
                 ,state_rcd = @state_rcd
                 ,user_id = @user_id
                 ,date_time = @date_time
@@ -489,6 +569,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                 command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                 command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
                 command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;

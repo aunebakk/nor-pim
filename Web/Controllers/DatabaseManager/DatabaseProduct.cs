@@ -1729,6 +1729,8 @@ create table cart_product
 	product_id  uniqueidentifier  not null ,
 	financial_currency_id  uniqueidentifier  not null ,
 	amount  decimal(15,4)  not null ,
+	session_id  uniqueidentifier  null ,
+	asp_id  uniqueidentifier  null ,
 	state_rcd  nvarchar(240)  not null ,
 	user_id  uniqueidentifier  not null ,
 	date_time  datetime  not null ,
