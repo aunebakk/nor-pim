@@ -11,9 +11,11 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
         public void UnOrder(
             Guid cartProductId
         ) {
+            Guid userId = Logging.UserId(User.Identity, ViewBag);
+
             var cartProductContract = new CrudeCartProductServiceClient().FetchByCartProductId(cartProductId);
             cartProductContract.StateRcd = DefaultStateRef.Invalidated;
-            cartProductContract.UserId = new Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            cartProductContract.UserId = userId;
             cartProductContract.DateTime = DateTime.UtcNow;
 
             new CrudeCartProductServiceClient().Update(cartProductContract);
@@ -39,7 +41,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
 
             // save it if we got it
             if (!string.IsNullOrEmpty(Session.SessionID))
-                cartProductContract.SessionId = Guid.Parse( Session.SessionID );
+                cartProductContract.SessionIdentificator = Session.SessionID;
 
             // oauth id
             if (!string.IsNullOrEmpty(User.Identity.GetUserId()))

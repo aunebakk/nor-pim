@@ -43,7 +43,11 @@ namespace SolutionNorSolutionPim.mvc.Controllers
 
             // use Identity Guid if valid
             try {
-                if (Guid.Parse(UserIdentity.GetUserId()) != Guid.Empty) {
+                if (string.IsNullOrEmpty(UserIdentity.GetUserId())) {
+
+                    return new Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+
+                } else if (Guid.Parse(UserIdentity.GetUserId()) != Guid.Empty) {
 
                     // validate user
                     CrudeDefaultUserContract user =
@@ -66,6 +70,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers
                         // create new client from user
                         CrudeClientContract client = new CrudeClientContract {
                             ClientId = user.DefaultUserId,
+                            ClientTypeRcd = ClientTypeRef.Business,
                             FirstName = user.DefaultUserName,
                             LastName = user.DefaultUserName,
                             UserId = new Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}"),
@@ -79,7 +84,9 @@ namespace SolutionNorSolutionPim.mvc.Controllers
 
                     return user.DefaultUserId;
                 }
-            } catch { }
+            } catch (Exception ex) {
+                throw new Exception("Failed to create user and client", ex);
+            }
 
             // use default use id
             return new Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
