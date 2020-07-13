@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="134144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="134656">
       <assemblyIdentity name="Contract" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AAz36EDRDZoyZ7rBuVgXh4He03XHSK5VrbSCXr/dLig=</dsig:DigestValue>
+        <dsig:DigestValue>OtWvKyqws3Vm6Wh/ewkz+PgDSBuH4Fz1hkE8OGWC7Ec=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jKAeORjNEgtYcWrLKKKfpXQiBgMFkd3tQdVv0KXc+zY=</dsig:DigestValue>
+        <dsig:DigestValue>qnfJX5zmLyjlsjKB106QH+TKwPaE7JQMZzihGcRdtn4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4mTH8yr5gsIT0ftzyZtqaF+KVYnB/ACsU9f2jagtyvo=</dsig:DigestValue>
+        <dsig:DigestValue>nLIncgBkQvYZ/xX8gSN+1tRYGfohEMz9pKazlIf5BGk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -92,7 +92,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>agh4kO0F6HgRYBLlJCZY14+esfT0AAj1hXRTIwhhOes=</dsig:DigestValue>
+      <dsig:DigestValue>BLABioeaGeNyq40LJiszQaM2zJ9kuJ/QxJHohvIq2Vs=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

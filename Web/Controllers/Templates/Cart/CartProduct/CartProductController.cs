@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/13/2020 2:02:13 PM
+  Generated Date: 7/13/2020 2:58:46 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateWithDurianByTypescriptGenerator.ControllerBeginning
 */
@@ -15,10 +15,10 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
     public partial class CartProductController : Controller {
 
         [HttpGet]
-        public ActionResult CartProductIndex(System.Guid clientId,System.Guid productId,System.Guid financialCurrencyId,System.Guid userId,System.Guid cartProductId) {
+        public ActionResult CartProductIndex(System.Guid clientId,System.Guid productId,System.Guid financialCurrencyId,System.Guid userId,System.Guid cartProductId,System.String sessionIdentificator) {
 
             List<GetCartProductContract> cart_product = 
-                new CartProductSearchService().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId);
+                new CartProductSearchService().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId,sessionIdentificator);
 
             return View(
                 "~/Views/Templates/Cart/CartProduct/CartProductIndex.cshtml",

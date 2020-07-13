@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/13/2020 1:56:26 PM
+  Generated Date: 7/13/2020 2:56:16 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.MVCDurianGenerator.MethodControllerCode
 */
@@ -14,11 +14,11 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
     public class GetCartProductController : Controller {
 
         [HttpGet]
-        public ActionResult GetCartProductIndex(System.Guid clientId,System.Guid productId,System.Guid financialCurrencyId,System.Guid userId,System.Guid cartProductId) {
+        public ActionResult GetCartProductIndex(System.Guid clientId,System.Guid productId,System.Guid financialCurrencyId,System.Guid userId,System.Guid cartProductId,System.String sessionIdentificator) {
 
             return View(
                 "~/Views/Durian/CartProductSearch/GetCartProductIndex.cshtml",
-                new CartProductSearchService().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId)
+                new CartProductSearchService().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId,sessionIdentificator)
                 );
         }
 

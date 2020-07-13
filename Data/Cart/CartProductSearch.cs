@@ -24,6 +24,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             ,System.Guid financialCurrencyId
             ,System.Guid userId
             ,System.Guid cartProductId
+            ,string sessionIdentificator
             ) {
             var ret = new List<GetCartProductData>();
             string sql = @"
@@ -51,6 +52,7 @@ select
     ,du.default_user_name
     ,cp.date_time
     ,cp.cart_product_id
+    ,cp.session_identificator
 from cart_product as cp
 inner join client as c on c.client_id = cp.client_id
 inner join product as p on p.product_id = cp.product_id
@@ -85,6 +87,10 @@ where 1 = 1
                     if (cartProductId != Guid.Empty) {
                         command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) cartProductId;
                         sql += " and cp.cart_product_id = @cart_product_id";
+                    }
+                    if (!string.IsNullOrEmpty( sessionIdentificator ) ) {
+                        command.Parameters.Add("@session_identificator",SqlDbType.NVarChar).Value = sessionIdentificator;
+                        sql += " and cp.session_identificator = @session_identificator";
                     }
 
                     command.CommandText = sql;

@@ -13,12 +13,12 @@ namespace SolutionNorSolutionPim.UserInterface {
         }
         
         public new void Show() {
-            durianGetCartProduct.RefreshGetCartProduct(Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty);
+            durianGetCartProduct.RefreshGetCartProduct(Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, String.Empty);
             base.Show();
         }
         
         private void buttonGetCartProductSearch_Click(object sender, EventArgs e) {
-            durianGetCartProduct.RefreshGetCartProduct(Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty);
+            durianGetCartProduct.RefreshGetCartProduct(Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, String.Empty);
         }
         
         private void buttonClose_Click(object sender, EventArgs e) {

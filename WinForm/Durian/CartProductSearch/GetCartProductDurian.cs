@@ -154,6 +154,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        public virtual string SessionIdentificator {
+            get {
+                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["SessionIdentificator"].Value; else return String.Empty;;
+            }
+        }
+        
         public int Count {
             get {
                 if (!DesignMode) return dataGridViewGetCartProduct.Rows.Count; else return 0;;
@@ -167,7 +173,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 this.Picked(new object(), new EventArgs());
         }
         
-        public void RefreshGetCartProduct(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, System.Guid userId, System.Guid cartProductId) {
+        public void RefreshGetCartProduct(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, System.Guid userId, System.Guid cartProductId, string sessionIdentificator) {
             try {
                 // remember selected row
                 int position = 0;
@@ -176,7 +182,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new CartProductSearchService().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId);
+                bindingSource.DataSource =  new CartProductSearchService().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId,sessionIdentificator);
                 dataGridViewGetCartProduct.AutoGenerateColumns = true;
                 dataGridViewGetCartProduct.DataSource = bindingSource;
                 dataGridViewGetCartProduct.AutoResizeColumns();
@@ -218,6 +224,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             dataGridViewGetCartProduct.Columns.Add("DefaultUserName","Default User Name");
             dataGridViewGetCartProduct.Columns.Add("DateTime","Date Time");
             dataGridViewGetCartProduct.Columns.Add("CartProductId","Cart Product Id");
+            dataGridViewGetCartProduct.Columns.Add("SessionIdentificator","Session Identificator");
             dataGridViewGetCartProduct.Columns.Add("ExtensionData", "");
             dataGridViewGetCartProduct.Columns["ExtensionData"].Visible = false;
 

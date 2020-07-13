@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3464F80F-0DB7-46F0-8C7A-B1B49D5CB9AD}</ProjectGuid>
+    <ProjectGuid>{0FF23A32-6592-4B5F-8F93-6892DEF64AE7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinForm</RootNamespace>
@@ -1263,7 +1263,9 @@
     <Compile Include="Durian\CartProductSearch\GetCartProductSearch.designer.cs">
       <DependentUpon>GetCartProductSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\CartSearch\GetCartProductWithFilterDurian.cs" />
+    <Compile Include="Durian\CartSearch\GetCartProductWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\CartSearch\GetCartProductWithFilterDurian.designer.cs">
       <DependentUpon>GetCartProductWithFilterDurian.cs</DependentUpon>
     </Compile>
@@ -1273,7 +1275,9 @@
     <Compile Include="Durian\CartSearch\GetCartProductWithFilterSearch.designer.cs">
       <DependentUpon>GetCartProductWithFilterSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\CategorySearch\CategoryFindDurian.cs" />
+    <Compile Include="Durian\CategorySearch\CategoryFindDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\CategorySearch\CategoryFindDurian.designer.cs">
       <DependentUpon>CategoryFindDurian.cs</DependentUpon>
     </Compile>
@@ -1313,7 +1317,9 @@
     <Compile Include="Durian\DefaultSearch\DashboardCountsDurian.designer.cs">
       <DependentUpon>DashboardCountsDurian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DashboardCountsSearch.cs" />
+    <Compile Include="Durian\DefaultSearch\DashboardCountsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DashboardCountsSearch.designer.cs">
       <DependentUpon>DashboardCountsSearch.cs</DependentUpon>
     </Compile>
@@ -1323,7 +1329,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewDurian.designer.cs">
       <DependentUpon>DefaultErrorOverviewDurian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewSearch.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultErrorOverviewSearch.designer.cs">
       <DependentUpon>DefaultErrorOverviewSearch.cs</DependentUpon>
     </Compile>
@@ -1363,7 +1371,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterSearch.designer.cs">
       <DependentUpon>DefaultPerformanceIssueFetchWithFilterSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsDurian.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultPerformanceTimeCommandsDurian.designer.cs">
       <DependentUpon>DefaultPerformanceTimeCommandsDurian.cs</DependentUpon>
     </Compile>
@@ -1397,7 +1407,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultResourceDatabaseStatisticsSearch.designer.cs">
       <DependentUpon>DefaultResourceDatabaseStatisticsSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsDurian.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultResourceStatisticsDurian.designer.cs">
       <DependentUpon>DefaultResourceStatisticsDurian.cs</DependentUpon>
     </Compile>
@@ -1413,7 +1425,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthDurian.designer.cs">
       <DependentUpon>DefaultStatisticsByMonthDurian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthSearch.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultStatisticsByMonthSearch.designer.cs">
       <DependentUpon>DefaultStatisticsByMonthSearch.cs</DependentUpon>
     </Compile>
@@ -1471,7 +1485,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressDurian.designer.cs">
       <DependentUpon>DefaultUserActivityGroupedByAddressDurian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressSearch.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultUserActivityGroupedByAddressSearch.designer.cs">
       <DependentUpon>DefaultUserActivityGroupedByAddressSearch.cs</DependentUpon>
     </Compile>
@@ -1499,7 +1515,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultUserActivityOnAddressSearch.designer.cs">
       <DependentUpon>DefaultUserActivityOnAddressSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentDurian.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentDurian.designer.cs">
       <DependentUpon>DefaultUserActivityRecentDurian.cs</DependentUpon>
     </Compile>
@@ -1509,7 +1527,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultUserActivityRecentSearch.designer.cs">
       <DependentUpon>DefaultUserActivityRecentSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultUserListDurian.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultUserListDurian.designer.cs">
       <DependentUpon>DefaultUserListDurian.cs</DependentUpon>
     </Compile>
@@ -1519,7 +1539,9 @@
     <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardDurian.designer.cs">
       <DependentUpon>DefaultUserListForDashboardDurian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardSearch.cs" />
+    <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardSearch.designer.cs">
       <DependentUpon>DefaultUserListForDashboardSearch.cs</DependentUpon>
     </Compile>
@@ -1541,7 +1563,9 @@
     <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogSearch.designer.cs">
       <DependentUpon>GetDefaultChangeLogSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderDurian.cs" />
+    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderDurian.designer.cs">
       <DependentUpon>GetFinancialOrderDurian.cs</DependentUpon>
     </Compile>
@@ -1581,7 +1605,9 @@
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterDurian.designer.cs">
       <DependentUpon>ProductMaintenanceIdentifierIndexWithFilterDurian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterSearch.cs" />
+    <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterSearch.designer.cs">
       <DependentUpon>ProductMaintenanceIdentifierIndexWithFilterSearch.cs</DependentUpon>
     </Compile>
@@ -1621,7 +1647,9 @@
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterSearch.designer.cs">
       <DependentUpon>ProductMaintenanceInfoIndexWithFilterSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterDurian.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterDurian.designer.cs">
       <DependentUpon>ProductReferenceAttributeSearchWithFilterDurian.cs</DependentUpon>
     </Compile>
@@ -1631,7 +1659,9 @@
     <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterSearch.designer.cs">
       <DependentUpon>ProductReferenceAttributeSearchWithFilterSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterDurian.cs" />
+    <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterDurian.designer.cs">
       <DependentUpon>ProductReferenceAttributeUnitSearchWithFilterDurian.cs</DependentUpon>
     </Compile>
@@ -1665,7 +1695,9 @@
     <Compile Include="Durian\ProductSearch\ProductSearchByCategoryCodeSearch.designer.cs">
       <DependentUpon>ProductSearchByCategoryCodeSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryDurian.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\ProductSearch\ProductSearchByCategoryDurian.designer.cs">
       <DependentUpon>ProductSearchByCategoryDurian.cs</DependentUpon>
     </Compile>
@@ -1693,7 +1725,9 @@
     <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Durian.designer.cs">
       <DependentUpon>ProductSearchByCategoryType2Durian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Search.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\ProductSearch\ProductSearchByCategoryType2Search.designer.cs">
       <DependentUpon>ProductSearchByCategoryType2Search.cs</DependentUpon>
     </Compile>
@@ -1727,11 +1761,15 @@
     <Compile Include="Durian\ProductSearch\ProductSearchByIdDurian.designer.cs">
       <DependentUpon>ProductSearchByIdDurian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\ProductSearch\ProductSearchByIdSearch.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByIdSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Durian\ProductSearch\ProductSearchByIdSearch.designer.cs">
       <DependentUpon>ProductSearchByIdSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\ProductSearch\ProductSearchByNameDurian.cs" />
+    <Compile Include="Durian\ProductSearch\ProductSearchByNameDurian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Durian\ProductSearch\ProductSearchByNameDurian.designer.cs">
       <DependentUpon>ProductSearchByNameDurian.cs</DependentUpon>
     </Compile>
@@ -1789,7 +1827,9 @@
     <Compile Include="ProductMaintenance\ProductAttribute\ProductAttributeSearch.designer.cs">
       <DependentUpon>ProductAttributeSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductMaintenance\ProductDocumentation\ProductDocumentationEdit.cs" />
+    <Compile Include="ProductMaintenance\ProductDocumentation\ProductDocumentationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ProductMaintenance\ProductDocumentation\ProductDocumentationEdit.designer.cs">
       <DependentUpon>ProductDocumentationEdit.cs</DependentUpon>
     </Compile>
@@ -2010,11 +2050,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{e3760ed3-04e4-4bdc-a332-5322d9b02d8c}</Project>
+      <Project>{5feeae03-b0f4-41f8-b6d2-3fb449fb8302}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{b6f417e6-7dff-46e9-8199-9ef8460cf30c}</Project>
+      <Project>{9ff31503-27fd-4387-ac5a-171b3d21b4d1}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>

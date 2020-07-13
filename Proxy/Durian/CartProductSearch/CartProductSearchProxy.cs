@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/13/2020 1:56:22 PM
+  Generated Date: 7/13/2020 2:56:15 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
@@ -14,7 +14,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICartProductSearchService")]
     public interface ICartProductSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/ICartProductSearchService/GetCartProduct", ReplyAction = "http://tempuri.org/ICartProductSearchService/GetCartProductResponse")]
-        List<GetCartProductContract> GetCartProduct(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, System.Guid userId, System.Guid cartProductId);
+        List<GetCartProductContract> GetCartProduct(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, System.Guid userId, System.Guid cartProductId, string sessionIdentificator);
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -42,8 +42,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<GetCartProductContract> GetCartProduct(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, System.Guid userId, System.Guid cartProductId) {
-            return base.Channel.GetCartProduct(clientId, productId, financialCurrencyId, userId, cartProductId);
+        public List<GetCartProductContract> GetCartProduct(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, System.Guid userId, System.Guid cartProductId, string sessionIdentificator) {
+            return base.Channel.GetCartProduct(clientId, productId, financialCurrencyId, userId, cartProductId, sessionIdentificator);
         }
     }
 }

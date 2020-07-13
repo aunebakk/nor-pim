@@ -1,7 +1,7 @@
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 7/13/2020 2:02:14 PM
+// Generated Date: 7/13/2020 2:58:46 PM
 // From Machine: DESKTOP-517I8BU
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian
@@ -72,7 +72,7 @@ var DesignVestreVikenDurian;
             // calc column widths 
             var context = canvas.getContext("2d");
             context.font = "bold 16px Arial"; // tileFontSize
-            var cartProductListWidths = new Array(23);
+            var cartProductListWidths = new Array(24);
             cartProductListWidths[0] = context.measureText("First Name").width;
             cartProductListWidths[1] = context.measureText("Middle Name").width;
             cartProductListWidths[2] = context.measureText("Last Name").width;
@@ -82,7 +82,8 @@ var DesignVestreVikenDurian;
             cartProductListWidths[6] = context.measureText("Image Blob Filename").width;
             cartProductListWidths[7] = context.measureText("Default User Name").width;
             cartProductListWidths[8] = context.measureText("Date Time").width;
-            cartProductListWidths[9] = 0;
+            cartProductListWidths[9] = context.measureText("Session Identificator").width;
+            cartProductListWidths[10] = 0;
             for (var i = 0; i < cartProductList.length; i++) {
                 // First Name
                 if ((context.measureText(cartProductList[i].FirstName).width > cartProductListWidths[0])
@@ -120,6 +121,10 @@ var DesignVestreVikenDurian;
                 if ((context.measureText(cartProductList[i].DateTime).width > cartProductListWidths[8])
                     && (context.measureText(cartProductList[i].DateTime).width < window.innerWidth * 0.9))
                     cartProductListWidths[8] = context.measureText(cartProductList[i].DateTime).width;
+                // Session Identificator
+                if ((context.measureText(cartProductList[i].SessionIdentificator).width > cartProductListWidths[9])
+                    && (context.measureText(cartProductList[i].SessionIdentificator).width < window.innerWidth * 0.9))
+                    cartProductListWidths[9] = context.measureText(cartProductList[i].SessionIdentificator).width;
             }
             // grid rows for GetCartProduct
             var lastTile;
@@ -586,6 +591,17 @@ var DesignVestreVikenDurian;
                 context.fillText(text, leftPos, this.textTop(name));
             }
             leftPos += this.cartProductListWidths[8];
+            // Session Identificator
+            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[9]) {
+                // cap text of last column until it fits inside the tile
+                var text = this.getCartProduct == null ? "Session Identificator" : this.getCartProduct.SessionIdentificator;
+                while (context.measureText(text).width > this.cartProductListWidths[9]
+                    && text.length > 2) {
+                    text = text.substr(0, text.length - 1);
+                }
+                context.fillText(text, leftPos, this.textTop(name));
+            }
+            leftPos += this.cartProductListWidths[9];
             context.stroke();
         };
         // frame
@@ -642,7 +658,7 @@ var DesignVestreVikenDurian;
             GetCartProductTileList.resizeCanvas();
             GetCartProductTileList.header.draw(context);
             // resize canvas to fit all columns 
-            canvas.height = 360 + 15;
+            canvas.height = 390 + 15;
             // clear background
             context.beginPath();
             context.fillStyle = "rgb(24, 101, 29)"; // overallColors.foreGround
@@ -799,6 +815,22 @@ var DesignVestreVikenDurian;
                 textDateTimeValue = textDateTimeValue.substr(0, textDateTimeValue.length - 1);
             }
             context.fillText(textDateTimeValue, context.measureText(textDateTime).width + 20, window.scrollY + 306);
+            // Session Identificator ( column name first, then value )
+            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.text 
+            var textSessionIdentificator = "Session Identificator: ";
+            while (context.measureText(textSessionIdentificator).width > this.tileWidth() - 40
+                && textSessionIdentificator.length > 2) {
+                textSessionIdentificator = textSessionIdentificator.substr(0, textSessionIdentificator.length - 1);
+            }
+            context.fillText(textSessionIdentificator, 20, window.scrollY + 336);
+            // column value
+            context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
+            var textSessionIdentificatorValue = this.getCartProduct.SessionIdentificator.toString();
+            while (context.measureText(textSessionIdentificator).width + context.measureText(textSessionIdentificatorValue).width > this.tileWidth() - 40
+                && textSessionIdentificatorValue.length > 2) {
+                textSessionIdentificatorValue = textSessionIdentificatorValue.substr(0, textSessionIdentificatorValue.length - 1);
+            }
+            context.fillText(textSessionIdentificatorValue, context.measureText(textSessionIdentificator).width + 20, window.scrollY + 336);
             context.stroke();
         };
         return Tile;

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/13/2020 1:56:21 PM
+  Generated Date: 7/13/2020 2:56:14 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
@@ -53,6 +53,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             dataContract.DefaultUserName = dalGetCartProduct.DefaultUserName;
             dataContract.DateTime = dalGetCartProduct.DateTime;
             dataContract.CartProductId = dalGetCartProduct.CartProductId;
+            dataContract.SessionIdentificator = dalGetCartProduct.SessionIdentificator;
         }
     }
 }

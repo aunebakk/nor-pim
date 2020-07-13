@@ -25,7 +25,8 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                         productId : Guid.Empty, 
                         financialCurrencyId: Guid.Empty, 
                         userId : Guid.Empty, 
-                        cartProductId : Guid.Empty
+                        cartProductId : Guid.Empty,
+                        sessionIdentificator : Session.SessionID
                     );
 
             return View(

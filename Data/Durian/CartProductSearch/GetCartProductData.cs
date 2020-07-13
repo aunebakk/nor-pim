@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/13/2020 1:56:19 PM
+  Generated Date: 7/13/2020 2:56:14 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -63,6 +63,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public System.Guid CartProductId { get; set; }
         
+        public string SessionIdentificator { get; set; }
+        
         public void Populate(IDataReader reader, GetCartProductDataOrdinals ordinals) {
             if (!reader.IsDBNull(ordinals.FirstName)) FirstName = reader.GetString(ordinals.FirstName);
             if (!reader.IsDBNull(ordinals.MiddleName)) MiddleName = reader.GetString(ordinals.MiddleName);
@@ -87,6 +89,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (!reader.IsDBNull(ordinals.DefaultUserName)) DefaultUserName = reader.GetString(ordinals.DefaultUserName);
             if (!reader.IsDBNull(ordinals.DateTime)) DateTime = reader.GetDateTime(ordinals.DateTime);
             if (!reader.IsDBNull(ordinals.CartProductId)) CartProductId = reader.GetGuid(ordinals.CartProductId);
+            if (!reader.IsDBNull(ordinals.SessionIdentificator)) SessionIdentificator = reader.GetString(ordinals.SessionIdentificator);
         }
     }
     
@@ -138,6 +141,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public int CartProductId;
         
+        public int SessionIdentificator;
+        
         public GetCartProductDataOrdinals(IDataReader reader) {
             FirstName = reader.GetOrdinal("first_name");
             MiddleName = reader.GetOrdinal("middle_name");
@@ -162,6 +167,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             DefaultUserName = reader.GetOrdinal("default_user_name");
             DateTime = reader.GetOrdinal("date_time");
             CartProductId = reader.GetOrdinal("cart_product_id");
+            SessionIdentificator = reader.GetOrdinal("session_identificator");
         }
     }
 }
