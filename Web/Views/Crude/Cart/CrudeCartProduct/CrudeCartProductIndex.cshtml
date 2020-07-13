@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/12/2020 10:41:31 AM
+  Generated Date: 7/13/2020 3:51:11 AM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.FromCrudeViewIndex
 -->
@@ -21,6 +21,7 @@
 <table class="table">
     <tr>
         <th>Amount</th>
+        <th>Session Identificator</th>
         <th>State</th>
         <th>Date Time</th>
         <th></th>
@@ -29,6 +30,7 @@
     @foreach (var item in Model) {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.Amount) </td>
+            <td>@Html.DisplayFor(modelItem => item.SessionIdentificator) </td>
             <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.DateTime) </td>
             <td>

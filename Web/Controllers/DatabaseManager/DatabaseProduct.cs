@@ -1725,11 +1725,12 @@ go
 create table cart_product
 (
 	cart_product_id  uniqueidentifier  not null ,
-	client_id  uniqueidentifier  not null ,
+	client_id  uniqueidentifier  null ,
 	product_id  uniqueidentifier  not null ,
 	financial_currency_id  uniqueidentifier  not null ,
 	amount  decimal(15,4)  not null ,
 	session_id  uniqueidentifier  null ,
+	session_identificator  nvarchar(240)  null ,
 	asp_id  uniqueidentifier  null ,
 	state_rcd  nvarchar(240)  not null ,
 	user_id  uniqueidentifier  not null ,

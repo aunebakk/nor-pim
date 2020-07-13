@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/12/2020 10:50:56 AM
+  Generated Date: 7/13/2020 3:59:37 AM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
@@ -45,6 +45,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             dataContract.FinancialCurrencyTypeCode = dalGetCartProductWithFilter.FinancialCurrencyTypeCode;
             dataContract.FinancialCurrencyId = dalGetCartProductWithFilter.FinancialCurrencyId;
             dataContract.Amount = dalGetCartProductWithFilter.Amount;
+            dataContract.SessionIdentificator = dalGetCartProductWithFilter.SessionIdentificator;
             dataContract.CartProductStateRcd = dalGetCartProductWithFilter.CartProductStateRcd;
             dataContract.UserId = dalGetCartProductWithFilter.UserId;
             dataContract.DateTime = dalGetCartProductWithFilter.DateTime;

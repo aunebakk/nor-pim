@@ -14,6 +14,10 @@
         
         private System.Windows.Forms.DataGridView dataGridViewCrudeCartProduct;
         
+        private System.Windows.Forms.TextBox textBoxSessionIdentificator;
+        
+        private System.Windows.Forms.Label labelSessionIdentificator;
+        
         private System.Windows.Forms.TextBox textBoxState;
         
         private System.Windows.Forms.Label labelState;
@@ -40,6 +44,8 @@
             this.buttonCrudeCartProductEdit = new System.Windows.Forms.Button();
             this.buttonCrudeCartProductSearch = new System.Windows.Forms.Button();
             this.dataGridViewCrudeCartProduct = new System.Windows.Forms.DataGridView();
+            this.labelSessionIdentificator = new System.Windows.Forms.Label();
+            this.textBoxSessionIdentificator = new System.Windows.Forms.TextBox();
             this.labelState = new System.Windows.Forms.Label();
             this.textBoxState = new System.Windows.Forms.TextBox();
             this.labelAmount = new System.Windows.Forms.Label();
@@ -49,56 +55,73 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCrudeCartProduct)).BeginInit();
             this.SuspendLayout();
             //
+            // labelSessionIdentificator
+            //
+            this.labelSessionIdentificator.AutoSize = true;
+            this.labelSessionIdentificator.Location = new System.Drawing.Point(11, 13);
+            this.labelSessionIdentificator.Name = "labelSessionIdentificator";
+            this.labelSessionIdentificator.Size = new System.Drawing.Size(71, 13);
+            this.labelSessionIdentificator.TabIndex = 2;
+            this.labelSessionIdentificator.Text = "Session Identificator:";
+            //
+            //textBoxSessionIdentificator
+            //
+            this.textBoxSessionIdentificator.Location = new System.Drawing.Point(147, 13);
+            this.textBoxSessionIdentificator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSessionIdentificator.Name = "textBoxSessionIdentificator";
+            this.textBoxSessionIdentificator.Size = new System.Drawing.Size(250, 20);
+            this.textBoxSessionIdentificator.TabIndex = 3;
+            //
             // labelState
             //
             this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(11, 13);
+            this.labelState.Location = new System.Drawing.Point(11, 36);
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(71, 13);
-            this.labelState.TabIndex = 2;
+            this.labelState.TabIndex = 4;
             this.labelState.Text = "State:";
             //
             //textBoxState
             //
-            this.textBoxState.Location = new System.Drawing.Point(140, 13);
+            this.textBoxState.Location = new System.Drawing.Point(147, 36);
             this.textBoxState.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxState.Name = "textBoxState";
             this.textBoxState.Size = new System.Drawing.Size(250, 20);
-            this.textBoxState.TabIndex = 3;
+            this.textBoxState.TabIndex = 5;
             //
             // labelAmount
             //
             this.labelAmount.AutoSize = true;
-            this.labelAmount.Location = new System.Drawing.Point(11, 36);
+            this.labelAmount.Location = new System.Drawing.Point(11, 59);
             this.labelAmount.Name = "labelAmount";
             this.labelAmount.Size = new System.Drawing.Size(71, 13);
-            this.labelAmount.TabIndex = 4;
+            this.labelAmount.TabIndex = 6;
             this.labelAmount.Text = "Amount:";
             //
             //maskedTextBoxAmount
             //
-            this.maskedTextBoxAmount.Location = new System.Drawing.Point(140, 36);
+            this.maskedTextBoxAmount.Location = new System.Drawing.Point(147, 59);
             this.maskedTextBoxAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.maskedTextBoxAmount.Name = "maskedTextBoxAmount";
             this.maskedTextBoxAmount.Size = new System.Drawing.Size(250, 20);
-            this.maskedTextBoxAmount.TabIndex = 5;
+            this.maskedTextBoxAmount.TabIndex = 7;
             //
             // labelDateTime
             //
             this.labelDateTime.AutoSize = true;
-            this.labelDateTime.Location = new System.Drawing.Point(11, 59);
+            this.labelDateTime.Location = new System.Drawing.Point(11, 82);
             this.labelDateTime.Name = "labelDateTime";
             this.labelDateTime.Size = new System.Drawing.Size(71, 13);
-            this.labelDateTime.TabIndex = 6;
+            this.labelDateTime.TabIndex = 8;
             this.labelDateTime.Text = "Date Time:";
             //
             //dateTimePickerDateTime
             //
-            this.dateTimePickerDateTime.Location = new System.Drawing.Point(140, 59);
+            this.dateTimePickerDateTime.Location = new System.Drawing.Point(147, 82);
             this.dateTimePickerDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerDateTime.Name = "dateTimePickerDateTime";
             this.dateTimePickerDateTime.Size = new System.Drawing.Size(250, 20);
-            this.dateTimePickerDateTime.TabIndex = 7;
+            this.dateTimePickerDateTime.TabIndex = 9;
             // 
             // dataGridViewCrudeCartProduct
             // 
@@ -109,9 +132,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCrudeCartProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCrudeCartProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCrudeCartProduct.Location = new System.Drawing.Point(12, 92);
+            this.dataGridViewCrudeCartProduct.Location = new System.Drawing.Point(12, 115);
             this.dataGridViewCrudeCartProduct.Name = "dataGridViewCrudeCartProduct";
-            this.dataGridViewCrudeCartProduct.Size = new System.Drawing.Size(378, 96);
+            this.dataGridViewCrudeCartProduct.Size = new System.Drawing.Size(385, 96);
             this.dataGridViewCrudeCartProduct.TabIndex = 0;
             this.dataGridViewCrudeCartProduct.ReadOnly = true;
             this.dataGridViewCrudeCartProduct.DoubleClick += new System.EventHandler(this.dataGridViewCrudeCartProduct_DoubleClick);
@@ -119,7 +142,7 @@
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.Location = new System.Drawing.Point(298, 195);
+            this.buttonClose.Location = new System.Drawing.Point(305, 218);
             
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
@@ -131,7 +154,7 @@
             // buttonCrudeCartProductSearch
             // 
             this.buttonCrudeCartProductSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCrudeCartProductSearch.Location = new System.Drawing.Point(198, 195);
+            this.buttonCrudeCartProductSearch.Location = new System.Drawing.Point(205, 218);
             this.buttonCrudeCartProductSearch.Name = "buttonCrudeCartProductSearch";
             this.buttonCrudeCartProductSearch.Size = new System.Drawing.Size(92, 22);
             this.buttonCrudeCartProductSearch.TabIndex = 2;
@@ -142,7 +165,7 @@
             // buttonCrudeCartProductAdd
             // 
             this.buttonCrudeCartProductAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCrudeCartProductAdd.Location = new System.Drawing.Point(98, 195);
+            this.buttonCrudeCartProductAdd.Location = new System.Drawing.Point(105, 218);
             this.buttonCrudeCartProductAdd.Name = "buttonCrudeCartProductAdd";
             this.buttonCrudeCartProductAdd.Size = new System.Drawing.Size(92, 22);
             this.buttonCrudeCartProductAdd.TabIndex = 3;
@@ -153,7 +176,7 @@
             // buttonCrudeCartProductEdit
             // 
             this.buttonCrudeCartProductEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCrudeCartProductEdit.Location = new System.Drawing.Point(-2, 195);
+            this.buttonCrudeCartProductEdit.Location = new System.Drawing.Point(5, 218);
             this.buttonCrudeCartProductEdit.Name = "buttonCrudeCartProductEdit";
             this.buttonCrudeCartProductEdit.Size = new System.Drawing.Size(92, 22);
             this.buttonCrudeCartProductEdit.TabIndex = 4;
@@ -165,7 +188,7 @@
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 223);
+            this.ClientSize = new System.Drawing.Size(409, 246);
             this.Controls.Add(this.buttonCrudeCartProductSearch);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonCrudeCartProductAdd);
@@ -174,6 +197,8 @@
             this.Name = "CrudeCartProductSearch";
             this.Text = "Cart Product Search";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCrudeCartProduct)).EndInit();
+            this.Controls.Add(this.labelSessionIdentificator);
+            this.Controls.Add(this.textBoxSessionIdentificator);
             this.Controls.Add(this.labelState);
             this.Controls.Add(this.textBoxState);
             this.Controls.Add(this.labelAmount);

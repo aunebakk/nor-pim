@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/12/2020 10:41:19 AM
+  Generated Date: 7/13/2020 3:50:59 AM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
@@ -112,6 +112,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                             ,Guid.Empty
                             ,maskedTextBoxAmount.Text == String.Empty ? 0 : Convert.ToDecimal(maskedTextBoxAmount.Text)
                             ,Guid.Empty
+                            ,textBoxSessionIdentificator.Text
                             ,Guid.Empty
                             ,textBoxState.Text
                             ,Guid.Empty
@@ -135,6 +136,8 @@ namespace SolutionNorSolutionPim.UserInterface {
             try {
                 dataGridViewCrudeCartProduct.Columns.Clear();
                 dataGridViewCrudeCartProduct.AutoGenerateColumns = false;
+                dataGridViewCrudeCartProduct.Columns.Add("SessionIdentificator","Session Identificator");
+                dataGridViewCrudeCartProduct.Columns["SessionIdentificator"].DataPropertyName = "SessionIdentificator";
                 dataGridViewCrudeCartProduct.Columns.Add("StateRcd","State");
                 dataGridViewCrudeCartProduct.Columns["StateRcd"].DataPropertyName = "StateRcd";
                 dataGridViewCrudeCartProduct.Columns.Add("Amount","Amount");

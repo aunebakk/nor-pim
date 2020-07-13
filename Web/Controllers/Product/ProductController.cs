@@ -3,6 +3,7 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNet.Identity;
+using System.Web.SessionState;
 
 namespace SolutionNorSolutionPim.mvc.Controllers {
     public class ProductController : Controller {
@@ -32,7 +33,18 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
 
             var cartProductContract = new CrudeCartProductContract ( );
             cartProductContract.ProductId = productId;
+
+            // our internal default_user_id becomes the client id... hmm
             cartProductContract.ClientId = userId;
+
+            // save it if we got it
+            if (!string.IsNullOrEmpty(Session.SessionID))
+                cartProductContract.SessionId = Guid.Parse( Session.SessionID );
+
+            // oauth id
+            if (!string.IsNullOrEmpty(User.Identity.GetUserId()))
+                cartProductContract.AspId = Guid.Parse( User.Identity.GetUserId() );
+
             cartProductContract.Amount = 666;
             cartProductContract.FinancialCurrencyId = financialCurrencyContracts[0].FinancialCurrencyId;
             cartProductContract.StateRcd = DefaultStateRef.Created;

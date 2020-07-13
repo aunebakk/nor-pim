@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/12/2020 10:41:19 AM
+  Generated Date: 7/13/2020 3:50:59 AM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateEditStyle3
 */
@@ -30,7 +30,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             try {
                 _contract = new CrudeCartProductContract();
                 _isNew = true;
-                this.Text += " - Not Savable (Client,Product,FinancialCurrency,User Missing)";
+                this.Text += " - Not Savable (Product,FinancialCurrency,User Missing)";
                 Show();
             } catch ( Exception ex ) {
                 if ( ex == null )
@@ -108,7 +108,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
-        public void ShowAsAdd(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId) {
+        public void ShowAsAdd(System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, string sessionIdentificator, System.Guid aspId, string stateRcd, System.Guid userId) {
             try {
                 _contract = new CrudeCartProductContract();
                 _isNew = true;
@@ -118,6 +118,8 @@ namespace SolutionNorSolutionPim.UserInterface {
                 _contract.Amount = amount;
                 maskedTextBoxAmount.Text = _contract.Amount.ToString();
                 _contract.SessionId = sessionId;
+                _contract.SessionIdentificator = sessionIdentificator;
+                textBoxSessionIdentificator.Text = _contract.SessionIdentificator;
                 _contract.AspId = aspId;
                 _contract.StateRcd = stateRcd;
                 textBoxState.Text = _contract.StateRcd;
@@ -140,6 +142,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             try {
                 _contract = service.FetchByCartProductId(cartProductId);
                 maskedTextBoxAmount.Text = _contract.Amount.ToString();
+                textBoxSessionIdentificator.Text = _contract.SessionIdentificator;
                 textBoxState.Text = _contract.StateRcd;
                 _contract.DateTime = DateTime.UtcNow;
                 dateTimePickerDateTime.Text = _contract.DateTime.ToString();
@@ -159,6 +162,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             var service = new CrudeCartProductServiceClient();
             try {
                 _contract.Amount = maskedTextBoxAmount.Text == String.Empty ? 0 : Convert.ToDecimal(maskedTextBoxAmount.Text);
+                _contract.SessionIdentificator = textBoxSessionIdentificator.Text;
                 _contract.StateRcd = textBoxState.Text;
 
                 if (_isNew)

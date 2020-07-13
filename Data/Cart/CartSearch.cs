@@ -34,6 +34,7 @@ select
     ,fc.financial_currency_type_code
     ,cp.financial_currency_id
     ,cp.amount
+    ,cp.session_identificator
     ,cp.state_rcd as cart_product_state_rcd
     ,cp.user_id
     ,cp.date_time
@@ -41,7 +42,7 @@ select
     ,cp.session_id
     ,cp.asp_id
 from cart_product as cp
-inner join client as c on c.client_id = cp.client_id
+left join client as c on c.client_id = cp.client_id
 inner join product as p on p.product_id = cp.product_id
 inner join financial_currency as fc on fc.financial_currency_id = cp.financial_currency_id
 inner join default_user as du on du.default_user_id = cp.user_id

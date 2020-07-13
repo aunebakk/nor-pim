@@ -42,38 +42,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="133632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="134144">
       <assemblyIdentity name="Contract" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WB+ebs7JsP5r7xpwkfTVcYKN4eI0Wixw2OyqJyJXGOs=</dsig:DigestValue>
+        <dsig:DigestValue>Zj8Zh21//8if5pZ+zFiF09ccQj0uM0XtEpRKHHsvDbM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proxy.dll" size="331776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proxy.dll" size="332288">
       <assemblyIdentity name="Proxy" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dh2UC6JxaEKqwBwDfG4q1SDCijo673Nj6JfpD9LQA3M=</dsig:DigestValue>
+        <dsig:DigestValue>C6wu4kHSHXTh60QJ1Q+tSokt4CR2CghazLkYIsRuOQw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForm.exe" size="1441280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForm.exe" size="1442304">
       <assemblyIdentity name="WinForm" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pPGP/g8P7AlEqTHyCkJd0Wm8lB4ZVJLNS99z58TvsZg=</dsig:DigestValue>
+        <dsig:DigestValue>AyY0PYukXw5Phm3tQzQcj66PzhWsGF8EPpyze/kq9uk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,13 +86,13 @@
       <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WinForm.exe.config" size="31636">
+  <file name="WinForm.exe.config" size="31635">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>R4yZ9Xy0vdcHDkH39uQ4PwCYE2RfHdpKQPI7HFnZCok=</dsig:DigestValue>
+      <dsig:DigestValue>grTfYpIh1HQM8sKljlWRF+ZfzimS80RcMNdCztUiDYg=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/12/2020 10:40:40 AM
+  Generated Date: 7/13/2020 3:50:18 AM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeContract.CrudeContract
 */
@@ -30,6 +30,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         [DataMember()]
         public System.Guid SessionId { get; set; }
+        
+        [DataMember()]
+        public string SessionIdentificator { get; set; }
         
         [DataMember()]
         public System.Guid AspId { get; set; }

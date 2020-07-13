@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/12/2020 10:40:51 AM
+  Generated Date: 7/13/2020 3:50:30 AM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
@@ -46,7 +46,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         List<CrudeCartProductContract> FetchByStateRcd(string stateRcd);
         
         [OperationContract()]
-        List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime);
+        List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, string sessionIdentificator, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime);
         
         [OperationContract()]
         List<CrudeCartProductContract> FetchAll();
@@ -173,7 +173,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return CrudeCartProductData.FetchAllCount();
         }
         
-        public List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime) {
+        public List<CrudeCartProductContract> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, string sessionIdentificator, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime) {
             var list = new List<CrudeCartProductContract>();
             List<CrudeCartProductData> dataList = CrudeCartProductData.FetchWithFilter(
                 cartProductId: cartProductId,
@@ -182,6 +182,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 financialCurrencyId: financialCurrencyId,
                 amount: amount,
                 sessionId: sessionId,
+                sessionIdentificator: sessionIdentificator,
                 aspId: aspId,
                 stateRcd: stateRcd,
                 userId: userId,
@@ -232,6 +233,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.FinancialCurrencyId = contract.FinancialCurrencyId;
             data.Amount = contract.Amount;
             data.SessionId = contract.SessionId;
+            data.SessionIdentificator = contract.SessionIdentificator;
             data.AspId = contract.AspId;
             data.StateRcd = contract.StateRcd;
             data.UserId = contract.UserId;
@@ -245,6 +247,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             contract.FinancialCurrencyId = data.FinancialCurrencyId;
             contract.Amount = data.Amount;
             contract.SessionId = data.SessionId;
+            contract.SessionIdentificator = data.SessionIdentificator;
             contract.AspId = data.AspId;
             contract.StateRcd = data.StateRcd;
             contract.UserId = data.UserId;
