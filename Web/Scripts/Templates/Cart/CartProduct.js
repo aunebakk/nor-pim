@@ -1,8 +1,8 @@
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 7/13/2020 10:04:52 AM
-// From Machine: DESKTOP-00MSEIL
+// Generated Date: 7/13/2020 11:02:56 AM
+// From Machine: DESKTOP-517I8BU
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian
 // Template Style: WithDurianByTypeScript
@@ -269,14 +269,9 @@ var DesignVestreVikenDurian;
         };
         // resize canvas based on window size
         GetCartProductTileList.resizeCanvas = function () {
-            // canvas for tiles set to window width for mobile, 80% for web
+            // canvas for header and tiles set to window width
             var canvas = document.getElementById("myCanvas");
-            if (!this.isMobile()) {
-                canvas.width = window.innerWidth * 0.8;
-            }
-            else {
-                canvas.width = window.innerWidth;
-            }
+            canvas.width = window.innerWidth * 0.9;
         };
         // check click event
         GetCartProductTileList.prototype.canvasClick = function (event) {
