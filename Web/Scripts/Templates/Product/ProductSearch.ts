@@ -1,8 +1,8 @@
 ﻿// SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 7/13/2020 9:17:49 AM
-// From Machine: DESKTOP-517I8BU
+// Generated Date: 7/13/2020 10:06:49 AM
+// From Machine: DESKTOP-00MSEIL
 // Template: sql2x.CrudeTypeScriptGenerator.OverallDesignTypeScriptTine
 module SQL2XTemplateCrudeTableDurian {
 '   use strict';

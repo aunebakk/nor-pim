@@ -1,8 +1,8 @@
 ﻿// SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 7/13/2020 9:16:05 AM
-// From Machine: DESKTOP-517I8BU
+// Generated Date: 7/13/2020 10:04:52 AM
+// From Machine: DESKTOP-00MSEIL
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian
 // Template Style: WithDurianByTypeScript
@@ -394,11 +394,14 @@ module DesignVestreVikenDurian {
         }
 
         // resize canvas based on window size
-        static resizeCanvas(): void {
-            // canvas for header and tiles set to window width
-
+        static resizeCanvas(): void {            
+            // canvas for tiles set to window width for mobile, 80% for web
             let canvas: HTMLCanvasElement = (<HTMLCanvasElement>document.getElementById("myCanvas"));
-            canvas.width = window.innerWidth * 0.9;
+            if (!this.isMobile()) {
+                canvas.width = window.innerWidth * 0.8;
+            } else {
+                canvas.width = window.innerWidth;
+            }
         }
 
         // check click event
