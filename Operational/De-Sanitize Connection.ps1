@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 7/13/2020 12:34:09 PM
+# Generated Date: 7/13/2020 1:06:24 PM
 # From Machine: DESKTOP-517I8BU
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -36,7 +36,7 @@ param(
 )
 
 [string] $startFolder = $pwd
-Set-Location C:\SQL2XProjects\SolutionNorSolutionQueue
+Set-Location C:\SQL2XProjects\SolutionNorSolutionPim
 
 # CSharp files
 $match = '*.cs' #, '*.cshtml' , '*.cs', '*.svc', '*.ps1' # , '*.json'

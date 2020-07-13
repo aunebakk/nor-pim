@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/13/2020 12:13:11 PM
+  Generated Date: 7/13/2020 12:49:34 PM
   From Machine: DESKTOP-517I8BU
   Filename: FinancialOrder.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
