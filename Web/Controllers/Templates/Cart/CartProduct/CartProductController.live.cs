@@ -11,6 +11,7 @@ using System;
 using System.Web.Mvc;
 using System.Collections.Generic;
 using SolutionNorSolutionPim.mvc.Controllers;
+using Microsoft.AspNet.Identity;
 
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
     public partial class CartProductController : Controller {
@@ -19,15 +20,28 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         public ActionResult CartProductIndexLive() {
             Guid userId = Logging.UserId(User.Identity, ViewBag);
 
-            List<GetCartProductContract> cart_product = 
-                new CartProductSearchService().GetCartProduct(
-                        clientId : userId, 
-                        productId : Guid.Empty, 
-                        financialCurrencyId: Guid.Empty, 
-                        userId : Guid.Empty, 
-                        cartProductId : Guid.Empty,
-                        sessionIdentificator : Session.SessionID
-                    );
+            List<GetCartProductContract> cart_product = null;
+
+            if (!string.IsNullOrEmpty(User.Identity.GetUserId())) 
+                cart_product = 
+                    new CartProductSearchService().GetCartProduct(
+                            clientId : userId, 
+                            productId : Guid.Empty, 
+                            financialCurrencyId: Guid.Empty, 
+                            userId : Guid.Empty, 
+                            cartProductId : Guid.Empty,
+                            sessionIdentificator : string.Empty
+                        );
+            else
+                cart_product = 
+                    new CartProductSearchService().GetCartProduct(
+                            clientId : Guid.Empty,
+                            productId : Guid.Empty, 
+                            financialCurrencyId: Guid.Empty, 
+                            userId : Guid.Empty, 
+                            cartProductId : Guid.Empty,
+                            sessionIdentificator : Session.SessionID
+                        );
 
             return View(
                 "~/Views/Templates/Cart/CartProduct/CartProductIndex.cshtml",
