@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/14/2020 6:57:07 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/14/2020 11:35:24 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -35,19 +35,31 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         public System.DateTime DateTime { get; set; }
         
+        // fetch by Primary key into current object
+        // parameters:
+        //   productFieldSetMappingId: primary key of table product_field_set_mapping
         public void FetchByProductFieldSetMappingId(System.Guid productFieldSetMappingId) {
+            // create query
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection and to make sure the query plan is pre-compiled
             string sql = @" select top 1 product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_field_set_mapping_id = @product_field_set_mapping_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
+
                 // dirty read
+                // starting a transaction seems to be the only way of doing a dirty read
+                // a dirty read means a row is read even if it is marked as locked by another transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
                 using (var command = new SqlCommand(sql, conn)) {
-                    // add all parameters
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = productFieldSetMappingId;
 
                     // execute and read one row, close connection
@@ -60,12 +72,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch by Primary key into new class instance
         public static CrudeProductFieldSetMappingData GetByProductFieldSetMappingId(System.Guid productFieldSetMappingId) {
             string sql = @" select top 1 product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_field_set_mapping_id = @product_field_set_mapping_id";
 
             var ret = new CrudeProductFieldSetMappingData();
+
             // open standard connection
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
@@ -75,13 +89,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
+                    // populate serialized class if row was found
                     if (reader.Read())
                         ret.Populate(reader);
                 }
             }
+
             return ret;
         }
         
+        // fetch by Foreign key into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchByProductFieldSetId(System.Guid productFieldSetId) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -110,6 +127,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch by Foreign key into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchByUserId(System.Guid userId) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -138,6 +156,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch by Foreign key into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchByProductIdentifierRcd(string productIdentifierRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -166,6 +185,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch by Foreign key into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchByProductAttributeRcd(string productAttributeRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -194,6 +214,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch by Foreign key into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchByProductInfoRcd(string productInfoRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -222,6 +243,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch by Foreign key into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchByProductImageTypeRcd(string productImageTypeRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -250,6 +272,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch by Foreign key into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchByProductDocumentationTypeRcd(string productDocumentationTypeRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -278,6 +301,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch all from table into new List of class instances
         public static List<CrudeProductFieldSetMappingData> FetchAll() {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -303,6 +327,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeProductFieldSetMappingData> FetchAllWithLimit(int limit) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -328,6 +353,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch all from table into new List of class instances, only populating specific columns , with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeProductFieldSetMappingData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -359,6 +385,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // get a count of rows in table
         public static int FetchAllCount() {
             string sql = @" select count(*) as count from [product_field_set_mapping]";
 
@@ -379,6 +406,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeProductFieldSetMappingData> FetchWithFilter(System.Guid productFieldSetMappingId, System.Guid productFieldSetId, string productIdentifierRcd, string productAttributeRcd, string productInfoRcd, string productImageTypeRcd, string productDocumentationTypeRcd, System.Guid userId, System.DateTime dateTime) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
@@ -442,6 +470,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // read all columns out and populate object members
         public void Populate(IDataReader reader) {
             if (reader["product_field_set_mapping_id"] != System.DBNull.Value) ProductFieldSetMappingId = (System.Guid) reader["product_field_set_mapping_id"];
             if (reader["product_field_set_id"] != System.DBNull.Value) ProductFieldSetId = (System.Guid) reader["product_field_set_id"];
@@ -454,6 +483,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
         }
         
+        // insert all object members as a new row in table
         public void Insert() {
 
             if (ProductFieldSetMappingId == Guid.Empty)
@@ -481,6 +511,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // insert all object members as a new row in table, in a transaction
+        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
+        // it is the callers responsibility to commit or rollback the transaction
         public void Insert(SqlConnection connection, SqlTransaction transaction) {
 
             if (ProductFieldSetMappingId == Guid.Empty)
@@ -489,7 +522,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = "insert into [product_field_set_mapping] (product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time)";
             sql += "            values (@product_field_set_mapping_id, @product_field_set_id, @product_identifier_rcd, @product_attribute_rcd, @product_info_rcd, @product_image_type_rcd, @product_documentation_type_rcd, @user_id, @date_time)";
 
-            // open standard connection
+            // use passed in connection
+            // transaction scope etc is determined by caller
+            // there are no result from this action, SqlClient will raise an exception in case
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetMappingId;
                 command.Parameters.Add("@product_field_set_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetId;
@@ -504,6 +539,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // update all object members on a row in table based on primary key
         public void Update() {
             string sql = @" update [product_field_set_mapping] set
                  product_field_set_mapping_id = @product_field_set_mapping_id
@@ -537,6 +573,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             string sql = @" update [product_field_set_mapping] set
                  product_field_set_mapping_id = @product_field_set_mapping_id
@@ -565,6 +602,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
+        // delete a row in table based on primary key
         public static void Delete(System.Guid productFieldSetMappingId) {
             string sql = @" delete [product_field_set_mapping] 
                 where product_field_set_mapping_id = @product_field_set_mapping_id";
