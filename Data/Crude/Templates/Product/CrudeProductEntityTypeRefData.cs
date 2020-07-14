@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/14/2020 11:35:24 AM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 7/14/2020 1:11:19 PM
+  From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -12,6 +12,10 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Configuration;
 
+// Data Access Layer
+// the DataAccessLayer is the first layer that has access to data coming from sql server after being streamed over a net or internal process
+// links:
+//   https://en.wikipedia.org/wiki/Data_access_layer: data access layer
 namespace SolutionNorSolutionPim.DataAccessLayer {
 
     public partial class ProductEntityTypeRef {
@@ -31,6 +35,11 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public const string ProductSupplier = "PS";
     }
     
+    // this class serves as a data access layer between c# and sql server
+    // it is serializable in order to speed up processing between the data access and business layers
+    // this class start with an identical representation of [the table]'s columns formatted to follow C# casing guidelines ( Pascal casing )
+    // links:
+    //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeProductEntityTypeRefData {
         
@@ -43,6 +52,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public System.DateTime DateTime { get; set; }
         
         // fetch by Primary key into current object
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
         // parameters:
         //   productEntityTypeRcd: primary key of table product_entity_type_ref
         public void FetchByProductEntityTypeRcd(string productEntityTypeRcd) {
@@ -62,7 +73,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 // dirty read
                 // starting a transaction seems to be the only way of doing a dirty read
-                // a dirty read means a row is read even if it is marked as locked by another transaction
+                // a dirty read means a row is read even if it is marked as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
                 using (var command = new SqlCommand(sql, conn)) {
