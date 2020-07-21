@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:16:32 AM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 7/21/2020 9:47:24 AM
+  From Machine: DESKTOP-00MSEIL
   Template: sql2x.PrototypeDotNetFrameworkWinExe.Content_GlobalSuppressionsDOTcs
 */
 // This file is used by Code Analysis to maintain SuppressMessage 

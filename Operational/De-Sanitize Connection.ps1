@@ -1,8 +1,8 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 7/21/2020 9:34:01 AM
-# From Machine: DESKTOP-517I8BU
+# Generated Date: 7/21/2020 10:03:47 AM
+# From Machine: DESKTOP-00MSEIL
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
 param(
