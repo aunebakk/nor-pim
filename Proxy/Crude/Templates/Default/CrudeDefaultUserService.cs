@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/14/2020 1:11:41 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/21/2020 9:16:28 AM
+  From Machine: DESKTOP-517I8BU
   Filename: DefaultUser.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy

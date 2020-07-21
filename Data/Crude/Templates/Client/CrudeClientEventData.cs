@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/14/2020 1:11:19 PM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 7/21/2020 9:15:54 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -13,14 +13,16 @@ using System.Collections.Generic;
 using System.Configuration;
 
 // Data Access Layer
-// the DataAccessLayer is the first layer that has access to data coming from sql server after being streamed over a net or internal process
+// the DataAccessLayer is the first layer that has access to data coming from
+//  sql server after being streamed over a net or internal process
 // links:
 //   https://en.wikipedia.org/wiki/Data_access_layer: data access layer
 namespace SolutionNorSolutionPim.DataAccessLayer {
 
     // this class serves as a data access layer between c# and sql server
     // it is serializable in order to speed up processing between the data access and business layers
-    // this class start with an identical representation of [the table]'s columns formatted to follow C# casing guidelines ( Pascal casing )
+    // this class start with an identical representation of client_event's columns
+    //  formatted to follow C# casing guidelines ( Pascal casing )
     // links:
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
@@ -42,9 +44,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         // parameters:
         //   clientEventId: primary key of table client_event
         public void FetchByClientEventId(System.Guid clientEventId) {
-            // create query
+            // create query against client_event
             // this will be ansi sql and parameterized
-            // parameterized queries are a good way of preventing sql injection and to make sure the query plan is pre-compiled
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 client_event_id, client_id, client_event_type_rcd, user_id, date_time
                             from [client_event]
                             where client_event_id = @client_event_id";
@@ -57,7 +60,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 // dirty read
                 // starting a transaction seems to be the only way of doing a dirty read
-                // a dirty read means a row is read even if it is marked as locked by another database transaction
+                // a dirty read means a row is read even if it is marked
+                //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
                 using (var command = new SqlCommand(sql, conn)) {
