@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -83,7 +83,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   defaultPerformanceTimeRollupId: primary key of table default_performance_time_rollup
         public static CrudeDefaultPerformanceTimeRollupData GetByDefaultPerformanceTimeRollupId(System.Guid defaultPerformanceTimeRollupId) {
+            // create query against default_performance_time_rollup
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 default_performance_time_rollup_id, command_name, milliseconds, hits, default_user_id, date_time
                             from [default_performance_time_rollup]
                             where default_performance_time_rollup_id = @default_performance_time_rollup_id
@@ -92,10 +100,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeDefaultPerformanceTimeRollupData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_performance_time_rollup_id",SqlDbType.UniqueIdentifier).Value = defaultPerformanceTimeRollupId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -120,10 +132,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by command_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = defaultUserId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -147,11 +163,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@commandName",SqlDbType.NVarChar).Value = commandName;
 
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -170,6 +190,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by command_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -197,6 +219,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by command_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -224,6 +248,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by command_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -253,6 +279,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [default_performance_time_rollup]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -278,10 +306,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (defaultPerformanceTimeRollupId != Guid.Empty) {
                         sql += "  and default_performance_time_rollup_id = @default_performance_time_rollup_id";
                         command.Parameters.Add("@default_performance_time_rollup_id", SqlDbType.UniqueIdentifier).Value = defaultPerformanceTimeRollupId;
@@ -343,6 +375,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@default_performance_time_rollup_id, @command_name, @milliseconds, @hits, @default_user_id, @date_time)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -395,6 +429,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_performance_time_rollup_id = @default_performance_time_rollup_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -423,6 +459,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_performance_time_rollup_id = @default_performance_time_rollup_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@default_performance_time_rollup_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultPerformanceTimeRollupId;
                 command.Parameters.Add("@command_name",SqlDbType.NVarChar).Value = (System.String)CommandName;
@@ -440,6 +478,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where default_performance_time_rollup_id = @default_performance_time_rollup_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

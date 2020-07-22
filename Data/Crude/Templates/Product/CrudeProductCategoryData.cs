@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -89,7 +89,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   productCategoryId: primary key of table product_category
         public static CrudeProductCategoryData GetByProductCategoryId(System.Guid productCategoryId) {
+            // create query against product_category
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 product_category_id, product_category_became_id, product_category_parent_id, product_category_code, product_category_name, product_category_position, state_rcd, user_id, date_time
                             from [product_category]
                             where product_category_id = @product_category_id
@@ -98,10 +106,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeProductCategoryData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_category_id",SqlDbType.UniqueIdentifier).Value = productCategoryId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -126,10 +138,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by product_category_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_category_became_id", SqlDbType.UniqueIdentifier).Value = productCategoryBecameId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -156,10 +172,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by product_category_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_category_parent_id", SqlDbType.UniqueIdentifier).Value = productCategoryParentId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -186,10 +206,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by product_category_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -216,10 +240,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by product_category_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = stateRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -243,11 +271,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@productCategoryName",SqlDbType.NVarChar).Value = productCategoryName;
 
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -266,6 +298,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by product_category_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -293,6 +327,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by product_category_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -320,6 +356,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by product_category_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -349,6 +387,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [product_category]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -374,10 +414,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (productCategoryId != Guid.Empty) {
                         sql += "  and product_category_id = @product_category_id";
                         command.Parameters.Add("@product_category_id", SqlDbType.UniqueIdentifier).Value = productCategoryId;
@@ -454,6 +498,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@product_category_id, @product_category_became_id, @product_category_parent_id, @product_category_code, @product_category_name, @product_category_position, @state_rcd, @user_id, @date_time)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -515,6 +561,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where product_category_id = @product_category_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -549,6 +597,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where product_category_id = @product_category_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@product_category_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductCategoryId;
                 command.Parameters.Add("@product_category_became_id",SqlDbType.UniqueIdentifier).Value = (ProductCategoryBecameId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ProductCategoryBecameId);
@@ -569,6 +619,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where product_category_id = @product_category_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

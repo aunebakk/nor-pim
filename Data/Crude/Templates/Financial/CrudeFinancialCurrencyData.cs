@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -95,7 +95,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   financialCurrencyId: primary key of table financial_currency
         public static CrudeFinancialCurrencyData GetByFinancialCurrencyId(System.Guid financialCurrencyId) {
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             where financial_currency_id = @financial_currency_id
@@ -104,10 +112,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeFinancialCurrencyData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -132,10 +144,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by financial_currency_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -162,10 +178,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by financial_currency_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_type_rcd", SqlDbType.NVarChar).Value = financialCurrencyTypeRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -192,10 +212,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by financial_currency_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_against_financial_currency_type_rcd", SqlDbType.NVarChar).Value = financialCurrencyAgainstFinancialCurrencyTypeRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -219,11 +243,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@financialCurrencyTypeName",SqlDbType.NVarChar).Value = financialCurrencyTypeName;
 
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -242,6 +270,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by financial_currency_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -269,6 +299,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by financial_currency_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -296,6 +328,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by financial_currency_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -325,6 +359,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [financial_currency]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -350,10 +386,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (financialCurrencyId != Guid.Empty) {
                         sql += "  and financial_currency_id = @financial_currency_id";
                         command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
@@ -445,6 +485,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@financial_currency_id, @financial_currency_type_rcd, @financial_currency_against_financial_currency_type_rcd, @user_id, @date_time, @valid_from_date_time, @valid_until_date_time, @amount, @equals_amount, @decimal_count, @financial_currency_type_code, @financial_currency_type_name)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -515,6 +557,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where financial_currency_id = @financial_currency_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -555,6 +599,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where financial_currency_id = @financial_currency_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                 command.Parameters.Add("@financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeRcd;
@@ -578,6 +624,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where financial_currency_id = @financial_currency_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -88,7 +88,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   productFieldSetMappingId: primary key of table product_field_set_mapping
         public static CrudeProductFieldSetMappingData GetByProductFieldSetMappingId(System.Guid productFieldSetMappingId) {
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_field_set_mapping_id = @product_field_set_mapping_id";
@@ -96,10 +104,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeProductFieldSetMappingData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = productFieldSetMappingId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -123,10 +135,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_id", SqlDbType.UniqueIdentifier).Value = productFieldSetId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -152,10 +168,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -181,10 +201,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_identifier_rcd", SqlDbType.NVarChar).Value = productIdentifierRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -210,10 +234,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_attribute_rcd", SqlDbType.NVarChar).Value = productAttributeRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -239,10 +267,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_info_rcd", SqlDbType.NVarChar).Value = productInfoRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -268,10 +300,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_image_type_rcd", SqlDbType.NVarChar).Value = productImageTypeRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -297,10 +333,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_documentation_type_rcd", SqlDbType.NVarChar).Value = productDocumentationTypeRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -324,6 +364,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [product_field_set_mapping]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -350,6 +392,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [product_field_set_mapping]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -376,6 +420,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [product_field_set_mapping]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -405,6 +451,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [product_field_set_mapping]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -430,10 +478,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (productFieldSetMappingId != Guid.Empty) {
                         sql += "  and product_field_set_mapping_id = @product_field_set_mapping_id";
                         command.Parameters.Add("@product_field_set_mapping_id", SqlDbType.UniqueIdentifier).Value = productFieldSetMappingId;
@@ -508,6 +560,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@product_field_set_mapping_id, @product_field_set_id, @product_identifier_rcd, @product_attribute_rcd, @product_info_rcd, @product_image_type_rcd, @product_documentation_type_rcd, @user_id, @date_time)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -569,6 +623,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where product_field_set_mapping_id = @product_field_set_mapping_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -603,6 +659,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where product_field_set_mapping_id = @product_field_set_mapping_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetMappingId;
                 command.Parameters.Add("@product_field_set_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetId;
@@ -623,6 +681,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where product_field_set_mapping_id = @product_field_set_mapping_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

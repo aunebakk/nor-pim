@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -84,7 +84,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   clientContactMethodId: primary key of table client_contact_method
         public static CrudeClientContactMethodData GetByClientContactMethodId(System.Guid clientContactMethodId) {
+            // create query against client_contact_method
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 client_contact_method_id, client_id, client_contact_method_rcd, contact_method_way, comment, user_id, date_time
                             from [client_contact_method]
                             where client_contact_method_id = @client_contact_method_id";
@@ -92,10 +100,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeClientContactMethodData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_contact_method_id",SqlDbType.UniqueIdentifier).Value = clientContactMethodId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -119,10 +131,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = clientId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -148,10 +164,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -177,10 +197,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_contact_method_rcd", SqlDbType.NVarChar).Value = clientContactMethodRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -204,6 +228,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [client_contact_method]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -230,6 +256,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [client_contact_method]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -256,6 +284,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [client_contact_method]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -285,6 +315,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [client_contact_method]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -310,10 +342,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (clientContactMethodId != Guid.Empty) {
                         sql += "  and client_contact_method_id = @client_contact_method_id";
                         command.Parameters.Add("@client_contact_method_id", SqlDbType.UniqueIdentifier).Value = clientContactMethodId;
@@ -378,6 +414,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@client_contact_method_id, @client_id, @client_contact_method_rcd, @contact_method_way, @comment, @user_id, @date_time)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -433,6 +471,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where client_contact_method_id = @client_contact_method_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -463,6 +503,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where client_contact_method_id = @client_contact_method_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@client_contact_method_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientContactMethodId;
                 command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientId;
@@ -481,6 +523,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where client_contact_method_id = @client_contact_method_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

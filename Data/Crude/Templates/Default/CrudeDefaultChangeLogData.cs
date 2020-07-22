@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -85,7 +85,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   defaultChangeLogId: primary key of table default_change_log
         public static CrudeDefaultChangeLogData GetByDefaultChangeLogId(System.Guid defaultChangeLogId) {
+            // create query against default_change_log
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 default_change_log_id, default_change_name, default_change_description, default_user_id, date_time, default_change_log_type_rcd, default_issue_id
                             from [default_change_log]
                             where default_change_log_id = @default_change_log_id
@@ -94,10 +102,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeDefaultChangeLogData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_change_log_id",SqlDbType.UniqueIdentifier).Value = defaultChangeLogId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -122,10 +134,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_change_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = defaultUserId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -152,10 +168,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_change_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_issue_id", SqlDbType.UniqueIdentifier).Value = defaultIssueId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -182,10 +202,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_change_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_change_log_type_rcd", SqlDbType.NVarChar).Value = defaultChangeLogTypeRcd.Replace("'","''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -209,11 +233,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@defaultChangeName",SqlDbType.NVarChar).Value = defaultChangeName;
 
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -232,6 +260,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_change_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -259,6 +289,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_change_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -286,6 +318,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_change_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -315,6 +349,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [default_change_log]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -340,10 +376,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (defaultChangeLogId != Guid.Empty) {
                         sql += "  and default_change_log_id = @default_change_log_id";
                         command.Parameters.Add("@default_change_log_id", SqlDbType.UniqueIdentifier).Value = defaultChangeLogId;
@@ -410,6 +450,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@default_change_log_id, @default_change_name, @default_change_description, @default_user_id, @date_time, @default_change_log_type_rcd, @default_issue_id)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -465,6 +507,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_change_log_id = @default_change_log_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -495,6 +539,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_change_log_id = @default_change_log_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@default_change_log_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultChangeLogId;
                 command.Parameters.Add("@default_change_name",SqlDbType.NVarChar).Value = (System.String)DefaultChangeName;
@@ -513,6 +559,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where default_change_log_id = @default_change_log_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

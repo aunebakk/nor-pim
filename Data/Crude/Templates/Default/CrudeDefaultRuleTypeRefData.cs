@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -84,7 +84,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   defaultRuleTypeRcd: primary key of table default_rule_type_ref
         public static CrudeDefaultRuleTypeRefData GetByDefaultRuleTypeRcd(string defaultRuleTypeRcd) {
+            // create query against default_rule_type_ref
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 default_rule_type_rcd, default_rule_type_name, default_user_id, date_time
                             from [default_rule_type_ref]
                             where default_rule_type_rcd = @default_rule_type_rcd
@@ -93,10 +101,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeDefaultRuleTypeRefData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_rule_type_rcd",SqlDbType.NVarChar).Value = defaultRuleTypeRcd;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -121,10 +133,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_rule_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = defaultUserId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -148,11 +164,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@defaultRuleTypeName",SqlDbType.NVarChar).Value = defaultRuleTypeName;
 
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -171,6 +191,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_rule_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -198,6 +220,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_rule_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -225,6 +249,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by default_rule_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -254,6 +280,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [default_rule_type_ref]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -279,10 +307,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (!string.IsNullOrEmpty(defaultRuleTypeRcd)) {
                         sql += "  and default_rule_type_rcd like '%' + @default_rule_type_rcd + '%'";
                         command.Parameters.Add("@default_rule_type_rcd", SqlDbType.NVarChar).Value = defaultRuleTypeRcd.Replace("'","''");
@@ -331,6 +363,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@default_rule_type_rcd, @default_rule_type_name, @default_user_id, @date_time)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -374,6 +408,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_rule_type_rcd = @default_rule_type_rcd";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -398,6 +434,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_rule_type_rcd = @default_rule_type_rcd";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@default_rule_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultRuleTypeRcd;
                 command.Parameters.Add("@default_rule_type_name",SqlDbType.NVarChar).Value = (System.String)DefaultRuleTypeName;
@@ -413,6 +451,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where default_rule_type_rcd = @default_rule_type_rcd";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

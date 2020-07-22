@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -92,7 +92,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   clientIdentifierTypeRcd: primary key of table client_identifier_type_ref
         public static CrudeClientIdentifierTypeRefData GetByClientIdentifierTypeRcd(string clientIdentifierTypeRcd) {
+            // create query against client_identifier_type_ref
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 client_identifier_type_rcd, client_identifier_type_name, client_identifier_type_description, active_flag, sort_order, user_id, date_time
                             from [client_identifier_type_ref]
                             where client_identifier_type_rcd = @client_identifier_type_rcd
@@ -101,10 +109,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeClientIdentifierTypeRefData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_identifier_type_rcd",SqlDbType.NVarChar).Value = clientIdentifierTypeRcd;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -129,10 +141,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by client_identifier_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -156,11 +172,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@clientIdentifierTypeName",SqlDbType.NVarChar).Value = clientIdentifierTypeName;
 
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -179,6 +199,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by client_identifier_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -206,6 +228,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by client_identifier_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -233,6 +257,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by client_identifier_type_name";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -262,6 +288,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [client_identifier_type_ref]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -287,10 +315,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (!string.IsNullOrEmpty(clientIdentifierTypeRcd)) {
                         sql += "  and client_identifier_type_rcd like '%' + @client_identifier_type_rcd + '%'";
                         command.Parameters.Add("@client_identifier_type_rcd", SqlDbType.NVarChar).Value = clientIdentifierTypeRcd.Replace("'","''");
@@ -354,6 +386,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@client_identifier_type_rcd, @client_identifier_type_name, @client_identifier_type_description, @active_flag, @sort_order, @user_id, @date_time)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -406,6 +440,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where client_identifier_type_rcd = @client_identifier_type_rcd";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -436,6 +472,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where client_identifier_type_rcd = @client_identifier_type_rcd";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@client_identifier_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientIdentifierTypeRcd;
                 command.Parameters.Add("@client_identifier_type_name",SqlDbType.NVarChar).Value = (System.String)ClientIdentifierTypeName;
@@ -454,6 +492,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where client_identifier_type_rcd = @client_identifier_type_rcd";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 

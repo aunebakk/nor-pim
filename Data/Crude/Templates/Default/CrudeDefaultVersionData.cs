@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/21/2020 9:46:58 AM
+  Generated Date: 7/22/2020 9:24:04 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -86,7 +86,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
         
         // fetch by Primary key into new class instance
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   defaultVersionId: primary key of table default_version
         public static CrudeDefaultVersionData GetByDefaultVersionId(System.Guid defaultVersionId) {
+            // create query against default_version
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 default_version_id, fun_version, number, major_number, minor_number, sequence_number, default_user_id, date_time
                             from [default_version]
                             where default_version_id = @default_version_id";
@@ -94,10 +102,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new CrudeDefaultVersionData();
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_version_id",SqlDbType.UniqueIdentifier).Value = defaultVersionId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
@@ -121,10 +133,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               ";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add foreign key column
+                    // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = defaultUserId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
@@ -148,6 +164,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [default_version]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -174,6 +192,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [default_version]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -200,6 +220,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [default_version]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -229,6 +251,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             string sql = @" select count(*) as count from [default_version]";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -254,10 +278,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where 1 = 1";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add search column(s) if they are not null or empty
+                    // this search column(s) will be used together with the prepared ansi sql statement
                     if (defaultVersionId != Guid.Empty) {
                         sql += "  and default_version_id = @default_version_id";
                         command.Parameters.Add("@default_version_id", SqlDbType.UniqueIdentifier).Value = defaultVersionId;
@@ -327,6 +355,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             sql += "            values (@default_version_id, @fun_version, @number, @major_number, @minor_number, @sequence_number, @default_user_id, @date_time)";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
@@ -385,6 +415,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_version_id = @default_version_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
@@ -417,6 +449,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             where default_version_id = @default_version_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 command.Parameters.Add("@default_version_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultVersionId;
                 command.Parameters.Add("@fun_version",SqlDbType.NVarChar).Value = (System.String)FunVersion;
@@ -436,6 +470,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where default_version_id = @default_version_id";
 
             // open standard connection
+            // the connection is found in web.config
+            // the connection is closed upon completion of the reader
             using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
