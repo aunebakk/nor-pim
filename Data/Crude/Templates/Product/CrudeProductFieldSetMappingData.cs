@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/22/2020 9:24:04 AM
+  Generated Date: 7/30/2020 6:40:14 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -114,9 +114,12 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = productFieldSetMappingId;
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                    // populate serialized class if row was found
+                    // populate serialized class if a row was found
                     if (reader.Read())
                         ret.Populate(reader);
                 }
@@ -129,6 +132,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchByProductFieldSetId(System.Guid productFieldSetId) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_field_set_id = @product_field_set_id
@@ -145,8 +152,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_id", SqlDbType.UniqueIdentifier).Value = productFieldSetId;
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -162,6 +175,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchByUserId(System.Guid userId) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where user_id = @user_id
@@ -178,8 +195,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -195,6 +218,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchByProductIdentifierRcd(string productIdentifierRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_identifier_rcd = @product_identifier_rcd
@@ -211,8 +238,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_identifier_rcd", SqlDbType.NVarChar).Value = productIdentifierRcd.Replace("'","''");
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -228,6 +261,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchByProductAttributeRcd(string productAttributeRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_attribute_rcd = @product_attribute_rcd
@@ -244,8 +281,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_attribute_rcd", SqlDbType.NVarChar).Value = productAttributeRcd.Replace("'","''");
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -261,6 +304,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchByProductInfoRcd(string productInfoRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_info_rcd = @product_info_rcd
@@ -277,8 +324,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_info_rcd", SqlDbType.NVarChar).Value = productInfoRcd.Replace("'","''");
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -294,6 +347,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchByProductImageTypeRcd(string productImageTypeRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_image_type_rcd = @product_image_type_rcd
@@ -310,8 +367,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_image_type_rcd", SqlDbType.NVarChar).Value = productImageTypeRcd.Replace("'","''");
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -327,6 +390,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchByProductDocumentationTypeRcd(string productDocumentationTypeRcd) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where product_documentation_type_rcd = @product_documentation_type_rcd
@@ -343,8 +410,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_documentation_type_rcd", SqlDbType.NVarChar).Value = productDocumentationTypeRcd.Replace("'","''");
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -360,6 +433,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchAll() {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]";
 
@@ -371,8 +448,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -388,6 +471,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchAllWithLimit(int limit) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top " + limit.ToString() + @" product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]";
 
@@ -399,8 +486,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -416,6 +509,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]";
 
@@ -427,10 +524,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
                     int count = 0;
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
                             var data = new CrudeProductFieldSetMappingData();
@@ -448,6 +551,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // get a count of rows in table
         public static int FetchAllCount() {
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select count(*) as count from [product_field_set_mapping]";
 
             // open standard connection
@@ -459,6 +566,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 int count = 0;
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
@@ -473,6 +583,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductFieldSetMappingData> FetchWithFilter(System.Guid productFieldSetMappingId, System.Guid productFieldSetId, string productIdentifierRcd, string productAttributeRcd, string productInfoRcd, string productImageTypeRcd, string productDocumentationTypeRcd, System.Guid userId, System.DateTime dateTime) {
             var dataList = new List<CrudeProductFieldSetMappingData>();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time
                             from [product_field_set_mapping]
                             where 1 = 1";
@@ -524,8 +638,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     command.CommandText = sql;
 
+                    // execute query against product_field_set_mapping
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_field_set_mapping
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductFieldSetMappingData();
                         data.Populate(reader);
@@ -556,6 +676,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (ProductFieldSetMappingId == Guid.Empty)
                 ProductFieldSetMappingId = Guid.NewGuid();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [product_field_set_mapping] (product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time)";
             sql += "            values (@product_field_set_mapping_id, @product_field_set_id, @product_identifier_rcd, @product_attribute_rcd, @product_info_rcd, @product_image_type_rcd, @product_documentation_type_rcd, @user_id, @date_time)";
 
@@ -566,6 +690,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 connection.Open();
 
                 using (var command = new SqlCommand(sql, connection)) {
+                    // add column(s) to insert as parameter
+                    // the insert column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetMappingId;
                     command.Parameters.Add("@product_field_set_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetId;
                     command.Parameters.Add("@product_identifier_rcd",SqlDbType.NVarChar).Value = (System.String)ProductIdentifierRcd;
@@ -575,6 +701,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@product_documentation_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductDocumentationTypeRcd;
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against product_field_set_mapping
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -588,6 +718,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (ProductFieldSetMappingId == Guid.Empty)
                 ProductFieldSetMappingId = Guid.NewGuid();
 
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [product_field_set_mapping] (product_field_set_mapping_id, product_field_set_id, product_identifier_rcd, product_attribute_rcd, product_info_rcd, product_image_type_rcd, product_documentation_type_rcd, user_id, date_time)";
             sql += "            values (@product_field_set_mapping_id, @product_field_set_id, @product_identifier_rcd, @product_attribute_rcd, @product_info_rcd, @product_image_type_rcd, @product_documentation_type_rcd, @user_id, @date_time)";
 
@@ -595,6 +729,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // transaction scope etc is determined by caller
             // there are no result from this action, SqlClient will raise an exception in case
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to insert as parameter(s)
+                // the insert column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetMappingId;
                 command.Parameters.Add("@product_field_set_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetId;
                 command.Parameters.Add("@product_identifier_rcd",SqlDbType.NVarChar).Value = (System.String)ProductIdentifierRcd;
@@ -604,12 +740,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@product_documentation_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductDocumentationTypeRcd;
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against product_field_set_mapping
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // update all object members on a row in table based on primary key
         public void Update() {
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [product_field_set_mapping] set
                  product_field_set_mapping_id = @product_field_set_mapping_id
                 ,product_field_set_id = @product_field_set_id
@@ -630,6 +774,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // add column(s) to update as parameter(s)
+                    // the update column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetMappingId;
                     command.Parameters.Add("@product_field_set_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetId;
                     command.Parameters.Add("@product_identifier_rcd",SqlDbType.NVarChar).Value = (System.String)ProductIdentifierRcd;
@@ -639,6 +785,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@product_documentation_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductDocumentationTypeRcd;
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against product_field_set_mapping
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -646,6 +796,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [product_field_set_mapping] set
                  product_field_set_mapping_id = @product_field_set_mapping_id
                 ,product_field_set_id = @product_field_set_id
@@ -662,6 +816,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to update as parameter
+                // the update column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetMappingId;
                 command.Parameters.Add("@product_field_set_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductFieldSetId;
                 command.Parameters.Add("@product_identifier_rcd",SqlDbType.NVarChar).Value = (System.String)ProductIdentifierRcd;
@@ -671,12 +827,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@product_documentation_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductDocumentationTypeRcd;
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against product_field_set_mapping
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // delete a row in table based on primary key
         public static void Delete(System.Guid productFieldSetMappingId) {
+            // create query against product_field_set_mapping
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" delete [product_field_set_mapping] 
                 where product_field_set_mapping_id = @product_field_set_mapping_id";
 
@@ -687,7 +851,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_field_set_mapping_id",SqlDbType.UniqueIdentifier).Value = productFieldSetMappingId;
+                    // execute query against product_field_set_mapping
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }

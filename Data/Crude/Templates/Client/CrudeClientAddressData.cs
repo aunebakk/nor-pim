@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/22/2020 9:24:04 AM
+  Generated Date: 7/30/2020 6:40:13 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -130,9 +130,12 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = clientAddressId;
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                    // populate serialized class if row was found
+                    // populate serialized class if a row was found
                     if (reader.Read())
                         ret.Populate(reader);
                 }
@@ -145,6 +148,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeClientAddressData> FetchByClientId(System.Guid clientId) {
             var dataList = new List<CrudeClientAddressData>();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             where client_id = @client_id
@@ -162,8 +169,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = clientId;
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of client_address
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeClientAddressData();
                         data.Populate(reader);
@@ -179,6 +192,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeClientAddressData> FetchByUserId(System.Guid userId) {
             var dataList = new List<CrudeClientAddressData>();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             where user_id = @user_id
@@ -196,8 +213,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of client_address
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeClientAddressData();
                         data.Populate(reader);
@@ -213,6 +236,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeClientAddressData> FetchByClientAddressTypeRcd(string clientAddressTypeRcd) {
             var dataList = new List<CrudeClientAddressData>();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             where client_address_type_rcd = @client_address_type_rcd
@@ -230,8 +257,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = clientAddressTypeRcd.Replace("'","''");
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of client_address
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeClientAddressData();
                         data.Populate(reader);
@@ -245,6 +278,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // fetch by Picker Member into new class instance
         public void FetchByAddressLineOneName(string addressLineOneName) {
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             where address_line_one_name like '%' + @addressLineOneName + '%'
@@ -262,6 +299,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@addressLineOneName",SqlDbType.NVarChar).Value = addressLineOneName;
 
+                // execute query against client_address
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                 if (reader.Read())
@@ -273,6 +313,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeClientAddressData> FetchAll() {
             var dataList = new List<CrudeClientAddressData>();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             order by address_line_one_name";
@@ -285,8 +329,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of client_address
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeClientAddressData();
                         data.Populate(reader);
@@ -302,6 +352,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeClientAddressData> FetchAllWithLimit(int limit) {
             var dataList = new List<CrudeClientAddressData>();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top " + limit.ToString() + @" client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             order by address_line_one_name";
@@ -314,8 +368,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of client_address
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeClientAddressData();
                         data.Populate(reader);
@@ -331,6 +391,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeClientAddressData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeClientAddressData>();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             order by address_line_one_name";
@@ -343,10 +407,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
                     int count = 0;
 
+                    // read all rows returned from the query of client_address
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
                             var data = new CrudeClientAddressData();
@@ -364,6 +434,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // get a count of rows in table
         public static int FetchAllCount() {
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select count(*) as count from [client_address]";
 
             // open standard connection
@@ -375,6 +449,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 int count = 0;
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
@@ -405,6 +482,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     System.DateTime dateTime) {
             var dataList = new List<CrudeClientAddressData>();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time
                             from [client_address]
                             where 1 = 1";
@@ -486,8 +567,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                     command.CommandText = sql;
 
+                    // execute query against client_address
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of client_address
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeClientAddressData();
                         data.Populate(reader);
@@ -525,6 +612,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (ClientAddressId == Guid.Empty)
                 ClientAddressId = Guid.NewGuid();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [client_address] (client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time)";
             sql += "            values (@client_address_id, @client_id, @client_address_type_rcd, @address_line_one_name, @address_line_two_name, @address_line_three_name, @city_name, @street_name, @state_name, @district_name, @province_name, @zip_code, @po_box, @comment, @user_id, @date_time)";
 
@@ -535,6 +626,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 connection.Open();
 
                 using (var command = new SqlCommand(sql, connection)) {
+                    // add column(s) to insert as parameter
+                    // the insert column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
                     command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
                     command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
@@ -551,6 +644,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against client_address
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -564,6 +661,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (ClientAddressId == Guid.Empty)
                 ClientAddressId = Guid.NewGuid();
 
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [client_address] (client_address_id, client_id, client_address_type_rcd, address_line_one_name, address_line_two_name, address_line_three_name, city_name, street_name, state_name, district_name, province_name, zip_code, po_box, comment, user_id, date_time)";
             sql += "            values (@client_address_id, @client_id, @client_address_type_rcd, @address_line_one_name, @address_line_two_name, @address_line_three_name, @city_name, @street_name, @state_name, @district_name, @province_name, @zip_code, @po_box, @comment, @user_id, @date_time)";
 
@@ -571,6 +672,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // transaction scope etc is determined by caller
             // there are no result from this action, SqlClient will raise an exception in case
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to insert as parameter(s)
+                // the insert column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
                 command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
                 command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
@@ -587,12 +690,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against client_address
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // update all object members on a row in table based on primary key
         public void Update() {
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [client_address] set
                  client_address_id = @client_address_id
                 ,client_id = @client_id
@@ -620,6 +731,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // add column(s) to update as parameter(s)
+                    // the update column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
                     command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
                     command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
@@ -636,6 +749,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against client_address
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -643,6 +760,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [client_address] set
                  client_address_id = @client_address_id
                 ,client_id = @client_id
@@ -666,6 +787,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to update as parameter
+                // the update column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
                 command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
                 command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
@@ -682,12 +805,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against client_address
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // delete a row in table based on primary key
         public static void Delete(System.Guid clientAddressId) {
+            // create query against client_address
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" delete [client_address] 
                 where client_address_id = @client_address_id";
 
@@ -698,7 +829,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = clientAddressId;
+                    // execute query against client_address
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }

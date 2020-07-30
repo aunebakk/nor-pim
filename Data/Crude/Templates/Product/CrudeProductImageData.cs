@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/22/2020 9:24:04 AM
+  Generated Date: 7/30/2020 6:40:14 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -112,9 +112,12 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_image_id",SqlDbType.UniqueIdentifier).Value = productImageId;
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                    // populate serialized class if row was found
+                    // populate serialized class if a row was found
                     if (reader.Read())
                         ret.Populate(reader);
                 }
@@ -127,6 +130,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductImageData> FetchByProductId(System.Guid productId) {
             var dataList = new List<CrudeProductImageData>();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             where product_id = @product_id
@@ -144,8 +151,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_image
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductImageData();
                         data.Populate(reader);
@@ -161,6 +174,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductImageData> FetchByUserId(System.Guid userId) {
             var dataList = new List<CrudeProductImageData>();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             where user_id = @user_id
@@ -178,8 +195,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_image
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductImageData();
                         data.Populate(reader);
@@ -195,6 +218,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductImageData> FetchByProductImageTypeRcd(string productImageTypeRcd) {
             var dataList = new List<CrudeProductImageData>();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             where product_image_type_rcd = @product_image_type_rcd
@@ -212,8 +239,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_image_type_rcd", SqlDbType.NVarChar).Value = productImageTypeRcd.Replace("'","''");
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_image
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductImageData();
                         data.Populate(reader);
@@ -227,6 +260,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // fetch by Picker Member into new class instance
         public void FetchByImageFileName(string imageFileName) {
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             where image_file_name like '%' + @imageFileName + '%'
@@ -244,6 +281,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@imageFileName",SqlDbType.NVarChar).Value = imageFileName;
 
+                // execute query against product_image
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                 if (reader.Read())
@@ -255,6 +295,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductImageData> FetchAll() {
             var dataList = new List<CrudeProductImageData>();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             order by image_file_name";
@@ -267,8 +311,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_image
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductImageData();
                         data.Populate(reader);
@@ -284,6 +334,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductImageData> FetchAllWithLimit(int limit) {
             var dataList = new List<CrudeProductImageData>();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top " + limit.ToString() + @" product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             order by image_file_name";
@@ -296,8 +350,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_image
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductImageData();
                         data.Populate(reader);
@@ -313,6 +373,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductImageData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeProductImageData>();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             order by image_file_name";
@@ -325,10 +389,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
                     int count = 0;
 
+                    // read all rows returned from the query of product_image
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
                             var data = new CrudeProductImageData();
@@ -346,6 +416,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // get a count of rows in table
         public static int FetchAllCount() {
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select count(*) as count from [product_image]";
 
             // open standard connection
@@ -357,6 +431,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 int count = 0;
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
@@ -371,6 +448,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeProductImageData> FetchWithFilter(System.Guid productImageId, System.Guid productId, string productImageTypeRcd, string imageFileName, byte[] image, System.Guid userId, System.DateTime dateTime) {
             var dataList = new List<CrudeProductImageData>();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time
                             from [product_image]
                             where 1 = 1";
@@ -416,8 +497,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                     command.CommandText = sql;
 
+                    // execute query against product_image
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of product_image
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeProductImageData();
                         data.Populate(reader);
@@ -446,6 +533,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (ProductImageId == Guid.Empty)
                 ProductImageId = Guid.NewGuid();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [product_image] (product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time)";
             sql += "            values (@product_image_id, @product_id, @product_image_type_rcd, @image_file_name, @image, @user_id, @date_time)";
 
@@ -456,6 +547,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 connection.Open();
 
                 using (var command = new SqlCommand(sql, connection)) {
+                    // add column(s) to insert as parameter
+                    // the insert column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_image_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductImageId;
                     command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                     command.Parameters.Add("@product_image_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductImageTypeRcd;
@@ -463,6 +556,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@image",SqlDbType.VarBinary).Value = (Image == null ? (object)DBNull.Value : (System.Byte[])Image);
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against product_image
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -476,6 +573,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (ProductImageId == Guid.Empty)
                 ProductImageId = Guid.NewGuid();
 
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [product_image] (product_image_id, product_id, product_image_type_rcd, image_file_name, image, user_id, date_time)";
             sql += "            values (@product_image_id, @product_id, @product_image_type_rcd, @image_file_name, @image, @user_id, @date_time)";
 
@@ -483,6 +584,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // transaction scope etc is determined by caller
             // there are no result from this action, SqlClient will raise an exception in case
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to insert as parameter(s)
+                // the insert column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@product_image_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductImageId;
                 command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                 command.Parameters.Add("@product_image_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductImageTypeRcd;
@@ -490,12 +593,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@image",SqlDbType.VarBinary).Value = (Image == null ? (object)DBNull.Value : (System.Byte[])Image);
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against product_image
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // update all object members on a row in table based on primary key
         public void Update() {
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [product_image] set
                  product_image_id = @product_image_id
                 ,product_id = @product_id
@@ -514,6 +625,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // add column(s) to update as parameter(s)
+                    // the update column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_image_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductImageId;
                     command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                     command.Parameters.Add("@product_image_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductImageTypeRcd;
@@ -521,6 +634,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@image",SqlDbType.VarBinary).Value = (Image == null ? (object)DBNull.Value : (System.Byte[])Image);
                     command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against product_image
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -528,6 +645,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [product_image] set
                  product_image_id = @product_image_id
                 ,product_id = @product_id
@@ -542,6 +663,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to update as parameter
+                // the update column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@product_image_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductImageId;
                 command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
                 command.Parameters.Add("@product_image_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductImageTypeRcd;
@@ -549,12 +672,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@image",SqlDbType.VarBinary).Value = (Image == null ? (object)DBNull.Value : (System.Byte[])Image);
                 command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against product_image
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // delete a row in table based on primary key
         public static void Delete(System.Guid productImageId) {
+            // create query against product_image
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" delete [product_image] 
                 where product_image_id = @product_image_id";
 
@@ -565,7 +696,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_image_id",SqlDbType.UniqueIdentifier).Value = productImageId;
+                    // execute query against product_image
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/22/2020 9:24:04 AM
+  Generated Date: 7/30/2020 6:40:13 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -106,9 +106,12 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_rule_id",SqlDbType.UniqueIdentifier).Value = defaultRuleId;
 
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                    // populate serialized class if row was found
+                    // populate serialized class if a row was found
                     if (reader.Read())
                         ret.Populate(reader);
                 }
@@ -121,6 +124,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeDefaultRuleData> FetchByDefaultUserId(System.Guid defaultUserId) {
             var dataList = new List<CrudeDefaultRuleData>();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select default_rule_id, default_rule_type_rcd, address, default_user_id, date_time
                             from [default_rule]
                             where default_user_id = @default_user_id
@@ -137,8 +144,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = defaultUserId;
 
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of default_rule
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeDefaultRuleData();
                         data.Populate(reader);
@@ -154,6 +167,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeDefaultRuleData> FetchByDefaultRuleTypeRcd(string defaultRuleTypeRcd) {
             var dataList = new List<CrudeDefaultRuleData>();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select default_rule_id, default_rule_type_rcd, address, default_user_id, date_time
                             from [default_rule]
                             where default_rule_type_rcd = @default_rule_type_rcd
@@ -170,8 +187,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_rule_type_rcd", SqlDbType.NVarChar).Value = defaultRuleTypeRcd.Replace("'","''");
 
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of default_rule
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeDefaultRuleData();
                         data.Populate(reader);
@@ -187,6 +210,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeDefaultRuleData> FetchAll() {
             var dataList = new List<CrudeDefaultRuleData>();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select default_rule_id, default_rule_type_rcd, address, default_user_id, date_time
                             from [default_rule]";
 
@@ -198,8 +225,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of default_rule
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeDefaultRuleData();
                         data.Populate(reader);
@@ -215,6 +248,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeDefaultRuleData> FetchAllWithLimit(int limit) {
             var dataList = new List<CrudeDefaultRuleData>();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top " + limit.ToString() + @" default_rule_id, default_rule_type_rcd, address, default_user_id, date_time
                             from [default_rule]";
 
@@ -226,8 +263,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of default_rule
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeDefaultRuleData();
                         data.Populate(reader);
@@ -243,6 +286,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeDefaultRuleData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeDefaultRuleData>();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select default_rule_id, default_rule_type_rcd, address, default_user_id, date_time
                             from [default_rule]";
 
@@ -254,10 +301,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
                     int count = 0;
 
+                    // read all rows returned from the query of default_rule
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
                             var data = new CrudeDefaultRuleData();
@@ -275,6 +328,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // get a count of rows in table
         public static int FetchAllCount() {
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select count(*) as count from [default_rule]";
 
             // open standard connection
@@ -286,6 +343,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 int count = 0;
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
@@ -300,6 +360,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeDefaultRuleData> FetchWithFilter(System.Guid defaultRuleId, string defaultRuleTypeRcd, string address, System.Guid defaultUserId, System.DateTime dateTime) {
             var dataList = new List<CrudeDefaultRuleData>();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select default_rule_id, default_rule_type_rcd, address, default_user_id, date_time
                             from [default_rule]
                             where 1 = 1";
@@ -335,8 +399,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     command.CommandText = sql;
 
+                    // execute query against default_rule
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of default_rule
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeDefaultRuleData();
                         data.Populate(reader);
@@ -363,6 +433,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (DefaultRuleId == Guid.Empty)
                 DefaultRuleId = Guid.NewGuid();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [default_rule] (default_rule_id, default_rule_type_rcd, address, default_user_id, date_time)";
             sql += "            values (@default_rule_id, @default_rule_type_rcd, @address, @default_user_id, @date_time)";
 
@@ -373,11 +447,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 connection.Open();
 
                 using (var command = new SqlCommand(sql, connection)) {
+                    // add column(s) to insert as parameter
+                    // the insert column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_rule_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultRuleId;
                     command.Parameters.Add("@default_rule_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultRuleTypeRcd;
                     command.Parameters.Add("@address",SqlDbType.NVarChar).Value = (System.String)Address;
                     command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultUserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against default_rule
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -391,6 +471,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (DefaultRuleId == Guid.Empty)
                 DefaultRuleId = Guid.NewGuid();
 
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [default_rule] (default_rule_id, default_rule_type_rcd, address, default_user_id, date_time)";
             sql += "            values (@default_rule_id, @default_rule_type_rcd, @address, @default_user_id, @date_time)";
 
@@ -398,17 +482,27 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // transaction scope etc is determined by caller
             // there are no result from this action, SqlClient will raise an exception in case
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to insert as parameter(s)
+                // the insert column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@default_rule_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultRuleId;
                 command.Parameters.Add("@default_rule_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultRuleTypeRcd;
                 command.Parameters.Add("@address",SqlDbType.NVarChar).Value = (System.String)Address;
                 command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultUserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against default_rule
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // update all object members on a row in table based on primary key
         public void Update() {
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [default_rule] set
                  default_rule_id = @default_rule_id
                 ,default_rule_type_rcd = @default_rule_type_rcd
@@ -425,11 +519,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // add column(s) to update as parameter(s)
+                    // the update column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_rule_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultRuleId;
                     command.Parameters.Add("@default_rule_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultRuleTypeRcd;
                     command.Parameters.Add("@address",SqlDbType.NVarChar).Value = (System.String)Address;
                     command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultUserId;
                     command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    // execute query against default_rule
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -437,6 +537,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [default_rule] set
                  default_rule_id = @default_rule_id
                 ,default_rule_type_rcd = @default_rule_type_rcd
@@ -449,17 +553,27 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to update as parameter
+                // the update column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@default_rule_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultRuleId;
                 command.Parameters.Add("@default_rule_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultRuleTypeRcd;
                 command.Parameters.Add("@address",SqlDbType.NVarChar).Value = (System.String)Address;
                 command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultUserId;
                 command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                // execute query against default_rule
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // delete a row in table based on primary key
         public static void Delete(System.Guid defaultRuleId) {
+            // create query against default_rule
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" delete [default_rule] 
                 where default_rule_id = @default_rule_id";
 
@@ -470,7 +584,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_rule_id",SqlDbType.UniqueIdentifier).Value = defaultRuleId;
+                    // execute query against default_rule
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }

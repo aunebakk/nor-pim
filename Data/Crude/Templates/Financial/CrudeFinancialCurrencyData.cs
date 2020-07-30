@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/22/2020 9:24:04 AM
+  Generated Date: 7/30/2020 6:40:13 AM
   From Machine: DESKTOP-00MSEIL
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -122,9 +122,12 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                    // populate serialized class if row was found
+                    // populate serialized class if a row was found
                     if (reader.Read())
                         ret.Populate(reader);
                 }
@@ -137,6 +140,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeFinancialCurrencyData> FetchByUserId(System.Guid userId) {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             where user_id = @user_id
@@ -154,8 +161,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of financial_currency
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeFinancialCurrencyData();
                         data.Populate(reader);
@@ -171,6 +184,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeFinancialCurrencyData> FetchByFinancialCurrencyTypeRcd(string financialCurrencyTypeRcd) {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             where financial_currency_type_rcd = @financial_currency_type_rcd
@@ -188,8 +205,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_type_rcd", SqlDbType.NVarChar).Value = financialCurrencyTypeRcd.Replace("'","''");
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of financial_currency
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeFinancialCurrencyData();
                         data.Populate(reader);
@@ -205,6 +228,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeFinancialCurrencyData> FetchByFinancialCurrencyAgainstFinancialCurrencyTypeRcd(string financialCurrencyAgainstFinancialCurrencyTypeRcd) {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             where financial_currency_against_financial_currency_type_rcd = @financial_currency_against_financial_currency_type_rcd
@@ -222,8 +249,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_against_financial_currency_type_rcd", SqlDbType.NVarChar).Value = financialCurrencyAgainstFinancialCurrencyTypeRcd.Replace("'","''");
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of financial_currency
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeFinancialCurrencyData();
                         data.Populate(reader);
@@ -237,6 +270,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // fetch by Picker Member into new class instance
         public void FetchByFinancialCurrencyTypeName(string financialCurrencyTypeName) {
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top 1 financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             where financial_currency_type_name like '%' + @financialCurrencyTypeName + '%'
@@ -254,6 +291,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // this search column will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@financialCurrencyTypeName",SqlDbType.NVarChar).Value = financialCurrencyTypeName;
 
+                // execute query against financial_currency
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                 if (reader.Read())
@@ -265,6 +305,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeFinancialCurrencyData> FetchAll() {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             order by financial_currency_type_name";
@@ -277,8 +321,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of financial_currency
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeFinancialCurrencyData();
                         data.Populate(reader);
@@ -294,6 +344,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeFinancialCurrencyData> FetchAllWithLimit(int limit) {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select top " + limit.ToString() + @" financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             order by financial_currency_type_name";
@@ -306,8 +360,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of financial_currency
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeFinancialCurrencyData();
                         data.Populate(reader);
@@ -323,6 +383,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeFinancialCurrencyData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             order by financial_currency_type_name";
@@ -335,10 +399,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
                     int count = 0;
 
+                    // read all rows returned from the query of financial_currency
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
                             var data = new CrudeFinancialCurrencyData();
@@ -356,6 +426,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // get a count of rows in table
         public static int FetchAllCount() {
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select count(*) as count from [financial_currency]";
 
             // open standard connection
@@ -367,6 +441,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 int count = 0;
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
@@ -381,6 +458,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public static List<CrudeFinancialCurrencyData> FetchWithFilter(System.Guid financialCurrencyId, string financialCurrencyTypeRcd, string financialCurrencyAgainstFinancialCurrencyTypeRcd, System.Guid userId, System.DateTime dateTime, System.DateTime validFromDateTime, System.DateTime validUntilDateTime, decimal amount, decimal equalsAmount, int decimalCount, string financialCurrencyTypeCode, string financialCurrencyTypeName) {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" select financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name
                             from [financial_currency]
                             where 1 = 1";
@@ -446,8 +527,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                     command.CommandText = sql;
 
+                    // execute query against financial_currency
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
+                    // read all rows returned from the query of financial_currency
+                    // read all columns from the datareader and 
+                    //   populate the List of C# objects with them
                     while (reader.Read()) {
                         var data = new CrudeFinancialCurrencyData();
                         data.Populate(reader);
@@ -481,6 +568,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (FinancialCurrencyId == Guid.Empty)
                 FinancialCurrencyId = Guid.NewGuid();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [financial_currency] (financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name)";
             sql += "            values (@financial_currency_id, @financial_currency_type_rcd, @financial_currency_against_financial_currency_type_rcd, @user_id, @date_time, @valid_from_date_time, @valid_until_date_time, @amount, @equals_amount, @decimal_count, @financial_currency_type_code, @financial_currency_type_name)";
 
@@ -491,6 +582,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 connection.Open();
 
                 using (var command = new SqlCommand(sql, connection)) {
+                    // add column(s) to insert as parameter
+                    // the insert column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                     command.Parameters.Add("@financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeRcd;
                     command.Parameters.Add("@financial_currency_against_financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyAgainstFinancialCurrencyTypeRcd;
@@ -503,6 +596,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@decimal_count",SqlDbType.Int).Value = (System.Int32)DecimalCount;
                     command.Parameters.Add("@financial_currency_type_code",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeCode;
                     command.Parameters.Add("@financial_currency_type_name",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeName;
+                    // execute query against financial_currency
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -516,6 +613,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             if (FinancialCurrencyId == Guid.Empty)
                 FinancialCurrencyId = Guid.NewGuid();
 
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = "insert into [financial_currency] (financial_currency_id, financial_currency_type_rcd, financial_currency_against_financial_currency_type_rcd, user_id, date_time, valid_from_date_time, valid_until_date_time, amount, equals_amount, decimal_count, financial_currency_type_code, financial_currency_type_name)";
             sql += "            values (@financial_currency_id, @financial_currency_type_rcd, @financial_currency_against_financial_currency_type_rcd, @user_id, @date_time, @valid_from_date_time, @valid_until_date_time, @amount, @equals_amount, @decimal_count, @financial_currency_type_code, @financial_currency_type_name)";
 
@@ -523,6 +624,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // transaction scope etc is determined by caller
             // there are no result from this action, SqlClient will raise an exception in case
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to insert as parameter(s)
+                // the insert column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                 command.Parameters.Add("@financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeRcd;
                 command.Parameters.Add("@financial_currency_against_financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyAgainstFinancialCurrencyTypeRcd;
@@ -535,12 +638,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@decimal_count",SqlDbType.Int).Value = (System.Int32)DecimalCount;
                 command.Parameters.Add("@financial_currency_type_code",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeCode;
                 command.Parameters.Add("@financial_currency_type_name",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeName;
+                // execute query against financial_currency
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // update all object members on a row in table based on primary key
         public void Update() {
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [financial_currency] set
                  financial_currency_id = @financial_currency_id
                 ,financial_currency_type_rcd = @financial_currency_type_rcd
@@ -564,6 +675,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 using (var command = new SqlCommand(sql, conn)) {
 
+                    // add column(s) to update as parameter(s)
+                    // the update column(s) will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                     command.Parameters.Add("@financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeRcd;
                     command.Parameters.Add("@financial_currency_against_financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyAgainstFinancialCurrencyTypeRcd;
@@ -576,6 +689,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     command.Parameters.Add("@decimal_count",SqlDbType.Int).Value = (System.Int32)DecimalCount;
                     command.Parameters.Add("@financial_currency_type_code",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeCode;
                     command.Parameters.Add("@financial_currency_type_name",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeName;
+                    // execute query against financial_currency
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
@@ -583,6 +700,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" update [financial_currency] set
                  financial_currency_id = @financial_currency_id
                 ,financial_currency_type_rcd = @financial_currency_type_rcd
@@ -602,6 +723,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+                // add column(s) to update as parameter
+                // the update column(s) will be used together with the prepared ansi sql statement
                 command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
                 command.Parameters.Add("@financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeRcd;
                 command.Parameters.Add("@financial_currency_against_financial_currency_type_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyAgainstFinancialCurrencyTypeRcd;
@@ -614,12 +737,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.Parameters.Add("@decimal_count",SqlDbType.Int).Value = (System.Int32)DecimalCount;
                 command.Parameters.Add("@financial_currency_type_code",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeCode;
                 command.Parameters.Add("@financial_currency_type_name",SqlDbType.NVarChar).Value = (System.String)FinancialCurrencyTypeName;
+                // execute query against financial_currency
+                // there is nothing returned from this action
+                // if the query fails in the preprocessor of sql server
+                //   an exception will be raised
                 command.ExecuteNonQuery();
             }
         }
         
         // delete a row in table based on primary key
         public static void Delete(System.Guid financialCurrencyId) {
+            // create query against financial_currency
+            // this will be ansi sql and parameterized
+            // parameterized queries are a good way of preventing sql injection
+            //   and to make sure the query plan is pre-compiled
             string sql = @" delete [financial_currency] 
                 where financial_currency_id = @financial_currency_id";
 
@@ -630,7 +761,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 conn.Open();
 
                 using (var command = new SqlCommand(sql, conn)) {
+                    // add primary key
+                    // this primary key will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
+                    // execute query against financial_currency
+                    // there is nothing returned from this action
+                    // if the query fails in the preprocessor of sql server
+                    //   an exception will be raised
                     command.ExecuteNonQuery();
                 }
             }
