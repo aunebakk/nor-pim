@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/30/2020 6:40:26 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:13 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -16,8 +16,17 @@ using System.Data.SqlClient;
 using System.ServiceModel.Activation;
 using SolutionNorSolutionPim.DataAccessLayer;
 
+// Business Logic Layer
+// the BusinessLogicLayer is where the DataAccessLayer is exposed as
+//  SOAP http services, using Windows Communication Framework
+// links:
+//   https://en.wikipedia.org/wiki/Business_logic: business logic layer
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
+    // this interface is used to expose C# objects as SOAP services using WCF
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     [ServiceContract()]
     public partial interface ICrudeFinancialCurrencyService {
         
@@ -61,8 +70,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         void Delete(System.Guid financialCurrencyId);
     }
     
+    // this class serves as a link to the data access layer between c# and sql server
+    // primarily it calls the data access layer to get to the serialized CRUDE tables data
+    //and transfers that data to a SOAP Contract ready to be exposed through WCF
+    // this contract is an identical representation of financial_currency's columns
+    //  formatted to follow C# casing guidelines ( Pascal casing )
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     public partial class CrudeFinancialCurrencyService : ICrudeFinancialCurrencyService {
         
+        // fetch by Primary key into current object
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   financialCurrencyId: primary key of table financial_currency
         public CrudeFinancialCurrencyContract FetchByFinancialCurrencyId(System.Guid financialCurrencyId) {
             var dataAccessLayer = new CrudeFinancialCurrencyData();
             var contract = new CrudeFinancialCurrencyContract();
@@ -83,14 +105,17 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contract;
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeFinancialCurrencyContract> FetchByUserId(System.Guid userId) {
             return DataListToContractList(CrudeFinancialCurrencyData.FetchByUserId(userId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeFinancialCurrencyContract> FetchByFinancialCurrencyTypeRcd(string financialCurrencyTypeRcd) {
             return DataListToContractList(CrudeFinancialCurrencyData.FetchByFinancialCurrencyTypeRcd(financialCurrencyTypeRcd));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeFinancialCurrencyContract> FetchByFinancialCurrencyAgainstFinancialCurrencyTypeRcd(string financialCurrencyAgainstFinancialCurrencyTypeRcd) {
             return DataListToContractList(CrudeFinancialCurrencyData.FetchByFinancialCurrencyAgainstFinancialCurrencyTypeRcd(financialCurrencyAgainstFinancialCurrencyTypeRcd));
         }

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/30/2020 6:40:28 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:14 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -16,8 +16,17 @@ using System.Data.SqlClient;
 using System.ServiceModel.Activation;
 using SolutionNorSolutionPim.DataAccessLayer;
 
+// Business Logic Layer
+// the BusinessLogicLayer is where the DataAccessLayer is exposed as
+//  SOAP http services, using Windows Communication Framework
+// links:
+//   https://en.wikipedia.org/wiki/Business_logic: business logic layer
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
+    // this interface is used to expose C# objects as SOAP services using WCF
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     [ServiceContract()]
     public partial interface ICrudeProductCategoryService {
         
@@ -64,8 +73,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         void Delete(System.Guid productCategoryId);
     }
     
+    // this class serves as a link to the data access layer between c# and sql server
+    // primarily it calls the data access layer to get to the serialized CRUDE tables data
+    //and transfers that data to a SOAP Contract ready to be exposed through WCF
+    // this contract is an identical representation of product_category's columns
+    //  formatted to follow C# casing guidelines ( Pascal casing )
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     public partial class CrudeProductCategoryService : ICrudeProductCategoryService {
         
+        // fetch by Primary key into current object
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   productCategoryId: primary key of table product_category
         public CrudeProductCategoryContract FetchByProductCategoryId(System.Guid productCategoryId) {
             var dataAccessLayer = new CrudeProductCategoryData();
             var contract = new CrudeProductCategoryContract();
@@ -86,18 +108,22 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contract;
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductCategoryContract> FetchByProductCategoryBecameId(System.Guid productCategoryBecameId) {
             return DataListToContractList(CrudeProductCategoryData.FetchByProductCategoryBecameId(productCategoryBecameId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductCategoryContract> FetchByProductCategoryParentId(System.Guid productCategoryParentId) {
             return DataListToContractList(CrudeProductCategoryData.FetchByProductCategoryParentId(productCategoryParentId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductCategoryContract> FetchByUserId(System.Guid userId) {
             return DataListToContractList(CrudeProductCategoryData.FetchByUserId(userId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductCategoryContract> FetchByStateRcd(string stateRcd) {
             return DataListToContractList(CrudeProductCategoryData.FetchByStateRcd(stateRcd));
         }

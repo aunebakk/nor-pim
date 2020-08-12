@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/30/2020 6:40:32 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:19 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -16,8 +16,17 @@ using System.Data.SqlClient;
 using System.ServiceModel.Activation;
 using SolutionNorSolutionPim.DataAccessLayer;
 
+// Business Logic Layer
+// the BusinessLogicLayer is where the DataAccessLayer is exposed as
+//  SOAP http services, using Windows Communication Framework
+// links:
+//   https://en.wikipedia.org/wiki/Business_logic: business logic layer
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
+    // this interface is used to expose C# objects as SOAP services using WCF
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     [ServiceContract()]
     public partial interface ICrudeProductGatherSourceService {
         
@@ -58,8 +67,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         void Delete(System.Guid productGatherSourceId);
     }
     
+    // this class serves as a link to the data access layer between c# and sql server
+    // primarily it calls the data access layer to get to the serialized CRUDE tables data
+    //and transfers that data to a SOAP Contract ready to be exposed through WCF
+    // this contract is an identical representation of product_gather_source's columns
+    //  formatted to follow C# casing guidelines ( Pascal casing )
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     public partial class CrudeProductGatherSourceService : ICrudeProductGatherSourceService {
         
+        // fetch by Primary key into current object
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   productGatherSourceId: primary key of table product_gather_source
         public CrudeProductGatherSourceContract FetchByProductGatherSourceId(System.Guid productGatherSourceId) {
             var dataAccessLayer = new CrudeProductGatherSourceData();
             var contract = new CrudeProductGatherSourceContract();
@@ -70,14 +92,17 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contract;
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductGatherSourceContract> FetchByProductGatherId(System.Guid productGatherId) {
             return DataListToContractList(CrudeProductGatherSourceData.FetchByProductGatherId(productGatherId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductGatherSourceContract> FetchByUserId(System.Guid userId) {
             return DataListToContractList(CrudeProductGatherSourceData.FetchByUserId(userId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductGatherSourceContract> FetchByProductGatherSourceTypeRcd(string productGatherSourceTypeRcd) {
             return DataListToContractList(CrudeProductGatherSourceData.FetchByProductGatherSourceTypeRcd(productGatherSourceTypeRcd));
         }

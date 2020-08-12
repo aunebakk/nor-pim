@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/30/2020 6:40:22 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:09 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -16,8 +16,17 @@ using System.Data.SqlClient;
 using System.ServiceModel.Activation;
 using SolutionNorSolutionPim.DataAccessLayer;
 
+// Business Logic Layer
+// the BusinessLogicLayer is where the DataAccessLayer is exposed as
+//  SOAP http services, using Windows Communication Framework
+// links:
+//   https://en.wikipedia.org/wiki/Business_logic: business logic layer
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
+    // this interface is used to expose C# objects as SOAP services using WCF
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     [ServiceContract()]
     public partial interface ICrudeDefaultIssueService {
         
@@ -64,8 +73,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         void Delete(System.Guid defaultIssueId);
     }
     
+    // this class serves as a link to the data access layer between c# and sql server
+    // primarily it calls the data access layer to get to the serialized CRUDE tables data
+    //and transfers that data to a SOAP Contract ready to be exposed through WCF
+    // this contract is an identical representation of default_issue's columns
+    //  formatted to follow C# casing guidelines ( Pascal casing )
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     public partial class CrudeDefaultIssueService : ICrudeDefaultIssueService {
         
+        // fetch by Primary key into current object
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   defaultIssueId: primary key of table default_issue
         public CrudeDefaultIssueContract FetchByDefaultIssueId(System.Guid defaultIssueId) {
             var dataAccessLayer = new CrudeDefaultIssueData();
             var contract = new CrudeDefaultIssueContract();
@@ -86,18 +108,22 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contract;
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeDefaultIssueContract> FetchByDefaultErrorId(System.Guid defaultErrorId) {
             return DataListToContractList(CrudeDefaultIssueData.FetchByDefaultErrorId(defaultErrorId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeDefaultIssueContract> FetchByDefaultUserId(System.Guid defaultUserId) {
             return DataListToContractList(CrudeDefaultIssueData.FetchByDefaultUserId(defaultUserId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeDefaultIssueContract> FetchByDefaultIssueTypeRcd(string defaultIssueTypeRcd) {
             return DataListToContractList(CrudeDefaultIssueData.FetchByDefaultIssueTypeRcd(defaultIssueTypeRcd));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeDefaultIssueContract> FetchByDefaultIssueStatusRcd(string defaultIssueStatusRcd) {
             return DataListToContractList(CrudeDefaultIssueData.FetchByDefaultIssueStatusRcd(defaultIssueStatusRcd));
         }

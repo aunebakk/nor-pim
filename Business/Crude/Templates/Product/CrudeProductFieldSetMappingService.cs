@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 7/30/2020 6:40:31 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:18 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -16,8 +16,17 @@ using System.Data.SqlClient;
 using System.ServiceModel.Activation;
 using SolutionNorSolutionPim.DataAccessLayer;
 
+// Business Logic Layer
+// the BusinessLogicLayer is where the DataAccessLayer is exposed as
+//  SOAP http services, using Windows Communication Framework
+// links:
+//   https://en.wikipedia.org/wiki/Business_logic: business logic layer
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
+    // this interface is used to expose C# objects as SOAP services using WCF
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     [ServiceContract()]
     public partial interface ICrudeProductFieldSetMappingService {
         
@@ -70,8 +79,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         void Delete(System.Guid productFieldSetMappingId);
     }
     
+    // this class serves as a link to the data access layer between c# and sql server
+    // primarily it calls the data access layer to get to the serialized CRUDE tables data
+    //and transfers that data to a SOAP Contract ready to be exposed through WCF
+    // this contract is an identical representation of product_field_set_mapping's columns
+    //  formatted to follow C# casing guidelines ( Pascal casing )
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     public partial class CrudeProductFieldSetMappingService : ICrudeProductFieldSetMappingService {
         
+        // fetch by Primary key into current object
+        // links:
+        //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
+        // parameters:
+        //   productFieldSetMappingId: primary key of table product_field_set_mapping
         public CrudeProductFieldSetMappingContract FetchByProductFieldSetMappingId(System.Guid productFieldSetMappingId) {
             var dataAccessLayer = new CrudeProductFieldSetMappingData();
             var contract = new CrudeProductFieldSetMappingContract();
@@ -82,30 +104,37 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contract;
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductFieldSetMappingContract> FetchByProductFieldSetId(System.Guid productFieldSetId) {
             return DataListToContractList(CrudeProductFieldSetMappingData.FetchByProductFieldSetId(productFieldSetId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductFieldSetMappingContract> FetchByUserId(System.Guid userId) {
             return DataListToContractList(CrudeProductFieldSetMappingData.FetchByUserId(userId));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductFieldSetMappingContract> FetchByProductIdentifierRcd(string productIdentifierRcd) {
             return DataListToContractList(CrudeProductFieldSetMappingData.FetchByProductIdentifierRcd(productIdentifierRcd));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductFieldSetMappingContract> FetchByProductAttributeRcd(string productAttributeRcd) {
             return DataListToContractList(CrudeProductFieldSetMappingData.FetchByProductAttributeRcd(productAttributeRcd));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductFieldSetMappingContract> FetchByProductInfoRcd(string productInfoRcd) {
             return DataListToContractList(CrudeProductFieldSetMappingData.FetchByProductInfoRcd(productInfoRcd));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductFieldSetMappingContract> FetchByProductImageTypeRcd(string productImageTypeRcd) {
             return DataListToContractList(CrudeProductFieldSetMappingData.FetchByProductImageTypeRcd(productImageTypeRcd));
         }
         
+        // fetch by Foreign key into new List of class instances
         public List<CrudeProductFieldSetMappingContract> FetchByProductDocumentationTypeRcd(string productDocumentationTypeRcd) {
             return DataListToContractList(CrudeProductFieldSetMappingData.FetchByProductDocumentationTypeRcd(productDocumentationTypeRcd));
         }
