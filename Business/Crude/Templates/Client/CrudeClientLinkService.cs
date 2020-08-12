@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:40:07 AM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 8/12/2020 10:45:34 AM
+  From Machine: DESKTOP-00MSEIL
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -120,6 +120,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return DataListToContractList(CrudeClientLinkData.FetchByClientLinkTypeRcd(clientLinkTypeRcd));
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts
         public static List<CrudeClientLinkContract> DataListToContractList(List<CrudeClientLinkData> dataList) {
             var contractList = new List<CrudeClientLinkContract>();
 
@@ -132,6 +133,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contractList;
         }
         
+        // copy all rows from a List of SOAP Contracts to a List of serialized data objects
         public static void ContractListToDataList(List<CrudeClientLinkContract> contractList, List<CrudeClientLinkData> dataList) {
             foreach (CrudeClientLinkContract contract in contractList) {
                 var data = new CrudeClientLinkData();
@@ -140,6 +142,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             }
         }
         
+        // copy all rows from a List of serialized data objects in CrudeClientLinkData to a List of SOAP Contracts
         public List<CrudeClientLinkContract> FetchAll() {
             var list = new List<CrudeClientLinkContract>();
             List<CrudeClientLinkData> dataList = CrudeClientLinkData.FetchAll();
@@ -153,6 +156,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
+        //  with a limit on number of returned rows and order by columns
         public List<CrudeClientLinkContract> FetchAllWithLimit(int limit) {
             var list = new List<CrudeClientLinkContract>();
             List<CrudeClientLinkData> dataList = CrudeClientLinkData.FetchAllWithLimit(limit);
@@ -166,6 +171,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
+        //  with a limit on number of returned rows and order by columns, starting at a specific row
         public List<CrudeClientLinkContract> FetchAllWithLimitAndOffset(int limit, int offset) {
             var list = new List<CrudeClientLinkContract>();
             List<CrudeClientLinkData> dataList = CrudeClientLinkData.FetchAllWithLimitAndOffset(limit, offset);
@@ -179,10 +186,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // get a count of rows in table
         public int FetchAllCount() {
             return CrudeClientLinkData.FetchAllCount();
         }
         
+        // fetch all rows from table into new List of Contracts, filtered by any column
         public List<CrudeClientLinkContract> FetchWithFilter(System.Guid clientLinkId, System.Guid clientId, string clientLinkTypeRcd, string linkName, string link, System.Guid userId, System.DateTime dateTime) {
             var list = new List<CrudeClientLinkContract>();
             List<CrudeClientLinkData> dataList = CrudeClientLinkData.FetchWithFilter(
@@ -204,34 +213,44 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // insert all object members as a new row in table
         public void Insert(CrudeClientLinkContract contract) {
             var data = new CrudeClientLinkData();
             ContractToData(contract, data);
             data.Insert();
         }
         
+        // insert all object members as a new row in table, in a transaction
+        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
+        // it is the callers responsibility to commit or rollback the transaction
         public void Insert(CrudeClientLinkContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeClientLinkData();
             ContractToData(contract, data);
             data.Insert(connection, transaction);
         }
         
+        // update all object members on a row in table based on primary key
         public void Update(CrudeClientLinkContract contract) {
             var data = new CrudeClientLinkData();
             ContractToData(contract, data);
             data.Update();
         }
         
+        // update all object members on a row in table based on primary key, on a transaction
+        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
+        // it is the callers responsibility to commit or rollback the transaction
         public void Update(CrudeClientLinkContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeClientLinkData();
             ContractToData(contract, data);
             data.Update(connection, transaction);
         }
         
+        // delete a row in table based on primary key
         public void Delete(System.Guid clientLinkId) {
             CrudeClientLinkData.Delete(clientLinkId);
         }
         
+        // copy all columns from a SOAP Contract to a serialized data object
         public static void ContractToData(CrudeClientLinkContract contract, CrudeClientLinkData data) {
             data.ClientLinkId = contract.ClientLinkId;
             data.ClientId = contract.ClientId;
@@ -242,6 +261,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.DateTime = contract.DateTime;
         }
         
+        // copy all columns from a serialized data object to a SOAP Contract
         public static void DataToContract(CrudeClientLinkData data, CrudeClientLinkContract contract) {
             contract.ClientLinkId = data.ClientLinkId;
             contract.ClientId = data.ClientId;

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:40:11 AM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 8/12/2020 10:45:38 AM
+  From Machine: DESKTOP-00MSEIL
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -104,6 +104,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return DataListToContractList(CrudeDefaultSystemSettingRefData.FetchByDefaultUserId(defaultUserId));
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts
         public static List<CrudeDefaultSystemSettingRefContract> DataListToContractList(List<CrudeDefaultSystemSettingRefData> dataList) {
             var contractList = new List<CrudeDefaultSystemSettingRefContract>();
 
@@ -116,6 +117,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contractList;
         }
         
+        // copy all rows from a List of SOAP Contracts to a List of serialized data objects
         public static void ContractListToDataList(List<CrudeDefaultSystemSettingRefContract> contractList, List<CrudeDefaultSystemSettingRefData> dataList) {
             foreach (CrudeDefaultSystemSettingRefContract contract in contractList) {
                 var data = new CrudeDefaultSystemSettingRefData();
@@ -124,6 +126,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             }
         }
         
+        // copy all rows from a List of serialized data objects in CrudeDefaultSystemSettingRefData to a List of SOAP Contracts
         public List<CrudeDefaultSystemSettingRefContract> FetchAll() {
             var list = new List<CrudeDefaultSystemSettingRefContract>();
             List<CrudeDefaultSystemSettingRefData> dataList = CrudeDefaultSystemSettingRefData.FetchAll();
@@ -137,6 +140,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
+        //  with a limit on number of returned rows and order by columns
         public List<CrudeDefaultSystemSettingRefContract> FetchAllWithLimit(int limit) {
             var list = new List<CrudeDefaultSystemSettingRefContract>();
             List<CrudeDefaultSystemSettingRefData> dataList = CrudeDefaultSystemSettingRefData.FetchAllWithLimit(limit);
@@ -150,6 +155,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
+        //  with a limit on number of returned rows and order by columns, starting at a specific row
         public List<CrudeDefaultSystemSettingRefContract> FetchAllWithLimitAndOffset(int limit, int offset) {
             var list = new List<CrudeDefaultSystemSettingRefContract>();
             List<CrudeDefaultSystemSettingRefData> dataList = CrudeDefaultSystemSettingRefData.FetchAllWithLimitAndOffset(limit, offset);
@@ -163,10 +170,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // get a count of rows in table
         public int FetchAllCount() {
             return CrudeDefaultSystemSettingRefData.FetchAllCount();
         }
         
+        // fetch all rows from table into new List of Contracts, filtered by any column
         public List<CrudeDefaultSystemSettingRefContract> FetchWithFilter(string defaultSystemSettingRcd, string defaultSystemSettingName, System.Guid defaultUserId, System.DateTime dateTime) {
             var list = new List<CrudeDefaultSystemSettingRefContract>();
             List<CrudeDefaultSystemSettingRefData> dataList = CrudeDefaultSystemSettingRefData.FetchWithFilter(
@@ -185,34 +194,44 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // insert all object members as a new row in table
         public void Insert(CrudeDefaultSystemSettingRefContract contract) {
             var data = new CrudeDefaultSystemSettingRefData();
             ContractToData(contract, data);
             data.Insert();
         }
         
+        // insert all object members as a new row in table, in a transaction
+        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
+        // it is the callers responsibility to commit or rollback the transaction
         public void Insert(CrudeDefaultSystemSettingRefContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeDefaultSystemSettingRefData();
             ContractToData(contract, data);
             data.Insert(connection, transaction);
         }
         
+        // update all object members on a row in table based on primary key
         public void Update(CrudeDefaultSystemSettingRefContract contract) {
             var data = new CrudeDefaultSystemSettingRefData();
             ContractToData(contract, data);
             data.Update();
         }
         
+        // update all object members on a row in table based on primary key, on a transaction
+        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
+        // it is the callers responsibility to commit or rollback the transaction
         public void Update(CrudeDefaultSystemSettingRefContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeDefaultSystemSettingRefData();
             ContractToData(contract, data);
             data.Update(connection, transaction);
         }
         
+        // delete a row in table based on primary key
         public void Delete(string defaultSystemSettingRcd) {
             CrudeDefaultSystemSettingRefData.Delete(defaultSystemSettingRcd);
         }
         
+        // copy all columns from a SOAP Contract to a serialized data object
         public static void ContractToData(CrudeDefaultSystemSettingRefContract contract, CrudeDefaultSystemSettingRefData data) {
             data.DefaultSystemSettingRcd = contract.DefaultSystemSettingRcd;
             data.DefaultSystemSettingName = contract.DefaultSystemSettingName;
@@ -220,6 +239,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.DateTime = contract.DateTime;
         }
         
+        // copy all columns from a serialized data object to a SOAP Contract
         public static void DataToContract(CrudeDefaultSystemSettingRefData data, CrudeDefaultSystemSettingRefContract contract) {
             contract.DefaultSystemSettingRcd = data.DefaultSystemSettingRcd;
             contract.DefaultSystemSettingName = data.DefaultSystemSettingName;
