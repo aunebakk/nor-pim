@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 10:45:27 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:00 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -210,7 +210,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
-        // fetch all rows from table product_info_ref into new List of class instances
+        // fetch all from table into new List of class instances
         public static List<CrudeProductInfoRefData> FetchAll() {
             var dataList = new List<CrudeProductInfoRefData>();
 
@@ -288,8 +288,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
-        // fetch all from table into new List of class instances, only populating specific columns,
-        //  with a limit on number of returned rows and order by columns starting at a specific row
+        // fetch all from table into new List of class instances, only populating specific columns , with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeProductInfoRefData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeProductInfoRefData>();
 

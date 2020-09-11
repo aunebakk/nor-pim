@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 10:45:40 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:14 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -104,7 +104,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return DataListToContractList(CrudeProductAttributeUnitRefData.FetchByUserId(userId));
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts
         public static List<CrudeProductAttributeUnitRefContract> DataListToContractList(List<CrudeProductAttributeUnitRefData> dataList) {
             var contractList = new List<CrudeProductAttributeUnitRefContract>();
 
@@ -117,7 +116,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contractList;
         }
         
-        // copy all rows from a List of SOAP Contracts to a List of serialized data objects
         public static void ContractListToDataList(List<CrudeProductAttributeUnitRefContract> contractList, List<CrudeProductAttributeUnitRefData> dataList) {
             foreach (CrudeProductAttributeUnitRefContract contract in contractList) {
                 var data = new CrudeProductAttributeUnitRefData();
@@ -126,7 +124,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             }
         }
         
-        // copy all rows from a List of serialized data objects in CrudeProductAttributeUnitRefData to a List of SOAP Contracts
         public List<CrudeProductAttributeUnitRefContract> FetchAll() {
             var list = new List<CrudeProductAttributeUnitRefContract>();
             List<CrudeProductAttributeUnitRefData> dataList = CrudeProductAttributeUnitRefData.FetchAll();
@@ -140,8 +137,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
-        //  with a limit on number of returned rows and order by columns
         public List<CrudeProductAttributeUnitRefContract> FetchAllWithLimit(int limit) {
             var list = new List<CrudeProductAttributeUnitRefContract>();
             List<CrudeProductAttributeUnitRefData> dataList = CrudeProductAttributeUnitRefData.FetchAllWithLimit(limit);
@@ -155,8 +150,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
-        //  with a limit on number of returned rows and order by columns, starting at a specific row
         public List<CrudeProductAttributeUnitRefContract> FetchAllWithLimitAndOffset(int limit, int offset) {
             var list = new List<CrudeProductAttributeUnitRefContract>();
             List<CrudeProductAttributeUnitRefData> dataList = CrudeProductAttributeUnitRefData.FetchAllWithLimitAndOffset(limit, offset);
@@ -170,12 +163,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // get a count of rows in table
         public int FetchAllCount() {
             return CrudeProductAttributeUnitRefData.FetchAllCount();
         }
         
-        // fetch all rows from table into new List of Contracts, filtered by any column
         public List<CrudeProductAttributeUnitRefContract> FetchWithFilter(string productAttributeUnitRcd, string productAttributeUnitName, System.Guid userId, System.DateTime dateTime) {
             var list = new List<CrudeProductAttributeUnitRefContract>();
             List<CrudeProductAttributeUnitRefData> dataList = CrudeProductAttributeUnitRefData.FetchWithFilter(
@@ -194,44 +185,34 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // insert all object members as a new row in table
         public void Insert(CrudeProductAttributeUnitRefContract contract) {
             var data = new CrudeProductAttributeUnitRefData();
             ContractToData(contract, data);
             data.Insert();
         }
         
-        // insert all object members as a new row in table, in a transaction
-        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
-        // it is the callers responsibility to commit or rollback the transaction
         public void Insert(CrudeProductAttributeUnitRefContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeProductAttributeUnitRefData();
             ContractToData(contract, data);
             data.Insert(connection, transaction);
         }
         
-        // update all object members on a row in table based on primary key
         public void Update(CrudeProductAttributeUnitRefContract contract) {
             var data = new CrudeProductAttributeUnitRefData();
             ContractToData(contract, data);
             data.Update();
         }
         
-        // update all object members on a row in table based on primary key, on a transaction
-        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
-        // it is the callers responsibility to commit or rollback the transaction
         public void Update(CrudeProductAttributeUnitRefContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeProductAttributeUnitRefData();
             ContractToData(contract, data);
             data.Update(connection, transaction);
         }
         
-        // delete a row in table based on primary key
         public void Delete(string productAttributeUnitRcd) {
             CrudeProductAttributeUnitRefData.Delete(productAttributeUnitRcd);
         }
         
-        // copy all columns from a SOAP Contract to a serialized data object
         public static void ContractToData(CrudeProductAttributeUnitRefContract contract, CrudeProductAttributeUnitRefData data) {
             data.ProductAttributeUnitRcd = contract.ProductAttributeUnitRcd;
             data.ProductAttributeUnitName = contract.ProductAttributeUnitName;
@@ -239,7 +220,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.DateTime = contract.DateTime;
         }
         
-        // copy all columns from a serialized data object to a SOAP Contract
         public static void DataToContract(CrudeProductAttributeUnitRefData data, CrudeProductAttributeUnitRefContract contract) {
             contract.ProductAttributeUnitRcd = data.ProductAttributeUnitRcd;
             contract.ProductAttributeUnitName = data.ProductAttributeUnitName;

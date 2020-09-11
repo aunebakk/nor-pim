@@ -2,9 +2,9 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 10:45:49 AM
-  From Machine: DESKTOP-00MSEIL
-  Filename: ClientIdentifierTypeRef.json
+  Generated Date: 8/25/2020 5:45:18 AM
+  From Machine: DESKTOP-517I8BU
+  Filename: C:\SQL2XProjects\SolutionNorSolutionPim\Proxy\SchemaTemplates\Client\ClientIdentifierTypeRef.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy
   Documentation:
@@ -15,8 +15,18 @@
 using System.Runtime.Serialization;
 using System.Collections.Generic;
 
+// Client Proxy Layer
+// the ClientProxyLayer is where the SOAP service ties into the Client layer
+//  this layer is used for, among other technologies, dotNetFramework WinForm,
+//  ASP and TypeScript User Interfaces or from one business layer to another
+// links:
+//   https://en.wikipedia.org/wiki/Business_logic: business logic layer
+//   https://www.c-sharpcorner.com/UploadFile/8a67c0/proxy-class-for-the-wcf-service/: client Proxy
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
+    // this class is used to expose reference codes from the database
+    // links:
+    //   https://norsolutionsql2xcore.azurewebsites.net/sql2xIndex#documentation: sql2x.org
     public partial class ClientIdentifierTypeRef {
         
         public const string EmployeeNumber = "ENR";
@@ -24,6 +34,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         public const string PassportNumber = "PNR";
     }
     
+    // this interface is used to consume SOAP Services as C# objects using WCF
+    // links:
+    //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
+    //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICrudeClientIdentifierTypeRefService")]
     public partial interface ICrudeClientIdentifierTypeRefService {

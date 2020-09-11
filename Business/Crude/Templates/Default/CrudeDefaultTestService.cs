@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 10:45:38 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:12 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -104,7 +104,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return DataListToContractList(CrudeDefaultTestData.FetchByUserId(userId));
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts
         public static List<CrudeDefaultTestContract> DataListToContractList(List<CrudeDefaultTestData> dataList) {
             var contractList = new List<CrudeDefaultTestContract>();
 
@@ -117,7 +116,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contractList;
         }
         
-        // copy all rows from a List of SOAP Contracts to a List of serialized data objects
         public static void ContractListToDataList(List<CrudeDefaultTestContract> contractList, List<CrudeDefaultTestData> dataList) {
             foreach (CrudeDefaultTestContract contract in contractList) {
                 var data = new CrudeDefaultTestData();
@@ -126,7 +124,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             }
         }
         
-        // copy all rows from a List of serialized data objects in CrudeDefaultTestData to a List of SOAP Contracts
         public List<CrudeDefaultTestContract> FetchAll() {
             var list = new List<CrudeDefaultTestContract>();
             List<CrudeDefaultTestData> dataList = CrudeDefaultTestData.FetchAll();
@@ -140,8 +137,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
-        //  with a limit on number of returned rows and order by columns
         public List<CrudeDefaultTestContract> FetchAllWithLimit(int limit) {
             var list = new List<CrudeDefaultTestContract>();
             List<CrudeDefaultTestData> dataList = CrudeDefaultTestData.FetchAllWithLimit(limit);
@@ -155,8 +150,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
-        //  with a limit on number of returned rows and order by columns, starting at a specific row
         public List<CrudeDefaultTestContract> FetchAllWithLimitAndOffset(int limit, int offset) {
             var list = new List<CrudeDefaultTestContract>();
             List<CrudeDefaultTestData> dataList = CrudeDefaultTestData.FetchAllWithLimitAndOffset(limit, offset);
@@ -170,12 +163,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // get a count of rows in table
         public int FetchAllCount() {
             return CrudeDefaultTestData.FetchAllCount();
         }
         
-        // fetch all rows from table into new List of Contracts, filtered by any column
         public List<CrudeDefaultTestContract> FetchWithFilter(System.Guid defaultTestId, string systemName, string testArea, string testSubArea, string testAddress, System.Guid userId, System.DateTime dateTime) {
             var list = new List<CrudeDefaultTestContract>();
             List<CrudeDefaultTestData> dataList = CrudeDefaultTestData.FetchWithFilter(
@@ -197,44 +188,34 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // insert all object members as a new row in table
         public void Insert(CrudeDefaultTestContract contract) {
             var data = new CrudeDefaultTestData();
             ContractToData(contract, data);
             data.Insert();
         }
         
-        // insert all object members as a new row in table, in a transaction
-        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
-        // it is the callers responsibility to commit or rollback the transaction
         public void Insert(CrudeDefaultTestContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeDefaultTestData();
             ContractToData(contract, data);
             data.Insert(connection, transaction);
         }
         
-        // update all object members on a row in table based on primary key
         public void Update(CrudeDefaultTestContract contract) {
             var data = new CrudeDefaultTestData();
             ContractToData(contract, data);
             data.Update();
         }
         
-        // update all object members on a row in table based on primary key, on a transaction
-        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
-        // it is the callers responsibility to commit or rollback the transaction
         public void Update(CrudeDefaultTestContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeDefaultTestData();
             ContractToData(contract, data);
             data.Update(connection, transaction);
         }
         
-        // delete a row in table based on primary key
         public void Delete(System.Guid defaultTestId) {
             CrudeDefaultTestData.Delete(defaultTestId);
         }
         
-        // copy all columns from a SOAP Contract to a serialized data object
         public static void ContractToData(CrudeDefaultTestContract contract, CrudeDefaultTestData data) {
             data.DefaultTestId = contract.DefaultTestId;
             data.SystemName = contract.SystemName;
@@ -245,7 +226,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.DateTime = contract.DateTime;
         }
         
-        // copy all columns from a serialized data object to a SOAP Contract
         public static void DataToContract(CrudeDefaultTestData data, CrudeDefaultTestContract contract) {
             contract.DefaultTestId = data.DefaultTestId;
             contract.SystemName = data.SystemName;

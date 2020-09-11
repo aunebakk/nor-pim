@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 10:45:35 AM
-  From Machine: DESKTOP-00MSEIL
+  Generated Date: 8/12/2020 7:40:08 AM
+  From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
 using System;
@@ -120,7 +120,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return DataListToContractList(CrudeDefaultErrorData.FetchByDefaultErrorTypeRcd(defaultErrorTypeRcd));
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts
         public static List<CrudeDefaultErrorContract> DataListToContractList(List<CrudeDefaultErrorData> dataList) {
             var contractList = new List<CrudeDefaultErrorContract>();
 
@@ -133,7 +132,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contractList;
         }
         
-        // copy all rows from a List of SOAP Contracts to a List of serialized data objects
         public static void ContractListToDataList(List<CrudeDefaultErrorContract> contractList, List<CrudeDefaultErrorData> dataList) {
             foreach (CrudeDefaultErrorContract contract in contractList) {
                 var data = new CrudeDefaultErrorData();
@@ -142,7 +140,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             }
         }
         
-        // copy all rows from a List of serialized data objects in CrudeDefaultErrorData to a List of SOAP Contracts
         public List<CrudeDefaultErrorContract> FetchAll() {
             var list = new List<CrudeDefaultErrorContract>();
             List<CrudeDefaultErrorData> dataList = CrudeDefaultErrorData.FetchAll();
@@ -156,8 +153,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
-        //  with a limit on number of returned rows and order by columns
         public List<CrudeDefaultErrorContract> FetchAllWithLimit(int limit) {
             var list = new List<CrudeDefaultErrorContract>();
             List<CrudeDefaultErrorData> dataList = CrudeDefaultErrorData.FetchAllWithLimit(limit);
@@ -171,8 +166,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
-        //  with a limit on number of returned rows and order by columns, starting at a specific row
         public List<CrudeDefaultErrorContract> FetchAllWithLimitAndOffset(int limit, int offset) {
             var list = new List<CrudeDefaultErrorContract>();
             List<CrudeDefaultErrorData> dataList = CrudeDefaultErrorData.FetchAllWithLimitAndOffset(limit, offset);
@@ -186,12 +179,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // get a count of rows in table
         public int FetchAllCount() {
             return CrudeDefaultErrorData.FetchAllCount();
         }
         
-        // fetch all rows from table into new List of Contracts, filtered by any column
         public List<CrudeDefaultErrorContract> FetchWithFilter(System.Guid defaultErrorId, string defaultErrorLayerRcd, string defaultErrorTypeRcd, string layerAddress, string errorMessage, string stackTrace, string methodName, string domainName, string className, System.Guid defaultUserId, System.DateTime dateTime) {
             var list = new List<CrudeDefaultErrorContract>();
             List<CrudeDefaultErrorData> dataList = CrudeDefaultErrorData.FetchWithFilter(
@@ -217,44 +208,34 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
-        // insert all object members as a new row in table
         public void Insert(CrudeDefaultErrorContract contract) {
             var data = new CrudeDefaultErrorData();
             ContractToData(contract, data);
             data.Insert();
         }
         
-        // insert all object members as a new row in table, in a transaction
-        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
-        // it is the callers responsibility to commit or rollback the transaction
         public void Insert(CrudeDefaultErrorContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeDefaultErrorData();
             ContractToData(contract, data);
             data.Insert(connection, transaction);
         }
         
-        // update all object members on a row in table based on primary key
         public void Update(CrudeDefaultErrorContract contract) {
             var data = new CrudeDefaultErrorData();
             ContractToData(contract, data);
             data.Update();
         }
         
-        // update all object members on a row in table based on primary key, on a transaction
-        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
-        // it is the callers responsibility to commit or rollback the transaction
         public void Update(CrudeDefaultErrorContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeDefaultErrorData();
             ContractToData(contract, data);
             data.Update(connection, transaction);
         }
         
-        // delete a row in table based on primary key
         public void Delete(System.Guid defaultErrorId) {
             CrudeDefaultErrorData.Delete(defaultErrorId);
         }
         
-        // copy all columns from a SOAP Contract to a serialized data object
         public static void ContractToData(CrudeDefaultErrorContract contract, CrudeDefaultErrorData data) {
             data.DefaultErrorId = contract.DefaultErrorId;
             data.DefaultErrorLayerRcd = contract.DefaultErrorLayerRcd;
@@ -269,7 +250,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.DateTime = contract.DateTime;
         }
         
-        // copy all columns from a serialized data object to a SOAP Contract
         public static void DataToContract(CrudeDefaultErrorData data, CrudeDefaultErrorContract contract) {
             contract.DefaultErrorId = data.DefaultErrorId;
             contract.DefaultErrorLayerRcd = data.DefaultErrorLayerRcd;
