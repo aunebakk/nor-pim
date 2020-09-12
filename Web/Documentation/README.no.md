@@ -58,7 +58,7 @@
 [ZH_TW]:README.zh_tw.md
 [NL]:README.nl.md
 
-Original kildekode til Apollo 11’s veilednings datamaskin for kommando ( Comanche055 ) og måne (Luminary099) modulene. Digitalisert av follkene ifra Virtual AGC og MIT Museumet. Målet er og være et «repo» for den orginale Apollo 11 kilde koden. «Pull Requests» er ønskelige for problemer som måtte finnes i oversettelser i dette «repositoriet» og de orginale kilde kode bildene til Luminary 099 og Comanche 055, samt bortklemte filer
+Original kildekode til Apollo 11’s veilednings datamaskin for kommando ( Comanche055 ) og måne (Luminary099) modulene. Digitalisert av folkene ifra Virtual AGC og MIT Museet. Målet er og være et «repo» for den originale Apollo 11 kilde koden. «Pull Requests» er ønskelige for problemer som måtte finnes i oversettelser i dette «repository» og de originale kilde kode bildene til Luminary 099 og Comanche 055, samt bortglemte filer
 
 ## Contributing
 
@@ -79,7 +79,7 @@ Luminary099    | Part of the source code for Luminary 1A, the Lunar Module's (LM
 Assembler      | yaYUL
 Contact        | Ron Burkey <info@sandroid.org>
 Website        | www.ibiblio.org/apollo
-Digitalisation | Denne kilde koden er tydet og addoptert fra de digitaliserte bildene som finnes på MIT museumet. Digitaliseringen er utført av Paul Fjeld, og sortert av Deborah Douglas som jobber på museumet. Takk til dere begge.
+Digitalisation | Denne kilde koden er tydet og addoptert fra de digitaliserte bildene som finnes på MIT Museet. Digitaliseringen er utført av Paul Fjeld, og sortert av Deborah Douglas som jobber på Museet. Takk til dere begge.
 
 ### Contract and Approvals
 
@@ -117,3 +117,5 @@ Ralph R. Ragan    | Deputy Director<br>Instrumentation Laboratory | 28 Mar 69
 [ComancheMilestone]:https://github.com/chrislgarry/Apollo-11/milestone/1
 [Luminary]:https://flat.badgen.net/github/milestones/chrislgarry/Apollo-11/2
 [LuminaryMilestone]:https://github.com/chrislgarry/Apollo-11/milestone/2
+
+<!-- translated by Roger Aunebak and Tine Jerndahl -->

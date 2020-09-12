@@ -38,7 +38,7 @@ Kilde koden I dette «repository» var digitalisert manuelt ifra papir utskrifte
 
 ## Nytteprogrammer
 
-GitHub har killdekode/kildekode støtte for «assembly» programering språket AGC ( innebygget ), og de følgene tekst redigerings programmene har også støtte for nøkkel ord fargesetting:
+GitHub har kildekode støtte for «assembly» programering språket AGC ( innebygget ), og de følgene tekst redigerings programmene har også støtte for nøkkel ord fargesetting:
 
 - [Atom][Atom]†
 - [CodeBlocks][CodeBlocks]
@@ -51,7 +51,7 @@ GitHub har killdekode/kildekode støtte for «assembly» programering språket A
 - [Visual Studio Code][VisualStudioCode]†
 - [jEdit][jEdit]
 
-† Supporterer automatisk formattering
+† Supportere automatisk formattering
 
 [Atom]:https://github.com/Alhadis/language-agc
 [CodeBlocks]:https://github.com/virtualagc/virtualagc/tree/master/Contributed/SyntaxHighlight/CodeBlocks
@@ -66,29 +66,28 @@ GitHub har killdekode/kildekode støtte for «assembly» programering språket A
 
 ## Formattering
 
-**Merk:** GitHub og redigerings programmenne nevnt ovenfor vil sørge for at du bruker korrekt formattering av kilde koden.
+**Merk:** GitHub og redigerings programmene nevnt ovenfor vil sørge for at du bruker korrekt formattering av kilde koden.
 
 •	Bruk Tab for innrykk?
 •	Bruk Tab med 8 mellomrom
-•	Ta bort mellomrom og annet som ikke er synelig /synlig på slutten av setninger
+•	Ta bort mellomrom og annet som ikke er synlig på slutten av setninger
 
 ## Hva må jeg sjekke?
 
-Any discrepancies between the scans and the source code in this repository, including:
-Eventuelle avvik ifra de inskannede bildene og kilde koden i dette «repository»/depoet?, inkludert:
+Eventuelle avvik ifra de innskannede bildene og kilde koden i dette «repository», inkludert:
 
 ### Kommentarer
 
-- Kommentarer I denne koden skal stemme helt med den digitaliserte orginalen.
-  - Dette betyr at stave feil også skal bevares og kan bety at kommentarer må legges til eller taes bort
+- Kommentarer I denne koden skal stemme helt med den digitaliserte originalen.
+  - Dette betyr at stave feil også skal bevares og kan bety at kommentarer må legges til eller tas bort
 
 ### Linje Skift
 
--	Linje skift *med* `R0000` i kolonne 1 skal stemme helt med orginalen.
+-	Linje skift *med* `R0000` i kolonne 1 skal stemme helt med originalen.
 -	Linje skift *uten* `R0000` i kolonne 1 skal bare ha en eller to blanke linjer etter seg.
   -	Om det er flere en to blanke linjer skal de fjernes
     -	Linjer med `R0000` i kolonne 1 regnes ikke i slike tilfeller
-  -	I orginalene ble disse skapt av et uskrevet tegn i kolonne 8. Sto det 2 der var der et dobbelt mellomrom ( enkel blank linje ) og om det var 3 så ble det et trippel mellomrom ( to dobble linjer ). Verdiene ifra 4 til 8 var definert, men er ikke i bruk. Les mer om dette i [#159][7]
+  -	I originalen ble disse skapt av et uskrevet tegn i kolonne 8. Sto det 2 der var der et dobbelt mellomrom ( enkel blank linje ) og om det var 3 så ble det et trippel mellomrom ( to dobble linjer ). Verdiene ifra 4 til 8 var definert, men er ikke i bruk. Les mer om dette i [#159][7]
 
 
 For eksempel skal følgende kode:
@@ -117,7 +116,7 @@ R0820
 -	Mellomrom imellom to karakterer i teksten skal respektere følgende regler ( se diskusjon i #316 )
   -	Enkelt mellomrom for nye ord
   -	Dobbelt mellomrom for nye linjer
-  -	Trippel mellomrom for indentering/ fordypninger?
+  -	Trippel mellomrom for innrykk?
 
 For eksempel skal følgende kode:
 
@@ -145,3 +144,5 @@ Før en gjør en «Pull Request» bør man være helt sikker på at forandringer
 [8]:http://www.ibiblio.org/apollo/ScansForConversion/Comanche055/
 [9]:http://www.ibiblio.org/apollo/ScansForConversion/Luminary099/
 [10]:https://github.com/chrislgarry/Apollo-11/pull/316#pullrequestreview-102892741
+
+<!-- translated by Roger Aunebak and Tine Jerndahl -->
