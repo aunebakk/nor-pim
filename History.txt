@@ -96,4 +96,5 @@
 2020.09.11 15:06:09  , Documentation                                              , 80 , 15:06:09 , 15:06:11 , True , False, False, False,         2,      ,    2,      0,          0, , 
 2020.09.11 15:06:21  , DistributeCreation                                         , 88 , 15:06:21 , 15:08:47 , True , False, False, False,       146,      , 6015,      2,         -1, , 
 2020.09.12 12:31:16  , Documentation                                              , 80 , 12:31:16 , 12:31:17 , True , False, False, False,         2,      ,    2,      0,          0, , 
-2020.09.12 12:31:54  , DistributeCreation                                         , 88 , 12:31:54 
+2020.09.12 12:31:54  , DistributeCreation                                         , 88 , 12:31:54 , 12:34:13 , True , False, False, False,       139,      , 6014,      2,         -1, , 
+2020.09.12 12:42:20  , DistributeCreation                                         , 88 , 12:42:20 
