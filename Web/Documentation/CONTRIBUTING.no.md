@@ -51,7 +51,7 @@ GitHub har kildekode støtte for «assembly» programmerings språket AGC ( inne
 - [Visual Studio Code][VisualStudioCode]†
 - [jEdit][jEdit]
 
-† Supportere automatisk formattering
+† Supporterer automatisk formattering
 
 [Atom]:https://github.com/Alhadis/language-agc
 [CodeBlocks]:https://github.com/virtualagc/virtualagc/tree/master/Contributed/SyntaxHighlight/CodeBlocks
@@ -68,9 +68,9 @@ GitHub har kildekode støtte for «assembly» programmerings språket AGC ( inne
 
 **Merk:** GitHub og redigerings programmene nevnt ovenfor vil sørge for at du bruker korrekt formattering av kilde koden.
 
-•	Bruk Tab for innrykk?
-•	Bruk Tab med 8 mellomrom
-•	Ta bort mellomrom og annet som ikke er synlig på slutten av setninger
+-	Bruk Tab for innrykk?
+-	Bruk Tab med 8 mellomrom
+-	Ta bort mellomrom og annet som ikke er synlig på slutten av setninger
 
 ## Hva må jeg sjekke?
 
