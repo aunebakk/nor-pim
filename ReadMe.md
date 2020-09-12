@@ -13,7 +13,7 @@ This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](ht
 ## NorPim
 
 <p align="center">
-  <img alt="VS Code in action" src="https://user-images.githubusercontent.com/1487073/58344409-70473b80-7e0a-11e9-8570-b2efc6f8fa44.png">
+  <img alt="VS Code in action" src="https://norsolutionpim.azurewebsites.net/images/deshboard.png">
 </p>
 
 [NorPim](https://NorPim.com) is a distribution of the `NorPim - OSS` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
