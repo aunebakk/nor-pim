@@ -522,6 +522,8 @@
     <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.deploy" />
     <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.manifest" />
     <Content Include="install\Application Files\WinForm_0_0_0_1\Main\pimlogo.png.deploy" />
+    <Content Include="Documentation\CONTRIBUTING.no.md" />
+    <Content Include="Documentation\README.no.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />

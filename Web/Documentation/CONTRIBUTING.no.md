@@ -31,14 +31,14 @@
 [ZH_CN]:CONTRIBUTING.zh_cn.md
 [ZH_TW]:CONTRIBUTING.zh_tw.md
 
-The source code in this repository was digitized manually from paper printouts, so typos and other discrepancies have been introduced accidentally. The code shall be modified to be made consistent with the scanned printouts:
+Kilde koden I dette «repository» var digitalisert manuelt ifra papir utskrifter, så om det finnes stavefeil og andre avvik skall koden rettes for og reflektere dette.( skrivefeil og andre avvik kan ha blitt innført ved et uhell, og må rettes opp )
 
 - [AGC printouts for Comanche][8]
 - [AGC printouts for Luminary][9]
 
-## Useful Extensions
+## Nytteprogrammer
 
-GitHub has syntax support for the AGC assembly language built-in. Unfortunately your code editor will not, however there are AGC language extensions that provides syntax highlighting for the following editors:
+GitHub har killdekode/kildekode støtte for «assembly» programering språket AGC ( innebygget ), og de følgene tekst redigerings programmene har også støtte for nøkkel ord fargesetting:
 
 - [Atom][Atom]†
 - [CodeBlocks][CodeBlocks]
@@ -51,7 +51,7 @@ GitHub has syntax support for the AGC assembly language built-in. Unfortunately 
 - [Visual Studio Code][VisualStudioCode]†
 - [jEdit][jEdit]
 
-† Supports automatic formatting
+† Supporterer automatisk formattering
 
 [Atom]:https://github.com/Alhadis/language-agc
 [CodeBlocks]:https://github.com/virtualagc/virtualagc/tree/master/Contributed/SyntaxHighlight/CodeBlocks
@@ -64,32 +64,34 @@ GitHub has syntax support for the AGC assembly language built-in. Unfortunately 
 [VisualStudioCode]:https://github.com/wopian/agc-assembly
 [jEdit]:https://github.com/virtualagc/virtualagc/tree/master/Contributed/SyntaxHighlight/jEdit
 
-## Formatting
+## Formattering
 
-**Note:** GitHub and extensions marked above will ensure you're using the correct formatting automatically.
+**Merk:** GitHub og redigerings programmenne nevnt ovenfor vil sørge for at du bruker korrekt formattering av kilde koden.
 
-- Use tab indentation
-- Use tab width of 8
-- Trim trailing whitespace
+•	Bruk Tab for innrykk?
+•	Bruk Tab med 8 mellomrom
+•	Ta bort mellomrom og annet som ikke er synelig /synlig på slutten av setninger
 
-## What do I check?
+## Hva må jeg sjekke?
 
 Any discrepancies between the scans and the source code in this repository, including:
+Eventuelle avvik ifra de inskannede bildene og kilde koden i dette «repository»/depoet?, inkludert:
 
-### Comments
+### Kommentarer
 
-- Comments in the transcribed code should match the scans exactly
-  - This could involve creating a deliberate typo or removing/adding an entire comment.
+- Kommentarer I denne koden skal stemme helt med den digitaliserte orginalen.
+  - Dette betyr at stave feil også skal bevares og kan bety at kommentarer må legges til eller taes bort
 
-### Line breaks
+### Linje Skift
 
-- Line breaks *with* `R0000` in column 1 should match the scans exactly.
-- Line breaks *with**__out__* `R0000` in column 1 should contain only 1 or 2 blank lines in a row.
-  - If there are more than 2 blank lines breaks, strip the extra line breaks.
-    - Lines with `R0000` in column 1 do not count towards this.
-  - In the source images, these were created by an unprinted digit in column 8. A 2 there forced a double space (single blank line) and a 3 forced a triple space (double blank line). Values 4-8 were defined but never used. Read more about it in [#159][7]
+-	Linje skift *med* `R0000` i kolonne 1 skal stemme helt med orginalen.
+-	Linje skift *uten* `R0000` i kolonne 1 skal bare ha en eller to blanke linjer etter seg.
+  -	Om det er flere en to blanke linjer skal de fjernes
+    -	Linjer med `R0000` i kolonne 1 regnes ikke i slike tilfeller
+  -	I orginalene ble disse skapt av et uskrevet tegn i kolonne 8. Sto det 2 der var der et dobbelt mellomrom ( enkel blank linje ) og om det var 3 så ble det et trippel mellomrom ( to dobble linjer ). Verdiene ifra 4 til 8 var definert, men er ikke i bruk. Les mer om dette i [#159][7]
 
-For example the following:
+
+For eksempel skal følgende kode:
 
 ```plain
 R0819   SUBROUTINE TO SKIP...
@@ -100,7 +102,7 @@ R0820
  0821   LAMPTEST  CS  IMODES33
 ```
 
-Should become:
+Se slik ut:
 
 ```plain
 R0819   SUBROUTINE TO SKIP...
@@ -110,30 +112,30 @@ R0820
  0820   LAMPTEST  CS  IMODES33
 ```
 
-### Spaces
+### Mellomrom
 
-- Spaces between two characters in the string should respect the following convention (see the discussion in [#316][10]):
-  - Single space for new words.
-  - Double space for new sentences.
-  - Triple space for indentations.
+-	Mellomrom imellom to karakterer i teksten skal respektere følgende regler ( se diskusjon i #316 )
+  -	Enkelt mellomrom for nye ord
+  -	Dobbelt mellomrom for nye linjer
+  -	Trippel mellomrom for indentering/ fordypninger?
 
-For example the following:
+For eksempel skal følgende kode:
 
 ```plain
 	1)  FOO BAR BAZ QUX QUUX QUUZ. CORGE, GRAULT,
 	GARPLY, WALDO.
 ```
 
-Should become:
+Se slik ut:
 
 ```plain
 	1) FOO BAR BAZ QUX QUUX QUUZ.  CORGE, GRAULT,
 	   GARPLY, WALDO.
 ```
 
-## Note
+## Noter
 
-Before you make a PR, please make sure your changes are consistent with the scans!
+Før en gjør en «Pull Request» bør man være helt sikker på at forandringer er helt lik de digitaliserte bildene!
 
 [0]:https://github.com/chrislgarry/Apollo-11/pull/new/master
 [1]:http://www.ibiblio.org/apollo/ScansForConversion/Luminary099/
