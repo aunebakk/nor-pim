@@ -101,4 +101,5 @@
 2020.09.12 16:43:21  , PublishDotNetFrameworkWebAppToAzure                        , 74 , 16:43:21 , 16:43:39 , True , True , False, False,        18,      ,   29,      0,          0, https://NorSolutionPim.AzureWebSites.net/, 
 2020.09.12 17:28:20  , DistributeCreation                                         , 88 , 17:28:20 , 17:31:18 , True , False, False, False,       178,      , 7117,      2,         -1, , 
 2020.09.12 17:45:19  , DistributeCreation                                         , 88 , 17:45:18 , 17:49:16 , True , False, False, False,       238,      , 7114,      2,         -1, , 
-2020.09.12 18:03:04  , DistributeCreation                                         , 88 , 18:03:04 
+2020.09.12 18:03:04  , DistributeCreation                                         , 88 , 18:03:04 , 18:06:13 , True , False, False, False,       189,      , 7114,      2,         -1, , 
+2020.09.12 18:08:49  , DistributeCreation                                         , 88 , 18:08:48 

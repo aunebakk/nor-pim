@@ -62,7 +62,7 @@ Original kildekode til Apollo 11’s veilednings datamaskin for kommando ( Coman
 
 ## Bidra
 
-Venligst les [CONTRIBUTING.md][7] før en "pull request" åpnes.
+Venligst les [CONTRIBUTING.no.md][7] før en "pull request" åpnes.
 
 ## Kompilere
 
@@ -83,8 +83,6 @@ Digitalisering | Denne kilde koden er tydet og adoptert fra de digitaliserte bil
 ### Kontrakt og godkjenninger
 
 *Fra [CONTRACT_AND_APPROVALS.agc]*
-
-This AGC program shall also be referred to as Colossus 2A.
 
 Dette AGC programmet skal også refereres til som Colossus 2A.
 
@@ -110,7 +108,7 @@ Ralph R. Ragan    | Deputy Director<br>Instrumentation Laboratory | 28 Mar 69
 [4]:http://web.mit.edu/museum/
 [5]:http://www.ibiblio.org/apollo/ScansForConversion/Luminary099/
 [6]:http://www.ibiblio.org/apollo/ScansForConversion/Comanche055/
-[7]:https://github.com/chrislgarry/Apollo-11/blob/master/CONTRIBUTING.md
+[7]:https://github.com/chrislgarry/Apollo-11/blob/master/CONTRIBUTING.no.md
 [8]:https://github.com/rburkey2005/virtualagc
 [SWH]:https://flat.badgen.net/badge/Software%20Heritage/Archive/0B3D91
 [SWH_URL]:https://archive.softwareheritage.org/browse/origin/https://github.com/chrislgarry/Apollo-11/
