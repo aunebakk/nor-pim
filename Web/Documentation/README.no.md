@@ -9,7 +9,7 @@
 [Bahasa Indonesia][ID],
 [Català][CA],
 [Deutsch][DE],
-**Norsk]**,
+**Norsk**,
 [English][EN],
 [Español][ES],
 [Français][FR],
@@ -60,40 +60,42 @@
 
 Original kildekode til Apollo 11’s veilednings datamaskin for kommando ( Comanche055 ) og måne (Luminary099) modulene. Digitalisert av folkene ifra Virtual AGC og MIT Museet. Målet er og være et «repo» for den originale Apollo 11 kilde koden. «Pull Requests» er ønskelige for problemer som måtte finnes i oversettelser i dette «repository» og de originale kilde kode bildene til Luminary 099 og Comanche 055, samt bortglemte filer
 
-## Contributing
+## Bidra
 
 Venligst les [CONTRIBUTING.md][7] før en "pull request" åpnes.
 
-## Compiling
+## Kompilere
 
 Om du er interesert i og kompilere den originale kilde koden så sjekk [Virtual AGC][8].
 
-## Attribution
+## Attribusjon
 
 &nbsp;         | &nbsp;
 :------------- | :-----
-Copyright      | Public domain
-Comanche055    | Part of the source code for Colossus 2A, the Command Module's (CM) Apollo Guidance Computer (AGC) for Apollo 11<br>`Assemble revision 055 of AGC program Comanche by NASA`<br>`2021113-051. 10:28 APR. 1, 1969`
-Luminary099    | Part of the source code for Luminary 1A, the Lunar Module's (LM) Apollo Guidance Computer (AGC) for Apollo 11<br>`Assemble revision 001 of AGC program LMY99 by NASA`<br>`2021112-061. 16:27 JUL. 14, 1969`
+opphavsrett    | Public domain
+Comanche055    | Deler av kilde koden til Colossus 2A, kommando modulen (CM) til Apollo Veiledningsdatamaskin (AGC) til Apollo 11<br>`Revisjon 055 av AGC program Comanche av NASA`<br>`2021113-051. 10:28 APR. 1, 1969`
+Luminary099    | Deler av kilde koden til Luminary 1A, the Lunar Module's (LM) Apollo Veiledningsdatamaskin (AGC) til Apollo 11<br>`Revisjon 001 av AGC program LMY99 av NASA`<br>`2021112-061. 16:27 JUL. 14, 1969`
 Assembler      | yaYUL
-Contact        | Ron Burkey <info@sandroid.org>
-Website        | www.ibiblio.org/apollo
+Kontakt        | Ron Burkey <info@sandroid.org>
+Webside        | www.ibiblio.org/apollo
 Digitalisering | Denne kilde koden er tydet og adoptert fra de digitaliserte bildene som finnes på MIT Museet. Digitaliseringen er utført av Paul Fjeld, og sortert av Deborah Douglas som jobber på Museet. Takk til dere begge.
 
-### Contract and Approvals
+### Kontrakt og godkjenninger
 
-*Derived from [CONTRACT_AND_APPROVALS.agc]*
+*Fra [CONTRACT_AND_APPROVALS.agc]*
 
 This AGC program shall also be referred to as Colossus 2A.
 
+Dette AGC programmet skal også refereres til som Colossus 2A.
+
 Dette programmet brukes i «CM» som spesifisert i rapport `R-577`. Dette programmet var også laget under DST prosjekt `55-23870`, som var sponset av «Manned Spacecraft Center of The National Aeronautics and Space Administration» via kontrakt `NAS 9-4065` med instrumentasjon laboratoriet ved «Massachusetts Institute of Technology, Cambridge, Mass» 
 
-Submitted by         | Role | Date
-:------------------- | :--- | :---
+Innsendt av          | Rolle | Dato
+:------------------- | :---- | :---
 Margaret H. Hamilton | Colossus Programming Leader<br>Apollo Guidance and Navigation | 28 Mar 69
 
-Approved by       | Role | Date
-:---------------- | :--- | :---
+Godkjent av       | Rolle | Dato
+:---------------- | :---- | :---
 Daniel J. Lickly  | Director, Mission Program Development<br>Apollo Guidance and Navigation Program | 28 Mar 69
 Fred H. Martin    | Colossus Project Manager<br>Apollo Guidance and Navigation Program | 28 Mar 69
 Norman E. Sears   | Director, Mission Development<br>Apollo Guidance and Navigation Program | 28 Mar 69

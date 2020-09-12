@@ -2,7 +2,7 @@
 
 🎌
 [Deutsch][DE],
-**Norsk]**,
+**Norsk**,
 [English][EN],
 [Español][ES],
 [Français][FR],
