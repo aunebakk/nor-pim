@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:16 AM
+  Generated Date: 9/12/2020 3:40:53 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeDefaultTestController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeDefaultTestIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeDefaultTestDetails(System.Guid defaultTestId) {
 
@@ -31,6 +39,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultTestEdit(
             System.Guid defaultTestId
@@ -44,6 +53,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultTestEdit([Bind()] CrudeDefaultTestContract contract) {
@@ -59,6 +69,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestCreate(System.Guid? userId) {
             var contract = new CrudeDefaultTestContract();
@@ -73,6 +84,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultTestCreate([Bind()] CrudeDefaultTestContract contract) {
@@ -89,6 +101,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestDelete(
             System.Guid defaultTestId

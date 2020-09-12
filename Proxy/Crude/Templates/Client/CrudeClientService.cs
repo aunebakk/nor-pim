@@ -2,9 +2,9 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/25/2020 10:02:08 AM
+  Generated Date: 9/12/2020 3:39:55 PM
   From Machine: DESKTOP-517I8BU
-  Filename: C:\SQL2XProjects\SolutionNorSolutionPim\Proxy\SchemaTemplates\Client\Client.json
+  Filename: Client.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy
   Documentation:
@@ -16,7 +16,7 @@ using System.Runtime.Serialization;
 using System.Collections.Generic;
 
 // Client Proxy Layer
-// the ClientProxyLayer is where the SOAP service ties into the Client layer
+// the ClientProxyLayer is where the SOAP services ties into the Client layer
 //  this layer is used for, among other technologies, dotNetFramework WinForm,
 //  ASP and TypeScript User Interfaces or from one business layer to another
 // links:

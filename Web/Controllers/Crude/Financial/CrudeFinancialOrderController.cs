@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:24 AM
+  Generated Date: 9/12/2020 3:41:01 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeFinancialOrderController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeFinancialOrderIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeFinancialOrderDetails(System.Guid financialOrderId) {
 
@@ -31,6 +39,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeFinancialOrderEdit(
             System.Guid financialOrderId
@@ -47,6 +56,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeFinancialOrderEdit([Bind()] CrudeFinancialOrderContract contract) {
@@ -64,6 +74,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeFinancialOrderCreate(System.Guid? userId, System.Guid? locationAddressId, System.Guid? financialCurrencyId, System.Guid? clientId) {
             var contract = new CrudeFinancialOrderContract();
@@ -87,6 +98,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeFinancialOrderCreate([Bind()] CrudeFinancialOrderContract contract) {
@@ -103,6 +115,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeFinancialOrderDelete(
             System.Guid financialOrderId

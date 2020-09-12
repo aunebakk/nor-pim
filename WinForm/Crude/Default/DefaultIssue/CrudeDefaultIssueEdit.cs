@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:40:32 AM
+  Generated Date: 9/12/2020 3:40:03 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateEditStyle3
 */
@@ -12,20 +12,29 @@ using System.Windows.Forms;
 using System.IO;
 using SolutionNorSolutionPim.BusinessLogicLayer;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.UserInterface {
 
+    // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeDefaultIssueEdit : Form {
         
+        // holds the contract, with default values if in New modus, and fetched values in Edit modus
         private CrudeDefaultIssueContract _contract;
         
         private Boolean _isNew;
         
+        // Constructs the form with a Save button which is default on Enter
+        //  and a Close button which works with the esc key
         public CrudeDefaultIssueEdit() {
             InitializeComponent();
             this.AcceptButton = buttonSave;
             this.CancelButton = buttonClose;
         }
         
+        // shows the form with default values for comboboxes and pickers
         public void ShowAsAdd() {
             try {
                 _contract = new CrudeDefaultIssueContract();
@@ -39,6 +48,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the form with default values for comboboxes and pickers
         public void ShowAsAddByRules(System.Guid defaultUserId) {
             try {
                 _contract = new CrudeDefaultIssueContract();
@@ -54,6 +64,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows by foreign keys
         public void ShowAsAddByDefaultError(System.Guid defaultErrorId) {
             try {
                 _contract = new CrudeDefaultIssueContract();
@@ -69,6 +80,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows by foreign keys
         public void ShowAsAddByDefaultUser(System.Guid defaultUserId) {
             try {
                 _contract = new CrudeDefaultIssueContract();
@@ -84,6 +96,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows by foreign keys
         public void ShowAsAddByDefaultIssueType(string defaultIssueTypeRcd) {
             try {
                 _contract = new CrudeDefaultIssueContract();
@@ -100,6 +113,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows by foreign keys
         public void ShowAsAddByDefaultIssueStatus(string defaultIssueStatusRcd) {
             try {
                 _contract = new CrudeDefaultIssueContract();
@@ -116,6 +130,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the form with default values for comboboxes and pickers
         public void ShowAsAdd(string defaultIssueTypeRcd, string defaultIssueStatusRcd, System.Guid defaultErrorId, string issueName, string issueDescription, string stepsToReproduce, string link, System.Guid defaultUserId, System.DateTime dateTime, string fixedNote) {
             try {
                 _contract = new CrudeDefaultIssueContract();
@@ -149,6 +164,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the form in edit modus
         public void ShowAsEdit(System.Guid defaultIssueId, System.Guid defaultUserId) {
             var service = new CrudeDefaultIssueServiceClient();
             _isNew = false;
@@ -176,6 +192,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // saves the form
         private void buttonSave_Click(object sender, EventArgs e) {
             var service = new CrudeDefaultIssueServiceClient();
             try {
@@ -204,6 +221,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             Close();
         }
         
+        // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }

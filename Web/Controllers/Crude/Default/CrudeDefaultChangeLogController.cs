@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:00 AM
+  Generated Date: 9/12/2020 3:40:36 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeDefaultChangeLogController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // page with foreign key data
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogByDefaultIssueIndex(System.Guid defaultIssueId) {
             ViewBag.DefaultIssueId = defaultIssueId;
@@ -32,6 +40,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogDetails(System.Guid defaultChangeLogId) {
 
@@ -41,6 +50,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogEdit(
             System.Guid defaultChangeLogId
@@ -68,6 +78,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultChangeLogEdit([Bind()] CrudeDefaultChangeLogContract contract) {
@@ -85,6 +96,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogCreate(System.Guid? defaultUserId, System.Guid? defaultIssueId) {
             var contract = new CrudeDefaultChangeLogContract();
@@ -117,6 +129,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultChangeLogCreate([Bind()] CrudeDefaultChangeLogContract contract) {
@@ -133,6 +146,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogDelete(
             System.Guid defaultChangeLogId

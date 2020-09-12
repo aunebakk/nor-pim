@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 9/11/2020 9:00:47 AM
+  Generated Date: 9/12/2020 3:40:02 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateComboStyle1
 */
@@ -21,7 +21,7 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 //   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.UserInterface {
 
-    // this combobox toolbox class is used to consume Crude SOAP Services through a WCF Proxy Client
+    // this ComboBox UserControl class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class ClientAddressTypeRefCombo : UserControl {
         
         // Constructs the control with an empty ComboBox
@@ -44,7 +44,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
-        // event for when a new item is selected in the combobox
+        // event for when a new item is selected in the ComboBox
         public event EventHandler Picked;
         
         // populates the ComboBox with all rows from the SOAP service

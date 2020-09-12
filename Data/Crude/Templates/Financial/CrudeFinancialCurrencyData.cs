@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:40:00 AM
+  Generated Date: 9/12/2020 3:38:08 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -301,7 +301,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
-        // fetch all from table into new List of class instances
+        // fetch all rows from table financial_currency into new List of class instances
         public static List<CrudeFinancialCurrencyData> FetchAll() {
             var dataList = new List<CrudeFinancialCurrencyData>();
 
@@ -379,7 +379,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             }
         }
         
-        // fetch all from table into new List of class instances, only populating specific columns , with a limit on number of returned rows and order by columns starting at a specific row
+        // fetch all from table into new List of class instances, only populating specific columns,
+        //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeFinancialCurrencyData> FetchAllWithLimitAndOffset(int limit, int offset) {
             var dataList = new List<CrudeFinancialCurrencyData>();
 

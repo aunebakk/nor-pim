@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:40:34 AM
+  Generated Date: 9/12/2020 3:40:06 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateEditStyle3
 */
@@ -12,20 +12,29 @@ using System.Windows.Forms;
 using System.IO;
 using SolutionNorSolutionPim.BusinessLogicLayer;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.UserInterface {
 
+    // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeProductImageEdit : Form {
         
+        // holds the contract, with default values if in New modus, and fetched values in Edit modus
         private CrudeProductImageContract _contract;
         
         private Boolean _isNew;
         
+        // Constructs the form with a Save button which is default on Enter
+        //  and a Close button which works with the esc key
         public CrudeProductImageEdit() {
             InitializeComponent();
             this.AcceptButton = buttonSave;
             this.CancelButton = buttonClose;
         }
         
+        // shows the form with default values for comboboxes and pickers
         public void ShowAsAdd() {
             try {
                 _contract = new CrudeProductImageContract();
@@ -40,6 +49,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the form with default values for comboboxes and pickers
         public void ShowAsAddByRules(System.Guid userId) {
             try {
                 _contract = new CrudeProductImageContract();
@@ -57,6 +67,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows by foreign keys
         public void ShowAsAddByProductImageTypeAndImage(string productImageTypeRcd, byte[] image) {
             try {
                 _contract = new CrudeProductImageContract();
@@ -78,6 +89,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows by foreign keys
         public void ShowAsAddByProduct(System.Guid productId) {
             try {
                 _contract = new CrudeProductImageContract();
@@ -95,6 +107,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the form with default values for comboboxes and pickers
         public void ShowAsAdd(System.Guid productId, string productImageTypeRcd, string imageFileName, byte[] image, System.Guid userId) {
             try {
                 _contract = new CrudeProductImageContract();
@@ -120,6 +133,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the form in edit modus
         public void ShowAsEdit(System.Guid productImageId) {
             var service = new CrudeProductImageServiceClient();
             _isNew = false;
@@ -143,6 +157,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // saves the form
         private void buttonSave_Click(object sender, EventArgs e) {
             var service = new CrudeProductImageServiceClient();
             try {
@@ -166,10 +181,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             Close();
         }
         
+        // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
         
+        // converts the Image type to an Byte array
         private byte[] ImageToByte(Image image) {
             try {
                 var converter = new ImageConverter ();
@@ -180,6 +197,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // converts an Byte array to an Image type
         private Image ByteToImage(byte[] byteArrayIn) {
             try {
                 if ( byteArrayIn.Length == 0 )
@@ -193,6 +211,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // load and show an image
         private void buttonImageLoad_Click(object sender, EventArgs e) {
             try {
                 var file = new OpenFileDialog ();

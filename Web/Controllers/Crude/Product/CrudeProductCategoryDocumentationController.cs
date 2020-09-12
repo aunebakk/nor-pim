@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:29 AM
+  Generated Date: 9/12/2020 3:41:07 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeProductCategoryDocumentationController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeProductCategoryDocumentationIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // page with foreign key data
         [HttpGet]
         public ActionResult CrudeProductCategoryDocumentationByProductCategoryIndex(System.Guid productCategoryId) {
             ViewBag.ProductCategoryId = productCategoryId;
@@ -32,6 +40,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeProductCategoryDocumentationDetails(System.Guid productCategoryDocumentationId) {
 
@@ -41,6 +50,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeProductCategoryDocumentationEdit(
             System.Guid productCategoryDocumentationId
@@ -71,6 +81,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeProductCategoryDocumentationEdit([Bind()] CrudeProductCategoryDocumentationContract contract) {
@@ -88,6 +99,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryDocumentationCreate(System.Guid? productCategoryId, System.Guid? userId) {
             var contract = new CrudeProductCategoryDocumentationContract();
@@ -123,6 +135,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeProductCategoryDocumentationCreate([Bind()] CrudeProductCategoryDocumentationContract contract) {
@@ -139,6 +152,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryDocumentationDelete(
             System.Guid productCategoryDocumentationId

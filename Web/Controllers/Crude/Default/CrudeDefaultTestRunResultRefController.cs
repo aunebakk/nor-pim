@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:18 AM
+  Generated Date: 9/12/2020 3:40:55 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeDefaultTestRunResultRefController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefDetails(System.String defaultTestRunResultRcd) {
 
@@ -31,6 +39,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefEdit(
             System.String defaultTestRunResultRcd
@@ -44,6 +53,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultTestRunResultRefEdit([Bind()] CrudeDefaultTestRunResultRefContract contract) {
@@ -61,6 +71,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefCreate(System.Guid? userId) {
             var contract = new CrudeDefaultTestRunResultRefContract();
@@ -75,6 +86,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultTestRunResultRefCreate([Bind()] CrudeDefaultTestRunResultRefContract contract) {
@@ -91,6 +103,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefDelete(
             System.String defaultTestRunResultRcd

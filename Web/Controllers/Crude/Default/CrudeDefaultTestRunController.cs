@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:17 AM
+  Generated Date: 9/12/2020 3:40:54 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeDefaultTestRunController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeDefaultTestRunIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // page with foreign key data
         [HttpGet]
         public ActionResult CrudeDefaultTestRunByDefaultTestIndex(System.Guid defaultTestId) {
             ViewBag.DefaultTestId = defaultTestId;
@@ -32,6 +40,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeDefaultTestRunDetails(System.Guid defaultTestRunId) {
 
@@ -41,6 +50,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunEdit(
             System.Guid defaultTestRunId
@@ -68,6 +78,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultTestRunEdit([Bind()] CrudeDefaultTestRunContract contract) {
@@ -83,6 +94,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunCreate(System.Guid? defaultTestId, System.Guid? userId) {
             var contract = new CrudeDefaultTestRunContract();
@@ -116,6 +128,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeDefaultTestRunCreate([Bind()] CrudeDefaultTestRunContract contract) {
@@ -132,6 +145,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunDelete(
             System.Guid defaultTestRunId

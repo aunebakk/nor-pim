@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:40:15 AM
+  Generated Date: 9/12/2020 3:39:41 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
@@ -107,6 +107,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return DataListToContractList(CrudeProductCategoryDocumentationData.FetchByProductCategoryDocumentationTypeRcd(productCategoryDocumentationTypeRcd));
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts
         public static List<CrudeProductCategoryDocumentationContract> DataListToContractList(List<CrudeProductCategoryDocumentationData> dataList) {
             var contractList = new List<CrudeProductCategoryDocumentationContract>();
 
@@ -119,6 +120,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return contractList;
         }
         
+        // copy all rows from a List of SOAP Contracts to a List of serialized data objects
         public static void ContractListToDataList(List<CrudeProductCategoryDocumentationContract> contractList, List<CrudeProductCategoryDocumentationData> dataList) {
             foreach (CrudeProductCategoryDocumentationContract contract in contractList) {
                 var data = new CrudeProductCategoryDocumentationData();
@@ -127,6 +129,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             }
         }
         
+        // copy all rows from a List of serialized data objects in CrudeProductCategoryDocumentationData to a List of SOAP Contracts
         public List<CrudeProductCategoryDocumentationContract> FetchAll() {
             var list = new List<CrudeProductCategoryDocumentationContract>();
             List<CrudeProductCategoryDocumentationData> dataList = CrudeProductCategoryDocumentationData.FetchAll();
@@ -140,6 +143,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
+        //  with a limit on number of returned rows and order by columns
         public List<CrudeProductCategoryDocumentationContract> FetchAllWithLimit(int limit) {
             var list = new List<CrudeProductCategoryDocumentationContract>();
             List<CrudeProductCategoryDocumentationData> dataList = CrudeProductCategoryDocumentationData.FetchAllWithLimit(limit);
@@ -153,6 +158,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
+        //  with a limit on number of returned rows and order by columns, starting at a specific row
         public List<CrudeProductCategoryDocumentationContract> FetchAllWithLimitAndOffset(int limit, int offset) {
             var list = new List<CrudeProductCategoryDocumentationContract>();
             List<CrudeProductCategoryDocumentationData> dataList = CrudeProductCategoryDocumentationData.FetchAllWithLimitAndOffset(limit, offset);
@@ -166,10 +173,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // get a count of rows in table
         public int FetchAllCount() {
             return CrudeProductCategoryDocumentationData.FetchAllCount();
         }
         
+        // fetch all rows from table into new List of Contracts, filtered by any column
         public List<CrudeProductCategoryDocumentationContract> FetchWithFilter(System.Guid productCategoryDocumentationId, string productCategoryDocumentationTypeRcd, System.Guid productCategoryId, string documentation, System.Guid userId, System.DateTime dateTime) {
             var list = new List<CrudeProductCategoryDocumentationContract>();
             List<CrudeProductCategoryDocumentationData> dataList = CrudeProductCategoryDocumentationData.FetchWithFilter(
@@ -190,34 +199,44 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return list;
         }
         
+        // insert all object members as a new row in table
         public void Insert(CrudeProductCategoryDocumentationContract contract) {
             var data = new CrudeProductCategoryDocumentationData();
             ContractToData(contract, data);
             data.Insert();
         }
         
+        // insert all object members as a new row in table, in a transaction
+        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
+        // it is the callers responsibility to commit or rollback the transaction
         public void Insert(CrudeProductCategoryDocumentationContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeProductCategoryDocumentationData();
             ContractToData(contract, data);
             data.Insert(connection, transaction);
         }
         
+        // update all object members on a row in table based on primary key
         public void Update(CrudeProductCategoryDocumentationContract contract) {
             var data = new CrudeProductCategoryDocumentationData();
             ContractToData(contract, data);
             data.Update();
         }
         
+        // update all object members on a row in table based on primary key, on a transaction
+        // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
+        // it is the callers responsibility to commit or rollback the transaction
         public void Update(CrudeProductCategoryDocumentationContract contract, SqlConnection connection, SqlTransaction transaction) {
             var data = new CrudeProductCategoryDocumentationData();
             ContractToData(contract, data);
             data.Update(connection, transaction);
         }
         
+        // delete a row in table based on primary key
         public void Delete(System.Guid productCategoryDocumentationId) {
             CrudeProductCategoryDocumentationData.Delete(productCategoryDocumentationId);
         }
         
+        // copy all columns from a SOAP Contract to a serialized data object
         public static void ContractToData(CrudeProductCategoryDocumentationContract contract, CrudeProductCategoryDocumentationData data) {
             data.ProductCategoryDocumentationId = contract.ProductCategoryDocumentationId;
             data.ProductCategoryDocumentationTypeRcd = contract.ProductCategoryDocumentationTypeRcd;
@@ -227,6 +246,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.DateTime = contract.DateTime;
         }
         
+        // copy all columns from a serialized data object to a SOAP Contract
         public static void DataToContract(CrudeProductCategoryDocumentationData data, CrudeProductCategoryDocumentationContract contract) {
             contract.ProductCategoryDocumentationId = data.ProductCategoryDocumentationId;
             contract.ProductCategoryDocumentationTypeRcd = data.ProductCategoryDocumentationTypeRcd;

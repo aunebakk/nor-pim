@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:40:34 AM
+  Generated Date: 9/12/2020 3:40:06 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
@@ -10,30 +10,41 @@ using System;
 using System.Windows.Forms;
 using SolutionNorSolutionPim.BusinessLogicLayer;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.UserInterface {
 
+    // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeProductInfoSearch : Form {
         
+        // the following fields holds initial state for foreign key's
         private string _productInfoRcd;
         
         private System.Guid _productId;
         
         private System.Guid _userId;
         
+        // Constructs the form with a Grid and Search button which is default on Enter
+        //  and a Close button which works with the esc key
         public CrudeProductInfoSearch() {
             InitializeComponent();
             InitializeGridCrudeProductInfo();
             this.AcceptButton = buttonCrudeProductInfoSearch;
             this.CancelButton = buttonClose;
-
         }
         
+        // shows the form with initial values for comboboxes and pickers
+        //  an search is done with these initial values
         public void Show(string productInfoRcd, System.Guid productId, System.Guid userId) {
             try {
                 _productInfoRcd = productInfoRcd;
                 _productId = productId;
                 _userId = userId;
+
                 RefreshCrudeProductInfo();
+
                 base.Show();
             } catch ( Exception ex ) {
                 if ( ex == null )
@@ -43,6 +54,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the detailed version of the selected grid row, in edit modus
         private void buttonCrudeProductInfoEdit_Click(object sender, EventArgs e) {
             try {
                 var editForm = new CrudeProductInfoEdit();
@@ -56,6 +68,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows a form for adding more rows
         private void buttonCrudeProductInfoAdd_Click(object sender, EventArgs e) {
             try {
                 var editForm = new CrudeProductInfoEdit();
@@ -69,6 +82,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // shows the detailed version of the selected grid row, in edit modus
         private void dataGridViewCrudeProductInfo_DoubleClick(object sender, EventArgs e) {
             try {
                 var editForm = new CrudeProductInfoEdit();
@@ -82,6 +96,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // does a search based on the filter and populates the grid
         private void buttonCrudeProductInfoSearch_Click(object sender, EventArgs e) {
             try {
                 RefreshCrudeProductInfo();
@@ -93,10 +108,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
         
+        // refresh the grid
         public void RefreshCrudeProductInfo() {
             var productInfo = new CrudeProductInfoServiceClient();
 
@@ -124,6 +141,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
         
+        // initialize the grid, hiding fields like guids and images
         private void InitializeGridCrudeProductInfo() {
             try {
                 dataGridViewCrudeProductInfo.Columns.Clear();

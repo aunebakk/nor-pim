@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:25 AM
+  Generated Date: 9/12/2020 3:41:03 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeProductAttributeController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeProductAttributeIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // page with foreign key data
         [HttpGet]
         public ActionResult CrudeProductAttributeByProductIndex(System.Guid productId) {
             ViewBag.ProductId = productId;
@@ -32,6 +40,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeProductAttributeDetails(System.Guid productAttributeId) {
 
@@ -41,6 +50,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeProductAttributeEdit(
             System.Guid productAttributeId
@@ -78,6 +88,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeProductAttributeEdit([Bind()] CrudeProductAttributeContract contract) {
@@ -95,6 +106,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeProductAttributeCreate(System.Guid? productId, System.Guid? userId) {
             var contract = new CrudeProductAttributeContract();
@@ -137,6 +149,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeProductAttributeCreate([Bind()] CrudeProductAttributeContract contract) {
@@ -153,6 +166,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeProductAttributeDelete(
             System.Guid productAttributeId

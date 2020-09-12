@@ -95,6 +95,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
             try {
                 var bindingSource = new BindingSource ();
+
                 bindingSource.DataSource = client.FetchWithFilter(
                              Guid.Empty
                             ,clientTypeRefCombo.Text

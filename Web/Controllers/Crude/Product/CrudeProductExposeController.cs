@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 8/12/2020 7:41:37 AM
+  Generated Date: 9/12/2020 3:41:17 PM
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -10,9 +10,16 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//   https://docs.microsoft.com/en-us/dotnet/framework/winforms/: client winform layer
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
+
+    // controller class for mvc
     public class CrudeProductExposeController : Controller {
 
+        // index page for controller
         [HttpGet]
         public ActionResult CrudeProductExposeIndex() {
 
@@ -22,6 +29,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // page with foreign key data
         [HttpGet]
         public ActionResult CrudeProductExposeByExposeProductIndex(System.Guid exposeProductId) {
             ViewBag.ExposeProductId = exposeProductId;
@@ -32,6 +40,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // page with foreign key data
         [HttpGet]
         public ActionResult CrudeProductExposeByExposeBasedOnProductIndex(System.Guid exposeBasedOnProductId) {
             ViewBag.ExposeBasedOnProductId = exposeBasedOnProductId;
@@ -42,6 +51,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // page with foreign key data
         [HttpGet]
         public ActionResult CrudeProductExposeByProductExposeSetIndex(System.Guid productExposeSetId) {
             ViewBag.ProductExposeSetId = productExposeSetId;
@@ -52,6 +62,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // fetch detail page for editing
         [HttpGet]
         public ActionResult CrudeProductExposeDetails(System.Guid productExposeId) {
 
@@ -61,6 +72,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // edit details page
         [HttpGet]
         public ActionResult CrudeProductExposeEdit(
             System.Guid productExposeId
@@ -98,6 +110,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // save detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeProductExposeEdit([Bind()] CrudeProductExposeContract contract) {
@@ -115,6 +128,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new entity page
         [HttpGet]
         public ActionResult CrudeProductExposeCreate(System.Guid? exposeProductId, System.Guid? exposeBasedOnProductId, System.Guid? productExposeSetId, System.Guid? userId) {
             var contract = new CrudeProductExposeContract();
@@ -159,6 +173,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // add new detail page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrudeProductExposeCreate([Bind()] CrudeProductExposeContract contract) {
@@ -175,6 +190,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 );
         }
 
+        // delete entity page
         [HttpGet]
         public ActionResult CrudeProductExposeDelete(
             System.Guid productExposeId
