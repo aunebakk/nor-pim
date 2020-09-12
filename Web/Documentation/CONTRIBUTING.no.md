@@ -1,9 +1,9 @@
-# Contributing
+# Bidra
 
 🎌
 [Deutsch][DE],
-[Norsk][NO],
-**English**,
+**Norsk]**,
+[English][EN],
 [Español][ES],
 [Français][FR],
 [Kurdi][KU],
@@ -18,7 +18,7 @@
 
 [AR]:CONTRIBUTING.ar.md
 [DE]:CONTRIBUTING.de.md
-[NO]:README.no.md
+[NO]:CONTRIBUTING.no.md
 [EN]:CONTRIBUTING.md
 [ES]:CONTRIBUTING.es.md
 [FR]:CONTRIBUTING.fr.md
@@ -33,12 +33,12 @@
 
 Kilde koden I dette «repository» var digitalisert manuelt ifra papir utskrifter, så om det finnes stavefeil og andre avvik skall koden rettes for og reflektere dette.( skrivefeil og andre avvik kan ha blitt innført ved et uhell, og må rettes opp )
 
-- [AGC printouts for Comanche][8]
-- [AGC printouts for Luminary][9]
+- [AGC utskrift for Comanche][8]
+- [AGC utskrift for Luminary][9]
 
 ## Nytteprogrammer
 
-GitHub har kildekode støtte for «assembly» programering språket AGC ( innebygget ), og de følgene tekst redigerings programmene har også støtte for nøkkel ord fargesetting:
+GitHub har kildekode støtte for «assembly» programmerings språket AGC ( innebygget ), og de følgene tekst redigerings programmene har også støtte for nøkkel ord fargesetting:
 
 - [Atom][Atom]†
 - [CodeBlocks][CodeBlocks]

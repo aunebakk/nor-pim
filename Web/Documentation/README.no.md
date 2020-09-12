@@ -9,8 +9,8 @@
 [Bahasa Indonesia][ID],
 [Català][CA],
 [Deutsch][DE],
-[Norsk][NO],
-**English**,
+**Norsk]**,
+[English][EN],
 [Español][ES],
 [Français][FR],
 [Italiano][IT],
@@ -62,12 +62,11 @@ Original kildekode til Apollo 11’s veilednings datamaskin for kommando ( Coman
 
 ## Contributing
 
-Please read [CONTRIBUTING.md][7] before opening a pull request.
+Venligst les [CONTRIBUTING.md][7] før en "pull request" åpnes.
 
 ## Compiling
 
-If you are interested in compiling the original source code, check
-out [Virtual AGC][8].
+Om du er interesert i og kompilere den originale kilde koden så sjekk [Virtual AGC][8].
 
 ## Attribution
 
@@ -79,7 +78,7 @@ Luminary099    | Part of the source code for Luminary 1A, the Lunar Module's (LM
 Assembler      | yaYUL
 Contact        | Ron Burkey <info@sandroid.org>
 Website        | www.ibiblio.org/apollo
-Digitalisation | Denne kilde koden er tydet og addoptert fra de digitaliserte bildene som finnes på MIT Museet. Digitaliseringen er utført av Paul Fjeld, og sortert av Deborah Douglas som jobber på Museet. Takk til dere begge.
+Digitalisering | Denne kilde koden er tydet og adoptert fra de digitaliserte bildene som finnes på MIT Museet. Digitaliseringen er utført av Paul Fjeld, og sortert av Deborah Douglas som jobber på Museet. Takk til dere begge.
 
 ### Contract and Approvals
 
@@ -87,7 +86,7 @@ Digitalisation | Denne kilde koden er tydet og addoptert fra de digitaliserte bi
 
 This AGC program shall also be referred to as Colossus 2A.
 
-Dette programmet brukes i «CM» som spesifisert i rapport `R-577`. Dette programmet var også laget uner DST prosjek `55-23870`, som var sponset av «Manned Spacecraft Center of The National Aeronautics and Space Administration» via kontrakt `NAS 9-4065` med instrumentasjon labaratoriet ved «Massachusetts Institute of Technology, Cambridge, Mass» 
+Dette programmet brukes i «CM» som spesifisert i rapport `R-577`. Dette programmet var også laget under DST prosjekt `55-23870`, som var sponset av «Manned Spacecraft Center of The National Aeronautics and Space Administration» via kontrakt `NAS 9-4065` med instrumentasjon laboratoriet ved «Massachusetts Institute of Technology, Cambridge, Mass» 
 
 Submitted by         | Role | Date
 :------------------- | :--- | :---
