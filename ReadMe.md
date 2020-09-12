@@ -1,13 +1,14 @@
 
-# NorPim - Open Source ("Code - OSS")
-[![Build Status](https://dev.azure.com/NorPim/NorPim/_apis/build/status/VS%20Code?branchName=master)](https://aka.ms/NorPim-builds)
-[![Feature Requests](https://img.shields.io/github/issues/NorGate/NorPim/feature-request.svg)](https://github.com/NorGate/NorPim/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-[![Bugs](https://img.shields.io/github/issues/NorGate/NorPim/bug.svg)](https://github.com/NorGate/NorPim/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
-[![Gitter](https://img.shields.io/badge/chat-on%20gitter-yellow.svg)](https://gitter.im/NorGate/NorPim)
+# NorPim - Open Source ("NorPim - OSS")
+[![Build Status](https://dev.azure.com/vscode/VSCode/_apis/build/status/VS%20Code?branchName=master)](https://aka.ms/vscode-builds)
+[![Feature Requests](https://img.shields.io/github/issues/Microsoft/vscode/feature-request.svg)](https://github.com/Microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
+[![Bugs](https://img.shields.io/github/issues/Microsoft/vscode/bug.svg)](https://github.com/Microsoft/vscode/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
+[![Gitter](https://img.shields.io/badge/chat-on%20gitter-yellow.svg)](https://gitter.im/Microsoft/vscode)[![NorPim](https://img.shields.io/badge/chat-on%20gitter-yellow.svg)](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
+[![NorPim](https://img.shields.io/badge/chat-on%20gitter-yellow.svg)](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
 
 ## The Repository
 
-This repository ("`Code - OSS`") is where we (NorGate) develop the [NorPim](https://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/NorGate/NorPim/wiki/Roadmap), [monthly iteration plans](https://github.com/NorGate/NorPim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/NorGate/NorPim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/NorGate/NorPim/blob/master/LICENSE.txt).
+This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](https://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/NorGate/NorPim/wiki/Roadmap), [monthly iteration plans](https://github.com/NorGate/NorPim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/NorGate/NorPim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/NorGate/NorPim/blob/master/LICENSE.txt).
 
 ## NorPim
 
@@ -15,7 +16,7 @@ This repository ("`Code - OSS`") is where we (NorGate) develop the [NorPim](http
   <img alt="VS Code in action" src="https://user-images.githubusercontent.com/1487073/58344409-70473b80-7e0a-11e9-8570-b2efc6f8fa44.png">
 </p>
 
-[NorPim](https://NorPim.com) is a distribution of the `Code - OSS` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
+[NorPim](https://NorPim.com) is a distribution of the `NorPim - OSS` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
 
 [NorPim](https://NorPim.com) combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.
 
