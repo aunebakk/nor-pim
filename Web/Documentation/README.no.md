@@ -68,7 +68,7 @@ Venligst les [CONTRIBUTING.no.md][7] før en "pull request" åpnes.
 
 Om du er interesert i og kompilere den originale kilde koden så sjekk [Virtual AGC][8].
 
-## Attribusjon
+## Bidragsytere
 
 &nbsp;         | &nbsp;
 :------------- | :-----
