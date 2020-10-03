@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 9/12/2020 3:39:55 PM
+  Generated Date: 10/3/2020 3:48:25 PM
   From Machine: DESKTOP-517I8BU
   Filename: ProductAttributeUnitRef.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy

@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F29BCD0D-89E6-466D-A9E7-A031DEA9457D}</ProjectGuid>
+    <ProjectGuid>{4BBA0387-1CDD-4C19-B337-E6FCAEB3BE12}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -498,13 +498,30 @@
     <Content Include="images\favicon\nor pim logo 260.png" />
     <Content Include="images\favicon\S__4743184.jpg" />
     <Content Include="images\favicon\S__4743267.jpg" />
+    <Content Include="install\Contract.dll" />
+    <Content Include="install\Contract.pdb" />
+    <Content Include="install\maybe\publish.htm" />
+    <Content Include="install\maybe\setup.exe" />
+    <Content Include="install\Proxy.dll" />
+    <Content Include="install\Proxy.pdb" />
+    <Content Include="install\publish.htm" />
+    <Content Include="install\setup.exe" />
+    <Content Include="install\WinForm.exe" />
+    <Content Include="install\WinForm.pdb" />
     <Content Include="Pack\Microsoft.Azure.Management.Sql.dll" />
     <Content Include="Pack\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.Authentication.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.dll" />
-    <Content Include="Documentation\CONTRIBUTING.no.md" />
-    <Content Include="Documentation\README.no.md" />
+    <Content Include="install\WinForm.application" />
+    <Content Include="install\WinForm.exe.config" />
+    <Content Include="install\WinForm.exe.manifest" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\Contract.dll.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\Proxy.dll.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.config.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.manifest" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\Main\pimlogo.png.deploy" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -522,9 +539,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -670,6 +685,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomTemplates\Product\ProductSearch.json" />
+    <Content Include="Documentation\CONTRIBUTING.no.md" />
+    <Content Include="Documentation\README.no.md" />
     <Content Include="images\favicon\07dfb2f6bbfc559de7762ca78413ab28.ico.zip" />
     <Content Include="images\favicon\manifest.json" />
     <None Include="Information\architecture.txt" />
@@ -995,6 +1012,7 @@
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierCreate.cshtml" />
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierEdit.cshtml" />
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierDetails.cshtml" />
+    <Content Include="install\mage.bat" />
     <Content Include="SchemaTemplates\Cart\CartProduct.json" />
     <Content Include="SchemaTemplates\Cart\CartProductPrice.json" />
     <Content Include="SchemaTemplates\Client\Client.json" />
@@ -1125,11 +1143,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{44742321-b306-41a2-a0fd-ddc8e905ad52}</Project>
+      <Project>{3ea87084-6880-4eb5-a047-56b36fb3e643}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{3f221a53-5720-464c-b912-405bd273e784}</Project>
+      <Project>{e435711e-bfd6-43cc-b547-4e9ec1f317cb}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1163,7 +1181,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59937</DevelopmentServerPort>
+          <DevelopmentServerPort>53124</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

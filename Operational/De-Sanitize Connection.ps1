@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 9/20/2020 6:44:33 PM
+# Generated Date: 10/3/2020 4:03:25 PM
 # From Machine: DESKTOP-517I8BU
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 

@@ -1,0 +1,1 @@
+cd C:\SQL2XProjects\SolutionNorClient\XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc\install
