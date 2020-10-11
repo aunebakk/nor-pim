@@ -8,7 +8,7 @@
 
 This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](https://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/NorGate/NorPim/wiki/Roadmap), [monthly iteration plans](https://github.com/NorGate/NorPim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/NorGate/NorPim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/NorGate/NorPim/blob/master/LICENSE.txt).
 
-## NorPim
+## NorPim 
 
 <p align="center">
   <img alt="NorPim in action" src="https://norsolutionpim.azurewebsites.net/images/dashboard.png#">
