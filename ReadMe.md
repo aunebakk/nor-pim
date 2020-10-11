@@ -1,4 +1,3 @@
-
 # NorPim - Open Source ("NorPim - OSS")
 [![Feature Requests](https://img.shields.io/github/issues/Microsoft/vscode/feature-request.svg)](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
 [![Bugs](https://img.shields.io/github/issues/Microsoft/vscode/bug.svg)](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
@@ -6,7 +5,7 @@
 
 ## The Repository
 
-This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](https://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/aunebakk/nor-pim/wiki/Roadmap), [monthly iteration plans](https://github.com/aunebakk/nor-pim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/aunebakk/nor-pim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/aunebakk/nor-pim/blob/master/LICENSE.txt).
+This repository ("`NorPim - OSS`") is where we ( NorGate ) develop the [NorPim](http://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/aunebakk/nor-pim/wiki/Roadmap), [monthly iteration plans](https://github.com/aunebakk/nor-pim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/aunebakk/nor-pim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/aunebakk/nor-pim/blob/master/LICENSE.txt).
 
 ## NorPim 
 
@@ -17,6 +16,28 @@ This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](ht
 [NorPim](https://NorPim.com) is a distribution of the `NorPim - OSS` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
 
 [NorPim](https://NorPim.com) Product Information Management - Structured and unstructured product specific attributes for Windows / Web and Mobile platform.
+
+NorPim is a Product Information Management System written for enterprise cloud environments with user interfaces tailored for PC, Web and Mobile.
+
+NorPim is used for managing Structured and Unstructured product specific attributes which is either maintained manually or automatically.
+
+NorPim provides full access to a Product and it's structure with a fixed or customized API through SOAP and REST interfaces.
+
+NorPim is still in a prototype stage, and it's main purpose is to act as a proof of concept for a three tiered cloud based LOB ( Line of Business ) system that features:
+
+ - SQL Server database
+ - Business layer through SOAP
+ - FrontEnd's consuming the SOAP layer :
+  - Windows Forms installed application
+  - Web Page browsing and editing access
+  - Mobile Hybrid App
+
+It uses no special frameworks outside of the dotNetFramework ecosystem in an effort to make it as scalable as possible, this is made possible by using a tool to generate boiler plate code for efficient communication between layers ( SQL2X )
+
+TODO:
+  pictures of the individual frontends
+  links to sql2x.org
+  
 
 NorPim is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on [NorPim"s website](https://NorPim.com/Download). To get the latest releases every day, install the [Insiders build](https://NorPim.com/insiders).
 
