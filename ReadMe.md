@@ -28,18 +28,18 @@ NorPim is still in a prototype stage, and it's main purpose is to act as a proof
  - SQL Server database
  - Business layer through SOAP
  - FrontEnd's consuming the SOAP layer :
-  - Windows Forms installed application
-  - Web Page browsing and editing access
-  - Mobile Hybrid App
+   - Windows Forms installed application
+   - Web Page browsing and editing access
+   -- Mobile Hybrid App
 
 It uses no special frameworks outside of the dotNetFramework ecosystem in an effort to make it as scalable as possible, this is made possible by using a tool to generate boiler plate code for efficient communication between layers ( SQL2X )
 
 TODO:
   pictures of the individual frontends
   links to sql2x.org
-  
 
-NorPim is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on [NorPim"s website](https://NorPim.com/Download). To get the latest releases every day, install the [Insiders build](https://NorPim.com/insiders).
+
+NorPim is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on [NorPim's website](https://NorPim.com/Download). To get the latest releases every day, install the [Insiders build](https://NorPim.com/insiders).
 
 ## Contributing
 
