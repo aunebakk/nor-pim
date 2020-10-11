@@ -6,7 +6,7 @@
 
 ## The Repository
 
-This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](https://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/NorGate/NorPim/wiki/Roadmap), [monthly iteration plans](https://github.com/NorGate/NorPim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/NorGate/NorPim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/NorGate/NorPim/blob/master/LICENSE.txt).
+This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](https://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/aunebakk/nor-pim/wiki/Roadmap), [monthly iteration plans](https://github.com/aunebakk/nor-pim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/aunebakk/nor-pim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/aunebakk/nor-pim/blob/master/LICENSE.txt).
 
 ## NorPim 
 
@@ -24,31 +24,31 @@ NorPim is updated monthly with new features and bug fixes. You can download it f
 
 There are many ways in which you can participate in the project, for example:
 
-* [Submit bugs and feature requests](https://github.com/NorGate/NorPim/issues), and help us verify as they are checked in
-* Review [source code changes](https://github.com/NorGate/NorPim/pulls)
+* [Submit bugs and feature requests](https://github.com/aunebakk/nor-pim/issues), and help us verify as they are checked in
+* Review [source code changes](https://github.com/aunebakk/nor-pim/pulls)
 * Review the [documentation](https://github.com/NorGate/NorPim-docs) and make pull requests for anything from typos to new content
 
 If you are interested in fixing issues and contributing directly to the code base,
-please see the document [How to Contribute](https://github.com/NorGate/NorPim/wiki/How-to-Contribute), which covers the following:
+please see the document [How to Contribute](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute), which covers the following:
 
-* [How to build and run from source](https://github.com/NorGate/NorPim/wiki/How-to-Contribute#build-and-run)
-* [The development workflow, including debugging and running tests](https://github.com/NorGate/NorPim/wiki/How-to-Contribute#debugging)
-* [Coding guidelines](https://github.com/NorGate/NorPim/wiki/Coding-Guidelines)
-* [Submitting pull requests](https://github.com/NorGate/NorPim/wiki/How-to-Contribute#pull-requests)
-* [Finding an issue to work on](https://github.com/NorGate/NorPim/wiki/How-to-Contribute#where-to-contribute)
+* [How to build and run from source](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#build-and-run)
+* [The development workflow, including debugging and running tests](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#debugging)
+* [Coding guidelines](https://github.com/aunebakk/nor-pim/wiki/Coding-Guidelines)
+* [Submitting pull requests](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#pull-requests)
+* [Finding an issue to work on](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#where-to-contribute)
 * [Contributing to translations](https://aka.ms/NorPimloc)
 
 ## Feedback
 
 * Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/NorPim)
 * [Request a new feature](CONTRIBUTING.md)
-* Upvote [popular feature requests](https://github.com/NorGate/NorPim/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-* [File an issue](https://github.com/NorGate/NorPim/issues)
+* Upvote [popular feature requests](https://github.com/aunebakk/nor-pim/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
+* [File an issue](https://github.com/aunebakk/nor-pim/issues)
 * Follow [@code](https://twitter.com/code) and let us know what you think!
 
 ## Related Projects
 
-Many of the core components and extensions to VS Code live in their own repositories on GitHub. For example, the [node debug adapter](https://github.com/NorGate/NorPim-node-debug) and the [mono debug adapter](https://github.com/NorGate/NorPim-mono-debug) have their own repositories. For a complete list, please visit the [Related Projects](https://github.com/NorGate/NorPim/wiki/Related-Projects) page on our [wiki](https://github.com/NorGate/NorPim/wiki).
+Many of the core components and extensions to VS Code live in their own repositories on GitHub. For example, the [node debug adapter](https://github.com/NorGate/NorPim-node-debug) and the [mono debug adapter](https://github.com/NorGate/NorPim-mono-debug) have their own repositories. For a complete list, please visit the [Related Projects](https://github.com/aunebakk/nor-pim/wiki/Related-Projects) page on our [wiki](https://github.com/aunebakk/nor-pim/wiki).
 
 ## Bundled Extensions
 
