@@ -1,5 +1,5 @@
 # NorPim - Open Source ("NorPim - OSS")
-[![Feature Requests](https://img.shields.io/github/issues/Microsoft/vscode/feature-request.svg)](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
+[![Feature Requests]](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
 [![Bugs](https://img.shields.io/github/issues/Microsoft/vscode/bug.svg)](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
 [![NorPim](https://img.shields.io/badge/chat-on%20gitter-yellow.svg)](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
 
