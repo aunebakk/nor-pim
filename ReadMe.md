@@ -11,7 +11,7 @@ This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](ht
 ## NorPim
 
 <p align="center">
-  <img alt="NorPim in action" src="https://norsolutionpim.azurewebsites.net/images/dashboard.png">
+  <img alt="NorPim in action" src="https://norsolutionpim.azurewebsites.net/images/dashboard.png#">
 </p>
 
 [NorPim](https://NorPim.com) is a distribution of the `NorPim - OSS` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
