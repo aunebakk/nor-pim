@@ -11,12 +11,12 @@ This repository ("`NorPim - OSS`") is where we (NorGate) develop the [NorPim](ht
 ## NorPim
 
 <p align="center">
-  <img alt="VS Code in action" src="https://norsolutionpim.azurewebsites.net/images/dashboard.png">
+  <img alt="NorPim in action" src="https://norsolutionpim.azurewebsites.net/images/dashboard.png">
 </p>
 
 [NorPim](https://NorPim.com) is a distribution of the `NorPim - OSS` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
 
-[NorPim](https://NorPim.com) combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.
+[NorPim](https://NorPim.com) Product Information Management - Structured and unstructured product specific attributes for Windows / Web and Mobile platform.
 
 NorPim is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on [NorPim"s website](https://NorPim.com/Download). To get the latest releases every day, install the [Insiders build](https://NorPim.com/insiders).
 

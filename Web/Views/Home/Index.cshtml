@@ -1,5 +1,6 @@
 @{
     ViewBag.Title = "nor-pim";
+    Layout = "";
 }
 <style>
     p {
@@ -13,27 +14,17 @@
     }
 </style>
 
-<div style="display: none;">
-    <img id="new-folder-video" src="~/images/dashboardSodaRed/1463795402_new-folder-video.png" />
-    <img id="Text-edit" src="~/images/dashboardSodaRed/1463795421_Text-edit.png" />
-    <img id="address-book" src="~/images/dashboardSodaRed/1463795455_address-book.png" />
-    <img id="zip" src="~/images/dashboardSodaRed/1463795473_zip.png" />
-    <img id="Klubok" src="~/images/dashboardSodaRed/1463795489_Klubok.png" />
-    <img id="box" src="~/images/dashboardSodaRed/1463795402_new-folder-video.png" />
-    <img id="apps" src="~/images/dashboardSodaRed/1463795550_apps.png" />
-    <img id="api" src="~/images/dashboardSodaRed/1472846465_api-r.png" />
-</div>
 <meta name="viewport" content="initial-scale=1 , minimum-scale=1 , maximum-scale=1" />
 
 <div id="header"></div>
 
-<canvas id="myCanvas" style="border:5px solid #ffffff;">
+<canvas id="myCanvas" style="border:0px solid #ffffff;">
     Your browser does not support the HTML5 canvas tag.
     metadata and index and search engine stuff.
     https://sql2x.org
 </canvas>
 
-@section Scripts {
+@*@section Scripts {*@
     <script type="text/javascript">
         var canvasName = "myCanvas";
         var tileWidthScale = 1;
@@ -108,8 +99,8 @@
 
         if (isMobile) {
             header.innerHTML = "";
-            var tileWidthScaleRecalc = true;
-            var tileWidthScale = 0.9;
+            var tileWidthScaleRecalc = false;
+            //var tileWidthScale = 0.9;
             var tileTextColor = "black";
             var frameLineWidthClick = 1;
             var frameLineWidthClear = 2;
@@ -121,5 +112,5 @@
         }
     </script>
 
-    <script src="~/Scripts/Dashboard/dashboard.js"></script>
-}
+    <script src="~/Scripts/Dashboard/dashboard.js" type="text/javascript"></script>
+@*}*@

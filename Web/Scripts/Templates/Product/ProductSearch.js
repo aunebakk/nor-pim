@@ -360,7 +360,7 @@ var SQL2XTemplateCrudeTableDurian;
                 // picture link
                 this.pictureLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 3);
                 this.pictureLink
-                    .linkUrl = '../images/efo/1082853_thumb_300x300.png?';
+                    .linkUrl = '../images/product/Cross_section_of_a_VGA_cable.jpg?';
                 //this.pictureLink.draw(this.tileFont(), 'P', this.textTop(this.name));
             }
             // chapter header
