@@ -34,7 +34,13 @@ It uses no special frameworks outside of the dotNetFramework ecosystem in an eff
 TODO:
  - pictures of the individual frontends
  - links to sql2x.org
-
+ - links to architecture
+ - documentation of functionality
+ - how to install locally
+ - how to install in azure
+ - how to run code locally
+ - sql2x light to publish?
+ - 
 
 NorPim is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on [NorPim's website](https://NorPim.com/Download). To get the latest releases every day, install the [Insiders build](https://NorPim.com/insiders).
 
