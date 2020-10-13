@@ -25,7 +25,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             Console.WriteLine(returnMessage);
 
-            if (returnMessage.IndexOf("Exception") > 0)
+            // if (returnMessage.IndexOf("Exception") > 0)
                 Console.ReadKey();
         }
 

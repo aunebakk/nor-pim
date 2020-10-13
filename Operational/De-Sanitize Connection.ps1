@@ -1,8 +1,8 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/11/2020 4:58:14 AM
-# From Machine: DESKTOP-517I8BU
+# Generated Date: 10/13/2020 3:07:55 PM
+# From Machine: DESKTOP-742U247
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
 param(
@@ -157,6 +157,11 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     # replace sql server connection strings
     [string] $find = 'connectionString=.+'
     [string] $replace = 'connectionString="' + $connectionStringSQLServerLocal + '"/>'
+    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+
+    # replace endpoints
+    [string] $find = 'http://NorSolutionPimBusiness.azurewebsites.net/'
+    [string] $replace = 'http://localhost:64804/'
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
 
     # show filename if changed

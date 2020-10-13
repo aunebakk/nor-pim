@@ -66,6 +66,20 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 else
                     connectionString = Conn.ConnectionStringLocal;
 
+                // check if database exist
+                if (!DatabaseExist(
+                        databaseName: this.databaseName, 
+                        connectionStringLocal: connectionString
+                    )) {
+
+                    Console.Write($"Created database {this.databaseName}");
+
+                    DatabaseCreate(
+                        connectionStringLocal: connectionString,
+                        databaseName: this.databaseName
+                        );
+                }
+
                 int minorNumber = 0;
                 int sequence = 0;
                 InitDatabaseClean(majorNumber: 0, minorNumber: minorNumber++);
@@ -100,6 +114,108 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             }
         }
 
+        public List<string> DatabaseCreate(
+            string connectionStringLocal,
+            string databaseName
+            ) {
+
+            string sql =
+@"select 'Creating database: " + databaseName + @"'
+
+create database " + databaseName + @"
+
+select 'Created database: " + databaseName + @"'
+";
+
+            List<string> result =
+                ExecuteWithResultInList(
+                            connectionStringLocal: connectionStringLocal,
+                            sql: sql
+                        );
+
+            foreach (string line in result) {
+                // Log("SQL Execute Result: " + line);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Execute sql statements
+        /// </summary>
+        /// <param name="sql">Sql statement to execute</param>
+        public static List<string> ExecuteWithResultInList (
+            string connectionStringLocal,
+            string sql
+            ) {
+
+            try {
+                DataSet result = GetDataSet(connectionStringLocal, sql);
+
+                List<string> resultList = new List<string>();
+
+                foreach (DataTable table in result.Tables) {
+                    foreach (DataRow row in table.Rows) {
+                        resultList.Add(row[0].ToString());
+                    }
+                }
+
+                return resultList;
+            } catch (Exception ex) {
+                throw new Exception("Failed when executing: \r\n" + sql, ex);
+            }
+        }
+
+        /// <summary>
+        /// Get dataset from sql statement
+        /// </summary>
+        /// <param name="sql">Sql statement to execute</param>
+        /// <returns>Dataset from sql</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage ( "Microsoft.Security" , "CA2100:Review SQL queries for security vulnerabilities" )]
+        public static DataSet GetDataSet ( string connectionString, string sql ) {
+            try {
+                var connection = new SqlConnection ( connectionString.Replace ( @"\\", @"\" ) );
+                var command = new SqlCommand ( sql, connection );
+                var adapter = new SqlDataAdapter ( command );
+                var dataSet = new DataSet ( );
+                adapter.Fill ( dataSet );
+
+                return dataSet;
+            } catch ( Exception ex ) {
+                if ( ex.InnerException == null ) {
+                    throw ( ex );
+                } else {
+                    throw ( ex.InnerException );
+                }
+            } finally {
+            }
+        }
+
+        public bool DatabaseExist(
+            string databaseName,
+            string connectionStringLocal
+            ) {
+
+            try {
+                string sql =
+@"select db_id('" + databaseName + @"')";
+
+                List<string> result =
+                    ExecuteWithResultInList(
+                                connectionStringLocal: connectionStringLocal,
+                                sql: sql
+                            );
+
+                int dbid;
+                int.TryParse(result[0], out dbid);
+
+                return dbid > 0;
+            } catch (Exception ex) {
+                // ErrorHandler.ErrorEx(serviceProvider, MethodBase.GetCurrentMethod(), "Failed to check if database exist", ex, rethrow: true);
+            }
+
+            return false;
+        }
         /// <summary>
         /// Execute Next Script
         /// </summary>

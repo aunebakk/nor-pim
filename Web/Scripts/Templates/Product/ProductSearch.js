@@ -14,8 +14,8 @@ var __extends = (this && this.__extends) || (function () {
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 10/3/2020 3:58:36 PM
-// From Machine: DESKTOP-517I8BU
+// Generated Date: 10/13/2020 2:27:51 PM
+// From Machine: DESKTOP-742U247
 // Template: sql2x.CrudeTypeScriptGenerator.OverallDesignTypeScriptTine
 var SQL2XTemplateCrudeTableDurian;
 (function (SQL2XTemplateCrudeTableDurian) {
@@ -360,7 +360,7 @@ var SQL2XTemplateCrudeTableDurian;
                 // picture link
                 this.pictureLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 3);
                 this.pictureLink
-                    .linkUrl = '../images/product/Cross_section_of_a_VGA_cable.jpg?';
+                    .linkUrl = '../images/efo/1082853_thumb_300x300.png?';
                 //this.pictureLink.draw(this.tileFont(), 'P', this.textTop(this.name));
             }
             // chapter header

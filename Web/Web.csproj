@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4BBA0387-1CDD-4C19-B337-E6FCAEB3BE12}</ProjectGuid>
+    <ProjectGuid>{41344416-5C7A-4123-B88C-EDE9E7DE2E70}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -456,11 +456,16 @@
     <Content Include="Documentation\Splash.html" />
     <Content Include="Documentation\Splash2.html" />
     <Content Include="Global.asax" />
-    <Content Include="Images\dashboard.png" />
     <Content Include="Images\dashboard\About.svg" />
     <Content Include="Images\dashboard\API.svg" />
     <Content Include="Images\dashboard\Apps.svg" />
     <Content Include="Images\dashboard\Catalog.svg" />
+    <Content Include="Images\dashboard\original\About.svg" />
+    <Content Include="Images\dashboard\original\API.svg" />
+    <Content Include="Images\dashboard\original\Apps.svg" />
+    <Content Include="Images\dashboard\original\Catalog.svg" />
+    <Content Include="Images\dashboard\original\Product.svg" />
+    <Content Include="Images\dashboard\original\Selected.svg" />
     <Content Include="Images\dashboard\Product.svg" />
     <Content Include="Images\dashboard\Selected.svg" />
     <Content Include="Images\favicon\android-icon-144x144.png" />
@@ -493,11 +498,30 @@
     <Content Include="Images\favicon\S__4743184.jpg" />
     <Content Include="Images\favicon\S__4743267.jpg" />
     <Content Include="Images\product\Cross_section_of_a_VGA_cable.jpg" />
+    <Content Include="install\Contract.dll" />
+    <Content Include="install\Contract.pdb" />
+    <Content Include="install\maybe\publish.htm" />
+    <Content Include="install\maybe\setup.exe" />
+    <Content Include="install\Proxy.dll" />
+    <Content Include="install\Proxy.pdb" />
+    <Content Include="install\publish.htm" />
+    <Content Include="install\setup.exe" />
+    <Content Include="install\WinForm.exe" />
+    <Content Include="install\WinForm.pdb" />
     <Content Include="Pack\Microsoft.Azure.Management.Sql.dll" />
     <Content Include="Pack\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.Authentication.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.dll" />
+    <Content Include="install\WinForm.application" />
+    <Content Include="install\WinForm.exe.config" />
+    <Content Include="install\WinForm.exe.manifest" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\Contract.dll.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\Proxy.dll.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.config.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.manifest" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\Main\pimlogo.png.deploy" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -661,8 +685,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomTemplates\Product\ProductSearch.json" />
-    <Content Include="Documentation\CONTRIBUTING.no.md" />
-    <Content Include="Documentation\README.no.md" />
     <Content Include="Images\favicon\07dfb2f6bbfc559de7762ca78413ab28.ico.zip" />
     <Content Include="Images\favicon\manifest.json" />
     <None Include="Information\architecture.txt" />
@@ -988,6 +1010,7 @@
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierCreate.cshtml" />
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierEdit.cshtml" />
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierDetails.cshtml" />
+    <Content Include="install\mage.bat" />
     <Content Include="SchemaTemplates\Cart\CartProduct.json" />
     <Content Include="SchemaTemplates\Cart\CartProductPrice.json" />
     <Content Include="SchemaTemplates\Client\Client.json" />
@@ -1118,11 +1141,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{3ea87084-6880-4eb5-a047-56b36fb3e643}</Project>
+      <Project>{c4b0440d-8a55-40e8-b474-14387f39ff87}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{e435711e-bfd6-43cc-b547-4e9ec1f317cb}</Project>
+      <Project>{b43e32e2-c79b-4a39-ad8d-5298c0012dd6}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1156,7 +1179,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53124</DevelopmentServerPort>
+          <DevelopmentServerPort>52708</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

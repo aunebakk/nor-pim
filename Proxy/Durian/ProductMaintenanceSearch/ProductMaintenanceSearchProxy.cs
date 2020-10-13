@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/3/2020 3:54:41 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/13/2020 2:22:42 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
@@ -12,7 +12,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductMaintenanceSearchService")]
-    public interface IProductMaintenanceSearchService {
+    public interface IProductMaintenanceSearchService
+    {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductMaintenanceSearchService/ProductMaintenanceIndex", ReplyAction = "http://tempuri.org/IProductMaintenanceSearchService/ProductMaintenanceIndexResponse")]
         List<ProductMaintenanceIndexContract> ProductMaintenanceIndex();
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductMaintenanceSearchService/ProductMaintenanceAttributeIndexWithFilter", ReplyAction = "http://tempuri.org/IProductMaintenanceSearchService/ProductMaintenanceAttributeIndexWithFilterResponse")]
@@ -52,27 +53,33 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<ProductMaintenanceIndexContract> ProductMaintenanceIndex() {
+        public List<ProductMaintenanceIndexContract> ProductMaintenanceIndex()
+        {
             return base.Channel.ProductMaintenanceIndex();
         }
 
-        public List<ProductMaintenanceAttributeIndexWithFilterContract> ProductMaintenanceAttributeIndexWithFilter(System.Guid productId) {
+        public List<ProductMaintenanceAttributeIndexWithFilterContract> ProductMaintenanceAttributeIndexWithFilter(System.Guid productId)
+        {
             return base.Channel.ProductMaintenanceAttributeIndexWithFilter(productId);
         }
 
-        public List<ProductMaintenanceDocumentationIndexWithFilterContract> ProductMaintenanceDocumentationIndexWithFilter(System.Guid productId) {
+        public List<ProductMaintenanceDocumentationIndexWithFilterContract> ProductMaintenanceDocumentationIndexWithFilter(System.Guid productId)
+        {
             return base.Channel.ProductMaintenanceDocumentationIndexWithFilter(productId);
         }
 
-        public List<ProductMaintenanceIdentifierIndexWithFilterContract> ProductMaintenanceIdentifierIndexWithFilter(System.Guid productId) {
+        public List<ProductMaintenanceIdentifierIndexWithFilterContract> ProductMaintenanceIdentifierIndexWithFilter(System.Guid productId)
+        {
             return base.Channel.ProductMaintenanceIdentifierIndexWithFilter(productId);
         }
 
-        public List<ProductMaintenanceImageIndexWithFilterContract> ProductMaintenanceImageIndexWithFilter(System.Guid productId) {
+        public List<ProductMaintenanceImageIndexWithFilterContract> ProductMaintenanceImageIndexWithFilter(System.Guid productId)
+        {
             return base.Channel.ProductMaintenanceImageIndexWithFilter(productId);
         }
 
-        public List<ProductMaintenanceInfoIndexWithFilterContract> ProductMaintenanceInfoIndexWithFilter(System.Guid productId) {
+        public List<ProductMaintenanceInfoIndexWithFilterContract> ProductMaintenanceInfoIndexWithFilter(System.Guid productId)
+        {
             return base.Channel.ProductMaintenanceInfoIndexWithFilter(productId);
         }
     }
