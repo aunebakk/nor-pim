@@ -68,16 +68,16 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
                 // check if database exist
                 if (!DatabaseExist(
-                        databaseName: this.databaseName, 
-                        connectionStringLocal: connectionString
+                        connectionStringLocal: connectionString.Replace("Initial Catalog=NorSolutionPim;", ""),
+                        databaseName: this.databaseName
                     )) {
 
-                    Console.Write($"Created database {this.databaseName}");
-
                     DatabaseCreate(
-                        connectionStringLocal: connectionString,
+                        connectionStringLocal: connectionString.Replace("Initial Catalog=NorSolutionPim;", ""),
                         databaseName: this.databaseName
                         );
+
+                    Console.WriteLine($"Created database {this.databaseName}");
                 }
 
                 int minorNumber = 0;
@@ -192,9 +192,10 @@ select 'Created database: " + databaseName + @"'
         }
 
         public bool DatabaseExist(
-            string databaseName,
-            string connectionStringLocal
-            ) {
+            string connectionStringLocal,
+            string databaseName
+            )
+        {
 
             try {
                 string sql =
