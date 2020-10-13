@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/13/2020 3:07:55 PM
+# Generated Date: 10/13/2020 3:58:28 PM
 # From Machine: DESKTOP-742U247
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -36,7 +36,8 @@ param(
 )
 
 [string] $startFolder = $pwd
-Set-Location C:\SQL2XProjects\SolutionNorSolutionPim
+# Set-Location C:\SQL2XProjects\SolutionNorSolutionPim
+Set-Location C:\GitProjects\nor-pim
 
 # CSharp files
 $match = '*.cs' #, '*.cshtml' , '*.cs', '*.svc', '*.ps1' # , '*.json'
@@ -160,8 +161,8 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
 
     # replace endpoints
-    [string] $find = 'http://NorSolutionPimBusiness.azurewebsites.net/'
-    [string] $replace = 'http://localhost:64804/'
+    [string] $find = 'NorSolutionPimBusiness\.azurewebsites\.net'
+    [string] $replace = 'localhost:64804'
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
 
     # show filename if changed

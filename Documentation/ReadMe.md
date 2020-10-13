@@ -4,24 +4,66 @@ NorPim is a Product Information Management System written for enterprise cloud e
 
 The code is written by one developer over the course of several years, where focus has been on *clean* and *maintainable* code. 
 
-**90%** of the code is produced by a Code Generator [sql2x](www.sql2x.org). The general idea is to use as few Frameworks and dependencies as possible in order to make a product that will stand the test of time without having to be rewritten when technology shifts happens and said Frameworks and Dependencies do become incompatible.
+**90%** of the code is produced by a Code Generator [sql2x](www.sql2x.org). The general idea is to use as few Frameworks and dependencies as possible in order to make a product that will stand the test of time without having to be rewritten when technology shifts happens and Frameworks and Dependencies become incompatible.
 
 The last **10%** of the code mainly consists of user interface tweaks to support new User Interface trends and fads, business layer code to interact with other systems, import/export, etc.
 
-The example Catalog and Product data is all Latin "Lorem ipsum" Gibberish, this to take focus away from the data as any Product related data can be handled by NorPim.
+T he example Catalog and Product data is all Latin "Lorem ipsum" Gibberish, this to take focus away from the data as any Product related data can be handled by NorPim.
 
 The goal of Open Sourcing NorPim is to attract organizations/developers to make more tailored User Interfaces tailored towards more specialized businesses while keeping the core sturdy enough to handle both large and huge amount of products as fast as possible on the infrastructure it runs on. 
 
 Currently NorPim runs with SQL Server, but there are only Tables, Columns and Relations.. no Stored Procedures or Functions is used, making NorPim easily adaptable for other databases on other platforms like Linux. Same with the business layer, dotNetCore under Linux is most definitely in the pipeline. The business logic in the **10%** manual code in NorPim is not expected to change at all during this transition.
 
+Live [NorPim running under Azure](http://www.NorPim.com) In this configuration all 3 FrontEnds runs under one Azure App, the WCF/SOAP layer in another one and finally Azure SQL Database on a third server.
+
 ## Todo:
- - documentation of functionality
- - how to install locally
-    - use of PowerShell to reinsert passwords and secrets
- - how to install in azure
- - how to run code locally
+ - Better documentation of functionality
+ - Better documentation
+ - Remove unused stuff
+
+## Code
+ - [GitHub](https://github.com/aunebakk/nor-pim)
+   - **GitHub CLI**: gh repo clone aunebakk/nor-pim
+   - **Git**: git clone https://github.com/aunebakk/nor-pim.git
+   - [zip](https://github.com/aunebakk/nor-pim/archive/master.zip)
+
+## How to run code on local computer
+Use PowerShell to reinsert passwords and secrets:
+
+.\Operational\De-Sanitize Connection.ps1 
+
+ - rename C:\SQL2XProjects\SolutionNorSolutionPim to new absolute path *todo* ( use absolute path of script's child )
+ 
+ - De-Sanitize Connection
+
+ & '.\De-Sanitize Connection.ps1' -connectionStringSQLServerLocal:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+ 
+ - git checkout origin/master -- .\DatabaseManager\ConnectionString.cs
+ - You only get one shot at using this script, get it wrong and you have to get latest from Git again.
+ - WindowsSetup Unsupported, todo, remove
+ - Clean build
+ - Start Business, confirm WCF/SOAP 
+ - Create Database NorSolutionPim ( todo )
+ - Run DatabaseManager
+ - Select Business and Web as startup
+ - Run
+
+de-sanitizing *.cs : C:\GitProjects\nor-pim\DatabaseManager\ConnectionString.cs
+de-sanitizing *.cs : C:\GitProjects\nor-pim\Web\ConnectionString.cs
+
+| Parameter                             | Comment                                           |
+|---------------------------------------|---------------------------------------------------|
+| azureUserName                         | *not sure*
+| azureWebAppProfileUserPassword        | Get web app profile password from the azure portal
+| connectionStringAzureTable            | Default Endpoints Protocol
+|                                       |
+| azureSQLServerName                    | Azure SQL Server Name
+| azureSQLServerPassword                | Azure SQL Server Password
+| azureSQLUserName                      | User name for Azure sql server
+| connectionStringSQLServerLocal        | ADO connection string to a SQL Server
+
+## How to publish to azure
  - sql2xLite to publish?
- -
 
 ## This ReadMe
 Is an top-down view of NorPim, starting with all user visible aspects, going through the Architecture from client proxies to business layer and the database.
@@ -99,12 +141,6 @@ NorPim is still in a prototype stage, and it's main purpose is to act as a proof
 
 NorPim uses no special frameworks outside of the dotNetFramework ecosystem in an effort to make it as scalable and maintainable as possible, this is made possible by using a tool to generate boiler plate code for efficient communication between layers ( SQL2X ). Since the code is bare bone C# and TypeScript it is also easy to find developers to maintain the code.
 
-## Code
- - [GitHub](https://github.com/aunebakk/nor-pim)
-   - **GitHub CLI**: gh repo clone aunebakk/nor-pim
-   - **Git**: git clone https://github.com/aunebakk/nor-pim.git
-   - [zip](https://github.com/aunebakk/nor-pim/archive/master.zip)
-
 ## Languages
  - C#
  - TypeScript / JavaScript ( minimal usage of HTML5 / CSS )
@@ -132,7 +168,7 @@ NorPim is updated monthly with new features and bug fixes. You can download it f
 ## Database
 Following is parts of NorPim's Database schema, there are more tables dealing with import and export, catalog structure, security and users.
 
-NorPim uses a database handler that takes care of upgrading database schemas from one version to another, making having multiple databases at different versions a possibility.
+NorPim uses a database handler that takes care of upgrading database schemas from one version to another, making having multiple databases at different versions manageable.
 <p align="center">
   <img alt="NorPim DB Schema" src="schema.png">
 </p>
