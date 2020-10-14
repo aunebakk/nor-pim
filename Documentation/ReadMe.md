@@ -58,12 +58,15 @@ Use PowerShell to reinsert passwords and secrets:
 
 **From PowerShell**
 
- & '.\Operational\De-Sanitize Connection.ps1' -connectionStringSQLServerLocal:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+& '.\Operational\De-Sanitize Connection.ps1' `
+  -connectionStringSQLServerLocal:"Data Source='Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;'" `
+  -emailPersonalSecond:'roger@aunebakk.com' `
+  -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2'
  
  - & '.\Operational\Restore packages.bat'
- - & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'
+ - & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'  *todo, warnings*
  - & '.\Web\Operational\Get-Web-App-PublishingProfile.ps1'
- - & '.\Web\Operational\Build package to disk.bat'
+ - & '.\Web\Operational\Build package to disk.bat'                                    *todo, warnings*
  - & '.\Web\Operational\Publish To Azure.bat'
 
 | Parameter                             | Comment                                           |
@@ -78,6 +81,8 @@ Use PowerShell to reinsert passwords and secrets:
 | azureSQLServerPassword                | Azure SQL Server Password
 | azureSQLUserName                      | User name for Azure sql server
 | connectionStringSQLServerLocal        | ADO connection string to a SQL Server
+
+**Open URL to published Hybrid/Web front**
 
 ## This ReadMe
 Is an top-down view of NorPim, starting with all user visible aspects, going through the Architecture from client proxies to business layer and the database.

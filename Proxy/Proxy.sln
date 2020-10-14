@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy.csproj", "{8A014F37-D9B8-471C-9E16-F148A11EC3F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy.csproj", "{4063BE4E-EF20-4520-921D-211E09B07469}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A014F37-D9B8-471C-9E16-F148A11EC3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A014F37-D9B8-471C-9E16-F148A11EC3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A014F37-D9B8-471C-9E16-F148A11EC3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A014F37-D9B8-471C-9E16-F148A11EC3F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4063BE4E-EF20-4520-921D-211E09B07469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4063BE4E-EF20-4520-921D-211E09B07469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4063BE4E-EF20-4520-921D-211E09B07469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4063BE4E-EF20-4520-921D-211E09B07469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7DFBB649-FE09-4C93-80F1-6E29B9BEEAB6}
+		SolutionGuid = {6EA2646D-7699-4870-8324-CEE1BBD485EC}
 	EndGlobalSection
 EndGlobal
