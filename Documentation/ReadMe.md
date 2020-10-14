@@ -8,7 +8,7 @@ The code is written by one developer over the course of several years, where foc
 
 The last **10%** of the code mainly consists of user interface tweaks to support new User Interface trends and fads, business layer code to interact with other systems, import/export, etc.
 
-T he example Catalog and Product data is all Latin "Lorem ipsum" Gibberish, this to take focus away from the data as any Product related data can be handled by NorPim.
+The example Catalog and Product data is all Latin "Lorem ipsum" Gibberish, this to take focus away from the data as any Product related data can be handled by NorPim.
 
 The goal of Open Sourcing NorPim is to attract organizations/developers to make more tailored User Interfaces tailored towards more specialized businesses while keeping the core sturdy enough to handle both large and huge amount of products as fast as possible on the infrastructure it runs on. 
 
@@ -30,29 +30,46 @@ Live [NorPim running under Azure](http://www.NorPim.com) In this configuration a
 ## How to run code on local computer
 Use PowerShell to reinsert passwords and secrets:
 
-.\Operational\De-Sanitize Connection.ps1 
-
- - rename C:\SQL2XProjects\SolutionNorSolutionPim to new absolute path *todo* ( use absolute path of script's child )
- 
  - De-Sanitize Connection
-
- & '.\De-Sanitize Connection.ps1' -connectionStringSQLServerLocal:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
- 
- - git checkout origin/master -- .\DatabaseManager\ConnectionString.cs
- - You only get one shot at using this script, get it wrong and you have to get latest from Git again.
- - WindowsSetup Unsupported, todo, remove
- - Clean build
- - Start Business, confirm WCF/SOAP 
- - Create Database NorSolutionPim ( todo )
- - Run DatabaseManager
- - Select Business and Web as startup
- - Run
-
-de-sanitizing *.cs : C:\GitProjects\nor-pim\DatabaseManager\ConnectionString.cs
-de-sanitizing *.cs : C:\GitProjects\nor-pim\Web\ConnectionString.cs
 
 | Parameter                             | Comment                                           |
 |---------------------------------------|---------------------------------------------------|
+| connectionStringSQLServerLocal        | ADO connection string to a SQL Server
+
+**From PowerShell**
+
+ & '.\Operational\De-Sanitize Connection.ps1' -connectionStringSQLServerLocal:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+ 
+ **From Visual Studio 2017**
+
+ - Clean build
+ - Run DatabaseManager 
+ - Start Business, confirm WCF/SOAP 
+ - Select Business and Web as startup
+ - Run
+
+## How to publish to azure
+
+| Parameter                             | Comment                                           |
+|---------------------------------------|---------------------------------------------------|
+| connectionStringSQLServerLocal        | ADO connection string to a SQL Server
+| emailPersonalSecond                   | Azure Active Directory Login eMail
+| passwordPersonalStyleLargeEndingTwo   | Azure Active Directory Login password
+
+**From PowerShell**
+
+ & '.\Operational\De-Sanitize Connection.ps1' -connectionStringSQLServerLocal:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+ 
+ - & '.\Operational\Restore packages.bat'
+ - & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'
+ - & '.\Web\Operational\Get-Web-App-PublishingProfile.ps1'
+ - & '.\Web\Operational\Build package to disk.bat'
+ - & '.\Web\Operational\Publish To Azure.bat'
+
+| Parameter                             | Comment                                           |
+|---------------------------------------|---------------------------------------------------|
+| emailPersonalSecond                   | Azure Active Directory Login eMail
+| passwordPersonalStyleLargeEndingTwo   | Azure Active Directory Login password
 | azureUserName                         | *not sure*
 | azureWebAppProfileUserPassword        | Get web app profile password from the azure portal
 | connectionStringAzureTable            | Default Endpoints Protocol
@@ -62,9 +79,6 @@ de-sanitizing *.cs : C:\GitProjects\nor-pim\Web\ConnectionString.cs
 | azureSQLUserName                      | User name for Azure sql server
 | connectionStringSQLServerLocal        | ADO connection string to a SQL Server
 
-## How to publish to azure
- - sql2xLite to publish?
-
 ## This ReadMe
 Is an top-down view of NorPim, starting with all user visible aspects, going through the Architecture from client proxies to business layer and the database.
 
@@ -72,35 +86,33 @@ Is an top-down view of NorPim, starting with all user visible aspects, going thr
 
 This repository ("`NorPim - OSS`") is where we ( NorGate ) develop the [NorPim](http://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/aunebakk/nor-pim/wiki/Roadmap), [monthly iteration plans](https://github.com/aunebakk/nor-pim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/aunebakk/nor-pim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/aunebakk/nor-pim/blob/master/LICENSE.txt).
 
-## NorPim 
-
-# DashBoard
+## DashBoard
 This is the starting page for the Hybrid Mobile/Web side of NorPim. It supports portrait and landscape mode, so rotating a mobile device will change layout of tiles.
 
 <p align="center">
   <img alt="NorPim in action" src="dashboard.png">
 </p>
 
-# Hybrid/Web Catalog Index view
+## Hybrid/Web Catalog Index view
 This view is used for navigating the index of your products. It supports portrait and landscape mode, so rotating a mobile device will change layout of tiles. This view is the first level, clicking a tile will bring the user to level 2, then level 3 and finally to the product view.
 
 <p align="center">
   <img alt="NorPim in action" src="catalog.png">
 </p>
 
-# Hybrid/Web Product view
+## Hybrid/Web Product view
 This is the product selection view, it allows for "Ordering/Selecting" a product, get Details about a product or Edit a product.
 <p align="center">
   <img alt="NorPim in action" src="product.png">
 </p>
 
-# Hybrid/Web Detail view
+## Hybrid/Web Detail view
 The detail page allows the user to see all essential information about a product in a Web page.
 <p align="center">
   <img alt="NorPim in action" src="product-detail.png">
 </p>
 
-# Hybrid/Web Edit page
+## Hybrid/Web Edit page
 The edit page allows the user to edit all essential information about a product in a Web page.
 
 The user will have to Login in order to save any changes ( TODO )
@@ -108,13 +120,13 @@ The user will have to Login in order to save any changes ( TODO )
   <img alt="NorPim in action" src="product-edit.png">
 </p>
 
-# Windows Product Preview
+## Windows Product Preview
 The windows version features it's own installation and has access to everything NorPim has to offer. 
 <p align="center">
   <img alt="NorPim in action" src="Windows-Product-Preview.png">
 </p>
 
-# Windows Whiteboard
+## Windows Whiteboard
 For editing all Product data, including an all inclusive history of all changes done to the product. Support for Excel Cut and Paste is in place.
 <p align="center">
   <img alt="NorPim in action" src="Windows-Product-Whiteboard.png">

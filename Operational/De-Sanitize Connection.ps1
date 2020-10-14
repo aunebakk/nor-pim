@@ -1,8 +1,8 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/14/2020 4:56:44 AM
-# From Machine: DESKTOP-517I8BU
+# Generated Date: 10/14/2020 3:04:17 PM
+# From Machine: DESKTOP-742U247
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
 param(
@@ -40,6 +40,8 @@ param(
 # get parent path of this script
 [string] $path = Split-Path $MyInvocation.MyCommand.Path
 [string] $parent = Split-Path $path
+
+[string] $sql2xParent = 'C:\\SQL2XProjects\\SolutionNorSolutionPim'
 
 Set-Location $parent
 
@@ -97,6 +99,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $find = 'DefaultEndpointsProtocol.+'
     [string] $replace = $connectionStringAzureTable
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+
+    # replace sql2x path with git clone path
+    $fileContent = $fileContent | ForEach-Object { $_ -Replace $sql2xParent, $parent } 
 
     # show filename if changed
     if ($fileContentOriginal -ne $fileContent) {
@@ -269,6 +274,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
                 )
             )
         }
+
+        # replace sql2x path with git clone path
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $sql2xParent, $parent } 
 
         # show filename if changed
         if ($fileContentOriginal -ne $fileContent) {
