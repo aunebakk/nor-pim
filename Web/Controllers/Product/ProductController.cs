@@ -47,7 +47,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
             if (!string.IsNullOrEmpty(User.Identity.GetUserId()))
                 cartProductContract.AspId = Guid.Parse( User.Identity.GetUserId() );
 
-            cartProductContract.Amount = 666;
+            cartProductContract.Amount = 66;
             cartProductContract.FinancialCurrencyId = financialCurrencyContracts[0].FinancialCurrencyId;
             cartProductContract.StateRcd = DefaultStateRef.Created;
             cartProductContract.UserId = userId;

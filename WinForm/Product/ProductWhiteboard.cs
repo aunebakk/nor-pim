@@ -1408,7 +1408,7 @@ namespace SolutionNorSolutionPim.UserInterface
         //        return;
 
         //    try {
-        //        string identifier = "666";
+        //        string identifier = "6";
 
         //        new ProductServiceClient().ProductChangeAttribute(
         //            productIds,

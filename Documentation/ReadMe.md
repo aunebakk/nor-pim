@@ -63,24 +63,12 @@ Use PowerShell to reinsert passwords and secrets:
   -emailPersonalSecond:'roger@aunebakk.com' `
   -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2'
  
+ - NuGet.exe restore .\SolutionNorSolutionPim.sln ( Download NuGet here: https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.9-rtm )
  - & '.\Operational\Restore packages.bat'
- - & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'  *todo, warnings*
+ - & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'
  - & '.\Web\Operational\Get-Web-App-PublishingProfile.ps1'
  - & '.\Web\Operational\Build package to disk.bat'                                    *todo, warnings*
  - & '.\Web\Operational\Publish To Azure.bat'
-
-| Parameter                             | Comment                                           |
-|---------------------------------------|---------------------------------------------------|
-| emailPersonalSecond                   | Azure Active Directory Login eMail
-| passwordPersonalStyleLargeEndingTwo   | Azure Active Directory Login password
-| azureUserName                         | *not sure*
-| azureWebAppProfileUserPassword        | Get web app profile password from the azure portal
-| connectionStringAzureTable            | Default Endpoints Protocol
-|                                       |
-| azureSQLServerName                    | Azure SQL Server Name
-| azureSQLServerPassword                | Azure SQL Server Password
-| azureSQLUserName                      | User name for Azure sql server
-| connectionStringSQLServerLocal        | ADO connection string to a SQL Server
 
 **Open URL to published Hybrid/Web front**
 

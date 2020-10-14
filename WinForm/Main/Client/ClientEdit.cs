@@ -24,10 +24,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 this.Text += " - Not Savable (User Missing?)";
                 Show ();
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
 
@@ -41,10 +38,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 Show ();
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
 
@@ -79,10 +73,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 Show ();
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
 
@@ -109,7 +100,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 Show ();
             } catch ( Exception ex ) {
                 if ( ex.HResult == 000 )
-                    ; // the detail is in the devil
+                    if (ex != null) { }
                 else
                     System.Diagnostics.Debugger.Break ();
             } finally {
@@ -180,8 +171,8 @@ namespace SolutionNorSolutionPim.UserInterface {
                 if (!string.IsNullOrEmpty( file.FileName ) )
                     pictureBoxImage.Load ( file.FileName );
             } catch ( Exception ex ) {
-                if ( ex.HResult == -2146233079 ) // "ImageLocation must be set.", never mid
-                    ; 
+                if (ex.HResult == -2146233079) // "ImageLocation must be set.", never mid
+                    { }
                 else
                     System.Diagnostics.Debugger.Break ();
             }

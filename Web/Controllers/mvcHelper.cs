@@ -199,24 +199,24 @@ namespace SolutionNorSolutionPim.mvc.Controllers
             string message
             ) {
             return;
-            try {
-                var contract = new CrudeDefaultUserActivityContract();
+            //try {
+            //    var contract = new CrudeDefaultUserActivityContract();
 
-                contract.DefaultUserActivityId = Guid.NewGuid();
-                contract.DefaultUserActivityTypeRcd = DefaultUserActivityTypeRef.WebPageOpened;
-                contract.UserActivityNote = message;
+            //    contract.DefaultUserActivityId = Guid.NewGuid();
+            //    contract.DefaultUserActivityTypeRcd = DefaultUserActivityTypeRef.WebPageOpened;
+            //    contract.UserActivityNote = message;
 
-                try {
-                    contract.OriginatingAddress = request.ServerVariables["REMOTE_ADDR"];
-                } catch { };
+            //    try {
+            //        contract.OriginatingAddress = request.ServerVariables["REMOTE_ADDR"];
+            //    } catch { };
 
-                //contract.DefaultUserId = UserId(request, string.Empty);
-                contract.DateTime = DateTime.UtcNow;
+            //    //contract.DefaultUserId = UserId(request, string.Empty);
+            //    contract.DateTime = DateTime.UtcNow;
 
-                var activity = new CrudeDefaultUserActivityServiceClient();
-                activity.Insert(contract);
-                activity.Close();
-            } catch { };
+            //    var activity = new CrudeDefaultUserActivityServiceClient();
+            //    activity.Insert(contract);
+            //    activity.Close();
+            //} catch { };
         }
 
         public static Guid ErrorLog(

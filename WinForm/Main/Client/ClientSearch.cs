@@ -36,10 +36,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 RefreshCrudeClient();
                 base.Show();
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
 
@@ -49,10 +46,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsEdit((System.Guid) dataGridViewCrudeClient.CurrentRow.Cells["ClientId"].Value);
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
 
@@ -62,10 +56,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsAddByRules(_userId);
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
 
@@ -75,10 +66,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsEdit((System.Guid) dataGridViewCrudeClient.CurrentRow.Cells["ClientId"].Value);
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
 
@@ -116,11 +104,9 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewCrudeClient.AutoResizeColumns();
                 dataGridViewCrudeClient.Refresh();
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
-            } finally {
+                if (ex != null) { }
+            }
+            finally {
                 client.Close();
             }
         }
@@ -161,10 +147,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewCrudeClient.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewCrudeClient.AutoResizeColumns ();
             } catch ( Exception ex ) {
-                if ( ex.HResult == -666 )
-                    ; // the detail is in the devil
-                else
-                    System.Diagnostics.Debugger.Break ();
+                if (ex != null) { }
             }
         }
     }

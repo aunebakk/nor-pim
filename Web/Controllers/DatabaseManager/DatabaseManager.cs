@@ -212,7 +212,7 @@ select 'Created database: " + databaseName + @"'
 
                 return dbid > 0;
             } catch (Exception ex) {
-                // ErrorHandler.ErrorEx(serviceProvider, MethodBase.GetCurrentMethod(), "Failed to check if database exist", ex, rethrow: true);
+                Console.WriteLine($"Failed to check if database exist, error: {ex.Message}");
             }
 
             return false;
