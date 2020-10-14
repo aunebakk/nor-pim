@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{27BBB59A-B8EF-42EB-A910-A35D4F62B210}</ProjectGuid>
+    <ProjectGuid>{4FFE35A9-A37B-468A-8D3B-661BF822986C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -498,30 +498,30 @@
     <Content Include="Images\favicon\S__4743184.jpg" />
     <Content Include="Images\favicon\S__4743267.jpg" />
     <Content Include="Images\product\Cross_section_of_a_VGA_cable.jpg" />
-    <Content Include="install\Contract.dll" />
-    <Content Include="install\Contract.pdb" />
-    <Content Include="install\maybe\publish.htm" />
-    <Content Include="install\maybe\setup.exe" />
-    <Content Include="install\Proxy.dll" />
-    <Content Include="install\Proxy.pdb" />
-    <Content Include="install\publish.htm" />
-    <Content Include="install\setup.exe" />
-    <Content Include="install\WinForm.exe" />
-    <Content Include="install\WinForm.pdb" />
+    <Content Include="Install\Contract.dll" />
+    <Content Include="Install\Contract.pdb" />
+    <Content Include="Install\maybe\publish.htm" />
+    <Content Include="Install\maybe\setup.exe" />
+    <Content Include="Install\Proxy.dll" />
+    <Content Include="Install\Proxy.pdb" />
+    <Content Include="Install\publish.htm" />
+    <Content Include="Install\setup.exe" />
+    <Content Include="Install\WinForm.exe" />
+    <Content Include="Install\WinForm.pdb" />
     <Content Include="Pack\Microsoft.Azure.Management.Sql.dll" />
     <Content Include="Pack\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.Authentication.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.dll" />
-    <Content Include="install\WinForm.application" />
-    <Content Include="install\WinForm.exe.config" />
-    <Content Include="install\WinForm.exe.manifest" />
-    <Content Include="install\Application Files\WinForm_0_0_0_1\Contract.dll.deploy" />
-    <Content Include="install\Application Files\WinForm_0_0_0_1\Proxy.dll.deploy" />
-    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.config.deploy" />
-    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.deploy" />
-    <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.manifest" />
-    <Content Include="install\Application Files\WinForm_0_0_0_1\Main\pimlogo.png.deploy" />
+    <Content Include="Install\WinForm.application" />
+    <Content Include="Install\WinForm.exe.config" />
+    <Content Include="Install\WinForm.exe.manifest" />
+    <Content Include="Install\Application Files\WinForm_0_0_0_1\Contract.dll.deploy" />
+    <Content Include="Install\Application Files\WinForm_0_0_0_1\Proxy.dll.deploy" />
+    <Content Include="Install\Application Files\WinForm_0_0_0_1\WinForm.exe.config.deploy" />
+    <Content Include="Install\Application Files\WinForm_0_0_0_1\WinForm.exe.deploy" />
+    <Content Include="Install\Application Files\WinForm_0_0_0_1\WinForm.exe.manifest" />
+    <Content Include="Install\Application Files\WinForm_0_0_0_1\Main\pimlogo.png.deploy" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -1010,7 +1010,7 @@
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierCreate.cshtml" />
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierEdit.cshtml" />
     <Content Include="Views\Crude\Product\CrudeProductSupplier\CrudeProductSupplierDetails.cshtml" />
-    <Content Include="install\mage.bat" />
+    <Content Include="Install\mage.bat" />
     <Content Include="SchemaTemplates\Cart\CartProduct.json" />
     <Content Include="SchemaTemplates\Cart\CartProductPrice.json" />
     <Content Include="SchemaTemplates\Client\Client.json" />
@@ -1141,11 +1141,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{8b7eabf2-cf60-4810-8eba-39cb0278f76d}</Project>
+      <Project>{bf5da816-e9ca-4d19-ad23-43e490e54363}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{1df4e97b-ce9b-4e39-a3f5-a9103ae87598}</Project>
+      <Project>{016f72f7-0387-401f-8c01-2938669ad32d}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1179,7 +1179,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53568</DevelopmentServerPort>
+          <DevelopmentServerPort>58175</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

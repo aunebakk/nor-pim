@@ -1,8 +1,8 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/13/2020 5:52:11 PM
-# From Machine: DESKTOP-742U247
+# Generated Date: 10/14/2020 4:56:44 AM
+# From Machine: DESKTOP-517I8BU
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
 param(
@@ -36,8 +36,12 @@ param(
 )
 
 [string] $startFolder = $pwd
-# Set-Location C:\SQL2XProjects\SolutionNorSolutionPim
-Set-Location C:\GitProjects\nor-pim
+
+# get parent path of this script
+[string] $path = Split-Path $MyInvocation.MyCommand.Path
+[string] $parent = Split-Path $path
+
+Set-Location $parent
 
 # CSharp files
 $match = '*.cs' #, '*.cshtml' , '*.cs', '*.svc', '*.ps1' # , '*.json'
