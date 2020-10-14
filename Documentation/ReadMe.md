@@ -43,7 +43,7 @@ Use PowerShell to reinsert passwords and secrets:
  **From Visual Studio 2017**
 
  - Clean build
- - Run DatabaseManager 
+ - Run DatabaseManager to create the Database and populate it's tables
  - Start Business, confirm WCF/SOAP 
  - Select Business and Web as startup
  - Run
@@ -58,19 +58,39 @@ Use PowerShell to reinsert passwords and secrets:
 
 **From PowerShell**
 
+***this can only run once or the connectionString will be messed up***
+
 & '.\Operational\De-Sanitize Connection.ps1' `
-  -connectionStringSQLServerLocal:"Data Source='Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;'" `
+  -connectionStringSQLServerLocal:"Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;" `
   -emailPersonalSecond:'roger@aunebakk.com' `
   -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2'
  
+ **The Web and Window Front**
  - NuGet.exe restore .\SolutionNorSolutionPim.sln ( Download NuGet here: https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.9-rtm )
  - & '.\Operational\Restore packages.bat'
  - & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'
  - & '.\Web\Operational\Get-Web-App-PublishingProfile.ps1'
- - & '.\Web\Operational\Build package to disk.bat'                                    *todo, warnings*
+ - & '.\Web\Operational\Build package to disk.bat'
  - & '.\Web\Operational\Publish To Azure.bat'
 
+**The Business Layer**
+ - & '.\Business\Operational\Get-Web-App-PublishingProfile.ps1'
+ - & '.\Business\Operational\Build package to disk.bat'
+ - & '.\Business\Operational\Publish To Azure.bat'
+
+**The Database** ***TODO***
+
+Note, The web front is responsible for creating and updating the database, so it needs to be published first. 
+
+ - https://norsolutionpim.azurewebsites.net/database
+   - Database Management Create Database
+   - Database Management Set Version Zero	Database
+   - Database Management Increase Version To Latest step by step
+   - Database Management Version Object
+
 **Open URL to published Hybrid/Web front**
+
+https://norsolutionpim.azurewebsites.net/ ***TODO***
 
 ## This ReadMe
 Is an top-down view of NorPim, starting with all user visible aspects, going through the Architecture from client proxies to business layer and the database.

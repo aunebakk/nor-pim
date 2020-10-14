@@ -63,21 +63,22 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 this.toRemote = toRemote;
                 if (this.toRemote)
                     connectionString = Conn.ConnectionStringRemote;
-                else
+                else { 
                     connectionString = Conn.ConnectionStringLocal;
 
-                // check if database exist
-                if (!DatabaseExist(
-                        connectionStringLocal: connectionString.Replace("Initial Catalog=NorSolutionPim;", ""),
-                        databaseName: this.databaseName
-                    )) {
+                    // check if database exist
+                    if (!DatabaseExist(
+                            connectionStringLocal: connectionString.Replace("Initial Catalog=NorSolutionPim;", ""),
+                            databaseName: this.databaseName
+                        )) {
 
-                    DatabaseCreate(
-                        connectionStringLocal: connectionString.Replace("Initial Catalog=NorSolutionPim;", ""),
-                        databaseName: this.databaseName
-                        );
+                        DatabaseCreate(
+                            connectionStringLocal: connectionString.Replace("Initial Catalog=NorSolutionPim;", ""),
+                            databaseName: this.databaseName
+                            );
 
-                    Console.WriteLine($"Created database {this.databaseName}");
+                        Console.WriteLine($"Created database {this.databaseName}");
+                    }
                 }
 
                 int minorNumber = 0;
