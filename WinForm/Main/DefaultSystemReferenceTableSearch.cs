@@ -206,6 +206,13 @@ namespace SolutionNorSolutionPim.UserInterface
                         mdiChild.Show ( Singleton.Instance.UserId );
                         break;
                     }
+                case "client_document_type_ref": {
+                        var mdiChild = new CrudeClientDocumentTypeRefSearch ();
+                        Singleton.Instance.CheckForm ( mdiChild );
+                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.Show ( Singleton.Instance.UserId );
+                        break;
+                    }
                 case "client_address_type_ref": {
                         var mdiChild = new CrudeClientAddressTypeRefSearch ();
                         Singleton.Instance.CheckForm ( mdiChild );
@@ -215,6 +222,13 @@ namespace SolutionNorSolutionPim.UserInterface
                     }
                 case "client_link_type_ref": {
                         var mdiChild = new CrudeClientLinkTypeRefSearch ();
+                        Singleton.Instance.CheckForm ( mdiChild );
+                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.Show ( Singleton.Instance.UserId );
+                        break;
+                    }
+                case "client_identifier_type_ref": {
+                        var mdiChild = new CrudeClientIdentifierTypeRefSearch ();
                         Singleton.Instance.CheckForm ( mdiChild );
                         mdiChild.MdiParent = this.MdiParent;
                         mdiChild.Show ( Singleton.Instance.UserId );
