@@ -510,11 +510,11 @@ module SQL2XTemplateCrudeTableDurian {
                     .linkUrl = '../Product/PIMDetails?productId=';
                 this.detailLink.draw(this.tileFont(), 'D', this.textTop(this.name));
 
-                // order link                                                           //here
-                this.orderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 3);        //here
-                this.orderLink                                                          //here
-                    .linkUrl = '../Product/Order?productId=';       //here 
-                this.orderLink.draw(this.tileFont(), 'O', this.textTop(this.name));     //here
+                // order link
+                this.orderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 3);
+                this.orderLink
+                    .linkUrl = '../Product/Order?productId=';
+                this.orderLink.draw(this.tileFont(), 'S', this.textTop(this.name));
             }
 
             // chapter header
