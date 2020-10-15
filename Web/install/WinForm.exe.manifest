@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WravHBdEtwGWLvhuRx1xad1g1BxFi6541rblLZJljVs=</dsig:DigestValue>
+        <dsig:DigestValue>N+LbDRiLr8vJhcgiqn4orj9adkHtteUITnvp4vjIdiE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,29 +61,38 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fY2QPYxvH79XKqrye/JwwRa1/MFSB2vxQXsSiyDLjUA=</dsig:DigestValue>
+        <dsig:DigestValue>khZFP/FELxK1cJYuO6oXuXF5u1TxL1njasJ2P6eVIaU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForm.exe" size="1441792">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForm.exe" size="1382912">
       <assemblyIdentity name="WinForm" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>R9Am8Keugxy6Dbj/heorye9yi3US1jieu3JyhK7fPfI=</dsig:DigestValue>
+        <dsig:DigestValue>CabRVXUnPHcSq99VxbkrFjpA01WewAZ4ms5Guai9o9I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Main\pimlogo.png" size="61419">
+  <file name="Main\pimlogo.png" size="34334">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qCF46XazPj1oh+nBAcZN6CXPc9n61w6Peq+5ukv73ao=</dsig:DigestValue>
+      <dsig:DigestValue>IlZCavCvire78ZiTPtV5X2oa/ye+8kEIbpgJH3oE9Ag=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Main\pimlogo.svg" size="5528">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aXwkIrKiZfDaua3eg28Sd8Pc4KPUHDHuyUbQHV0zd2g=</dsig:DigestValue>
     </hash>
   </file>
   <file name="WinForm.exe.config" size="31636">
@@ -92,7 +101,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NqrtgGN7LFHNFDDs3OtUO0pkB9RSX32KaHfPdQ9CPjw=</dsig:DigestValue>
+      <dsig:DigestValue>GM5jC8EWOhjm1xzp7t2NtwPMGnCaeHsf9ENgqEWxTno=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

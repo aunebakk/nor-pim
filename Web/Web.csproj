@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{64775A31-B604-4E15-9751-0250AAFA11E0}</ProjectGuid>
+    <ProjectGuid>{DB35BC77-0145-4588-8CE0-C051C00800E8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -522,6 +522,7 @@
     <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.deploy" />
     <Content Include="install\Application Files\WinForm_0_0_0_1\WinForm.exe.manifest" />
     <Content Include="install\Application Files\WinForm_0_0_0_1\Main\pimlogo.png.deploy" />
+    <Content Include="install\Application Files\WinForm_0_0_0_1\Main\pimlogo.svg.deploy" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -1141,11 +1142,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{1792aad6-dc7c-49e6-83e0-7c566963e86c}</Project>
+      <Project>{405b86f0-13e0-4bb2-b815-60f543726ebb}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{5881d7aa-474c-4677-aaa1-ce96f5f3dd6c}</Project>
+      <Project>{77076890-8386-403f-a6e7-c3659a73226a}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1179,7 +1180,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63976</DevelopmentServerPort>
+          <DevelopmentServerPort>64654</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

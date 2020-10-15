@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68FC1AB5-1C3B-4800-A7A8-08103340962D}</ProjectGuid>
+    <ProjectGuid>{0028BF73-50B4-41F6-A120-2ED282E618A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinForm</RootNamespace>
@@ -2050,11 +2050,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{1792aad6-dc7c-49e6-83e0-7c566963e86c}</Project>
+      <Project>{405b86f0-13e0-4bb2-b815-60f543726ebb}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{5881d7aa-474c-4677-aaa1-ce96f5f3dd6c}</Project>
+      <Project>{77076890-8386-403f-a6e7-c3659a73226a}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -2072,6 +2072,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Main\pimlogo.png" />
+    <Content Include="Main\pimlogo.svg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Operational\" />
