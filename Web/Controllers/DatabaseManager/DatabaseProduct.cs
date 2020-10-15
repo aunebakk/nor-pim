@@ -1070,6 +1070,10 @@ insert into product_attribute_unit_ref (product_attribute_unit_rcd, product_attr
 	values ('MM', 'Milli Meters', '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
 insert into product_attribute_unit_ref (product_attribute_unit_rcd, product_attribute_unit_name, user_id, date_time) 
 	values ('G', 'Grams', '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+insert into product_attribute_unit_ref (product_attribute_unit_rcd, product_attribute_unit_name, user_id, date_time) 
+	values ('Co', 'Color', '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+insert into product_attribute_unit_ref (product_attribute_unit_rcd, product_attribute_unit_name, user_id, date_time) 
+	values ('KM', 'KiloMeter', '{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
 
 -- identifier
 insert into product_identifier_ref (product_identifier_rcd, product_identifier_name, user_id, date_time) 
@@ -1317,8 +1321,8 @@ begin
 		insert into product (product_id, product_name, state_rcd, user_id, date_time) 
 			values (@product_id, @name, 'C', @user_id, getutcdate());
 
-		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, user_id, date_time) 
-			values (newid(), @product_id, 'Color', @color, @user_id, getutcdate());
+		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, product_attribute_unit_rcd, user_id, date_time) 
+			values (newid(), @product_id, 'Color', @color, 'Co', @user_id, getutcdate());
 
 		insert into product_identifier (product_identifier_id, product_id, product_identifier_rcd, identifier, user_id, date_time) 
 			values (newid(), @product_id, 'GTIN13', @gtin, @user_id, getutcdate());
@@ -1456,8 +1460,8 @@ begin
 		insert into product_category_mapping (product_category_mapping_id, product_id, product_category_id, user_id, date_time) 
 			values (newid(), @new_product_id, @product_category_id, @user_id, getutcdate());
 
-		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, user_id, date_time) 
-			values (newid(), @new_product_id, 'Color', @color, @user_id, getutcdate());
+		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, product_attribute_unit_rcd, user_id, date_time) 
+			values (newid(), @new_product_id, 'Color', @color, 'Co', @user_id, getutcdate());
 
 		insert into product_identifier (product_identifier_id, product_id, product_identifier_rcd, identifier, user_id, date_time) 
 			values (newid(), @new_product_id, 'GTIN13', @gtin, @user_id, getutcdate());
@@ -1615,8 +1619,8 @@ create procedure duplicate_products(@product_expose_set_id uniqueidentifier,
 		insert into product_category_mapping (product_category_mapping_id, product_id, product_category_id, user_id, date_time) 
 			values (newid(), @new_product_id, @product_category_id, @user_id, getutcdate());
 
-		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, user_id, date_time) 
-			select newid(), @new_product_id, pa.product_attribute_rcd, pa.value, @user_id, getutcdate()
+		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, product_attribute_unit_rcd, user_id, date_time) 
+			select newid(), @new_product_id, pa.product_attribute_rcd, pa.value, pa.product_attribute_unit_rcd, @user_id, getutcdate()
 			from product_attribute as pa
 			where pa.product_id = @product_to_duplicate_id 
 

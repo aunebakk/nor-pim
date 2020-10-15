@@ -169,24 +169,24 @@ create procedure product_insert(
 												newid(), 						@product_category_parent_id_3, 	@new_product_id,	'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', 	getutcdate()			)
 
 		-- attributes
-		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, user_id, date_time) 
+		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, product_attribute_unit_rcd, user_id, date_time) 
 			values (newid(), @new_product_id, dbo.ref('product_attribute_ref.Color'), 
-			dbo.random_color(),																	-- random color
+			dbo.random_color(),	dbo.ref('product_attribute_unit_ref.Co'),														-- random color
 			'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
 
-		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, user_id, date_time) 
+		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, product_attribute_unit_rcd, user_id, date_time) 
 			values (newid(), @new_product_id, dbo.ref('product_attribute_ref.H'), 
-			cast(abs(checksum(newid())) % 14 + 1 as varchar)  + ' mm',							-- random positive number and 'mm'
+			cast(abs(checksum(newid())) % 14 + 1 as varchar), dbo.ref('product_attribute_unit_ref.MM'),							-- random positive number and 'mm'
 			'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
 
-		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, user_id, date_time) 
+		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, product_attribute_unit_rcd, user_id, date_time) 
 			values (newid(), @new_product_id, dbo.ref('product_attribute_ref.L'), 
-			cast(abs(checksum(newid())) % 14 + 1 as varchar)  + ' mm',							-- random positive number and 'mm'
+			cast(abs(checksum(newid())) % 14 + 1 as varchar), dbo.ref('product_attribute_unit_ref.MM'),							-- random positive number and 'mm'
 			'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
 
-		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, user_id, date_time) 
+		insert into product_attribute (product_attribute_id, product_id, product_attribute_rcd, value, product_attribute_unit_rcd, user_id, date_time) 
 			values (newid(), @new_product_id, dbo.ref('product_attribute_ref.RKM'), 
-			cast(abs(checksum(newid())) % 14 + 1 as varchar),									-- random positive number
+			cast(abs(checksum(newid())) % 14 + 1 as varchar), dbo.ref('product_attribute_unit_rcd.KM'), 						-- random positive number
 			'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
 
 		insert into product_identifier (product_identifier_id, product_id, product_identifier_rcd, identifier, user_id, date_time)

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/14/2020 8:33:28 PM
+  Generated Date: 10/15/2020 8:58:37 AM
   From Machine: DESKTOP-742U247
   Filename: ProductAttributeUnitRef.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
@@ -29,7 +29,11 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     //   https://norsolutionsql2xcore.azurewebsites.net/sql2xIndex#documentation: sql2x.org
     public partial class ProductAttributeUnitRef {
         
+        public const string Color = "Co";
+        
         public const string Grams = "G";
+        
+        public const string KiloMeter = "KM";
         
         public const string Meters = "METER";
         

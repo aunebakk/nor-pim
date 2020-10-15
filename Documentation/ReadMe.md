@@ -1,5 +1,10 @@
 # NorPim - Open Source ("NorPim - OSS")
 
+## Todo:
+ - Better documentation of functionality
+ - Better documentation
+ - Remove unused stuff
+
 NorPim is a Product Information Management System written for enterprise cloud environments with user interfaces tailored for PC, Web and Mobile. It is centered around Microsoft products like SQL Server, Azure, Visual Studio, C# and TypeScript.
 
 The code is written by one developer over the course of several years, where focus has been on *clean* and *maintainable* code. 
@@ -16,10 +21,8 @@ Currently NorPim runs with SQL Server, but there are only Tables, Columns and Re
 
 Live [NorPim running under Azure](http://www.NorPim.com) In this configuration all 3 FrontEnds runs under one Azure App, the WCF/SOAP layer in another one and finally Azure SQL Database on a third server.
 
-## Todo:
- - Better documentation of functionality
- - Better documentation
- - Remove unused stuff
+## Visual Studio 2017
+NorPim requires Visual Studio 2017 which can be downloaded here: https://visualstudio.microsoft.com/vs/older-downloads/
 
 ## Code
  - [GitHub](https://github.com/aunebakk/nor-pim)
@@ -73,24 +76,26 @@ Use PowerShell to reinsert passwords and secrets:
  - & '.\Web\Operational\Build package to disk.bat'
  - & '.\Web\Operational\Publish To Azure.bat'
 
+At this point the Front can only be used to bring up the start page and the about box.
+
 **The Business Layer**
  - & '.\Business\Operational\Get-Web-App-PublishingProfile.ps1'
  - & '.\Business\Operational\Build package to disk.bat'
  - & '.\Business\Operational\Publish To Azure.bat'
 
-**The Database** ***TODO***
+**The Database**
 
-Note, The web front is responsible for creating and updating the database, so it needs to be published first. 
+The web front is responsible for creating and updating the database, so the Front needs to be published before the database can be created. 
 
  - https://norsolutionpim.azurewebsites.net/database
    - Database Management Create Database
    - Database Management Set Version Zero	Database
    - Database Management Increase Version To Latest step by step
-   - Database Management Version Object
+   - Database Management Version Object ( Should be 0.14.0 )
 
 **Open URL to published Hybrid/Web front**
 
-https://norsolutionpim.azurewebsites.net/ ***TODO***
+https://???.azurewebsites.net/
 
 ## This ReadMe
 Is an top-down view of NorPim, starting with all user visible aspects, going through the Architecture from client proxies to business layer and the database.
