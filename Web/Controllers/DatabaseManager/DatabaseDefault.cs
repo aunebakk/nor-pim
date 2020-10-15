@@ -55,6 +55,57 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 	                            values (newid(), 'default_rule_type_ref'										,'Rule Type'								,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
                             insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
 	                            values (newid(), 'default_test_run_result_ref'									,'Default Test Run Result'					,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_attribute_ref'									    ,'Product Attribute Type'					,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_attribute_unit_ref'									,'Product Attribute Unit Type'  			,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_address_type_ref',                    'Client address type'                                        ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_contact_method_ref',                  'Client contact method'                                      ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_document_type_ref',                   'Client document type'                                       ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_event_type_ref',                      'Client event type'                                          ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_gender_ref',                          'Client gender'                                              ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_identifier_type_ref',                 'Client identifier type'                                     ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_link_type_ref',                       'Client link type'                                           ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_nationality_ref',                     'Client nationality'                                         ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_title_ref',                           'Client title'                                               ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'client_type_ref',                            'Client type'                                                ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_attribute_ref',                      'Product attribute'                                          ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_attribute_unit_ref',                 'Product attribute unit'                                     ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_category_documentation_type_ref',    'Product category documentation type'                        ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_category_image_type_ref',            'Product category image type'                                ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_documentation_type_ref',             'Product documentation type'                                 ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_entity_type_ref',                    'Product entity type'                                        ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_expose_set_type_ref',                'Product expose set type'                                    ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_gather_attribute_type_ref',          'Product gather attribute type'                              ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_gather_source_type_ref',             'Product gather source type'                                 ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_identifier_ref',                     'Product identifier'                                         ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_image_type_ref',                     'Product image type'                                         ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+                            insert into default_system_reference_table(default_system_reference_table_id, default_system_reference_table_name, default_system_reference_display_name, default_user_id, date_time) 
+	                            values (newid(), 'product_info_ref',                           'Product info'                                               ,'{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}', getutcdate());
+
                         ",
                     BreakUpToBatches = true
                 }
