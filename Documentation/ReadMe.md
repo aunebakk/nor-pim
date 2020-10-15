@@ -1,13 +1,12 @@
-# NorPim - Open Source ("NorPim - OSS")
+# NorPim - Open Source
 
-## Todo:
- - Better documentation of functionality
- - Better documentation
- - Remove unused stuff
+## Todo
+ - Applications Tile needs a better Windows install page
+ - What about the *Web* version, how do i distinguish it from the Hybrid
 
 NorPim is a Product Information Management System written for enterprise cloud environments with user interfaces tailored for PC, Web and Mobile. It is centered around Microsoft products like SQL Server, Azure, Visual Studio, C# and TypeScript.
 
-The code is written by one developer over the course of several years, where focus has been on *clean* and *maintainable* code. 
+The code is written by one developer over the course of several years, where focus has been on *simple*, *clean* and *maintainable* code. 
 
 **90%** of the code is produced by a Code Generator [sql2x](www.sql2x.org). The general idea is to use as few Frameworks and dependencies as possible in order to make a product that will stand the test of time without having to be rewritten when technology shifts happens and Frameworks and Dependencies become incompatible.
 
@@ -22,13 +21,13 @@ Currently NorPim runs with SQL Server, but there are only Tables, Columns and Re
 Live [NorPim running under Azure](http://www.NorPim.com) In this configuration all 3 FrontEnds runs under one Azure App, the WCF/SOAP layer in another one and finally Azure SQL Database on a third server.
 
 ## Visual Studio 2017
-NorPim requires Visual Studio 2017 which can be downloaded here: https://visualstudio.microsoft.com/vs/older-downloads/
+NorPim requires Visual Studio 2017 which can be downloaded [here](https://visualstudio.microsoft.com/vs/older-downloads/)
 
 ## Code
  - [GitHub](https://github.com/aunebakk/nor-pim)
    - **GitHub CLI**: gh repo clone aunebakk/nor-pim
    - **Git**: git clone https://github.com/aunebakk/nor-pim.git
-   - [zip](https://github.com/aunebakk/nor-pim/archive/master.zip)
+   - Compressed [zip](https://github.com/aunebakk/nor-pim/archive/master.zip) file
 
 ## How to run code on local computer
 Use PowerShell to reinsert passwords and secrets:
@@ -61,8 +60,6 @@ Use PowerShell to reinsert passwords and secrets:
 
 **From PowerShell**
 
-***this can only run once or the connectionString will be messed up***
-
 & '.\Operational\De-Sanitize Connection.ps1' `
   -connectionStringSQLServerLocal:"Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;" `
   -emailPersonalSecond:'roger@aunebakk.com' `
@@ -93,16 +90,14 @@ The web front is responsible for creating and updating the database, so the Fron
    - Database Management Increase Version To Latest step by step
    - Database Management Version Object ( Should be 0.14.0 )
 
-**Open URL to published Hybrid/Web front**
-
-https://???.azurewebsites.net/
+**Open URL to published Hybrid/Web front, you will find the starting point for the Windows version under Applications Tile**
 
 ## This ReadMe
 Is an top-down view of NorPim, starting with all user visible aspects, going through the Architecture from client proxies to business layer and the database.
 
 ## The Repository
 
-This repository ("`NorPim - OSS`") is where we ( NorGate ) develop the [NorPim](http://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/aunebakk/nor-pim/wiki/Roadmap), [monthly iteration plans](https://github.com/aunebakk/nor-pim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/aunebakk/nor-pim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/aunebakk/nor-pim/blob/master/LICENSE.txt).
+This repository ("`NorPim`") is where we ( NorGate ) develop the [NorPim](http://NorPim.com) product. Not only do we work on code and issues here, we also publish our [roadmap](https://github.com/aunebakk/nor-pim/wiki/Roadmap), [monthly iteration plans](https://github.com/aunebakk/nor-pim/wiki/Iteration-Plans), and our [endgame plans](https://github.com/aunebakk/nor-pim/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/aunebakk/nor-pim/blob/master/LICENSE.txt).
 
 ## DashBoard
 This is the starting page for the Hybrid Mobile/Web side of NorPim. It supports portrait and landscape mode, so rotating a mobile device will change layout of tiles.
@@ -150,7 +145,7 @@ For editing all Product data, including an all inclusive history of all changes 
   <img alt="NorPim in action" src="Windows-Product-Whiteboard.png">
 </p>
 
-[NorPim](https://NorPim.com) is a distribution of the `NorPim - OSS` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
+[NorPim](https://NorPim.com) is a distribution of the `NorPim` repository with NorGate specific customizations released under a traditional [NorGate product license](https://NorPim.com/License/).
 
 [NorPim](https://NorPim.com) Product Information Management - Structured and unstructured product specific attributes for Windows / Web and Mobile platform.
 
@@ -216,37 +211,19 @@ There are many ways in which you can participate in the project, for example:
 * Review [source code changes](https://github.com/aunebakk/nor-pim/pulls)
 * Review the [documentation](https://github.com/NorGate/NorPim-docs) and make pull requests for anything from typos to new content
 
-If you are interested in fixing issues and contributing directly to the code base,
-please see the document [How to Contribute](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute), which covers the following:
-
-* [How to build and run from source](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#build-and-run)
-* [The development workflow, including debugging and running tests](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#debugging)
-* [Coding guidelines](https://github.com/aunebakk/nor-pim/wiki/Coding-Guidelines)
-* [Submitting pull requests](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#pull-requests)
-* [Finding an issue to work on](https://github.com/aunebakk/nor-pim/wiki/How-to-Contribute#where-to-contribute)
-* [Contributing to translations](https://aka.ms/NorPimloc)
-
 ## Feedback
 
 * Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/NorPim)
-* [Request a new feature](CONTRIBUTING.md)
+* [Request a new feature](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
 * Upvote [popular feature requests](https://github.com/aunebakk/nor-pim/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
 * [File an issue ( GitHub issue tracker )](https://github.com/aunebakk/nor-pim/issues)
 * [File an issue ( NorPim's own issue tracker )](https://norsolutionpim.azurewebsites.net/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex)
-* Follow [@sql2x](https://twitter.com/aunebakk) and let us know what you think!
+* Follow [@sql2x](https://twitter.com/sql2x) and let us know what you think!
 * Follow [reddit](https://www.reddit.com/r/sql2x/) and let us know what you think!
 
 ## Related Projects
 
-Many of the core components and extensions to NorPim live in their own repositories on GitHub. For example, [sql2x](https://github.com/aunebakk/sql2x) have it's own repository. For a complete list, please visit the [Related Projects](https://github.com/aunebakk/nor-pim/wiki/Related-Projects) page on our [wiki](https://github.com/aunebakk/nor-pim/wiki).
-
-## Bundled Extensions
-
-NorPim includes a set of built-in extensions located in the [extensions](extensions) folder, including grammars and snippets for many languages. Extensions that provide rich language support (code completion, Go to Definition) for a language have the suffix `language-features`. For example, the `json` extension provides coloring for `JSON` and the `json-language-features` provides rich language support for `JSON`.
-
-## Code of Conduct
-
-This project has adopted the [NorGate Open Source Code of Conduct](https://opensource.NorGate.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.NorGate.com/codeofconduct/faq/) or contact [opencode@NorGate.com](mailto:opencode@NorGate.com) with any additional questions or comments.
+Many of the core components and extensions to NorPim live in their own repositories on GitHub. For example, [sql2x](https://github.com/aunebakk/sql2x) have it's own repository. 
 
 ## License
 

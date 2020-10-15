@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 10/15/2020 5:42:35 PM
+// Generated Date: 10/15/2020 6:28:01 PM
 // From Machine: DESKTOP-742U247
 // Template: sql2x.CrudeTypeScriptGenerator.OverallDesignTypeScriptTine
 var SQL2XTemplateCrudeTableDurian;
