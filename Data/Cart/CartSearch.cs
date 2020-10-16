@@ -3,20 +3,18 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer
-{
+namespace SolutionNorSolutionPim.DataAccessLayer {
     /// <summary> 
     /// Provides cart search with different parameter and result sets
     /// </summary>
     /// <domain>Cart</domain>
-    public class CartSearch
-    {
+    public class CartSearch {
 
         /// <summary>Get Cart Product</summary>
         /// <cardinality>Many</cardinality>
         /// <template>ByServiceTableCrud</template>
         public List<GetCartProductWithFilterData> GetCartProductWithFilter() {
-            var ret = new List<GetCartProductWithFilterData>();
+            List<GetCartProductWithFilterData> ret = new List<GetCartProductWithFilterData>();
             string sql = @"
 select 
      c.first_name
@@ -50,10 +48,10 @@ inner join default_user as du on du.default_user_id = cp.user_id
 where 1 = 1
 ";
 
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     command.CommandText = sql;
 
@@ -61,10 +59,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    var ordinals = new GetCartProductWithFilterDataOrdinals(reader);
+                    GetCartProductWithFilterDataOrdinals ordinals = new GetCartProductWithFilterDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        var data = new GetCartProductWithFilterData();
+                        GetCartProductWithFilterData data = new GetCartProductWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }

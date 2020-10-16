@@ -2,16 +2,16 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:04:53 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:59:49 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductMaintenanceSearchService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IProductMaintenanceSearchService")]
     public interface IProductMaintenanceSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductMaintenanceSearchService/ProductMaintenanceIndex", ReplyAction = "http://tempuri.org/IProductMaintenanceSearchService/ProductMaintenanceIndexResponse")]
         List<ProductMaintenanceIndexContract> ProductMaintenanceIndex();
@@ -30,25 +30,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IProductMaintenanceSearchServiceChannel : IProductMaintenanceSearchService, System.ServiceModel.IClientChannel {
     }
-    
+
     public class ProductMaintenanceSearchService : System.ServiceModel.ClientBase<IProductMaintenanceSearchService>, IProductMaintenanceSearchService {
-        
+
         public ProductMaintenanceSearchService() {
         }
-        
-        public ProductMaintenanceSearchService(string endpointConfigurationName) : 
+
+        public ProductMaintenanceSearchService(string endpointConfigurationName) :
                 base(endpointConfigurationName) {
         }
-        
-        public ProductMaintenanceSearchService(string endpointConfigurationName, string remoteAddress) : 
+
+        public ProductMaintenanceSearchService(string endpointConfigurationName, string remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
-        public ProductMaintenanceSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public ProductMaintenanceSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
-        public ProductMaintenanceSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public ProductMaintenanceSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress) {
         }
 

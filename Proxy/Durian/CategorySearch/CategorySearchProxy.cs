@@ -2,16 +2,16 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:08:53 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:02:20 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICategorySearchService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "ICategorySearchService")]
     public interface ICategorySearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/ICategorySearchService/CategoryTree", ReplyAction = "http://tempuri.org/ICategorySearchService/CategoryTreeResponse")]
         List<CategoryTreeContract> CategoryTree();
@@ -22,25 +22,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ICategorySearchServiceChannel : ICategorySearchService, System.ServiceModel.IClientChannel {
     }
-    
+
     public class CategorySearchService : System.ServiceModel.ClientBase<ICategorySearchService>, ICategorySearchService {
-        
+
         public CategorySearchService() {
         }
-        
-        public CategorySearchService(string endpointConfigurationName) : 
+
+        public CategorySearchService(string endpointConfigurationName) :
                 base(endpointConfigurationName) {
         }
-        
-        public CategorySearchService(string endpointConfigurationName, string remoteAddress) : 
+
+        public CategorySearchService(string endpointConfigurationName, string remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
-        public CategorySearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public CategorySearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
-        public CategorySearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public CategorySearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress) {
         }
 

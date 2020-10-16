@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:08 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:40 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeClientIdentifierTypeRefDetails(System.String clientIdentifierTypeRcd) {
+        public ActionResult CrudeClientIdentifierTypeRefDetails(string clientIdentifierTypeRcd) {
 
             return View(
                 "~/Views/Crude/Client/CrudeClientIdentifierTypeRef/CrudeClientIdentifierTypeRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeClientIdentifierTypeRefEdit(
-            System.String clientIdentifierTypeRcd
+            string clientIdentifierTypeRcd
             ) {
 
             CrudeClientIdentifierTypeRefContract contract = new CrudeClientIdentifierTypeRefServiceClient().FetchByClientIdentifierTypeRcd(clientIdentifierTypeRcd);
@@ -76,11 +76,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeClientIdentifierTypeRefCreate(System.Guid? userId) {
-            var contract = new CrudeClientIdentifierTypeRefContract();
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeClientIdentifierTypeRefContract contract = new CrudeClientIdentifierTypeRefContract();
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -111,7 +114,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeClientIdentifierTypeRefDelete(
-            System.String clientIdentifierTypeRcd
+            string clientIdentifierTypeRcd
             ) {
             new CrudeClientIdentifierTypeRefServiceClient().Delete(clientIdentifierTypeRcd);
 

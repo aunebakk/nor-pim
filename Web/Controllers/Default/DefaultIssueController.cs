@@ -1,15 +1,12 @@
-using System;
-using System.Web.Mvc;
 using SolutionNorSolutionPim.BusinessLogicLayer;
 using SolutionNorSolutionPim.mvc.Controllers;
+using System;
+using System.Web.Mvc;
 
-namespace SolutionNorSolutionPim.Controllers.Default
-{
-    public class DefaultIssueController : Controller
-    {
+namespace SolutionNorSolutionPim.Controllers.Default {
+    public class DefaultIssueController : Controller {
         [HttpGet]
-        public ActionResult DefaultIssueIndex()
-        {
+        public ActionResult DefaultIssueIndex() {
             MVCHelper.Resolve(Request, "Default", "DefaultIssue", "DefaultIssueIndex");
 
             return View(
@@ -19,8 +16,7 @@ namespace SolutionNorSolutionPim.Controllers.Default
         }
 
         [HttpGet]
-        public ActionResult DefaultIssueByDefaultErrorIndex(Guid defaultErrorId)
-        {
+        public ActionResult DefaultIssueByDefaultErrorIndex(Guid defaultErrorId) {
             MVCHelper.Resolve(Request, "Default", "DefaultIssue", "DefaultIssueIndex");
 
             ViewBag.DefaultErrorId = defaultErrorId;
@@ -31,8 +27,7 @@ namespace SolutionNorSolutionPim.Controllers.Default
         }
 
         [HttpGet]
-        public ActionResult DefaultIssueDetails(Guid defaultIssueId)
-        {
+        public ActionResult DefaultIssueDetails(Guid defaultIssueId) {
             MVCHelper.Resolve(Request, "Default", "DefaultIssue", "DefaultIssueDetails");
 
             return View(
@@ -42,9 +37,8 @@ namespace SolutionNorSolutionPim.Controllers.Default
         }
 
         [HttpGet]
-        public ActionResult DefaultIssueEdit(Guid defaultIssueId)
-        {
-            var contract = new CrudeDefaultIssueServiceClient().FetchByDefaultIssueId(defaultIssueId);
+        public ActionResult DefaultIssueEdit(Guid defaultIssueId) {
+            CrudeDefaultIssueContract contract = new CrudeDefaultIssueServiceClient().FetchByDefaultIssueId(defaultIssueId);
             ViewBag.DefaultIssueTypeRcd =
                 new SelectList(new CrudeDefaultIssueTypeRefServiceClient().FetchAll(),
                     "DefaultIssueTypeRcd",
@@ -59,8 +53,7 @@ namespace SolutionNorSolutionPim.Controllers.Default
                     contract.DefaultIssueStatusRcd
                     );
 
-            if (contract.DefaultErrorId != Guid.Empty)
-            {
+            if (contract.DefaultErrorId != Guid.Empty) {
                 ViewBag.DefaultErrorId =
                     new SelectList(new CrudeDefaultErrorServiceClient().FetchAll(),
                         "DefaultErrorId",
@@ -81,10 +74,8 @@ namespace SolutionNorSolutionPim.Controllers.Default
         [ValidateAntiForgeryToken]
         public ActionResult DefaultIssueEdit(
             [Bind] CrudeDefaultIssueContract contract
-            )
-        {
-            if (ModelState.IsValid)
-            {
+            ) {
+            if (ModelState.IsValid) {
                 contract.DefaultUserId = new Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
 
                 new CrudeDefaultIssueServiceClient().Update(contract);
@@ -104,11 +95,11 @@ namespace SolutionNorSolutionPim.Controllers.Default
         public ActionResult DefaultIssueCreateWithUrl(
             string fromUrl,
             Guid? defaultUserId
-            )
-        {
-            var contract = new CrudeDefaultIssueContract();
-            if (defaultUserId != null)
-                contract.DefaultUserId = (Guid) defaultUserId;
+            ) {
+            CrudeDefaultIssueContract contract = new CrudeDefaultIssueContract();
+            if (defaultUserId != null) {
+                contract.DefaultUserId = (Guid)defaultUserId;
+            }
 
             contract.Link = fromUrl;
 
@@ -128,8 +119,9 @@ namespace SolutionNorSolutionPim.Controllers.Default
                     contract.DefaultIssueStatusRcd
                     );
 
-            if (defaultUserId == null)
+            if (defaultUserId == null) {
                 contract.DefaultUserId = new Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -145,10 +137,8 @@ namespace SolutionNorSolutionPim.Controllers.Default
         [ValidateAntiForgeryToken]
         public ActionResult DefaultIssueCreateWithUrl(
             [Bind] CrudeDefaultIssueContract contract
-            )
-        {
-            if (ModelState.IsValid)
-            {
+            ) {
+            if (ModelState.IsValid) {
                 new CrudeDefaultIssueServiceClient().Insert(contract);
 
                 return RedirectToAction("DefaultIssueWithFilterLiveIndex", "DefaultIssueWithFilterLive");
@@ -166,15 +156,18 @@ namespace SolutionNorSolutionPim.Controllers.Default
         public ActionResult DefaultIssueCreate(
             Guid? defaultErrorId,
             Guid? defaultUserId
-            )
-        {
-            var contract = new CrudeDefaultIssueContract();
-            contract.DefaultIssueTypeRcd = DefaultIssueTypeRef.IncorrectBehavior;
-            contract.DefaultIssueStatusRcd = DefaultIssueStatusRef.ToBeResolved;
-            if (defaultErrorId != null)
-                contract.DefaultErrorId = (Guid) defaultErrorId;
-            if (defaultUserId != null)
-                contract.DefaultUserId = (Guid) defaultUserId;
+            ) {
+            CrudeDefaultIssueContract contract = new CrudeDefaultIssueContract {
+                DefaultIssueTypeRcd = DefaultIssueTypeRef.IncorrectBehavior,
+                DefaultIssueStatusRcd = DefaultIssueStatusRef.ToBeResolved
+            };
+            if (defaultErrorId != null) {
+                contract.DefaultErrorId = (Guid)defaultErrorId;
+            }
+
+            if (defaultUserId != null) {
+                contract.DefaultUserId = (Guid)defaultUserId;
+            }
 
             ViewBag.DefaultIssueTypeRcd =
                 new SelectList(new CrudeDefaultIssueTypeRefServiceClient().FetchAll(),
@@ -190,8 +183,7 @@ namespace SolutionNorSolutionPim.Controllers.Default
                     contract.DefaultIssueStatusRcd
                     );
 
-            if (defaultUserId != null)
-            {
+            if (defaultUserId != null) {
                 ViewBag.DefaultErrorId =
                     new SelectList(new CrudeDefaultErrorServiceClient().FetchAll(),
                         "DefaultErrorId",
@@ -200,8 +192,9 @@ namespace SolutionNorSolutionPim.Controllers.Default
                         );
             }
 
-            if (defaultUserId == null)
+            if (defaultUserId == null) {
                 contract.DefaultUserId = new Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -257,9 +250,8 @@ namespace SolutionNorSolutionPim.Controllers.Default
         public ActionResult DefaultIssueSetStatus(
             Guid defaultIssueId,
             string defaultIssueStatusRcd
-            )
-        {
-            var contract =
+            ) {
+            CrudeDefaultIssueContract contract =
                 new CrudeDefaultIssueServiceClient().FetchByDefaultIssueId(
                     defaultIssueId
                     );

@@ -2,33 +2,29 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:05:39 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:00:14 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
-using System;
-using System.Collections.Generic;
-using System.ServiceModel;
-using System.Runtime.Serialization;
-using System.Data;
 using SolutionNorSolutionPim.DataAccessLayer;
+using System.Collections.Generic;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public class GetCartProduct {
-        
+
         public List<GetCartProductContract> GetCartProductFromDal(List<GetCartProductData> dataList) {
-           var list = new List<GetCartProductContract>();
+            List<GetCartProductContract> list = new List<GetCartProductContract>();
 
-           foreach (GetCartProductData data in dataList) {
-               var contract = new GetCartProductContract();
-               DataToContract(data, contract);
-               list.Add(contract);
-           }
+            foreach (GetCartProductData data in dataList) {
+                GetCartProductContract contract = new GetCartProductContract();
+                DataToContract(data, contract);
+                list.Add(contract);
+            }
 
-           return list;
+            return list;
         }
-        
+
         public void DataToContract(GetCartProductData dalGetCartProduct, GetCartProductContract dataContract) {
             dataContract.FirstName = dalGetCartProduct.FirstName;
             dataContract.MiddleName = dalGetCartProduct.MiddleName;

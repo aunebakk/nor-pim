@@ -2,33 +2,31 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:12:32 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:04:44 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.UsingWinForm
 */
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
-using System.IO;
-using System.Drawing;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
 namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class ProductInfoSearch : Form {
-        
+
         private System.Guid _productId;
-        
+
         private string _productInfoRcd;
-        
+
         private System.Guid _userId;
-        
+
         public ProductInfoSearch() {
             InitializeComponent();
             InitializeGridProductInfo();
-            this.AcceptButton = buttonProductInfoSearch;
-            this.CancelButton = buttonClose;
+            AcceptButton = buttonProductInfoSearch;
+            CancelButton = buttonClose;
         }
-        
+
         public void Show(System.Guid productId, string productInfoRcd, System.Guid userId) {
             _productId = productId;
             _productInfoRcd = productInfoRcd;
@@ -36,36 +34,36 @@ namespace SolutionNorSolutionPim.UserInterface {
             RefreshProductInfo();
             base.Show();
         }
-        
+
         private void buttonProductInfoEdit_Click(object sender, EventArgs e) {
-            var editForm = new ProductInfoEdit();
-            editForm.MdiParent = this.MdiParent;
-            editForm.ShowAsEdit((System.Guid) dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
+            ProductInfoEdit editForm = new ProductInfoEdit();
+            editForm.MdiParent = MdiParent;
+            editForm.ShowAsEdit((System.Guid)dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
         }
-        
+
         private void buttonProductInfoAdd_Click(object sender, EventArgs e) {
-            var editForm = new ProductInfoEdit();
-            editForm.MdiParent = this.MdiParent;
+            ProductInfoEdit editForm = new ProductInfoEdit();
+            editForm.MdiParent = MdiParent;
             editForm.ShowAsAddByRules(_userId);
         }
-        
+
         private void dataGridViewProductInfo_DoubleClick(object sender, EventArgs e) {
-            var editForm = new ProductInfoEdit();
-            editForm.MdiParent = this.MdiParent;
-            editForm.ShowAsEdit((System.Guid) dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
+            ProductInfoEdit editForm = new ProductInfoEdit();
+            editForm.MdiParent = MdiParent;
+            editForm.ShowAsEdit((System.Guid)dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
         }
-        
+
         private void buttonProductInfoSearch_Click(object sender, EventArgs e) {
             RefreshProductInfo();
         }
-        
+
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-        
+
         public void RefreshProductInfo() {
-            var productInfo = new ProductMaintenanceSearchService();
-            var bindingSource = new BindingSource();
+            ProductMaintenanceSearchService productInfo = new ProductMaintenanceSearchService();
+            BindingSource bindingSource = new BindingSource();
 
             try {
                 bindingSource.DataSource = productInfo.ProductMaintenanceInfoIndexWithFilter(_productId);
@@ -79,31 +77,31 @@ namespace SolutionNorSolutionPim.UserInterface {
                 productInfo.Close();
             }
         }
-        
+
         private void InitializeGridProductInfo() {
             dataGridViewProductInfo.Columns.Clear();
             dataGridViewProductInfo.AutoGenerateColumns = false;
-            dataGridViewProductInfo.Columns.Add("ProductName","Product Name");
+            dataGridViewProductInfo.Columns.Add("ProductName", "Product Name");
             dataGridViewProductInfo.Columns["ProductName"].DataPropertyName = "ProductName";
-            dataGridViewProductInfo.Columns.Add("StateRcd","State");
+            dataGridViewProductInfo.Columns.Add("StateRcd", "State");
             dataGridViewProductInfo.Columns["StateRcd"].DataPropertyName = "StateRcd";
-            dataGridViewProductInfo.Columns.Add("ProductInfoName","Product Info Name");
+            dataGridViewProductInfo.Columns.Add("ProductInfoName", "Product Info Name");
             dataGridViewProductInfo.Columns["ProductInfoName"].DataPropertyName = "ProductInfoName";
-            dataGridViewProductInfo.Columns.Add("DefaultUserName","Default User Name");
+            dataGridViewProductInfo.Columns.Add("DefaultUserName", "Default User Name");
             dataGridViewProductInfo.Columns["DefaultUserName"].DataPropertyName = "DefaultUserName";
-            dataGridViewProductInfo.Columns.Add("ProductId","Product Id");
+            dataGridViewProductInfo.Columns.Add("ProductId", "Product Id");
             dataGridViewProductInfo.Columns["ProductId"].DataPropertyName = "ProductId";
             dataGridViewProductInfo.Columns["ProductId"].Visible = false;
-            dataGridViewProductInfo.Columns.Add("ProductInfoRcd","Product Info");
+            dataGridViewProductInfo.Columns.Add("ProductInfoRcd", "Product Info");
             dataGridViewProductInfo.Columns["ProductInfoRcd"].DataPropertyName = "ProductInfoRcd";
-            dataGridViewProductInfo.Columns.Add("ProductInfoValue","Product Info Value");
+            dataGridViewProductInfo.Columns.Add("ProductInfoValue", "Product Info Value");
             dataGridViewProductInfo.Columns["ProductInfoValue"].DataPropertyName = "ProductInfoValue";
-            dataGridViewProductInfo.Columns.Add("UserId","User Id");
+            dataGridViewProductInfo.Columns.Add("UserId", "User Id");
             dataGridViewProductInfo.Columns["UserId"].DataPropertyName = "UserId";
             dataGridViewProductInfo.Columns["UserId"].Visible = false;
-            dataGridViewProductInfo.Columns.Add("DateTime","Date Time");
+            dataGridViewProductInfo.Columns.Add("DateTime", "Date Time");
             dataGridViewProductInfo.Columns["DateTime"].DataPropertyName = "DateTime";
-            dataGridViewProductInfo.Columns.Add("ProductInfoId","Product Info Id");
+            dataGridViewProductInfo.Columns.Add("ProductInfoId", "Product Info Id");
             dataGridViewProductInfo.Columns["ProductInfoId"].DataPropertyName = "ProductInfoId";
             dataGridViewProductInfo.Columns["ProductInfoId"].Visible = false;
             dataGridViewProductInfo.Columns.Add("ExtensionData", "");

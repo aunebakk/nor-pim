@@ -1,15 +1,15 @@
 ﻿using System.Windows.Forms;
 
 namespace SolutionNorSolutionPim.UserInterface {
-    class MDIParentRefs {
-        static public void DisplayRefForm(
+    internal class MDIParentRefs {
+        public static void DisplayRefForm(
             string systemReferenceTableName,
             Form mdiParent
             ) {
 
             switch (systemReferenceTableName) {
                 case "client_address_type_ref": {
-                        var mdiChild = new CrudeClientAddressTypeRefSearch();
+                        CrudeClientAddressTypeRefSearch mdiChild = new CrudeClientAddressTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -17,7 +17,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_contact_method_ref": {
-                        var mdiChild = new CrudeClientContactMethodRefSearch();
+                        CrudeClientContactMethodRefSearch mdiChild = new CrudeClientContactMethodRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -25,7 +25,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_document_type_ref": {
-                        var mdiChild = new CrudeClientDocumentTypeRefSearch();
+                        CrudeClientDocumentTypeRefSearch mdiChild = new CrudeClientDocumentTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -33,7 +33,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_event_type_ref": {
-                        var mdiChild = new CrudeClientEventTypeRefSearch();
+                        CrudeClientEventTypeRefSearch mdiChild = new CrudeClientEventTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -41,7 +41,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_gender_ref": {
-                        var mdiChild = new CrudeClientGenderRefSearch();
+                        CrudeClientGenderRefSearch mdiChild = new CrudeClientGenderRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -49,7 +49,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_identifier_type_ref": {
-                        var mdiChild = new CrudeClientIdentifierTypeRefSearch();
+                        CrudeClientIdentifierTypeRefSearch mdiChild = new CrudeClientIdentifierTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -57,7 +57,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_link_type_ref": {
-                        var mdiChild = new CrudeClientLinkTypeRefSearch();
+                        CrudeClientLinkTypeRefSearch mdiChild = new CrudeClientLinkTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -65,7 +65,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_nationality_ref": {
-                        var mdiChild = new CrudeClientNationalityRefSearch();
+                        CrudeClientNationalityRefSearch mdiChild = new CrudeClientNationalityRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -73,7 +73,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_title_ref": {
-                        var mdiChild = new CrudeClientTitleRefSearch();
+                        CrudeClientTitleRefSearch mdiChild = new CrudeClientTitleRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -81,7 +81,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "client_type_ref": {
-                        var mdiChild = new CrudeClientTypeRefSearch();
+                        CrudeClientTypeRefSearch mdiChild = new CrudeClientTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -89,7 +89,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_change_log_type_ref": {
-                        var mdiChild = new CrudeDefaultChangeLogTypeRefSearch();
+                        CrudeDefaultChangeLogTypeRefSearch mdiChild = new CrudeDefaultChangeLogTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -97,7 +97,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_error_layer_ref": {
-                        var mdiChild = new CrudeDefaultErrorLayerRefSearch();
+                        CrudeDefaultErrorLayerRefSearch mdiChild = new CrudeDefaultErrorLayerRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -105,7 +105,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_error_type_ref": {
-                        var mdiChild = new CrudeDefaultErrorTypeRefSearch();
+                        CrudeDefaultErrorTypeRefSearch mdiChild = new CrudeDefaultErrorTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -113,7 +113,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_issue_status_ref": {
-                        var mdiChild = new CrudeDefaultIssueStatusRefSearch();
+                        CrudeDefaultIssueStatusRefSearch mdiChild = new CrudeDefaultIssueStatusRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -121,7 +121,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_issue_type_ref": {
-                        var mdiChild = new CrudeDefaultIssueTypeRefSearch();
+                        CrudeDefaultIssueTypeRefSearch mdiChild = new CrudeDefaultIssueTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -129,7 +129,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_rule_type_ref": {
-                        var mdiChild = new CrudeDefaultRuleTypeRefSearch();
+                        CrudeDefaultRuleTypeRefSearch mdiChild = new CrudeDefaultRuleTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -137,7 +137,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_state_ref": {
-                        var mdiChild = new CrudeDefaultStateRefSearch();
+                        CrudeDefaultStateRefSearch mdiChild = new CrudeDefaultStateRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -145,7 +145,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_system_setting_ref": {
-                        var mdiChild = new CrudeDefaultSystemSettingRefSearch();
+                        CrudeDefaultSystemSettingRefSearch mdiChild = new CrudeDefaultSystemSettingRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -153,7 +153,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_test_run_result_ref": {
-                        var mdiChild = new CrudeDefaultTestRunResultRefSearch();
+                        CrudeDefaultTestRunResultRefSearch mdiChild = new CrudeDefaultTestRunResultRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -161,7 +161,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "default_user_activity_type_ref": {
-                        var mdiChild = new CrudeDefaultUserActivityTypeRefSearch();
+                        CrudeDefaultUserActivityTypeRefSearch mdiChild = new CrudeDefaultUserActivityTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -169,7 +169,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_attribute_ref": {
-                        var mdiChild = new CrudeProductAttributeRefSearch();
+                        CrudeProductAttributeRefSearch mdiChild = new CrudeProductAttributeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -177,7 +177,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_attribute_unit_ref": {
-                        var mdiChild = new CrudeProductAttributeUnitRefSearch();
+                        CrudeProductAttributeUnitRefSearch mdiChild = new CrudeProductAttributeUnitRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -185,7 +185,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_category_documentation_type_ref": {
-                        var mdiChild = new CrudeProductCategoryDocumentationTypeRefSearch();
+                        CrudeProductCategoryDocumentationTypeRefSearch mdiChild = new CrudeProductCategoryDocumentationTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -193,7 +193,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_category_image_type_ref": {
-                        var mdiChild = new CrudeProductCategoryImageTypeRefSearch();
+                        CrudeProductCategoryImageTypeRefSearch mdiChild = new CrudeProductCategoryImageTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -201,7 +201,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_documentation_type_ref": {
-                        var mdiChild = new CrudeProductDocumentationTypeRefSearch();
+                        CrudeProductDocumentationTypeRefSearch mdiChild = new CrudeProductDocumentationTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -209,7 +209,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_entity_type_ref": {
-                        var mdiChild = new CrudeProductEntityTypeRefSearch();
+                        CrudeProductEntityTypeRefSearch mdiChild = new CrudeProductEntityTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -217,7 +217,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_expose_set_type_ref": {
-                        var mdiChild = new CrudeProductExposeSetTypeRefSearch();
+                        CrudeProductExposeSetTypeRefSearch mdiChild = new CrudeProductExposeSetTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -225,7 +225,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_gather_attribute_type_ref": {
-                        var mdiChild = new CrudeProductGatherAttributeTypeRefSearch();
+                        CrudeProductGatherAttributeTypeRefSearch mdiChild = new CrudeProductGatherAttributeTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -233,7 +233,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_gather_source_type_ref": {
-                        var mdiChild = new CrudeProductGatherSourceTypeRefSearch();
+                        CrudeProductGatherSourceTypeRefSearch mdiChild = new CrudeProductGatherSourceTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -241,7 +241,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_identifier_ref": {
-                        var mdiChild = new CrudeProductIdentifierRefSearch();
+                        CrudeProductIdentifierRefSearch mdiChild = new CrudeProductIdentifierRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -249,7 +249,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_image_type_ref": {
-                        var mdiChild = new CrudeProductImageTypeRefSearch();
+                        CrudeProductImageTypeRefSearch mdiChild = new CrudeProductImageTypeRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();
@@ -257,7 +257,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                         break;
                     }
                 case "product_info_ref": {
-                        var mdiChild = new CrudeProductInfoRefSearch();
+                        CrudeProductInfoRefSearch mdiChild = new CrudeProductInfoRefSearch();
                         //Singleton.Instance.CheckForm(mdiChild);
                         mdiChild.MdiParent = mdiParent;
                         mdiChild.Show();

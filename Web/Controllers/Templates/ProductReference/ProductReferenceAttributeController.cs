@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:12:40 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:04:52 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,18 +18,22 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             return RedirectToAction(
                     "ProductReferenceAttributeEdit",
-                    new {    productAttributeRcd = String.Empty    }
+                    new { productAttributeRcd = string.Empty }
                     );
         }
 
         [HttpGet]
         public ActionResult ProductReferenceAttributeCreate(System.Guid? userId) {
-            var productContract = new ProductReferenceAttributeContract();
-            productContract.ProductAttributeRefNew = new CrudeProductAttributeRefContract();
-            if (userId != null) productContract.ProductAttributeRefNew.UserId = (System.Guid) userId;
+            ProductReferenceAttributeContract productContract = new ProductReferenceAttributeContract {
+                ProductAttributeRefNew = new CrudeProductAttributeRefContract()
+            };
+            if (userId != null) {
+                productContract.ProductAttributeRefNew.UserId = (System.Guid)userId;
+            }
 
-            if (userId == null)
+            if (userId == null) {
                 productContract.ProductAttributeRefNew.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             productContract.ProductAttributeRefNew.DateTime = DateTime.UtcNow;
 
@@ -48,7 +52,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 return RedirectToAction(
                         "ProductReferenceAttributeEdit",
-                        new {    productAttributeRcd = String.Empty}
+                        new { productAttributeRcd = string.Empty }
                         );
             }
 

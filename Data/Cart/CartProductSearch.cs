@@ -20,13 +20,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         /// <template>WithDurian</template>
         public List<GetCartProductData> GetCartProduct(
              System.Guid clientId
-            ,System.Guid productId
-            ,System.Guid financialCurrencyId
-            ,System.Guid userId
-            ,System.Guid cartProductId
-            ,string sessionIdentificator
+            , System.Guid productId
+            , System.Guid financialCurrencyId
+            , System.Guid userId
+            , System.Guid cartProductId
+            , string sessionIdentificator
             ) {
-            var ret = new List<GetCartProductData>();
+            List<GetCartProductData> ret = new List<GetCartProductData>();
             string sql = @"
 select 
      c.first_name
@@ -62,34 +62,34 @@ inner join default_user as du on du.default_user_id = cp.user_id
 where 1 = 1
 ";
 
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
-                    command.Parameters.Add("@state_ref_created", SqlDbType.VarChar).Value = (System.String) DefaultStateRef.Created;
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                    command.Parameters.Add("@state_ref_created", SqlDbType.VarChar).Value = DefaultStateRef.Created;
 
                     if (clientId != Guid.Empty) {
-                        command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) clientId;
+                        command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = clientId;
                         sql += " and cp.client_id = @client_id";
                     }
                     if (productId != Guid.Empty) {
-                        command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) productId;
+                        command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
                         sql += " and cp.product_id = @product_id";
                     }
                     if (financialCurrencyId != Guid.Empty) {
-                        command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) financialCurrencyId;
+                        command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
                         sql += " and cp.financial_currency_id = @financial_currency_id";
                     }
                     if (userId != Guid.Empty) {
-                        command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) userId;
+                        command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
                         sql += " and cp.user_id = @user_id";
                     }
                     if (cartProductId != Guid.Empty) {
-                        command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) cartProductId;
+                        command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = cartProductId;
                         sql += " and cp.cart_product_id = @cart_product_id";
                     }
-                    if (!string.IsNullOrEmpty( sessionIdentificator ) ) {
-                        command.Parameters.Add("@session_identificator",SqlDbType.NVarChar).Value = sessionIdentificator;
+                    if (!string.IsNullOrEmpty(sessionIdentificator)) {
+                        command.Parameters.Add("@session_identificator", SqlDbType.NVarChar).Value = sessionIdentificator;
                         sql += " and cp.session_identificator = @session_identificator";
                     }
 
@@ -99,10 +99,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    var ordinals = new GetCartProductDataOrdinals(reader);
+                    GetCartProductDataOrdinals ordinals = new GetCartProductDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        var data = new GetCartProductData();
+                        GetCartProductData data = new GetCartProductData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }

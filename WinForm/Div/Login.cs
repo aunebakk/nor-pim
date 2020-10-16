@@ -1,13 +1,10 @@
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Net;
 using System.Windows.Forms;
-using SolutionNorSolutionPim.BusinessLogicLayer;
-using SolutionNorSolutionPim.ProxyLayer;
 
-namespace SolutionNorSolutionPim.UserInterface
-{
-    partial class Login : Form
-    {
+namespace SolutionNorSolutionPim.UserInterface {
+    internal partial class Login : Form {
 
         private Main _parent;
 
@@ -27,7 +24,7 @@ namespace SolutionNorSolutionPim.UserInterface
 
         private void buttonOK_Click(object sender, EventArgs e) {
             Log("diagnostics, instantiate");
-            var diagnostics = new DiagnosticsServiceClient();
+            DiagnosticsServiceClient diagnostics = new DiagnosticsServiceClient();
 
             try {
                 Log("diagnostics, open");
@@ -46,7 +43,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 Application.DoEvents();
                 // log the login
                 Log("login, add activity login");
-                var activity = new DefaultUserActivityServiceClient();
+                DefaultUserActivityServiceClient activity = new DefaultUserActivityServiceClient();
 
                 Application.DoEvents();
 
@@ -66,12 +63,13 @@ namespace SolutionNorSolutionPim.UserInterface
                 Log("login, get system settings");
                 Singleton.Instance.RefreshSystemSettings();
                 Singleton.Instance.CheckForm(this);
-                Singleton.Instance.CheckForm(this.MdiParent);
+                Singleton.Instance.CheckForm(MdiParent);
 
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Log("exception: " + ex.Message);
-                if ( ex.InnerException != null )
+                if (ex.InnerException != null) {
                     Log("exception inner: " + ex.InnerException.Message);
+                }
             } finally {
                 Log("login, closing diagnostics");
                 diagnostics.Close();

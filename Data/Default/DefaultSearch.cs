@@ -4,21 +4,19 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer
-{
+namespace SolutionNorSolutionPim.DataAccessLayer {
     /// <summary> 
     /// Provides error search durians
     /// </summary>
     /// <domain>Default</domain>
-    public class DefaultSearch
-    {
+    public class DefaultSearch {
         /// <summary>Get Default Performance Issue</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultTestOverviewData> DefaultTestOverview(
-            System.String commandName
+            string commandName
             ) {
 
-            var ret = new List<DefaultTestOverviewData>();
+            List<DefaultTestOverviewData> ret = new List<DefaultTestOverviewData>();
             string sql = @"
                 select 
 	                 dt.test_area
@@ -31,18 +29,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("DefaultTestOverview");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultTestOverviewDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultTestOverviewData();
+                        DefaultTestOverviewDataOrdinals ordinals = new DefaultTestOverviewDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultTestOverviewData data = new DefaultTestOverviewData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -50,7 +48,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -59,7 +57,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get Dashboard statistics</summary>
         /// <cardinality>Many</cardinality>
         public List<DashboardCountsData> DashboardCounts(string dashboardLayoutRcd) {
-            var ret = new List<DashboardCountsData>();
+            List<DashboardCountsData> ret = new List<DashboardCountsData>();
 
             string sql = @" 
                 select 
@@ -90,17 +88,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             sql += "\r\n";
 
-            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using ( var command = new SqlCommand(sql, conn) ) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    var ordinals = new DashboardCountsDataOrdinals(reader);
+                    DashboardCountsDataOrdinals ordinals = new DashboardCountsDataOrdinals(reader);
 
-                    while ( reader.Read() ) {
-                        var data = new DashboardCountsData();
+                    while (reader.Read()) {
+                        DashboardCountsData data = new DashboardCountsData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -114,10 +112,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get Default Performance Issue</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultPerformanceIssueFetchWithFilterData> DefaultPerformanceIssueFetchWithFilter(
-            System.String commandName
+            string commandName
             ) {
 
-            var ret = new List<DefaultPerformanceIssueFetchWithFilterData>();
+            List<DefaultPerformanceIssueFetchWithFilterData> ret = new List<DefaultPerformanceIssueFetchWithFilterData>();
             string sql = @"select
                      dpi.date_time
                     ,dpi.command_name
@@ -129,18 +127,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("DefaultPerformanceIssueFetchWithFilter");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultPerformanceIssueFetchWithFilterDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultPerformanceIssueFetchWithFilterData();
+                        DefaultPerformanceIssueFetchWithFilterDataOrdinals ordinals = new DefaultPerformanceIssueFetchWithFilterDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultPerformanceIssueFetchWithFilterData data = new DefaultPerformanceIssueFetchWithFilterData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -148,7 +146,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -157,11 +155,11 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get Default Issue</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultIssueWithFilterData> DefaultIssueWithFilter(
-             System.String defaultIssueTypeRcd
-            , System.String defaultIssueStatusRcd
+             string defaultIssueTypeRcd
+            , string defaultIssueStatusRcd
             ) {
 
-            var ret = new List<DefaultIssueWithFilterData>();
+            List<DefaultIssueWithFilterData> ret = new List<DefaultIssueWithFilterData>();
             string sql = @"
                 select
                      di.default_issue_type_rcd
@@ -185,17 +183,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("DefaultIssueWithFilter");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
-                        if ( defaultIssueTypeRcd != null ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
+                        if (defaultIssueTypeRcd != null) {
                             command.Parameters.Add("@default_issue_type_rcd", SqlDbType.NVarChar).Value = defaultIssueTypeRcd;
                             sql += "               and di.default_issue_type_rcd = @default_issue_type_rcd\r\n";
                         }
 
-                        if ( defaultIssueStatusRcd != null ) {
+                        if (defaultIssueStatusRcd != null) {
                             command.Parameters.Add("@default_issue_status_rcd", SqlDbType.NVarChar).Value = defaultIssueStatusRcd;
                             sql += "               and di.default_issue_status_rcd = @default_issue_status_rcd\r\n";
                         }
@@ -209,9 +207,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultIssueWithFilterDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultIssueWithFilterData();
+                        DefaultIssueWithFilterDataOrdinals ordinals = new DefaultIssueWithFilterDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultIssueWithFilterData data = new DefaultIssueWithFilterData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -219,7 +217,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -228,7 +226,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Error overview, last first </summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultErrorOverviewData> DefaultErrorOverview() {
-            var ret = new List<DefaultErrorOverviewData>();
+            List<DefaultErrorOverviewData> ret = new List<DefaultErrorOverviewData>();
 
             string sql = @" 
                 select top 50
@@ -248,18 +246,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("DefaultErrorOverview");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultErrorOverviewDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultErrorOverviewData();
+                        DefaultErrorOverviewDataOrdinals ordinals = new DefaultErrorOverviewDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultErrorOverviewData data = new DefaultErrorOverviewData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -267,7 +265,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -276,7 +274,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get default statistics</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultPerformanceIndicatorsData> DefaultPerformanceIndicators() {
-            var ret = new List<DefaultPerformanceIndicatorsData>();
+            List<DefaultPerformanceIndicatorsData> ret = new List<DefaultPerformanceIndicatorsData>();
 
             string sql = @" 
                 select 
@@ -290,18 +288,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultPerformanceIndicators");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultPerformanceIndicatorsDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultPerformanceIndicatorsData();
+                        DefaultPerformanceIndicatorsDataOrdinals ordinals = new DefaultPerformanceIndicatorsDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultPerformanceIndicatorsData data = new DefaultPerformanceIndicatorsData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -309,7 +307,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -318,7 +316,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get default statistics</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultStatisticsData> DefaultStatistics() {
-            var ret = new List<DefaultStatisticsData>();
+            List<DefaultStatisticsData> ret = new List<DefaultStatisticsData>();
 
             string sql = @" 
                     select top 50 
@@ -333,18 +331,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultStatistics");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultStatisticsDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultStatisticsData();
+                        DefaultStatisticsDataOrdinals ordinals = new DefaultStatisticsDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultStatisticsData data = new DefaultStatisticsData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -352,7 +350,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -361,7 +359,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get default User Activity By Hour</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultUserActivityByHourData> DefaultUserActivityByHour() {
-            var ret = new List<DefaultUserActivityByHourData>();
+            List<DefaultUserActivityByHourData> ret = new List<DefaultUserActivityByHourData>();
 
             string sql = @" 
                 select 
@@ -379,18 +377,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultUserActivityByHour");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultUserActivityByHourDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultUserActivityByHourData();
+                        DefaultUserActivityByHourDataOrdinals ordinals = new DefaultUserActivityByHourDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultUserActivityByHourData data = new DefaultUserActivityByHourData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -398,7 +396,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -407,7 +405,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get default statistics by month</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultStatisticsByMonthData> DefaultStatisticsByMonth() {
-            var ret = new List<DefaultStatisticsByMonthData>();
+            List<DefaultStatisticsByMonthData> ret = new List<DefaultStatisticsByMonthData>();
 
             string sql = @" 
                     select top 50 
@@ -421,18 +419,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultStatisticsByMonth");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultStatisticsByMonthDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultStatisticsByMonthData();
+                        DefaultStatisticsByMonthDataOrdinals ordinals = new DefaultStatisticsByMonthDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultStatisticsByMonthData data = new DefaultStatisticsByMonthData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -440,7 +438,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -449,7 +447,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get default statistics</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultStatisticsTop5Data> DefaultStatisticsTop5() {
-            var ret = new List<DefaultStatisticsTop5Data>();
+            List<DefaultStatisticsTop5Data> ret = new List<DefaultStatisticsTop5Data>();
 
             string sql = @" 
                 select 'utc' as measurement, convert(nvarchar(240),				getutcdate(), 121) as value
@@ -483,18 +481,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultStatisticsTop5");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultStatisticsTop5DataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultStatisticsTop5Data();
+                        DefaultStatisticsTop5DataOrdinals ordinals = new DefaultStatisticsTop5DataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultStatisticsTop5Data data = new DefaultStatisticsTop5Data();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -502,7 +500,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -514,7 +512,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             string commandName
             ) {
 
-            var ret = new List<DefaultPerformanceTimesData>();
+            List<DefaultPerformanceTimesData> ret = new List<DefaultPerformanceTimesData>();
 
             string sql = @" 
                  select top 50
@@ -527,19 +525,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultPerformanceTimes");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         command.Parameters.Add("@command_name", SqlDbType.VarChar).Value = commandName;
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultPerformanceTimesDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultPerformanceTimesData();
+                        DefaultPerformanceTimesDataOrdinals ordinals = new DefaultPerformanceTimesDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultPerformanceTimesData data = new DefaultPerformanceTimesData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -547,7 +545,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -558,7 +556,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         public List<DefaultPerformanceTimeCommandsData> DefaultPerformanceTimeCommands(
             ) {
 
-            var ret = new List<DefaultPerformanceTimeCommandsData>();
+            List<DefaultPerformanceTimeCommandsData> ret = new List<DefaultPerformanceTimeCommandsData>();
 
             string sql = @" 
                  select  
@@ -583,18 +581,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultPerformanceTimeCommands");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultPerformanceTimeCommandsDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultPerformanceTimeCommandsData();
+                        DefaultPerformanceTimeCommandsDataOrdinals ordinals = new DefaultPerformanceTimeCommandsDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultPerformanceTimeCommandsData data = new DefaultPerformanceTimeCommandsData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -602,7 +600,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -615,7 +613,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             Guid defaultUserId
             ) {
 
-            var ret = new List<DefaultUserActivityRecentData>();
+            List<DefaultUserActivityRecentData> ret = new List<DefaultUserActivityRecentData>();
 
             string sql = @" 
                     select top 50
@@ -627,7 +625,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 					from default_user_activity                  as ua
                     inner join default_user_activity_type_ref   as uatr on uatr.default_user_activity_type_rcd = ua.default_user_activity_type_rcd
             ";
-            if ( defaultUserId == Guid.Empty ) {
+            if (defaultUserId == Guid.Empty) {
                 sql += @"
 					 left join default_rule						as der	on der.address = ua.originating_address
 																	   and der.default_rule_type_rcd = @default_rule_type_rcd
@@ -637,12 +635,12 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultUserActivityRecent");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
-                        if ( defaultUserId == Guid.Empty ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
+                        if (defaultUserId == Guid.Empty) {
                             command.Parameters.Add("@default_rule_type_rcd", SqlDbType.NVarChar).Value = DefaultRuleTypeRef.HideLayerAddress;
                         } else {
                             sql += " where ua.default_user_id = @default_user_id\r\n";
@@ -657,9 +655,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultUserActivityRecentDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultUserActivityRecentData();
+                        DefaultUserActivityRecentDataOrdinals ordinals = new DefaultUserActivityRecentDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultUserActivityRecentData data = new DefaultUserActivityRecentData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -667,7 +665,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -678,7 +676,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         public List<DefaultUserActivityOnAddressData> DefaultUserActivityOnAddress(
             string originatingAddress
             ) {
-            var ret = new List<DefaultUserActivityOnAddressData>();
+            List<DefaultUserActivityOnAddressData> ret = new List<DefaultUserActivityOnAddressData>();
 
             string sql = @" 
                     select top 50
@@ -695,19 +693,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultUserActivityOnAddress");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         command.Parameters.Add("@originating_address", SqlDbType.VarChar).Value = originatingAddress;
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultUserActivityOnAddressDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultUserActivityOnAddressData();
+                        DefaultUserActivityOnAddressDataOrdinals ordinals = new DefaultUserActivityOnAddressDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultUserActivityOnAddressData data = new DefaultUserActivityOnAddressData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -715,7 +713,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -724,7 +722,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>User activities grouped</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultUserActivityGroupedData> DefaultUserActivityGrouped() {
-            var ret = new List<DefaultUserActivityGroupedData>();
+            List<DefaultUserActivityGroupedData> ret = new List<DefaultUserActivityGroupedData>();
 
             string sql = @" 
                     select top 50
@@ -744,18 +742,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultUserActivityGrouped");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultUserActivityGroupedDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultUserActivityGroupedData();
+                        DefaultUserActivityGroupedDataOrdinals ordinals = new DefaultUserActivityGroupedDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultUserActivityGroupedData data = new DefaultUserActivityGroupedData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -763,7 +761,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -772,7 +770,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>User activities grouped by address</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultUserActivityGroupedByAddressData> DefaultUserActivityGroupedByAddress() {
-            var ret = new List<DefaultUserActivityGroupedByAddressData>();
+            List<DefaultUserActivityGroupedByAddressData> ret = new List<DefaultUserActivityGroupedByAddressData>();
 
             string sql = @" 
                     select top 50
@@ -788,18 +786,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultUserActivityGroupedByAddress");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultUserActivityGroupedByAddressDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultUserActivityGroupedByAddressData();
+                        DefaultUserActivityGroupedByAddressDataOrdinals ordinals = new DefaultUserActivityGroupedByAddressDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultUserActivityGroupedByAddressData data = new DefaultUserActivityGroupedByAddressData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -807,7 +805,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -817,7 +815,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>With indicators of user activities</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultUserListData> DefaultUserList() {
-            var ret = new List<DefaultUserListData>();
+            List<DefaultUserListData> ret = new List<DefaultUserListData>();
 
             string sql = @" 
                 select top 100
@@ -856,18 +854,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             */
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultUserList");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultUserListDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultUserListData();
+                        DefaultUserListDataOrdinals ordinals = new DefaultUserListDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultUserListData data = new DefaultUserListData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -875,7 +873,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -885,7 +883,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>With indicators of user activities</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultUserListForDashboardData> DefaultUserListForDashboard() {
-            var ret = new List<DefaultUserListForDashboardData>();
+            List<DefaultUserListForDashboardData> ret = new List<DefaultUserListForDashboardData>();
 
             string sql = @" 
                 select top 25
@@ -935,18 +933,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             */
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultUserListForDashboard");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultUserListForDashboardDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultUserListForDashboardData();
+                        DefaultUserListForDashboardDataOrdinals ordinals = new DefaultUserListForDashboardDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultUserListForDashboardData data = new DefaultUserListForDashboardData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -954,7 +952,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -963,13 +961,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         /// <summary>Get Default Change Log</summary>
         /// <cardinality>Many</cardinality>
         public List<GetDefaultChangeLogData> GetDefaultChangeLog(
-             System.String defaultChangeName
-            , System.String defaultChangeLogTypeRcd
+             string defaultChangeName
+            , string defaultChangeLogTypeRcd
             , System.Guid defaultIssueId
             , System.Guid defaultChangeLogId
             ) {
 
-            var ret = new List<GetDefaultChangeLogData>();
+            List<GetDefaultChangeLogData> ret = new List<GetDefaultChangeLogData>();
             string sql = @"select
      dcl.default_change_name
     ,dcl.default_change_description
@@ -985,24 +983,24 @@ left join default_issue as di on di.default_issue_id = dcl.default_issue_id
 where 1 = 1
 ";
 
-            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using ( var command = new SqlCommand(sql, conn) ) {
-                    if ( !String.IsNullOrEmpty(defaultChangeName) ) {
-                        command.Parameters.Add("@default_change_name", SqlDbType.NVarChar).Value = ( System.String ) defaultChangeName;
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                    if (!string.IsNullOrEmpty(defaultChangeName)) {
+                        command.Parameters.Add("@default_change_name", SqlDbType.NVarChar).Value = defaultChangeName;
                         sql += " and dcl.default_change_name = @default_change_name";
                     }
-                    if ( !String.IsNullOrEmpty(defaultChangeLogTypeRcd) ) {
-                        command.Parameters.Add("@default_change_log_type_rcd", SqlDbType.NVarChar).Value = ( System.String ) defaultChangeLogTypeRcd;
+                    if (!string.IsNullOrEmpty(defaultChangeLogTypeRcd)) {
+                        command.Parameters.Add("@default_change_log_type_rcd", SqlDbType.NVarChar).Value = defaultChangeLogTypeRcd;
                         sql += " and dcl.default_change_log_type_rcd = @default_change_log_type_rcd";
                     }
-                    if ( defaultIssueId != Guid.Empty ) {
-                        command.Parameters.Add("@default_issue_id", SqlDbType.UniqueIdentifier).Value = ( System.Guid ) defaultIssueId;
+                    if (defaultIssueId != Guid.Empty) {
+                        command.Parameters.Add("@default_issue_id", SqlDbType.UniqueIdentifier).Value = defaultIssueId;
                         sql += " and dcl.default_issue_id = @default_issue_id";
                     }
-                    if ( defaultChangeLogId != Guid.Empty ) {
-                        command.Parameters.Add("@default_change_log_id", SqlDbType.UniqueIdentifier).Value = ( System.Guid ) defaultChangeLogId;
+                    if (defaultChangeLogId != Guid.Empty) {
+                        command.Parameters.Add("@default_change_log_id", SqlDbType.UniqueIdentifier).Value = defaultChangeLogId;
                         sql += " and dcl.default_change_log_id = @default_change_log_id";
                     }
 
@@ -1010,10 +1008,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     log.PerformanceTimeStop(sql, command);
 
-                    var ordinals = new GetDefaultChangeLogDataOrdinals(reader);
+                    GetDefaultChangeLogDataOrdinals ordinals = new GetDefaultChangeLogDataOrdinals(reader);
 
-                    while ( reader.Read() ) {
-                        var data = new GetDefaultChangeLogData();
+                    while (reader.Read()) {
+                        GetDefaultChangeLogData data = new GetDefaultChangeLogData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -1028,7 +1026,7 @@ where 1 = 1
         /// <summary>Get default resource statistics</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultResourceStatisticsData> DefaultResourceStatistics() {
-            var ret = new List<DefaultResourceStatisticsData>();
+            List<DefaultResourceStatisticsData> ret = new List<DefaultResourceStatisticsData>();
 
             string sql = @" 
 select top 20 
@@ -1044,18 +1042,18 @@ order by date_time desc
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultResourceStatistics");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultResourceStatisticsDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultResourceStatisticsData();
+                        DefaultResourceStatisticsDataOrdinals ordinals = new DefaultResourceStatisticsDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultResourceStatisticsData data = new DefaultResourceStatisticsData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -1063,7 +1061,7 @@ order by date_time desc
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;
@@ -1072,7 +1070,7 @@ order by date_time desc
         /// <summary>Get default database size</summary>
         /// <cardinality>Many</cardinality>
         public List<DefaultResourceDatabaseStatisticsData> DefaultResourceDatabaseStatistics() {
-            var ret = new List<DefaultResourceDatabaseStatisticsData>();
+            List<DefaultResourceDatabaseStatisticsData> ret = new List<DefaultResourceDatabaseStatisticsData>();
 
             string sql = @" 
                 select cast(sum(reserved_page_count) * 8.0 as int) as reserved_page_count
@@ -1081,18 +1079,18 @@ order by date_time desc
 
             Logging log = Logging.PerformanceTimeStart("Default", "DataAccessLayer", "DefaultSearch", "DefaultResourceDatabaseStatistics");
             try {
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
                     conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                    using ( var command = new SqlCommand(sql, conn) ) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         log.PerformanceTimePrepare(command);
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                         log.PerformanceTimeCheck();
 
-                        var ordinals = new DefaultResourceDatabaseStatisticsDataOrdinals(reader);
-                        while ( reader.Read() ) {
-                            var data = new DefaultResourceDatabaseStatisticsData();
+                        DefaultResourceDatabaseStatisticsDataOrdinals ordinals = new DefaultResourceDatabaseStatisticsDataOrdinals(reader);
+                        while (reader.Read()) {
+                            DefaultResourceDatabaseStatisticsData data = new DefaultResourceDatabaseStatisticsData();
                             data.Populate(reader, ordinals);
                             ret.Add(data);
                         }
@@ -1100,7 +1098,7 @@ order by date_time desc
                         reader.Close();
                     }
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 log.Error(ex);
             }
             return ret;

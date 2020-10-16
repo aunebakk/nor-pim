@@ -1,19 +1,17 @@
-using System.Web.Mvc;
 using SolutionNorSolutionPim.BusinessLogicLayer;
 using SolutionNorSolutionPim.mvc.Controllers;
+using System.Web.Mvc;
 
-namespace SolutionNorSolutionPim.Controllers.Default
-{
-    public class DefaultIssueWithFilterLiveController : Controller
-    {
+namespace SolutionNorSolutionPim.Controllers.Default {
+    public class DefaultIssueWithFilterLiveController : Controller {
         [HttpGet]
         public ActionResult DefaultIssueWithFilterLiveIndex(
             string defaultIssueTypeRcd,
             string defaultIssueStatusRcd
-            )
-        {
-            if (defaultIssueStatusRcd == null)
+            ) {
+            if (defaultIssueStatusRcd == null) {
                 defaultIssueStatusRcd = DefaultIssueStatusRef.ToBeResolved;
+            }
 
             ViewBag.DefaultIssueStatusRcd =
                 new SelectList(
@@ -40,8 +38,7 @@ namespace SolutionNorSolutionPim.Controllers.Default
             [Bind] DefaultIssueWithFilterContract contract,
             string defaultIssueTypeRcd,
             string defaultIssueStatusRcd
-            )
-        {
+            ) {
             ViewBag.DefaultIssueStatusRcd =
                 new SelectList(
                     new CrudeDefaultIssueStatusRefServiceClient().FetchAll(),

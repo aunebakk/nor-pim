@@ -1,60 +1,60 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeClientEdit {
-        
+
         private System.ComponentModel.IContainer components = null;
-        
+
         private System.Windows.Forms.Button buttonClose;
-        
+
         private System.Windows.Forms.Button buttonSave;
-        
+
         private ClientTypeRefCombo clientTypeRefCombo;
-        
+
         private System.Windows.Forms.Label labelClientTypeRefCombo;
-        
+
         private ClientNationalityRefCombo clientNationalityRefCombo;
-        
+
         private System.Windows.Forms.Label labelClientNationalityRefCombo;
-        
+
         private ClientGenderRefCombo clientGenderRefCombo;
-        
+
         private System.Windows.Forms.Label labelClientGenderRefCombo;
-        
+
         private ClientTitleRefCombo clientTitleRefCombo;
-        
+
         private System.Windows.Forms.Label labelClientTitleRefCombo;
-        
+
         private System.Windows.Forms.TextBox textBoxFirstName;
-        
+
         private System.Windows.Forms.Label labelFirstName;
-        
+
         private System.Windows.Forms.TextBox textBoxMiddleName;
-        
+
         private System.Windows.Forms.Label labelMiddleName;
-        
+
         private System.Windows.Forms.TextBox textBoxLastName;
-        
+
         private System.Windows.Forms.Label labelLastName;
-        
+
         private System.Windows.Forms.PictureBox pictureBoxImage;
-        
+
         private System.Windows.Forms.Label labelImage;
-        
+
         private System.Windows.Forms.TextBox textBoxImageBlobFilename;
-        
+
         private System.Windows.Forms.Label labelImageBlobFilename;
-        
+
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-        
+
         private System.Windows.Forms.Label labelDateTime;
-        
+
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-        
+
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -254,7 +254,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(298, 243);
-            
+
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

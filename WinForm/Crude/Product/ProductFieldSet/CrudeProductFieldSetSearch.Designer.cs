@@ -1,34 +1,34 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeProductFieldSetSearch {
-        
+
         private System.ComponentModel.IContainer components = null;
-        
+
         private System.Windows.Forms.Button buttonClose;
-        
+
         private System.Windows.Forms.Button buttonCrudeProductFieldSetSearch;
-        
+
         private System.Windows.Forms.Button buttonCrudeProductFieldSetAdd;
-        
+
         private System.Windows.Forms.Button buttonCrudeProductFieldSetEdit;
-        
+
         private System.Windows.Forms.DataGridView dataGridViewCrudeProductFieldSet;
-        
+
         private System.Windows.Forms.TextBox textBoxProductFieldSetName;
-        
+
         private System.Windows.Forms.Label labelProductFieldSetName;
-        
+
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-        
+
         private System.Windows.Forms.Label labelDateTime;
-        
+
         protected override void Dispose(bool disposing) {
-           if (disposing && (components != null)) {
-               components.Dispose();
-           }
-           base.Dispose(disposing);
+            if (disposing && (components != null)) {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
-        
+
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonClose = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(312, 172);
-            
+
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

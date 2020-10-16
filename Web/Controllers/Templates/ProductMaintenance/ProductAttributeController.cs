@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:11:35 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:04:18 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -30,27 +30,27 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             ViewBag.ProductAttributeId = productAttributeId;
 
-            var productAttributeContract = new ProductAttributeContract();
-
-            productAttributeContract.ProductAttribute =
-                new CrudeProductAttributeServiceClient().FetchByProductAttributeId(productAttributeId);
+            ProductAttributeContract productAttributeContract = new ProductAttributeContract {
+                ProductAttribute =
+                new CrudeProductAttributeServiceClient().FetchByProductAttributeId(productAttributeId)
+            };
 
             ViewBag.ProductId =
-                new SelectList( new CrudeProductServiceClient().FetchAll(),
+                new SelectList(new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productAttributeContract.ProductAttribute.ProductId
                                 );
 
             ViewBag.ProductAttributeRcd =
-                new SelectList( new CrudeProductAttributeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductAttributeRefServiceClient().FetchAll(),
                                 "ProductAttributeRcd",
                                 "ProductAttributeName",
                                 productAttributeContract.ProductAttribute.ProductAttributeRcd
                                 );
 
             ViewBag.ProductAttributeUnitRcd =
-                new SelectList( new CrudeProductAttributeUnitRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductAttributeUnitRefServiceClient().FetchAll(),
                                 "ProductAttributeUnitRcd",
                                 "ProductAttributeUnitName",
                                 productAttributeContract.ProductAttribute.ProductAttributeUnitRcd
@@ -67,7 +67,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductAttributeEdit([Bind()] ProductAttributeContract productAttributeContract, System.Guid productId,System.String productAttributeRcd,System.String productAttributeUnitRcd) {
+        public ActionResult ProductAttributeEdit([Bind()] ProductAttributeContract productAttributeContract, System.Guid productId, string productAttributeRcd, string productAttributeUnitRcd) {
             if (ModelState.IsValid) {
 
                 productAttributeContract.ProductAttribute.ProductId = productId;
@@ -77,7 +77,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 new CrudeProductAttributeServiceClient().Update(productAttributeContract.ProductAttribute);
 
-                return RedirectToAction("ProductAttributeIndex", new { productId = productAttributeContract.ProductAttribute.ProductId} );
+                return RedirectToAction("ProductAttributeIndex", new { productId = productAttributeContract.ProductAttribute.ProductId });
             }
 
             return View(
@@ -88,34 +88,41 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpGet]
         public ActionResult ProductAttributeCreate(System.Guid? productId, System.Guid? userId) {
-            var productAttributeContract = new ProductAttributeContract();
-            productAttributeContract.ProductAttribute = new CrudeProductAttributeContract();
-            if (productId != null) productAttributeContract.ProductAttribute.ProductId = (System.Guid) productId;
-            if (userId != null) productAttributeContract.ProductAttribute.UserId = (System.Guid) userId;
+            ProductAttributeContract productAttributeContract = new ProductAttributeContract {
+                ProductAttribute = new CrudeProductAttributeContract()
+            };
+            if (productId != null) {
+                productAttributeContract.ProductAttribute.ProductId = (System.Guid)productId;
+            }
+
+            if (userId != null) {
+                productAttributeContract.ProductAttribute.UserId = (System.Guid)userId;
+            }
 
             ViewBag.ProductId =
-                new SelectList( new CrudeProductServiceClient().FetchAll(),
+                new SelectList(new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productAttributeContract.ProductAttribute.ProductId
                                 );
 
             ViewBag.ProductAttributeRcd =
-                new SelectList( new CrudeProductAttributeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductAttributeRefServiceClient().FetchAll(),
                                 "ProductAttributeRcd",
                                 "ProductAttributeName",
                                 productAttributeContract.ProductAttribute.ProductAttributeRcd
                                 );
 
             ViewBag.ProductAttributeUnitRcd =
-                new SelectList( new CrudeProductAttributeUnitRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductAttributeUnitRefServiceClient().FetchAll(),
                                 "ProductAttributeUnitRcd",
                                 "ProductAttributeUnitName",
                                 productAttributeContract.ProductAttribute.ProductAttributeUnitRcd
                                 );
 
-            if (userId == null)
+            if (userId == null) {
                 productAttributeContract.ProductAttribute.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(productAttributeContract.ProductAttribute.UserId).DefaultUserName;
@@ -131,7 +138,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductAttributeCreate([Bind()] ProductAttributeContract productAttributeContract, System.Guid productId,System.String productAttributeRcd,System.String productAttributeUnitRcd) {
+        public ActionResult ProductAttributeCreate([Bind()] ProductAttributeContract productAttributeContract, System.Guid productId, string productAttributeRcd, string productAttributeUnitRcd) {
             if (ModelState.IsValid) {
 
                 productAttributeContract.ProductAttribute.ProductId = productId;
@@ -139,7 +146,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                 productAttributeContract.ProductAttribute.ProductAttributeUnitRcd = productAttributeUnitRcd;
                 new CrudeProductAttributeServiceClient().Insert(productAttributeContract.ProductAttribute);
 
-                return RedirectToAction("ProductAttributeIndex", new { productId = productAttributeContract.ProductAttribute.ProductId} );
+                return RedirectToAction("ProductAttributeIndex", new { productId = productAttributeContract.ProductAttribute.ProductId });
             }
 
             return View(

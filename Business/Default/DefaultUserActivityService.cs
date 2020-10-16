@@ -1,15 +1,13 @@
+using SolutionNorSolutionPim.DataAccessLayer;
 using System;
 using System.IO;
 using System.Net;
 using System.ServiceModel;
-using SolutionNorSolutionPim.DataAccessLayer;
 
-namespace SolutionNorSolutionPim.BusinessLogicLayer
-{
+namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [ServiceContract()]
-    public interface IDefaultUserActivityService
-    {
+    public interface IDefaultUserActivityService {
         [OperationContract()]
         string ResolveNetnameFromIpV4(
             string ipAddress
@@ -36,8 +34,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer
 
     /// <domain>User</domain>
     /// <namespace>SolutionNorSolutionPim.BusinessLogicLayer</namespace>
-    public class DefaultUserActivityService : IDefaultUserActivityService
-    {
+    public class DefaultUserActivityService : IDefaultUserActivityService {
 
         /// <summary>
         /// get netname from whois based on ipv4 address
@@ -60,13 +57,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer
                 reader = new StreamReader(stream);
 
                 string line = string.Empty;
-                while ( line != null ) {
+                while (line != null) {
                     line = reader.ReadLine();
-                    if ( line != null && line.ToLower().StartsWith(lookFor) )
+                    if (line != null && line.ToLower().StartsWith(lookFor)) {
                         netname = line.Substring(lookFor.Length + 1).Trim();
+                    }
                 }
 
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 // todo, what happens with WCF here?
                 throw new Exception("ResolveNetnameFromIpV4 failed", ex);
             } finally {
@@ -88,16 +86,17 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer
             string originatingAddress
             ) {
 
-            var defaultUserActivity = new CrudeDefaultUserActivityData();
-            defaultUserActivity.DefaultUserActivityId = Guid.NewGuid();
-            defaultUserActivity.DefaultUserActivityTypeRcd = userActivityTypeRcd;
-            defaultUserActivity.UserActivityNote = activityNote;
-            defaultUserActivity.OriginatingAddress = originatingAddress;
-            defaultUserActivity.DefaultUserId = userId;
-            defaultUserActivity.DateTime = DateTime.UtcNow;
+            CrudeDefaultUserActivityData defaultUserActivity = new CrudeDefaultUserActivityData {
+                DefaultUserActivityId = Guid.NewGuid(),
+                DefaultUserActivityTypeRcd = userActivityTypeRcd,
+                UserActivityNote = activityNote,
+                OriginatingAddress = originatingAddress,
+                DefaultUserId = userId,
+                DateTime = DateTime.UtcNow
+            };
             defaultUserActivity.Insert();
 
-            var defaultUser = new CrudeDefaultUserData();
+            CrudeDefaultUserData defaultUser = new CrudeDefaultUserData();
             defaultUser.FetchByDefaultUserId(userId);
             defaultUser.LastActivityDateTime = DateTime.UtcNow;
             defaultUser.Update(); // todo, possible to only update LastActivityDateTime?
@@ -141,24 +140,24 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer
             bool overrideUserName
             ) {
 
-            var defaultUser = new CrudeDefaultUserData();
+            CrudeDefaultUserData defaultUser = new CrudeDefaultUserData();
 
             try {
                 defaultUser.FetchByDefaultUserName(userCode);
 
                 // insert if not existing
-                if ( defaultUser.DefaultUserId == Guid.Empty ) {
+                if (defaultUser.DefaultUserId == Guid.Empty) {
                     defaultUser.DefaultUserId = new Guid();
                     defaultUser.DefaultUserCode = userCode;
 
                     // resolve net-name if user code appears to be an ip address
-                    IPAddress ipAddress;
-                    if ( IPAddress.TryParse(userCode, out ipAddress) ) {
+                    if (IPAddress.TryParse(userCode, out IPAddress ipAddress)) {
                         defaultUser.DefaultUserName = ResolveNetnameFromIpV4(userCode);
 
                         // use ip user code if no net-name found
-                        if ( string.IsNullOrEmpty(defaultUser.DefaultUserName) )
+                        if (string.IsNullOrEmpty(defaultUser.DefaultUserName)) {
                             defaultUser.DefaultUserName = userCode;
+                        }
                     } else {
                         // not an ip address, username is usercode
                         defaultUser.DefaultUserName = userCode;
@@ -179,14 +178,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer
                 } else {
                     // resolve net-name if user name appears to be an ip address
                     // or an averride is asked for
-                    IPAddress ipAddress;
-                    if ( IPAddress.TryParse(defaultUser.DefaultUserName, out ipAddress)
+                    if (IPAddress.TryParse(defaultUser.DefaultUserName, out IPAddress ipAddress)
                         || overrideUserName
                         ) {
                         string netName = ResolveNetnameFromIpV4(userCode);
 
                         // use new net-name if found
-                        if ( !string.IsNullOrEmpty(netName) ) {
+                        if (!string.IsNullOrEmpty(netName)) {
 
                             // a new net name was found, use that instead of ip address
                             defaultUser.DefaultUserName = netName;
@@ -215,7 +213,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer
                     "Internal"
                     );
 
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 // todo, what happens with WCF here?
                 throw new Exception("Login failed", ex);
             }

@@ -4,13 +4,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace SolutionNorSolutionPim.DataAccessLayer
-{
-    public class Logging
-    {
+namespace SolutionNorSolutionPim.DataAccessLayer {
+    public class Logging {
         public Stopwatch StopWatch;
-        Guid UserId;
-        string _sql;
+        private Guid UserId;
+        private string _sql;
 
         public string DomainName { get; set; }
         public string LayerName { get; set; }
@@ -24,10 +22,11 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             string commandName
             ) {
 
-            var log = new Logging();
-            log.MethodName = commandName;
-            log.StopWatch = new Stopwatch();
-            log.StartUTC = DateTime.UtcNow;
+            Logging log = new Logging {
+                MethodName = commandName,
+                StopWatch = new Stopwatch(),
+                StartUTC = DateTime.UtcNow
+            };
             log.StopWatch.Start();
 
             return log;
@@ -41,14 +40,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             Guid? userId = null
             ) {
 
-            var log = new Logging();
-            log.DomainName = domainName;
-            log.LayerName = layerName;
-            log.ClassName = className;
-            log.MethodName = methodName;
+            Logging log = new Logging {
+                DomainName = domainName,
+                LayerName = layerName,
+                ClassName = className,
+                MethodName = methodName
+            };
 
-            if ( userId != null )
-                log.UserId = ( Guid ) userId;
+            if (userId != null) {
+                log.UserId = (Guid)userId;
+            }
 
             log.StopWatch = new Stopwatch();
             log.StopWatch.Start();
@@ -68,46 +69,47 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             StopWatch.Stop();
             StopUTC = DateTime.UtcNow;
 
-            if ( StopWatch.ElapsedMilliseconds > logIfMoreThanMilliseconds ) {
-                var performance = new CrudeDefaultPerformanceTimeData();
-                performance.CommandName = MethodName;
-                performance.Milliseconds = ( int ) StopWatch.ElapsedMilliseconds;
-                performance.DefaultUserId = UserId;
-                performance.DateTime = DateTime.UtcNow;
+            if (StopWatch.ElapsedMilliseconds > logIfMoreThanMilliseconds) {
+                CrudeDefaultPerformanceTimeData performance = new CrudeDefaultPerformanceTimeData {
+                    CommandName = MethodName,
+                    Milliseconds = (int)StopWatch.ElapsedMilliseconds,
+                    DefaultUserId = UserId,
+                    DateTime = DateTime.UtcNow
+                };
                 performance.Insert();
 
                 // update rollup
                 int hits = 0;
-                using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                     conn.Open();
-                    using ( var command = new SqlCommand(@" 
+                    using (SqlCommand command = new SqlCommand(@" 
                                 update [default_performance_time_rollup] set
                                         milliseconds = milliseconds + @milliseconds
                                     ,hits = hits + 1
                                 where command_name = @command_name
                                 ",
                             conn
-                            ) ) {
+                            )) {
 
                         command.Parameters.Add("@command_name", SqlDbType.NVarChar).Value = MethodName;
-                        command.Parameters.Add("@milliseconds", SqlDbType.BigInt).Value = ( int ) StopWatch.ElapsedMilliseconds;
+                        command.Parameters.Add("@milliseconds", SqlDbType.BigInt).Value = (int)StopWatch.ElapsedMilliseconds;
 
                         hits = command.ExecuteNonQuery();
                     }
                 }
 
-                if ( hits == 0 ) {
+                if (hits == 0) {
                     // no hits, insert instead
-                    using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+                    using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                         conn.Open();
-                        using ( var command = new SqlCommand(@"
+                        using (SqlCommand command = new SqlCommand(@"
                                 insert into [default_performance_time_rollup] (default_performance_time_rollup_id, command_name, milliseconds, hits, date_time, default_user_id)
                                         values (newid(), @command_name, @milliseconds, 1, getutcdate(), @user_id)
                                 ",
                                conn
-                               ) ) {
+                               )) {
                             command.Parameters.Add("@command_name", SqlDbType.NVarChar).Value = MethodName;
-                            command.Parameters.Add("@milliseconds", SqlDbType.BigInt).Value = ( int ) StopWatch.ElapsedMilliseconds;
+                            command.Parameters.Add("@milliseconds", SqlDbType.BigInt).Value = (int)StopWatch.ElapsedMilliseconds;
                             command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
                             command.ExecuteNonQuery();
                         }
@@ -121,7 +123,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             SqlCommand command
             ) {
             // replace parameters in sql
-            foreach ( SqlParameter parameter in command.Parameters ) {
+            foreach (SqlParameter parameter in command.Parameters) {
                 try {
                     sql = sql.Replace(parameter.ParameterName, "'" + parameter.Value.ToString() + "'");
                 } catch { }
@@ -141,22 +143,24 @@ namespace SolutionNorSolutionPim.DataAccessLayer
         public void PerformanceTimeCheck(
             ) {
             StopWatch.Stop();
-            if ( StopWatch.ElapsedMilliseconds > 500 ) {
-                var performance = new CrudeDefaultPerformanceTimeData();
-                performance.CommandName = MethodName;
-                performance.Milliseconds = ( int ) StopWatch.ElapsedMilliseconds;
-                performance.DefaultUserId = UserId;
-                performance.DateTime = DateTime.UtcNow;
+            if (StopWatch.ElapsedMilliseconds > 500) {
+                CrudeDefaultPerformanceTimeData performance = new CrudeDefaultPerformanceTimeData {
+                    CommandName = MethodName,
+                    Milliseconds = (int)StopWatch.ElapsedMilliseconds,
+                    DefaultUserId = UserId,
+                    DateTime = DateTime.UtcNow
+                };
                 performance.Insert();
             }
 
-            if ( StopWatch.ElapsedMilliseconds > 500 ) {
-                var performance = new CrudeDefaultPerformanceIssueData();
-                performance.CommandName = MethodName;
-                performance.CommandText = _sql;
-                performance.Milliseconds = ( int ) StopWatch.ElapsedMilliseconds;
-                performance.DefaultUserId = UserId;
-                performance.DateTime = DateTime.UtcNow;
+            if (StopWatch.ElapsedMilliseconds > 500) {
+                CrudeDefaultPerformanceIssueData performance = new CrudeDefaultPerformanceIssueData {
+                    CommandName = MethodName,
+                    CommandText = _sql,
+                    Milliseconds = (int)StopWatch.ElapsedMilliseconds,
+                    DefaultUserId = UserId,
+                    DateTime = DateTime.UtcNow
+                };
                 performance.Insert();
             }
         }
@@ -180,8 +184,9 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             Exception ex
             ) {
 
-            if ( !string.IsNullOrEmpty(_sql) )
+            if (!string.IsNullOrEmpty(_sql)) {
                 PerformanceTimeCheck();
+            }
 
             Logging.ErrorLog(
                 DomainName,
@@ -199,15 +204,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             ) {
 
             try {
-                var contract = new CrudeDefaultUserActivityData();
+                CrudeDefaultUserActivityData contract = new CrudeDefaultUserActivityData {
+                    DefaultUserActivityId = Guid.NewGuid(),
+                    DefaultUserActivityTypeRcd = DefaultUserActivityTypeRef.BusinessLogicMethodInvoked,
+                    OriginatingAddress = System.Environment.MachineName,
+                    UserActivityNote = message,
 
-                contract.DefaultUserActivityId = Guid.NewGuid();
-                contract.DefaultUserActivityTypeRcd = DefaultUserActivityTypeRef.BusinessLogicMethodInvoked;
-                contract.OriginatingAddress = System.Environment.MachineName;
-                contract.UserActivityNote = message;
-
-                contract.DefaultUserId = userId;
-                contract.DateTime = DateTime.UtcNow;
+                    DefaultUserId = userId,
+                    DateTime = DateTime.UtcNow
+                };
 
                 contract.Insert();
             } catch { };
@@ -223,19 +228,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer
             ) {
 
             try {
-                var contract = new CrudeDefaultErrorData();
-
-                contract.DefaultErrorId = Guid.NewGuid();
-                contract.DefaultErrorTypeRcd = DefaultErrorTypeRef.SilentCaught;
-                contract.DefaultErrorLayerRcd = DefaultErrorLayerRef.BusinessLogicLayerSoap;
-                // todo, layer address added ( in erwin )
-                contract.DomainName = domainName;
-                contract.ClassName = className;
-                contract.MethodName = methodName;
-                contract.StackTrace = stackTrace;
-                contract.ErrorMessage = errorMessage;
-                contract.DefaultUserId = userId;
-                contract.DateTime = DateTime.UtcNow;
+                CrudeDefaultErrorData contract = new CrudeDefaultErrorData {
+                    DefaultErrorId = Guid.NewGuid(),
+                    DefaultErrorTypeRcd = DefaultErrorTypeRef.SilentCaught,
+                    DefaultErrorLayerRcd = DefaultErrorLayerRef.BusinessLogicLayerSoap,
+                    // todo, layer address added ( in erwin )
+                    DomainName = domainName,
+                    ClassName = className,
+                    MethodName = methodName,
+                    StackTrace = stackTrace,
+                    ErrorMessage = errorMessage,
+                    DefaultUserId = userId,
+                    DateTime = DateTime.UtcNow
+                };
                 contract.Insert();
             } catch {
                 // never mind, most likely a network / environment issue

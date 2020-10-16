@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     public partial class DatabaseManager {
-        void InitOAuth(
+        private void InitOAuth(
             int majorNumber,
             int minorNumber
             ) {
@@ -12,7 +10,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "OAuthDropTables",
                 Description = "OAuth Drop Tables",
                 #region script ( *** )
@@ -36,9 +34,9 @@ if object_id (N'__MigrationHistory') is not null
                 #endregion
             });
 
-            scripts.Add(lastScript = new DatabaseScript { 
+            scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "OAuthCreateTables",
                 Description = "OAuth Create Tables",
                 #region script ( *** )
@@ -132,7 +130,7 @@ ALTER TABLE [dbo].[AspNetUserRoles] WITH NOCHECK
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "OAuthTestData",
                 Description = "OAuth Test Data",
                 #region script ( *** )

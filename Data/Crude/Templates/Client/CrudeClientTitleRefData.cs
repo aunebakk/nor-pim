@@ -2,15 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:54:44 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:52:43 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
-using System.Data;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 // Data Access Layer
 // the DataAccessLayer is the first layer that has access to data coming from
@@ -20,16 +20,16 @@ using System.Configuration;
 namespace SolutionNorSolutionPim.DataAccessLayer {
 
     public partial class ClientTitleRef {
-        
+
         public const string Child = "CHA";
-        
+
         public const string Infant = "INA";
-        
+
         public const string Mr = "MR";
-        
+
         public const string Mrs = "MRS";
     }
-    
+
     // this class serves as a data access layer between c# and sql server
     // it is serializable in order to speed up processing between the data access and business layers
     // this class start with an identical representation of client_title_ref's columns
@@ -38,21 +38,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeClientTitleRefData {
-        
+
         public string ClientTitleRcd { get; set; }
-        
+
         public string ClientTitleName { get; set; }
-        
+
         public string ClientTitleDescription { get; set; }
-        
+
         public bool ActiveFlag { get; set; }
-        
+
         public int SortOrder { get; set; }
-        
+
         public System.Guid UserId { get; set; }
-        
+
         public System.DateTime DateTime { get; set; }
-        
+
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -71,7 +71,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 // dirty read
@@ -80,21 +80,22 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_title_rcd",SqlDbType.NVarChar).Value = clientTitleRcd;
+                    command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = clientTitleRcd;
 
                     // execute and read one row, close connection
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serializable class if row was found
-                    if (reader.Read())
+                    if (reader.Read()) {
                         Populate(reader);
+                    }
                 }
             }
         }
-        
+
         // fetch by Primary key into new class instance
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -110,18 +111,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where client_title_rcd = @client_title_rcd
                             order by client_title_name";
 
-            var ret = new CrudeClientTitleRefData();
+            CrudeClientTitleRefData ret = new CrudeClientTitleRefData();
 
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_title_rcd",SqlDbType.NVarChar).Value = clientTitleRcd;
+                    command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = clientTitleRcd;
 
                     // execute query against client_title_ref
                     // if the query fails in the preprocessor of sql server
@@ -129,17 +130,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serialized class if a row was found
-                    if (reader.Read())
+                    if (reader.Read()) {
                         ret.Populate(reader);
+                    }
                 }
             }
 
             return ret;
         }
-        
+
         // fetch by Foreign key into new List of class instances
         public static List<CrudeClientTitleRefData> FetchByUserId(System.Guid userId) {
-            var dataList = new List<CrudeClientTitleRefData>();
+            List<CrudeClientTitleRefData> dataList = new List<CrudeClientTitleRefData>();
 
             // create query against client_title_ref
             // this will be ansi sql and parameterized
@@ -154,10 +156,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
@@ -171,16 +173,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeClientTitleRefData();
+                        CrudeClientTitleRefData data = new CrudeClientTitleRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch by Picker Member into new class instance
         public void FetchByClientTitleName(string clientTitleName) {
             // create query against client_title_ref
@@ -195,28 +197,29 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
-                    // add search column
-                    // this search column will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@clientTitleName",SqlDbType.NVarChar).Value = clientTitleName;
+                // add search column
+                // this search column will be used together with the prepared ansi sql statement
+                command.Parameters.Add("@clientTitleName", SqlDbType.NVarChar).Value = clientTitleName;
 
                 // execute query against client_title_ref
                 // if the query fails in the preprocessor of sql server
                 //   an exception will be raised
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                if (reader.Read())
+                if (reader.Read()) {
                     Populate(reader);
+                }
             }
         }
-        
+
         // fetch all rows from table client_title_ref into new List of class instances
         public static List<CrudeClientTitleRefData> FetchAll() {
-            var dataList = new List<CrudeClientTitleRefData>();
+            List<CrudeClientTitleRefData> dataList = new List<CrudeClientTitleRefData>();
 
             // create query against client_title_ref
             // this will be ansi sql and parameterized
@@ -229,10 +232,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // execute query against client_title_ref
                     // if the query fails in the preprocessor of sql server
@@ -243,19 +246,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeClientTitleRefData();
+                        CrudeClientTitleRefData data = new CrudeClientTitleRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeClientTitleRefData> FetchAllWithLimit(int limit) {
-            var dataList = new List<CrudeClientTitleRefData>();
+            List<CrudeClientTitleRefData> dataList = new List<CrudeClientTitleRefData>();
 
             // create query against client_title_ref
             // this will be ansi sql and parameterized
@@ -268,10 +271,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // execute query against client_title_ref
                     // if the query fails in the preprocessor of sql server
@@ -282,20 +285,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeClientTitleRefData();
+                        CrudeClientTitleRefData data = new CrudeClientTitleRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch all from table into new List of class instances, only populating specific columns,
         //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeClientTitleRefData> FetchAllWithLimitAndOffset(int limit, int offset) {
-            var dataList = new List<CrudeClientTitleRefData>();
+            List<CrudeClientTitleRefData> dataList = new List<CrudeClientTitleRefData>();
 
             // create query against client_title_ref
             // this will be ansi sql and parameterized
@@ -308,10 +311,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // execute query against client_title_ref
                     // if the query fails in the preprocessor of sql server
@@ -325,19 +328,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
-                            var data = new CrudeClientTitleRefData();
+                            CrudeClientTitleRefData data = new CrudeClientTitleRefData();
                             data.Populate(reader);
                             dataList.Add(data);
                         }
                         count++;
-                        if (count > limit + offset) break;
+                        if (count > limit + offset) {
+                            break;
+                        }
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // get a count of rows in table
         public static int FetchAllCount() {
             // create query against client_title_ref
@@ -349,28 +354,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 int count = 0;
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // execute query against client_title_ref
                     // if the query fails in the preprocessor of sql server
                     //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
-                    count = (System.Int32) reader["count"];
+                    count = (int)reader["count"];
                 }
 
                 return count;
             }
         }
-        
+
         // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeClientTitleRefData> FetchWithFilter(string clientTitleRcd, string clientTitleName, string clientTitleDescription, bool activeFlag, int sortOrder, System.Guid userId, System.DateTime dateTime) {
-            var dataList = new List<CrudeClientTitleRefData>();
+            List<CrudeClientTitleRefData> dataList = new List<CrudeClientTitleRefData>();
 
             // create query against client_title_ref
             // this will be ansi sql and parameterized
@@ -383,23 +388,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add search column(s) if they are not null or empty
                     // this search column(s) will be used together with the prepared ansi sql statement
                     if (!string.IsNullOrEmpty(clientTitleRcd)) {
                         sql += "  and client_title_rcd like '%' + @client_title_rcd + '%'";
-                        command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = clientTitleRcd.Replace("'","''");
+                        command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = clientTitleRcd.Replace("'", "''");
                     }
                     if (!string.IsNullOrEmpty(clientTitleName)) {
                         sql += "  and client_title_name like '%' + @client_title_name + '%'";
-                        command.Parameters.Add("@client_title_name", SqlDbType.NVarChar).Value = clientTitleName.Replace("'","''");
+                        command.Parameters.Add("@client_title_name", SqlDbType.NVarChar).Value = clientTitleName.Replace("'", "''");
                     }
                     if (!string.IsNullOrEmpty(clientTitleDescription)) {
                         sql += "  and client_title_description like '%' + @client_title_description + '%'";
-                        command.Parameters.Add("@client_title_description", SqlDbType.NVarChar).Value = clientTitleDescription.Replace("'","''");
+                        command.Parameters.Add("@client_title_description", SqlDbType.NVarChar).Value = clientTitleDescription.Replace("'", "''");
                     }
                     if (activeFlag != false) {
                         sql += "  and active_flag = @active_flag";
@@ -430,27 +435,47 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeClientTitleRefData();
+                        CrudeClientTitleRefData data = new CrudeClientTitleRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // read all columns out and populate object members
         public void Populate(IDataReader reader) {
-            if (reader["client_title_rcd"] != System.DBNull.Value) ClientTitleRcd = (System.String) reader["client_title_rcd"];
-            if (reader["client_title_name"] != System.DBNull.Value) ClientTitleName = (System.String) reader["client_title_name"];
-            if (reader["client_title_description"] != System.DBNull.Value) ClientTitleDescription = (System.String) reader["client_title_description"];
-            if (reader["active_flag"] != System.DBNull.Value) ActiveFlag = (System.Boolean) reader["active_flag"];
-            if (reader["sort_order"] != System.DBNull.Value) SortOrder = (System.Int32) reader["sort_order"];
-            if (reader["user_id"] != System.DBNull.Value) UserId = (System.Guid) reader["user_id"];
-            if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
+            if (reader["client_title_rcd"] != System.DBNull.Value) {
+                ClientTitleRcd = (string)reader["client_title_rcd"];
+            }
+
+            if (reader["client_title_name"] != System.DBNull.Value) {
+                ClientTitleName = (string)reader["client_title_name"];
+            }
+
+            if (reader["client_title_description"] != System.DBNull.Value) {
+                ClientTitleDescription = (string)reader["client_title_description"];
+            }
+
+            if (reader["active_flag"] != System.DBNull.Value) {
+                ActiveFlag = (bool)reader["active_flag"];
+            }
+
+            if (reader["sort_order"] != System.DBNull.Value) {
+                SortOrder = (int)reader["sort_order"];
+            }
+
+            if (reader["user_id"] != System.DBNull.Value) {
+                UserId = (System.Guid)reader["user_id"];
+            }
+
+            if (reader["date_time"] != System.DBNull.Value) {
+                DateTime = (System.DateTime)reader["date_time"];
+            }
         }
-        
+
         // insert all object members as a new row in table
         public void Insert() {
 
@@ -464,19 +489,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
-                using (var command = new SqlCommand(sql, connection)) {
+                using (SqlCommand command = new SqlCommand(sql, connection)) {
                     // add column(s) to insert as parameter
                     // the insert column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_title_rcd",SqlDbType.NVarChar).Value = (System.String)ClientTitleRcd;
-                    command.Parameters.Add("@client_title_name",SqlDbType.NVarChar).Value = (System.String)ClientTitleName;
-                    command.Parameters.Add("@client_title_description",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : (System.String)ClientTitleDescription;
-                    command.Parameters.Add("@active_flag",SqlDbType.Bit).Value = (System.Boolean)ActiveFlag;
-                    command.Parameters.Add("@sort_order",SqlDbType.Int).Value = (System.Int32)SortOrder;
-                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = ClientTitleRcd;
+                    command.Parameters.Add("@client_title_name", SqlDbType.NVarChar).Value = ClientTitleName;
+                    command.Parameters.Add("@client_title_description", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : ClientTitleDescription;
+                    command.Parameters.Add("@active_flag", SqlDbType.Bit).Value = ActiveFlag;
+                    command.Parameters.Add("@sort_order", SqlDbType.Int).Value = SortOrder;
+                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
                     // execute query against client_title_ref
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -485,7 +510,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-        
+
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
@@ -504,13 +529,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to insert as parameter(s)
                 // the insert column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@client_title_rcd",SqlDbType.NVarChar).Value = (System.String)ClientTitleRcd;
-                command.Parameters.Add("@client_title_name",SqlDbType.NVarChar).Value = (System.String)ClientTitleName;
-                command.Parameters.Add("@client_title_description",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : (System.String)ClientTitleDescription;
-                command.Parameters.Add("@active_flag",SqlDbType.Bit).Value = (System.Boolean)ActiveFlag;
-                command.Parameters.Add("@sort_order",SqlDbType.Int).Value = (System.Int32)SortOrder;
-                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = ClientTitleRcd;
+                command.Parameters.Add("@client_title_name", SqlDbType.NVarChar).Value = ClientTitleName;
+                command.Parameters.Add("@client_title_description", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : ClientTitleDescription;
+                command.Parameters.Add("@active_flag", SqlDbType.Bit).Value = ActiveFlag;
+                command.Parameters.Add("@sort_order", SqlDbType.Int).Value = SortOrder;
+                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
                 // execute query against client_title_ref
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -518,7 +543,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-        
+
         // update all object members on a row in table based on primary key
         public void Update() {
             // create query against client_title_ref
@@ -538,20 +563,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // add column(s) to update as parameter(s)
                     // the update column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_title_rcd",SqlDbType.NVarChar).Value = (System.String)ClientTitleRcd;
-                    command.Parameters.Add("@client_title_name",SqlDbType.NVarChar).Value = (System.String)ClientTitleName;
-                    command.Parameters.Add("@client_title_description",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : (System.String)ClientTitleDescription;
-                    command.Parameters.Add("@active_flag",SqlDbType.Bit).Value = (System.Boolean)ActiveFlag;
-                    command.Parameters.Add("@sort_order",SqlDbType.Int).Value = (System.Int32)SortOrder;
-                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                    command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = ClientTitleRcd;
+                    command.Parameters.Add("@client_title_name", SqlDbType.NVarChar).Value = ClientTitleName;
+                    command.Parameters.Add("@client_title_description", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : ClientTitleDescription;
+                    command.Parameters.Add("@active_flag", SqlDbType.Bit).Value = ActiveFlag;
+                    command.Parameters.Add("@sort_order", SqlDbType.Int).Value = SortOrder;
+                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
                     // execute query against client_title_ref
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -560,7 +585,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-        
+
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             // create query against client_title_ref
@@ -583,13 +608,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to update as parameter
                 // the update column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@client_title_rcd",SqlDbType.NVarChar).Value = (System.String)ClientTitleRcd;
-                command.Parameters.Add("@client_title_name",SqlDbType.NVarChar).Value = (System.String)ClientTitleName;
-                command.Parameters.Add("@client_title_description",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : (System.String)ClientTitleDescription;
-                command.Parameters.Add("@active_flag",SqlDbType.Bit).Value = (System.Boolean)ActiveFlag;
-                command.Parameters.Add("@sort_order",SqlDbType.Int).Value = (System.Int32)SortOrder;
-                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
+                command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = ClientTitleRcd;
+                command.Parameters.Add("@client_title_name", SqlDbType.NVarChar).Value = ClientTitleName;
+                command.Parameters.Add("@client_title_description", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(ClientTitleDescription)) ? (object)DBNull.Value : ClientTitleDescription;
+                command.Parameters.Add("@active_flag", SqlDbType.Bit).Value = ActiveFlag;
+                command.Parameters.Add("@sort_order", SqlDbType.Int).Value = SortOrder;
+                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
                 // execute query against client_title_ref
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -597,7 +622,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-        
+
         // delete a row in table based on primary key
         public static void Delete(string clientTitleRcd) {
             // create query against client_title_ref
@@ -610,13 +635,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_title_rcd",SqlDbType.NVarChar).Value = clientTitleRcd;
+                    command.Parameters.Add("@client_title_rcd", SqlDbType.NVarChar).Value = clientTitleRcd;
                     // execute query against client_title_ref
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server

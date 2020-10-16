@@ -1,18 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     public partial class DatabaseManager {
-        void InitIpsum(
+        private void InitIpsum(
             int majorNumber,
             int minorNumber
             ) {
             int sequence = 0;
 
-            scripts.Add(lastScript = new DatabaseScript { 
+            scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "IpsumCatalog",
                 Description = "Ipsum Catalog",
                 #region script ( *** )
@@ -103,7 +101,7 @@ go
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "IpsumLast",
                 Description = "IpsumStop",
                 #region script ( *** )

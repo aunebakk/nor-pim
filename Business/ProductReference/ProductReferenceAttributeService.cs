@@ -2,46 +2,42 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:12:40 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:04:52 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.BusinessUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.ServiceModel;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [ServiceContract()]
     public partial interface IProductReferenceAttributeService {
-        
+
         // Gets parent and children
         [OperationContract()]
         ProductReferenceAttributeContract ProductReferenceAttributeCompleteGet(string productAttributeRcd, System.Guid userId);
-        
+
         // Updates parent, children are added or updated as needed
         [OperationContract()]
         string ProductReferenceAttributeCompleteUpdate(string productAttributeRcd, ProductReferenceAttributeContract productContract, System.Guid userId);
     }
-    
+
     public partial class ProductReferenceAttributeService : IProductReferenceAttributeService {
-        
+
         // Gets parent and children
         public ProductReferenceAttributeContract ProductReferenceAttributeCompleteGet(string productAttributeRcd, System.Guid userId) {
-            var productContract = 
+            ProductReferenceAttributeContract productContract =
                 new ProductReferenceAttributeContract();
 
             // open standard connection
-            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
                 try {
-                    productContract.ProductAttributeRef = 
+                    productContract.ProductAttributeRef =
                         new CrudeProductAttributeRefService().FetchAll();
 
                     // save checksum for comparison on update
@@ -54,21 +50,23 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             return productContract;
         }
-        
+
         // Updates parent, children are added or updated as needed
         public string ProductReferenceAttributeCompleteUpdate(string productAttributeRcd, ProductReferenceAttributeContract productContract, System.Guid userId) {
 
             // check for differences since fetch
-            if (productContract.ChecksumAfterGet.Equals(productContract.Checksum()))
-                return String.Empty;
+            if (productContract.ChecksumAfterGet.Equals(productContract.Checksum())) {
+                return string.Empty;
+            }
 
             // check for database differences since fetch
             ProductReferenceAttributeContract productContractCurrent = ProductReferenceAttributeCompleteGet(productAttributeRcd, userId);
-            if (!productContract.ChecksumAfterGet.Equals(productContractCurrent.Checksum())) 
+            if (!productContract.ChecksumAfterGet.Equals(productContractCurrent.Checksum())) {
                 throw new Exception("ProductReferenceAttributeCompleteUpdate, data has changed since fetch");
+            }
 
             // open standard connection
-            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
 
@@ -85,7 +83,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 }
             }
 
-            return String.Empty;
+            return string.Empty;
 
         }
     }

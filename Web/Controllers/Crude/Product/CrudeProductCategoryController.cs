@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:49 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:16 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -77,13 +77,22 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryCreate(System.Guid? productCategoryBecameId, System.Guid? productCategoryParentId, System.Guid? userId) {
-            var contract = new CrudeProductCategoryContract();
-            if (productCategoryBecameId != null) contract.ProductCategoryBecameId = (System.Guid) productCategoryBecameId;
-            if (productCategoryParentId != null) contract.ProductCategoryParentId = (System.Guid) productCategoryParentId;
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeProductCategoryContract contract = new CrudeProductCategoryContract();
+            if (productCategoryBecameId != null) {
+                contract.ProductCategoryBecameId = (System.Guid)productCategoryBecameId;
+            }
 
-            if (userId == null)
+            if (productCategoryParentId != null) {
+                contract.ProductCategoryParentId = (System.Guid)productCategoryParentId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
+
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

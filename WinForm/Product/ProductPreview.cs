@@ -1,14 +1,12 @@
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.UserInterface
-{
-    public partial class ProductPreview : Form
-    {
+namespace SolutionNorSolutionPim.UserInterface {
+    public partial class ProductPreview : Form {
         private Guid _userId;
         private Guid _productCategoryId;
 
@@ -37,22 +35,24 @@ namespace SolutionNorSolutionPim.UserInterface
             Show();
 
             // select first node
-            if ( treeViewHierarchy.Nodes.Count > 0 )
+            if (treeViewHierarchy.Nodes.Count > 0) {
                 SelectNode(treeViewHierarchy.Nodes[0]);
+            }
 
             treeViewHierarchy.SelectedNode = _currentNode;
         }
 
-        void AddCategory(List<CategoryTreeContract> productCategoryContracts,
+        private void AddCategory(List<CategoryTreeContract> productCategoryContracts,
                             TreeNode node,
                             Guid productCategoryParentId
                             ) {
-            foreach ( CategoryTreeContract contractChild in productCategoryContracts ) {
+            foreach (CategoryTreeContract contractChild in productCategoryContracts) {
                 // exclude parent
-                if ( contractChild.ProductCategoryId == contractChild.ProductCategoryParentId )
+                if (contractChild.ProductCategoryId == contractChild.ProductCategoryParentId) {
                     continue;
+                }
 
-                if ( contractChild.ProductCategoryParentId == productCategoryParentId ) {
+                if (contractChild.ProductCategoryParentId == productCategoryParentId) {
                     TreeNode newNode = node.Nodes.Add(
                         contractChild.ProductCategoryId.ToString(),
                         contractChild.ProductCategoryName
@@ -69,13 +69,14 @@ namespace SolutionNorSolutionPim.UserInterface
         private void CategoryTreeviewRefresh() {
             treeViewHierarchy.Nodes.Clear();
 
-            var productCategoryService = new CategorySearchService();
+            CategorySearchService productCategoryService = new CategorySearchService();
             List<CategoryTreeContract> productCategoryContracts = productCategoryService.CategoryTree();
 
-            foreach ( CategoryTreeContract productCategoryContract in productCategoryContracts ) {
+            foreach (CategoryTreeContract productCategoryContract in productCategoryContracts) {
                 // first level is it's own parent
-                if ( productCategoryContract.ProductCategoryId != productCategoryContract.ProductCategoryParentId )
+                if (productCategoryContract.ProductCategoryId != productCategoryContract.ProductCategoryParentId) {
                     continue;
+                }
 
                 TreeNode node = treeViewHierarchy.Nodes.Add(productCategoryContract.ProductCategoryId.ToString(),
                                                             productCategoryContract.ProductCategoryName);
@@ -108,7 +109,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 UpdateCategory();
                 UpdateProducts();
 
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -116,7 +117,7 @@ namespace SolutionNorSolutionPim.UserInterface
         private void treeViewHierarchy_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) {
             try {
                 SelectNode(e.Node);
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
                 try {
                     dataGridViewProducts1.DataSource = null;
@@ -125,8 +126,8 @@ namespace SolutionNorSolutionPim.UserInterface
             }
         }
 
-        void UpdateProducts() {
-            var productSearchService = new ProductSearchService();
+        private void UpdateProducts() {
+            ProductSearchService productSearchService = new ProductSearchService();
 
             Cursor.Current = Cursors.WaitCursor;
 
@@ -141,7 +142,7 @@ namespace SolutionNorSolutionPim.UserInterface
                         );
                 dataGridViewProducts1.AutoResizeColumns();
                 dataGridViewProducts1.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             } finally {
                 productSearchService.Close();
@@ -164,15 +165,16 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProducts.Columns.Add("Image", "Image");
                 dataGridViewProducts.Columns.Add("ExtensionData", "");
                 dataGridViewProducts.Columns["ExtensionData"].Visible = false;
-                foreach ( DataGridViewColumn column in dataGridViewProducts.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProducts.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
                 dataGridViewProducts.AutoResizeColumns();
                 dataGridViewProducts.Refresh();
                 //dataGridViewProducts.ColumnHeadersVisible = false;
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -190,14 +192,15 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductAttribute.Columns.Add("ProductAttributeUnitCd", "Product Attribute Unit Cd");
                 dataGridViewProductAttribute.Columns.Add("ExtensionData", "");
                 dataGridViewProductAttribute.Columns["ExtensionData"].Visible = false;
-                foreach ( DataGridViewColumn column in dataGridViewProductAttribute.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductAttribute.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
                 dataGridViewProductAttribute.AutoResizeColumns();
                 dataGridViewProductAttribute.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -213,14 +216,15 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductIdentifier.Columns.Add("DateTime", "Date Time");
                 dataGridViewProductIdentifier.Columns.Add("ExtensionData", "");
                 dataGridViewProductIdentifier.Columns["ExtensionData"].Visible = false;
-                foreach ( DataGridViewColumn column in dataGridViewProductIdentifier.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductIdentifier.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
                 dataGridViewProductIdentifier.AutoResizeColumns();
                 dataGridViewProductIdentifier.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -236,15 +240,16 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductInfo.Columns.Add("ExtensionData", "");
                 dataGridViewProductInfo.Columns["ExtensionData"].Visible = false;
 
-                foreach ( DataGridViewColumn column in dataGridViewProductInfo.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductInfo.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
 
                 dataGridViewProductInfo.AutoResizeColumns();
                 dataGridViewProductInfo.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -262,15 +267,16 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductImage.Columns.Add("ExtensionData", "");
                 dataGridViewProductImage.Columns["ExtensionData"].Visible = false;
 
-                foreach ( DataGridViewColumn column in dataGridViewProductImage.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductImage.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
 
                 dataGridViewProductImage.AutoResizeColumns();
                 dataGridViewProductImage.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -288,15 +294,16 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductDocumentation.Columns.Add("ExtensionData", "");
                 dataGridViewProductDocumentation.Columns["ExtensionData"].Visible = false;
 
-                foreach ( DataGridViewColumn column in dataGridViewProductDocumentation.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductDocumentation.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
 
                 dataGridViewProductDocumentation.AutoResizeColumns();
                 dataGridViewProductDocumentation.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -315,29 +322,30 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductCategoryDocumentation.Columns.Add("ExtensionData", "");
                 dataGridViewProductCategoryDocumentation.Columns["ExtensionData"].Visible = false;
 
-                foreach ( DataGridViewColumn column in dataGridViewProductCategoryDocumentation.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductCategoryDocumentation.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
 
                 dataGridViewProductCategoryDocumentation.AutoResizeColumns();
                 dataGridViewProductCategoryDocumentation.Refresh();
                 dataGridViewProductCategoryDocumentation.ColumnHeadersVisible = false;
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
 
         private void UpdateProduct(Guid productId) {
             // Show product info
-            var productServiceClient = new ProductServiceClient();
+            ProductServiceClient productServiceClient = new ProductServiceClient();
             try {
                 _productContract =
                     productServiceClient.ProductGetCompleteById(
                         productId);
 
-                if ( productId == Guid.Empty ) {
+                if (productId == Guid.Empty) {
                     // big todo
                     // either set this to empty here, or allow comobo / datetime, etc to be null/empty
                     // note 1.. not doing this now because it causes flicker in the end
@@ -354,7 +362,7 @@ namespace SolutionNorSolutionPim.UserInterface
                     PopulateProductImage(_productContract.ProductImage);
                     PopulateProductDocument(_productContract.ProductDocumentation);
                 }
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             } finally {
                 productServiceClient.Close();
@@ -362,9 +370,9 @@ namespace SolutionNorSolutionPim.UserInterface
         }
 
         private void UpdateCategory() {
-            var productCategoryServiceClient = new ProductCategoryServiceClient();
+            ProductCategoryServiceClient productCategoryServiceClient = new ProductCategoryServiceClient();
             try {
-                ProductCategoryContract contract = 
+                ProductCategoryContract contract =
                     productCategoryServiceClient.ProductCategoryGetCompleteById(
                         _productCategoryId
                         );
@@ -374,7 +382,7 @@ namespace SolutionNorSolutionPim.UserInterface
 
                 PopulateProductCategoryImage(contract.ProductCategoryImage);
                 PopulateProductCategoryDocument(contract.ProductCategoryDocumentation);
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             } finally {
                 productCategoryServiceClient.Close();
@@ -389,7 +397,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductAttribute.DataSource = bindingSource;
                 dataGridViewProductAttribute.AutoResizeColumns();
                 dataGridViewProductAttribute.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -402,7 +410,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductIdentifier.DataSource = bindingSource;
                 dataGridViewProductIdentifier.AutoResizeColumns();
                 dataGridViewProductIdentifier.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -415,7 +423,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductInfo.DataSource = bindingSource;
                 dataGridViewProductInfo.AutoResizeColumns();
                 dataGridViewProductInfo.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -428,7 +436,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductImage.DataSource = bindingSource;
                 dataGridViewProductImage.AutoResizeColumns();
                 dataGridViewProductImage.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
@@ -441,21 +449,21 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductDocumentation.DataSource = bindingSource;
                 dataGridViewProductDocumentation.AutoResizeColumns();
                 dataGridViewProductDocumentation.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
 
         private void PopulateProductCategoryImage(List<CrudeProductCategoryImageContract> ImageContract) {
-            var service = new CrudeProductCategoryImageServiceClient ();
+            CrudeProductCategoryImageServiceClient service = new CrudeProductCategoryImageServiceClient();
             try {
-                var contract = service.FetchByProductCategoryImageId ( ImageContract [ 0 ].ProductCategoryImageId );
-                pictureBoxImage.Image = ByteToImage ( contract.Image );
-            } catch ( Exception ex ) {
-                Error ( ex );
+                CrudeProductCategoryImageContract contract = service.FetchByProductCategoryImageId(ImageContract[0].ProductCategoryImageId);
+                pictureBoxImage.Image = ByteToImage(contract.Image);
+            } catch (Exception ex) {
+                Error(ex);
                 pictureBoxImage.Image = null;
             } finally {
-                service.Close ();
+                service.Close();
             }
 
         }
@@ -469,57 +477,61 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductCategoryDocumentation.DataSource = bindingSource;
                 dataGridViewProductCategoryDocumentation.AutoResizeColumns();
                 dataGridViewProductCategoryDocumentation.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
 
         private System.Drawing.Image ByteToImage(byte[] byteArrayIn) {
-            var ms = new MemoryStream(byteArrayIn);
+            MemoryStream ms = new MemoryStream(byteArrayIn);
             return Image.FromStream(ms);
         }
 
         private void dataGridViewProducts1_SelectionChanged(object sender, EventArgs e) {
             try {
-                if ( dataGridViewProducts1.CurrentRow == null )
+                if (dataGridViewProducts1.CurrentRow == null) {
                     return;
+                }
 
                 Guid currentProductId = Guid.Empty;
 
-                if ( dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value != null )
-                    currentProductId = ( System.Guid ) dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value;
+                if (dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value != null) {
+                    currentProductId = (System.Guid)dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value;
+                }
 
-                if ( _productContract == null || _productContract.Product.ProductId != currentProductId )
+                if (_productContract == null || _productContract.Product.ProductId != currentProductId) {
                     UpdateProduct(currentProductId);
-            } catch ( Exception ex ) {
+                }
+            } catch (Exception ex) {
                 Error(ex);
             }
         }
 
         private void toolStripTextBoxSearch_KeyPress(object sender, KeyPressEventArgs e) {
-            if ( e.KeyChar == ( char ) 13 ) {
+            if (e.KeyChar == (char)13) {
                 e.Handled = true;
 
                 // find category
-                var productCategoryService = new CategorySearchService();
+                CategorySearchService productCategoryService = new CategorySearchService();
                 List<CategoryFindContract> productCategoryContracts = productCategoryService.CategoryFind(toolStripTextBoxSearch.Text);
                 productCategoryService.Close();
 
-                if ( productCategoryContracts.Count == 0 )
+                if (productCategoryContracts.Count == 0) {
                     return;
+                }
 
                 Guid productCategoryId = productCategoryContracts[0].ProductCategoryId;
 
-                foreach ( TreeNode node in treeViewHierarchy.Nodes ) {
-                    if ( new Guid(node.Name) == productCategoryId ) {
+                foreach (TreeNode node in treeViewHierarchy.Nodes) {
+                    if (new Guid(node.Name) == productCategoryId) {
                         node.Expand();
                         treeViewHierarchy.SelectedNode = node;
                         SelectNode(node);
                         treeViewHierarchy.Select();
                     }
 
-                    foreach ( TreeNode subNode in node.Nodes ) {
-                        if ( new Guid(subNode.Name) == productCategoryId ) {
+                    foreach (TreeNode subNode in node.Nodes) {
+                        if (new Guid(subNode.Name) == productCategoryId) {
                             subNode.Parent.Expand();
                             treeViewHierarchy.SelectedNode = subNode;
                             SelectNode(subNode);

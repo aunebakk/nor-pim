@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:05 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:38 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeClientEventTypeRefDetails(System.String clientEventTypeRcd) {
+        public ActionResult CrudeClientEventTypeRefDetails(string clientEventTypeRcd) {
 
             return View(
                 "~/Views/Crude/Client/CrudeClientEventTypeRef/CrudeClientEventTypeRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeClientEventTypeRefEdit(
-            System.String clientEventTypeRcd
+            string clientEventTypeRcd
             ) {
 
             CrudeClientEventTypeRefContract contract = new CrudeClientEventTypeRefServiceClient().FetchByClientEventTypeRcd(clientEventTypeRcd);
@@ -76,11 +76,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeClientEventTypeRefCreate(System.Guid? userId) {
-            var contract = new CrudeClientEventTypeRefContract();
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeClientEventTypeRefContract contract = new CrudeClientEventTypeRefContract();
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -111,7 +114,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeClientEventTypeRefDelete(
-            System.String clientEventTypeRcd
+            string clientEventTypeRcd
             ) {
             new CrudeClientEventTypeRefServiceClient().Delete(clientEventTypeRcd);
 

@@ -1,11 +1,9 @@
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.mvc.Controllers
-{
-    public class ClientContactMethodController : Controller
-    {
+namespace SolutionNorSolutionPim.mvc.Controllers {
+    public class ClientContactMethodController : Controller {
 
         [HttpGet]
         public ActionResult ClientContactMethodByClientIndex(System.Guid clientId) {
@@ -47,7 +45,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ClientContactMethodEdit([Bind()] CrudeClientContactMethodContract contract) {
-            if ( ModelState.IsValid ) {
+            if (ModelState.IsValid) {
                 new CrudeClientContactMethodServiceClient().Update(contract);
 
                 return RedirectToAction("ClientContactMethodByClientIndex", new { clientId = contract.ClientId });
@@ -61,11 +59,14 @@ namespace SolutionNorSolutionPim.mvc.Controllers
 
         [HttpGet]
         public ActionResult ClientContactMethodCreate(System.Guid? clientId, System.Guid? userId) {
-            var contract = new CrudeClientContactMethodContract();
-            if ( clientId != null )
-                contract.ClientId = ( System.Guid ) clientId;
-            if ( userId != null )
-                contract.UserId = ( System.Guid ) userId;
+            CrudeClientContactMethodContract contract = new CrudeClientContactMethodContract();
+            if (clientId != null) {
+                contract.ClientId = (System.Guid)clientId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
             ViewBag.ClientContactMethodRcd =
                 new SelectList(new CrudeClientContactMethodRefServiceClient().FetchAll(),
@@ -74,8 +75,9 @@ namespace SolutionNorSolutionPim.mvc.Controllers
                                 contract.ClientContactMethodRcd
                                 );
 
-            if ( userId == null )
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;
@@ -91,7 +93,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ClientContactMethodCreate([Bind()] CrudeClientContactMethodContract contract) {
-            if ( ModelState.IsValid ) {
+            if (ModelState.IsValid) {
 
                 new CrudeClientContactMethodServiceClient().Insert(contract);
 

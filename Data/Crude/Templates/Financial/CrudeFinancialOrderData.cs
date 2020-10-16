@@ -2,15 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:54:44 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:52:43 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
-using System.Data;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 // Data Access Layer
 // the DataAccessLayer is the first layer that has access to data coming from
@@ -27,23 +27,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeFinancialOrderData {
-        
+
         public System.Guid FinancialOrderId { get; set; }
-        
+
         public System.Guid UserId { get; set; }
-        
+
         public System.DateTime DateTime { get; set; }
-        
+
         public string Comment { get; set; }
-        
+
         public System.Guid LocationAddressId { get; set; }
-        
+
         public System.Guid FinancialCurrencyId { get; set; }
-        
+
         public string FinancialOrderSourceRcd { get; set; }
-        
+
         public System.Guid ClientId { get; set; }
-        
+
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -61,7 +61,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 // dirty read
@@ -70,21 +70,22 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = financialOrderId;
+                    command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = financialOrderId;
 
                     // execute and read one row, close connection
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serializable class if row was found
-                    if (reader.Read())
+                    if (reader.Read()) {
                         Populate(reader);
+                    }
                 }
             }
         }
-        
+
         // fetch by Primary key into new class instance
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -99,18 +100,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [financial_order]
                             where financial_order_id = @financial_order_id";
 
-            var ret = new CrudeFinancialOrderData();
+            CrudeFinancialOrderData ret = new CrudeFinancialOrderData();
 
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = financialOrderId;
+                    command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = financialOrderId;
 
                     // execute query against financial_order
                     // if the query fails in the preprocessor of sql server
@@ -118,17 +119,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serialized class if a row was found
-                    if (reader.Read())
+                    if (reader.Read()) {
                         ret.Populate(reader);
+                    }
                 }
             }
 
             return ret;
         }
-        
+
         // fetch by Foreign key into new List of class instances
         public static List<CrudeFinancialOrderData> FetchByUserId(System.Guid userId) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -142,10 +144,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
@@ -159,19 +161,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch by Foreign key into new List of class instances
         public static List<CrudeFinancialOrderData> FetchByLocationAddressId(System.Guid locationAddressId) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -185,10 +187,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@location_address_id", SqlDbType.UniqueIdentifier).Value = locationAddressId;
@@ -202,19 +204,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch by Foreign key into new List of class instances
         public static List<CrudeFinancialOrderData> FetchByFinancialCurrencyId(System.Guid financialCurrencyId) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -228,10 +230,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
@@ -245,19 +247,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch by Foreign key into new List of class instances
         public static List<CrudeFinancialOrderData> FetchByClientId(System.Guid clientId) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -271,10 +273,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = clientId;
@@ -288,19 +290,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch by Foreign key into new List of class instances
         public static List<CrudeFinancialOrderData> FetchByFinancialOrderSourceRcd(string financialOrderSourceRcd) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -314,13 +316,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = financialOrderSourceRcd.Replace("'","''");
+                    command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = financialOrderSourceRcd.Replace("'", "''");
 
                     // execute query against financial_order
                     // if the query fails in the preprocessor of sql server
@@ -331,19 +333,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch all rows from table financial_order into new List of class instances
         public static List<CrudeFinancialOrderData> FetchAll() {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -355,10 +357,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // execute query against financial_order
                     // if the query fails in the preprocessor of sql server
@@ -369,19 +371,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeFinancialOrderData> FetchAllWithLimit(int limit) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -393,10 +395,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // execute query against financial_order
                     // if the query fails in the preprocessor of sql server
@@ -407,20 +409,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // fetch all from table into new List of class instances, only populating specific columns,
         //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeFinancialOrderData> FetchAllWithLimitAndOffset(int limit, int offset) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -432,10 +434,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // execute query against financial_order
                     // if the query fails in the preprocessor of sql server
@@ -449,19 +451,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
-                            var data = new CrudeFinancialOrderData();
+                            CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                             data.Populate(reader);
                             dataList.Add(data);
                         }
                         count++;
-                        if (count > limit + offset) break;
+                        if (count > limit + offset) {
+                            break;
+                        }
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // get a count of rows in table
         public static int FetchAllCount() {
             // create query against financial_order
@@ -473,28 +477,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 int count = 0;
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // execute query against financial_order
                     // if the query fails in the preprocessor of sql server
                     //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
-                    count = (System.Int32) reader["count"];
+                    count = (int)reader["count"];
                 }
 
                 return count;
             }
         }
-        
+
         // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeFinancialOrderData> FetchWithFilter(System.Guid financialOrderId, System.Guid userId, System.DateTime dateTime, string comment, System.Guid locationAddressId, System.Guid financialCurrencyId, string financialOrderSourceRcd, System.Guid clientId) {
-            var dataList = new List<CrudeFinancialOrderData>();
+            List<CrudeFinancialOrderData> dataList = new List<CrudeFinancialOrderData>();
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -507,10 +511,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add search column(s) if they are not null or empty
                     // this search column(s) will be used together with the prepared ansi sql statement
                     if (financialOrderId != Guid.Empty) {
@@ -527,7 +531,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     if (!string.IsNullOrEmpty(comment)) {
                         sql += "  and comment like '%' + @comment + '%'";
-                        command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = comment.Replace("'","''");
+                        command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = comment.Replace("'", "''");
                     }
                     if (locationAddressId != Guid.Empty) {
                         sql += "  and location_address_id = @location_address_id";
@@ -539,7 +543,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     if (!string.IsNullOrEmpty(financialOrderSourceRcd)) {
                         sql += "  and financial_order_source_rcd like '%' + @financial_order_source_rcd + '%'";
-                        command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = financialOrderSourceRcd.Replace("'","''");
+                        command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = financialOrderSourceRcd.Replace("'", "''");
                     }
                     if (clientId != Guid.Empty) {
                         sql += "  and client_id = @client_id";
@@ -556,33 +560,57 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        var data = new CrudeFinancialOrderData();
+                        CrudeFinancialOrderData data = new CrudeFinancialOrderData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-                
+
                 return dataList;
             }
         }
-        
+
         // read all columns out and populate object members
         public void Populate(IDataReader reader) {
-            if (reader["financial_order_id"] != System.DBNull.Value) FinancialOrderId = (System.Guid) reader["financial_order_id"];
-            if (reader["user_id"] != System.DBNull.Value) UserId = (System.Guid) reader["user_id"];
-            if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
-            if (reader["comment"] != System.DBNull.Value) Comment = (System.String) reader["comment"];
-            if (reader["location_address_id"] != System.DBNull.Value) LocationAddressId = (System.Guid) reader["location_address_id"];
-            if (reader["financial_currency_id"] != System.DBNull.Value) FinancialCurrencyId = (System.Guid) reader["financial_currency_id"];
-            if (reader["financial_order_source_rcd"] != System.DBNull.Value) FinancialOrderSourceRcd = (System.String) reader["financial_order_source_rcd"];
-            if (reader["client_id"] != System.DBNull.Value) ClientId = (System.Guid) reader["client_id"];
+            if (reader["financial_order_id"] != System.DBNull.Value) {
+                FinancialOrderId = (System.Guid)reader["financial_order_id"];
+            }
+
+            if (reader["user_id"] != System.DBNull.Value) {
+                UserId = (System.Guid)reader["user_id"];
+            }
+
+            if (reader["date_time"] != System.DBNull.Value) {
+                DateTime = (System.DateTime)reader["date_time"];
+            }
+
+            if (reader["comment"] != System.DBNull.Value) {
+                Comment = (string)reader["comment"];
+            }
+
+            if (reader["location_address_id"] != System.DBNull.Value) {
+                LocationAddressId = (System.Guid)reader["location_address_id"];
+            }
+
+            if (reader["financial_currency_id"] != System.DBNull.Value) {
+                FinancialCurrencyId = (System.Guid)reader["financial_currency_id"];
+            }
+
+            if (reader["financial_order_source_rcd"] != System.DBNull.Value) {
+                FinancialOrderSourceRcd = (string)reader["financial_order_source_rcd"];
+            }
+
+            if (reader["client_id"] != System.DBNull.Value) {
+                ClientId = (System.Guid)reader["client_id"];
+            }
         }
-        
+
         // insert all object members as a new row in table
         public void Insert() {
 
-            if (FinancialOrderId == Guid.Empty)
+            if (FinancialOrderId == Guid.Empty) {
                 FinancialOrderId = Guid.NewGuid();
+            }
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -594,20 +622,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
-                using (var command = new SqlCommand(sql, connection)) {
+                using (SqlCommand command = new SqlCommand(sql, connection)) {
                     // add column(s) to insert as parameter
                     // the insert column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialOrderId;
-                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
-                    command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : (System.String)Comment;
-                    command.Parameters.Add("@location_address_id",SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : (System.Guid)LocationAddressId);
-                    command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
-                    command.Parameters.Add("@financial_order_source_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialOrderSourceRcd;
-                    command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientId;
+                    command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = FinancialOrderId;
+                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : Comment;
+                    command.Parameters.Add("@location_address_id", SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : LocationAddressId);
+                    command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
+                    command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = FinancialOrderSourceRcd;
+                    command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = ClientId;
                     // execute query against financial_order
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -616,14 +644,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-        
+
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
         public void Insert(SqlConnection connection, SqlTransaction transaction) {
 
-            if (FinancialOrderId == Guid.Empty)
+            if (FinancialOrderId == Guid.Empty) {
                 FinancialOrderId = Guid.NewGuid();
+            }
 
             // create query against financial_order
             // this will be ansi sql and parameterized
@@ -638,14 +667,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to insert as parameter(s)
                 // the insert column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialOrderId;
-                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
-                command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : (System.String)Comment;
-                command.Parameters.Add("@location_address_id",SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : (System.Guid)LocationAddressId);
-                command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
-                command.Parameters.Add("@financial_order_source_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialOrderSourceRcd;
-                command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientId;
+                command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = FinancialOrderId;
+                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : Comment;
+                command.Parameters.Add("@location_address_id", SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : LocationAddressId);
+                command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
+                command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = FinancialOrderSourceRcd;
+                command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = ClientId;
                 // execute query against financial_order
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -653,7 +682,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-        
+
         // update all object members on a row in table based on primary key
         public void Update() {
             // create query against financial_order
@@ -674,21 +703,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
 
                     // add column(s) to update as parameter(s)
                     // the update column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialOrderId;
-                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
-                    command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : (System.String)Comment;
-                    command.Parameters.Add("@location_address_id",SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : (System.Guid)LocationAddressId);
-                    command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
-                    command.Parameters.Add("@financial_order_source_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialOrderSourceRcd;
-                    command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientId;
+                    command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = FinancialOrderId;
+                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : Comment;
+                    command.Parameters.Add("@location_address_id", SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : LocationAddressId);
+                    command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
+                    command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = FinancialOrderSourceRcd;
+                    command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = ClientId;
                     // execute query against financial_order
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -697,7 +726,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-        
+
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             // create query against financial_order
@@ -721,14 +750,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to update as parameter
                 // the update column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialOrderId;
-                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
-                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
-                command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : (System.String)Comment;
-                command.Parameters.Add("@location_address_id",SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : (System.Guid)LocationAddressId);
-                command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
-                command.Parameters.Add("@financial_order_source_rcd",SqlDbType.NVarChar).Value = (System.String)FinancialOrderSourceRcd;
-                command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientId;
+                command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = FinancialOrderId;
+                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
+                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(Comment)) ? (object)DBNull.Value : Comment;
+                command.Parameters.Add("@location_address_id", SqlDbType.UniqueIdentifier).Value = (LocationAddressId == Guid.Empty ? (object)DBNull.Value : LocationAddressId);
+                command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
+                command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = FinancialOrderSourceRcd;
+                command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = ClientId;
                 // execute query against financial_order
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -736,7 +765,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-        
+
         // delete a row in table based on primary key
         public static void Delete(System.Guid financialOrderId) {
             // create query against financial_order
@@ -749,13 +778,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = financialOrderId;
+                    command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = financialOrderId;
                     // execute query against financial_order
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server

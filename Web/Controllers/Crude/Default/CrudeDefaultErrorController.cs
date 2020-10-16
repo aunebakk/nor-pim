@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:17 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:48 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -47,14 +47,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeDefaultErrorContract contract = new CrudeDefaultErrorServiceClient().FetchByDefaultErrorId(defaultErrorId);
             ViewBag.DefaultErrorLayerRcd =
-                new SelectList( new CrudeDefaultErrorLayerRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultErrorLayerRefServiceClient().FetchAll(),
                                 "DefaultErrorLayerRcd",
                                 "DefaultErrorLayerName",
                                 contract.DefaultErrorLayerRcd
                                 );
 
             ViewBag.DefaultErrorTypeRcd =
-                new SelectList( new CrudeDefaultErrorTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultErrorTypeRefServiceClient().FetchAll(),
                                 "DefaultErrorTypeRcd",
                                 "DefaultErrorTypeName",
                                 contract.DefaultErrorTypeRcd
@@ -88,25 +88,28 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultErrorCreate(System.Guid? defaultUserId) {
-            var contract = new CrudeDefaultErrorContract();
-            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
+            CrudeDefaultErrorContract contract = new CrudeDefaultErrorContract();
+            if (defaultUserId != null) {
+                contract.DefaultUserId = (System.Guid)defaultUserId;
+            }
 
             ViewBag.DefaultErrorLayerRcd =
-                new SelectList( new CrudeDefaultErrorLayerRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultErrorLayerRefServiceClient().FetchAll(),
                                 "DefaultErrorLayerRcd",
                                 "DefaultErrorLayerName",
                                 contract.DefaultErrorLayerRcd
                                 );
 
             ViewBag.DefaultErrorTypeRcd =
-                new SelectList( new CrudeDefaultErrorTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultErrorTypeRefServiceClient().FetchAll(),
                                 "DefaultErrorTypeRcd",
                                 "DefaultErrorTypeName",
                                 contract.DefaultErrorTypeRcd
                                 );
 
-            if (defaultUserId == null)
+            if (defaultUserId == null) {
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 

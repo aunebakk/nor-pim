@@ -2,16 +2,16 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:09:16 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:02:32 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductSearchService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IProductSearchService")]
     public interface IProductSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IProductSearchService/ProductHistory", ReplyAction = "http://tempuri.org/IProductSearchService/ProductHistoryResponse")]
         List<ProductHistoryContract> ProductHistory(System.Guid productId);
@@ -36,25 +36,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IProductSearchServiceChannel : IProductSearchService, System.ServiceModel.IClientChannel {
     }
-    
+
     public class ProductSearchService : System.ServiceModel.ClientBase<IProductSearchService>, IProductSearchService {
-        
+
         public ProductSearchService() {
         }
-        
-        public ProductSearchService(string endpointConfigurationName) : 
+
+        public ProductSearchService(string endpointConfigurationName) :
                 base(endpointConfigurationName) {
         }
-        
-        public ProductSearchService(string endpointConfigurationName, string remoteAddress) : 
+
+        public ProductSearchService(string endpointConfigurationName, string remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
-        public ProductSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public ProductSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
-        public ProductSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public ProductSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress) {
         }
 

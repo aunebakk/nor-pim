@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:57:22 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:44 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeProductInfoRefDetails(System.String productInfoRcd) {
+        public ActionResult CrudeProductInfoRefDetails(string productInfoRcd) {
 
             return View(
                 "~/Views/Crude/Product/CrudeProductInfoRef/CrudeProductInfoRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeProductInfoRefEdit(
-            System.String productInfoRcd
+            string productInfoRcd
             ) {
 
             CrudeProductInfoRefContract contract = new CrudeProductInfoRefServiceClient().FetchByProductInfoRcd(productInfoRcd);
@@ -76,11 +76,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductInfoRefCreate(System.Guid? userId) {
-            var contract = new CrudeProductInfoRefContract();
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeProductInfoRefContract contract = new CrudeProductInfoRefContract();
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -111,7 +114,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeProductInfoRefDelete(
-            System.String productInfoRcd
+            string productInfoRcd
             ) {
             new CrudeProductInfoRefServiceClient().Delete(productInfoRcd);
 

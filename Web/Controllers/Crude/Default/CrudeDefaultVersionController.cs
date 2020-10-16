@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:42 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:09 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -74,11 +74,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultVersionCreate(System.Guid? defaultUserId) {
-            var contract = new CrudeDefaultVersionContract();
-            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
+            CrudeDefaultVersionContract contract = new CrudeDefaultVersionContract();
+            if (defaultUserId != null) {
+                contract.DefaultUserId = (System.Guid)defaultUserId;
+            }
 
-            if (defaultUserId == null)
+            if (defaultUserId == null) {
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 

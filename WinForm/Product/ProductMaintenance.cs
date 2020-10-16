@@ -1,17 +1,16 @@
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.UserInterface
-{
-    public partial class ProductMaintenance : Form
-    {
-        Guid _userId;
-        Guid _productId;
+namespace SolutionNorSolutionPim.UserInterface {
+    public partial class ProductMaintenance : Form {
+        private Guid _userId;
+        private Guid _productId;
+
         //Form _parent;
-        const bool _logEvents = true;
-        ProductContract _productContract = null;
+        private const bool _logEvents = true;
+        private ProductContract _productContract = null;
 
         public ProductMaintenance() {
             InitializeComponent();
@@ -33,12 +32,13 @@ namespace SolutionNorSolutionPim.UserInterface
             _userId = userId;
 
             // save 
-            if ( mdiParent != null )
+            if (mdiParent != null) {
                 MdiParent = mdiParent;
+            }
 
             UpdateProduct(productId);
 
-            this.Show();
+            Show();
         }
 
         public void Show(
@@ -84,7 +84,7 @@ namespace SolutionNorSolutionPim.UserInterface
 
                 // get new product ( check for updated data, needed? )
                 UpdateProduct(newProductId);
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("buttonProductSave_Click", ex);
             }
         }
@@ -220,13 +220,15 @@ namespace SolutionNorSolutionPim.UserInterface
         }
 
         private void Log(string caller, string message) {
-            if ( _logEvents )
+            if (_logEvents) {
                 Singleton.Instance.Log(caller + " : " + message);
+            }
         }
 
         private void Log(string message) {
-            if ( _logEvents )
+            if (_logEvents) {
                 Singleton.Instance.Log(message);
+            }
         }
 
         private void Error(Exception ex) {
@@ -259,7 +261,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 PopulateProductImage(_productContract.ProductImage);
                 PopulateProductDocument(_productContract.ProductDocumentation);
                 PopulateProductHistory();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("UpdateProduct", ex);
             }
         }
@@ -275,7 +277,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductAttribute.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductAttribute.AutoResizeColumns();
                 dataGridViewProductAttribute.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("PopulateProductAttribute", ex);
             }
         }
@@ -291,7 +293,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductIdentifier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductIdentifier.AutoResizeColumns();
                 dataGridViewProductIdentifier.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("PopulateProductIdentifier", ex);
             }
         }
@@ -307,7 +309,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductInfo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductInfo.AutoResizeColumns();
                 dataGridViewProductInfo.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("PopulateProductInfo", ex);
             }
         }
@@ -323,7 +325,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductImage.AutoResizeColumns();
                 dataGridViewProductImage.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("PopulateProductImage", ex);
             }
         }
@@ -339,7 +341,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductDocumentation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductDocumentation.AutoResizeColumns();
                 dataGridViewProductDocumentation.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("PopulateProductDocument", ex);
             }
         }
@@ -357,7 +359,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductHistory.AutoResizeColumns();
                 dataGridViewProductHistory.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             } finally {
                 productHistory.Close();
@@ -369,11 +371,11 @@ namespace SolutionNorSolutionPim.UserInterface
 
             try {
                 Log("buttonProductHistory_Click: ProductId: " + _productContract.Product.ProductId);
-                var history = new ProductHistory(_productContract.Product.ProductId);
-                history.MdiParent = this.MdiParent;
+                ProductHistory history = new ProductHistory(_productContract.Product.ProductId);
+                history.MdiParent = MdiParent;
                 CheckForm(history);
                 history.Show();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("buttonProductHistory_Click", ex);
             }
         }
@@ -392,15 +394,16 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductAttribute.Columns.Add("ProductAttributeUnitCd", "Product Attribute Unit Cd");
                 dataGridViewProductAttribute.Columns.Add("ExtensionData", "");
                 dataGridViewProductAttribute.Columns["ExtensionData"].Visible = false;
-                foreach ( DataGridViewColumn column in dataGridViewProductAttribute.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductAttribute.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
                 dataGridViewProductAttribute.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductAttribute.AutoResizeColumns();
                 dataGridViewProductAttribute.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("InitializeGridProductAttribute", ex);
             }
         }
@@ -419,15 +422,16 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductIdentifier.Columns.Add("DateTime", "Date Time");
                 dataGridViewProductIdentifier.Columns.Add("ExtensionData", "");
                 dataGridViewProductIdentifier.Columns["ExtensionData"].Visible = false;
-                foreach ( DataGridViewColumn column in dataGridViewProductIdentifier.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductIdentifier.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
                 dataGridViewProductIdentifier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductIdentifier.AutoResizeColumns();
                 dataGridViewProductIdentifier.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("InitializeGridProductIdentifier", ex);
             }
         }
@@ -445,16 +449,17 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductInfo.Columns.Add("ExtensionData", "");
                 dataGridViewProductInfo.Columns["ExtensionData"].Visible = false;
 
-                foreach ( DataGridViewColumn column in dataGridViewProductInfo.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductInfo.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
 
                 dataGridViewProductInfo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductInfo.AutoResizeColumns();
                 dataGridViewProductInfo.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("InitializeGridProductInfo", ex);
             }
         }
@@ -474,16 +479,17 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductImage.Columns.Add("ExtensionData", "");
                 dataGridViewProductImage.Columns["ExtensionData"].Visible = false;
 
-                foreach ( DataGridViewColumn column in dataGridViewProductImage.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductImage.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
 
                 dataGridViewProductImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductImage.AutoResizeColumns();
                 dataGridViewProductImage.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("InitializeGridProductImages", ex);
             }
         }
@@ -503,16 +509,17 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewProductDocumentation.Columns.Add("ExtensionData", "");
                 dataGridViewProductDocumentation.Columns["ExtensionData"].Visible = false;
 
-                foreach ( DataGridViewColumn column in dataGridViewProductDocumentation.Columns ) {
+                foreach (DataGridViewColumn column in dataGridViewProductDocumentation.Columns) {
                     column.DataPropertyName = column.Name;
-                    if ( column.Name.EndsWith("Id") )
+                    if (column.Name.EndsWith("Id")) {
                         column.Visible = false;
+                    }
                 }
 
                 dataGridViewProductDocumentation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductDocumentation.AutoResizeColumns();
                 dataGridViewProductDocumentation.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("InitializeGridProductDocumentation", ex);
             }
         }
@@ -529,10 +536,11 @@ namespace SolutionNorSolutionPim.UserInterface
             dataGridViewProductHistory.Columns.Add("ExtensionData", "");
             dataGridViewProductHistory.Columns["ExtensionData"].Visible = false;
 
-            foreach ( DataGridViewColumn column in dataGridViewProductHistory.Columns ) {
+            foreach (DataGridViewColumn column in dataGridViewProductHistory.Columns) {
                 column.DataPropertyName = column.Name;
-                if ( column.Name.EndsWith("Id") )
+                if (column.Name.EndsWith("Id")) {
                     column.Visible = false;
+                }
             }
 
             dataGridViewProductHistory.AutoResizeColumns();
@@ -542,15 +550,15 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductIdentifierAdd_Click");
 
             try {
-                var newMDIChild = new CrudeProductIdentifierEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductIdentifierEdit newMDIChild = new CrudeProductIdentifierEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
                                         string.Empty,
                                         _userId
                                         );
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("buttonProductIdentifierAdd_Click", ex);
             }
         }
@@ -559,11 +567,11 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductIdentifierEdit_Click");
 
             try {
-                var newMDIChild = new CrudeProductIdentifierEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductIdentifierEdit newMDIChild = new CrudeProductIdentifierEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductIdentifier.CurrentRow.Cells["ProductIdentifierId"].Value);
-            } catch ( Exception ex ) {
+                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductIdentifier.CurrentRow.Cells["ProductIdentifierId"].Value);
+            } catch (Exception ex) {
                 Error("buttonProductIdentifierEdit_Click", ex);
             }
         }
@@ -572,8 +580,8 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductAttributeAdd_Click");
 
             try {
-                var newMDIChild = new CrudeProductAttributeEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductAttributeEdit newMDIChild = new CrudeProductAttributeEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
@@ -581,7 +589,7 @@ namespace SolutionNorSolutionPim.UserInterface
                                         string.Empty,
                                         _userId
                                         );
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("buttonProductAttributeAdd_Click", ex);
             }
         }
@@ -590,11 +598,11 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductAttributeEdit_Click");
 
             try {
-                var newMDIChild = new CrudeProductAttributeEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductAttributeEdit newMDIChild = new CrudeProductAttributeEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductAttribute.CurrentRow.Cells["ProductAttributeId"].Value);
-            } catch ( Exception ex ) {
+                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductAttribute.CurrentRow.Cells["ProductAttributeId"].Value);
+            } catch (Exception ex) {
                 Error("buttonProductAttributeEdit_Click", ex);
             }
         }
@@ -603,15 +611,15 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductInfoAdd_Click");
 
             try {
-                var newMDIChild = new CrudeProductInfoEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductInfoEdit newMDIChild = new CrudeProductInfoEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
                                         string.Empty,
                                         _userId
                                         );
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("buttonProductInfoAdd_Click", ex);
             }
         }
@@ -620,8 +628,8 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductImageAdd_Click");
 
             try {
-                var newMDIChild = new CrudeProductImageEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductImageEdit newMDIChild = new CrudeProductImageEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
@@ -629,7 +637,7 @@ namespace SolutionNorSolutionPim.UserInterface
                                         null,
                                         _userId
                                         );
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("buttonProductImageAdd_Click", ex);
             }
         }
@@ -638,15 +646,15 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductDocumentationAdd_Click");
 
             try {
-                var newMDIChild = new CrudeProductDocumentationEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductDocumentationEdit newMDIChild = new CrudeProductDocumentationEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
                                         string.Empty,
                                         _userId
                                         );
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 Error("buttonProductDocumentationAdd_Click", ex);
             }
         }
@@ -655,11 +663,11 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductInfoEdit_Click");
 
             try {
-                var newMDIChild = new CrudeProductInfoEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductInfoEdit newMDIChild = new CrudeProductInfoEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
-            } catch ( Exception ex ) {
+                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
+            } catch (Exception ex) {
                 Error("buttonProductInfoEdit_Click", ex);
             }
         }
@@ -668,11 +676,11 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductImageEdit_Click");
 
             try {
-                var newMDIChild = new CrudeProductImageEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductImageEdit newMDIChild = new CrudeProductImageEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductImage.CurrentRow.Cells["ProductImageId"].Value);
-            } catch ( Exception ex ) {
+                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductImage.CurrentRow.Cells["ProductImageId"].Value);
+            } catch (Exception ex) {
                 Error("buttonProductImageEdit_Click", ex);
             }
         }
@@ -681,11 +689,11 @@ namespace SolutionNorSolutionPim.UserInterface
             Log("buttonProductDocumentationEdit_Click");
 
             try {
-                var newMDIChild = new CrudeProductDocumentationEdit();
-                newMDIChild.MdiParent = this.MdiParent;
+                CrudeProductDocumentationEdit newMDIChild = new CrudeProductDocumentationEdit();
+                newMDIChild.MdiParent = MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductDocumentation.CurrentRow.Cells["ProductDocumentationId"].Value);
-            } catch ( Exception ex ) {
+                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductDocumentation.CurrentRow.Cells["ProductDocumentationId"].Value);
+            } catch (Exception ex) {
                 Error("buttonProductDocumentationEdit_Click", ex);
             }
         }

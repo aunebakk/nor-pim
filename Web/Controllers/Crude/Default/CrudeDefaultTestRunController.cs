@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:36 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:04 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeDefaultTestRunContract contract = new CrudeDefaultTestRunServiceClient().FetchByDefaultTestRunId(defaultTestRunId);
             ViewBag.DefaultTestId =
-                new SelectList( new CrudeDefaultTestServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultTestServiceClient().FetchAll(),
                                 "DefaultTestId",
                                 "SystemName",
                                 contract.DefaultTestId
                                 );
 
             ViewBag.DefaultTestRunResultRcd =
-                new SelectList( new CrudeDefaultTestRunResultRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultTestRunResultRefServiceClient().FetchAll(),
                                 "DefaultTestRunResultRcd",
                                 "DefaultTestRunResultName",
                                 contract.DefaultTestRunResultRcd
@@ -97,19 +97,24 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunCreate(System.Guid? defaultTestId, System.Guid? userId) {
-            var contract = new CrudeDefaultTestRunContract();
-            if (defaultTestId != null) contract.DefaultTestId = (System.Guid) defaultTestId;
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeDefaultTestRunContract contract = new CrudeDefaultTestRunContract();
+            if (defaultTestId != null) {
+                contract.DefaultTestId = (System.Guid)defaultTestId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
             ViewBag.DefaultTestId =
-                new SelectList( new CrudeDefaultTestServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultTestServiceClient().FetchAll(),
                                 "DefaultTestId",
                                 "SystemName",
                                 contract.DefaultTestId
                                 );
 
             ViewBag.DefaultTestRunResultRcd =
-                new SelectList( new CrudeDefaultTestRunResultRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultTestRunResultRefServiceClient().FetchAll(),
                                 "DefaultTestRunResultRcd",
                                 "DefaultTestRunResultName",
                                 contract.DefaultTestRunResultRcd

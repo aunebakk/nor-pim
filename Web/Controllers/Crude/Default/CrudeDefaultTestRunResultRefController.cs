@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:37 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:05 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeDefaultTestRunResultRefDetails(System.String defaultTestRunResultRcd) {
+        public ActionResult CrudeDefaultTestRunResultRefDetails(string defaultTestRunResultRcd) {
 
             return View(
                 "~/Views/Crude/Default/CrudeDefaultTestRunResultRef/CrudeDefaultTestRunResultRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefEdit(
-            System.String defaultTestRunResultRcd
+            string defaultTestRunResultRcd
             ) {
 
             CrudeDefaultTestRunResultRefContract contract = new CrudeDefaultTestRunResultRefServiceClient().FetchByDefaultTestRunResultRcd(defaultTestRunResultRcd);
@@ -74,8 +74,10 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefCreate(System.Guid? userId) {
-            var contract = new CrudeDefaultTestRunResultRefContract();
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeDefaultTestRunResultRefContract contract = new CrudeDefaultTestRunResultRefContract();
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -106,7 +108,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefDelete(
-            System.String defaultTestRunResultRcd
+            string defaultTestRunResultRcd
             ) {
             new CrudeDefaultTestRunResultRefServiceClient().Delete(defaultTestRunResultRcd);
 

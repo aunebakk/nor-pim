@@ -6,18 +6,17 @@
   Template: sql2x.MVCDurianGenerator.MethodControllerCode
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
-using System;
 using System.Web.Mvc;
 
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
     public class ProductSearchByCategoryCodeLiveController : Controller {
 
         [HttpGet]
-        public ActionResult ProductSearchByCategoryCodeIndex(System.String productCategoryCode,System.Boolean onParent) {
+        public ActionResult ProductSearchByCategoryCodeIndex(string productCategoryCode, bool onParent) {
 
             return View(
                 "~/Views/DurianLive/ProductSearch/ProductSearchByCategoryCodeIndex.cshtml",
-                new ProductSearchService().ProductSearchByCategoryCode(productCategoryCode,onParent)
+                new ProductSearchService().ProductSearchByCategoryCode(productCategoryCode, onParent)
                 );
         }
 

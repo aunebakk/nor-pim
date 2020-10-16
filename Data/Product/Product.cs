@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer
-{
+namespace SolutionNorSolutionPim.DataAccessLayer {
 
     [Serializable()]
-    public class Product
-    {
+    public class Product {
         public CrudeProductData product;
         public List<CrudeProductAttributeData> ProductAttribute { get; set; }
         public List<CrudeProductIdentifierData> ProductIdentifier { get; set; }
@@ -60,7 +58,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
         public void Save(Guid userId) {
             // start transaction
-            using ( var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
 
@@ -89,7 +87,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                     oldProduct.UpdateBecame(connection, transaction);
 
                     // change identifier keys, save
-                    foreach ( CrudeProductIdentifierData identifier in ProductIdentifier ) {
+                    foreach (CrudeProductIdentifierData identifier in ProductIdentifier) {
                         identifier.ProductIdentifierId = Guid.NewGuid();
                         identifier.ProductId = product.ProductId;
                         identifier.UserId = userId;
@@ -98,7 +96,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                     }
 
                     // change attribute keys, save
-                    foreach ( CrudeProductAttributeData attribute in ProductAttribute ) {
+                    foreach (CrudeProductAttributeData attribute in ProductAttribute) {
                         attribute.ProductAttributeId = Guid.NewGuid();
                         attribute.ProductId = product.ProductId;
                         attribute.UserId = userId;
@@ -107,7 +105,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                     }
 
                     // change info keys, save
-                    foreach ( CrudeProductInfoData info in ProductInfo ) {
+                    foreach (CrudeProductInfoData info in ProductInfo) {
                         info.ProductInfoId = Guid.NewGuid();
                         info.ProductId = product.ProductId;
                         info.UserId = userId;
@@ -116,7 +114,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                     }
 
                     // change documentation keys, save
-                    foreach ( CrudeProductDocumentationData documentation in ProductDocumentation ) {
+                    foreach (CrudeProductDocumentationData documentation in ProductDocumentation) {
                         documentation.ProductDocumentationId = Guid.NewGuid();
                         documentation.ProductId = product.ProductId;
                         documentation.UserId = userId;
@@ -125,7 +123,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
                     }
 
                     // change image keys, save
-                    foreach ( CrudeProductImageData image in ProductImage ) {
+                    foreach (CrudeProductImageData image in ProductImage) {
                         image.ProductImageId = Guid.NewGuid();
                         image.ProductId = product.ProductId;
                         image.UserId = userId;
@@ -135,7 +133,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
                     // commit transaction
                     transaction.Commit();
-                } catch ( Exception ex ) {
+                } catch (Exception ex) {
                     transaction.Rollback();
                     throw new Exception("DataAccessLayer, Product, Save, Failed", ex);
                 }

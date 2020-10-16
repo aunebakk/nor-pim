@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     public partial class DatabaseManager {
-        void InitFinancial(
+        private void InitFinancial(
             int majorNumber,
             int minorNumber
             ) {
@@ -13,7 +11,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultFinancialColumnTypes",
                 Description = "Default Financial Column Types",
                 #region script ( *** )
@@ -57,7 +55,7 @@ go
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultFinancialDropTables",
                 Description = "Default Financial Drop Tables",
                 #region script ( *** )
@@ -77,7 +75,7 @@ if object_id (N'financial_currency') is not null
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultFinancialCreateTables",
                 Description = "Default Financial Create Tables",
                 #region script ( *** )
@@ -173,7 +171,7 @@ go
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "FinancialReferenceData",
                 Description = "Financial Reference Data",
                 #region script ( *** )

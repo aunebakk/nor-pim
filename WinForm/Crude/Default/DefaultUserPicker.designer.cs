@@ -1,9 +1,7 @@
-namespace SolutionNorSolutionPim.UserInterface
-{
+namespace SolutionNorSolutionPim.UserInterface {
 
 
-    public partial class DefaultUserPicker
-    {
+    public partial class DefaultUserPicker {
 
         private System.ComponentModel.IContainer components = null;
 
@@ -14,7 +12,7 @@ namespace SolutionNorSolutionPim.UserInterface
         private System.Windows.Forms.TextBox txtDefaultUserName;
 
         protected override void Dispose(bool disposing) {
-            if ( disposing && ( components != null ) ) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -46,8 +44,8 @@ namespace SolutionNorSolutionPim.UserInterface
             //
             // txtDefaultUserName
             //
-            this.txtDefaultUserName.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
-                | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.txtDefaultUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDefaultUserName.Location = new System.Drawing.Point(111, 1);
             this.txtDefaultUserName.Name = "txtDefaultUserName";
             this.txtDefaultUserName.Size = new System.Drawing.Size(199, 20);

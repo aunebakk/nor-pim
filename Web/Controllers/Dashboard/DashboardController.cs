@@ -28,8 +28,8 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
             Logging.ActionLog(Request, "TemplateChapterIndex", ViewBag);
 
             // fetch products
-            var productCategory = new CrudeProductCategoryServiceClient();
-            var productCategoryContracts = productCategory.FetchAll();
+            CrudeProductCategoryServiceClient productCategory = new CrudeProductCategoryServiceClient();
+            System.Collections.Generic.List<CrudeProductCategoryContract> productCategoryContracts = productCategory.FetchAll();
 
             return View(
                 productCategoryContracts

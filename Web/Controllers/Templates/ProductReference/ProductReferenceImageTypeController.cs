@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:13:44 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:05:42 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,18 +18,22 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             return RedirectToAction(
                     "ProductReferenceImageTypeEdit",
-                    new {    productInfoRcd = String.Empty    }
+                    new { productInfoRcd = string.Empty }
                     );
         }
 
         [HttpGet]
         public ActionResult ProductReferenceImageTypeCreate(System.Guid? userId) {
-            var productContract = new ProductReferenceImageTypeContract();
-            productContract.ProductInfoRefNew = new CrudeProductInfoRefContract();
-            if (userId != null) productContract.ProductInfoRefNew.UserId = (System.Guid) userId;
+            ProductReferenceImageTypeContract productContract = new ProductReferenceImageTypeContract {
+                ProductInfoRefNew = new CrudeProductInfoRefContract()
+            };
+            if (userId != null) {
+                productContract.ProductInfoRefNew.UserId = (System.Guid)userId;
+            }
 
-            if (userId == null)
+            if (userId == null) {
                 productContract.ProductInfoRefNew.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             productContract.ProductInfoRefNew.DateTime = DateTime.UtcNow;
 
@@ -48,7 +52,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 return RedirectToAction(
                         "ProductReferenceImageTypeEdit",
-                        new {    productInfoRcd = String.Empty}
+                        new { productInfoRcd = string.Empty }
                         );
             }
 

@@ -11,7 +11,6 @@
 */
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -33,11 +32,11 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public partial class DatabaseManager {
         public List<DatabaseScript> scripts = new List<DatabaseScript>();
-        DatabaseScript lastScript = new DatabaseScript();
-        String databaseName = string.Empty;
-        public String connectionString = string.Empty;
-        Int32 scriptNumber = 1;
-        bool toRemote;
+        private DatabaseScript lastScript = new DatabaseScript();
+        private string databaseName = string.Empty;
+        public string connectionString = string.Empty;
+        private int scriptNumber = 1;
+        private bool toRemote;
 
         public DatabaseVersion minimumVersion = new DatabaseVersion();
         public DatabaseVersion defaultVersion;
@@ -49,21 +48,22 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         /// <param name="databaseName">Name of Database to delete</param>
         /// <param name="toRemote">Use remote or local database</param>
         public DatabaseManager(
-            String databaseName,
+            string databaseName,
             bool toRemote
             ) {
 
-            if (string.IsNullOrEmpty(databaseName))
+            if (string.IsNullOrEmpty(databaseName)) {
                 throw new ArgumentException("Missing Database Name", "databaseName");
+            }
 
             try {
                 this.databaseName = databaseName;
 
                 // remote or local
                 this.toRemote = toRemote;
-                if (this.toRemote)
+                if (this.toRemote) {
                     connectionString = Conn.ConnectionStringRemote;
-                else { 
+                } else {
                     connectionString = Conn.ConnectionStringLocal;
 
                     // check if database exist
@@ -82,12 +82,11 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 }
 
                 int minorNumber = 0;
-                int sequence = 0;
                 InitDatabaseClean(majorNumber: 0, minorNumber: minorNumber++);
                 InitVersioning(majorNumber: 0, minorNumber: minorNumber++);
                 InitJSONClient(majorNumber: 0, minorNumber: minorNumber++);
                 InitSystemReferenceErrorAndIssue(majorNumber: 0, minorNumber: minorNumber++);
-                InitDefaultUserActivity(majorNumber: 0, minorNumber: minorNumber++, sequence: out sequence);
+                InitDefaultUserActivity(majorNumber: 0, minorNumber: minorNumber++, sequence: out int sequence);
                 InitDefaultSystemSetting(majorNumber: 0, minorNumber: minorNumber++, sequence: ref sequence);
                 InitDefaultChangeLog(majorNumber: 0, minorNumber: minorNumber++, sequence: ref sequence);
                 InitDefaultRule(majorNumber: 0, minorNumber: minorNumber++, sequence: ref sequence);
@@ -100,7 +99,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 // creation checkmark, do not process scripts after this until creation is created
                 scripts.Add(lastScript = new DatabaseScript {
                     DatabaseVersion = new DatabaseVersion { MajorNumber = 0, MinorNumber = minorNumber++, SequenceNumber = sequence++, DateTime = new DateTime(2019, 02, 05) },
-                    ScriptNumber = this.scriptNumber++,
+                    ScriptNumber = scriptNumber++,
                     Name = "CreationCheckmark"
                 });
 
@@ -145,7 +144,7 @@ select 'Created database: " + databaseName + @"'
         /// Execute sql statements
         /// </summary>
         /// <param name="sql">Sql statement to execute</param>
-        public static List<string> ExecuteWithResultInList (
+        public static List<string> ExecuteWithResultInList(
             string connectionStringLocal,
             string sql
             ) {
@@ -172,21 +171,21 @@ select 'Created database: " + databaseName + @"'
         /// </summary>
         /// <param name="sql">Sql statement to execute</param>
         /// <returns>Dataset from sql</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage ( "Microsoft.Security" , "CA2100:Review SQL queries for security vulnerabilities" )]
-        public static DataSet GetDataSet ( string connectionString, string sql ) {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
+        public static DataSet GetDataSet(string connectionString, string sql) {
             try {
-                var connection = new SqlConnection ( connectionString.Replace ( @"\\", @"\" ) );
-                var command = new SqlCommand ( sql, connection );
-                var adapter = new SqlDataAdapter ( command );
-                var dataSet = new DataSet ( );
-                adapter.Fill ( dataSet );
+                SqlConnection connection = new SqlConnection(connectionString.Replace(@"\\", @"\"));
+                SqlCommand command = new SqlCommand(sql, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
 
                 return dataSet;
-            } catch ( Exception ex ) {
-                if ( ex.InnerException == null ) {
-                    throw ( ex );
+            } catch (Exception ex) {
+                if (ex.InnerException == null) {
+                    throw (ex);
                 } else {
-                    throw ( ex.InnerException );
+                    throw (ex.InnerException);
                 }
             } finally {
             }
@@ -195,8 +194,7 @@ select 'Created database: " + databaseName + @"'
         public bool DatabaseExist(
             string connectionStringLocal,
             string databaseName
-            )
-        {
+            ) {
 
             try {
                 string sql =
@@ -208,8 +206,7 @@ select 'Created database: " + databaseName + @"'
                                 sql: sql
                             );
 
-                int dbid;
-                int.TryParse(result[0], out dbid);
+                int.TryParse(result[0], out int dbid);
 
                 return dbid > 0;
             } catch (Exception ex) {
@@ -232,8 +229,9 @@ select 'Created database: " + databaseName + @"'
                     returnMessage += DateTime.UtcNow + " " + "Script Executed" + " " + "( " + Execute(nextScript, haltOnException: true) + " )" + "\r\n";
 
                     if (IsVersionTableGood())   // make sure table exists
+{
                         returnMessage += DateTime.UtcNow + " " + DefaultVersion(nextScript.DatabaseVersion) + "\r\n";
-
+                    }
                 } else {
                     returnMessage = DateTime.UtcNow + " " + "Database is up to date\r\n";
                 }
@@ -252,27 +250,32 @@ select 'Created database: " + databaseName + @"'
             try {
                 // find current state
                 string whyNot = string.Empty;
-                if (!IsConnectionGood(out whyNot))
-                    throw new Exception($"Connection not good; {SanitizePassword(this.connectionString)}\r\n    Because: {whyNot}");
+                if (!IsConnectionGood(out whyNot)) {
+                    throw new Exception($"Connection not good; {SanitizePassword(connectionString)}\r\n    Because: {whyNot}");
+                }
 
-                if (!IsDatabaseGood())
-                    throw new Exception("Database is not good; " + this.databaseName + " on connection; " + SanitizePassword(this.connectionString));
+                if (!IsDatabaseGood()) {
+                    throw new Exception("Database is not good; " + databaseName + " on connection; " + SanitizePassword(connectionString));
+                }
 
                 // get version
                 DatabaseVersion databaseVersion = new DatabaseVersion();
 
                 string returnMessage = string.Empty;
-                if (!IsVersionTableGood())
-                    throw new Exception("Version table is not good on connection; " + SanitizePassword(this.connectionString));
+                if (!IsVersionTableGood()) {
+                    throw new Exception("Version table is not good on connection; " + SanitizePassword(connectionString));
+                }
 
                 databaseVersion = VersionTableLastEntry();
 
                 // is code version and database version the same?
-                if (maximumVersion == databaseVersion)
+                if (maximumVersion == databaseVersion) {
                     return null;
+                }
 
-                if (maximumVersion < databaseVersion)
+                if (maximumVersion < databaseVersion) {
                     throw new Exception("Maxmimum version is less than the database version" + "\r\n");
+                }
 
                 // filter out scripts to execute
                 List<DatabaseScript> scriptsFiltered =
@@ -308,7 +311,7 @@ select 'Created database: " + databaseName + @"'
         /// <returns>Timespan of timeout</returns>
         public TimeSpan ConectionTimeout() {
             try {
-                using (var connection = new SqlConnection(connectionString)) {
+                using (SqlConnection connection = new SqlConnection(connectionString)) {
                     connection.Open();
                     return TimeSpan.FromSeconds(connection.ConnectionTimeout);
                 }
@@ -326,7 +329,7 @@ select 'Created database: " + databaseName + @"'
                 out string whyNot
             ) {
             try {
-                using (var connection = new SqlConnection(connectionString)) {
+                using (SqlConnection connection = new SqlConnection(connectionString)) {
                     connection.Open();
                     connection.Close();
                 }
@@ -347,9 +350,9 @@ select 'Created database: " + databaseName + @"'
         public bool IsDatabaseGood() {
 
             try {
-                using (var connection = new SqlConnection(connectionString)) {
+                using (SqlConnection connection = new SqlConnection(connectionString)) {
                     connection.Open();
-                    connection.ChangeDatabase(this.databaseName); // not sure about this one, could be some 'smart' handling preventing switching to current database
+                    connection.ChangeDatabase(databaseName); // not sure about this one, could be some 'smart' handling preventing switching to current database
                 }
             } catch (Exception ex) {
                 if (ex != null) { }
@@ -366,9 +369,9 @@ select 'Created database: " + databaseName + @"'
         public bool IsVersionTableGood() {
             try {
                 string sql = "select * from default_version";
-                using (var connection = new SqlConnection(connectionString)) {
+                using (SqlConnection connection = new SqlConnection(connectionString)) {
                     connection.Open();
-                    using (var command = new SqlCommand(sql, connection)) {
+                    using (SqlCommand command = new SqlCommand(sql, connection)) {
                         int rowsAffected = command.ExecuteNonQuery();
                         return rowsAffected >= -1; // which means the table is there, but might not contain any entries
                     }
@@ -391,28 +394,32 @@ select 'Created database: " + databaseName + @"'
                        order by date_time desc
                         ";
 
-                using (var conn = new SqlConnection(this.connectionString)) {
+                using (SqlConnection conn = new SqlConnection(connectionString)) {
                     conn.Open();    // open standard connection
                     conn.BeginTransaction(IsolationLevel.ReadCommitted).Commit();   // committed read
 
                     // execute and read one row, close connection
-                    using (var command = new SqlCommand(sql, conn)) {
+                    using (SqlCommand command = new SqlCommand(sql, conn)) {
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                         // populate serializable class if row was found
                         DatabaseVersion databaseVersion = new DatabaseVersion();
                         if (reader.Read()) {
-                            if (reader["major_number"] != System.DBNull.Value)
-                                databaseVersion.MajorNumber = (System.Int32)reader["major_number"];
+                            if (reader["major_number"] != System.DBNull.Value) {
+                                databaseVersion.MajorNumber = (int)reader["major_number"];
+                            }
 
-                            if (reader["minor_number"] != System.DBNull.Value)
-                                databaseVersion.MinorNumber = (System.Int32)reader["minor_number"];
+                            if (reader["minor_number"] != System.DBNull.Value) {
+                                databaseVersion.MinorNumber = (int)reader["minor_number"];
+                            }
 
-                            if (reader["sequence_number"] != System.DBNull.Value)
-                                databaseVersion.SequenceNumber = (System.Int32)reader["sequence_number"];
+                            if (reader["sequence_number"] != System.DBNull.Value) {
+                                databaseVersion.SequenceNumber = (int)reader["sequence_number"];
+                            }
 
-                            if (reader["date_time"] != System.DBNull.Value)
+                            if (reader["date_time"] != System.DBNull.Value) {
                                 databaseVersion.DateTime = (System.DateTime)reader["date_time"];
+                            }
                         }
 
                         return databaseVersion;
@@ -420,13 +427,13 @@ select 'Created database: " + databaseName + @"'
                 }
             } catch (System.Exception ex) {
                 throw new System.Exception(
-                    "Failed to fetch last default version" + " on Connection; " + SanitizePassword(this.connectionString),
+                    "Failed to fetch last default version" + " on Connection; " + SanitizePassword(connectionString),
                     ex
                     );
             }
 
             throw new System.Exception(
-                "Failed to fetch last default version" + " on Connection; " + SanitizePassword(this.connectionString)
+                "Failed to fetch last default version" + " on Connection; " + SanitizePassword(connectionString)
                 );
         }
 
@@ -434,11 +441,7 @@ select 'Created database: " + databaseName + @"'
         /// Get connection string without sensitive info
         /// </summary>
         /// <returns>Connection string</returns>
-        public string ConnectionStringSanitized {
-            get {
-                return SanitizePassword(connectionString);
-            }
-        }
+        public string ConnectionStringSanitized => SanitizePassword(connectionString);
 
         /// <summary>
         /// Remove password from string
@@ -450,8 +453,9 @@ select 'Created database: " + databaseName + @"'
             ) {
             try {
                 int passwordPos = stringToSanitize.IndexOf("Password=");
-                if (passwordPos == -1)
+                if (passwordPos == -1) {
                     return stringToSanitize;
+                }
 
                 int afterPasswordPos = stringToSanitize.Substring(startIndex: passwordPos).IndexOf(";");
 
@@ -476,19 +480,21 @@ select 'Created database: " + databaseName + @"'
             try {
                 // find current state
                 string whyNot = string.Empty;
-                if (!IsConnectionGood(out whyNot))
-                    throw new Exception($"Connection not good; {SanitizePassword(this.connectionString)}\r\n    Because: {whyNot}");
+                if (!IsConnectionGood(out whyNot)) {
+                    throw new Exception($"Connection not good; {SanitizePassword(connectionString)}\r\n    Because: {whyNot}");
+                }
 
-                if (!IsDatabaseGood())
-                    return "Database is not good; " + this.databaseName + " on connection; " + SanitizePassword(this.connectionString);
+                if (!IsDatabaseGood()) {
+                    return "Database is not good; " + databaseName + " on connection; " + SanitizePassword(connectionString);
+                }
 
                 // get version
                 DatabaseVersion databaseVersion = new DatabaseVersion();
 
                 string returnMessage = string.Empty;
-                if (!IsVersionTableGood())
-                    returnMessage += "Version table is not good on connection; " + SanitizePassword(this.connectionString) + "\r\n";
-                else {
+                if (!IsVersionTableGood()) {
+                    returnMessage += "Version table is not good on connection; " + SanitizePassword(connectionString) + "\r\n";
+                } else {
                     try {
                         databaseVersion = VersionTableLastEntry();
                     } catch (Exception ex) {
@@ -496,8 +502,9 @@ select 'Created database: " + databaseName + @"'
                     }
                 }
 
-                if (maximumVersion == databaseVersion)
+                if (maximumVersion == databaseVersion) {
                     returnMessage += "Code version and database version is the same" + "\r\n";
+                }
 
                 if (maximumVersion > databaseVersion) {
                     returnMessage += "Code version is greater than the database version" + "\r\n";
@@ -524,11 +531,13 @@ select 'Created database: " + databaseName + @"'
 
                     foreach (DatabaseScript script in scriptOrdered) {
 
-                        if (script.Name.Equals("CreationCheckmark") && breakOnCreationCheckmark)
+                        if (script.Name.Equals("CreationCheckmark") && breakOnCreationCheckmark) {
                             break;
+                        }
 
-                        if (script.Name.Equals("CreationCheckmark"))
+                        if (script.Name.Equals("CreationCheckmark")) {
                             continue;   // do not execute this script
+                        }
 
                         returnMessage += DateTime.UtcNow;
                         //returnMessage += "Script Executed" + " " + "( " + script.Name + " )" + "\r\n";
@@ -536,7 +545,9 @@ select 'Created database: " + databaseName + @"'
 
                         try {
                             if (IsVersionTableGood())   // make sure table exists
+{
                                 returnMessage += DefaultVersion(script.DatabaseVersion) + "\r\n";
+                            }
                         } catch (Exception ex) {
                             if (ex != null) { }
                         }
@@ -558,7 +569,7 @@ select 'Created database: " + databaseName + @"'
         /// <param name="majorNumber">Major number for version</param>
         /// <param name="minorNumber">Minor number for version</param>
         /// <returns>Database Version script</returns>
-        DatabaseVersion InitBlank(
+        private DatabaseVersion InitBlank(
             int majorNumber,
             int minorNumber
             ) {
@@ -566,7 +577,7 @@ select 'Created database: " + databaseName + @"'
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = databaseVersion.SequenceIncrease,
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "",
                 Description = "",
                 DatabaseScriptBatch = new DatabaseScriptBatch {
@@ -589,8 +600,9 @@ select 'Created database: " + databaseName + @"'
             ) {
             string reply = string.Empty;
 
-            foreach (string scriptName in scriptList)
+            foreach (string scriptName in scriptList) {
                 reply += "Script Executed" + " " + "( " + Execute(scripts.Find(x => x.Name.Equals(scriptName))) + " )";
+            }
 
             return reply;
         }
@@ -606,27 +618,29 @@ select 'Created database: " + databaseName + @"'
             bool haltOnException = false
             ) {
 
-            if (databaseScript.Name.Equals("CreationCheckmark"))
+            if (databaseScript.Name.Equals("CreationCheckmark")) {
                 return string.Empty;   // do not execute this script
+            }
 
             try {
                 if (!Execute(
                     databaseScript.DatabaseScriptBatch.Script,
                     databaseScript.DatabaseScriptBatch.BreakUpToBatches
-                    ))
-
+                    )) {
                     return "Failed";
-
+                }
             } catch (System.Exception ex) {
-                if (haltOnException)
+                if (haltOnException) {
                     throw new Exception("Failed to execute script; " + databaseScript.Name, ex);
+                }
 
-                if (ex.HResult == -2147467261)
+                if (ex.HResult == -2147467261) {
                     return "Exception; No database script to execute";
-                else
+                } else {
                     return
                           "Script Name: " + databaseScript.Name + "\r\n" + "\r\n"
                         + "Exception: " + ExtractException(ex);
+                }
             }
 
             return databaseScript.Description;
@@ -656,7 +670,7 @@ select 'Created database: " + databaseName + @"'
         /// <param name="sql">Database Script to execute</param>
         /// <param name="breakUpToBatches">Break scripts up on 'go'</param>
         /// <returns>True if executed without errors</returns>
-        bool Execute(
+        private bool Execute(
             string sql,
             bool breakUpToBatches = true
             ) {
@@ -665,7 +679,7 @@ select 'Created database: " + databaseName + @"'
                 string[] batches = sql.Split(new string[] { "go\r\n" }, StringSplitOptions.None);
 
                 try {
-                    using (var connection = new SqlConnection(connectionString)) {
+                    using (SqlConnection connection = new SqlConnection(connectionString)) {
                         connection.Open();
 
                         // execute script in batches
@@ -674,14 +688,14 @@ select 'Created database: " + databaseName + @"'
                             try {
                                 batchPart = batchLine.Trim();
                                 if (!string.IsNullOrEmpty(batchPart)) {
-                                    using (var command = new SqlCommand(batchPart, connection)) {
+                                    using (SqlCommand command = new SqlCommand(batchPart, connection)) {
                                         command.CommandTimeout = 60 * 5;    // https://stackoverflow.com/questions/8602395/timeout-expired-the-timeout-period-elapsed-prior-to-completion-of-the-operation
                                         command.ExecuteNonQuery();
                                     }
                                 }
                             } catch (System.Exception ex) {
                                 throw new System.Exception(
-                                    "On Connection; " + SanitizePassword(this.connectionString) + "\r\n"
+                                    "On Connection; " + SanitizePassword(connectionString) + "\r\n"
                                     + "Failed to execute (batch inner): " + batchPart + "\r\n" + "\r\n" + ex.Message,
                                     ex
                                     );
@@ -692,7 +706,7 @@ select 'Created database: " + databaseName + @"'
                     return true;
                 } catch (System.Exception ex) {
                     throw new System.Exception(
-                        "On Connection; " + SanitizePassword(this.connectionString) + "\r\n"
+                        "On Connection; " + SanitizePassword(connectionString) + "\r\n"
                         + "Failed to execute (batch outer): " + sql + "\r\n" + "\r\n"
                         + ex.Message,
                         ex
@@ -702,11 +716,11 @@ select 'Created database: " + databaseName + @"'
                 sql = sql.Replace("go\r\n", string.Empty);
                 try {
                     // open standard connection
-                    using (var connection = new SqlConnection(connectionString)) {
+                    using (SqlConnection connection = new SqlConnection(connectionString)) {
                         connection.Open();
 
                         // execute script
-                        using (var command = new SqlCommand(sql, connection)) {
+                        using (SqlCommand command = new SqlCommand(sql, connection)) {
                             command.CommandTimeout = 60 * 5;    // https://stackoverflow.com/questions/8602395/timeout-expired-the-timeout-period-elapsed-prior-to-completion-of-the-operation
                             command.ExecuteNonQuery();
                         }
@@ -714,7 +728,7 @@ select 'Created database: " + databaseName + @"'
                     return true;
                 } catch (System.Exception ex) {
                     throw new System.Exception(
-                        "On Connection; " + SanitizePassword(this.connectionString) + "\r\n"
+                        "On Connection; " + SanitizePassword(connectionString) + "\r\n"
                         + "Failed to execute (nobatch): " + sql,
                         ex
                         );

@@ -1,11 +1,9 @@
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.mvc.Controllers
-{
-    public class ClientLinkController : Controller
-    {
+namespace SolutionNorSolutionPim.mvc.Controllers {
+    public class ClientLinkController : Controller {
 
         [HttpGet]
         public ActionResult ClientLinkByClientIndex(System.Guid clientId) {
@@ -47,7 +45,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ClientLinkEdit([Bind()] CrudeClientLinkContract contract) {
-            if ( ModelState.IsValid ) {
+            if (ModelState.IsValid) {
                 new CrudeClientLinkServiceClient().Update(contract);
 
                 return RedirectToAction("ClientLinkByClientIndex", new { clientId = contract.ClientId });
@@ -61,11 +59,14 @@ namespace SolutionNorSolutionPim.mvc.Controllers
 
         [HttpGet]
         public ActionResult ClientLinkCreate(System.Guid? clientId, System.Guid? userId) {
-            var contract = new CrudeClientLinkContract();
-            if ( clientId != null )
-                contract.ClientId = ( System.Guid ) clientId;
-            if ( userId != null )
-                contract.UserId = ( System.Guid ) userId;
+            CrudeClientLinkContract contract = new CrudeClientLinkContract();
+            if (clientId != null) {
+                contract.ClientId = (System.Guid)clientId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
             ViewBag.ClientLinkTypeRcd =
                 new SelectList(new CrudeClientLinkTypeRefServiceClient().FetchAll(),
@@ -74,8 +75,9 @@ namespace SolutionNorSolutionPim.mvc.Controllers
                                 contract.ClientLinkTypeRcd
                                 );
 
-            if ( userId == null )
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;
@@ -91,7 +93,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ClientLinkCreate([Bind()] CrudeClientLinkContract contract) {
-            if ( ModelState.IsValid ) {
+            if (ModelState.IsValid) {
 
                 new CrudeClientLinkServiceClient().Insert(contract);
 

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:07 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:39 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeClientIdentifierContract contract = new CrudeClientIdentifierServiceClient().FetchByClientIdentifierId(clientIdentifierId);
             ViewBag.ClientId =
-                new SelectList( new CrudeClientServiceClient().FetchAll(),
+                new SelectList(new CrudeClientServiceClient().FetchAll(),
                                 "ClientId",
                                 "FirstName",
                                 contract.ClientId
                                 );
 
             ViewBag.ClientIdentifierTypeRcd =
-                new SelectList( new CrudeClientIdentifierTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeClientIdentifierTypeRefServiceClient().FetchAll(),
                                 "ClientIdentifierTypeRcd",
                                 "ClientIdentifierTypeName",
                                 contract.ClientIdentifierTypeRcd
@@ -102,26 +102,32 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeClientIdentifierCreate(System.Guid? clientId, System.Guid? userId) {
-            var contract = new CrudeClientIdentifierContract();
-            if (clientId != null) contract.ClientId = (System.Guid) clientId;
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeClientIdentifierContract contract = new CrudeClientIdentifierContract();
+            if (clientId != null) {
+                contract.ClientId = (System.Guid)clientId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
             ViewBag.ClientId =
-                new SelectList( new CrudeClientServiceClient().FetchAll(),
+                new SelectList(new CrudeClientServiceClient().FetchAll(),
                                 "ClientId",
                                 "FirstName",
                                 contract.ClientId
                                 );
 
             ViewBag.ClientIdentifierTypeRcd =
-                new SelectList( new CrudeClientIdentifierTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeClientIdentifierTypeRefServiceClient().FetchAll(),
                                 "ClientIdentifierTypeRcd",
                                 "ClientIdentifierTypeName",
                                 contract.ClientIdentifierTypeRcd
                                 );
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

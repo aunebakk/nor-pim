@@ -28,7 +28,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DatabaseCleanScript1",
                 Description = "Clear database script ( Drop all non-system stored procs )",
                 DatabaseScriptBatch = new DatabaseScriptBatch {
@@ -52,7 +52,7 @@ END",
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DatabaseCleanScript2",
                 Description = "Clear database script ( Drop all views )",
                 DatabaseScriptBatch = new DatabaseScriptBatch {
@@ -77,7 +77,7 @@ END
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DatabaseCleanScript3",
                 Description = "Clear database script ( Drop all functions )",
                 DatabaseScriptBatch = new DatabaseScriptBatch {
@@ -102,7 +102,7 @@ END
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DatabaseCleanScript4",
                 Description = "Clear database script ( Drop all Foreign Key constraints )",
                 DatabaseScriptBatch = new DatabaseScriptBatch {
@@ -133,7 +133,7 @@ END
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DatabaseCleanScript5",
                 Description = "Clear database script ( Drop all Primary Key constraints )",
                 DatabaseScriptBatch = new DatabaseScriptBatch {
@@ -164,7 +164,7 @@ END
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DatabaseCleanScript6",
                 Description = "Clear database script ( Drop all tables )",
                 DatabaseScriptBatch = new DatabaseScriptBatch {

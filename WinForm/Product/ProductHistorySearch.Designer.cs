@@ -1,9 +1,7 @@
-namespace SolutionNorSolutionPim.UserInterface
-{
+namespace SolutionNorSolutionPim.UserInterface {
 
 
-    public partial class ProductHistory
-    {
+    public partial class ProductHistory {
 
         private System.ComponentModel.IContainer components = null;
 
@@ -14,7 +12,7 @@ namespace SolutionNorSolutionPim.UserInterface
         private System.Windows.Forms.DataGridView grid;
 
         protected override void Dispose(bool disposing) {
-            if ( disposing && ( components != null ) ) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -25,12 +23,12 @@ namespace SolutionNorSolutionPim.UserInterface
             this.btnSearch = new System.Windows.Forms.Button();
             this.grid = new System.Windows.Forms.DataGridView();
             this.buttonHistory = new System.Windows.Forms.Button();
-            ( ( System.ComponentModel.ISupportInitialize ) ( this.grid ) ).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Location = new System.Drawing.Point(433, 277);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 22);
@@ -41,7 +39,7 @@ namespace SolutionNorSolutionPim.UserInterface
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.Location = new System.Drawing.Point(335, 277);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 22);
@@ -52,9 +50,9 @@ namespace SolutionNorSolutionPim.UserInterface
             // 
             // grid
             // 
-            this.grid.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
-            | System.Windows.Forms.AnchorStyles.Left )
-            | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Location = new System.Drawing.Point(2, 3);
             this.grid.Name = "grid";
@@ -63,7 +61,7 @@ namespace SolutionNorSolutionPim.UserInterface
             // 
             // buttonHistory
             // 
-            this.buttonHistory.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.buttonHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonHistory.Location = new System.Drawing.Point(237, 277);
             this.buttonHistory.Name = "buttonHistory";
             this.buttonHistory.Size = new System.Drawing.Size(92, 22);
@@ -83,7 +81,7 @@ namespace SolutionNorSolutionPim.UserInterface
             this.Controls.Add(this.grid);
             this.Name = "ProductHistory";
             this.Text = "ProductHistory";
-            ( ( System.ComponentModel.ISupportInitialize ) ( this.grid ) ).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
 
         }

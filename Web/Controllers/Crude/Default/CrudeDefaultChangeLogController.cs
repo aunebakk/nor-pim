@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:15 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:46 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeDefaultChangeLogContract contract = new CrudeDefaultChangeLogServiceClient().FetchByDefaultChangeLogId(defaultChangeLogId);
             ViewBag.DefaultChangeLogTypeRcd =
-                new SelectList( new CrudeDefaultChangeLogTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultChangeLogTypeRefServiceClient().FetchAll(),
                                 "DefaultChangeLogTypeRcd",
                                 "DefaultChangeLogTypeName",
                                 contract.DefaultChangeLogTypeRcd
                                 );
 
             ViewBag.DefaultIssueId =
-                new SelectList( new CrudeDefaultIssueServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultIssueServiceClient().FetchAll(),
                                 "DefaultIssueId",
                                 "IssueName",
                                 contract.DefaultIssueId
@@ -99,24 +99,30 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogCreate(System.Guid? defaultUserId, System.Guid? defaultIssueId) {
-            var contract = new CrudeDefaultChangeLogContract();
-            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
-            if (defaultIssueId != null) contract.DefaultIssueId = (System.Guid) defaultIssueId;
+            CrudeDefaultChangeLogContract contract = new CrudeDefaultChangeLogContract();
+            if (defaultUserId != null) {
+                contract.DefaultUserId = (System.Guid)defaultUserId;
+            }
 
-            if (defaultUserId == null)
+            if (defaultIssueId != null) {
+                contract.DefaultIssueId = (System.Guid)defaultIssueId;
+            }
+
+            if (defaultUserId == null) {
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
             ViewBag.DefaultChangeLogTypeRcd =
-                new SelectList( new CrudeDefaultChangeLogTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultChangeLogTypeRefServiceClient().FetchAll(),
                                 "DefaultChangeLogTypeRcd",
                                 "DefaultChangeLogTypeName",
                                 contract.DefaultChangeLogTypeRcd
                                 );
 
             ViewBag.DefaultIssueId =
-                new SelectList( new CrudeDefaultIssueServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultIssueServiceClient().FetchAll(),
                                 "DefaultIssueId",
                                 "IssueName",
                                 contract.DefaultIssueId

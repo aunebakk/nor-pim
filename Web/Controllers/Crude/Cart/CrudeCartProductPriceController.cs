@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:55:55 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:30 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -69,14 +69,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeCartProductPriceContract contract = new CrudeCartProductPriceServiceClient().FetchByCartProductPriceId(cartProductPriceId);
             ViewBag.FinancialCurrencyId =
-                new SelectList( new CrudeFinancialCurrencyServiceClient().FetchAll(),
+                new SelectList(new CrudeFinancialCurrencyServiceClient().FetchAll(),
                                 "FinancialCurrencyId",
                                 "FinancialCurrencyTypeName",
                                 contract.FinancialCurrencyId
                                 );
 
             ViewBag.ProductId =
-                new SelectList( new CrudeProductServiceClient().FetchAll(),
+                new SelectList(new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 contract.ProductId
@@ -113,20 +113,29 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeCartProductPriceCreate(System.Guid? financialCurrencyId, System.Guid? userId, System.Guid? productId) {
-            var contract = new CrudeCartProductPriceContract();
-            if (financialCurrencyId != null) contract.FinancialCurrencyId = (System.Guid) financialCurrencyId;
-            if (userId != null) contract.UserId = (System.Guid) userId;
-            if (productId != null) contract.ProductId = (System.Guid) productId;
+            CrudeCartProductPriceContract contract = new CrudeCartProductPriceContract();
+            if (financialCurrencyId != null) {
+                contract.FinancialCurrencyId = (System.Guid)financialCurrencyId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
+
+            if (productId != null) {
+                contract.ProductId = (System.Guid)productId;
+            }
 
             ViewBag.FinancialCurrencyId =
-                new SelectList( new CrudeFinancialCurrencyServiceClient().FetchAll(),
+                new SelectList(new CrudeFinancialCurrencyServiceClient().FetchAll(),
                                 "FinancialCurrencyId",
                                 "FinancialCurrencyTypeName",
                                 contract.FinancialCurrencyId
                                 );
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;
@@ -134,7 +143,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
             contract.DateTime = DateTime.UtcNow;
 
             ViewBag.ProductId =
-                new SelectList( new CrudeProductServiceClient().FetchAll(),
+                new SelectList(new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 contract.ProductId

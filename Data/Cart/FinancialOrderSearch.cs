@@ -20,13 +20,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         /// <template>WithDurian</template>
         public List<GetFinancialOrderData> GetFinancialOrder(
              System.Guid clientId
-            ,System.Guid financialCurrencyId
-            ,System.Guid locationAddressId
-            ,System.String financialOrderSourceRcd
-            ,System.Guid userId
-            ,System.Guid financialOrderId
+            , System.Guid financialCurrencyId
+            , System.Guid locationAddressId
+            , string financialOrderSourceRcd
+            , System.Guid userId
+            , System.Guid financialOrderId
             ) {
-            var ret = new List<GetFinancialOrderData>();
+            List<GetFinancialOrderData> ret = new List<GetFinancialOrderData>();
             string sql = @"
 select 
      c.first_name
@@ -77,32 +77,32 @@ order by fo.date_time desc
 
 ";
 
-            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (var command = new SqlCommand(sql, conn)) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     if (clientId != Guid.Empty) {
-                        command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) clientId;
+                        command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = clientId;
                         sql += " and fo.client_id = @client_id";
                     }
                     if (financialCurrencyId != Guid.Empty) {
-                        command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) financialCurrencyId;
+                        command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
                         sql += " and fo.financial_currency_id = @financial_currency_id";
                     }
                     if (locationAddressId != Guid.Empty) {
-                        command.Parameters.Add("@location_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) locationAddressId;
+                        command.Parameters.Add("@location_address_id", SqlDbType.UniqueIdentifier).Value = locationAddressId;
                         sql += " and fo.location_address_id = @location_address_id";
                     }
-                    if (!String.IsNullOrEmpty(financialOrderSourceRcd)) {
-                        command.Parameters.Add("@financial_order_source_rcd",SqlDbType.NVarChar).Value = (System.String) financialOrderSourceRcd;
+                    if (!string.IsNullOrEmpty(financialOrderSourceRcd)) {
+                        command.Parameters.Add("@financial_order_source_rcd", SqlDbType.NVarChar).Value = financialOrderSourceRcd;
                         sql += " and fo.financial_order_source_rcd = @financial_order_source_rcd";
                     }
                     if (userId != Guid.Empty) {
-                        command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) userId;
+                        command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
                         sql += " and fo.user_id = @user_id";
                     }
                     if (financialOrderId != Guid.Empty) {
-                        command.Parameters.Add("@financial_order_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) financialOrderId;
+                        command.Parameters.Add("@financial_order_id", SqlDbType.UniqueIdentifier).Value = financialOrderId;
                         sql += " and fo.financial_order_id = @financial_order_id";
                     }
 
@@ -112,10 +112,10 @@ order by fo.date_time desc
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    var ordinals = new GetFinancialOrderDataOrdinals(reader);
+                    GetFinancialOrderDataOrdinals ordinals = new GetFinancialOrderDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        var data = new GetFinancialOrderData();
+                        GetFinancialOrderData data = new GetFinancialOrderData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }

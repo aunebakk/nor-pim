@@ -1,50 +1,50 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeClientIdentifierTypeRefSearch {
-        
+
         private System.ComponentModel.IContainer components = null;
-        
+
         private System.Windows.Forms.Button buttonClose;
-        
+
         private System.Windows.Forms.Button buttonCrudeClientIdentifierTypeRefSearch;
-        
+
         private System.Windows.Forms.Button buttonCrudeClientIdentifierTypeRefAdd;
-        
+
         private System.Windows.Forms.Button buttonCrudeClientIdentifierTypeRefEdit;
-        
+
         private System.Windows.Forms.DataGridView dataGridViewCrudeClientIdentifierTypeRef;
-        
+
         private System.Windows.Forms.TextBox textBoxClientIdentifierTypeName;
-        
+
         private System.Windows.Forms.Label labelClientIdentifierTypeName;
-        
+
         private System.Windows.Forms.TextBox textBoxClientIdentifierType;
-        
+
         private System.Windows.Forms.Label labelClientIdentifierType;
-        
+
         private System.Windows.Forms.TextBox textBoxClientIdentifierTypeDescription;
-        
+
         private System.Windows.Forms.Label labelClientIdentifierTypeDescription;
-        
+
         private System.Windows.Forms.MaskedTextBox maskedTextBoxSortOrder;
-        
+
         private System.Windows.Forms.Label labelSortOrder;
-        
+
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-        
+
         private System.Windows.Forms.Label labelDateTime;
-        
+
         private System.Windows.Forms.CheckBox checkBoxActiveFlag;
-        
+
         private System.Windows.Forms.Label labelActiveFlag;
-        
+
         protected override void Dispose(bool disposing) {
-           if (disposing && (components != null)) {
-               components.Dispose();
-           }
-           base.Dispose(disposing);
+            if (disposing && (components != null)) {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
-        
+
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonClose = new System.Windows.Forms.Button();
@@ -189,7 +189,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(396, 264);
-            
+
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

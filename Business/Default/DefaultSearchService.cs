@@ -2,22 +2,19 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:06:17 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:00:37 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
-using System.Runtime.Serialization;
-using System.Data;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [ServiceContract()]
     public partial interface IDefaultSearchService {
-        
+
         [OperationContract()]
         List<DefaultTestOverviewContract> DefaultTestOverview(string commandName);
         [OperationContract()]
@@ -63,130 +60,130 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     }
 
     public partial class DefaultSearchService : IDefaultSearchService {
-        
+
         public virtual List<DefaultTestOverviewContract> DefaultTestOverview(string commandName) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultTestOverview();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultTestOverview businessLogicLayer = new DefaultTestOverview();
             return businessLogicLayer.DefaultTestOverviewFromDal(dataAccessLayer.DefaultTestOverview(commandName));
         }
 
         public List<DashboardCountsContract> DashboardCounts(string dashboardLayoutRcd) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DashboardCounts();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DashboardCounts businessLogicLayer = new DashboardCounts();
             return businessLogicLayer.DashboardCountsFromDal(dataAccessLayer.DashboardCounts(dashboardLayoutRcd));
         }
 
         public List<DefaultPerformanceIssueFetchWithFilterContract> DefaultPerformanceIssueFetchWithFilter(string commandName) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultPerformanceIssueFetchWithFilter();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultPerformanceIssueFetchWithFilter businessLogicLayer = new DefaultPerformanceIssueFetchWithFilter();
             return businessLogicLayer.DefaultPerformanceIssueFetchWithFilterFromDal(dataAccessLayer.DefaultPerformanceIssueFetchWithFilter(commandName));
         }
 
         public List<DefaultIssueWithFilterContract> DefaultIssueWithFilter(string defaultIssueTypeRcd, string defaultIssueStatusRcd) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultIssueWithFilter();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultIssueWithFilter businessLogicLayer = new DefaultIssueWithFilter();
             return businessLogicLayer.DefaultIssueWithFilterFromDal(dataAccessLayer.DefaultIssueWithFilter(defaultIssueTypeRcd, defaultIssueStatusRcd));
         }
 
         public List<DefaultErrorOverviewContract> DefaultErrorOverview() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultErrorOverview();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultErrorOverview businessLogicLayer = new DefaultErrorOverview();
             return businessLogicLayer.DefaultErrorOverviewFromDal(dataAccessLayer.DefaultErrorOverview());
         }
 
         public List<DefaultPerformanceIndicatorsContract> DefaultPerformanceIndicators() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultPerformanceIndicators();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultPerformanceIndicators businessLogicLayer = new DefaultPerformanceIndicators();
             return businessLogicLayer.DefaultPerformanceIndicatorsFromDal(dataAccessLayer.DefaultPerformanceIndicators());
         }
 
         public List<DefaultStatisticsContract> DefaultStatistics() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultStatistics();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultStatistics businessLogicLayer = new DefaultStatistics();
             return businessLogicLayer.DefaultStatisticsFromDal(dataAccessLayer.DefaultStatistics());
         }
 
         public List<DefaultUserActivityByHourContract> DefaultUserActivityByHour() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultUserActivityByHour();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultUserActivityByHour businessLogicLayer = new DefaultUserActivityByHour();
             return businessLogicLayer.DefaultUserActivityByHourFromDal(dataAccessLayer.DefaultUserActivityByHour());
         }
 
         public List<DefaultStatisticsByMonthContract> DefaultStatisticsByMonth() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultStatisticsByMonth();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultStatisticsByMonth businessLogicLayer = new DefaultStatisticsByMonth();
             return businessLogicLayer.DefaultStatisticsByMonthFromDal(dataAccessLayer.DefaultStatisticsByMonth());
         }
 
         public List<DefaultStatisticsTop5Contract> DefaultStatisticsTop5() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultStatisticsTop5();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultStatisticsTop5 businessLogicLayer = new DefaultStatisticsTop5();
             return businessLogicLayer.DefaultStatisticsTop5FromDal(dataAccessLayer.DefaultStatisticsTop5());
         }
 
         public List<DefaultPerformanceTimesContract> DefaultPerformanceTimes(string commandName) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultPerformanceTimes();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultPerformanceTimes businessLogicLayer = new DefaultPerformanceTimes();
             return businessLogicLayer.DefaultPerformanceTimesFromDal(dataAccessLayer.DefaultPerformanceTimes(commandName));
         }
 
         public List<DefaultPerformanceTimeCommandsContract> DefaultPerformanceTimeCommands() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultPerformanceTimeCommands();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultPerformanceTimeCommands businessLogicLayer = new DefaultPerformanceTimeCommands();
             return businessLogicLayer.DefaultPerformanceTimeCommandsFromDal(dataAccessLayer.DefaultPerformanceTimeCommands());
         }
 
         public List<DefaultUserActivityRecentContract> DefaultUserActivityRecent(Guid defaultUserId) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultUserActivityRecent();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultUserActivityRecent businessLogicLayer = new DefaultUserActivityRecent();
             return businessLogicLayer.DefaultUserActivityRecentFromDal(dataAccessLayer.DefaultUserActivityRecent(defaultUserId));
         }
 
         public List<DefaultUserActivityOnAddressContract> DefaultUserActivityOnAddress(string originatingAddress) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultUserActivityOnAddress();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultUserActivityOnAddress businessLogicLayer = new DefaultUserActivityOnAddress();
             return businessLogicLayer.DefaultUserActivityOnAddressFromDal(dataAccessLayer.DefaultUserActivityOnAddress(originatingAddress));
         }
 
         public List<DefaultUserActivityGroupedContract> DefaultUserActivityGrouped() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultUserActivityGrouped();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultUserActivityGrouped businessLogicLayer = new DefaultUserActivityGrouped();
             return businessLogicLayer.DefaultUserActivityGroupedFromDal(dataAccessLayer.DefaultUserActivityGrouped());
         }
 
         public List<DefaultUserActivityGroupedByAddressContract> DefaultUserActivityGroupedByAddress() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultUserActivityGroupedByAddress();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultUserActivityGroupedByAddress businessLogicLayer = new DefaultUserActivityGroupedByAddress();
             return businessLogicLayer.DefaultUserActivityGroupedByAddressFromDal(dataAccessLayer.DefaultUserActivityGroupedByAddress());
         }
 
         public List<DefaultUserListContract> DefaultUserList() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultUserList();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultUserList businessLogicLayer = new DefaultUserList();
             return businessLogicLayer.DefaultUserListFromDal(dataAccessLayer.DefaultUserList());
         }
 
         public List<DefaultUserListForDashboardContract> DefaultUserListForDashboard() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultUserListForDashboard();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultUserListForDashboard businessLogicLayer = new DefaultUserListForDashboard();
             return businessLogicLayer.DefaultUserListForDashboardFromDal(dataAccessLayer.DefaultUserListForDashboard());
         }
 
         public List<GetDefaultChangeLogContract> GetDefaultChangeLog(string defaultChangeName, string defaultChangeLogTypeRcd, Guid defaultIssueId, Guid defaultChangeLogId) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new GetDefaultChangeLog();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            GetDefaultChangeLog businessLogicLayer = new GetDefaultChangeLog();
             return businessLogicLayer.GetDefaultChangeLogFromDal(dataAccessLayer.GetDefaultChangeLog(defaultChangeName, defaultChangeLogTypeRcd, defaultIssueId, defaultChangeLogId));
         }
 
         public List<DefaultResourceStatisticsContract> DefaultResourceStatistics() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultResourceStatistics();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultResourceStatistics businessLogicLayer = new DefaultResourceStatistics();
             return businessLogicLayer.DefaultResourceStatisticsFromDal(dataAccessLayer.DefaultResourceStatistics());
         }
 
         public List<DefaultResourceDatabaseStatisticsContract> DefaultResourceDatabaseStatistics() {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
-            var businessLogicLayer = new DefaultResourceDatabaseStatistics();
+            DataAccessLayer.DefaultSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
+            DefaultResourceDatabaseStatistics businessLogicLayer = new DefaultResourceDatabaseStatistics();
             return businessLogicLayer.DefaultResourceDatabaseStatisticsFromDal(dataAccessLayer.DefaultResourceDatabaseStatistics());
         }
     }

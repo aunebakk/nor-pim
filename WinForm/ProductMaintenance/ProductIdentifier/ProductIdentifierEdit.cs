@@ -2,39 +2,37 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:12:08 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:04:31 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.UsingWinForm
 */
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
-using System.IO;
-using System.Drawing;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
 namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class ProductIdentifierEdit : Form {
-        
+
         private CrudeProductIdentifierContract _contract;
-        
-        private Boolean _isNew;
-        
+
+        private bool _isNew;
+
         public ProductIdentifierEdit() {
             InitializeComponent();
             InitializeGridProductIdentifier();
-            this.AcceptButton = buttonSave;
-            this.CancelButton = buttonClose;
+            AcceptButton = buttonSave;
+            CancelButton = buttonClose;
         }
-        
+
         public void ShowAsAdd() {
             _contract = new CrudeProductIdentifierContract();
             _isNew = true;
-            this.Text += " - Not Savable (Product,User Missing)";
+            Text += " - Not Savable (Product,User Missing)";
             RefreshProductIdentifier();
             Show();
         }
-        
+
         public void ShowAsAddByRules(System.Guid userId) {
             _contract = new CrudeProductIdentifierContract();
             _isNew = true;
@@ -45,7 +43,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             RefreshProductIdentifier();
             Show();
         }
-        
+
         public void ShowAsAddByProductAndProductIdentifierAndIdentifier(System.Guid productId, string productIdentifierRcd, string identifier) {
             _contract = new CrudeProductIdentifierContract();
             _isNew = true;
@@ -53,14 +51,14 @@ namespace SolutionNorSolutionPim.UserInterface {
             dateTimePickerDateTime.Text = _contract.DateTime.ToString();
             _contract.ProductId = productId;
             _contract.ProductIdentifierRcd = productIdentifierRcd;
-            productIdentifierRefCombo.Text = _contract.ProductIdentifierRcd != null ? _contract.ProductIdentifierRcd : String.Empty;
+            productIdentifierRefCombo.Text = _contract.ProductIdentifierRcd != null ? _contract.ProductIdentifierRcd : string.Empty;
             _contract.Identifier = identifier;
             textBoxIdentifier.Text = _contract.Identifier;
 
             RefreshProductIdentifier();
             Show();
         }
-        
+
         public void ShowAsAddByProduct(System.Guid productId) {
             _contract = new CrudeProductIdentifierContract();
             _isNew = true;
@@ -71,13 +69,13 @@ namespace SolutionNorSolutionPim.UserInterface {
             RefreshProductIdentifier();
             Show();
         }
-        
+
         public void ShowAsAdd(System.Guid productId, string productIdentifierRcd, string identifier, System.Guid userId) {
             _contract = new CrudeProductIdentifierContract();
             _isNew = true;
             _contract.ProductId = productId;
             _contract.ProductIdentifierRcd = productIdentifierRcd;
-            productIdentifierRefCombo.Text = _contract.ProductIdentifierRcd != null ? _contract.ProductIdentifierRcd : String.Empty;
+            productIdentifierRefCombo.Text = _contract.ProductIdentifierRcd != null ? _contract.ProductIdentifierRcd : string.Empty;
             _contract.Identifier = identifier;
             textBoxIdentifier.Text = _contract.Identifier;
             _contract.UserId = userId;
@@ -87,13 +85,13 @@ namespace SolutionNorSolutionPim.UserInterface {
             RefreshProductIdentifier();
             Show();
         }
-        
+
         public void ShowAsEdit(System.Guid productIdentifierId) {
-            var service = new CrudeProductIdentifierServiceClient();
+            CrudeProductIdentifierServiceClient service = new CrudeProductIdentifierServiceClient();
             _isNew = false;
             try {
                 _contract = service.FetchByProductIdentifierId(productIdentifierId);
-                productIdentifierRefCombo.Text = _contract.ProductIdentifierRcd != null ? _contract.ProductIdentifierRcd : String.Empty;
+                productIdentifierRefCombo.Text = _contract.ProductIdentifierRcd != null ? _contract.ProductIdentifierRcd : string.Empty;
                 textBoxIdentifier.Text = _contract.Identifier;
                 _contract.DateTime = DateTime.UtcNow;
                 dateTimePickerDateTime.Text = _contract.DateTime.ToString();
@@ -101,56 +99,57 @@ namespace SolutionNorSolutionPim.UserInterface {
                 RefreshProductIdentifier();
                 Show();
             } catch (Exception ex) {
-                MessageBox.Show (ex.Message);
+                MessageBox.Show(ex.Message);
             } finally {
                 service.Close();
             }
         }
-        
+
         private void buttonSave_Click(object sender, EventArgs e) {
-            var service = new CrudeProductIdentifierServiceClient();
+            CrudeProductIdentifierServiceClient service = new CrudeProductIdentifierServiceClient();
             try {
                 _contract.ProductIdentifierRcd = productIdentifierRefCombo.Text;
                 _contract.Identifier = textBoxIdentifier.Text;
 
-                if (_isNew)
+                if (_isNew) {
                     service.Insert(_contract);
-                else
+                } else {
                     service.Update(_contract);
+                }
             } catch (Exception ex) {
-                MessageBox.Show (ex.Message);
+                MessageBox.Show(ex.Message);
             } finally {
                 service.Close();
             }
 
             Close();
         }
-        
+
         private void buttonProductIdentifierSearch_Click(object sender, EventArgs e) {
             RefreshProductIdentifier();
         }
-        
+
         private void buttonProductIdentifierEdit_Click(object sender, EventArgs e) {
         }
-        
+
         private void buttonProductIdentifierAdd_Click(object sender, EventArgs e) {
             RefreshProductIdentifier();
         }
-        
+
         private void dataGridViewProductIdentifier_DoubleClick(object sender, EventArgs e) {
-            var editForm = new ProductIdentifierEdit();
-            editForm.MdiParent = this.MdiParent;
+            ProductIdentifierEdit editForm = new ProductIdentifierEdit();
+            editForm.MdiParent = MdiParent;
 
         }
-        
+
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-        
+
         public void RefreshProductIdentifier() {
 
         }
-        
+
         private void InitializeGridProductIdentifier() {
             dataGridViewProductIdentifier.Columns.Clear();
             dataGridViewProductIdentifier.AutoGenerateColumns = false;

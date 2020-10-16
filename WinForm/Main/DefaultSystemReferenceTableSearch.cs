@@ -1,19 +1,17 @@
+using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.UserInterface
-{
-    public partial class DefaultSystemReferenceTableSearch : Form
-    {
+namespace SolutionNorSolutionPim.UserInterface {
+    public partial class DefaultSystemReferenceTableSearch : Form {
 
         private Guid _userId;
 
         public DefaultSystemReferenceTableSearch() {
             InitializeComponent();
             InitializeGridCrudeDefaultSystemReferenceTable();
-            this.AcceptButton = btnSearch;
-            this.CancelButton = btnClose;
+            AcceptButton = btnSearch;
+            CancelButton = btnClose;
         }
 
         public void Show(Guid userId) {
@@ -25,241 +23,241 @@ namespace SolutionNorSolutionPim.UserInterface
         private void btnEdit_Click(object sender, EventArgs e) {
             Cursor.Current = Cursors.WaitCursor;
 
-            string systemReferenceTableName = 
-                ( string ) dataGridViewCrudeDefaultSystemReferenceTable.
+            string systemReferenceTableName =
+                (string)dataGridViewCrudeDefaultSystemReferenceTable.
                     CurrentRow.
                         Cells["DefaultSystemReferenceTableName"].Value;
 
-            switch ( systemReferenceTableName ) {
+            switch (systemReferenceTableName) {
                 case "default_state_ref": {
-                        var mdiChild = new CrudeDefaultStateRefSearch();
+                        CrudeDefaultStateRefSearch mdiChild = new CrudeDefaultStateRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_user_activity_type_ref": {
-                        var mdiChild = new CrudeDefaultUserActivityTypeRefSearch();
+                        CrudeDefaultUserActivityTypeRefSearch mdiChild = new CrudeDefaultUserActivityTypeRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_system_setting_ref": {
-                        var mdiChild = new CrudeDefaultSystemSettingRefSearch();
+                        CrudeDefaultSystemSettingRefSearch mdiChild = new CrudeDefaultSystemSettingRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_error_layer_ref": {
-                        var mdiChild = new CrudeDefaultErrorLayerRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeDefaultErrorLayerRefSearch mdiChild = new CrudeDefaultErrorLayerRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_error_type_ref": {
-                        var mdiChild = new CrudeDefaultErrorTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeDefaultErrorTypeRefSearch mdiChild = new CrudeDefaultErrorTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_issue_type_ref": {
-                        var mdiChild = new CrudeDefaultIssueTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeDefaultIssueTypeRefSearch mdiChild = new CrudeDefaultIssueTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_issue_status_ref": {
-                        var mdiChild = new CrudeDefaultIssueStatusRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeDefaultIssueStatusRefSearch mdiChild = new CrudeDefaultIssueStatusRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_change_log_type_ref": {
-                        var mdiChild = new CrudeDefaultChangeLogTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeDefaultChangeLogTypeRefSearch mdiChild = new CrudeDefaultChangeLogTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_rule_type_ref": {
-                        var mdiChild = new CrudeDefaultRuleTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeDefaultRuleTypeRefSearch mdiChild = new CrudeDefaultRuleTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_test_run_result_ref": {
-                        var mdiChild = new CrudeDefaultTestRunResultRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show (  );
+                        CrudeDefaultTestRunResultRefSearch mdiChild = new CrudeDefaultTestRunResultRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show();
                         break;
                     }
                 case "product_attribute_ref": {
-                        var mdiChild = new CrudeProductAttributeRefSearch();
+                        CrudeProductAttributeRefSearch mdiChild = new CrudeProductAttributeRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_info_ref": {
-                        var mdiChild = new CrudeProductInfoRefSearch();
+                        CrudeProductInfoRefSearch mdiChild = new CrudeProductInfoRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_identifier_ref": {
-                        var mdiChild = new CrudeProductIdentifierRefSearch();
+                        CrudeProductIdentifierRefSearch mdiChild = new CrudeProductIdentifierRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_image_type_ref": {
-                        var mdiChild = new CrudeProductImageTypeRefSearch();
+                        CrudeProductImageTypeRefSearch mdiChild = new CrudeProductImageTypeRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_documentation_type_ref": {
-                        var mdiChild = new CrudeProductDocumentationTypeRefSearch();
+                        CrudeProductDocumentationTypeRefSearch mdiChild = new CrudeProductDocumentationTypeRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_category_documentation_type_ref": {
-                        var mdiChild = new CrudeProductCategoryDocumentationTypeRefSearch();
+                        CrudeProductCategoryDocumentationTypeRefSearch mdiChild = new CrudeProductCategoryDocumentationTypeRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_attribute_unit_ref": {
-                        var mdiChild = new CrudeProductAttributeUnitRefSearch();
+                        CrudeProductAttributeUnitRefSearch mdiChild = new CrudeProductAttributeUnitRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_category_image_type_ref": {
-                        var mdiChild = new CrudeProductImageTypeRefSearch ();
+                        CrudeProductImageTypeRefSearch mdiChild = new CrudeProductImageTypeRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_gather_source_type_ref": {
-                        var mdiChild = new CrudeProductGatherSourceTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeProductGatherSourceTypeRefSearch mdiChild = new CrudeProductGatherSourceTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_gather_attribute_type_ref": {
-                        var mdiChild = new CrudeProductGatherAttributeTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeProductGatherAttributeTypeRefSearch mdiChild = new CrudeProductGatherAttributeTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_event_type_ref": {
-                        var mdiChild = new CrudeClientEventTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientEventTypeRefSearch mdiChild = new CrudeClientEventTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_nationality_ref": {
-                        var mdiChild = new CrudeClientNationalityRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientNationalityRefSearch mdiChild = new CrudeClientNationalityRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_gender_ref": {
-                        var mdiChild = new CrudeClientGenderRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientGenderRefSearch mdiChild = new CrudeClientGenderRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_title_ref": {
-                        var mdiChild = new CrudeClientTitleRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientTitleRefSearch mdiChild = new CrudeClientTitleRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_type_ref": {
-                        var mdiChild = new CrudeClientTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientTypeRefSearch mdiChild = new CrudeClientTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_document_type_ref": {
-                        var mdiChild = new CrudeClientDocumentTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientDocumentTypeRefSearch mdiChild = new CrudeClientDocumentTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_address_type_ref": {
-                        var mdiChild = new CrudeClientAddressTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientAddressTypeRefSearch mdiChild = new CrudeClientAddressTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_link_type_ref": {
-                        var mdiChild = new CrudeClientLinkTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientLinkTypeRefSearch mdiChild = new CrudeClientLinkTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_identifier_type_ref": {
-                        var mdiChild = new CrudeClientIdentifierTypeRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientIdentifierTypeRefSearch mdiChild = new CrudeClientIdentifierTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "client_contact_method_ref": {
-                        var mdiChild = new CrudeClientContactMethodRefSearch ();
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeClientContactMethodRefSearch mdiChild = new CrudeClientContactMethodRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_entity_type_ref": {
-                        var mdiChild = new CrudeProductEntityTypeRefSearch ( );
+                        CrudeProductEntityTypeRefSearch mdiChild = new CrudeProductEntityTypeRefSearch();
                         Singleton.Instance.CheckForm(mdiChild);
-                        mdiChild.MdiParent = this.MdiParent;
+                        mdiChild.MdiParent = MdiParent;
                         mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "default_system_reference_table": {
-                        var mdiChild = new CrudeDefaultSystemReferenceTableSearch ( );
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeDefaultSystemReferenceTableSearch mdiChild = new CrudeDefaultSystemReferenceTableSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 case "product_expose_set_type_ref": {
-                        var mdiChild = new CrudeProductExposeSetTypeRefSearch ( );
-                        Singleton.Instance.CheckForm ( mdiChild );
-                        mdiChild.MdiParent = this.MdiParent;
-                        mdiChild.Show ( Singleton.Instance.UserId );
+                        CrudeProductExposeSetTypeRefSearch mdiChild = new CrudeProductExposeSetTypeRefSearch();
+                        Singleton.Instance.CheckForm(mdiChild);
+                        mdiChild.MdiParent = MdiParent;
+                        mdiChild.Show(Singleton.Instance.UserId);
                         break;
                     }
                 default:
@@ -275,8 +273,8 @@ namespace SolutionNorSolutionPim.UserInterface
         }
 
         private void btnSearch_Click(object sender, EventArgs e) {
-            var crudeDefaultSystemReferenceTable = new CrudeDefaultSystemReferenceTableServiceClient();
-            var bindingSource = new BindingSource();
+            CrudeDefaultSystemReferenceTableServiceClient crudeDefaultSystemReferenceTable = new CrudeDefaultSystemReferenceTableServiceClient();
+            BindingSource bindingSource = new BindingSource();
 
             try {
                 bindingSource.DataSource = crudeDefaultSystemReferenceTable.FetchWithFilter(
@@ -291,7 +289,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 dataGridViewCrudeDefaultSystemReferenceTable.DataSource = bindingSource;
                 dataGridViewCrudeDefaultSystemReferenceTable.AutoResizeColumns();
                 dataGridViewCrudeDefaultSystemReferenceTable.Refresh();
-            } catch ( Exception ex ) {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             } finally {
                 crudeDefaultSystemReferenceTable.Close();
@@ -315,10 +313,11 @@ namespace SolutionNorSolutionPim.UserInterface
             dataGridViewCrudeDefaultSystemReferenceTable.Columns.Add("ExtensionData", "");
             dataGridViewCrudeDefaultSystemReferenceTable.Columns["ExtensionData"].Visible = false;
 
-            foreach ( DataGridViewColumn column in dataGridViewCrudeDefaultSystemReferenceTable.Columns ) {
+            foreach (DataGridViewColumn column in dataGridViewCrudeDefaultSystemReferenceTable.Columns) {
                 column.DataPropertyName = column.Name;
-                if ( column.Name.EndsWith("Id") || column.Name.Equals("DefaultSystemReferenceTableName") )
+                if (column.Name.EndsWith("Id") || column.Name.Equals("DefaultSystemReferenceTableName")) {
                     column.Visible = false;
+                }
             }
 
             dataGridViewCrudeDefaultSystemReferenceTable.AutoResizeColumns();

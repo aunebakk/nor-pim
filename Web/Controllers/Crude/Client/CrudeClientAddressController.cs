@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:55:57 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:32 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -47,7 +47,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeClientAddressContract contract = new CrudeClientAddressServiceClient().FetchByClientAddressId(clientAddressId);
             ViewBag.ClientAddressTypeRcd =
-                new SelectList( new CrudeClientAddressTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeClientAddressTypeRefServiceClient().FetchAll(),
                                 "ClientAddressTypeRcd",
                                 "ClientAddressTypeName",
                                 contract.ClientAddressTypeRcd
@@ -84,19 +84,25 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeClientAddressCreate(System.Guid? clientId, System.Guid? userId) {
-            var contract = new CrudeClientAddressContract();
-            if (clientId != null) contract.ClientId = (System.Guid) clientId;
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeClientAddressContract contract = new CrudeClientAddressContract();
+            if (clientId != null) {
+                contract.ClientId = (System.Guid)clientId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
             ViewBag.ClientAddressTypeRcd =
-                new SelectList( new CrudeClientAddressTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeClientAddressTypeRefServiceClient().FetchAll(),
                                 "ClientAddressTypeRcd",
                                 "ClientAddressTypeName",
                                 contract.ClientAddressTypeRcd
                                 );
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

@@ -1,40 +1,40 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class ProductIdentifierEdit {
-        
+
         private System.ComponentModel.IContainer components = null;
-        
+
         private System.Windows.Forms.Button buttonClose;
-        
+
         private System.Windows.Forms.Button buttonSave;
-        
+
         private ProductIdentifierRefCombo productIdentifierRefCombo;
-        
+
         private System.Windows.Forms.Label labelProductIdentifierRefCombo;
-        
+
         private System.Windows.Forms.TextBox textBoxIdentifier;
-        
+
         private System.Windows.Forms.Label labelIdentifier;
-        
+
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-        
+
         private System.Windows.Forms.Label labelDateTime;
-        
+
         private System.Windows.Forms.Button buttonProductIdentifierSearch;
-        
+
         private System.Windows.Forms.Button buttonProductIdentifierAdd;
-        
+
         private System.Windows.Forms.Button buttonProductIdentifierEdit;
-        
+
         private System.Windows.Forms.DataGridView dataGridViewProductIdentifier;
-        
+
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-        
+
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -155,7 +155,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(398, 195);
-            
+
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

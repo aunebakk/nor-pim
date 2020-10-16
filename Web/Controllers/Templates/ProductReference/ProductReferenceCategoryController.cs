@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:13:02 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:05:08 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -18,20 +18,30 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             return RedirectToAction(
                     "ProductReferenceCategoryEdit",
-                    new {    productCategoryId = Guid.Empty    }
+                    new { productCategoryId = Guid.Empty }
                     );
         }
 
         [HttpGet]
         public ActionResult ProductReferenceCategoryCreate(System.Guid? productCategoryBecameId, System.Guid? productCategoryParentId, System.Guid? userId) {
-            var productContract = new ProductReferenceCategoryContract();
-            productContract.ProductCategoryNew = new CrudeProductCategoryContract();
-            if (productCategoryBecameId != null) productContract.ProductCategoryNew.ProductCategoryBecameId = (System.Guid) productCategoryBecameId;
-            if (productCategoryParentId != null) productContract.ProductCategoryNew.ProductCategoryParentId = (System.Guid) productCategoryParentId;
-            if (userId != null) productContract.ProductCategoryNew.UserId = (System.Guid) userId;
+            ProductReferenceCategoryContract productContract = new ProductReferenceCategoryContract {
+                ProductCategoryNew = new CrudeProductCategoryContract()
+            };
+            if (productCategoryBecameId != null) {
+                productContract.ProductCategoryNew.ProductCategoryBecameId = (System.Guid)productCategoryBecameId;
+            }
 
-            if (userId == null)
+            if (productCategoryParentId != null) {
+                productContract.ProductCategoryNew.ProductCategoryParentId = (System.Guid)productCategoryParentId;
+            }
+
+            if (userId != null) {
+                productContract.ProductCategoryNew.UserId = (System.Guid)userId;
+            }
+
+            if (userId == null) {
                 productContract.ProductCategoryNew.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(productContract.ProductCategoryNew.UserId).DefaultUserName;
@@ -53,7 +63,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 return RedirectToAction(
                         "ProductReferenceCategoryEdit",
-                        new {    productCategoryId = Guid.Empty}
+                        new { productCategoryId = Guid.Empty }
                         );
             }
 

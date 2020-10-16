@@ -3,22 +3,20 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer
-{
+namespace SolutionNorSolutionPim.DataAccessLayer {
     /// <summary> 
     /// Provides client search with different parameter and result sets
     /// </summary>
     /// <domain>Client</domain>
-    public class ClientSearch
-    {
+    public class ClientSearch {
         /// <summary>Get Client</summary>
         /// <cardinality>Many</cardinality>
         public List<GetClientWithFilterData> GetClientWithFilter(
-             System.String lastName
-            , System.String clientTypeRcd
+             string lastName
+            , string clientTypeRcd
             ) {
 
-            var ret = new List<GetClientWithFilterData>();
+            List<GetClientWithFilterData> ret = new List<GetClientWithFilterData>();
             string sql = @"select
      c.first_name
     ,c.middle_name
@@ -45,11 +43,11 @@ left join client_title_ref as tr on tr.client_title_rcd = c.client_title_rcd
 left join client_type_ref as ctr on ctr.client_type_rcd = c.client_type_rcd
 ";
 
-            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using ( var command = new SqlCommand(sql, conn) ) {
+                using (SqlCommand command = new SqlCommand(sql, conn)) {
                     //command.Parameters.Add("@last_name", SqlDbType.NVarChar).Value = lastName;
                     //command.Parameters.Add("@client_type_rcd", SqlDbType.NVarChar).Value = clientTypeRcd;
 
@@ -57,10 +55,10 @@ left join client_type_ref as ctr on ctr.client_type_rcd = c.client_type_rcd
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     log.PerformanceTimeStop(sql, command);
 
-                    var ordinals = new GetClientWithFilterDataOrdinals(reader);
+                    GetClientWithFilterDataOrdinals ordinals = new GetClientWithFilterDataOrdinals(reader);
 
-                    while ( reader.Read() ) {
-                        var data = new GetClientWithFilterData();
+                    while (reader.Read()) {
+                        GetClientWithFilterData data = new GetClientWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }

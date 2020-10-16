@@ -1,40 +1,40 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeProductCategoryEdit {
-        
+
         private System.ComponentModel.IContainer components = null;
-        
+
         private System.Windows.Forms.Button buttonClose;
-        
+
         private System.Windows.Forms.Button buttonSave;
-        
+
         private System.Windows.Forms.TextBox textBoxProductCategoryCode;
-        
+
         private System.Windows.Forms.Label labelProductCategoryCode;
-        
+
         private System.Windows.Forms.TextBox textBoxProductCategoryName;
-        
+
         private System.Windows.Forms.Label labelProductCategoryName;
-        
+
         private System.Windows.Forms.MaskedTextBox maskedTextBoxProductCategoryPosition;
-        
+
         private System.Windows.Forms.Label labelProductCategoryPosition;
-        
+
         private System.Windows.Forms.TextBox textBoxState;
-        
+
         private System.Windows.Forms.Label labelState;
-        
+
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-        
+
         private System.Windows.Forms.Label labelDateTime;
-        
+
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-        
+
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -139,7 +139,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(333, 128);
-            
+
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

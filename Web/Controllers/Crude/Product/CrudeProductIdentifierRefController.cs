@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:57:17 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:40 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeProductIdentifierRefDetails(System.String productIdentifierRcd) {
+        public ActionResult CrudeProductIdentifierRefDetails(string productIdentifierRcd) {
 
             return View(
                 "~/Views/Crude/Product/CrudeProductIdentifierRef/CrudeProductIdentifierRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeProductIdentifierRefEdit(
-            System.String productIdentifierRcd
+            string productIdentifierRcd
             ) {
 
             CrudeProductIdentifierRefContract contract = new CrudeProductIdentifierRefServiceClient().FetchByProductIdentifierRcd(productIdentifierRcd);
@@ -76,11 +76,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductIdentifierRefCreate(System.Guid? userId) {
-            var contract = new CrudeProductIdentifierRefContract();
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeProductIdentifierRefContract contract = new CrudeProductIdentifierRefContract();
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -111,7 +114,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeProductIdentifierRefDelete(
-            System.String productIdentifierRcd
+            string productIdentifierRcd
             ) {
             new CrudeProductIdentifierRefServiceClient().Delete(productIdentifierRcd);
 

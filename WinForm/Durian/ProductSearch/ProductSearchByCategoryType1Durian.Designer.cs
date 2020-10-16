@@ -1,18 +1,18 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class ProductSearchByCategoryType1Durian {
-        
+
         private System.ComponentModel.IContainer components = null;
-        
+
         private System.Windows.Forms.DataGridView dataGridViewProductSearchByCategoryType1;
-        
+
         protected override void Dispose(bool disposing) {
-           if (disposing && (components != null)) {
-               components.Dispose();
-           }
-           base.Dispose(disposing);
+            if (disposing && (components != null)) {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
-        
+
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewProductSearchByCategoryType1 = new System.Windows.Forms.DataGridView();

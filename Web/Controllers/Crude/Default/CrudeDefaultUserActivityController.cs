@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:39 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:07 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -47,7 +47,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeDefaultUserActivityContract contract = new CrudeDefaultUserActivityServiceClient().FetchByDefaultUserActivityId(defaultUserActivityId);
             ViewBag.DefaultUserActivityTypeRcd =
-                new SelectList( new CrudeDefaultUserActivityTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultUserActivityTypeRefServiceClient().FetchAll(),
                                 "DefaultUserActivityTypeRcd",
                                 "DefaultUserActivityTypeName",
                                 contract.DefaultUserActivityTypeRcd
@@ -81,18 +81,21 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultUserActivityCreate(System.Guid? defaultUserId) {
-            var contract = new CrudeDefaultUserActivityContract();
-            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
+            CrudeDefaultUserActivityContract contract = new CrudeDefaultUserActivityContract();
+            if (defaultUserId != null) {
+                contract.DefaultUserId = (System.Guid)defaultUserId;
+            }
 
             ViewBag.DefaultUserActivityTypeRcd =
-                new SelectList( new CrudeDefaultUserActivityTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultUserActivityTypeRefServiceClient().FetchAll(),
                                 "DefaultUserActivityTypeRcd",
                                 "DefaultUserActivityTypeName",
                                 contract.DefaultUserActivityTypeRcd
                                 );
 
-            if (defaultUserId == null)
+            if (defaultUserId == null) {
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 

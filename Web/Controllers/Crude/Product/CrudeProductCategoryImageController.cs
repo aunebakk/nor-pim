@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:52 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:54:19 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeProductCategoryImageContract contract = new CrudeProductCategoryImageServiceClient().FetchByProductCategoryImageId(productCategoryImageId);
             ViewBag.ProductCategoryId =
-                new SelectList( new CrudeProductCategoryServiceClient().FetchAll(),
+                new SelectList(new CrudeProductCategoryServiceClient().FetchAll(),
                                 "ProductCategoryId",
                                 "ProductCategoryName",
                                 contract.ProductCategoryId
                                 );
 
             ViewBag.ProductCategoryImageTypeRcd =
-                new SelectList( new CrudeProductCategoryImageTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductCategoryImageTypeRefServiceClient().FetchAll(),
                                 "ProductCategoryImageTypeRcd",
                                 "ProductCategoryImageTypeName",
                                 contract.ProductCategoryImageTypeRcd
@@ -102,26 +102,32 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryImageCreate(System.Guid? productCategoryId, System.Guid? userId) {
-            var contract = new CrudeProductCategoryImageContract();
-            if (productCategoryId != null) contract.ProductCategoryId = (System.Guid) productCategoryId;
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeProductCategoryImageContract contract = new CrudeProductCategoryImageContract();
+            if (productCategoryId != null) {
+                contract.ProductCategoryId = (System.Guid)productCategoryId;
+            }
+
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
             ViewBag.ProductCategoryId =
-                new SelectList( new CrudeProductCategoryServiceClient().FetchAll(),
+                new SelectList(new CrudeProductCategoryServiceClient().FetchAll(),
                                 "ProductCategoryId",
                                 "ProductCategoryName",
                                 contract.ProductCategoryId
                                 );
 
             ViewBag.ProductCategoryImageTypeRcd =
-                new SelectList( new CrudeProductCategoryImageTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductCategoryImageTypeRefServiceClient().FetchAll(),
                                 "ProductCategoryImageTypeRcd",
                                 "ProductCategoryImageTypeName",
                                 contract.ProductCategoryImageTypeRcd
                                 );
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

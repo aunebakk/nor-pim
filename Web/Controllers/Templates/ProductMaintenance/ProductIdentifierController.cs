@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 3:12:08 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 6:04:31 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -30,20 +30,20 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             ViewBag.ProductIdentifierId = productIdentifierId;
 
-            var productIdentifierContract = new ProductIdentifierContract();
-
-            productIdentifierContract.ProductIdentifier =
-                new CrudeProductIdentifierServiceClient().FetchByProductIdentifierId(productIdentifierId);
+            ProductIdentifierContract productIdentifierContract = new ProductIdentifierContract {
+                ProductIdentifier =
+                new CrudeProductIdentifierServiceClient().FetchByProductIdentifierId(productIdentifierId)
+            };
 
             ViewBag.ProductId =
-                new SelectList( new CrudeProductServiceClient().FetchAll(),
+                new SelectList(new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productIdentifierContract.ProductIdentifier.ProductId
                                 );
 
             ViewBag.ProductIdentifierRcd =
-                new SelectList( new CrudeProductIdentifierRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductIdentifierRefServiceClient().FetchAll(),
                                 "ProductIdentifierRcd",
                                 "ProductIdentifierName",
                                 productIdentifierContract.ProductIdentifier.ProductIdentifierRcd
@@ -60,7 +60,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductIdentifierEdit([Bind()] ProductIdentifierContract productIdentifierContract, System.Guid productId,System.String productIdentifierRcd) {
+        public ActionResult ProductIdentifierEdit([Bind()] ProductIdentifierContract productIdentifierContract, System.Guid productId, string productIdentifierRcd) {
             if (ModelState.IsValid) {
 
                 productIdentifierContract.ProductIdentifier.ProductId = productId;
@@ -69,7 +69,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 new CrudeProductIdentifierServiceClient().Update(productIdentifierContract.ProductIdentifier);
 
-                return RedirectToAction("ProductIdentifierIndex", new { productId = productIdentifierContract.ProductIdentifier.ProductId} );
+                return RedirectToAction("ProductIdentifierIndex", new { productId = productIdentifierContract.ProductIdentifier.ProductId });
             }
 
             return View(
@@ -80,27 +80,34 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpGet]
         public ActionResult ProductIdentifierCreate(System.Guid? productId, System.Guid? userId) {
-            var productIdentifierContract = new ProductIdentifierContract();
-            productIdentifierContract.ProductIdentifier = new CrudeProductIdentifierContract();
-            if (productId != null) productIdentifierContract.ProductIdentifier.ProductId = (System.Guid) productId;
-            if (userId != null) productIdentifierContract.ProductIdentifier.UserId = (System.Guid) userId;
+            ProductIdentifierContract productIdentifierContract = new ProductIdentifierContract {
+                ProductIdentifier = new CrudeProductIdentifierContract()
+            };
+            if (productId != null) {
+                productIdentifierContract.ProductIdentifier.ProductId = (System.Guid)productId;
+            }
+
+            if (userId != null) {
+                productIdentifierContract.ProductIdentifier.UserId = (System.Guid)userId;
+            }
 
             ViewBag.ProductId =
-                new SelectList( new CrudeProductServiceClient().FetchAll(),
+                new SelectList(new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productIdentifierContract.ProductIdentifier.ProductId
                                 );
 
             ViewBag.ProductIdentifierRcd =
-                new SelectList( new CrudeProductIdentifierRefServiceClient().FetchAll(),
+                new SelectList(new CrudeProductIdentifierRefServiceClient().FetchAll(),
                                 "ProductIdentifierRcd",
                                 "ProductIdentifierName",
                                 productIdentifierContract.ProductIdentifier.ProductIdentifierRcd
                                 );
 
-            if (userId == null)
+            if (userId == null) {
                 productIdentifierContract.ProductIdentifier.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(productIdentifierContract.ProductIdentifier.UserId).DefaultUserName;
@@ -116,14 +123,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductIdentifierCreate([Bind()] ProductIdentifierContract productIdentifierContract, System.Guid productId,System.String productIdentifierRcd) {
+        public ActionResult ProductIdentifierCreate([Bind()] ProductIdentifierContract productIdentifierContract, System.Guid productId, string productIdentifierRcd) {
             if (ModelState.IsValid) {
 
                 productIdentifierContract.ProductIdentifier.ProductId = productId;
                 productIdentifierContract.ProductIdentifier.ProductIdentifierRcd = productIdentifierRcd;
                 new CrudeProductIdentifierServiceClient().Insert(productIdentifierContract.ProductIdentifier);
 
-                return RedirectToAction("ProductIdentifierIndex", new { productId = productIdentifierContract.ProductIdentifier.ProductId} );
+                return RedirectToAction("ProductIdentifierIndex", new { productId = productIdentifierContract.ProductIdentifier.ProductId });
             }
 
             return View(

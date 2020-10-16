@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Windows.Forms;
-using SolutionNorSolutionPim.BusinessLogicLayer;
 
 namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CategoryFindSearch : Form {
-        
+
         public CategoryFindSearch() {
-           InitializeComponent();
-           this.AcceptButton = buttonCategoryFindSearch;
-           this.CancelButton = buttonClose;
+            InitializeComponent();
+            AcceptButton = buttonCategoryFindSearch;
+            CancelButton = buttonClose;
         }
-        
+
         public new void Show() {
-            durianCategoryFind.RefreshCategoryFind(String.Empty);
+            durianCategoryFind.RefreshCategoryFind(string.Empty);
             base.Show();
         }
-        
+
         private void buttonCategoryFindSearch_Click(object sender, EventArgs e) {
-            durianCategoryFind.RefreshCategoryFind(String.Empty);
+            durianCategoryFind.RefreshCategoryFind(string.Empty);
         }
-        
+
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }

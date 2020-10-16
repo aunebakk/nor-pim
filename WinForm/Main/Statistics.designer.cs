@@ -1,9 +1,7 @@
-namespace SolutionNorSolutionPim.UserInterface
-{
+namespace SolutionNorSolutionPim.UserInterface {
 
 
-    public partial class Statistics
-    {
+    public partial class Statistics {
 
         private System.ComponentModel.IContainer components = null;
 
@@ -14,7 +12,7 @@ namespace SolutionNorSolutionPim.UserInterface
         private System.Windows.Forms.DataGridView gridDefaultStatisticsTop5;
 
         protected override void Dispose(bool disposing) {
-            if ( disposing && ( components != null ) ) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,13 +24,13 @@ namespace SolutionNorSolutionPim.UserInterface
             this.gridDefaultStatisticsTop5 = new System.Windows.Forms.DataGridView();
             this.gridDefaultStatistics = new System.Windows.Forms.DataGridView();
             this.buttonPingTest = new System.Windows.Forms.Button();
-            ( ( System.ComponentModel.ISupportInitialize ) ( this.gridDefaultStatisticsTop5 ) ).BeginInit();
-            ( ( System.ComponentModel.ISupportInitialize ) ( this.gridDefaultStatistics ) ).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDefaultStatisticsTop5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDefaultStatistics)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Location = new System.Drawing.Point(422, 268);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 22);
@@ -43,7 +41,7 @@ namespace SolutionNorSolutionPim.UserInterface
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.Location = new System.Drawing.Point(324, 268);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 22);
@@ -54,9 +52,9 @@ namespace SolutionNorSolutionPim.UserInterface
             // 
             // gridDefaultStatisticsTop5
             // 
-            this.gridDefaultStatisticsTop5.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
-            | System.Windows.Forms.AnchorStyles.Left )
-            | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.gridDefaultStatisticsTop5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDefaultStatisticsTop5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDefaultStatisticsTop5.Location = new System.Drawing.Point(12, 12);
             this.gridDefaultStatisticsTop5.Name = "gridDefaultStatisticsTop5";
@@ -65,8 +63,8 @@ namespace SolutionNorSolutionPim.UserInterface
             // 
             // gridDefaultStatistics
             // 
-            this.gridDefaultStatistics.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
-            | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.gridDefaultStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDefaultStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDefaultStatistics.Location = new System.Drawing.Point(273, 12);
             this.gridDefaultStatistics.Name = "gridDefaultStatistics";
@@ -75,7 +73,7 @@ namespace SolutionNorSolutionPim.UserInterface
             // 
             // buttonPingTest
             // 
-            this.buttonPingTest.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.buttonPingTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPingTest.Location = new System.Drawing.Point(226, 268);
             this.buttonPingTest.Name = "buttonPingTest";
             this.buttonPingTest.Size = new System.Drawing.Size(92, 22);
@@ -96,8 +94,8 @@ namespace SolutionNorSolutionPim.UserInterface
             this.Controls.Add(this.gridDefaultStatisticsTop5);
             this.Name = "Statistics";
             this.Text = "Statistics";
-            ( ( System.ComponentModel.ISupportInitialize ) ( this.gridDefaultStatisticsTop5 ) ).EndInit();
-            ( ( System.ComponentModel.ISupportInitialize ) ( this.gridDefaultStatistics ) ).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDefaultStatisticsTop5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDefaultStatistics)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:20 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:51 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -58,21 +58,21 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeDefaultIssueContract contract = new CrudeDefaultIssueServiceClient().FetchByDefaultIssueId(defaultIssueId);
             ViewBag.DefaultIssueTypeRcd =
-                new SelectList( new CrudeDefaultIssueTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultIssueTypeRefServiceClient().FetchAll(),
                                 "DefaultIssueTypeRcd",
                                 "DefaultIssueTypeName",
                                 contract.DefaultIssueTypeRcd
                                 );
 
             ViewBag.DefaultIssueStatusRcd =
-                new SelectList( new CrudeDefaultIssueStatusRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultIssueStatusRefServiceClient().FetchAll(),
                                 "DefaultIssueStatusRcd",
                                 "DefaultIssueStatusName",
                                 contract.DefaultIssueStatusRcd
                                 );
 
             ViewBag.DefaultErrorId =
-                new SelectList( new CrudeDefaultErrorServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultErrorServiceClient().FetchAll(),
                                 "DefaultErrorId",
                                 "MethodName",
                                 contract.DefaultErrorId
@@ -106,33 +106,39 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultIssueCreate(System.Guid? defaultErrorId, System.Guid? defaultUserId) {
-            var contract = new CrudeDefaultIssueContract();
-            if (defaultErrorId != null) contract.DefaultErrorId = (System.Guid) defaultErrorId;
-            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
+            CrudeDefaultIssueContract contract = new CrudeDefaultIssueContract();
+            if (defaultErrorId != null) {
+                contract.DefaultErrorId = (System.Guid)defaultErrorId;
+            }
+
+            if (defaultUserId != null) {
+                contract.DefaultUserId = (System.Guid)defaultUserId;
+            }
 
             ViewBag.DefaultIssueTypeRcd =
-                new SelectList( new CrudeDefaultIssueTypeRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultIssueTypeRefServiceClient().FetchAll(),
                                 "DefaultIssueTypeRcd",
                                 "DefaultIssueTypeName",
                                 contract.DefaultIssueTypeRcd
                                 );
 
             ViewBag.DefaultIssueStatusRcd =
-                new SelectList( new CrudeDefaultIssueStatusRefServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultIssueStatusRefServiceClient().FetchAll(),
                                 "DefaultIssueStatusRcd",
                                 "DefaultIssueStatusName",
                                 contract.DefaultIssueStatusRcd
                                 );
 
             ViewBag.DefaultErrorId =
-                new SelectList( new CrudeDefaultErrorServiceClient().FetchAll(),
+                new SelectList(new CrudeDefaultErrorServiceClient().FetchAll(),
                                 "DefaultErrorId",
                                 "MethodName",
                                 contract.DefaultErrorId
                                 );
 
-            if (defaultUserId == null)
+            if (defaultUserId == null) {
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 

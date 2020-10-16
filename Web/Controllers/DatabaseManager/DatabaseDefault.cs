@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     public partial class DatabaseManager {
-        void InitSystemReferenceErrorAndIssue(
+        private void InitSystemReferenceErrorAndIssue(
             int majorNumber,
             int minorNumber
             ) {
@@ -13,7 +11,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 01, 23) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultSystemReference",
                 Description = "Default System Reference create and Test data",
                 #region script ( default_system_reference_table )
@@ -114,7 +112,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2016, 01, 01) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultIssueDrop",
                 Description = "Default and Issue Drop",
                 #region script ( default_issue, default_error, default_error_layer_ref, default_error_type_ref, default_issue_type_ref, default_issue_status_ref )
@@ -146,7 +144,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2016, 01, 01) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultIssueCreate",
                 Description = "Default and Issue Create",
                 #region script ( default_issue, default_error, default_error_layer_ref, default_error_type_ref, default_issue_type_ref, default_issue_status_ref )
@@ -282,7 +280,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2016, 01, 01) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultIssueTestData",
                 Description = "Default and Issue Test Data",
                 #region script ( default_issue_type_ref, default_issue_status_ref, default_error_layer_ref, default_error_type_ref )
@@ -354,7 +352,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             });
         }
 
-        void InitDefaultUserActivity(
+        private void InitDefaultUserActivity(
             int majorNumber,
             int minorNumber,
             out int sequence
@@ -363,7 +361,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 05) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultUserActivity",
                 Description = "Default User Activity Drop and Create Tables",
                 #region script ( default_user_activity, default_user_activity_type_ref )
@@ -403,7 +401,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 05) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultUserActivityReference",
                 Description = "Default User Activity Reference Data",
                 #region script ( default_user_activity_type_ref )
@@ -428,14 +426,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             });
         }
 
-        void InitDefaultSystemSetting(
+        private void InitDefaultSystemSetting(
             int majorNumber,
             int minorNumber,
             ref int sequence
             ) {
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 06) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultSystemSetting",
                 Description = "DefaultSystemSetting Drop and Create",
                 #region script ( default_system_setting, default_system_setting_ref )
@@ -476,7 +474,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 06) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultSystemSettingReference",
                 Description = "Default System Setting Reference",
                 #region script ( default_system_setting, default_system_setting_ref )
@@ -500,14 +498,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             });
         }
 
-        void InitDefaultChangeLog(
+        private void InitDefaultChangeLog(
             int majorNumber,
             int minorNumber,
             ref int sequence
             ) {
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 06) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultChangeLog",
                 Description = "DefaultChangeLog Drop and Create",
                 #region script ( default_change_log, default_change_log_type_ref )
@@ -565,7 +563,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 06) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultChangeLog",
                 Description = "DefaultChangeLog Reference ",
                 #region script ( default_change_log_type_ref )
@@ -586,15 +584,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             });
         }
 
-        void InitDefaultRule(
+        private void InitDefaultRule(
             int majorNumber,
             int minorNumber,
             ref int sequence
-            )
-        {
+            ) {
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 06) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultRule",
                 Description = "DefaultRule Drop and Create",
                 #region script ( default_rule, default_rule_type_ref )
@@ -635,7 +632,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 06) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultRule",
                 Description = "DefaultRule Reference",
                 #region script ( default_rule_type_ref )
@@ -650,15 +647,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             });
         }
 
-        void InitDefaultPerformanceIssue(
+        private void InitDefaultPerformanceIssue(
             int majorNumber,
             int minorNumber,
             ref int sequence
-            )
-        {
+            ) {
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 06) },
-                ScriptNumber = this.scriptNumber++,
+                ScriptNumber = scriptNumber++,
                 Name = "DefaultPerformanceIssue",
                 Description = "DefaultPerformanceIssue Drop and Create",
                 #region script ( default_performance_issue, default_performance_time, default_performance_time_rollup, default_resource_measurement, default_test_run, default_test_run_result_ref, default_test )

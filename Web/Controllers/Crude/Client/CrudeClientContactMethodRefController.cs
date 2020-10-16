@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 2:56:01 PM
-  From Machine: DESKTOP-517I8BU
+  Generated Date: 10/16/2020 5:53:34 PM
+  From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeClientContactMethodRefDetails(System.String clientContactMethodRcd) {
+        public ActionResult CrudeClientContactMethodRefDetails(string clientContactMethodRcd) {
 
             return View(
                 "~/Views/Crude/Client/CrudeClientContactMethodRef/CrudeClientContactMethodRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeClientContactMethodRefEdit(
-            System.String clientContactMethodRcd
+            string clientContactMethodRcd
             ) {
 
             CrudeClientContactMethodRefContract contract = new CrudeClientContactMethodRefServiceClient().FetchByClientContactMethodRcd(clientContactMethodRcd);
@@ -76,11 +76,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeClientContactMethodRefCreate(System.Guid? userId) {
-            var contract = new CrudeClientContactMethodRefContract();
-            if (userId != null) contract.UserId = (System.Guid) userId;
+            CrudeClientContactMethodRefContract contract = new CrudeClientContactMethodRefContract();
+            if (userId != null) {
+                contract.UserId = (System.Guid)userId;
+            }
 
-            if (userId == null)
+            if (userId == null) {
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
+            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -111,7 +114,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeClientContactMethodRefDelete(
-            System.String clientContactMethodRcd
+            string clientContactMethodRcd
             ) {
             new CrudeClientContactMethodRefServiceClient().Delete(clientContactMethodRcd);
 
