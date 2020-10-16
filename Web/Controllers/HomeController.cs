@@ -13,6 +13,10 @@ namespace XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc.Controllers {
             return View ();
         }
 
+        public ActionResult Applications () {
+            return View ();
+        }
+
         public ActionResult About () {
             ViewBag.Message = "Your application description page.";
 
@@ -20,7 +24,6 @@ namespace XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc.Controllers {
         }
 
         public ActionResult Splash () {
-            // Redirect ( "https://NorSolutionPim.azurewebsites.net/Documentation/Splash.html" );
             Response.Redirect ( "~/Documentation/Splash2.html", true );
 
             return null;

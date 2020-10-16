@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/15/2020 6:22:32 PM
+  Generated Date: 10/16/2020 4:19:51 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
@@ -12,8 +12,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IFinancialOrderSearchService")]
-    public interface IFinancialOrderSearchService
-    {
+    public interface IFinancialOrderSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IFinancialOrderSearchService/GetFinancialOrder", ReplyAction = "http://tempuri.org/IFinancialOrderSearchService/GetFinancialOrderResponse")]
         List<GetFinancialOrderContract> GetFinancialOrder(System.Guid clientId, System.Guid financialCurrencyId, System.Guid locationAddressId, string financialOrderSourceRcd, System.Guid userId, System.Guid financialOrderId);
     }
@@ -43,8 +42,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<GetFinancialOrderContract> GetFinancialOrder(System.Guid clientId, System.Guid financialCurrencyId, System.Guid locationAddressId, string financialOrderSourceRcd, System.Guid userId, System.Guid financialOrderId)
-        {
+        public List<GetFinancialOrderContract> GetFinancialOrder(System.Guid clientId, System.Guid financialCurrencyId, System.Guid locationAddressId, string financialOrderSourceRcd, System.Guid userId, System.Guid financialOrderId) {
             return base.Channel.GetFinancialOrder(clientId, financialCurrencyId, locationAddressId, financialOrderSourceRcd, userId, financialOrderId);
         }
     }

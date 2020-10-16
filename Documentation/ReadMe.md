@@ -3,6 +3,8 @@
 ## Todo
  - Applications Tile needs a better Windows install page
  - What about the *Web* version, how do i distinguish it from the Hybrid
+ - Format all code
+ - DashboardInfo frame
 
 NorPim is a Product Information Management System written for enterprise cloud environments with user interfaces tailored for PC, Web and Mobile. It is centered around Microsoft products like SQL Server, Azure, Visual Studio, C# and TypeScript.
 

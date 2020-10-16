@@ -1,7 +1,7 @@
 rem SQL2X Generated code based on a SQL Server Schema
 rem SQL2X Version: 1.0
 rem http://sql2x.org/
-rem Generated Date: 10/15/2020 6:14:05 PM
+rem Generated Date: 10/16/2020 4:11:05 AM
 rem From Machine: DESKTOP-742U247
 rem Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.ExecuteDatabaseManager
 cd C:\SQL2XProjects\SolutionNorSolutionPim\DatabaseManager

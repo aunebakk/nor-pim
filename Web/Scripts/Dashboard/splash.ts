@@ -1,13 +1,4 @@
-﻿//
-// refs
-//
-// http://www.typescriptlang.org/Handbook#basic-types-array
-// https://mapicons.mapsmarker.com/
-// https://www.iconfinder.com/search/?q=airline
-// https://stackoverflow.com/questions/20823767/welcome-screen-before-website-loads-click-to-enter-splash-screen
-//
-
-// client on load
+﻿// client on load
 window.onload = () => {
     var contentElement: any = document.getElementById("content");
     var splash = new Splash(contentElement);
@@ -43,17 +34,6 @@ class Splash {
         this.resizeCanvas();
 
         this.drawNormal();
-
-        //// resize
-        //let thisThat = this;
-        //window.addEventListener('resize', function () {
-        //    // resize canvas
-        //    // get client elements
-        //    let canvas: HTMLCanvasElement = (<HTMLCanvasElement>document.getElementById('myCanvas'));
-
-        //    canvas.width = window.innerWidth;
-        //    canvas.height = window.innerHeight;
-        //}, false);
     }
 
     // draw tiles in normal size
@@ -62,12 +42,6 @@ class Splash {
         // get client elements
         let canvas: HTMLCanvasElement = (<HTMLCanvasElement>document.getElementById('myCanvas'));
         let context: CanvasRenderingContext2D = canvas.getContext('2d');
-
-        // clear canvas
-        //context.beginPath();
-        //context.fillStyle = '#888888';
-        //context.fillRect(0, 0, canvas.width, canvas.height);
-        //context.stroke();
 
         if (!sessionStorage.getItem('splashShown') || sessionStorage.getItem('splashShown') === null) {
 
@@ -126,13 +100,6 @@ class Splash {
                 Splash.drawLogo(size);
             }, 10
             );
-        } //else {
-        //    setTimeout(function (): void {
-        //        // go to norpim desktop
-        //        window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
-        //        //window.location.href = '/home/index';
-        //    }, 500
-        //    );
-        //}
+        }
     }
 }

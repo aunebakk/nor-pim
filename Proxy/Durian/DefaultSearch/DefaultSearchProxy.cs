@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/15/2020 6:22:44 PM
+  Generated Date: 10/16/2020 4:20:03 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
@@ -12,8 +12,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IDefaultSearchService")]
-    public interface IDefaultSearchService
-    {
+    public interface IDefaultSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IDefaultSearchService/DefaultTestOverview", ReplyAction = "http://tempuri.org/IDefaultSearchService/DefaultTestOverviewResponse")]
         List<DefaultTestOverviewContract> DefaultTestOverview(string commandName);
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IDefaultSearchService/DashboardCounts", ReplyAction = "http://tempuri.org/IDefaultSearchService/DashboardCountsResponse")]
@@ -83,108 +82,87 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<DefaultTestOverviewContract> DefaultTestOverview(string commandName)
-        {
+        public List<DefaultTestOverviewContract> DefaultTestOverview(string commandName) {
             return base.Channel.DefaultTestOverview(commandName);
         }
 
-        public List<DashboardCountsContract> DashboardCounts(string dashboardLayoutRcd)
-        {
+        public List<DashboardCountsContract> DashboardCounts(string dashboardLayoutRcd) {
             return base.Channel.DashboardCounts(dashboardLayoutRcd);
         }
 
-        public List<DefaultPerformanceIssueFetchWithFilterContract> DefaultPerformanceIssueFetchWithFilter(string commandName)
-        {
+        public List<DefaultPerformanceIssueFetchWithFilterContract> DefaultPerformanceIssueFetchWithFilter(string commandName) {
             return base.Channel.DefaultPerformanceIssueFetchWithFilter(commandName);
         }
 
-        public List<DefaultIssueWithFilterContract> DefaultIssueWithFilter(string defaultIssueTypeRcd, string defaultIssueStatusRcd)
-        {
+        public List<DefaultIssueWithFilterContract> DefaultIssueWithFilter(string defaultIssueTypeRcd, string defaultIssueStatusRcd) {
             return base.Channel.DefaultIssueWithFilter(defaultIssueTypeRcd, defaultIssueStatusRcd);
         }
 
-        public List<DefaultErrorOverviewContract> DefaultErrorOverview()
-        {
+        public List<DefaultErrorOverviewContract> DefaultErrorOverview() {
             return base.Channel.DefaultErrorOverview();
         }
 
-        public List<DefaultPerformanceIndicatorsContract> DefaultPerformanceIndicators()
-        {
+        public List<DefaultPerformanceIndicatorsContract> DefaultPerformanceIndicators() {
             return base.Channel.DefaultPerformanceIndicators();
         }
 
-        public List<DefaultStatisticsContract> DefaultStatistics()
-        {
+        public List<DefaultStatisticsContract> DefaultStatistics() {
             return base.Channel.DefaultStatistics();
         }
 
-        public List<DefaultUserActivityByHourContract> DefaultUserActivityByHour()
-        {
+        public List<DefaultUserActivityByHourContract> DefaultUserActivityByHour() {
             return base.Channel.DefaultUserActivityByHour();
         }
 
-        public List<DefaultStatisticsByMonthContract> DefaultStatisticsByMonth()
-        {
+        public List<DefaultStatisticsByMonthContract> DefaultStatisticsByMonth() {
             return base.Channel.DefaultStatisticsByMonth();
         }
 
-        public List<DefaultStatisticsTop5Contract> DefaultStatisticsTop5()
-        {
+        public List<DefaultStatisticsTop5Contract> DefaultStatisticsTop5() {
             return base.Channel.DefaultStatisticsTop5();
         }
 
-        public List<DefaultPerformanceTimesContract> DefaultPerformanceTimes(string commandName)
-        {
+        public List<DefaultPerformanceTimesContract> DefaultPerformanceTimes(string commandName) {
             return base.Channel.DefaultPerformanceTimes(commandName);
         }
 
-        public List<DefaultPerformanceTimeCommandsContract> DefaultPerformanceTimeCommands()
-        {
+        public List<DefaultPerformanceTimeCommandsContract> DefaultPerformanceTimeCommands() {
             return base.Channel.DefaultPerformanceTimeCommands();
         }
 
-        public List<DefaultUserActivityRecentContract> DefaultUserActivityRecent(System.Guid defaultUserId)
-        {
+        public List<DefaultUserActivityRecentContract> DefaultUserActivityRecent(System.Guid defaultUserId) {
             return base.Channel.DefaultUserActivityRecent(defaultUserId);
         }
 
-        public List<DefaultUserActivityOnAddressContract> DefaultUserActivityOnAddress(string originatingAddress)
-        {
+        public List<DefaultUserActivityOnAddressContract> DefaultUserActivityOnAddress(string originatingAddress) {
             return base.Channel.DefaultUserActivityOnAddress(originatingAddress);
         }
 
-        public List<DefaultUserActivityGroupedContract> DefaultUserActivityGrouped()
-        {
+        public List<DefaultUserActivityGroupedContract> DefaultUserActivityGrouped() {
             return base.Channel.DefaultUserActivityGrouped();
         }
 
-        public List<DefaultUserActivityGroupedByAddressContract> DefaultUserActivityGroupedByAddress()
-        {
+        public List<DefaultUserActivityGroupedByAddressContract> DefaultUserActivityGroupedByAddress() {
             return base.Channel.DefaultUserActivityGroupedByAddress();
         }
 
-        public List<DefaultUserListContract> DefaultUserList()
-        {
+        public List<DefaultUserListContract> DefaultUserList() {
             return base.Channel.DefaultUserList();
         }
 
-        public List<DefaultUserListForDashboardContract> DefaultUserListForDashboard()
-        {
+        public List<DefaultUserListForDashboardContract> DefaultUserListForDashboard() {
             return base.Channel.DefaultUserListForDashboard();
         }
 
-        public List<GetDefaultChangeLogContract> GetDefaultChangeLog(string defaultChangeName, string defaultChangeLogTypeRcd, System.Guid defaultIssueId, System.Guid defaultChangeLogId)
-        {
+        public List<GetDefaultChangeLogContract> GetDefaultChangeLog(string defaultChangeName, string defaultChangeLogTypeRcd, System.Guid defaultIssueId, System.Guid defaultChangeLogId) {
             return base.Channel.GetDefaultChangeLog(defaultChangeName, defaultChangeLogTypeRcd, defaultIssueId, defaultChangeLogId);
         }
 
-        public List<DefaultResourceStatisticsContract> DefaultResourceStatistics()
-        {
+        public List<DefaultResourceStatisticsContract> DefaultResourceStatistics() {
             return base.Channel.DefaultResourceStatistics();
         }
 
-        public List<DefaultResourceDatabaseStatisticsContract> DefaultResourceDatabaseStatistics()
-        {
+        public List<DefaultResourceDatabaseStatisticsContract> DefaultResourceDatabaseStatistics() {
             return base.Channel.DefaultResourceDatabaseStatistics();
         }
     }

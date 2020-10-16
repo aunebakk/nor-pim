@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/15/2020 6:24:28 PM
+  Generated Date: 10/16/2020 4:21:48 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
@@ -12,8 +12,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICategorySearchService")]
-    public interface ICategorySearchService
-    {
+    public interface ICategorySearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/ICategorySearchService/CategoryTree", ReplyAction = "http://tempuri.org/ICategorySearchService/CategoryTreeResponse")]
         List<CategoryTreeContract> CategoryTree();
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/ICategorySearchService/CategoryFind", ReplyAction = "http://tempuri.org/ICategorySearchService/CategoryFindResponse")]
@@ -45,13 +44,11 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 base(binding, remoteAddress) {
         }
 
-        public List<CategoryTreeContract> CategoryTree()
-        {
+        public List<CategoryTreeContract> CategoryTree() {
             return base.Channel.CategoryTree();
         }
 
-        public List<CategoryFindContract> CategoryFind(string findWhat)
-        {
+        public List<CategoryFindContract> CategoryFind(string findWhat) {
             return base.Channel.CategoryFind(findWhat);
         }
     }

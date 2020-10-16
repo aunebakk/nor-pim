@@ -17,16 +17,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
     
     [ServiceContract()]
-    public partial interface IFinancialOrderSearchService
-    {
+    public partial interface IFinancialOrderSearchService {
         [OperationContract()]
         List<GetFinancialOrderContract> GetFinancialOrder(Guid clientId, Guid financialCurrencyId, Guid locationAddressId, string financialOrderSourceRcd, Guid userId, Guid financialOrderId);
     }
 
-    public partial class FinancialOrderSearchService : IFinancialOrderSearchService
-    {
-        public List<GetFinancialOrderContract> GetFinancialOrder(Guid clientId, Guid financialCurrencyId, Guid locationAddressId, string financialOrderSourceRcd, Guid userId, Guid financialOrderId)
-        {
+    public partial class FinancialOrderSearchService : IFinancialOrderSearchService {
+        public List<GetFinancialOrderContract> GetFinancialOrder(Guid clientId, Guid financialCurrencyId, Guid locationAddressId, string financialOrderSourceRcd, Guid userId, Guid financialOrderId) {
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.FinancialOrderSearch();
             var businessLogicLayer = new GetFinancialOrder();
             return businessLogicLayer.GetFinancialOrderFromDal(dataAccessLayer.GetFinancialOrder(clientId, financialCurrencyId, locationAddressId, financialOrderSourceRcd, userId, financialOrderId));

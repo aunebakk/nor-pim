@@ -1,11 +1,3 @@
-//
-// refs
-//
-// http://www.typescriptlang.org/Handbook#basic-types-array
-// https://mapicons.mapsmarker.com/
-// https://www.iconfinder.com/search/?q=airline
-// https://stackoverflow.com/questions/20823767/welcome-screen-before-website-loads-click-to-enter-splash-screen
-//
 // client on load
 window.onload = function () {
     var contentElement = document.getElementById("content");
@@ -31,26 +23,12 @@ var Splash = /** @class */ (function () {
         // resize canvas
         this.resizeCanvas();
         this.drawNormal();
-        //// resize
-        //let thisThat = this;
-        //window.addEventListener('resize', function () {
-        //    // resize canvas
-        //    // get client elements
-        //    let canvas: HTMLCanvasElement = (<HTMLCanvasElement>document.getElementById('myCanvas'));
-        //    canvas.width = window.innerWidth;
-        //    canvas.height = window.innerHeight;
-        //}, false);
     };
     // draw tiles in normal size
     Splash.prototype.drawNormal = function () {
         // get client elements
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
-        // clear canvas
-        //context.beginPath();
-        //context.fillStyle = '#888888';
-        //context.fillRect(0, 0, canvas.width, canvas.height);
-        //context.stroke();
         if (!sessionStorage.getItem('splashShown') || sessionStorage.getItem('splashShown') === null) {
             setTimeout(function () {
                 Splash.drawLogo(100);
@@ -86,14 +64,7 @@ var Splash = /** @class */ (function () {
             timer = setTimeout(function () {
                 Splash.drawLogo(size);
             }, 10);
-        } //else {
-        //    setTimeout(function (): void {
-        //        // go to norpim desktop
-        //        window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
-        //        //window.location.href = '/home/index';
-        //    }, 500
-        //    );
-        //}
+        }
     };
     return Splash;
 }());
