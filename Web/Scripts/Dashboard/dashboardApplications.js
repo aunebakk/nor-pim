@@ -311,7 +311,7 @@ var DashboardFirstApplications;
             else {
                 context.setLineDash([]);
             }
-            context.rect(this.relativeIconLeft(), this.relativeIconTop() - 25, this.relativeIconWidth() + 15, this.relativeIconHeight() + 25);
+            context.rect(this.relativeIconLeft() - 7, this.relativeIconTop() - 27, this.relativeIconWidth() + 27, this.relativeIconHeight() + 30);
             context.stroke();
         };
         // clear frame
