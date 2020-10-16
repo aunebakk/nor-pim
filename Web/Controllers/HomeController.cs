@@ -36,18 +36,6 @@ namespace XXPrototypeDotNetFrameworkWebAppMvcCrudeAspMvc.Controllers {
         public ActionResult CreateIssue () {
             Logging.ActionLog ( Request , "Create Issue" );
 
-            // save result of call
-            //new DefaultTestServiceClient ().
-            //    AddTestRun (
-            //        "SolutionNorPim" , "PIM" , "ASPMenu" ,
-            //        Request.UrlReferrer.AbsoluteUri ,
-            //        DateTime.UtcNow , DateTime.UtcNow ,
-            //        1 ,
-            //        DefaultTestRunResultRef.OK ,
-            //        string.Empty ,
-            //        Logging.UserId ( Request , ViewBag )
-            //    );
-
             return RedirectToAction (
                 "DefaultIssueCreateWithUrl" ,
                 "DefaultIssue" ,

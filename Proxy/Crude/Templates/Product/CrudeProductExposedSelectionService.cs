@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 1:21:11 PM
-  From Machine: DESKTOP-742U247
+  Generated Date: 10/16/2020 2:55:24 PM
+  From Machine: DESKTOP-517I8BU
   Filename: ProductExposedSelection.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: CrudeProxy

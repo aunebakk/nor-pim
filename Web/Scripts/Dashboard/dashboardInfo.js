@@ -51,16 +51,9 @@ var DashboardInfo;
             lastTile = new Tile('General Statistics', 40, line, '../DefaultStatisticsTop5/DefaultStatisticsTop5Index', 15, Tile.tileFontSize() + 30, 15, 2, 7);
             ProductTiles.tiles.push(lastTile);
             line++;
-            //lastTile = new Tile('System Information', 40, line, '../Home/SystemInformation',
-            //    15, Tile.tileFontSize() + 30, 15, 2, 7);
-            //ProductTiles.tiles.push(lastTile); line++;
             lastTile = new Tile('Dashboard Counts', 40, line, '../DashboardCounts/DashboardCountsIndex', 15, Tile.tileFontSize() + 30, 15, 2, 7);
             ProductTiles.tiles.push(lastTile);
             line++;
-            //lastTile = new Tile('Change Log', 40, line, '../GetDefaultChangeLog/GetDefaultChangeLogIndex',
-            //    15, Tile.tileFontSize() + 30, 15, 2, 7);
-            //ProductTiles.tiles.push(lastTile);
-            //line++;
             lastTile = new Tile('Issues', 40, line, '../DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex', 15, Tile.tileFontSize() + 30, 15, 2, 7);
             ProductTiles.tiles.push(lastTile);
             line++;
@@ -70,16 +63,6 @@ var DashboardInfo;
                 '/' + 'DefaultStatisticsIndex', 15, Tile.tileFontSize() + 30, 15, 2, 7);
             ProductTiles.tiles.push(lastTile);
             line++;
-            // lastTile = new Tile('Activity Chart', 40, line, 'http://SolutionNorPim.azurewebsites.net/' +
-            //    'Chart' +
-            //    '/' + 'UserActivityIndex',
-            //    15, Tile.tileFontSize() + 30, 15, 2, 7);
-            // ProductTiles.tiles.push(lastTile); line++;
-            //lastTile = new Tile('User Activity', 40, line, '../' +
-            //    'Chart' +
-            //    '/' + 'UserActivityIndex',
-            //    15, Tile.tileFontSize() + 30, 15, 2, 7);
-            //ProductTiles.tiles.push(lastTile); line++;
             lastTile = new Tile('User Activity Grouped', 40, line, '../' +
                 'DefaultUserActivityGroupedLive' +
                 '/' + 'DefaultUserActivityGroupedLiveIndex', 15, Tile.tileFontSize() + 30, 15, 2, 7);
@@ -95,12 +78,6 @@ var DashboardInfo;
                 '/' + 'DefaultUserActivityByHourIndex', 15, Tile.tileFontSize() + 30, 15, 2, 7);
             ProductTiles.tiles.push(lastTile);
             line++;
-            // test
-            //lastTile = new Tile('Performance', 40, line, '../' +
-            //    'DefaultPerformanceIssue' +
-            //    '/' + 'DefaultPerformanceIssueIndex',
-            //    15, Tile.tileFontSize() + 30, 15, 2, 7);
-            //ProductTiles.tiles.push(lastTile); line++;
             lastTile = new Tile('Performance Indicators', 40, line, '../' +
                 'DefaultPerformanceIndicators' +
                 '/' + 'DefaultPerformanceIndicatorsIndex', 15, Tile.tileFontSize() + 30, 15, 2, 7);
@@ -111,16 +88,6 @@ var DashboardInfo;
                 '/' + 'Splash.html', 15, Tile.tileFontSize() + 30, 15, 2, 7);
             ProductTiles.tiles.push(lastTile);
             line++;
-            //lastTile = new Tile('Error Log', 40, line, '../' +
-            //    'DefaultErrorOverviewLive' +
-            //    '/' + 'DefaultErrorOverviewLiveIndex',
-            //    15, Tile.tileFontSize() + 30, 15, 2, 7);
-            //ProductTiles.tiles.push(lastTile); line++;
-            //lastTile = new Tile('Error Rule', 40, line, '../' +
-            //    'CrudeDefaultRule' +
-            //    '/' + 'CrudeDefaultRuleIndex',
-            //    15, Tile.tileFontSize() + 30, 15, 2, 7);
-            //ProductTiles.tiles.push(lastTile); line++;
             // resize canvas to last tile
             canvas.height = lastTile.tileTop + lastTile.tileHeight + 15;
             // draw chapter index
@@ -182,18 +149,6 @@ var DashboardInfo;
                     // check whole tile area
                     if (tile.hitTest(event.offsetX, event.offsetY)) {
                         if (tile.url != '') {
-                            //if (event.offsetX > tile.editLink.linkLeft) {
-                            //    // indicate that the tile link was clicked
-                            //    tile.editLink.frame(tile.lineWidth, true);
-                            //    // reset the color after a short delay
-                            //    var resetLink: Link = tile.editLink;
-                            //    var lineWidth: number = tile.lineWidth;
-                            //    setTimeout(function () {
-                            //        resetLink.frame(5, false);
-                            //    }, 1000);
-                            //    // go to edits
-                            //    window.location.href = tile.editLink.linkUrl;
-                            //} else 
                             if (event.offsetX > tile.detailLink.linkLeft) {
                                 // indicate that the tile link was clicked
                                 tile.detailLink.frame(tile.lineWidth, true);
@@ -209,6 +164,7 @@ var DashboardInfo;
                             else {
                                 // indicate that the tile link was clicked
                                 tile.detailLink.frame(tile.lineWidth, true);
+                                tile.frame(tile.backgroundColor, 5, false);
                                 // reset the color after a short delay
                                 var resetLink = tile.detailLink;
                                 var lineWidth = tile.lineWidth;
@@ -233,7 +189,7 @@ var DashboardInfo;
                     }
                     else {
                         // remove if not hit
-                        tile.frame(tile.backgroundColor, 5, false);
+                        // tile.frame(tile.backgroundColor, 5, false);
                     }
                 }
             }
@@ -303,7 +259,6 @@ var DashboardInfo;
     }());
     // represents everything needed inside one tile
     var Tile = /** @class */ (function () {
-        //public editLink: Link;
         function Tile(name, tileLeft, tileTop, url, tileCount, tileHeight, tileBorder, textReposLeft, tileSpaceVertical) {
             this.name = name;
             this.tileLeft = tileLeft;
@@ -318,7 +273,6 @@ var DashboardInfo;
             this.textColor = 'black';
             this.lineWidth = 1;
             this.textLeft = 0;
-            //this.editLink = new Link();
             this.detailLink = new Link();
             this.tileTop = tileSpaceVertical + ((this.tileHeight + tileSpaceVertical) * this.tileTop);
             this.textLeft = this.tileLeft + this.textReposLeft + (this.tileBorder * 1.5);
@@ -345,12 +299,6 @@ var DashboardInfo;
             // fixed stuff
             this.tileFrame(context);
             // gradient box
-            /*
-            let boxLeft: number = this.tileLeft + this.tileBorder;
-            let boxTop: number = this.tileTop + this.tileBorder;
-            let boxWidth: number = this.tileWidth() - (this.tileBorder * 2);
-            let boxHeight: number = this.tileHeight - (this.tileBorder * 2);
-            */
             var boxLeft = this.tileLeft;
             var boxTop = this.tileTop;
             var boxWidth = this.tileWidth();
@@ -379,11 +327,6 @@ var DashboardInfo;
             context.fillRect(boxLeft, boxTop, boxWidth, boxHeight);
             context.stroke();
             if (this.url != '') {
-                //// edit link
-                //this.editLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 1);
-                //this.editLink.linkUrl = this.url;
-                //this.editLink.draw(this.tileFont(), 'E', this.textTop(this.name));
-                //context.stroke();
                 // detail link
                 this.detailLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 1);
                 this.detailLink.linkUrl = this.url;
