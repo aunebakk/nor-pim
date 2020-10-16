@@ -518,10 +518,6 @@ module DashboardFirst {
                 this.relativeIconTop() - 23 * this.sizeFactor,
                 this.relativeIconWidth() + 24 * this.sizeFactor,
                 this.relativeIconHeight() + 26 * this.sizeFactor
-                //this.left + (this.offset * this.sizeFactor) + 5,
-                //this.top * this.sizeFactor + 5,
-                //this.width() * this.sizeFactor - 10,
-                //this.height() * this.sizeFactor - 10
             );
 
             context.stroke();
