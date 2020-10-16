@@ -84,7 +84,7 @@ var DashboardFirst;
                 if (this.imageElement.length !== 0) {
                     var image = document.getElementById(this.imageElement);
                     if (image !== null) {
-                        context.drawImage(image, this.relativeIconLeft(), this.relativeIconTop(), this.relativeIconWidth(), this.relativeIconHeight());
+                        context.drawImage(image, this.relativeIconLeft(), this.relativeIconTop() - 10, this.relativeIconWidth(), this.relativeIconHeight());
                     }
                 }
             }
@@ -311,7 +311,7 @@ var DashboardFirst;
             else {
                 context.setLineDash([]);
             }
-            context.rect(this.left + (this.offset * this.sizeFactor) + 5, this.top * this.sizeFactor + 5, this.width() * this.sizeFactor - 10, this.height() * this.sizeFactor - 10);
+            context.rect(this.relativeIconLeft(), this.relativeIconTop() - 25, this.relativeIconWidth() + 15, this.relativeIconHeight() + 25);
             context.stroke();
         };
         // clear frame
