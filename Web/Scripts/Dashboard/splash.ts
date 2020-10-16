@@ -43,7 +43,7 @@ class Splash {
         let canvas: HTMLCanvasElement = (<HTMLCanvasElement>document.getElementById('myCanvas'));
         let context: CanvasRenderingContext2D = canvas.getContext('2d');
 
-        if (!sessionStorage.getItem('splashShown') || sessionStorage.getItem('splashShown') === null) {
+        //if (!sessionStorage.getItem('splashShown') || sessionStorage.getItem('splashShown') === null) {
 
             setTimeout(function (): void {
                 Splash.drawLogo(100);
@@ -55,9 +55,9 @@ class Splash {
                 }, 2000
             );
 
-        } else {
-            window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
-        }
+        //} else {
+        //    window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
+        //}
 
         sessionStorage.setItem('splashShown', "true");
     }

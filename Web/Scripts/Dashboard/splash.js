@@ -29,17 +29,16 @@ var Splash = /** @class */ (function () {
         // get client elements
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
-        if (!sessionStorage.getItem('splashShown') || sessionStorage.getItem('splashShown') === null) {
-            setTimeout(function () {
-                Splash.drawLogo(100);
-            }, 5);
-            setTimeout(function () {
-                window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
-            }, 2000);
-        }
-        else {
+        //if (!sessionStorage.getItem('splashShown') || sessionStorage.getItem('splashShown') === null) {
+        setTimeout(function () {
+            Splash.drawLogo(100);
+        }, 5);
+        setTimeout(function () {
             window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
-        }
+        }, 2000);
+        //} else {
+        //    window.location.href = 'http://NorSolutionPim.azurewebsites.net/home/index';
+        //}
         sessionStorage.setItem('splashShown', "true");
     };
     Splash.drawLogo = function (size) {

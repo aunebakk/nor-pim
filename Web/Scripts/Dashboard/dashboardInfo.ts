@@ -140,6 +140,12 @@ module DashboardInfo {
                 15, Tile.tileFontSize() + 30, 15, 2, 7);
             ProductTiles.tiles.push(lastTile); line++;
 
+            lastTile = new Tile('Splash Screen', 40, line, '../' +
+                'Documentation' +
+                '/' + 'Splash.html',
+                15, Tile.tileFontSize() + 30, 15, 2, 7);
+            ProductTiles.tiles.push(lastTile); line++;
+
             //lastTile = new Tile('Error Log', 40, line, '../' +
             //    'DefaultErrorOverviewLive' +
             //    '/' + 'DefaultErrorOverviewLiveIndex',
