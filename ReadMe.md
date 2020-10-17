@@ -243,4 +243,4 @@ NorPim is in large part made by an Visual Studio Extension called SQL2X. Metadat
 
 Copyright (c) NorGate. All rights reserved.
 
-Licensed under the [MIT](.\Documentation\license.txt) license.
+Licensed under the [MIT](https://github.com/aunebakk/nor-pim/blob/master/Documentation/license.txt) license.
