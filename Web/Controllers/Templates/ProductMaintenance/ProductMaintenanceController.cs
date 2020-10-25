@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:12 PM
+  Generated Date: 10/25/2020 9:25:21 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.ControllerBeginning
 */
@@ -29,10 +29,10 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             ViewBag.ProductId = productId;
 
-            ProductMaintenanceContract productContract = new ProductMaintenanceContract {
-                Product =
-                new CrudeProductServiceClient().FetchByProductId(productId)
-            };
+            var productContract = new ProductMaintenanceContract();
+
+            productContract.Product =
+                new CrudeProductServiceClient().FetchByProductId(productId);
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(productContract.Product.UserId).DefaultUserName;
@@ -63,20 +63,13 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpGet]
         public ActionResult ProductMaintenanceCreate(System.Guid? productBecameId, System.Guid? userId) {
-            ProductMaintenanceContract productContract = new ProductMaintenanceContract {
-                Product = new CrudeProductContract()
-            };
-            if (productBecameId != null) {
-                productContract.Product.ProductBecameId = (System.Guid)productBecameId;
-            }
+            var productContract = new ProductMaintenanceContract();
+            productContract.Product = new CrudeProductContract();
+            if (productBecameId != null) productContract.Product.ProductBecameId = (System.Guid) productBecameId;
+            if (userId != null) productContract.Product.UserId = (System.Guid) userId;
 
-            if (userId != null) {
-                productContract.Product.UserId = (System.Guid)userId;
-            }
-
-            if (userId == null) {
+            if (userId == null)
                 productContract.Product.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(productContract.Product.UserId).DefaultUserName;

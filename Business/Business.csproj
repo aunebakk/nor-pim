@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8D8C0C6B-6AB4-43D8-9091-5DC1EA3FC985}</ProjectGuid>
+    <ProjectGuid>{0B720BBF-9894-4BC0-96A7-32DFEEC04B6C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -189,7 +189,6 @@
     <Compile Include="Cart\CartProductSearchService.cs" />
     <Compile Include="Cart\CartProductService.cs" />
     <Compile Include="Cart\CartSearchService.cs" />
-    <Compile Include="Cart\FinancialOrderSearchService.cs" />
     <Compile Include="Category\CategorySearchService.cs" />
     <Compile Include="Client\ClientSearchService.cs" />
     <Compile Include="Crude\Templates\Cart\CrudeCartProductPriceService.cs" />
@@ -301,7 +300,6 @@
     <Compile Include="Durian\DefaultSearch\DefaultUserList.cs" />
     <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboard.cs" />
     <Compile Include="Durian\DefaultSearch\GetDefaultChangeLog.cs" />
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrder.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilter.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilter.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilter.cs" />
@@ -458,11 +456,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{5d96244b-4ecb-4308-bfdb-50439b775519}</Project>
+      <Project>{dbf93cbd-1423-435f-8528-100e848c94d1}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{37a1d76f-f32b-4790-857e-6e393f1fe5bb}</Project>
+      <Project>{ee658144-5a47-436c-abc3-d65176ef8abc}</Project>
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>

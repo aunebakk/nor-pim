@@ -1,18 +1,18 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class DefaultStatisticsDurian {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.DataGridView dataGridViewDefaultStatistics;
-
+        
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+           if (disposing && (components != null)) {
+               components.Dispose();
+           }
+           base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewDefaultStatistics = new System.Windows.Forms.DataGridView();

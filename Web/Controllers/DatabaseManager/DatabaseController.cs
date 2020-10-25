@@ -15,6 +15,7 @@ using Microsoft.Rest;
 using Microsoft.Rest.Azure.Authentication;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -108,10 +109,10 @@ select 'Created database: " + databaseName + @"'
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public static DataSet GetDataSet(string connectionString, string sql) {
             try {
-                SqlConnection connection = new SqlConnection(connectionString.Replace(@"\\", @"\"));
-                SqlCommand command = new SqlCommand(sql, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataSet dataSet = new DataSet();
+                var connection = new SqlConnection(connectionString.Replace(@"\\", @"\"));
+                var command = new SqlCommand(sql, connection);
+                var adapter = new SqlDataAdapter(command);
+                var dataSet = new DataSet();
                 adapter.Fill(dataSet);
 
                 return dataSet;
@@ -166,9 +167,8 @@ select 'Created database: " + databaseName + @"'
 
                 ServiceClientCredentials serviceCreds = Task.Run(() => ApplicationTokenProvider.LoginSilentAsync(domain: tenantId, clientId: clientId, secret: secret)).Result;
 
-                sqlClient = new SqlManagementClient(serviceCreds) {
-                    SubscriptionId = subscriptionId
-                };
+                sqlClient = new SqlManagementClient(serviceCreds);
+                sqlClient.SubscriptionId = subscriptionId;
             } catch (Exception ex) {
                 if (ex != null) { }
                 throw new Exception(message: $"Failed to get Azure Service Principal: {ex.Message}");
@@ -188,7 +188,7 @@ select 'Created database: " + databaseName + @"'
             } else {
                 SqlManagementClient sqlClient = AzureSqlClient();
 
-                Database newDb = new Microsoft.Azure.Management.Sql.Models.Database {
+                var newDb = new Microsoft.Azure.Management.Sql.Models.Database {
                     Location = "East US 2",
                     LicenseType = "BasePrice",
                     Sku = new Sku(name: "Basic")
@@ -216,7 +216,7 @@ select 'Created database: " + databaseName + @"'
             } else {
                 SqlManagementClient sqlClient = AzureSqlClient();
 
-                Database newDb = new Microsoft.Azure.Management.Sql.Models.Database {
+                var newDb = new Microsoft.Azure.Management.Sql.Models.Database {
                     Location = "East US 2"
                 };
 
@@ -235,7 +235,7 @@ select 'Created database: " + databaseName + @"'
         /// </summary>
         /// <returns>True if local</returns>
         //private bool IsLocal { get { return this.Request.Host.ToString().IndexOf("localhost") != -1; } }
-        private bool IsLocal => false;
+        private bool IsLocal { get { return false; } }
 
         /// <summary>
         /// Get version as object from SQL2X Queue database
@@ -260,10 +260,10 @@ select 'Created database: " + databaseName + @"'
                     order by dv.date_time desc
                     ";
 
-                using (SqlConnection conn = new SqlConnection(Conn.ConnectionString)) {
+                using (var conn = new SqlConnection(Conn.ConnectionString)) {
                     conn.Open();
 
-                    using (SqlCommand command = new SqlCommand(sql, conn)) {
+                    using (var command = new SqlCommand(sql, conn)) {
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                         if (reader.Read()) {
@@ -322,10 +322,10 @@ select 'Created database: " + databaseName + @"'
                     order by dv.date_time desc
                     ";
 
-                using (SqlConnection conn = new SqlConnection(Conn.ConnectionString)) {
+                using (var conn = new SqlConnection(Conn.ConnectionString)) {
                     conn.Open();
 
-                    using (SqlCommand command = new SqlCommand(sql, conn)) {
+                    using (var command = new SqlCommand(sql, conn)) {
                         IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                         if (reader.Read()) {
@@ -377,17 +377,14 @@ select 'Created database: " + databaseName + @"'
                 returnMessage += "" + "\r\n";
 
                 string whyNot = string.Empty;
-                if (databaseManager.IsConnectionGood(out whyNot)) {
+                if (databaseManager.IsConnectionGood(out whyNot))
                     returnMessage += DateTime.UtcNow + " " + "Connection is good" + "\r\n";
-                }
 
-                if (databaseManager.IsDatabaseGood()) {
+                if (databaseManager.IsDatabaseGood())
                     returnMessage += DateTime.UtcNow + " " + "Database is good" + "\r\n";
-                }
 
-                if (databaseManager.IsVersionTableGood()) {
+                if (databaseManager.IsVersionTableGood())
                     returnMessage += DateTime.UtcNow + " " + "Version table is good" + "\r\n";
-                }
 
                 // set version zero
                 try {
@@ -453,17 +450,14 @@ select 'Created database: " + databaseName + @"'
                 returnMessage += "" + "\r\n";
 
                 string whyNot = string.Empty;
-                if (databaseManager.IsConnectionGood(out whyNot)) {
+                if (databaseManager.IsConnectionGood(out whyNot))
                     returnMessage += DateTime.UtcNow + " " + "Connection is good" + "\r\n";
-                }
 
-                if (databaseManager.IsDatabaseGood()) {
+                if (databaseManager.IsDatabaseGood())
                     returnMessage += DateTime.UtcNow + " " + "Database is good" + "\r\n";
-                }
 
-                if (databaseManager.IsVersionTableGood()) {
+                if (databaseManager.IsVersionTableGood())
                     returnMessage += DateTime.UtcNow + " " + "Version table is good" + "\r\n";
-                }
 
                 DatabaseVersion databaseVersion = databaseManager.minimumVersion;
                 try {
@@ -518,17 +512,14 @@ select 'Created database: " + databaseName + @"'
                 returnMessage += "" + "\r\n";
 
                 string whyNot = string.Empty;
-                if (databaseManager.IsConnectionGood(out whyNot)) {
+                if (databaseManager.IsConnectionGood(out whyNot))
                     returnMessage += DateTime.UtcNow + " " + "Connection is good" + "\r\n";
-                }
 
-                if (databaseManager.IsDatabaseGood()) {
+                if (databaseManager.IsDatabaseGood())
                     returnMessage += DateTime.UtcNow + " " + "Database is good" + "\r\n";
-                }
 
-                if (databaseManager.IsVersionTableGood()) {
+                if (databaseManager.IsVersionTableGood())
                     returnMessage += DateTime.UtcNow + " " + "Version table is good" + "\r\n";
-                }
 
                 DatabaseVersion databaseVersion = databaseManager.minimumVersion;
                 try {
@@ -548,9 +539,7 @@ select 'Created database: " + databaseName + @"'
                     returnMessage += DateTime.UtcNow + " " + "Script Executed" + " " + "( " + databaseManager.Execute(nextScript, haltOnException: true) + " )" + "\r\n";
 
                     if (databaseManager.IsVersionTableGood())   // make sure table exists
-{
                         returnMessage += DateTime.UtcNow + " " + databaseManager.DefaultVersion(nextScript.DatabaseVersion) + "\r\n";
-                    }
 
                     returnMessage += DateTime.UtcNow + " " + "End Script" + "\r\n";
 

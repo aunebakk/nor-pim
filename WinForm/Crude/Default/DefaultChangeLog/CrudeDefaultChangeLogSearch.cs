@@ -2,13 +2,13 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:17 PM
+  Generated Date: 10/25/2020 9:15:07 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
@@ -18,23 +18,23 @@ namespace SolutionNorSolutionPim.UserInterface {
 
     // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeDefaultChangeLogSearch : Form {
-
+        
         // the following fields holds initial state for foreign key's
         private string _defaultChangeLogTypeRcd;
-
+        
         private System.Guid _defaultUserId;
-
+        
         private System.Guid _defaultIssueId;
-
+        
         // Constructs the form with a Grid and Search button which is default on Enter
         //  and a Close button which works with the esc key
         public CrudeDefaultChangeLogSearch() {
             InitializeComponent();
             InitializeGridCrudeDefaultChangeLog();
-            AcceptButton = buttonCrudeDefaultChangeLogSearch;
-            CancelButton = buttonClose;
+            this.AcceptButton = buttonCrudeDefaultChangeLogSearch;
+            this.CancelButton = buttonClose;
         }
-
+        
         // shows the form with initial values for comboboxes and pickers
         //  an search is done with these initial values
         public void Show(string defaultChangeLogTypeRcd, System.Guid defaultUserId, System.Guid defaultIssueId) {
@@ -46,113 +46,119 @@ namespace SolutionNorSolutionPim.UserInterface {
                 RefreshCrudeDefaultChangeLog();
 
                 base.Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void buttonCrudeDefaultChangeLogEdit_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultChangeLogEdit editForm = new CrudeDefaultChangeLogEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeDefaultChangeLog.CurrentRow.Cells["DefaultChangeLogId"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultChangeLogEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeDefaultChangeLog.CurrentRow.Cells["DefaultChangeLogId"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows a form for adding more rows
         private void buttonCrudeDefaultChangeLogAdd_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultChangeLogEdit editForm = new CrudeDefaultChangeLogEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeDefaultChangeLogEdit();
+                editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsAddByRules(_defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void dataGridViewCrudeDefaultChangeLog_DoubleClick(object sender, EventArgs e) {
             try {
-                CrudeDefaultChangeLogEdit editForm = new CrudeDefaultChangeLogEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeDefaultChangeLog.CurrentRow.Cells["DefaultChangeLogId"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultChangeLogEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeDefaultChangeLog.CurrentRow.Cells["DefaultChangeLogId"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // does a search based on the filter and populates the grid
         private void buttonCrudeDefaultChangeLogSearch_Click(object sender, EventArgs e) {
             try {
                 RefreshCrudeDefaultChangeLog();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-
+        
         // refresh the grid
         public void RefreshCrudeDefaultChangeLog() {
-            CrudeDefaultChangeLogServiceClient defaultChangeLog = new CrudeDefaultChangeLogServiceClient();
+            var defaultChangeLog = new CrudeDefaultChangeLogServiceClient();
 
             try {
-                BindingSource bindingSource = new BindingSource();
+                var bindingSource = new BindingSource();
                 bindingSource.DataSource = defaultChangeLog.FetchWithFilter(
                              Guid.Empty
-                            , textBoxDefaultChangeName.Text
-                            , textBoxDefaultChangeDescription.Text
-                            , Guid.Empty
-                            , dateTimePickerDateTime.Checked ? Convert.ToDateTime(dateTimePickerDateTime.Value) : DateTime.MinValue
-                            , defaultChangeLogTypeRefCombo.Text
-                            , Guid.Empty
+                            ,textBoxDefaultChangeName.Text
+                            ,textBoxDefaultChangeDescription.Text
+                            ,Guid.Empty
+                            ,dateTimePickerDateTime.Checked ? Convert.ToDateTime(dateTimePickerDateTime.Value): DateTime.MinValue
+                            ,defaultChangeLogTypeRefCombo.Text
+                            ,Guid.Empty
                             );
                 dataGridViewCrudeDefaultChangeLog.AutoGenerateColumns = false;
                 dataGridViewCrudeDefaultChangeLog.DataSource = bindingSource;
                 dataGridViewCrudeDefaultChangeLog.AutoResizeColumns();
                 dataGridViewCrudeDefaultChangeLog.Refresh();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             } finally {
                 defaultChangeLog.Close();
             }
         }
-
+        
         // initialize the grid, hiding fields like guids and images
         private void InitializeGridCrudeDefaultChangeLog() {
             try {
                 dataGridViewCrudeDefaultChangeLog.Columns.Clear();
                 dataGridViewCrudeDefaultChangeLog.AutoGenerateColumns = false;
-                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeName", "Default Change Name");
+                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeName","Default Change Name");
                 dataGridViewCrudeDefaultChangeLog.Columns["DefaultChangeName"].DataPropertyName = "DefaultChangeName";
-                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeDescription", "Default Change Description");
+                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeDescription","Default Change Description");
                 dataGridViewCrudeDefaultChangeLog.Columns["DefaultChangeDescription"].DataPropertyName = "DefaultChangeDescription";
-                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeLogTypeRcd", "Default Change Log Type");
+                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeLogTypeRcd","Default Change Log Type");
                 dataGridViewCrudeDefaultChangeLog.Columns["DefaultChangeLogTypeRcd"].DataPropertyName = "DefaultChangeLogTypeRcd";
-                dataGridViewCrudeDefaultChangeLog.Columns.Add("DateTime", "Date Time");
+                dataGridViewCrudeDefaultChangeLog.Columns.Add("DateTime","Date Time");
                 dataGridViewCrudeDefaultChangeLog.Columns["DateTime"].DataPropertyName = "DateTime";
-                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeLogId", "Default Change Log");
+                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultChangeLogId","Default Change Log");
                 dataGridViewCrudeDefaultChangeLog.Columns["DefaultChangeLogId"].DataPropertyName = "DefaultChangeLogId";
                 dataGridViewCrudeDefaultChangeLog.Columns["DefaultChangeLogId"].Visible = false;
-                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultIssueId", "Default Issue");
+                dataGridViewCrudeDefaultChangeLog.Columns.Add("DefaultIssueId","Default Issue");
                 dataGridViewCrudeDefaultChangeLog.Columns["DefaultIssueId"].DataPropertyName = "DefaultIssueId";
                 dataGridViewCrudeDefaultChangeLog.Columns["DefaultIssueId"].Visible = false;
                 dataGridViewCrudeDefaultChangeLog.Columns.Add("ExtensionData", "");
@@ -160,10 +166,11 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 dataGridViewCrudeDefaultChangeLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewCrudeDefaultChangeLog.AutoResizeColumns();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
     }

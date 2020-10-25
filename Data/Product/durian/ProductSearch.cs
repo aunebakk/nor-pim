@@ -4,19 +4,21 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer {
+namespace SolutionNorSolutionPim.DataAccessLayer
+{
     /// <summary> 
     /// Provides product search with different parameter and result sets
     /// </summary>
     /// <domain>Product</domain>
-    public partial class ProductSearch {
+    public partial class ProductSearch
+    {
         /// <summary>Get product history</summary>
         /// <cardinality>Many</cardinality>
         public List<ProductHistoryData> ProductHistory(
             Guid productId
             ) {
 
-            List<ProductHistoryData> ret = new List<ProductHistoryData>();
+            var ret = new List<ProductHistoryData>();
 
             string sql = @" 
                     select 
@@ -33,18 +35,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     order by p.date_time
                 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductHistoryDataOrdinals ordinals = new ProductHistoryDataOrdinals(reader);
+                    var ordinals = new ProductHistoryDataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        ProductHistoryData data = new ProductHistoryData();
+                    while ( reader.Read() ) {
+                        var data = new ProductHistoryData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -55,14 +57,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 return ret;
             }
         }
-
+        
         /// <summary>Search products by name</summary>
         /// <cardinality>Many</cardinality>
         public List<ProductSearchByNameData> ProductSearchByName(
             string productName
             ) {
 
-            List<ProductSearchByNameData> ret = new List<ProductSearchByNameData>();
+            var ret = new List<ProductSearchByNameData>();
 
             string sql = @" 
                 select  
@@ -89,18 +91,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 order by p.date_time
                     ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_name", SqlDbType.NVarChar).Value = productName.Replace("'", "''");
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductSearchByNameDataOrdinals ordinals = new ProductSearchByNameDataOrdinals(reader);
+                    var ordinals = new ProductSearchByNameDataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        ProductSearchByNameData data = new ProductSearchByNameData();
+                    while ( reader.Read() ) {
+                        var data = new ProductSearchByNameData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -111,14 +113,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 return ret;
             }
         }
-
+        
         /// <summary>Search products by id</summary>
         /// <cardinality>one</cardinality>
         public ProductSearchByIdData ProductSearchById(
             Guid productId
             ) {
 
-            ProductSearchByIdData ret = new ProductSearchByIdData();
+            var ret = new ProductSearchByIdData();
 
             string sql = @" 
                 select  
@@ -143,29 +145,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 where p.product_id = @product_id
                     ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( SqlCommand command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
-                    if (reader.Read()) {
+                    if ( reader.Read() )
                         ret.Populate(reader, new ProductSearchByIdDataOrdinals(reader));
-                    }
                 }
 
                 return ret;
             }
         }
-
+        
         /// <summary>Search products by category</summary>
         /// <cardinality>Many</cardinality>
         public List<ProductSearchByCategoryData> ProductSearchByCategory(
             Guid productCategoryId,
             bool onParent
             ) {
-            List<ProductSearchByCategoryData> ret = new List<ProductSearchByCategoryData>();
+            var ret = new List<ProductSearchByCategoryData>();
 
             string sql = @" 
                 select  
@@ -211,24 +212,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                   and p.product_became_id is null
                 ";
 
-            if (onParent) {
+            if ( onParent )
                 sql += "    or pc.product_category_parent_id = @product_category_id\r\n";
-            }
 
             sql += "    order by p.product_name, identifier\r\n";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_category_id", SqlDbType.UniqueIdentifier).Value = productCategoryId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductSearchByCategoryDataOrdinals ordinals = new ProductSearchByCategoryDataOrdinals(reader);
+                    var ordinals = new ProductSearchByCategoryDataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        ProductSearchByCategoryData data = new ProductSearchByCategoryData();
+                    while ( reader.Read() ) {
+                        var data = new ProductSearchByCategoryData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -243,10 +243,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         /// <summary>Search products by category</summary>
         /// <cardinality>Many</cardinality>
         public List<ProductSearchByCategoryCodeData> ProductSearchByCategoryCode(
-            string productCategoryCode,
+            String productCategoryCode,
             bool onParent
             ) {
-            List<ProductSearchByCategoryCodeData> ret = new List<ProductSearchByCategoryCodeData>();
+            var ret = new List<ProductSearchByCategoryCodeData>();
 
             string sql = @" 
                 select  
@@ -293,24 +293,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                   and p.product_became_id is null
                 ";
 
-            if (onParent) {
+            if (onParent)
                 sql += "    or pcp.product_category_code = @product_category_code\r\n";
-            }
 
             sql += "    order by p.product_name, identifier\r\n";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     command.Parameters.Add("@product_category_code", SqlDbType.NVarChar).Value = productCategoryCode;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductSearchByCategoryCodeDataOrdinals ordinals = new ProductSearchByCategoryCodeDataOrdinals(reader);
+                    var ordinals = new ProductSearchByCategoryCodeDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductSearchByCategoryCodeData data = new ProductSearchByCategoryCodeData();
+                        var data = new ProductSearchByCategoryCodeData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -329,7 +328,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             bool onParent
             ) {
 
-            List<ProductSearchByCategoryType1Data> ret = new List<ProductSearchByCategoryType1Data>();
+            var ret = new List<ProductSearchByCategoryType1Data>();
 
             string sql = @" 
                 select  
@@ -356,24 +355,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                   and p.product_became_id is null
                 ";
 
-            if (onParent) {
+            if ( onParent )
                 sql += "    or pc.product_category_parent_id = @product_category_id\r\n";
-            }
 
             sql += "    order by p.product_name, gtin13\r\n";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_category_id", SqlDbType.UniqueIdentifier).Value = productCategoryId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductSearchByCategoryType1DataOrdinals ordinals = new ProductSearchByCategoryType1DataOrdinals(reader);
+                    var ordinals = new ProductSearchByCategoryType1DataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        ProductSearchByCategoryType1Data data = new ProductSearchByCategoryType1Data();
+                    while ( reader.Read() ) {
+                        var data = new ProductSearchByCategoryType1Data();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -392,7 +390,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             bool onParent
             ) {
 
-            List<ProductSearchByCategoryType2Data> ret = new List<ProductSearchByCategoryType2Data>();
+            var ret = new List<ProductSearchByCategoryType2Data>();
 
             string sql = @" 
                 select  
@@ -425,24 +423,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                   and p.product_became_id is null
                 ";
 
-            if (onParent) {
+            if ( onParent )
                 sql += "    or pc.product_category_parent_id = @product_category_id\r\n";
-            }
 
             sql += "    order by p.product_name, gtin13\r\n";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_category_id", SqlDbType.UniqueIdentifier).Value = productCategoryId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductSearchByCategoryType2DataOrdinals ordinals = new ProductSearchByCategoryType2DataOrdinals(reader);
+                    var ordinals = new ProductSearchByCategoryType2DataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        ProductSearchByCategoryType2Data data = new ProductSearchByCategoryType2Data();
+                    while ( reader.Read() ) {
+                        var data = new ProductSearchByCategoryType2Data();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -461,7 +458,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             bool onParent
             ) {
 
-            List<ProductSearchByCategoryType3Data> ret = new List<ProductSearchByCategoryType3Data>();
+            var ret = new List<ProductSearchByCategoryType3Data>();
 
             string sql = @" 
                 select  
@@ -494,24 +491,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                   and p.product_became_id is null
                 ";
 
-            if (onParent) {
+            if ( onParent )
                 sql += "    or pc.product_category_parent_id = @product_category_id\r\n";
-            }
 
             sql += "    order by p.product_name, gtin13\r\n";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_category_id", SqlDbType.UniqueIdentifier).Value = productCategoryId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductSearchByCategoryType3DataOrdinals ordinals = new ProductSearchByCategoryType3DataOrdinals(reader);
+                    var ordinals = new ProductSearchByCategoryType3DataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        ProductSearchByCategoryType3Data data = new ProductSearchByCategoryType3Data();
+                    while ( reader.Read() ) {
+                        var data = new ProductSearchByCategoryType3Data();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -530,7 +526,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             bool onParent
             ) {
 
-            List<ProductSearchByCategoryType4Data> ret = new List<ProductSearchByCategoryType4Data>();
+            var ret = new List<ProductSearchByCategoryType4Data>();
 
             string sql = @" 
                 select  
@@ -561,24 +557,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                   and p.product_became_id is null
                 ";
 
-            if (onParent) {
+            if ( onParent )
                 sql += "    or pc.product_category_parent_id = @product_category_id\r\n";
-            }
 
             sql += "    order by p.product_name, gtin13\r\n";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_category_id", SqlDbType.UniqueIdentifier).Value = productCategoryId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    ProductSearchByCategoryType4DataOrdinals ordinals = new ProductSearchByCategoryType4DataOrdinals(reader);
+                    var ordinals = new ProductSearchByCategoryType4DataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        ProductSearchByCategoryType4Data data = new ProductSearchByCategoryType4Data();
+                    while ( reader.Read() ) {
+                        var data = new ProductSearchByCategoryType4Data();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }

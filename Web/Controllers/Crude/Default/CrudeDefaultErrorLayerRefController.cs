@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:49 PM
+  Generated Date: 10/25/2020 9:15:34 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeDefaultErrorLayerRefDetails(string defaultErrorLayerRcd) {
+        public ActionResult CrudeDefaultErrorLayerRefDetails(System.String defaultErrorLayerRcd) {
 
             return View(
                 "~/Views/Crude/Default/CrudeDefaultErrorLayerRef/CrudeDefaultErrorLayerRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultErrorLayerRefEdit(
-            string defaultErrorLayerRcd
+            System.String defaultErrorLayerRcd
             ) {
 
             CrudeDefaultErrorLayerRefContract contract = new CrudeDefaultErrorLayerRefServiceClient().FetchByDefaultErrorLayerRcd(defaultErrorLayerRcd);
@@ -76,14 +76,11 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultErrorLayerRefCreate(System.Guid? defaultUserId) {
-            CrudeDefaultErrorLayerRefContract contract = new CrudeDefaultErrorLayerRefContract();
-            if (defaultUserId != null) {
-                contract.DefaultUserId = (System.Guid)defaultUserId;
-            }
+            var contract = new CrudeDefaultErrorLayerRefContract();
+            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
 
-            if (defaultUserId == null) {
+            if (defaultUserId == null)
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -114,7 +111,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultErrorLayerRefDelete(
-            string defaultErrorLayerRcd
+            System.String defaultErrorLayerRcd
             ) {
             new CrudeDefaultErrorLayerRefServiceClient().Delete(defaultErrorLayerRcd);
 

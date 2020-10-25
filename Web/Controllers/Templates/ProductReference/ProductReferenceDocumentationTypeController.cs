@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:05:21 PM
+  Generated Date: 10/25/2020 9:26:10 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
@@ -18,22 +18,18 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             return RedirectToAction(
                     "ProductReferenceDocumentationTypeEdit",
-                    new { productDocumentationTypeRcd = string.Empty }
+                    new {    productDocumentationTypeRcd = String.Empty    }
                     );
         }
 
         [HttpGet]
         public ActionResult ProductReferenceDocumentationTypeCreate(System.Guid? userId) {
-            ProductReferenceDocumentationTypeContract productContract = new ProductReferenceDocumentationTypeContract {
-                ProductDocumentationTypeRefNew = new CrudeProductDocumentationTypeRefContract()
-            };
-            if (userId != null) {
-                productContract.ProductDocumentationTypeRefNew.UserId = (System.Guid)userId;
-            }
+            var productContract = new ProductReferenceDocumentationTypeContract();
+            productContract.ProductDocumentationTypeRefNew = new CrudeProductDocumentationTypeRefContract();
+            if (userId != null) productContract.ProductDocumentationTypeRefNew.UserId = (System.Guid) userId;
 
-            if (userId == null) {
+            if (userId == null)
                 productContract.ProductDocumentationTypeRefNew.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             productContract.ProductDocumentationTypeRefNew.DateTime = DateTime.UtcNow;
 
@@ -52,7 +48,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 return RedirectToAction(
                         "ProductReferenceDocumentationTypeEdit",
-                        new { productDocumentationTypeRcd = string.Empty }
+                        new {    productDocumentationTypeRcd = String.Empty}
                         );
             }
 

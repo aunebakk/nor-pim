@@ -1,18 +1,18 @@
 using System;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
-    internal class Program {
+    class Program {
 
         /// <summary>
         /// Execute all scripts, echo outcome to console
         /// </summary>
-        private static void Main(string[] args) {
+        static void Main(string[] args) {
             string returnMessage = string.Empty;
 
             try {
                 DatabaseManager databaseManager = new DatabaseManager("NorSolutionPim", toRemote: false);
 
-                returnMessage =
+                returnMessage = 
                     databaseManager.ExecuteScriptsBetween(
                         databaseManager.minimumVersion,
                         databaseManager.maximumVersion,
@@ -25,9 +25,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             Console.WriteLine(returnMessage);
 
-            if (returnMessage.IndexOf("Exception") > 0) {
+            if (returnMessage.IndexOf("Exception") > 0)
                 Console.ReadKey();
-            }
         }
 
         /// <summary>

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:03 PM
+  Generated Date: 10/25/2020 9:25:15 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.ControllerBeginning
 */
@@ -18,63 +18,44 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             return RedirectToAction(
                     "CartProductEdit",
-                    new { cartProductId = Guid.Empty }
+                    new {    cartProductId = Guid.Empty    }
                     );
         }
 
         [HttpGet]
         public ActionResult CartProductCreate(System.Guid? clientId, System.Guid? productId, System.Guid? financialCurrencyId, System.Guid? sessionId, System.Guid? aspId, System.Guid? userId) {
-            CartProductContract cartProductContract = new CartProductContract {
-                CartProductNew = new CrudeCartProductContract()
-            };
-            if (clientId != null) {
-                cartProductContract.CartProductNew.ClientId = (System.Guid)clientId;
-            }
-
-            if (productId != null) {
-                cartProductContract.CartProductNew.ProductId = (System.Guid)productId;
-            }
-
-            if (financialCurrencyId != null) {
-                cartProductContract.CartProductNew.FinancialCurrencyId = (System.Guid)financialCurrencyId;
-            }
-
-            if (sessionId != null) {
-                cartProductContract.CartProductNew.SessionId = (System.Guid)sessionId;
-            }
-
-            if (aspId != null) {
-                cartProductContract.CartProductNew.AspId = (System.Guid)aspId;
-            }
-
-            if (userId != null) {
-                cartProductContract.CartProductNew.UserId = (System.Guid)userId;
-            }
+            var cartProductContract = new CartProductContract();
+            cartProductContract.CartProductNew = new CrudeCartProductContract();
+            if (clientId != null) cartProductContract.CartProductNew.ClientId = (System.Guid) clientId;
+            if (productId != null) cartProductContract.CartProductNew.ProductId = (System.Guid) productId;
+            if (financialCurrencyId != null) cartProductContract.CartProductNew.FinancialCurrencyId = (System.Guid) financialCurrencyId;
+            if (sessionId != null) cartProductContract.CartProductNew.SessionId = (System.Guid) sessionId;
+            if (aspId != null) cartProductContract.CartProductNew.AspId = (System.Guid) aspId;
+            if (userId != null) cartProductContract.CartProductNew.UserId = (System.Guid) userId;
 
             ViewBag.ClientId =
-                new SelectList(new CrudeClientServiceClient().FetchAll(),
+                new SelectList( new CrudeClientServiceClient().FetchAll(),
                                 "ClientId",
                                 "FirstName",
                                 cartProductContract.CartProductNew.ClientId
                                 );
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 cartProductContract.CartProductNew.ProductId
                                 );
 
             ViewBag.FinancialCurrencyId =
-                new SelectList(new CrudeFinancialCurrencyServiceClient().FetchAll(),
+                new SelectList( new CrudeFinancialCurrencyServiceClient().FetchAll(),
                                 "FinancialCurrencyId",
                                 "FinancialCurrencyTypeName",
                                 cartProductContract.CartProductNew.FinancialCurrencyId
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 cartProductContract.CartProductNew.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(cartProductContract.CartProductNew.UserId).DefaultUserName;
@@ -89,7 +70,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CartProductCreate([Bind()] CartProductContract cartProductContract, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId) {
+        public ActionResult CartProductCreate([Bind()] CartProductContract cartProductContract, System.Guid clientId,System.Guid productId,System.Guid financialCurrencyId) {
             if (ModelState.IsValid) {
 
                 cartProductContract.CartProductNew.ClientId = clientId;
@@ -99,7 +80,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 return RedirectToAction(
                         "CartProductEdit",
-                        new { cartProductId = Guid.Empty }
+                        new {    cartProductId = Guid.Empty}
                         );
             }
 

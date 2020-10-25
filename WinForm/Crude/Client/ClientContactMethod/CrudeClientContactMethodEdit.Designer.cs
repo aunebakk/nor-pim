@@ -1,36 +1,36 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeClientContactMethodEdit {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonSave;
-
+        
         private ClientContactMethodRefCombo clientContactMethodRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientContactMethodRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxContactMethodWay;
-
+        
         private System.Windows.Forms.Label labelContactMethodWay;
-
+        
         private System.Windows.Forms.TextBox textBoxComment;
-
+        
         private System.Windows.Forms.Label labelComment;
-
+        
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-
+        
         private System.Windows.Forms.Label labelDateTime;
-
+        
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -116,7 +116,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(305, 105);
-
+            
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

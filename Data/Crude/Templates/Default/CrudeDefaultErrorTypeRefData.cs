@@ -2,15 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:52:43 PM
+  Generated Date: 10/25/2020 9:14:41 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Configuration;
 
 // Data Access Layer
 // the DataAccessLayer is the first layer that has access to data coming from
@@ -20,16 +20,16 @@ using System.Data.SqlClient;
 namespace SolutionNorSolutionPim.DataAccessLayer {
 
     public partial class DefaultErrorTypeRef {
-
+        
         public const string Engine = "Engine";
-
+        
         public const string SilentCaught = "Silent";
-
+        
         public const string AutomatedTest = "Test";
-
+        
         public const string UserInitiated = "User";
     }
-
+    
     // this class serves as a data access layer between c# and sql server
     // it is serializable in order to speed up processing between the data access and business layers
     // this class start with an identical representation of default_error_type_ref's columns
@@ -38,15 +38,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeDefaultErrorTypeRefData {
-
+        
         public string DefaultErrorTypeRcd { get; set; }
-
+        
         public string DefaultErrorTypeName { get; set; }
-
+        
         public System.Guid DefaultUserId { get; set; }
-
+        
         public System.DateTime DateTime { get; set; }
-
+        
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -65,7 +65,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 // dirty read
@@ -74,22 +74,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = defaultErrorTypeRcd;
+                    command.Parameters.Add("@default_error_type_rcd",SqlDbType.NVarChar).Value = defaultErrorTypeRcd;
 
                     // execute and read one row, close connection
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serializable class if row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         Populate(reader);
-                    }
                 }
             }
         }
-
+        
         // fetch by Primary key into new class instance
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -105,18 +104,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where default_error_type_rcd = @default_error_type_rcd
                             order by default_error_type_name";
 
-            CrudeDefaultErrorTypeRefData ret = new CrudeDefaultErrorTypeRefData();
+            var ret = new CrudeDefaultErrorTypeRefData();
 
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = defaultErrorTypeRcd;
+                    command.Parameters.Add("@default_error_type_rcd",SqlDbType.NVarChar).Value = defaultErrorTypeRcd;
 
                     // execute query against default_error_type_ref
                     // if the query fails in the preprocessor of sql server
@@ -124,18 +123,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serialized class if a row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         ret.Populate(reader);
-                    }
                 }
             }
 
             return ret;
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeDefaultErrorTypeRefData> FetchByDefaultUserId(System.Guid defaultUserId) {
-            List<CrudeDefaultErrorTypeRefData> dataList = new List<CrudeDefaultErrorTypeRefData>();
+            var dataList = new List<CrudeDefaultErrorTypeRefData>();
 
             // create query against default_error_type_ref
             // this will be ansi sql and parameterized
@@ -150,10 +148,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = defaultUserId;
@@ -167,16 +165,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultErrorTypeRefData data = new CrudeDefaultErrorTypeRefData();
+                        var data = new CrudeDefaultErrorTypeRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Picker Member into new class instance
         public void FetchByDefaultErrorTypeName(string defaultErrorTypeName) {
             // create query against default_error_type_ref
@@ -191,29 +189,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
-                // add search column
-                // this search column will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@defaultErrorTypeName", SqlDbType.NVarChar).Value = defaultErrorTypeName;
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
+                command.Parameters.Add("@defaultErrorTypeName",SqlDbType.NVarChar).Value = defaultErrorTypeName;
 
                 // execute query against default_error_type_ref
                 // if the query fails in the preprocessor of sql server
                 //   an exception will be raised
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                if (reader.Read()) {
+                if (reader.Read())
                     Populate(reader);
-                }
             }
         }
-
+        
         // fetch all rows from table default_error_type_ref into new List of class instances
         public static List<CrudeDefaultErrorTypeRefData> FetchAll() {
-            List<CrudeDefaultErrorTypeRefData> dataList = new List<CrudeDefaultErrorTypeRefData>();
+            var dataList = new List<CrudeDefaultErrorTypeRefData>();
 
             // create query against default_error_type_ref
             // this will be ansi sql and parameterized
@@ -226,10 +223,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against default_error_type_ref
                     // if the query fails in the preprocessor of sql server
@@ -240,19 +237,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultErrorTypeRefData data = new CrudeDefaultErrorTypeRefData();
+                        var data = new CrudeDefaultErrorTypeRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeDefaultErrorTypeRefData> FetchAllWithLimit(int limit) {
-            List<CrudeDefaultErrorTypeRefData> dataList = new List<CrudeDefaultErrorTypeRefData>();
+            var dataList = new List<CrudeDefaultErrorTypeRefData>();
 
             // create query against default_error_type_ref
             // this will be ansi sql and parameterized
@@ -265,10 +262,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against default_error_type_ref
                     // if the query fails in the preprocessor of sql server
@@ -279,20 +276,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultErrorTypeRefData data = new CrudeDefaultErrorTypeRefData();
+                        var data = new CrudeDefaultErrorTypeRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, only populating specific columns,
         //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeDefaultErrorTypeRefData> FetchAllWithLimitAndOffset(int limit, int offset) {
-            List<CrudeDefaultErrorTypeRefData> dataList = new List<CrudeDefaultErrorTypeRefData>();
+            var dataList = new List<CrudeDefaultErrorTypeRefData>();
 
             // create query against default_error_type_ref
             // this will be ansi sql and parameterized
@@ -305,10 +302,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against default_error_type_ref
                     // if the query fails in the preprocessor of sql server
@@ -322,21 +319,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
-                            CrudeDefaultErrorTypeRefData data = new CrudeDefaultErrorTypeRefData();
+                            var data = new CrudeDefaultErrorTypeRefData();
                             data.Populate(reader);
                             dataList.Add(data);
                         }
                         count++;
-                        if (count > limit + offset) {
-                            break;
-                        }
+                        if (count > limit + offset) break;
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // get a count of rows in table
         public static int FetchAllCount() {
             // create query against default_error_type_ref
@@ -348,28 +343,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 int count = 0;
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // execute query against default_error_type_ref
                     // if the query fails in the preprocessor of sql server
                     //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
-                    count = (int)reader["count"];
+                    count = (System.Int32) reader["count"];
                 }
 
                 return count;
             }
         }
-
+        
         // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeDefaultErrorTypeRefData> FetchWithFilter(string defaultErrorTypeRcd, string defaultErrorTypeName, System.Guid defaultUserId, System.DateTime dateTime) {
-            List<CrudeDefaultErrorTypeRefData> dataList = new List<CrudeDefaultErrorTypeRefData>();
+            var dataList = new List<CrudeDefaultErrorTypeRefData>();
 
             // create query against default_error_type_ref
             // this will be ansi sql and parameterized
@@ -382,19 +377,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add search column(s) if they are not null or empty
                     // this search column(s) will be used together with the prepared ansi sql statement
                     if (!string.IsNullOrEmpty(defaultErrorTypeRcd)) {
                         sql += "  and default_error_type_rcd like '%' + @default_error_type_rcd + '%'";
-                        command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = defaultErrorTypeRcd.Replace("'", "''");
+                        command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = defaultErrorTypeRcd.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(defaultErrorTypeName)) {
                         sql += "  and default_error_type_name like '%' + @default_error_type_name + '%'";
-                        command.Parameters.Add("@default_error_type_name", SqlDbType.NVarChar).Value = defaultErrorTypeName.Replace("'", "''");
+                        command.Parameters.Add("@default_error_type_name", SqlDbType.NVarChar).Value = defaultErrorTypeName.Replace("'","''");
                     }
                     if (defaultUserId != Guid.Empty) {
                         sql += "  and default_user_id = @default_user_id";
@@ -417,35 +412,24 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultErrorTypeRefData data = new CrudeDefaultErrorTypeRefData();
+                        var data = new CrudeDefaultErrorTypeRefData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // read all columns out and populate object members
         public void Populate(IDataReader reader) {
-            if (reader["default_error_type_rcd"] != System.DBNull.Value) {
-                DefaultErrorTypeRcd = (string)reader["default_error_type_rcd"];
-            }
-
-            if (reader["default_error_type_name"] != System.DBNull.Value) {
-                DefaultErrorTypeName = (string)reader["default_error_type_name"];
-            }
-
-            if (reader["default_user_id"] != System.DBNull.Value) {
-                DefaultUserId = (System.Guid)reader["default_user_id"];
-            }
-
-            if (reader["date_time"] != System.DBNull.Value) {
-                DateTime = (System.DateTime)reader["date_time"];
-            }
+            if (reader["default_error_type_rcd"] != System.DBNull.Value) DefaultErrorTypeRcd = (System.String) reader["default_error_type_rcd"];
+            if (reader["default_error_type_name"] != System.DBNull.Value) DefaultErrorTypeName = (System.String) reader["default_error_type_name"];
+            if (reader["default_user_id"] != System.DBNull.Value) DefaultUserId = (System.Guid) reader["default_user_id"];
+            if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
         }
-
+        
         // insert all object members as a new row in table
         public void Insert() {
 
@@ -459,16 +443,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, connection)) {
+                using (var command = new SqlCommand(sql, connection)) {
                     // add column(s) to insert as parameter
                     // the insert column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = DefaultErrorTypeRcd;
-                    command.Parameters.Add("@default_error_type_name", SqlDbType.NVarChar).Value = DefaultErrorTypeName;
-                    command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : DefaultUserId);
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@default_error_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeRcd;
+                    command.Parameters.Add("@default_error_type_name",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeName;
+                    command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : (System.Guid)DefaultUserId);
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against default_error_type_ref
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -477,7 +461,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
@@ -496,10 +480,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to insert as parameter(s)
                 // the insert column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = DefaultErrorTypeRcd;
-                command.Parameters.Add("@default_error_type_name", SqlDbType.NVarChar).Value = DefaultErrorTypeName;
-                command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : DefaultUserId);
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@default_error_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeRcd;
+                command.Parameters.Add("@default_error_type_name",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeName;
+                command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : (System.Guid)DefaultUserId);
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against default_error_type_ref
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -507,7 +491,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // update all object members on a row in table based on primary key
         public void Update() {
             // create query against default_error_type_ref
@@ -524,17 +508,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // add column(s) to update as parameter(s)
                     // the update column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = DefaultErrorTypeRcd;
-                    command.Parameters.Add("@default_error_type_name", SqlDbType.NVarChar).Value = DefaultErrorTypeName;
-                    command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : DefaultUserId);
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@default_error_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeRcd;
+                    command.Parameters.Add("@default_error_type_name",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeName;
+                    command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : (System.Guid)DefaultUserId);
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against default_error_type_ref
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -543,7 +527,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             // create query against default_error_type_ref
@@ -563,10 +547,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to update as parameter
                 // the update column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = DefaultErrorTypeRcd;
-                command.Parameters.Add("@default_error_type_name", SqlDbType.NVarChar).Value = DefaultErrorTypeName;
-                command.Parameters.Add("@default_user_id", SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : DefaultUserId);
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@default_error_type_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeRcd;
+                command.Parameters.Add("@default_error_type_name",SqlDbType.NVarChar).Value = (System.String)DefaultErrorTypeName;
+                command.Parameters.Add("@default_user_id",SqlDbType.UniqueIdentifier).Value = (DefaultUserId == Guid.Empty ? (object)DBNull.Value : (System.Guid)DefaultUserId);
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against default_error_type_ref
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -574,7 +558,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // delete a row in table based on primary key
         public static void Delete(string defaultErrorTypeRcd) {
             // create query against default_error_type_ref
@@ -587,13 +571,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_error_type_rcd", SqlDbType.NVarChar).Value = defaultErrorTypeRcd;
+                    command.Parameters.Add("@default_error_type_rcd",SqlDbType.NVarChar).Value = defaultErrorTypeRcd;
                     // execute query against default_error_type_ref
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server

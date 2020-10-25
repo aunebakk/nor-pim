@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:29 PM
+  Generated Date: 10/25/2020 9:16:04 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -77,18 +77,12 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductExposedSelectionCreate(System.Guid? productExposeId, System.Guid? userId) {
-            CrudeProductExposedSelectionContract contract = new CrudeProductExposedSelectionContract();
-            if (productExposeId != null) {
-                contract.ProductExposeId = (System.Guid)productExposeId;
-            }
+            var contract = new CrudeProductExposedSelectionContract();
+            if (productExposeId != null) contract.ProductExposeId = (System.Guid) productExposeId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
-
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

@@ -2,55 +2,47 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:00:48 PM
+  Generated Date: 10/25/2020 9:23:18 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
 using System.Data;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Configuration;
 
 namespace SolutionNorSolutionPim.DataAccessLayer {
 
     [Serializable()]
     public partial class DefaultPerformanceIssueFetchWithFilterData {
-
+        
         public System.DateTime DateTime { get; set; }
-
+        
         public string CommandName { get; set; }
-
+        
         public int Milliseconds { get; set; }
-
+        
         public System.Guid DefaultPerformanceIssueId { get; set; }
-
+        
         public void Populate(IDataReader reader, DefaultPerformanceIssueFetchWithFilterDataOrdinals ordinals) {
-            if (!reader.IsDBNull(ordinals.DateTime)) {
-                DateTime = reader.GetDateTime(ordinals.DateTime);
-            }
-
-            if (!reader.IsDBNull(ordinals.CommandName)) {
-                CommandName = reader.GetString(ordinals.CommandName);
-            }
-
-            if (!reader.IsDBNull(ordinals.Milliseconds)) {
-                Milliseconds = reader.GetInt32(ordinals.Milliseconds);
-            }
-
-            if (!reader.IsDBNull(ordinals.DefaultPerformanceIssueId)) {
-                DefaultPerformanceIssueId = reader.GetGuid(ordinals.DefaultPerformanceIssueId);
-            }
+            if (!reader.IsDBNull(ordinals.DateTime)) DateTime = reader.GetDateTime(ordinals.DateTime);
+            if (!reader.IsDBNull(ordinals.CommandName)) CommandName = reader.GetString(ordinals.CommandName);
+            if (!reader.IsDBNull(ordinals.Milliseconds)) Milliseconds = reader.GetInt32(ordinals.Milliseconds);
+            if (!reader.IsDBNull(ordinals.DefaultPerformanceIssueId)) DefaultPerformanceIssueId = reader.GetGuid(ordinals.DefaultPerformanceIssueId);
         }
     }
-
+    
     public partial class DefaultPerformanceIssueFetchWithFilterDataOrdinals {
-
+        
         public int DateTime;
-
+        
         public int CommandName;
-
+        
         public int Milliseconds;
-
+        
         public int DefaultPerformanceIssueId;
-
+        
         public DefaultPerformanceIssueFetchWithFilterDataOrdinals(IDataReader reader) {
             DateTime = reader.GetOrdinal("date_time");
             CommandName = reader.GetOrdinal("command_name");

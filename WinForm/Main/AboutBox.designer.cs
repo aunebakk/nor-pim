@@ -1,5 +1,7 @@
-namespace SolutionNorSolutionPim.UserInterface {
-    partial class AboutBox {
+namespace SolutionNorSolutionPim.UserInterface
+{
+    partial class AboutBox
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,7 +11,7 @@ namespace SolutionNorSolutionPim.UserInterface {
         /// Clean up any resources being used.
         /// </summary>
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+            if ( disposing && ( components != null ) ) {
                 components.Dispose();
             }
             base.Dispose(disposing);

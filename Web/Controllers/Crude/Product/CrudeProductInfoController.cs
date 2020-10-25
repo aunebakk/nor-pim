@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:43 PM
+  Generated Date: 10/25/2020 9:16:14 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeProductInfoContract contract = new CrudeProductInfoServiceClient().FetchByProductInfoId(productInfoId);
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 contract.ProductId
                                 );
 
             ViewBag.ProductInfoRcd =
-                new SelectList(new CrudeProductInfoRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductInfoRefServiceClient().FetchAll(),
                                 "ProductInfoRcd",
                                 "ProductInfoName",
                                 contract.ProductInfoRcd
@@ -102,32 +102,26 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductInfoCreate(System.Guid? productId, System.Guid? userId) {
-            CrudeProductInfoContract contract = new CrudeProductInfoContract();
-            if (productId != null) {
-                contract.ProductId = (System.Guid)productId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductInfoContract();
+            if (productId != null) contract.ProductId = (System.Guid) productId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 contract.ProductId
                                 );
 
             ViewBag.ProductInfoRcd =
-                new SelectList(new CrudeProductInfoRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductInfoRefServiceClient().FetchAll(),
                                 "ProductInfoRcd",
                                 "ProductInfoName",
                                 contract.ProductInfoRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

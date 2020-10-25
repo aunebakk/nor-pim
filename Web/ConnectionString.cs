@@ -6,7 +6,7 @@
   From Machine: DESKTOP-517I8BU
   Template: SQL2XExtension.SQL2XExtensionCreatorCoreV0.Content_ConnectionStringDOTcs
 */
-internal static class Conn {
+static class Conn { 
     public const string ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;";
     public const string ConnectionStringLocal = @"Data Source=(localdb)\MSSQLLocalDB;";
     public const string ConnectionStringRemote = @"Data Source=(localdb)\MSSQLLocalDB;";

@@ -1,18 +1,18 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class DefaultErrorLayerRefCombo {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.ComboBox cboRef;
-
+        
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+           if (disposing && (components != null)) {
+               components.Dispose();
+           }
+           base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.cboRef = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();

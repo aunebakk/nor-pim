@@ -2,15 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:52:43 PM
+  Generated Date: 10/25/2020 9:14:41 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Configuration;
 
 // Data Access Layer
 // the DataAccessLayer is the first layer that has access to data coming from
@@ -27,29 +27,29 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeCartProductData {
-
+        
         public System.Guid CartProductId { get; set; }
-
+        
         public System.Guid ClientId { get; set; }
-
+        
         public System.Guid ProductId { get; set; }
-
+        
         public System.Guid FinancialCurrencyId { get; set; }
-
+        
         public decimal Amount { get; set; }
-
+        
         public System.Guid SessionId { get; set; }
-
+        
         public string SessionIdentificator { get; set; }
-
+        
         public System.Guid AspId { get; set; }
-
+        
         public string StateRcd { get; set; }
-
+        
         public System.Guid UserId { get; set; }
-
+        
         public System.DateTime DateTime { get; set; }
-
+        
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -67,7 +67,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 // dirty read
@@ -76,22 +76,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = cartProductId;
+                    command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = cartProductId;
 
                     // execute and read one row, close connection
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serializable class if row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         Populate(reader);
-                    }
                 }
             }
         }
-
+        
         // fetch by Primary key into new class instance
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -106,18 +105,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [cart_product]
                             where cart_product_id = @cart_product_id";
 
-            CrudeCartProductData ret = new CrudeCartProductData();
+            var ret = new CrudeCartProductData();
 
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = cartProductId;
+                    command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = cartProductId;
 
                     // execute query against cart_product
                     // if the query fails in the preprocessor of sql server
@@ -125,18 +124,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serialized class if a row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         ret.Populate(reader);
-                    }
                 }
             }
 
             return ret;
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeCartProductData> FetchByClientId(System.Guid clientId) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -150,10 +148,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = clientId;
@@ -167,19 +165,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeCartProductData> FetchByProductId(System.Guid productId) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -193,10 +191,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
@@ -210,19 +208,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeCartProductData> FetchByFinancialCurrencyId(System.Guid financialCurrencyId) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -236,10 +234,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = financialCurrencyId;
@@ -253,19 +251,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeCartProductData> FetchBySessionId(System.Guid sessionId) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -279,10 +277,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@session_id", SqlDbType.UniqueIdentifier).Value = sessionId;
@@ -296,19 +294,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeCartProductData> FetchByAspId(System.Guid aspId) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -322,10 +320,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@asp_id", SqlDbType.UniqueIdentifier).Value = aspId;
@@ -339,19 +337,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeCartProductData> FetchByUserId(System.Guid userId) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -365,10 +363,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
@@ -382,19 +380,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeCartProductData> FetchByStateRcd(string stateRcd) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -408,13 +406,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = stateRcd.Replace("'", "''");
+                    command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = stateRcd.Replace("'","''");
 
                     // execute query against cart_product
                     // if the query fails in the preprocessor of sql server
@@ -425,19 +423,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all rows from table cart_product into new List of class instances
         public static List<CrudeCartProductData> FetchAll() {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -449,10 +447,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against cart_product
                     // if the query fails in the preprocessor of sql server
@@ -463,19 +461,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeCartProductData> FetchAllWithLimit(int limit) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -487,10 +485,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against cart_product
                     // if the query fails in the preprocessor of sql server
@@ -501,20 +499,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, only populating specific columns,
         //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeCartProductData> FetchAllWithLimitAndOffset(int limit, int offset) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -526,10 +524,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against cart_product
                     // if the query fails in the preprocessor of sql server
@@ -543,21 +541,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
-                            CrudeCartProductData data = new CrudeCartProductData();
+                            var data = new CrudeCartProductData();
                             data.Populate(reader);
                             dataList.Add(data);
                         }
                         count++;
-                        if (count > limit + offset) {
-                            break;
-                        }
+                        if (count > limit + offset) break;
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // get a count of rows in table
         public static int FetchAllCount() {
             // create query against cart_product
@@ -569,28 +565,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 int count = 0;
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // execute query against cart_product
                     // if the query fails in the preprocessor of sql server
                     //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
-                    count = (int)reader["count"];
+                    count = (System.Int32) reader["count"];
                 }
 
                 return count;
             }
         }
-
+        
         // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeCartProductData> FetchWithFilter(System.Guid cartProductId, System.Guid clientId, System.Guid productId, System.Guid financialCurrencyId, decimal amount, System.Guid sessionId, string sessionIdentificator, System.Guid aspId, string stateRcd, System.Guid userId, System.DateTime dateTime) {
-            List<CrudeCartProductData> dataList = new List<CrudeCartProductData>();
+            var dataList = new List<CrudeCartProductData>();
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -603,10 +599,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add search column(s) if they are not null or empty
                     // this search column(s) will be used together with the prepared ansi sql statement
                     if (cartProductId != Guid.Empty) {
@@ -635,7 +631,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     if (!string.IsNullOrEmpty(sessionIdentificator)) {
                         sql += "  and session_identificator like '%' + @session_identificator + '%'";
-                        command.Parameters.Add("@session_identificator", SqlDbType.NVarChar).Value = sessionIdentificator.Replace("'", "''");
+                        command.Parameters.Add("@session_identificator", SqlDbType.NVarChar).Value = sessionIdentificator.Replace("'","''");
                     }
                     if (aspId != Guid.Empty) {
                         sql += "  and asp_id = @asp_id";
@@ -643,7 +639,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     if (!string.IsNullOrEmpty(stateRcd)) {
                         sql += "  and state_rcd like '%' + @state_rcd + '%'";
-                        command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = stateRcd.Replace("'", "''");
+                        command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = stateRcd.Replace("'","''");
                     }
                     if (userId != Guid.Empty) {
                         sql += "  and user_id = @user_id";
@@ -664,69 +660,36 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeCartProductData data = new CrudeCartProductData();
+                        var data = new CrudeCartProductData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // read all columns out and populate object members
         public void Populate(IDataReader reader) {
-            if (reader["cart_product_id"] != System.DBNull.Value) {
-                CartProductId = (System.Guid)reader["cart_product_id"];
-            }
-
-            if (reader["client_id"] != System.DBNull.Value) {
-                ClientId = (System.Guid)reader["client_id"];
-            }
-
-            if (reader["product_id"] != System.DBNull.Value) {
-                ProductId = (System.Guid)reader["product_id"];
-            }
-
-            if (reader["financial_currency_id"] != System.DBNull.Value) {
-                FinancialCurrencyId = (System.Guid)reader["financial_currency_id"];
-            }
-
-            if (reader["amount"] != System.DBNull.Value) {
-                Amount = (decimal)reader["amount"];
-            }
-
-            if (reader["session_id"] != System.DBNull.Value) {
-                SessionId = (System.Guid)reader["session_id"];
-            }
-
-            if (reader["session_identificator"] != System.DBNull.Value) {
-                SessionIdentificator = (string)reader["session_identificator"];
-            }
-
-            if (reader["asp_id"] != System.DBNull.Value) {
-                AspId = (System.Guid)reader["asp_id"];
-            }
-
-            if (reader["state_rcd"] != System.DBNull.Value) {
-                StateRcd = (string)reader["state_rcd"];
-            }
-
-            if (reader["user_id"] != System.DBNull.Value) {
-                UserId = (System.Guid)reader["user_id"];
-            }
-
-            if (reader["date_time"] != System.DBNull.Value) {
-                DateTime = (System.DateTime)reader["date_time"];
-            }
+            if (reader["cart_product_id"] != System.DBNull.Value) CartProductId = (System.Guid) reader["cart_product_id"];
+            if (reader["client_id"] != System.DBNull.Value) ClientId = (System.Guid) reader["client_id"];
+            if (reader["product_id"] != System.DBNull.Value) ProductId = (System.Guid) reader["product_id"];
+            if (reader["financial_currency_id"] != System.DBNull.Value) FinancialCurrencyId = (System.Guid) reader["financial_currency_id"];
+            if (reader["amount"] != System.DBNull.Value) Amount = (System.Decimal) reader["amount"];
+            if (reader["session_id"] != System.DBNull.Value) SessionId = (System.Guid) reader["session_id"];
+            if (reader["session_identificator"] != System.DBNull.Value) SessionIdentificator = (System.String) reader["session_identificator"];
+            if (reader["asp_id"] != System.DBNull.Value) AspId = (System.Guid) reader["asp_id"];
+            if (reader["state_rcd"] != System.DBNull.Value) StateRcd = (System.String) reader["state_rcd"];
+            if (reader["user_id"] != System.DBNull.Value) UserId = (System.Guid) reader["user_id"];
+            if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
         }
-
+        
         // insert all object members as a new row in table
         public void Insert() {
 
-            if (CartProductId == Guid.Empty) {
+            if (CartProductId == Guid.Empty)
                 CartProductId = Guid.NewGuid();
-            }
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -738,23 +701,23 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, connection)) {
+                using (var command = new SqlCommand(sql, connection)) {
                     // add column(s) to insert as parameter
                     // the insert column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = CartProductId;
-                    command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                    command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                    command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
-                    command.Parameters.Add("@amount", SqlDbType.Decimal).Value = Amount;
-                    command.Parameters.Add("@session_id", SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : SessionId);
-                    command.Parameters.Add("@session_identificator", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : SessionIdentificator;
-                    command.Parameters.Add("@asp_id", SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : AspId);
-                    command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = StateRcd;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)CartProductId;
+                    command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                    command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                    command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
+                    command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                    command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                    command.Parameters.Add("@session_identificator",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : (System.String)SessionIdentificator;
+                    command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
+                    command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against cart_product
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -763,15 +726,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
         public void Insert(SqlConnection connection, SqlTransaction transaction) {
 
-            if (CartProductId == Guid.Empty) {
+            if (CartProductId == Guid.Empty)
                 CartProductId = Guid.NewGuid();
-            }
 
             // create query against cart_product
             // this will be ansi sql and parameterized
@@ -786,17 +748,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to insert as parameter(s)
                 // the insert column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = CartProductId;
-                command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
-                command.Parameters.Add("@amount", SqlDbType.Decimal).Value = Amount;
-                command.Parameters.Add("@session_id", SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : SessionId);
-                command.Parameters.Add("@session_identificator", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : SessionIdentificator;
-                command.Parameters.Add("@asp_id", SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : AspId);
-                command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = StateRcd;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)CartProductId;
+                command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
+                command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                command.Parameters.Add("@session_identificator",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : (System.String)SessionIdentificator;
+                command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
+                command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against cart_product
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -804,7 +766,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // update all object members on a row in table based on primary key
         public void Update() {
             // create query against cart_product
@@ -828,24 +790,24 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // add column(s) to update as parameter(s)
                     // the update column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = CartProductId;
-                    command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                    command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                    command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
-                    command.Parameters.Add("@amount", SqlDbType.Decimal).Value = Amount;
-                    command.Parameters.Add("@session_id", SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : SessionId);
-                    command.Parameters.Add("@session_identificator", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : SessionIdentificator;
-                    command.Parameters.Add("@asp_id", SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : AspId);
-                    command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = StateRcd;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)CartProductId;
+                    command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                    command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                    command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
+                    command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                    command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                    command.Parameters.Add("@session_identificator",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : (System.String)SessionIdentificator;
+                    command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
+                    command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against cart_product
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -854,7 +816,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             // create query against cart_product
@@ -881,17 +843,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to update as parameter
                 // the update column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = CartProductId;
-                command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                command.Parameters.Add("@financial_currency_id", SqlDbType.UniqueIdentifier).Value = FinancialCurrencyId;
-                command.Parameters.Add("@amount", SqlDbType.Decimal).Value = Amount;
-                command.Parameters.Add("@session_id", SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : SessionId);
-                command.Parameters.Add("@session_identificator", SqlDbType.NVarChar).Value = (string.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : SessionIdentificator;
-                command.Parameters.Add("@asp_id", SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : AspId);
-                command.Parameters.Add("@state_rcd", SqlDbType.NVarChar).Value = StateRcd;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)CartProductId;
+                command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                command.Parameters.Add("@financial_currency_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)FinancialCurrencyId;
+                command.Parameters.Add("@amount",SqlDbType.Decimal).Value = (System.Decimal)Amount;
+                command.Parameters.Add("@session_id",SqlDbType.UniqueIdentifier).Value = (SessionId == Guid.Empty ? (object)DBNull.Value : (System.Guid)SessionId);
+                command.Parameters.Add("@session_identificator",SqlDbType.NVarChar).Value = (String.IsNullOrEmpty(SessionIdentificator)) ? (object)DBNull.Value : (System.String)SessionIdentificator;
+                command.Parameters.Add("@asp_id",SqlDbType.UniqueIdentifier).Value = (AspId == Guid.Empty ? (object)DBNull.Value : (System.Guid)AspId);
+                command.Parameters.Add("@state_rcd",SqlDbType.NVarChar).Value = (System.String)StateRcd;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against cart_product
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -899,7 +861,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // delete a row in table based on primary key
         public static void Delete(System.Guid cartProductId) {
             // create query against cart_product
@@ -912,13 +874,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@cart_product_id", SqlDbType.UniqueIdentifier).Value = cartProductId;
+                    command.Parameters.Add("@cart_product_id",SqlDbType.UniqueIdentifier).Value = cartProductId;
                     // execute query against cart_product
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:20 PM
+  Generated Date: 10/25/2020 9:15:58 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -69,14 +69,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeProductCategoryMappingContract contract = new CrudeProductCategoryMappingServiceClient().FetchByProductCategoryMappingId(productCategoryMappingId);
             ViewBag.ProductCategoryId =
-                new SelectList(new CrudeProductCategoryServiceClient().FetchAll(),
+                new SelectList( new CrudeProductCategoryServiceClient().FetchAll(),
                                 "ProductCategoryId",
                                 "ProductCategoryName",
                                 contract.ProductCategoryId
                                 );
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 contract.ProductId
@@ -113,36 +113,27 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryMappingCreate(System.Guid? productCategoryId, System.Guid? productId, System.Guid? userId) {
-            CrudeProductCategoryMappingContract contract = new CrudeProductCategoryMappingContract();
-            if (productCategoryId != null) {
-                contract.ProductCategoryId = (System.Guid)productCategoryId;
-            }
-
-            if (productId != null) {
-                contract.ProductId = (System.Guid)productId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductCategoryMappingContract();
+            if (productCategoryId != null) contract.ProductCategoryId = (System.Guid) productCategoryId;
+            if (productId != null) contract.ProductId = (System.Guid) productId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ProductCategoryId =
-                new SelectList(new CrudeProductCategoryServiceClient().FetchAll(),
+                new SelectList( new CrudeProductCategoryServiceClient().FetchAll(),
                                 "ProductCategoryId",
                                 "ProductCategoryName",
                                 contract.ProductCategoryId
                                 );
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 contract.ProductId
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

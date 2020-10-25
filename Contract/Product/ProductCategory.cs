@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace SolutionNorSolutionPim.BusinessLogicLayer {
+namespace SolutionNorSolutionPim.BusinessLogicLayer
+{
     [DataContract()]
-    public class ProductCategoryContract {
+    public class ProductCategoryContract
+    {
         [DataMember()]
         public CrudeProductCategoryContract ProductCategory { get; set; }
 

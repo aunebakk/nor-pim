@@ -2,29 +2,33 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:03:18 PM
+  Generated Date: 10/25/2020 9:24:47 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.ServiceModel;
+using System.Runtime.Serialization;
+using System.Data;
+using SolutionNorSolutionPim.DataAccessLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public class ProductSearchByCategoryType4 {
-
+        
         public List<ProductSearchByCategoryType4Contract> ProductSearchByCategoryType4FromDal(List<ProductSearchByCategoryType4Data> dataList) {
-            List<ProductSearchByCategoryType4Contract> list = new List<ProductSearchByCategoryType4Contract>();
+           var list = new List<ProductSearchByCategoryType4Contract>();
 
-            foreach (ProductSearchByCategoryType4Data data in dataList) {
-                ProductSearchByCategoryType4Contract contract = new ProductSearchByCategoryType4Contract();
-                DataToContract(data, contract);
-                list.Add(contract);
-            }
+           foreach (ProductSearchByCategoryType4Data data in dataList) {
+               var contract = new ProductSearchByCategoryType4Contract();
+               DataToContract(data, contract);
+               list.Add(contract);
+           }
 
-            return list;
+           return list;
         }
-
+        
         public void DataToContract(ProductSearchByCategoryType4Data dalProductSearchByCategoryType4, ProductSearchByCategoryType4Contract dataContract) {
             dataContract.Hn = dalProductSearchByCategoryType4.Hn;
             dataContract.ProductName = dalProductSearchByCategoryType4.ProductName;

@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/16/2020 6:47:31 PM
+# Generated Date: 10/25/2020 9:32:09 AM
 # From Machine: DESKTOP-742U247
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -332,8 +332,12 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $replace = $azureSQLUserName
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
 
-    [string] $find = 'tiney01'
+    [string] $find = 'gitHubUserTiney'
     [string] $replace = $gitHubUserTiney
+    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+
+    [string] $find = 'developerName'
+    [string] $replace = $developerName
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
 
     # replace password's

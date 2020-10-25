@@ -6,12 +6,12 @@
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateWithDurianByTypescriptGenerator.ControllerBeginning
 */
-using Microsoft.AspNet.Identity;
 using SolutionNorSolutionPim.BusinessLogicLayer;
-using SolutionNorSolutionPim.mvc.Controllers;
 using System;
-using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Collections.Generic;
+using SolutionNorSolutionPim.mvc.Controllers;
+using Microsoft.AspNet.Identity;
 
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
     public partial class CartProductController : Controller {
@@ -22,27 +22,26 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             List<GetCartProductContract> cart_product = null;
 
-            if (!string.IsNullOrEmpty(User.Identity.GetUserId())) {
-                cart_product =
+            if (!string.IsNullOrEmpty(User.Identity.GetUserId())) 
+                cart_product = 
                     new CartProductSearchService().GetCartProduct(
-                            clientId: userId,
-                            productId: Guid.Empty,
-                            financialCurrencyId: Guid.Empty,
-                            userId: Guid.Empty,
-                            cartProductId: Guid.Empty,
-                            sessionIdentificator: string.Empty
+                            clientId : userId, 
+                            productId : Guid.Empty, 
+                            financialCurrencyId: Guid.Empty, 
+                            userId : Guid.Empty, 
+                            cartProductId : Guid.Empty,
+                            sessionIdentificator : string.Empty
                         );
-            } else {
-                cart_product =
+            else
+                cart_product = 
                     new CartProductSearchService().GetCartProduct(
-                            clientId: Guid.Empty,
-                            productId: Guid.Empty,
-                            financialCurrencyId: Guid.Empty,
-                            userId: Guid.Empty,
-                            cartProductId: Guid.Empty,
-                            sessionIdentificator: Session.SessionID
+                            clientId : Guid.Empty,
+                            productId : Guid.Empty, 
+                            financialCurrencyId: Guid.Empty, 
+                            userId : Guid.Empty, 
+                            cartProductId : Guid.Empty,
+                            sessionIdentificator : Session.SessionID
                         );
-            }
 
             return View(
                 "~/Views/Templates/Cart/CartProduct/CartProductIndex.cshtml",

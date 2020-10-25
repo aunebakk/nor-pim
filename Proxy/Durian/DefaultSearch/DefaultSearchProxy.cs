@@ -2,16 +2,16 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:00:38 PM
+  Generated Date: 10/25/2020 9:23:12 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
-
-
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IDefaultSearchService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IDefaultSearchService")]
     public interface IDefaultSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IDefaultSearchService/DefaultTestOverview", ReplyAction = "http://tempuri.org/IDefaultSearchService/DefaultTestOverviewResponse")]
         List<DefaultTestOverviewContract> DefaultTestOverview(string commandName);
@@ -60,25 +60,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IDefaultSearchServiceChannel : IDefaultSearchService, System.ServiceModel.IClientChannel {
     }
-
+    
     public class DefaultSearchService : System.ServiceModel.ClientBase<IDefaultSearchService>, IDefaultSearchService {
-
+        
         public DefaultSearchService() {
         }
-
-        public DefaultSearchService(string endpointConfigurationName) :
+        
+        public DefaultSearchService(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
-
-        public DefaultSearchService(string endpointConfigurationName, string remoteAddress) :
+        
+        public DefaultSearchService(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
-
-        public DefaultSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
+        
+        public DefaultSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
-
-        public DefaultSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+        
+        public DefaultSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
 

@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace SolutionNorSolutionPim.BusinessLogicLayer {
+namespace SolutionNorSolutionPim.BusinessLogicLayer
+{
     [DataContract()]
-    public class ProductChangeEntityDetailContract {
+    public class ProductChangeEntityDetailContract
+    {
 
         [DataMember()]
         public string ProductEntityTypeRcd { get; set; }
@@ -20,7 +22,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     }
 
     [DataContract()]
-    public class ProductChangeEntityContract {
+    public class ProductChangeEntityContract
+    {
         [DataMember()]
         public Guid ProductId { get; set; }
 
@@ -29,7 +32,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     }
 
     [DataContract()]
-    public class ProductContract {
+    public class ProductContract
+    {
         [DataMember()]
         public CrudeProductContract Product { get; set; }
 

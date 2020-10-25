@@ -2,29 +2,33 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:00:32 PM
+  Generated Date: 10/25/2020 9:23:08 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.ServiceModel;
+using System.Runtime.Serialization;
+using System.Data;
+using SolutionNorSolutionPim.DataAccessLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public class GetClientWithFilter {
-
+        
         public List<GetClientWithFilterContract> GetClientWithFilterFromDal(List<GetClientWithFilterData> dataList) {
-            List<GetClientWithFilterContract> list = new List<GetClientWithFilterContract>();
+           var list = new List<GetClientWithFilterContract>();
 
-            foreach (GetClientWithFilterData data in dataList) {
-                GetClientWithFilterContract contract = new GetClientWithFilterContract();
-                DataToContract(data, contract);
-                list.Add(contract);
-            }
+           foreach (GetClientWithFilterData data in dataList) {
+               var contract = new GetClientWithFilterContract();
+               DataToContract(data, contract);
+               list.Add(contract);
+           }
 
-            return list;
+           return list;
         }
-
+        
         public void DataToContract(GetClientWithFilterData dalGetClientWithFilter, GetClientWithFilterContract dataContract) {
             dataContract.FirstName = dalGetClientWithFilter.FirstName;
             dataContract.MiddleName = dalGetClientWithFilter.MiddleName;

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:27 PM
+  Generated Date: 10/25/2020 9:16:03 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -47,7 +47,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeProductExposeSetContract contract = new CrudeProductExposeSetServiceClient().FetchByProductExposeSetId(productExposeSetId);
             ViewBag.ProductExposeSetTypeRcd =
-                new SelectList(new CrudeProductExposeSetTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductExposeSetTypeRefServiceClient().FetchAll(),
                                 "ProductExposeSetTypeRcd",
                                 "ProductExposeSetTypeName",
                                 contract.ProductExposeSetTypeRcd
@@ -84,21 +84,18 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductExposeSetCreate(System.Guid? userId) {
-            CrudeProductExposeSetContract contract = new CrudeProductExposeSetContract();
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductExposeSetContract();
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ProductExposeSetTypeRcd =
-                new SelectList(new CrudeProductExposeSetTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductExposeSetTypeRefServiceClient().FetchAll(),
                                 "ProductExposeSetTypeRcd",
                                 "ProductExposeSetTypeName",
                                 contract.ProductExposeSetTypeRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

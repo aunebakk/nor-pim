@@ -1,5 +1,7 @@
-namespace SolutionNorSolutionPim.UserInterface {
-    partial class ProductWhiteboard {
+namespace SolutionNorSolutionPim.UserInterface
+{
+    partial class ProductWhiteboard
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -10,7 +12,7 @@ namespace SolutionNorSolutionPim.UserInterface {
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+            if ( disposing && ( components != null ) ) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -102,47 +104,47 @@ namespace SolutionNorSolutionPim.UserInterface {
             this.stateRefComboCategory = new SolutionNorSolutionPim.UserInterface.DefaultStateRefCombo();
             this.stateRefComboProduct = new SolutionNorSolutionPim.UserInterface.DefaultStateRefCombo();
             this.toolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitMain)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.splitMain ) ).BeginInit();
             this.splitMain.Panel1.SuspendLayout();
             this.splitMain.Panel2.SuspendLayout();
             this.splitMain.SuspendLayout();
             this.tabControlSplit.SuspendLayout();
             this.tabPageCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitCategory)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.splitCategory ) ).BeginInit();
             this.splitCategory.Panel1.SuspendLayout();
             this.splitCategory.Panel2.SuspendLayout();
             this.splitCategory.SuspendLayout();
             this.tabControlCategory.SuspendLayout();
             this.tabPageCategoryImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductCategoryImage)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductCategoryImage ) ).BeginInit();
             this.tabPageCategoryDocumentation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductCategoryDocumentation)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductCategoryDocumentation ) ).BeginInit();
             this.tabPageProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitProduct)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.splitProduct ) ).BeginInit();
             this.splitProduct.Panel1.SuspendLayout();
             this.splitProduct.Panel2.SuspendLayout();
             this.splitProduct.SuspendLayout();
             this.tabControlProductsPage.SuspendLayout();
             this.tabPageProductsView1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts1)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProducts1 ) ).BeginInit();
             this.tabPageProductsView2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts2)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProducts2 ) ).BeginInit();
             this.tabPageProductsView3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts3)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProducts3 ) ).BeginInit();
             this.tabControlProduct.SuspendLayout();
             this.tabPageProduct.SuspendLayout();
             this.tabPageProductAttribute.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductAttribute)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductAttribute ) ).BeginInit();
             this.tabPageProductIdentifier.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductIdentifier)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductIdentifier ) ).BeginInit();
             this.tabPageProductInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductInfo)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductInfo ) ).BeginInit();
             this.tabPageProductImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductImage)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductImage ) ).BeginInit();
             this.tabPageProductDocumentation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductDocumentation)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductDocumentation ) ).BeginInit();
             this.tabPageProductHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductHistory)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductHistory ) ).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip
@@ -213,9 +215,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // splitMain
             // 
-            this.splitMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitMain.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.splitMain.Location = new System.Drawing.Point(0, 28);
             this.splitMain.Name = "splitMain";
             // 
@@ -232,9 +234,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // treeViewHierarchy
             // 
-            this.treeViewHierarchy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.treeViewHierarchy.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.treeViewHierarchy.Location = new System.Drawing.Point(3, 3);
             this.treeViewHierarchy.Name = "treeViewHierarchy";
             this.treeViewHierarchy.Size = new System.Drawing.Size(277, 483);
@@ -243,9 +245,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // tabControlSplit
             // 
-            this.tabControlSplit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlSplit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.tabControlSplit.Controls.Add(this.tabPageCategory);
             this.tabControlSplit.Controls.Add(this.tabPageProducts);
             this.tabControlSplit.Location = new System.Drawing.Point(3, 3);
@@ -268,9 +270,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // splitCategory
             // 
-            this.splitCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitCategory.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.splitCategory.Location = new System.Drawing.Point(6, 6);
             this.splitCategory.Name = "splitCategory";
             this.splitCategory.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -298,7 +300,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductCategoryEdit
             // 
-            this.buttonProductCategoryEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductCategoryEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductCategoryEdit.Location = new System.Drawing.Point(440, 11);
             this.buttonProductCategoryEdit.Name = "buttonProductCategoryEdit";
             this.buttonProductCategoryEdit.Size = new System.Drawing.Size(92, 22);
@@ -384,9 +386,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // tabControlCategory
             // 
-            this.tabControlCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlCategory.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.tabControlCategory.Controls.Add(this.tabPageCategoryImage);
             this.tabControlCategory.Controls.Add(this.tabPageCategoryDocumentation);
             this.tabControlCategory.Location = new System.Drawing.Point(3, 3);
@@ -410,7 +412,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonCategoryImageAdd
             // 
-            this.buttonCategoryImageAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCategoryImageAdd.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonCategoryImageAdd.Location = new System.Drawing.Point(335, 225);
             this.buttonCategoryImageAdd.Name = "buttonCategoryImageAdd";
             this.buttonCategoryImageAdd.Size = new System.Drawing.Size(92, 22);
@@ -421,7 +423,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonCategoryImageEdit
             // 
-            this.buttonCategoryImageEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCategoryImageEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonCategoryImageEdit.Location = new System.Drawing.Point(433, 225);
             this.buttonCategoryImageEdit.Name = "buttonCategoryImageEdit";
             this.buttonCategoryImageEdit.Size = new System.Drawing.Size(92, 22);
@@ -432,9 +434,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductCategoryImage
             // 
-            this.dataGridViewProductCategoryImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductCategoryImage.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductCategoryImage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductCategoryImage.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductCategoryImage.Name = "dataGridViewProductCategoryImage";
@@ -457,7 +459,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductCategoryDocumentationAdd
             // 
-            this.buttonProductCategoryDocumentationAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductCategoryDocumentationAdd.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductCategoryDocumentationAdd.Location = new System.Drawing.Point(335, 226);
             this.buttonProductCategoryDocumentationAdd.Name = "buttonProductCategoryDocumentationAdd";
             this.buttonProductCategoryDocumentationAdd.Size = new System.Drawing.Size(92, 22);
@@ -468,7 +470,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductCategoryDocumentationEdit
             // 
-            this.buttonProductCategoryDocumentationEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductCategoryDocumentationEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductCategoryDocumentationEdit.Location = new System.Drawing.Point(433, 226);
             this.buttonProductCategoryDocumentationEdit.Name = "buttonProductCategoryDocumentationEdit";
             this.buttonProductCategoryDocumentationEdit.Size = new System.Drawing.Size(92, 22);
@@ -479,9 +481,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductCategoryDocumentation
             // 
-            this.dataGridViewProductCategoryDocumentation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductCategoryDocumentation.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductCategoryDocumentation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductCategoryDocumentation.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductCategoryDocumentation.Name = "dataGridViewProductCategoryDocumentation";
@@ -502,9 +504,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // splitProduct
             // 
-            this.splitProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitProduct.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.splitProduct.Location = new System.Drawing.Point(6, 6);
             this.splitProduct.Name = "splitProduct";
             this.splitProduct.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -522,9 +524,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // tabControlProductsPage
             // 
-            this.tabControlProductsPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlProductsPage.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.tabControlProductsPage.Controls.Add(this.tabPageProductsView1);
             this.tabControlProductsPage.Controls.Add(this.tabPageProductsView2);
             this.tabControlProductsPage.Controls.Add(this.tabPageProductsView3);
@@ -548,11 +550,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProducts1
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 255 ) ) ) ));
             this.dataGridViewProducts1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewProducts1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProducts1.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProducts1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts1.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewProducts1.Name = "dataGridViewProducts1";
@@ -573,11 +575,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProducts2
             // 
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 255 ) ) ) ));
             this.dataGridViewProducts2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridViewProducts2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProducts2.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProducts2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts2.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewProducts2.Name = "dataGridViewProducts2";
@@ -599,11 +601,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProducts3
             // 
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 255 ) ) ) ));
             this.dataGridViewProducts3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewProducts3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProducts3.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProducts3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts3.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewProducts3.Name = "dataGridViewProducts3";
@@ -613,9 +615,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // tabControlProduct
             // 
-            this.tabControlProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlProduct.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.tabControlProduct.Controls.Add(this.tabPageProduct);
             this.tabControlProduct.Controls.Add(this.tabPageProductAttribute);
             this.tabControlProduct.Controls.Add(this.tabPageProductIdentifier);
@@ -628,7 +630,6 @@ namespace SolutionNorSolutionPim.UserInterface {
             this.tabControlProduct.SelectedIndex = 0;
             this.tabControlProduct.Size = new System.Drawing.Size(531, 214);
             this.tabControlProduct.TabIndex = 0;
-            this.tabControlProduct.SelectedIndexChanged += new System.EventHandler(this.tabControlProduct_SelectedIndexChanged);
             // 
             // tabPageProduct
             // 
@@ -651,7 +652,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductHistory
             // 
-            this.buttonProductHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductHistory.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductHistory.Location = new System.Drawing.Point(425, 68);
             this.buttonProductHistory.Name = "buttonProductHistory";
             this.buttonProductHistory.Size = new System.Drawing.Size(92, 22);
@@ -662,7 +663,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductSave
             // 
-            this.buttonProductSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductSave.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductSave.Location = new System.Drawing.Point(425, 40);
             this.buttonProductSave.Name = "buttonProductSave";
             this.buttonProductSave.Size = new System.Drawing.Size(92, 22);
@@ -673,7 +674,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductEdit
             // 
-            this.buttonProductEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductEdit.Location = new System.Drawing.Point(425, 12);
             this.buttonProductEdit.Name = "buttonProductEdit";
             this.buttonProductEdit.Size = new System.Drawing.Size(92, 22);
@@ -740,7 +741,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductAttributeAdd
             // 
-            this.buttonProductAttributeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductAttributeAdd.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductAttributeAdd.Location = new System.Drawing.Point(330, 163);
             this.buttonProductAttributeAdd.Name = "buttonProductAttributeAdd";
             this.buttonProductAttributeAdd.Size = new System.Drawing.Size(92, 22);
@@ -751,7 +752,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductAttributeEdit
             // 
-            this.buttonProductAttributeEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductAttributeEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductAttributeEdit.Location = new System.Drawing.Point(428, 163);
             this.buttonProductAttributeEdit.Name = "buttonProductAttributeEdit";
             this.buttonProductAttributeEdit.Size = new System.Drawing.Size(92, 22);
@@ -762,9 +763,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductAttribute
             // 
-            this.dataGridViewProductAttribute.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductAttribute.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductAttribute.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductAttribute.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductAttribute.Name = "dataGridViewProductAttribute";
@@ -785,7 +786,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductIdentifierAdd
             // 
-            this.buttonProductIdentifierAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductIdentifierAdd.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductIdentifierAdd.Location = new System.Drawing.Point(330, 163);
             this.buttonProductIdentifierAdd.Name = "buttonProductIdentifierAdd";
             this.buttonProductIdentifierAdd.Size = new System.Drawing.Size(92, 22);
@@ -796,7 +797,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductIdentifierEdit
             // 
-            this.buttonProductIdentifierEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductIdentifierEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductIdentifierEdit.Location = new System.Drawing.Point(428, 163);
             this.buttonProductIdentifierEdit.Name = "buttonProductIdentifierEdit";
             this.buttonProductIdentifierEdit.Size = new System.Drawing.Size(92, 22);
@@ -807,9 +808,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductIdentifier
             // 
-            this.dataGridViewProductIdentifier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductIdentifier.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductIdentifier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductIdentifier.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductIdentifier.Name = "dataGridViewProductIdentifier";
@@ -831,7 +832,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductInfoAdd
             // 
-            this.buttonProductInfoAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductInfoAdd.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductInfoAdd.Location = new System.Drawing.Point(330, 163);
             this.buttonProductInfoAdd.Name = "buttonProductInfoAdd";
             this.buttonProductInfoAdd.Size = new System.Drawing.Size(92, 22);
@@ -842,7 +843,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductInfoEdit
             // 
-            this.buttonProductInfoEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductInfoEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductInfoEdit.Location = new System.Drawing.Point(428, 163);
             this.buttonProductInfoEdit.Name = "buttonProductInfoEdit";
             this.buttonProductInfoEdit.Size = new System.Drawing.Size(92, 22);
@@ -853,9 +854,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductInfo
             // 
-            this.dataGridViewProductInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductInfo.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductInfo.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductInfo.Name = "dataGridViewProductInfo";
@@ -876,7 +877,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductImageAdd
             // 
-            this.buttonProductImageAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductImageAdd.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductImageAdd.Location = new System.Drawing.Point(329, 163);
             this.buttonProductImageAdd.Name = "buttonProductImageAdd";
             this.buttonProductImageAdd.Size = new System.Drawing.Size(92, 22);
@@ -887,7 +888,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductImageEdit
             // 
-            this.buttonProductImageEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductImageEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductImageEdit.Location = new System.Drawing.Point(427, 163);
             this.buttonProductImageEdit.Name = "buttonProductImageEdit";
             this.buttonProductImageEdit.Size = new System.Drawing.Size(92, 22);
@@ -898,9 +899,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductImage
             // 
-            this.dataGridViewProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductImage.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductImage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductImage.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductImage.Name = "dataGridViewProductImage";
@@ -921,7 +922,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductDocumentationAdd
             // 
-            this.buttonProductDocumentationAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductDocumentationAdd.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductDocumentationAdd.Location = new System.Drawing.Point(330, 161);
             this.buttonProductDocumentationAdd.Name = "buttonProductDocumentationAdd";
             this.buttonProductDocumentationAdd.Size = new System.Drawing.Size(92, 22);
@@ -932,7 +933,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // buttonProductDocumentationEdit
             // 
-            this.buttonProductDocumentationEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProductDocumentationEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.buttonProductDocumentationEdit.Location = new System.Drawing.Point(428, 161);
             this.buttonProductDocumentationEdit.Name = "buttonProductDocumentationEdit";
             this.buttonProductDocumentationEdit.Size = new System.Drawing.Size(92, 22);
@@ -943,9 +944,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductDocumentation
             // 
-            this.dataGridViewProductDocumentation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductDocumentation.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductDocumentation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductDocumentation.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductDocumentation.Name = "dataGridViewProductDocumentation";
@@ -964,9 +965,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewProductHistory
             // 
-            this.dataGridViewProductHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProductHistory.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewProductHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductHistory.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewProductHistory.Name = "dataGridViewProductHistory";
@@ -1001,47 +1002,47 @@ namespace SolutionNorSolutionPim.UserInterface {
             this.toolStrip.PerformLayout();
             this.splitMain.Panel1.ResumeLayout(false);
             this.splitMain.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitMain)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.splitMain ) ).EndInit();
             this.splitMain.ResumeLayout(false);
             this.tabControlSplit.ResumeLayout(false);
             this.tabPageCategory.ResumeLayout(false);
             this.splitCategory.Panel1.ResumeLayout(false);
             this.splitCategory.Panel1.PerformLayout();
             this.splitCategory.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitCategory)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.splitCategory ) ).EndInit();
             this.splitCategory.ResumeLayout(false);
             this.tabControlCategory.ResumeLayout(false);
             this.tabPageCategoryImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductCategoryImage)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductCategoryImage ) ).EndInit();
             this.tabPageCategoryDocumentation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductCategoryDocumentation)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductCategoryDocumentation ) ).EndInit();
             this.tabPageProducts.ResumeLayout(false);
             this.splitProduct.Panel1.ResumeLayout(false);
             this.splitProduct.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitProduct)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.splitProduct ) ).EndInit();
             this.splitProduct.ResumeLayout(false);
             this.tabControlProductsPage.ResumeLayout(false);
             this.tabPageProductsView1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts1)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProducts1 ) ).EndInit();
             this.tabPageProductsView2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts2)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProducts2 ) ).EndInit();
             this.tabPageProductsView3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts3)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProducts3 ) ).EndInit();
             this.tabControlProduct.ResumeLayout(false);
             this.tabPageProduct.ResumeLayout(false);
             this.tabPageProduct.PerformLayout();
             this.tabPageProductAttribute.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductAttribute)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductAttribute ) ).EndInit();
             this.tabPageProductIdentifier.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductIdentifier)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductIdentifier ) ).EndInit();
             this.tabPageProductInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductInfo)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductInfo ) ).EndInit();
             this.tabPageProductImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductImage)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductImage ) ).EndInit();
             this.tabPageProductDocumentation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductDocumentation)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductDocumentation ) ).EndInit();
             this.tabPageProductHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductHistory)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewProductHistory ) ).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,9 +3,11 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer {
+namespace SolutionNorSolutionPim.DataAccessLayer
+{
 
-    public partial class CrudeReportingRoundupData {
+    public partial class CrudeReportingRoundupData
+    {
 
         public static void UpdateOrInsert(
             DateTime date,
@@ -27,14 +29,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     and reporting_reference_code = @reporting_reference_code
     ";
 
-            using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
-                command.Parameters.Add("@date", SqlDbType.DateTime).Value = date.Date;
-                command.Parameters.Add("@reporting_roundup_type_rcd", SqlDbType.NVarChar).Value = reportingRoundupTypeRcd;
-                command.Parameters.Add("@reporting_reference_code", SqlDbType.NVarChar).Value = reportingReferenceCode;
+            using ( var command = new SqlCommand(sql, connection, transaction) ) {
+                command.Parameters.Add("@date", SqlDbType.DateTime).Value = ( System.DateTime ) date.Date;
+                command.Parameters.Add("@reporting_roundup_type_rcd", SqlDbType.NVarChar).Value = ( System.String ) reportingRoundupTypeRcd;
+                command.Parameters.Add("@reporting_reference_code", SqlDbType.NVarChar).Value = ( System.String ) reportingReferenceCode;
                 command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
                 command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime.UtcNow;
 
-                if (command.ExecuteNonQuery() == 0) {
+                if ( command.ExecuteNonQuery() == 0 ) {
                     command.Parameters.Add("@reporting_roundup_id", SqlDbType.UniqueIdentifier).Value = Guid.NewGuid();
                     command.Parameters.Add("@count_number", SqlDbType.Int).Value = 1;
 
@@ -65,18 +67,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     and reporting_reference_code = @reporting_reference_code
     ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
-                    command.Parameters.Add("@date", SqlDbType.DateTime).Value = date.Date;
-                    command.Parameters.Add("@reporting_roundup_type_rcd", SqlDbType.NVarChar).Value = reportingRoundupTypeRcd;
-                    command.Parameters.Add("@reporting_reference_code", SqlDbType.NVarChar).Value = reportingReferenceCode;
+                using ( var command = new SqlCommand(sql, conn) ) {
+                    command.Parameters.Add("@date", SqlDbType.DateTime).Value = ( System.DateTime ) date.Date;
+                    command.Parameters.Add("@reporting_roundup_type_rcd", SqlDbType.NVarChar).Value = ( System.String ) reportingRoundupTypeRcd;
+                    command.Parameters.Add("@reporting_reference_code", SqlDbType.NVarChar).Value = ( System.String ) reportingReferenceCode;
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
                     command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime.UtcNow;
 
-                    if (command.ExecuteNonQuery() == 0) {
+                    if ( command.ExecuteNonQuery() == 0 ) {
                         command.Parameters.Add("@reporting_roundup_id", SqlDbType.UniqueIdentifier).Value = Guid.NewGuid();
                         command.Parameters.Add("@count_number", SqlDbType.Int).Value = 1;
 

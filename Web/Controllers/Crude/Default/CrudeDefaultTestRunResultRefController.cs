@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:05 PM
+  Generated Date: 10/25/2020 9:15:46 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeDefaultTestRunResultRefDetails(string defaultTestRunResultRcd) {
+        public ActionResult CrudeDefaultTestRunResultRefDetails(System.String defaultTestRunResultRcd) {
 
             return View(
                 "~/Views/Crude/Default/CrudeDefaultTestRunResultRef/CrudeDefaultTestRunResultRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefEdit(
-            string defaultTestRunResultRcd
+            System.String defaultTestRunResultRcd
             ) {
 
             CrudeDefaultTestRunResultRefContract contract = new CrudeDefaultTestRunResultRefServiceClient().FetchByDefaultTestRunResultRcd(defaultTestRunResultRcd);
@@ -74,10 +74,8 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefCreate(System.Guid? userId) {
-            CrudeDefaultTestRunResultRefContract contract = new CrudeDefaultTestRunResultRefContract();
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeDefaultTestRunResultRefContract();
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -108,7 +106,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultTestRunResultRefDelete(
-            string defaultTestRunResultRcd
+            System.String defaultTestRunResultRcd
             ) {
             new CrudeDefaultTestRunResultRefServiceClient().Delete(defaultTestRunResultRcd);
 

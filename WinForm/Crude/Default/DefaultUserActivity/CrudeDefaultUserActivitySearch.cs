@@ -2,13 +2,13 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:18 PM
+  Generated Date: 10/25/2020 9:15:09 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
@@ -18,21 +18,21 @@ namespace SolutionNorSolutionPim.UserInterface {
 
     // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeDefaultUserActivitySearch : Form {
-
+        
         // the following fields holds initial state for foreign key's
         private string _defaultUserActivityTypeRcd;
-
+        
         private System.Guid _defaultUserId;
-
+        
         // Constructs the form with a Grid and Search button which is default on Enter
         //  and a Close button which works with the esc key
         public CrudeDefaultUserActivitySearch() {
             InitializeComponent();
             InitializeGridCrudeDefaultUserActivity();
-            AcceptButton = buttonCrudeDefaultUserActivitySearch;
-            CancelButton = buttonClose;
+            this.AcceptButton = buttonCrudeDefaultUserActivitySearch;
+            this.CancelButton = buttonClose;
         }
-
+        
         // shows the form with initial values for comboboxes and pickers
         //  an search is done with these initial values
         public void Show(string defaultUserActivityTypeRcd, System.Guid defaultUserId) {
@@ -43,112 +43,118 @@ namespace SolutionNorSolutionPim.UserInterface {
                 RefreshCrudeDefaultUserActivity();
 
                 base.Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void buttonCrudeDefaultUserActivityEdit_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultUserActivityEdit editForm = new CrudeDefaultUserActivityEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeDefaultUserActivity.CurrentRow.Cells["DefaultUserActivityId"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultUserActivityEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeDefaultUserActivity.CurrentRow.Cells["DefaultUserActivityId"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows a form for adding more rows
         private void buttonCrudeDefaultUserActivityAdd_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultUserActivityEdit editForm = new CrudeDefaultUserActivityEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeDefaultUserActivityEdit();
+                editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsAddByRules(_defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void dataGridViewCrudeDefaultUserActivity_DoubleClick(object sender, EventArgs e) {
             try {
-                CrudeDefaultUserActivityEdit editForm = new CrudeDefaultUserActivityEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeDefaultUserActivity.CurrentRow.Cells["DefaultUserActivityId"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultUserActivityEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeDefaultUserActivity.CurrentRow.Cells["DefaultUserActivityId"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // does a search based on the filter and populates the grid
         private void buttonCrudeDefaultUserActivitySearch_Click(object sender, EventArgs e) {
             try {
                 RefreshCrudeDefaultUserActivity();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-
+        
         // refresh the grid
         public void RefreshCrudeDefaultUserActivity() {
-            CrudeDefaultUserActivityServiceClient defaultUserActivity = new CrudeDefaultUserActivityServiceClient();
+            var defaultUserActivity = new CrudeDefaultUserActivityServiceClient();
 
             try {
-                BindingSource bindingSource = new BindingSource();
+                var bindingSource = new BindingSource();
                 bindingSource.DataSource = defaultUserActivity.FetchWithFilter(
                              Guid.Empty
-                            , defaultUserActivityTypeRefCombo.Text
-                            , textBoxUserActivityNote.Text
-                            , textBoxOriginatingAddress.Text
-                            , textBoxReferrer.Text
-                            , Guid.Empty
-                            , dateTimePickerDateTime.Checked ? Convert.ToDateTime(dateTimePickerDateTime.Value) : DateTime.MinValue
+                            ,defaultUserActivityTypeRefCombo.Text
+                            ,textBoxUserActivityNote.Text
+                            ,textBoxOriginatingAddress.Text
+                            ,textBoxReferrer.Text
+                            ,Guid.Empty
+                            ,dateTimePickerDateTime.Checked ? Convert.ToDateTime(dateTimePickerDateTime.Value): DateTime.MinValue
                             );
                 dataGridViewCrudeDefaultUserActivity.AutoGenerateColumns = false;
                 dataGridViewCrudeDefaultUserActivity.DataSource = bindingSource;
                 dataGridViewCrudeDefaultUserActivity.AutoResizeColumns();
                 dataGridViewCrudeDefaultUserActivity.Refresh();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             } finally {
                 defaultUserActivity.Close();
             }
         }
-
+        
         // initialize the grid, hiding fields like guids and images
         private void InitializeGridCrudeDefaultUserActivity() {
             try {
                 dataGridViewCrudeDefaultUserActivity.Columns.Clear();
                 dataGridViewCrudeDefaultUserActivity.AutoGenerateColumns = false;
-                dataGridViewCrudeDefaultUserActivity.Columns.Add("DefaultUserActivityTypeRcd", "Default User Activity Type");
+                dataGridViewCrudeDefaultUserActivity.Columns.Add("DefaultUserActivityTypeRcd","Default User Activity Type");
                 dataGridViewCrudeDefaultUserActivity.Columns["DefaultUserActivityTypeRcd"].DataPropertyName = "DefaultUserActivityTypeRcd";
-                dataGridViewCrudeDefaultUserActivity.Columns.Add("UserActivityNote", "User Activity Note");
+                dataGridViewCrudeDefaultUserActivity.Columns.Add("UserActivityNote","User Activity Note");
                 dataGridViewCrudeDefaultUserActivity.Columns["UserActivityNote"].DataPropertyName = "UserActivityNote";
-                dataGridViewCrudeDefaultUserActivity.Columns.Add("OriginatingAddress", "Originating Address");
+                dataGridViewCrudeDefaultUserActivity.Columns.Add("OriginatingAddress","Originating Address");
                 dataGridViewCrudeDefaultUserActivity.Columns["OriginatingAddress"].DataPropertyName = "OriginatingAddress";
-                dataGridViewCrudeDefaultUserActivity.Columns.Add("Referrer", "Referrer");
+                dataGridViewCrudeDefaultUserActivity.Columns.Add("Referrer","Referrer");
                 dataGridViewCrudeDefaultUserActivity.Columns["Referrer"].DataPropertyName = "Referrer";
-                dataGridViewCrudeDefaultUserActivity.Columns.Add("DateTime", "Date Time");
+                dataGridViewCrudeDefaultUserActivity.Columns.Add("DateTime","Date Time");
                 dataGridViewCrudeDefaultUserActivity.Columns["DateTime"].DataPropertyName = "DateTime";
-                dataGridViewCrudeDefaultUserActivity.Columns.Add("DefaultUserActivityId", "Default User Activity");
+                dataGridViewCrudeDefaultUserActivity.Columns.Add("DefaultUserActivityId","Default User Activity");
                 dataGridViewCrudeDefaultUserActivity.Columns["DefaultUserActivityId"].DataPropertyName = "DefaultUserActivityId";
                 dataGridViewCrudeDefaultUserActivity.Columns["DefaultUserActivityId"].Visible = false;
                 dataGridViewCrudeDefaultUserActivity.Columns.Add("ExtensionData", "");
@@ -156,10 +162,11 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 dataGridViewCrudeDefaultUserActivity.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewCrudeDefaultUserActivity.AutoResizeColumns();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
     }

@@ -3,16 +3,18 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer {
+namespace SolutionNorSolutionPim.DataAccessLayer
+{
     /// <summary> 
     /// Provides product search with different parameter and result sets
     /// </summary>
-    public partial class ProductSearch {
+    public partial class ProductSearch
+    {
         /// <summary>Get product history part</summary>
         /// <cardinality>One</cardinality>
         public ProductHistoryData ProductHistoryPart(Guid productId) {
 
-            ProductHistoryData ret = new ProductHistoryData();
+            var ret = new ProductHistoryData();
 
             string sql = @" 
                     select top 1 -- not needed
@@ -28,16 +30,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     where p.product_id = @product_id
                 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
-                    if (reader.Read()) {
+                    if ( reader.Read() )
                         ret.Populate(reader, new ProductHistoryDataOrdinals(reader));
-                    }
                 }
 
                 return ret;
@@ -48,7 +49,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         /// <cardinality>One</cardinality>
         public ProductHistoryData ProductHistoryBecame(Guid becameProductId) {
 
-            ProductHistoryData ret = new ProductHistoryData();
+            var ret = new ProductHistoryData();
 
             string sql = @" 
                     select top 1 -- not needed
@@ -64,16 +65,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     where p.product_became_id = @product_became_id
                 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_became_id", SqlDbType.UniqueIdentifier).Value = becameProductId;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
-                    if (reader.Read()) {
+                    if ( reader.Read() )
                         ret.Populate(reader, new ProductHistoryDataOrdinals(reader));
-                    }
                 }
 
                 return ret;

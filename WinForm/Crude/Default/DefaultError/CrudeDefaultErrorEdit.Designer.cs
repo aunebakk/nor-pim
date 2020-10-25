@@ -1,56 +1,56 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeDefaultErrorEdit {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonSave;
-
+        
         private DefaultErrorLayerRefCombo defaultErrorLayerRefCombo;
-
+        
         private System.Windows.Forms.Label labelDefaultErrorLayerRefCombo;
-
+        
         private DefaultErrorTypeRefCombo defaultErrorTypeRefCombo;
-
+        
         private System.Windows.Forms.Label labelDefaultErrorTypeRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxLayerAddress;
-
+        
         private System.Windows.Forms.Label labelLayerAddress;
-
+        
         private System.Windows.Forms.TextBox textBoxErrorMessage;
-
+        
         private System.Windows.Forms.Label labelErrorMessage;
-
+        
         private System.Windows.Forms.TextBox textBoxStackTrace;
-
+        
         private System.Windows.Forms.Label labelStackTrace;
-
+        
         private System.Windows.Forms.TextBox textBoxMethodName;
-
+        
         private System.Windows.Forms.Label labelMethodName;
-
+        
         private System.Windows.Forms.TextBox textBoxDomainName;
-
+        
         private System.Windows.Forms.Label labelDomainName;
-
+        
         private System.Windows.Forms.TextBox textBoxClassName;
-
+        
         private System.Windows.Forms.Label labelClassName;
-
+        
         private System.Windows.Forms.DateTimePicker dateTimePickerDateTime;
-
+        
         private System.Windows.Forms.Label labelDateTime;
-
+        
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -233,7 +233,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(298, 220);
-
+            
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

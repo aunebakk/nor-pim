@@ -1,44 +1,44 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class ProductAttributeEdit {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonSave;
-
+        
         private ProductAttributeRefCombo productAttributeRefCombo;
-
+        
         private System.Windows.Forms.Label labelProductAttributeRefCombo;
-
+        
         private ProductAttributeUnitRefCombo productAttributeUnitRefCombo;
-
+        
         private System.Windows.Forms.Label labelProductAttributeUnitRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxValue;
-
+        
         private System.Windows.Forms.Label labelValue;
-
+        
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-
+        
         private System.Windows.Forms.Label labelDateTime;
-
+        
         private System.Windows.Forms.Button buttonProductAttributeSearch;
-
+        
         private System.Windows.Forms.Button buttonProductAttributeAdd;
-
+        
         private System.Windows.Forms.Button buttonProductAttributeEdit;
-
+        
         private System.Windows.Forms.DataGridView dataGridViewProductAttribute;
-
+        
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -178,7 +178,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(412, 218);
-
+            
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

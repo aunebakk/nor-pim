@@ -2,13 +2,13 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:17 PM
+  Generated Date: 10/25/2020 9:15:08 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
@@ -18,19 +18,19 @@ namespace SolutionNorSolutionPim.UserInterface {
 
     // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeDefaultIssueStatusRefSearch : Form {
-
+        
         // the following fields holds initial state for foreign key's
         private System.Guid _defaultUserId;
-
+        
         // Constructs the form with a Grid and Search button which is default on Enter
         //  and a Close button which works with the esc key
         public CrudeDefaultIssueStatusRefSearch() {
             InitializeComponent();
             InitializeGridCrudeDefaultIssueStatusRef();
-            AcceptButton = buttonCrudeDefaultIssueStatusRefSearch;
-            CancelButton = buttonClose;
+            this.AcceptButton = buttonCrudeDefaultIssueStatusRefSearch;
+            this.CancelButton = buttonClose;
         }
-
+        
         // shows the form with initial values for comboboxes and pickers
         //  an search is done with these initial values
         public void Show(System.Guid defaultUserId) {
@@ -40,113 +40,120 @@ namespace SolutionNorSolutionPim.UserInterface {
                 RefreshCrudeDefaultIssueStatusRef();
 
                 base.Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void buttonCrudeDefaultIssueStatusRefEdit_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultIssueStatusRefEdit editForm = new CrudeDefaultIssueStatusRefEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((string)dataGridViewCrudeDefaultIssueStatusRef.CurrentRow.Cells["DefaultIssueStatusRcd"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultIssueStatusRefEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.String) dataGridViewCrudeDefaultIssueStatusRef.CurrentRow.Cells["DefaultIssueStatusRcd"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows a form for adding more rows
         private void buttonCrudeDefaultIssueStatusRefAdd_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultIssueStatusRefEdit editForm = new CrudeDefaultIssueStatusRefEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeDefaultIssueStatusRefEdit();
+                editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsAddByRules(_defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void dataGridViewCrudeDefaultIssueStatusRef_DoubleClick(object sender, EventArgs e) {
             try {
-                CrudeDefaultIssueStatusRefEdit editForm = new CrudeDefaultIssueStatusRefEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((string)dataGridViewCrudeDefaultIssueStatusRef.CurrentRow.Cells["DefaultIssueStatusRcd"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultIssueStatusRefEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.String) dataGridViewCrudeDefaultIssueStatusRef.CurrentRow.Cells["DefaultIssueStatusRcd"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // does a search based on the filter and populates the grid
         private void buttonCrudeDefaultIssueStatusRefSearch_Click(object sender, EventArgs e) {
             try {
                 RefreshCrudeDefaultIssueStatusRef();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-
+        
         // refresh the grid
         public void RefreshCrudeDefaultIssueStatusRef() {
-            CrudeDefaultIssueStatusRefServiceClient defaultIssueStatusRef = new CrudeDefaultIssueStatusRefServiceClient();
+            var defaultIssueStatusRef = new CrudeDefaultIssueStatusRefServiceClient();
 
             try {
-                BindingSource bindingSource = new BindingSource();
+                var bindingSource = new BindingSource();
                 bindingSource.DataSource = defaultIssueStatusRef.FetchWithFilter(
                              textBoxDefaultIssueStatus.Text
-                            , textBoxDefaultIssueStatusName.Text
-                            , Guid.Empty
-                            , DateTime.MinValue
+                            ,textBoxDefaultIssueStatusName.Text
+                            ,Guid.Empty
+                            ,DateTime.MinValue
                             );
                 dataGridViewCrudeDefaultIssueStatusRef.AutoGenerateColumns = false;
                 dataGridViewCrudeDefaultIssueStatusRef.DataSource = bindingSource;
                 dataGridViewCrudeDefaultIssueStatusRef.AutoResizeColumns();
                 dataGridViewCrudeDefaultIssueStatusRef.Refresh();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             } finally {
                 defaultIssueStatusRef.Close();
             }
         }
-
+        
         // initialize the grid, hiding fields like guids and images
         private void InitializeGridCrudeDefaultIssueStatusRef() {
             try {
                 dataGridViewCrudeDefaultIssueStatusRef.Columns.Clear();
                 dataGridViewCrudeDefaultIssueStatusRef.AutoGenerateColumns = false;
-                dataGridViewCrudeDefaultIssueStatusRef.Columns.Add("DefaultIssueStatusName", "Default Issue Status Name");
+                dataGridViewCrudeDefaultIssueStatusRef.Columns.Add("DefaultIssueStatusName","Default Issue Status Name");
                 dataGridViewCrudeDefaultIssueStatusRef.Columns["DefaultIssueStatusName"].DataPropertyName = "DefaultIssueStatusName";
-                dataGridViewCrudeDefaultIssueStatusRef.Columns.Add("DefaultIssueStatusRcd", "Default Issue Status");
+                dataGridViewCrudeDefaultIssueStatusRef.Columns.Add("DefaultIssueStatusRcd","Default Issue Status");
                 dataGridViewCrudeDefaultIssueStatusRef.Columns["DefaultIssueStatusRcd"].DataPropertyName = "DefaultIssueStatusRcd";
-                dataGridViewCrudeDefaultIssueStatusRef.Columns.Add("DateTime", "Date Time");
+                dataGridViewCrudeDefaultIssueStatusRef.Columns.Add("DateTime","Date Time");
                 dataGridViewCrudeDefaultIssueStatusRef.Columns["DateTime"].DataPropertyName = "DateTime";
                 dataGridViewCrudeDefaultIssueStatusRef.Columns.Add("ExtensionData", "");
                 dataGridViewCrudeDefaultIssueStatusRef.Columns["ExtensionData"].Visible = false;
 
                 dataGridViewCrudeDefaultIssueStatusRef.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewCrudeDefaultIssueStatusRef.AutoResizeColumns();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
     }

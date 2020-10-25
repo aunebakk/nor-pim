@@ -151,7 +151,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                     defaultUser.DefaultUserCode = userCode;
 
                     // resolve net-name if user code appears to be an ip address
-                    if (IPAddress.TryParse(userCode, out IPAddress ipAddress)) {
+                    IPAddress ipAddress;
+                    if (IPAddress.TryParse(userCode, out ipAddress)) {
                         defaultUser.DefaultUserName = ResolveNetnameFromIpV4(userCode);
 
                         // use ip user code if no net-name found
@@ -178,7 +179,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 } else {
                     // resolve net-name if user name appears to be an ip address
                     // or an averride is asked for
-                    if (IPAddress.TryParse(defaultUser.DefaultUserName, out IPAddress ipAddress)
+                    IPAddress ipAddress;
+                    if (IPAddress.TryParse(defaultUser.DefaultUserName, out ipAddress)
                         || overrideUserName
                         ) {
                         string netName = ResolveNetnameFromIpV4(userCode);

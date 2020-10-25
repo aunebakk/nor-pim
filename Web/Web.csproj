@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E6F720BC-7DBB-4AB3-852B-B132A59B46D0}</ProjectGuid>
+    <ProjectGuid>{77F083D3-43F9-4A8D-BC33-DFFDC6E87275}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -316,8 +316,6 @@
     <Compile Include="Controllers\Durian\DefaultSearch\DefaultUserListController.cs" />
     <Compile Include="Controllers\Durian\DefaultSearch\DefaultUserListForDashboardController.cs" />
     <Compile Include="Controllers\Durian\DefaultSearch\GetDefaultChangeLogController.cs" />
-    <Compile Include="Controllers\Durian\FinancialOrderSearch\FinancialOrderSearchController.cs" />
-    <Compile Include="Controllers\Durian\FinancialOrderSearch\GetFinancialOrderController.cs" />
     <Compile Include="Controllers\Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterController.cs" />
     <Compile Include="Controllers\Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterController.cs" />
     <Compile Include="Controllers\Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterController.cs" />
@@ -645,9 +643,6 @@
     <Content Include="Views\Durian\CartSearch\GetCartProductWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\CartSearch\CartSearch.cshtml" />
     <Content Include="Views\Home\Durian\CartSearch\CartSearchDurians.cshtml" />
-    <Content Include="Views\Durian\FinancialOrderSearch\GetFinancialOrderIndex.cshtml" />
-    <Content Include="Views\Durian\FinancialOrderSearch\FinancialOrderSearch.cshtml" />
-    <Content Include="Views\Home\Durian\FinancialOrderSearch\FinancialOrderSearchDurians.cshtml" />
     <Content Include="Views\Durian\ClientSearch\GetClientWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ClientSearch\ClientSearch.cshtml" />
     <Content Include="Views\Home\Durian\ClientSearch\ClientSearchDurians.cshtml" />
@@ -1150,11 +1145,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{5d96244b-4ecb-4308-bfdb-50439b775519}</Project>
+      <Project>{dbf93cbd-1423-435f-8528-100e848c94d1}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{823fd7fa-a416-443e-bc00-5ce8f573a97e}</Project>
+      <Project>{9e8b1640-52a0-4b0e-bcab-ed98e7ecc277}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1189,7 +1184,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59316</DevelopmentServerPort>
+          <DevelopmentServerPort>56801</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

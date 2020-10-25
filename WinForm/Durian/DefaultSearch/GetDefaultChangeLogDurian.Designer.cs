@@ -1,18 +1,18 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class GetDefaultChangeLogDurian {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.DataGridView dataGridViewGetDefaultChangeLog;
-
+        
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+           if (disposing && (components != null)) {
+               components.Dispose();
+           }
+           base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewGetDefaultChangeLog = new System.Windows.Forms.DataGridView();

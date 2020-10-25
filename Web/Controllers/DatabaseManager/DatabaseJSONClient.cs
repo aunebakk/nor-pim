@@ -2,18 +2,19 @@ using System;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     public partial class DatabaseManager {
-        public void InitJSONClient(
+        public void InitJSONClient (
             int majorNumber,
             int minorNumber
-            ) {
+            )
+        {
 
             int sequence = 0;
 
-            scripts.Add(lastScript = new DatabaseScript {
-                DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
+            scripts.Add ( lastScript = new DatabaseScript {
+                DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime ( 2015 , 11 , 22 ) } ,
                 ScriptNumber = scriptNumber++,
-                Name = "ClientSchema",
-                Description = "Client Schema",
+                Name = "ClientSchema" ,
+                Description = "Client Schema" ,
                 DatabaseScriptBatch = new DatabaseScriptBatch {
                     Script = @"
                             /*
@@ -426,16 +427,16 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                                     foreign key (client_contact_method_rcd)
                                     references client_contact_method_ref(client_contact_method_rcd)
                             )
-                            ",
+                            " ,
                     BreakUpToBatches = false
                 }
-            });
+            } );
 
-            scripts.Add(lastScript = new DatabaseScript {
-                DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2015, 11, 22) },
+            scripts.Add ( lastScript = new DatabaseScript {
+                DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime ( 2015 , 11 , 22 ) } ,
                 ScriptNumber = scriptNumber++,
-                Name = "ClientTestData",
-                Description = "Client Test Data",
+                Name = "ClientTestData" ,
+                Description = "Client Test Data" ,
                 DatabaseScriptBatch = new DatabaseScriptBatch {
                     Script = @"
                             -- default client uses default user 
@@ -454,10 +455,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                             declare @client_address_id uniqueidentifier = newid()
                             insert into client_address ( client_address_id, client_id, client_address_type_rcd,     address_line_one_name ,    address_line_two_name ,    address_line_three_name ,    city_name ,    street_name ,    state_name ,    district_name ,    province_name ,    zip_code ,    po_box ,    [comment] , user_id, date_time)
                                values (@client_address_id, @client_id, dbo.ref('client_address_type_ref.PRA'), 'Oslo', 'Oslo', 'Oslo', 'Oslo', 'Oslo', 'Oslo', 'Oslo', 'Oslo', 'Oslo', 'Oslo', 'Oslo', N'ffffffff-5555-5555-5555-ffffffffffff', getdate())
-                            ",
+                            " ,
                     BreakUpToBatches = false
                 }
-            });
+            } );
         }
     }
 }

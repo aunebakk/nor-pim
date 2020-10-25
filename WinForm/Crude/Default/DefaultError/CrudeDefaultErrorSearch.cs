@@ -2,13 +2,13 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:17 PM
+  Generated Date: 10/25/2020 9:15:07 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
@@ -18,23 +18,23 @@ namespace SolutionNorSolutionPim.UserInterface {
 
     // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeDefaultErrorSearch : Form {
-
+        
         // the following fields holds initial state for foreign key's
         private string _defaultErrorLayerRcd;
-
+        
         private string _defaultErrorTypeRcd;
-
+        
         private System.Guid _defaultUserId;
-
+        
         // Constructs the form with a Grid and Search button which is default on Enter
         //  and a Close button which works with the esc key
         public CrudeDefaultErrorSearch() {
             InitializeComponent();
             InitializeGridCrudeDefaultError();
-            AcceptButton = buttonCrudeDefaultErrorSearch;
-            CancelButton = buttonClose;
+            this.AcceptButton = buttonCrudeDefaultErrorSearch;
+            this.CancelButton = buttonClose;
         }
-
+        
         // shows the form with initial values for comboboxes and pickers
         //  an search is done with these initial values
         public void Show(string defaultErrorLayerRcd, string defaultErrorTypeRcd, System.Guid defaultUserId) {
@@ -46,124 +46,130 @@ namespace SolutionNorSolutionPim.UserInterface {
                 RefreshCrudeDefaultError();
 
                 base.Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void buttonCrudeDefaultErrorEdit_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultErrorEdit editForm = new CrudeDefaultErrorEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeDefaultError.CurrentRow.Cells["DefaultErrorId"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultErrorEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeDefaultError.CurrentRow.Cells["DefaultErrorId"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows a form for adding more rows
         private void buttonCrudeDefaultErrorAdd_Click(object sender, EventArgs e) {
             try {
-                CrudeDefaultErrorEdit editForm = new CrudeDefaultErrorEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeDefaultErrorEdit();
+                editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsAddByRules(_defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void dataGridViewCrudeDefaultError_DoubleClick(object sender, EventArgs e) {
             try {
-                CrudeDefaultErrorEdit editForm = new CrudeDefaultErrorEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeDefaultError.CurrentRow.Cells["DefaultErrorId"].Value, _defaultUserId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeDefaultErrorEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeDefaultError.CurrentRow.Cells["DefaultErrorId"].Value,_defaultUserId);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // does a search based on the filter and populates the grid
         private void buttonCrudeDefaultErrorSearch_Click(object sender, EventArgs e) {
             try {
                 RefreshCrudeDefaultError();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-
+        
         // refresh the grid
         public void RefreshCrudeDefaultError() {
-            CrudeDefaultErrorServiceClient defaultError = new CrudeDefaultErrorServiceClient();
+            var defaultError = new CrudeDefaultErrorServiceClient();
 
             try {
-                BindingSource bindingSource = new BindingSource();
+                var bindingSource = new BindingSource();
                 bindingSource.DataSource = defaultError.FetchWithFilter(
                              Guid.Empty
-                            , defaultErrorLayerRefCombo.Text
-                            , defaultErrorTypeRefCombo.Text
-                            , textBoxLayerAddress.Text
-                            , textBoxErrorMessage.Text
-                            , textBoxStackTrace.Text
-                            , textBoxMethodName.Text
-                            , textBoxDomainName.Text
-                            , textBoxClassName.Text
-                            , Guid.Empty
-                            , dateTimePickerDateTime.Checked ? Convert.ToDateTime(dateTimePickerDateTime.Value) : DateTime.MinValue
+                            ,defaultErrorLayerRefCombo.Text
+                            ,defaultErrorTypeRefCombo.Text
+                            ,textBoxLayerAddress.Text
+                            ,textBoxErrorMessage.Text
+                            ,textBoxStackTrace.Text
+                            ,textBoxMethodName.Text
+                            ,textBoxDomainName.Text
+                            ,textBoxClassName.Text
+                            ,Guid.Empty
+                            ,dateTimePickerDateTime.Checked ? Convert.ToDateTime(dateTimePickerDateTime.Value): DateTime.MinValue
                             );
                 dataGridViewCrudeDefaultError.AutoGenerateColumns = false;
                 dataGridViewCrudeDefaultError.DataSource = bindingSource;
                 dataGridViewCrudeDefaultError.AutoResizeColumns();
                 dataGridViewCrudeDefaultError.Refresh();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             } finally {
                 defaultError.Close();
             }
         }
-
+        
         // initialize the grid, hiding fields like guids and images
         private void InitializeGridCrudeDefaultError() {
             try {
                 dataGridViewCrudeDefaultError.Columns.Clear();
                 dataGridViewCrudeDefaultError.AutoGenerateColumns = false;
-                dataGridViewCrudeDefaultError.Columns.Add("MethodName", "Method Name");
+                dataGridViewCrudeDefaultError.Columns.Add("MethodName","Method Name");
                 dataGridViewCrudeDefaultError.Columns["MethodName"].DataPropertyName = "MethodName";
-                dataGridViewCrudeDefaultError.Columns.Add("DomainName", "Domain Name");
+                dataGridViewCrudeDefaultError.Columns.Add("DomainName","Domain Name");
                 dataGridViewCrudeDefaultError.Columns["DomainName"].DataPropertyName = "DomainName";
-                dataGridViewCrudeDefaultError.Columns.Add("ClassName", "Class Name");
+                dataGridViewCrudeDefaultError.Columns.Add("ClassName","Class Name");
                 dataGridViewCrudeDefaultError.Columns["ClassName"].DataPropertyName = "ClassName";
-                dataGridViewCrudeDefaultError.Columns.Add("DefaultErrorLayerRcd", "Default Error Layer");
+                dataGridViewCrudeDefaultError.Columns.Add("DefaultErrorLayerRcd","Default Error Layer");
                 dataGridViewCrudeDefaultError.Columns["DefaultErrorLayerRcd"].DataPropertyName = "DefaultErrorLayerRcd";
-                dataGridViewCrudeDefaultError.Columns.Add("DefaultErrorTypeRcd", "Default Error Type");
+                dataGridViewCrudeDefaultError.Columns.Add("DefaultErrorTypeRcd","Default Error Type");
                 dataGridViewCrudeDefaultError.Columns["DefaultErrorTypeRcd"].DataPropertyName = "DefaultErrorTypeRcd";
-                dataGridViewCrudeDefaultError.Columns.Add("LayerAddress", "Layer Address");
+                dataGridViewCrudeDefaultError.Columns.Add("LayerAddress","Layer Address");
                 dataGridViewCrudeDefaultError.Columns["LayerAddress"].DataPropertyName = "LayerAddress";
-                dataGridViewCrudeDefaultError.Columns.Add("ErrorMessage", "Error Message");
+                dataGridViewCrudeDefaultError.Columns.Add("ErrorMessage","Error Message");
                 dataGridViewCrudeDefaultError.Columns["ErrorMessage"].DataPropertyName = "ErrorMessage";
-                dataGridViewCrudeDefaultError.Columns.Add("StackTrace", "Stack Trace");
+                dataGridViewCrudeDefaultError.Columns.Add("StackTrace","Stack Trace");
                 dataGridViewCrudeDefaultError.Columns["StackTrace"].DataPropertyName = "StackTrace";
-                dataGridViewCrudeDefaultError.Columns.Add("DateTime", "Date Time");
+                dataGridViewCrudeDefaultError.Columns.Add("DateTime","Date Time");
                 dataGridViewCrudeDefaultError.Columns["DateTime"].DataPropertyName = "DateTime";
-                dataGridViewCrudeDefaultError.Columns.Add("DefaultErrorId", "Default Error");
+                dataGridViewCrudeDefaultError.Columns.Add("DefaultErrorId","Default Error");
                 dataGridViewCrudeDefaultError.Columns["DefaultErrorId"].DataPropertyName = "DefaultErrorId";
                 dataGridViewCrudeDefaultError.Columns["DefaultErrorId"].Visible = false;
                 dataGridViewCrudeDefaultError.Columns.Add("ExtensionData", "");
@@ -171,10 +177,11 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 dataGridViewCrudeDefaultError.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewCrudeDefaultError.AutoResizeColumns();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
     }

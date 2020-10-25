@@ -1,40 +1,40 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeDefaultUserActivityEdit {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonSave;
-
+        
         private DefaultUserActivityTypeRefCombo defaultUserActivityTypeRefCombo;
-
+        
         private System.Windows.Forms.Label labelDefaultUserActivityTypeRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxUserActivityNote;
-
+        
         private System.Windows.Forms.Label labelUserActivityNote;
-
+        
         private System.Windows.Forms.TextBox textBoxOriginatingAddress;
-
+        
         private System.Windows.Forms.Label labelOriginatingAddress;
-
+        
         private System.Windows.Forms.TextBox textBoxReferrer;
-
+        
         private System.Windows.Forms.Label labelReferrer;
-
+        
         private System.Windows.Forms.DateTimePicker dateTimePickerDateTime;
-
+        
         private System.Windows.Forms.Label labelDateTime;
-
+        
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -141,7 +141,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(340, 128);
-
+            
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

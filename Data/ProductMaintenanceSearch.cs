@@ -17,7 +17,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public List<ProductMaintenanceInfoIndexWithFilterData> ProductMaintenanceInfoIndexWithFilter(
              System.Guid productId
             ) {
-            List<ProductMaintenanceInfoIndexWithFilterData> ret = new List<ProductMaintenanceInfoIndexWithFilterData>();
+            var ret = new List<ProductMaintenanceInfoIndexWithFilterData>();
             string sql = @"
 select 
      p.product_name
@@ -38,12 +38,12 @@ inner join default_user as du on du.default_user_id = pi.user_id
 where 1 = 1
 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     if (productId != Guid.Empty) {
-                        command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
+                        command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) productId;
                         sql += " and pi.product_id = @product_id";
                     }
 
@@ -53,10 +53,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    ProductMaintenanceInfoIndexWithFilterDataOrdinals ordinals = new ProductMaintenanceInfoIndexWithFilterDataOrdinals(reader);
+                    var ordinals = new ProductMaintenanceInfoIndexWithFilterDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductMaintenanceInfoIndexWithFilterData data = new ProductMaintenanceInfoIndexWithFilterData();
+                        var data = new ProductMaintenanceInfoIndexWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -74,7 +74,7 @@ where 1 = 1
         public List<ProductMaintenanceImageIndexWithFilterData> ProductMaintenanceImageIndexWithFilter(
              System.Guid productId
             ) {
-            List<ProductMaintenanceImageIndexWithFilterData> ret = new List<ProductMaintenanceImageIndexWithFilterData>();
+            var ret = new List<ProductMaintenanceImageIndexWithFilterData>();
             string sql = @"
 select 
      p.product_name
@@ -96,12 +96,12 @@ inner join default_user as du on du.default_user_id = pi.user_id
 where 1 = 1
 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     if (productId != Guid.Empty) {
-                        command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
+                        command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) productId;
                         sql += " and pi.product_id = @product_id";
                     }
 
@@ -111,10 +111,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    ProductMaintenanceImageIndexWithFilterDataOrdinals ordinals = new ProductMaintenanceImageIndexWithFilterDataOrdinals(reader);
+                    var ordinals = new ProductMaintenanceImageIndexWithFilterDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductMaintenanceImageIndexWithFilterData data = new ProductMaintenanceImageIndexWithFilterData();
+                        var data = new ProductMaintenanceImageIndexWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -132,7 +132,7 @@ where 1 = 1
         public List<ProductMaintenanceIdentifierIndexWithFilterData> ProductMaintenanceIdentifierIndexWithFilter(
              System.Guid productId
             ) {
-            List<ProductMaintenanceIdentifierIndexWithFilterData> ret = new List<ProductMaintenanceIdentifierIndexWithFilterData>();
+            var ret = new List<ProductMaintenanceIdentifierIndexWithFilterData>();
             string sql = @"
 select 
      p.product_name
@@ -153,12 +153,12 @@ inner join default_user as du on du.default_user_id = pi.user_id
 where 1 = 1
 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     if (productId != Guid.Empty) {
-                        command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
+                        command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) productId;
                         sql += " and pi.product_id = @product_id";
                     }
 
@@ -168,10 +168,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    ProductMaintenanceIdentifierIndexWithFilterDataOrdinals ordinals = new ProductMaintenanceIdentifierIndexWithFilterDataOrdinals(reader);
+                    var ordinals = new ProductMaintenanceIdentifierIndexWithFilterDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductMaintenanceIdentifierIndexWithFilterData data = new ProductMaintenanceIdentifierIndexWithFilterData();
+                        var data = new ProductMaintenanceIdentifierIndexWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -189,7 +189,7 @@ where 1 = 1
         public List<ProductMaintenanceDocumentationIndexWithFilterData> ProductMaintenanceDocumentationIndexWithFilter(
              System.Guid productId
             ) {
-            List<ProductMaintenanceDocumentationIndexWithFilterData> ret = new List<ProductMaintenanceDocumentationIndexWithFilterData>();
+            var ret = new List<ProductMaintenanceDocumentationIndexWithFilterData>();
             string sql = @"
 select 
      p.product_name
@@ -210,12 +210,12 @@ inner join default_user as du on du.default_user_id = pd.user_id
 where 1 = 1
 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     if (productId != Guid.Empty) {
-                        command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
+                        command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) productId;
                         sql += " and pd.product_id = @product_id";
                     }
 
@@ -225,10 +225,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    ProductMaintenanceDocumentationIndexWithFilterDataOrdinals ordinals = new ProductMaintenanceDocumentationIndexWithFilterDataOrdinals(reader);
+                    var ordinals = new ProductMaintenanceDocumentationIndexWithFilterDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductMaintenanceDocumentationIndexWithFilterData data = new ProductMaintenanceDocumentationIndexWithFilterData();
+                        var data = new ProductMaintenanceDocumentationIndexWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -246,7 +246,7 @@ where 1 = 1
         public List<ProductMaintenanceAttributeIndexWithFilterData> ProductMaintenanceAttributeIndexWithFilter(
              System.Guid productId
             ) {
-            List<ProductMaintenanceAttributeIndexWithFilterData> ret = new List<ProductMaintenanceAttributeIndexWithFilterData>();
+            var ret = new List<ProductMaintenanceAttributeIndexWithFilterData>();
             string sql = @"
 select 
      p.product_name
@@ -270,12 +270,12 @@ inner join default_user as du on du.default_user_id = pa.user_id
 where 1 = 1
 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     if (productId != Guid.Empty) {
-                        command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
+                        command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid) productId;
                         sql += " and pa.product_id = @product_id";
                     }
 
@@ -285,10 +285,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    ProductMaintenanceAttributeIndexWithFilterDataOrdinals ordinals = new ProductMaintenanceAttributeIndexWithFilterDataOrdinals(reader);
+                    var ordinals = new ProductMaintenanceAttributeIndexWithFilterDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductMaintenanceAttributeIndexWithFilterData data = new ProductMaintenanceAttributeIndexWithFilterData();
+                        var data = new ProductMaintenanceAttributeIndexWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -304,7 +304,7 @@ where 1 = 1
         /// <cardinality>Many</cardinality>
         /// <template>WithDurian</template>
         public List<ProductMaintenanceIndexData> ProductMaintenanceIndex() {
-            List<ProductMaintenanceIndexData> ret = new List<ProductMaintenanceIndexData>();
+            var ret = new List<ProductMaintenanceIndexData>();
             string sql = @"
 select 
      p.product_name
@@ -319,10 +319,10 @@ inner join default_user as du on du.default_user_id = p.user_id
 where 1 = 1
 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     command.CommandText = sql;
 
@@ -330,10 +330,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    ProductMaintenanceIndexDataOrdinals ordinals = new ProductMaintenanceIndexDataOrdinals(reader);
+                    var ordinals = new ProductMaintenanceIndexDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductMaintenanceIndexData data = new ProductMaintenanceIndexData();
+                        var data = new ProductMaintenanceIndexData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -344,6 +344,6 @@ where 1 = 1
                 return ret;
             }
         }
-
+    
     }
 }

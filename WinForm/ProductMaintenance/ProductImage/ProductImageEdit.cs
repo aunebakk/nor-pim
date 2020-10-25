@@ -2,39 +2,39 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:38 PM
+  Generated Date: 10/25/2020 9:25:39 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.UsingWinForm
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class ProductImageEdit : Form {
-
+        
         private CrudeProductImageContract _contract;
-
-        private bool _isNew;
-
+        
+        private Boolean _isNew;
+        
         public ProductImageEdit() {
             InitializeComponent();
             InitializeGridProductImage();
-            AcceptButton = buttonSave;
-            CancelButton = buttonClose;
+            this.AcceptButton = buttonSave;
+            this.CancelButton = buttonClose;
         }
-
+        
         public void ShowAsAdd() {
             _contract = new CrudeProductImageContract();
             _isNew = true;
-            Text += " - Not Savable (Product,User Missing)";
+            this.Text += " - Not Savable (Product,User Missing)";
             RefreshProductImage();
             Show();
         }
-
+        
         public void ShowAsAddByRules(System.Guid userId) {
             _contract = new CrudeProductImageContract();
             _isNew = true;
@@ -45,23 +45,22 @@ namespace SolutionNorSolutionPim.UserInterface {
             RefreshProductImage();
             Show();
         }
-
+        
         public void ShowAsAddByProductImageTypeAndImage(string productImageTypeRcd, byte[] image) {
             _contract = new CrudeProductImageContract();
             _isNew = true;
             _contract.DateTime = DateTime.UtcNow;
             dateTimePickerDateTime.Text = _contract.DateTime.ToString();
             _contract.ProductImageTypeRcd = productImageTypeRcd;
-            productImageTypeRefCombo.Text = _contract.ProductImageTypeRcd != null ? _contract.ProductImageTypeRcd : string.Empty;
+            productImageTypeRefCombo.Text = _contract.ProductImageTypeRcd != null ? _contract.ProductImageTypeRcd : String.Empty;
             _contract.Image = image;
-            if (_contract.Image != null) {
+            if (_contract.Image != null)
                 pictureBoxImage.Image = ByteToImage(_contract.Image);
-            }
 
             RefreshProductImage();
             Show();
         }
-
+        
         public void ShowAsAddByProduct(System.Guid productId) {
             _contract = new CrudeProductImageContract();
             _isNew = true;
@@ -72,20 +71,18 @@ namespace SolutionNorSolutionPim.UserInterface {
             RefreshProductImage();
             Show();
         }
-
+        
         public void ShowAsAdd(System.Guid productId, string productImageTypeRcd, string imageFileName, byte[] image, System.Guid userId) {
             _contract = new CrudeProductImageContract();
             _isNew = true;
             _contract.ProductId = productId;
             _contract.ProductImageTypeRcd = productImageTypeRcd;
-            productImageTypeRefCombo.Text = _contract.ProductImageTypeRcd != null ? _contract.ProductImageTypeRcd : string.Empty;
+            productImageTypeRefCombo.Text = _contract.ProductImageTypeRcd != null ? _contract.ProductImageTypeRcd : String.Empty;
             _contract.ImageFileName = imageFileName;
             textBoxImageFileName.Text = _contract.ImageFileName;
             _contract.Image = image;
-            if (_contract.Image != null) {
+            if (_contract.Image != null)
                 pictureBoxImage.Image = ByteToImage(_contract.Image);
-            }
-
             _contract.UserId = userId;
             _contract.DateTime = DateTime.UtcNow;
             dateTimePickerDateTime.Text = _contract.DateTime.ToString();
@@ -93,86 +90,83 @@ namespace SolutionNorSolutionPim.UserInterface {
             RefreshProductImage();
             Show();
         }
-
+        
         public void ShowAsEdit(System.Guid productImageId) {
-            CrudeProductImageServiceClient service = new CrudeProductImageServiceClient();
+            var service = new CrudeProductImageServiceClient();
             _isNew = false;
             try {
                 _contract = service.FetchByProductImageId(productImageId);
-                productImageTypeRefCombo.Text = _contract.ProductImageTypeRcd != null ? _contract.ProductImageTypeRcd : string.Empty;
+                productImageTypeRefCombo.Text = _contract.ProductImageTypeRcd != null ? _contract.ProductImageTypeRcd : String.Empty;
                 textBoxImageFileName.Text = _contract.ImageFileName;
-                if (_contract.Image != null) {
+                if (_contract.Image != null)
                     pictureBoxImage.Image = ByteToImage(_contract.Image);
-                }
-
                 _contract.DateTime = DateTime.UtcNow;
                 dateTimePickerDateTime.Text = _contract.DateTime.ToString();
 
                 RefreshProductImage();
                 Show();
             } catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show (ex.Message);
             } finally {
                 service.Close();
             }
         }
-
+        
         private void buttonSave_Click(object sender, EventArgs e) {
-            CrudeProductImageServiceClient service = new CrudeProductImageServiceClient();
+            var service = new CrudeProductImageServiceClient();
             try {
                 _contract.ProductImageTypeRcd = productImageTypeRefCombo.Text;
                 _contract.ImageFileName = textBoxImageFileName.Text;
                 _contract.Image = ImageToByte(pictureBoxImage.Image);
 
-                if (_isNew) {
+                if (_isNew)
                     service.Insert(_contract);
-                } else {
+                else
                     service.Update(_contract);
-                }
             } catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show (ex.Message);
             } finally {
                 service.Close();
             }
 
             Close();
         }
-
+        
         private void buttonProductImageSearch_Click(object sender, EventArgs e) {
             RefreshProductImage();
         }
-
+        
         private void buttonProductImageEdit_Click(object sender, EventArgs e) {
         }
-
+        
         private void buttonProductImageAdd_Click(object sender, EventArgs e) {
             RefreshProductImage();
         }
-
+        
         private void dataGridViewProductImage_DoubleClick(object sender, EventArgs e) {
-            ProductImageEdit editForm = new ProductImageEdit();
-            editForm.MdiParent = MdiParent;
+            var editForm = new ProductImageEdit();
+            editForm.MdiParent = this.MdiParent;
 
         }
-
+        
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-
+        
         private byte[] ImageToByte(Image image) {
-            ImageConverter converter = new ImageConverter();
-            return (byte[])converter.ConvertTo(image, typeof(byte[]));
+            var converter = new ImageConverter();
+            return (byte[]) converter.ConvertTo(image, typeof(byte[]));
         }
-
+        
         private Image ByteToImage(byte[] byteArrayIn) {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
+            var ms = new MemoryStream(byteArrayIn);
             return Image.FromStream(ms);
         }
-
+        
         public void RefreshProductImage() {
 
         }
-
+        
         private void InitializeGridProductImage() {
             dataGridViewProductImage.Columns.Clear();
             dataGridViewProductImage.AutoGenerateColumns = false;

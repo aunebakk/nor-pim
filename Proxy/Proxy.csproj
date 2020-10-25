@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{823FD7FA-A416-443E-BC00-5CE8F573A97E}</ProjectGuid>
+    <ProjectGuid>{9E8B1640-52A0-4B0E-BCAB-ED98E7ECC277}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Proxy</RootNamespace>
@@ -128,7 +128,6 @@
     <Compile Include="Durian\CategorySearch\CategorySearchProxy.cs" />
     <Compile Include="Durian\ClientSearch\ClientSearchProxy.cs" />
     <Compile Include="Durian\DefaultSearch\DefaultSearchProxy.cs" />
-    <Compile Include="Durian\FinancialOrderSearch\FinancialOrderSearchProxy.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceSearchProxy.cs" />
     <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchProxy.cs" />
     <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchProxy.cs" />
@@ -236,7 +235,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{5d96244b-4ecb-4308-bfdb-50439b775519}</Project>
+      <Project>{dbf93cbd-1423-435f-8528-100e848c94d1}</Project>
       <Name>Contract</Name>
     </ProjectReference>
   </ItemGroup>

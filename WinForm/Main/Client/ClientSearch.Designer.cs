@@ -1,55 +1,55 @@
 namespace SolutionNorSolutionPim.UserInterface {
-
-
+    
+    
     public partial class ClientSearch {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonCrudeClientSearch;
-
+        
         private System.Windows.Forms.Button buttonCrudeClientAdd;
-
+        
         private System.Windows.Forms.Button buttonCrudeClientEdit;
-
+        
         private System.Windows.Forms.DataGridView dataGridViewCrudeClient;
-
+        
         private ClientTypeRefCombo clientTypeRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientTypeRefCombo;
-
+        
         private ClientNationalityRefCombo clientNationalityRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientNationalityRefCombo;
-
+        
         private ClientGenderRefCombo clientGenderRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientGenderRefCombo;
-
+        
         private ClientTitleRefCombo clientTitleRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientTitleRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxFirstName;
-
+        
         private System.Windows.Forms.Label labelFirstName;
-
+        
         private System.Windows.Forms.TextBox textBoxMiddleName;
-
+        
         private System.Windows.Forms.Label labelMiddleName;
-
+        
         private System.Windows.Forms.TextBox textBoxLastName;
-
+        
         private System.Windows.Forms.Label labelLastName;
-
+        
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+           if (disposing && (components != null)) {
+               components.Dispose();
+           }
+           base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonClose = new System.Windows.Forms.Button();
@@ -126,8 +126,8 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dataGridViewCrudeClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewCrudeClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridViewCrudeClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCrudeClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCrudeClient.Location = new System.Drawing.Point(18, 167);
@@ -150,7 +150,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientTypeRefCombo
             // 
-            this.clientTypeRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientTypeRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientTypeRefCombo.Location = new System.Drawing.Point(716, 17);
             this.clientTypeRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -170,7 +170,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientNationalityRefCombo
             // 
-            this.clientNationalityRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientNationalityRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientNationalityRefCombo.Location = new System.Drawing.Point(716, 52);
             this.clientNationalityRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -190,7 +190,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientGenderRefCombo
             // 
-            this.clientGenderRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientGenderRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientGenderRefCombo.Location = new System.Drawing.Point(716, 88);
             this.clientGenderRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -210,7 +210,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientTitleRefCombo
             // 
-            this.clientTitleRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientTitleRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientTitleRefCombo.Location = new System.Drawing.Point(716, 123);
             this.clientTitleRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);

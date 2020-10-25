@@ -3,18 +3,20 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer {
+namespace SolutionNorSolutionPim.DataAccessLayer
+{
     /// <summary> 
     /// Provides Product Reference search with different parameter and result sets
     /// </summary>
     /// <domain>ProductReference</domain>
-    public class ProductReferenceAttributeUnitSearch {
+    public class ProductReferenceAttributeUnitSearch
+    {
 
         /// <summary>Get Product Attribute Unit Ref</summary>
         /// <cardinality>Many</cardinality>
         /// <template>ByServiceTableCrud</template>
         public List<ProductReferenceAttributeUnitSearchWithFilterData> ProductReferenceAttributeUnitSearchWithFilter() {
-            List<ProductReferenceAttributeUnitSearchWithFilterData> ret = new List<ProductReferenceAttributeUnitSearchWithFilterData>();
+            var ret = new List<ProductReferenceAttributeUnitSearchWithFilterData>();
             string sql = @"
 select 
      paur.product_attribute_unit_name
@@ -25,10 +27,10 @@ from product_attribute_unit_ref as paur
 where 1 = 1
 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     command.CommandText = sql;
 
@@ -36,10 +38,10 @@ where 1 = 1
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
                     // log.PerformanceTimeStop(sql, command);
 
-                    ProductReferenceAttributeUnitSearchWithFilterDataOrdinals ordinals = new ProductReferenceAttributeUnitSearchWithFilterDataOrdinals(reader);
+                    var ordinals = new ProductReferenceAttributeUnitSearchWithFilterDataOrdinals(reader);
 
                     while (reader.Read()) {
-                        ProductReferenceAttributeUnitSearchWithFilterData data = new ProductReferenceAttributeUnitSearchWithFilterData();
+                        var data = new ProductReferenceAttributeUnitSearchWithFilterData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -50,6 +52,6 @@ where 1 = 1
                 return ret;
             }
         }
-
+    
     }
 }

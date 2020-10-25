@@ -2,29 +2,33 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:00:48 PM
+  Generated Date: 10/25/2020 9:23:18 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.ServiceModel;
+using System.Runtime.Serialization;
+using System.Data;
+using SolutionNorSolutionPim.DataAccessLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public class DefaultPerformanceIssueFetchWithFilter {
-
+        
         public List<DefaultPerformanceIssueFetchWithFilterContract> DefaultPerformanceIssueFetchWithFilterFromDal(List<DefaultPerformanceIssueFetchWithFilterData> dataList) {
-            List<DefaultPerformanceIssueFetchWithFilterContract> list = new List<DefaultPerformanceIssueFetchWithFilterContract>();
+           var list = new List<DefaultPerformanceIssueFetchWithFilterContract>();
 
-            foreach (DefaultPerformanceIssueFetchWithFilterData data in dataList) {
-                DefaultPerformanceIssueFetchWithFilterContract contract = new DefaultPerformanceIssueFetchWithFilterContract();
-                DataToContract(data, contract);
-                list.Add(contract);
-            }
+           foreach (DefaultPerformanceIssueFetchWithFilterData data in dataList) {
+               var contract = new DefaultPerformanceIssueFetchWithFilterContract();
+               DataToContract(data, contract);
+               list.Add(contract);
+           }
 
-            return list;
+           return list;
         }
-
+        
         public void DataToContract(DefaultPerformanceIssueFetchWithFilterData dalDefaultPerformanceIssueFetchWithFilter, DefaultPerformanceIssueFetchWithFilterContract dataContract) {
             dataContract.DateTime = dalDefaultPerformanceIssueFetchWithFilter.DateTime;
             dataContract.CommandName = dalDefaultPerformanceIssueFetchWithFilter.CommandName;

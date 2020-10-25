@@ -2,15 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:52:43 PM
+  Generated Date: 10/25/2020 9:14:41 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Configuration;
 
 // Data Access Layer
 // the DataAccessLayer is the first layer that has access to data coming from
@@ -27,17 +27,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeProductExposePlanData {
-
+        
         public System.Guid ProductExposePlanId { get; set; }
-
+        
         public System.Guid ProductId { get; set; }
-
+        
         public string ProductExposeSetTypeRcd { get; set; }
-
+        
         public System.Guid UserId { get; set; }
-
+        
         public System.DateTime DateTime { get; set; }
-
+        
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -55,7 +55,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 // dirty read
@@ -64,22 +64,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@product_expose_plan_id", SqlDbType.UniqueIdentifier).Value = productExposePlanId;
+                    command.Parameters.Add("@product_expose_plan_id",SqlDbType.UniqueIdentifier).Value = productExposePlanId;
 
                     // execute and read one row, close connection
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serializable class if row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         Populate(reader);
-                    }
                 }
             }
         }
-
+        
         // fetch by Primary key into new class instance
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -94,18 +93,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [product_expose_plan]
                             where product_expose_plan_id = @product_expose_plan_id";
 
-            CrudeProductExposePlanData ret = new CrudeProductExposePlanData();
+            var ret = new CrudeProductExposePlanData();
 
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@product_expose_plan_id", SqlDbType.UniqueIdentifier).Value = productExposePlanId;
+                    command.Parameters.Add("@product_expose_plan_id",SqlDbType.UniqueIdentifier).Value = productExposePlanId;
 
                     // execute query against product_expose_plan
                     // if the query fails in the preprocessor of sql server
@@ -113,18 +112,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serialized class if a row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         ret.Populate(reader);
-                    }
                 }
             }
 
             return ret;
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeProductExposePlanData> FetchByProductId(System.Guid productId) {
-            List<CrudeProductExposePlanData> dataList = new List<CrudeProductExposePlanData>();
+            var dataList = new List<CrudeProductExposePlanData>();
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -138,10 +136,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = productId;
@@ -155,19 +153,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeProductExposePlanData data = new CrudeProductExposePlanData();
+                        var data = new CrudeProductExposePlanData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeProductExposePlanData> FetchByUserId(System.Guid userId) {
-            List<CrudeProductExposePlanData> dataList = new List<CrudeProductExposePlanData>();
+            var dataList = new List<CrudeProductExposePlanData>();
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -181,10 +179,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
@@ -198,19 +196,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeProductExposePlanData data = new CrudeProductExposePlanData();
+                        var data = new CrudeProductExposePlanData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeProductExposePlanData> FetchByProductExposeSetTypeRcd(string productExposeSetTypeRcd) {
-            List<CrudeProductExposePlanData> dataList = new List<CrudeProductExposePlanData>();
+            var dataList = new List<CrudeProductExposePlanData>();
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -224,13 +222,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = productExposeSetTypeRcd.Replace("'", "''");
+                    command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = productExposeSetTypeRcd.Replace("'","''");
 
                     // execute query against product_expose_plan
                     // if the query fails in the preprocessor of sql server
@@ -241,19 +239,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeProductExposePlanData data = new CrudeProductExposePlanData();
+                        var data = new CrudeProductExposePlanData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all rows from table product_expose_plan into new List of class instances
         public static List<CrudeProductExposePlanData> FetchAll() {
-            List<CrudeProductExposePlanData> dataList = new List<CrudeProductExposePlanData>();
+            var dataList = new List<CrudeProductExposePlanData>();
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -265,10 +263,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against product_expose_plan
                     // if the query fails in the preprocessor of sql server
@@ -279,19 +277,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeProductExposePlanData data = new CrudeProductExposePlanData();
+                        var data = new CrudeProductExposePlanData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeProductExposePlanData> FetchAllWithLimit(int limit) {
-            List<CrudeProductExposePlanData> dataList = new List<CrudeProductExposePlanData>();
+            var dataList = new List<CrudeProductExposePlanData>();
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -303,10 +301,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against product_expose_plan
                     // if the query fails in the preprocessor of sql server
@@ -317,20 +315,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeProductExposePlanData data = new CrudeProductExposePlanData();
+                        var data = new CrudeProductExposePlanData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, only populating specific columns,
         //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeProductExposePlanData> FetchAllWithLimitAndOffset(int limit, int offset) {
-            List<CrudeProductExposePlanData> dataList = new List<CrudeProductExposePlanData>();
+            var dataList = new List<CrudeProductExposePlanData>();
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -342,10 +340,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against product_expose_plan
                     // if the query fails in the preprocessor of sql server
@@ -359,21 +357,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
-                            CrudeProductExposePlanData data = new CrudeProductExposePlanData();
+                            var data = new CrudeProductExposePlanData();
                             data.Populate(reader);
                             dataList.Add(data);
                         }
                         count++;
-                        if (count > limit + offset) {
-                            break;
-                        }
+                        if (count > limit + offset) break;
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // get a count of rows in table
         public static int FetchAllCount() {
             // create query against product_expose_plan
@@ -385,28 +381,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 int count = 0;
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // execute query against product_expose_plan
                     // if the query fails in the preprocessor of sql server
                     //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
-                    count = (int)reader["count"];
+                    count = (System.Int32) reader["count"];
                 }
 
                 return count;
             }
         }
-
+        
         // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeProductExposePlanData> FetchWithFilter(System.Guid productExposePlanId, System.Guid productId, string productExposeSetTypeRcd, System.Guid userId, System.DateTime dateTime) {
-            List<CrudeProductExposePlanData> dataList = new List<CrudeProductExposePlanData>();
+            var dataList = new List<CrudeProductExposePlanData>();
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -419,10 +415,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add search column(s) if they are not null or empty
                     // this search column(s) will be used together with the prepared ansi sql statement
                     if (productExposePlanId != Guid.Empty) {
@@ -435,7 +431,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     if (!string.IsNullOrEmpty(productExposeSetTypeRcd)) {
                         sql += "  and product_expose_set_type_rcd like '%' + @product_expose_set_type_rcd + '%'";
-                        command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = productExposeSetTypeRcd.Replace("'", "''");
+                        command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = productExposeSetTypeRcd.Replace("'","''");
                     }
                     if (userId != Guid.Empty) {
                         sql += "  and user_id = @user_id";
@@ -456,45 +452,30 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeProductExposePlanData data = new CrudeProductExposePlanData();
+                        var data = new CrudeProductExposePlanData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // read all columns out and populate object members
         public void Populate(IDataReader reader) {
-            if (reader["product_expose_plan_id"] != System.DBNull.Value) {
-                ProductExposePlanId = (System.Guid)reader["product_expose_plan_id"];
-            }
-
-            if (reader["product_id"] != System.DBNull.Value) {
-                ProductId = (System.Guid)reader["product_id"];
-            }
-
-            if (reader["product_expose_set_type_rcd"] != System.DBNull.Value) {
-                ProductExposeSetTypeRcd = (string)reader["product_expose_set_type_rcd"];
-            }
-
-            if (reader["user_id"] != System.DBNull.Value) {
-                UserId = (System.Guid)reader["user_id"];
-            }
-
-            if (reader["date_time"] != System.DBNull.Value) {
-                DateTime = (System.DateTime)reader["date_time"];
-            }
+            if (reader["product_expose_plan_id"] != System.DBNull.Value) ProductExposePlanId = (System.Guid) reader["product_expose_plan_id"];
+            if (reader["product_id"] != System.DBNull.Value) ProductId = (System.Guid) reader["product_id"];
+            if (reader["product_expose_set_type_rcd"] != System.DBNull.Value) ProductExposeSetTypeRcd = (System.String) reader["product_expose_set_type_rcd"];
+            if (reader["user_id"] != System.DBNull.Value) UserId = (System.Guid) reader["user_id"];
+            if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
         }
-
+        
         // insert all object members as a new row in table
         public void Insert() {
 
-            if (ProductExposePlanId == Guid.Empty) {
+            if (ProductExposePlanId == Guid.Empty)
                 ProductExposePlanId = Guid.NewGuid();
-            }
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -506,17 +487,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, connection)) {
+                using (var command = new SqlCommand(sql, connection)) {
                     // add column(s) to insert as parameter
                     // the insert column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@product_expose_plan_id", SqlDbType.UniqueIdentifier).Value = ProductExposePlanId;
-                    command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                    command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = ProductExposeSetTypeRcd;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@product_expose_plan_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductExposePlanId;
+                    command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                    command.Parameters.Add("@product_expose_set_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductExposeSetTypeRcd;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against product_expose_plan
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -525,15 +506,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
         public void Insert(SqlConnection connection, SqlTransaction transaction) {
 
-            if (ProductExposePlanId == Guid.Empty) {
+            if (ProductExposePlanId == Guid.Empty)
                 ProductExposePlanId = Guid.NewGuid();
-            }
 
             // create query against product_expose_plan
             // this will be ansi sql and parameterized
@@ -548,11 +528,11 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to insert as parameter(s)
                 // the insert column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@product_expose_plan_id", SqlDbType.UniqueIdentifier).Value = ProductExposePlanId;
-                command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = ProductExposeSetTypeRcd;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@product_expose_plan_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductExposePlanId;
+                command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                command.Parameters.Add("@product_expose_set_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductExposeSetTypeRcd;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against product_expose_plan
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -560,7 +540,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // update all object members on a row in table based on primary key
         public void Update() {
             // create query against product_expose_plan
@@ -578,18 +558,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // add column(s) to update as parameter(s)
                     // the update column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@product_expose_plan_id", SqlDbType.UniqueIdentifier).Value = ProductExposePlanId;
-                    command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                    command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = ProductExposeSetTypeRcd;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@product_expose_plan_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductExposePlanId;
+                    command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                    command.Parameters.Add("@product_expose_set_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductExposeSetTypeRcd;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against product_expose_plan
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -598,7 +578,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             // create query against product_expose_plan
@@ -619,11 +599,11 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to update as parameter
                 // the update column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@product_expose_plan_id", SqlDbType.UniqueIdentifier).Value = ProductExposePlanId;
-                command.Parameters.Add("@product_id", SqlDbType.UniqueIdentifier).Value = ProductId;
-                command.Parameters.Add("@product_expose_set_type_rcd", SqlDbType.NVarChar).Value = ProductExposeSetTypeRcd;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@product_expose_plan_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductExposePlanId;
+                command.Parameters.Add("@product_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ProductId;
+                command.Parameters.Add("@product_expose_set_type_rcd",SqlDbType.NVarChar).Value = (System.String)ProductExposeSetTypeRcd;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against product_expose_plan
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -631,7 +611,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // delete a row in table based on primary key
         public static void Delete(System.Guid productExposePlanId) {
             // create query against product_expose_plan
@@ -644,13 +624,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@product_expose_plan_id", SqlDbType.UniqueIdentifier).Value = productExposePlanId;
+                    command.Parameters.Add("@product_expose_plan_id",SqlDbType.UniqueIdentifier).Value = productExposePlanId;
                     // execute query against product_expose_plan
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server

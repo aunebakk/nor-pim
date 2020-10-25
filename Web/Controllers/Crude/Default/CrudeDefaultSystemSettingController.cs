@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:01 PM
+  Generated Date: 10/25/2020 9:15:43 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -47,7 +47,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeDefaultSystemSettingContract contract = new CrudeDefaultSystemSettingServiceClient().FetchByDefaultSystemSettingId(defaultSystemSettingId);
             ViewBag.DefaultSystemSettingRcd =
-                new SelectList(new CrudeDefaultSystemSettingRefServiceClient().FetchAll(),
+                new SelectList( new CrudeDefaultSystemSettingRefServiceClient().FetchAll(),
                                 "DefaultSystemSettingRcd",
                                 "DefaultSystemSettingName",
                                 contract.DefaultSystemSettingRcd
@@ -81,21 +81,18 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultSystemSettingCreate(System.Guid? defaultUserId) {
-            CrudeDefaultSystemSettingContract contract = new CrudeDefaultSystemSettingContract();
-            if (defaultUserId != null) {
-                contract.DefaultUserId = (System.Guid)defaultUserId;
-            }
+            var contract = new CrudeDefaultSystemSettingContract();
+            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
 
             ViewBag.DefaultSystemSettingRcd =
-                new SelectList(new CrudeDefaultSystemSettingRefServiceClient().FetchAll(),
+                new SelectList( new CrudeDefaultSystemSettingRefServiceClient().FetchAll(),
                                 "DefaultSystemSettingRcd",
                                 "DefaultSystemSettingName",
                                 contract.DefaultSystemSettingRcd
                                 );
 
-            if (defaultUserId == null) {
+            if (defaultUserId == null)
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             contract.DateTime = DateTime.UtcNow;
 

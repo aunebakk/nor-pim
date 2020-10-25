@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:44 PM
+  Generated Date: 10/25/2020 9:25:44 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.ControllerBeginning
 */
@@ -30,20 +30,20 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             ViewBag.ProductInfoId = productInfoId;
 
-            ProductInfoContract productInfoContract = new ProductInfoContract {
-                ProductInfo =
-                new CrudeProductInfoServiceClient().FetchByProductInfoId(productInfoId)
-            };
+            var productInfoContract = new ProductInfoContract();
+
+            productInfoContract.ProductInfo =
+                new CrudeProductInfoServiceClient().FetchByProductInfoId(productInfoId);
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productInfoContract.ProductInfo.ProductId
                                 );
 
             ViewBag.ProductInfoRcd =
-                new SelectList(new CrudeProductInfoRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductInfoRefServiceClient().FetchAll(),
                                 "ProductInfoRcd",
                                 "ProductInfoName",
                                 productInfoContract.ProductInfo.ProductInfoRcd
@@ -60,7 +60,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductInfoEdit([Bind()] ProductInfoContract productInfoContract, System.Guid productId, string productInfoRcd) {
+        public ActionResult ProductInfoEdit([Bind()] ProductInfoContract productInfoContract, System.Guid productId,System.String productInfoRcd) {
             if (ModelState.IsValid) {
 
                 productInfoContract.ProductInfo.ProductId = productId;
@@ -69,7 +69,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 new CrudeProductInfoServiceClient().Update(productInfoContract.ProductInfo);
 
-                return RedirectToAction("ProductInfoIndex", new { productId = productInfoContract.ProductInfo.ProductId });
+                return RedirectToAction("ProductInfoIndex", new { productId = productInfoContract.ProductInfo.ProductId} );
             }
 
             return View(
@@ -80,34 +80,27 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpGet]
         public ActionResult ProductInfoCreate(System.Guid? productId, System.Guid? userId) {
-            ProductInfoContract productInfoContract = new ProductInfoContract {
-                ProductInfo = new CrudeProductInfoContract()
-            };
-            if (productId != null) {
-                productInfoContract.ProductInfo.ProductId = (System.Guid)productId;
-            }
-
-            if (userId != null) {
-                productInfoContract.ProductInfo.UserId = (System.Guid)userId;
-            }
+            var productInfoContract = new ProductInfoContract();
+            productInfoContract.ProductInfo = new CrudeProductInfoContract();
+            if (productId != null) productInfoContract.ProductInfo.ProductId = (System.Guid) productId;
+            if (userId != null) productInfoContract.ProductInfo.UserId = (System.Guid) userId;
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productInfoContract.ProductInfo.ProductId
                                 );
 
             ViewBag.ProductInfoRcd =
-                new SelectList(new CrudeProductInfoRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductInfoRefServiceClient().FetchAll(),
                                 "ProductInfoRcd",
                                 "ProductInfoName",
                                 productInfoContract.ProductInfo.ProductInfoRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 productInfoContract.ProductInfo.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(productInfoContract.ProductInfo.UserId).DefaultUserName;
@@ -123,14 +116,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductInfoCreate([Bind()] ProductInfoContract productInfoContract, System.Guid productId, string productInfoRcd) {
+        public ActionResult ProductInfoCreate([Bind()] ProductInfoContract productInfoContract, System.Guid productId,System.String productInfoRcd) {
             if (ModelState.IsValid) {
 
                 productInfoContract.ProductInfo.ProductId = productId;
                 productInfoContract.ProductInfo.ProductInfoRcd = productInfoRcd;
                 new CrudeProductInfoServiceClient().Insert(productInfoContract.ProductInfo);
 
-                return RedirectToAction("ProductInfoIndex", new { productId = productInfoContract.ProductInfo.ProductId });
+                return RedirectToAction("ProductInfoIndex", new { productId = productInfoContract.ProductInfo.ProductId} );
             }
 
             return View(

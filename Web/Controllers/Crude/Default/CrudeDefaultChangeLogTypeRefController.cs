@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:47 PM
+  Generated Date: 10/25/2020 9:15:33 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeDefaultChangeLogTypeRefDetails(string defaultChangeLogTypeRcd) {
+        public ActionResult CrudeDefaultChangeLogTypeRefDetails(System.String defaultChangeLogTypeRcd) {
 
             return View(
                 "~/Views/Crude/Default/CrudeDefaultChangeLogTypeRef/CrudeDefaultChangeLogTypeRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogTypeRefEdit(
-            string defaultChangeLogTypeRcd
+            System.String defaultChangeLogTypeRcd
             ) {
 
             CrudeDefaultChangeLogTypeRefContract contract = new CrudeDefaultChangeLogTypeRefServiceClient().FetchByDefaultChangeLogTypeRcd(defaultChangeLogTypeRcd);
@@ -76,14 +76,11 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogTypeRefCreate(System.Guid? defaultUserId) {
-            CrudeDefaultChangeLogTypeRefContract contract = new CrudeDefaultChangeLogTypeRefContract();
-            if (defaultUserId != null) {
-                contract.DefaultUserId = (System.Guid)defaultUserId;
-            }
+            var contract = new CrudeDefaultChangeLogTypeRefContract();
+            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
 
-            if (defaultUserId == null) {
+            if (defaultUserId == null)
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -114,7 +111,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultChangeLogTypeRefDelete(
-            string defaultChangeLogTypeRcd
+            System.String defaultChangeLogTypeRcd
             ) {
             new CrudeDefaultChangeLogTypeRefServiceClient().Delete(defaultChangeLogTypeRcd);
 

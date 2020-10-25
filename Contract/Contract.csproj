@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D96244B-4ECB-4308-BFDB-50439B775519}</ProjectGuid>
+    <ProjectGuid>{DBF93CBD-1423-435F-8528-100E848C94D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contract</RootNamespace>
@@ -147,7 +147,6 @@
     <Compile Include="Durian\DefaultSearch\DefaultUserList.cs" />
     <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboard.cs" />
     <Compile Include="Durian\DefaultSearch\GetDefaultChangeLog.cs" />
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrder.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilter.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilter.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilter.cs" />

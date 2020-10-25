@@ -2,19 +2,22 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:02:31 PM
+  Generated Date: 10/25/2020 9:24:21 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using System.Runtime.Serialization;
+using System.Data;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [ServiceContract()]
     public partial interface IProductSearchService {
-
+        
         [OperationContract()]
         List<ProductHistoryContract> ProductHistory(System.Guid productId);
         [OperationContract()]
@@ -36,58 +39,58 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     }
 
     public partial class ProductSearchService : IProductSearchService {
-
+        
         public virtual List<ProductHistoryContract> ProductHistory(System.Guid productId) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductHistory businessLogicLayer = new ProductHistory();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductHistory();
             return businessLogicLayer.ProductHistoryFromDal(dataAccessLayer.ProductHistory(productId));
         }
 
         public List<ProductSearchByNameContract> ProductSearchByName(string productName) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchByName businessLogicLayer = new ProductSearchByName();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchByName();
             return businessLogicLayer.ProductSearchByNameFromDal(dataAccessLayer.ProductSearchByName(productName));
         }
 
         public ProductSearchByIdContract ProductSearchById(Guid productId) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchById businessLogicLayer = new ProductSearchById();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchById();
             return businessLogicLayer.ProductSearchByIdFromDal(dataAccessLayer.ProductSearchById(productId));
         }
 
         public List<ProductSearchByCategoryContract> ProductSearchByCategory(Guid productCategoryId, bool onParent) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchByCategory businessLogicLayer = new ProductSearchByCategory();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchByCategory();
             return businessLogicLayer.ProductSearchByCategoryFromDal(dataAccessLayer.ProductSearchByCategory(productCategoryId, onParent));
         }
 
         public List<ProductSearchByCategoryCodeContract> ProductSearchByCategoryCode(string productCategoryCode, bool onParent) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchByCategoryCode businessLogicLayer = new ProductSearchByCategoryCode();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchByCategoryCode();
             return businessLogicLayer.ProductSearchByCategoryCodeFromDal(dataAccessLayer.ProductSearchByCategoryCode(productCategoryCode, onParent));
         }
 
         public List<ProductSearchByCategoryType1Contract> ProductSearchByCategoryType1(Guid productCategoryId, bool onParent) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchByCategoryType1 businessLogicLayer = new ProductSearchByCategoryType1();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchByCategoryType1();
             return businessLogicLayer.ProductSearchByCategoryType1FromDal(dataAccessLayer.ProductSearchByCategoryType1(productCategoryId, onParent));
         }
 
         public List<ProductSearchByCategoryType2Contract> ProductSearchByCategoryType2(Guid productCategoryId, bool onParent) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchByCategoryType2 businessLogicLayer = new ProductSearchByCategoryType2();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchByCategoryType2();
             return businessLogicLayer.ProductSearchByCategoryType2FromDal(dataAccessLayer.ProductSearchByCategoryType2(productCategoryId, onParent));
         }
 
         public List<ProductSearchByCategoryType3Contract> ProductSearchByCategoryType3(Guid productCategoryId, bool onParent) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchByCategoryType3 businessLogicLayer = new ProductSearchByCategoryType3();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchByCategoryType3();
             return businessLogicLayer.ProductSearchByCategoryType3FromDal(dataAccessLayer.ProductSearchByCategoryType3(productCategoryId, onParent));
         }
 
         public List<ProductSearchByCategoryType4Contract> ProductSearchByCategoryType4(Guid productCategoryId, bool onParent) {
-            DataAccessLayer.ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
-            ProductSearchByCategoryType4 businessLogicLayer = new ProductSearchByCategoryType4();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var businessLogicLayer = new ProductSearchByCategoryType4();
             return businessLogicLayer.ProductSearchByCategoryType4FromDal(dataAccessLayer.ProductSearchByCategoryType4(productCategoryId, onParent));
         }
     }

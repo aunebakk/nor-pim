@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:35 PM
+  Generated Date: 10/25/2020 9:15:24 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeClientDocumentContract contract = new CrudeClientDocumentServiceClient().FetchByClientDocumentId(clientDocumentId);
             ViewBag.ClientId =
-                new SelectList(new CrudeClientServiceClient().FetchAll(),
+                new SelectList( new CrudeClientServiceClient().FetchAll(),
                                 "ClientId",
                                 "FirstName",
                                 contract.ClientId
                                 );
 
             ViewBag.ClientDocumentTypeRcd =
-                new SelectList(new CrudeClientDocumentTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeClientDocumentTypeRefServiceClient().FetchAll(),
                                 "ClientDocumentTypeRcd",
                                 "ClientDocumentTypeName",
                                 contract.ClientDocumentTypeRcd
@@ -102,24 +102,19 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeClientDocumentCreate(System.Guid? clientId, System.Guid? userId) {
-            CrudeClientDocumentContract contract = new CrudeClientDocumentContract();
-            if (clientId != null) {
-                contract.ClientId = (System.Guid)clientId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeClientDocumentContract();
+            if (clientId != null) contract.ClientId = (System.Guid) clientId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ClientId =
-                new SelectList(new CrudeClientServiceClient().FetchAll(),
+                new SelectList( new CrudeClientServiceClient().FetchAll(),
                                 "ClientId",
                                 "FirstName",
                                 contract.ClientId
                                 );
 
             ViewBag.ClientDocumentTypeRcd =
-                new SelectList(new CrudeClientDocumentTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeClientDocumentTypeRefServiceClient().FetchAll(),
                                 "ClientDocumentTypeRcd",
                                 "ClientDocumentTypeName",
                                 contract.ClientDocumentTypeRcd
@@ -129,9 +124,8 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             contract.ExpiryDateTime = DateTime.UtcNow;
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

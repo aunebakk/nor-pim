@@ -1,21 +1,23 @@
 using System;
 using System.Windows.Forms;
 
-namespace SolutionNorSolutionPim.UserInterface {
+namespace SolutionNorSolutionPim.UserInterface
+{
 
 
-    public partial class ProductHistory : Form {
-        private Guid _productId = Guid.Empty;
+    public partial class ProductHistory : Form
+    {
+        Guid _productId = Guid.Empty;
 
         public ProductHistory(Guid productId) {
             InitializeComponent();
             InitializeGrid();
             _productId = productId;
 
-            btnSearch_Click(new object(), new EventArgs());
+            btnSearch_Click(new Object(), new EventArgs());
 
-            AcceptButton = btnSearch;
-            CancelButton = btnClose;
+            this.AcceptButton = btnSearch;
+            this.CancelButton = btnClose;
         }
 
         private void btnSearch_Click(object sender, EventArgs e) {
@@ -29,7 +31,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 grid.AutoResizeColumns();
                 grid.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 MessageBox.Show(ex.Message);
             } finally {
                 productHistory.Close();
@@ -53,11 +55,10 @@ namespace SolutionNorSolutionPim.UserInterface {
             grid.Columns.Add("ExtensionData", "");
             grid.Columns["ExtensionData"].Visible = false;
 
-            foreach (DataGridViewColumn column in grid.Columns) {
+            foreach ( DataGridViewColumn column in grid.Columns ) {
                 column.DataPropertyName = column.Name;
-                if (column.Name.EndsWith("Id")) {
+                if ( column.Name.EndsWith("Id") )
                     column.Visible = false;
-                }
             }
 
             grid.AutoResizeColumns();
@@ -65,13 +66,12 @@ namespace SolutionNorSolutionPim.UserInterface {
         }
 
         private void buttonHistory_Click(object sender, EventArgs e) {
-            if (grid.CurrentRow.Cells["ProductId"].Value == null) {
+            if ( grid.CurrentRow.Cells["ProductId"].Value == null )
                 return;
-            }
 
-            Guid productId = (System.Guid)grid.CurrentRow.Cells["ProductId"].Value;
-            ProductHistory history = new ProductHistory(productId);
-            history.MdiParent = MdiParent;
+            Guid productId = ( System.Guid ) grid.CurrentRow.Cells["ProductId"].Value;
+            var history = new ProductHistory(productId);
+            history.MdiParent = this.MdiParent;
             Singleton.Instance.CheckForm(history);
             history.Show();
         }

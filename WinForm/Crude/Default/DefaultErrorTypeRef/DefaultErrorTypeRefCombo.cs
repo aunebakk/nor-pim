@@ -6,10 +6,14 @@
   From Machine: DESKTOP-517I8BU
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateComboStyle1
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Text;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
@@ -19,42 +23,41 @@ namespace SolutionNorSolutionPim.UserInterface {
 
     // this ComboBox UserControl class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class DefaultErrorTypeRefCombo : UserControl {
-
+        
         // Constructs the control with an empty ComboBox
         public DefaultErrorTypeRefCombo() {
-            InitializeComponent();
+           InitializeComponent();
         }
-
+        
         // get or sets the current combobox row
         public override string Text {
             get {
-                string selectedValue = string.Empty;
-                try {
+                System.String selectedValue = String.Empty;
+                try { 
                     selectedValue = cboRef.SelectedValue.ToString();
-                } catch { }
+                } catch {}
                 return selectedValue;
             }
             set {
                 PopulateCombo();
-                cboRef.SelectedValue = value; ;
+                cboRef.SelectedValue = value;;
             }
         }
-
+        
         // event for when a new item is selected in the ComboBox
         public event EventHandler Picked;
-
+        
         // populates the ComboBox with all rows from the SOAP service
         private void cboRef_Click(object sender, EventArgs e) {
             PopulateCombo();
         }
-
+        
         // trigger Picked event when selected row in the ComboBox changes
         private void cboRef_SelectedIndexChanged(object sender, EventArgs e) {
-            if (cboRef.SelectedValue != null && Picked != null) {
-                Picked(new object(), new EventArgs());
-            }
+            if (cboRef.SelectedValue != null && this.Picked != null)
+                this.Picked(new object(), new EventArgs());
         }
-
+        
         // fetch all rows from the SOAP layer and populate the ComboBox with it
         public void PopulateCombo() {
             if (!DesignMode && cboRef.DataSource == null) {
@@ -70,9 +73,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 } catch (Exception ex) {
                     if (ex != null) { }
                 } finally {
-                    if (defaultErrorTypeRef != null) {
-                        defaultErrorTypeRef.Close();
-                    }
+                    if (defaultErrorTypeRef != null) defaultErrorTypeRef.Close();
                 }
             }
         }

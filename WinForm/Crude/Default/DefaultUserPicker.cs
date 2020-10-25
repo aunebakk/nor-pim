@@ -1,12 +1,14 @@
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.UserInterface {
+namespace SolutionNorSolutionPim.UserInterface
+{
 
 
-    public partial class DefaultUserPicker : UserControl {
+    public partial class DefaultUserPicker : UserControl
+    {
 
         private System.Guid _defaultUserId;
 
@@ -15,24 +17,25 @@ namespace SolutionNorSolutionPim.UserInterface {
         }
 
         public System.Guid SelectedValue {
-            get => _defaultUserId;
+            get {
+                return _defaultUserId;
+            }
             set {
-                if (!DesignMode) {
+                if ( !DesignMode ) {
                     _defaultUserId = value;
-                    CrudeDefaultUserServiceClient defaultUser = new CrudeDefaultUserServiceClient();
+                    var defaultUser = new CrudeDefaultUserServiceClient();
                     try {
                         CrudeDefaultUserContract contract = defaultUser.FetchByDefaultUserId(_defaultUserId);
 
-                        if (contract != null) {
+                        if ( contract != null ) {
                             txtDefaultUserName.Text = contract.DefaultUserName;
                             txtDefaultUserCode.Text = contract.DefaultUserCode;
                         }
-                    } catch (Exception ex) {
+                    } catch ( Exception ex ) {
                         MessageBox.Show(ex.Message);
                     } finally {
-                        if (defaultUser != null) {
+                        if ( defaultUser != null )
                             defaultUser.Close();
-                        }
                     }
                 };
             }
@@ -41,9 +44,9 @@ namespace SolutionNorSolutionPim.UserInterface {
         public event EventHandler Picked;
 
         private void txtDefaultUserCode_Validating(object sender, CancelEventArgs e) {
-            if (!DesignMode) {
+            if ( !DesignMode ) {
                 // empty picker on no code
-                if (string.IsNullOrEmpty(txtDefaultUserCode.Text)) {
+                if ( string.IsNullOrEmpty(txtDefaultUserCode.Text) ) {
                     _defaultUserId = Guid.Empty;
                     txtDefaultUserName.Text = string.Empty;
                     txtDefaultUserCode.Text = string.Empty;
@@ -56,22 +59,20 @@ namespace SolutionNorSolutionPim.UserInterface {
                     defaultUser = new CrudeDefaultUserServiceClient();
                     CrudeDefaultUserContract contract = defaultUser.FetchByDefaultUserName(txtDefaultUserCode.Text);
 
-                    if (contract != null) {
+                    if ( contract != null ) {
                         txtDefaultUserCode.Text = contract.DefaultUserCode;
                         txtDefaultUserName.Text = contract.DefaultUserName;
                         _defaultUserId = contract.DefaultUserId;
                     }
-                } catch (Exception ex) {
+                } catch ( Exception ex ) {
                     MessageBox.Show(ex.Message);
                 } finally {
-                    if (defaultUser != null) {
+                    if ( defaultUser != null )
                         defaultUser.Close();
-                    }
                 }
 
-                if (Picked != null) {
-                    Picked(new object(), new EventArgs());
-                }
+                if ( this.Picked != null )
+                    this.Picked(new object(), new EventArgs());
             }
         }
     }

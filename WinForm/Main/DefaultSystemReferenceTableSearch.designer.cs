@@ -1,7 +1,9 @@
-namespace SolutionNorSolutionPim.UserInterface {
+namespace SolutionNorSolutionPim.UserInterface
+{
 
 
-    public partial class DefaultSystemReferenceTableSearch {
+    public partial class DefaultSystemReferenceTableSearch
+    {
 
         private System.ComponentModel.IContainer components = null;
 
@@ -30,7 +32,7 @@ namespace SolutionNorSolutionPim.UserInterface {
         private System.Windows.Forms.Label labelUserPicker;
 
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+            if ( disposing && ( components != null ) ) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -50,12 +52,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             this.dateTimePickerDateTime = new System.Windows.Forms.DateTimePicker();
             this.labelUserPicker = new System.Windows.Forms.Label();
             this.userPicker = new SolutionNorSolutionPim.UserInterface.DefaultUserPicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCrudeDefaultSystemReferenceTable)).BeginInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewCrudeDefaultSystemReferenceTable ) ).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.btnClose.Location = new System.Drawing.Point(433, 218);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 22);
@@ -66,7 +68,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // btnEdit
             // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.btnEdit.Location = new System.Drawing.Point(237, 218);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(92, 22);
@@ -77,7 +79,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.btnSearch.Location = new System.Drawing.Point(334, 218);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 22);
@@ -88,11 +90,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // dataGridViewCrudeDefaultSystemReferenceTable
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 255 ) ) ) ));
             this.dataGridViewCrudeDefaultSystemReferenceTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewCrudeDefaultSystemReferenceTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCrudeDefaultSystemReferenceTable.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.dataGridViewCrudeDefaultSystemReferenceTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCrudeDefaultSystemReferenceTable.Location = new System.Drawing.Point(12, 115);
             this.dataGridViewCrudeDefaultSystemReferenceTable.Name = "dataGridViewCrudeDefaultSystemReferenceTable";
@@ -186,7 +188,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             this.Controls.Add(this.userPicker);
             this.Name = "DefaultSystemReferenceTableSearch";
             this.Text = "System Reference Table Search";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCrudeDefaultSystemReferenceTable)).EndInit();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.dataGridViewCrudeDefaultSystemReferenceTable ) ).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

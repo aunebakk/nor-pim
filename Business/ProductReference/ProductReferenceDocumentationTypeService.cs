@@ -2,42 +2,46 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:05:21 PM
+  Generated Date: 10/25/2020 9:26:10 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.BusinessUsing
 */
+using SolutionNorSolutionPim.DataAccessLayer;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.ServiceModel;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [ServiceContract()]
     public partial interface IProductReferenceDocumentationTypeService {
-
+        
         // Gets parent and children
         [OperationContract()]
         ProductReferenceDocumentationTypeContract ProductReferenceDocumentationTypeCompleteGet(string productDocumentationTypeRcd, System.Guid userId);
-
+        
         // Updates parent, children are added or updated as needed
         [OperationContract()]
         string ProductReferenceDocumentationTypeCompleteUpdate(string productDocumentationTypeRcd, ProductReferenceDocumentationTypeContract productContract, System.Guid userId);
     }
-
+    
     public partial class ProductReferenceDocumentationTypeService : IProductReferenceDocumentationTypeService {
-
+        
         // Gets parent and children
         public ProductReferenceDocumentationTypeContract ProductReferenceDocumentationTypeCompleteGet(string productDocumentationTypeRcd, System.Guid userId) {
-            ProductReferenceDocumentationTypeContract productContract =
+            var productContract = 
                 new ProductReferenceDocumentationTypeContract();
 
             // open standard connection
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
                 try {
-                    productContract.ProductDocumentationTypeRef =
+                    productContract.ProductDocumentationTypeRef = 
                         new CrudeProductDocumentationTypeRefService().FetchAll();
 
                     // save checksum for comparison on update
@@ -50,23 +54,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             return productContract;
         }
-
+        
         // Updates parent, children are added or updated as needed
         public string ProductReferenceDocumentationTypeCompleteUpdate(string productDocumentationTypeRcd, ProductReferenceDocumentationTypeContract productContract, System.Guid userId) {
 
             // check for differences since fetch
-            if (productContract.ChecksumAfterGet.Equals(productContract.Checksum())) {
-                return string.Empty;
-            }
+            if (productContract.ChecksumAfterGet.Equals(productContract.Checksum()))
+                return String.Empty;
 
             // check for database differences since fetch
             ProductReferenceDocumentationTypeContract productContractCurrent = ProductReferenceDocumentationTypeCompleteGet(productDocumentationTypeRcd, userId);
-            if (!productContract.ChecksumAfterGet.Equals(productContractCurrent.Checksum())) {
+            if (!productContract.ChecksumAfterGet.Equals(productContractCurrent.Checksum())) 
                 throw new Exception("ProductReferenceDocumentationTypeCompleteUpdate, data has changed since fetch");
-            }
 
             // open standard connection
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
 
@@ -83,7 +85,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 }
             }
 
-            return string.Empty;
+            return String.Empty;
 
         }
     }

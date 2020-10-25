@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:06 PM
+  Generated Date: 10/25/2020 9:15:47 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeDefaultUserContract contract = new CrudeDefaultUserServiceClient().FetchByDefaultUserId(defaultUserId);
             ViewBag.DefaultStateRcd =
-                new SelectList(new CrudeDefaultStateRefServiceClient().FetchAll(),
+                new SelectList( new CrudeDefaultStateRefServiceClient().FetchAll(),
                                 "DefaultStateRcd",
                                 "DefaultStateName",
                                 contract.DefaultStateRcd
                                 );
 
             ViewBag.CreatedByDefaultUserId =
-                new SelectList(new CrudeDefaultUserServiceClient().FetchAll(),
+                new SelectList( new CrudeDefaultUserServiceClient().FetchAll(),
                                 "DefaultUserId",
                                 "DefaultUserName",
                                 contract.CreatedByDefaultUserId
@@ -99,20 +99,18 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultUserCreate(System.Guid? createdByDefaultUserId) {
-            CrudeDefaultUserContract contract = new CrudeDefaultUserContract();
-            if (createdByDefaultUserId != null) {
-                contract.CreatedByDefaultUserId = (System.Guid)createdByDefaultUserId;
-            }
+            var contract = new CrudeDefaultUserContract();
+            if (createdByDefaultUserId != null) contract.CreatedByDefaultUserId = (System.Guid) createdByDefaultUserId;
 
             ViewBag.DefaultStateRcd =
-                new SelectList(new CrudeDefaultStateRefServiceClient().FetchAll(),
+                new SelectList( new CrudeDefaultStateRefServiceClient().FetchAll(),
                                 "DefaultStateRcd",
                                 "DefaultStateName",
                                 contract.DefaultStateRcd
                                 );
 
             ViewBag.CreatedByDefaultUserId =
-                new SelectList(new CrudeDefaultUserServiceClient().FetchAll(),
+                new SelectList( new CrudeDefaultUserServiceClient().FetchAll(),
                                 "DefaultUserId",
                                 "DefaultUserName",
                                 contract.CreatedByDefaultUserId

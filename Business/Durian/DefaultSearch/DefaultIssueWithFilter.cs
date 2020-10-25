@@ -2,29 +2,33 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:00:53 PM
+  Generated Date: 10/25/2020 9:23:21 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.ServiceModel;
+using System.Runtime.Serialization;
+using System.Data;
+using SolutionNorSolutionPim.DataAccessLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public class DefaultIssueWithFilter {
-
+        
         public List<DefaultIssueWithFilterContract> DefaultIssueWithFilterFromDal(List<DefaultIssueWithFilterData> dataList) {
-            List<DefaultIssueWithFilterContract> list = new List<DefaultIssueWithFilterContract>();
+           var list = new List<DefaultIssueWithFilterContract>();
 
-            foreach (DefaultIssueWithFilterData data in dataList) {
-                DefaultIssueWithFilterContract contract = new DefaultIssueWithFilterContract();
-                DataToContract(data, contract);
-                list.Add(contract);
-            }
+           foreach (DefaultIssueWithFilterData data in dataList) {
+               var contract = new DefaultIssueWithFilterContract();
+               DataToContract(data, contract);
+               list.Add(contract);
+           }
 
-            return list;
+           return list;
         }
-
+        
         public void DataToContract(DefaultIssueWithFilterData dalDefaultIssueWithFilter, DefaultIssueWithFilterContract dataContract) {
             dataContract.DefaultIssueTypeRcd = dalDefaultIssueWithFilter.DefaultIssueTypeRcd;
             dataContract.DefaultIssueTypeName = dalDefaultIssueWithFilter.DefaultIssueTypeName;

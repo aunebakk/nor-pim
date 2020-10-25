@@ -3,9 +3,11 @@ using System.Configuration;
 using System.Diagnostics;
 using System.ServiceModel;
 
-namespace SolutionNorSolutionPim.BusinessLogicLayer {
+namespace SolutionNorSolutionPim.BusinessLogicLayer
+{
     [ServiceContract()]
-    public interface IDiagnosticsService {
+    public interface IDiagnosticsService
+    {
         [OperationContract()]
         long WorkingSet();
 
@@ -21,7 +23,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     /// <domain>Diagnostics</domain>
     /// <namespace>SolutionNorSolutionPim.BusinessLogicLayer</namespace>
-    public class DiagnosticsService : IDiagnosticsService {
+    public class DiagnosticsService : IDiagnosticsService
+    {
         public long WorkingSet() {
             Process myProcess = Process.GetCurrentProcess();
             long workingSet = myProcess.WorkingSet64 / 1024 / 1024;
@@ -37,10 +40,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             string connection = ConfigurationManager.AppSettings["Conn"];
 
             // exclude password if present
-            if (connection.IndexOf("Password") > 0) {
+            if ( connection.IndexOf("Password") > 0 )
                 return connection.Substring(0,
                        connection.IndexOf("Password"));
-            }
 
             return connection;
         }

@@ -2,29 +2,33 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:25 PM
+  Generated Date: 10/25/2020 9:25:30 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.ServiceModel;
+using System.Runtime.Serialization;
+using System.Data;
+using SolutionNorSolutionPim.DataAccessLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public class ProductMaintenanceDocumentationIndexWithFilter {
-
+        
         public List<ProductMaintenanceDocumentationIndexWithFilterContract> ProductMaintenanceDocumentationIndexWithFilterFromDal(List<ProductMaintenanceDocumentationIndexWithFilterData> dataList) {
-            List<ProductMaintenanceDocumentationIndexWithFilterContract> list = new List<ProductMaintenanceDocumentationIndexWithFilterContract>();
+           var list = new List<ProductMaintenanceDocumentationIndexWithFilterContract>();
 
-            foreach (ProductMaintenanceDocumentationIndexWithFilterData data in dataList) {
-                ProductMaintenanceDocumentationIndexWithFilterContract contract = new ProductMaintenanceDocumentationIndexWithFilterContract();
-                DataToContract(data, contract);
-                list.Add(contract);
-            }
+           foreach (ProductMaintenanceDocumentationIndexWithFilterData data in dataList) {
+               var contract = new ProductMaintenanceDocumentationIndexWithFilterContract();
+               DataToContract(data, contract);
+               list.Add(contract);
+           }
 
-            return list;
+           return list;
         }
-
+        
         public void DataToContract(ProductMaintenanceDocumentationIndexWithFilterData dalProductMaintenanceDocumentationIndexWithFilter, ProductMaintenanceDocumentationIndexWithFilterContract dataContract) {
             dataContract.ProductName = dalProductMaintenanceDocumentationIndexWithFilter.ProductName;
             dataContract.StateRcd = dalProductMaintenanceDocumentationIndexWithFilter.StateRcd;

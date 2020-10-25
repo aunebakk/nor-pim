@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:37 PM
+  Generated Date: 10/25/2020 9:16:10 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -47,7 +47,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeProductGatherSourceContract contract = new CrudeProductGatherSourceServiceClient().FetchByProductGatherSourceId(productGatherSourceId);
             ViewBag.ProductGatherSourceTypeRcd =
-                new SelectList(new CrudeProductGatherSourceTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductGatherSourceTypeRefServiceClient().FetchAll(),
                                 "ProductGatherSourceTypeRcd",
                                 "ProductGatherSourceTypeName",
                                 contract.ProductGatherSourceTypeRcd
@@ -84,25 +84,19 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductGatherSourceCreate(System.Guid? productGatherId, System.Guid? userId) {
-            CrudeProductGatherSourceContract contract = new CrudeProductGatherSourceContract();
-            if (productGatherId != null) {
-                contract.ProductGatherId = (System.Guid)productGatherId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductGatherSourceContract();
+            if (productGatherId != null) contract.ProductGatherId = (System.Guid) productGatherId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ProductGatherSourceTypeRcd =
-                new SelectList(new CrudeProductGatherSourceTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductGatherSourceTypeRefServiceClient().FetchAll(),
                                 "ProductGatherSourceTypeRcd",
                                 "ProductGatherSourceTypeName",
                                 contract.ProductGatherSourceTypeRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

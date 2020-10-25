@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:15 PM
+  Generated Date: 10/25/2020 9:15:06 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.PrototypeDotNetFrameworkWinExe.Content_GlobalSuppressionsDOTcs
 */
@@ -11,7 +11,7 @@
 // Project-level suppressions either have no target or are given 
 // a specific target and scoped to a namespace, type, member, etc.
 
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Warning", "CS0642:Possible mistaken empty statement")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Warning" , "CS0642:Possible mistaken empty statement" )]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0018:Inline variable declaration")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0028:Simplify collection initialization")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0017:Simplify object initialization")]

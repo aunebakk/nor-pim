@@ -1,11 +1,13 @@
-using SolutionNorSolutionPim.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using SolutionNorSolutionPim.DataAccessLayer;
 
-namespace SolutionNorSolutionPim.BusinessLogicLayer {
+namespace SolutionNorSolutionPim.BusinessLogicLayer
+{
     [ServiceContract()]
-    public interface IProductService {
+    public interface IProductService
+    {
         [OperationContract()]
         ProductContract ProductGetCompleteById(
             Guid productId
@@ -48,7 +50,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     /// <domain>Product</domain>
     /// <namespace>SolutionNorSolutionPim.BusinessLogicLayer</namespace>
-    public class ProductService : IProductService {
+    public class ProductService : IProductService
+    {
 
         /// <summary>
         /// get product and all entities
@@ -58,8 +61,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         public ProductContract ProductGetCompleteById(
             Guid productId
             ) {
-            ProductContract contract = new ProductContract();
-            Product data = new Product(productId);
+            var contract = new ProductContract();
+            var data = new Product(productId);
 
             // move data from data access layer to business logic layer
             contract.Product = new CrudeProductContract();
@@ -90,7 +93,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             // check checksum ( object has hash code )
 
             // move from contract to data
-            Product data = new Product();
+            var data = new Product();
             CrudeProductService.ContractToData(contract.Product, data.product);
             CrudeProductAttributeService.ContractListToDataList(contract.ProductAttribute, data.ProductAttribute);
             CrudeProductIdentifierService.ContractListToDataList(contract.ProductIdentifier, data.ProductIdentifier);
@@ -118,27 +121,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             ) {
 
             // add product
-            CrudeProductContract productContract = new CrudeProductContract {
-                ProductId = Guid.NewGuid(),
-                ProductName = productName,
-                StateRcd = DefaultStateRef.Created,
-                UserId = userId,
-                DateTime = DateTime.UtcNow
-            };
+            var productContract = new CrudeProductContract();
+            productContract.ProductId = Guid.NewGuid();
+            productContract.ProductName = productName;
+            productContract.StateRcd = DefaultStateRef.Created;
+            productContract.UserId = userId;
+            productContract.DateTime = DateTime.UtcNow;
 
-            CrudeProductService productBll = new CrudeProductService();
+            var productBll = new CrudeProductService();
             productBll.Insert(productContract);
 
             // map to category
-            CrudeProductCategoryMappingContract productCategoryMapping = new CrudeProductCategoryMappingContract {
-                ProductCategoryMappingId = Guid.NewGuid(),
-                ProductId = productContract.ProductId,
-                ProductCategoryId = productCategoryId,
-                UserId = userId,
-                DateTime = DateTime.UtcNow
-            };
+            var productCategoryMapping = new CrudeProductCategoryMappingContract();
+            productCategoryMapping.ProductCategoryMappingId = Guid.NewGuid();
+            productCategoryMapping.ProductId = productContract.ProductId;
+            productCategoryMapping.ProductCategoryId = productCategoryId;
+            productCategoryMapping.UserId = userId;
+            productCategoryMapping.DateTime = DateTime.UtcNow;
 
-            CrudeProductCategoryMappingService mappingBll = new CrudeProductCategoryMappingService();
+            var mappingBll = new CrudeProductCategoryMappingService();
             mappingBll.Insert(productCategoryMapping);
 
             return productContract.ProductId;
@@ -152,7 +153,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         public List<ProductHistoryContract> ProductHistory(
             Guid productId
             ) {
-            ProductSearch dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductSearch();
             List<SolutionNorSolutionPim.DataAccessLayer.ProductHistoryData> dataList = new List<DataAccessLayer.ProductHistoryData>();
 
             // get start
@@ -160,19 +161,19 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             dataList.Add(data);
 
             // get next
-            while (data.ProductBecameId != Guid.Empty) {
+            while ( data.ProductBecameId != Guid.Empty ) {
                 data = dataAccessLayer.ProductHistoryPart(data.ProductBecameId);
                 dataList.Add(data);
             }
 
             // get previous
             data = dataAccessLayer.ProductHistoryBecame(productId);
-            while (data.ProductId != Guid.Empty) {
+            while ( data.ProductId != Guid.Empty ) {
                 dataList.Add(data);
                 data = dataAccessLayer.ProductHistoryBecame(data.ProductId);
             }
 
-            ProductHistory businessLogicLayer = new ProductHistory();
+            var businessLogicLayer = new ProductHistory();
 
             return businessLogicLayer.ProductHistoryFromDal(dataList);
         }
@@ -196,27 +197,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             Guid userId
             ) {
 
-            if (productIds.Count.Equals(0)) {
+            if ( productIds.Count.Equals(0) )
                 throw new Exception("ProductService, ProductChangeAttribute, no products");
-            }
 
-            foreach (Guid productId in productIds) {
+            foreach ( Guid productId in productIds ) {
                 // get current product
                 ProductContract product = ProductGetCompleteById(productId);
 
-                if (product.Product.ProductId.Equals(Guid.Empty)) {
+                if ( product.Product.ProductId.Equals(Guid.Empty) )
                     throw new Exception("ProductService, ProductChangeAttribute, product: " + productId + " not found");
-                }
 
                 // check if any change was made
                 bool didChange = false;
                 bool didFind = false;
 
                 // check attributes
-                foreach (CrudeProductAttributeContract attribute in product.ProductAttribute) {
-                    if (attribute.ProductAttributeRcd.Equals(productAttributeRcd)) {
+                foreach ( CrudeProductAttributeContract attribute in product.ProductAttribute ) {
+                    if ( attribute.ProductAttributeRcd.Equals(productAttributeRcd) ) {
                         // check if current column value is the same as proposed new value
-                        if (!attribute.Value.Equals(newAttributeValue)) {
+                        if ( !attribute.Value.Equals(newAttributeValue) ) {
                             // change column value
                             attribute.Value = newAttributeValue;
                             attribute.DateTime = DateTime.UtcNow;
@@ -227,23 +226,23 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                     }
                 }
 
-                if (!didFind) {
+                if ( !didFind ) {
                     // attribute not present, add it
-                    CrudeProductAttributeContract attribute = new CrudeProductAttributeContract {
-                        ProductAttributeRcd = productAttributeRcd,
-                        Value = newAttributeValue,
-                        DateTime = DateTime.UtcNow,
-                        UserId = userId
-                    };
+                    var attribute = new CrudeProductAttributeContract();
+
+                    attribute.ProductAttributeRcd = productAttributeRcd;
+                    attribute.Value = newAttributeValue;
+                    attribute.DateTime = DateTime.UtcNow;
+                    attribute.UserId = userId;
 
                     product.ProductAttribute.Add(attribute);
                 }
 
                 // check identifiers
-                foreach (CrudeProductIdentifierContract identifier in product.ProductIdentifier) {
-                    if (identifier.ProductIdentifierRcd.Equals(productIdentifierRcd)) {
+                foreach ( CrudeProductIdentifierContract identifier in product.ProductIdentifier ) {
+                    if ( identifier.ProductIdentifierRcd.Equals(productIdentifierRcd) ) {
                         // check if current column value is the same as proposed new value
-                        if (!identifier.Identifier.Equals(newIdentifierValue)) {
+                        if ( !identifier.Identifier.Equals(newIdentifierValue) ) {
                             // change column value
                             identifier.Identifier = newIdentifierValue;
                             identifier.DateTime = DateTime.UtcNow;
@@ -255,9 +254,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 }
 
                 // save if any change was made
-                if (didChange) {
+                if ( didChange )
                     ProductSaveCompleteById(product, userId);
-                }
             }
         }
 
@@ -272,16 +270,16 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             ) {
             //productEntities.Reverse();  // because of updated by sort order
 
-            foreach (ProductChangeEntityContract productEntity in productEntities) {
+            foreach ( ProductChangeEntityContract productEntity in productEntities ) {
                 // get current product
                 ProductContract product = ProductGetCompleteById(productEntity.ProductId);
                 // check if any change was made
                 bool didChange = false;
-                foreach (ProductChangeEntityDetailContract entityDetail in productEntity.EntityChanges) {
-                    switch (entityDetail.ProductEntityTypeRcd) {
+                foreach ( ProductChangeEntityDetailContract entityDetail in productEntity.EntityChanges ) {
+                    switch ( entityDetail.ProductEntityTypeRcd ) {
                         case ProductEntityTypeRef.Product: {
                                 // check if current column value is the same as proposed new value
-                                if (product.Product.ProductName == null || !product.Product.ProductName.Equals(entityDetail.ProductEntityNewValue)) {
+                                if ( product.Product.ProductName == null || !product.Product.ProductName.Equals(entityDetail.ProductEntityNewValue) ) {
                                     // change product name
                                     product.Product.ProductName = entityDetail.ProductEntityNewValue;
                                     product.Product.DateTime = DateTime.UtcNow;
@@ -292,10 +290,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                             }
                         case ProductEntityTypeRef.ProductAttribute: {
                                 bool didFind = false;
-                                foreach (CrudeProductAttributeContract attribute in product.ProductAttribute) {
-                                    if (attribute.ProductAttributeRcd.Equals(entityDetail.ProductEntityRcd)) {
+                                foreach ( CrudeProductAttributeContract attribute in product.ProductAttribute ) {
+                                    if ( attribute.ProductAttributeRcd.Equals(entityDetail.ProductEntityRcd) ) {
                                         // check if current column value is the same as proposed new value
-                                        if (attribute.Value == null || !attribute.Value.Equals(entityDetail.ProductEntityNewValue)) {
+                                        if ( attribute.Value == null || !attribute.Value.Equals(entityDetail.ProductEntityNewValue) ) {
                                             // change column value
                                             attribute.Value = entityDetail.ProductEntityNewValue;
                                             attribute.DateTime = DateTime.UtcNow;
@@ -306,14 +304,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                                         break;
                                     }
                                 }
-                                if (!didFind) {
+                                if ( !didFind ) {
                                     // attribute not present, add it
-                                    CrudeProductAttributeContract attribute = new CrudeProductAttributeContract {
-                                        ProductAttributeRcd = entityDetail.ProductEntityRcd,
-                                        Value = entityDetail.ProductEntityNewValue,
-                                        DateTime = DateTime.UtcNow,
-                                        UserId = userId
-                                    };
+                                    var attribute = new CrudeProductAttributeContract();
+                                    attribute.ProductAttributeRcd = entityDetail.ProductEntityRcd;
+                                    attribute.Value = entityDetail.ProductEntityNewValue;
+                                    attribute.DateTime = DateTime.UtcNow;
+                                    attribute.UserId = userId;
                                     product.ProductAttribute.Add(attribute);
                                     didChange = true;
                                 }
@@ -321,10 +318,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                             }
                         case ProductEntityTypeRef.ProductIdentifier: {
                                 bool didFind = false;
-                                foreach (CrudeProductIdentifierContract identifier in product.ProductIdentifier) {
-                                    if (identifier.ProductIdentifierRcd.Equals(entityDetail.ProductEntityRcd)) {
+                                foreach ( CrudeProductIdentifierContract identifier in product.ProductIdentifier ) {
+                                    if ( identifier.ProductIdentifierRcd.Equals(entityDetail.ProductEntityRcd) ) {
                                         // check if current column value is the same as proposed new value
-                                        if (identifier.Identifier == null || !identifier.Identifier.Equals(entityDetail.ProductEntityNewValue)) {
+                                        if ( identifier.Identifier == null || !identifier.Identifier.Equals(entityDetail.ProductEntityNewValue) ) {
                                             // change column value
                                             identifier.Identifier = entityDetail.ProductEntityNewValue;
                                             identifier.DateTime = DateTime.UtcNow;
@@ -334,14 +331,13 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                                         didFind = true;
                                     }
                                 }
-                                if (!didFind) {
+                                if ( !didFind ) {
                                     // identifier not present, add it
-                                    CrudeProductIdentifierContract identifier = new CrudeProductIdentifierContract {
-                                        ProductIdentifierRcd = entityDetail.ProductEntityRcd,
-                                        Identifier = entityDetail.ProductEntityNewValue,
-                                        DateTime = DateTime.UtcNow,
-                                        UserId = userId
-                                    };
+                                    var identifier = new CrudeProductIdentifierContract();
+                                    identifier.ProductIdentifierRcd = entityDetail.ProductEntityRcd;
+                                    identifier.Identifier = entityDetail.ProductEntityNewValue;
+                                    identifier.DateTime = DateTime.UtcNow;
+                                    identifier.UserId = userId;
                                     product.ProductIdentifier.Add(identifier);
                                     didChange = true;
                                 }
@@ -351,9 +347,8 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 }
 
                 // save if any change was made
-                if (didChange) {
+                if ( didChange )
                     ProductSaveCompleteById(product, userId);
-                }
             }
         }
     }

@@ -1,72 +1,72 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeClientAddressEdit {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonSave;
-
+        
         private ClientAddressTypeRefCombo clientAddressTypeRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientAddressTypeRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxAddressLineOneName;
-
+        
         private System.Windows.Forms.Label labelAddressLineOneName;
-
+        
         private System.Windows.Forms.TextBox textBoxAddressLineTwoName;
-
+        
         private System.Windows.Forms.Label labelAddressLineTwoName;
-
+        
         private System.Windows.Forms.TextBox textBoxAddressLineThreeName;
-
+        
         private System.Windows.Forms.Label labelAddressLineThreeName;
-
+        
         private System.Windows.Forms.TextBox textBoxCityName;
-
+        
         private System.Windows.Forms.Label labelCityName;
-
+        
         private System.Windows.Forms.TextBox textBoxStreetName;
-
+        
         private System.Windows.Forms.Label labelStreetName;
-
+        
         private System.Windows.Forms.TextBox textBoxStateName;
-
+        
         private System.Windows.Forms.Label labelStateName;
-
+        
         private System.Windows.Forms.TextBox textBoxDistrictName;
-
+        
         private System.Windows.Forms.Label labelDistrictName;
-
+        
         private System.Windows.Forms.TextBox textBoxProvinceName;
-
+        
         private System.Windows.Forms.Label labelProvinceName;
-
+        
         private System.Windows.Forms.TextBox textBoxZipCode;
-
+        
         private System.Windows.Forms.Label labelZipCode;
-
+        
         private System.Windows.Forms.TextBox textBoxPoBox;
-
+        
         private System.Windows.Forms.Label labelPoBox;
-
+        
         private System.Windows.Forms.TextBox textBoxComment;
-
+        
         private System.Windows.Forms.Label labelComment;
-
+        
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-
+        
         private System.Windows.Forms.Label labelDateTime;
-
+        
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -323,7 +323,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(319, 312);
-
+            
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

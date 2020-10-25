@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     public partial class DatabaseManager {
-        private void InitProduct(
+        void InitProduct(
             int majorNumber,
             int minorNumber
             ) {
@@ -10,7 +12,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 12) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductColumnTypes",
                 Description = "Product Column Types",
                 #region script ( *** )
@@ -54,7 +56,7 @@ go
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductCartDropTables",
                 Description = "Product Cart Drop Tables",
                 #region script ( cart_product, cart_product_price )
@@ -72,7 +74,7 @@ if object_id(N'cart_product') is not null
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductDropTables",
                 Description = "Product Drop Tables",
                 #region script ( *** )
@@ -188,9 +190,9 @@ go
                 #endregion
             });
 
-            scripts.Add(lastScript = new DatabaseScript {
+            scripts.Add(lastScript = new DatabaseScript { 
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductCreateTables",
                 Description = "Product Create Tables",
                 #region script ( *** )
@@ -1025,7 +1027,7 @@ go
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductReferenceDataDefaults",
                 Description = "Product Reference Data",
                 #region script ( *** )
@@ -1164,7 +1166,7 @@ insert into product_entity_type_ref ( product_entity_type_rcd, product_entity_ty
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductRawLoadProcedures",
                 Description = "Product Raw Load Procedures",
                 #region script ( *** )
@@ -1479,7 +1481,7 @@ end
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductRawLoad",
                 Description = "Product Raw Load",
                 #region script ( *** )
@@ -1571,7 +1573,7 @@ commit transaction
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductDuplicateTest",
                 Description = "Product Duplicate Test",
                 #region script ( *** )
@@ -1651,7 +1653,7 @@ end
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductExposeLoad",
                 Description = "Product Expose Load",
                 #region script ( *** )
@@ -1694,7 +1696,7 @@ go
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 07) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductCartCreateTables",
                 Description = "Product Cart Create Tables",
                 #region script ( cart_product, cart_product_price )
@@ -1765,7 +1767,7 @@ create index xif3cart_product on cart_product
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 03, 12) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "ProductLastScript",
                 Description = "Product Last Script",
                 #region script ( *** )

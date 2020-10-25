@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:52 PM
+  Generated Date: 10/25/2020 9:15:36 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeDefaultIssueStatusRefDetails(string defaultIssueStatusRcd) {
+        public ActionResult CrudeDefaultIssueStatusRefDetails(System.String defaultIssueStatusRcd) {
 
             return View(
                 "~/Views/Crude/Default/CrudeDefaultIssueStatusRef/CrudeDefaultIssueStatusRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeDefaultIssueStatusRefEdit(
-            string defaultIssueStatusRcd
+            System.String defaultIssueStatusRcd
             ) {
 
             CrudeDefaultIssueStatusRefContract contract = new CrudeDefaultIssueStatusRefServiceClient().FetchByDefaultIssueStatusRcd(defaultIssueStatusRcd);
@@ -76,14 +76,11 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeDefaultIssueStatusRefCreate(System.Guid? defaultUserId) {
-            CrudeDefaultIssueStatusRefContract contract = new CrudeDefaultIssueStatusRefContract();
-            if (defaultUserId != null) {
-                contract.DefaultUserId = (System.Guid)defaultUserId;
-            }
+            var contract = new CrudeDefaultIssueStatusRefContract();
+            if (defaultUserId != null) contract.DefaultUserId = (System.Guid) defaultUserId;
 
-            if (defaultUserId == null) {
+            if (defaultUserId == null)
                 contract.DefaultUserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -114,7 +111,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeDefaultIssueStatusRefDelete(
-            string defaultIssueStatusRcd
+            System.String defaultIssueStatusRcd
             ) {
             new CrudeDefaultIssueStatusRefServiceClient().Delete(defaultIssueStatusRcd);
 

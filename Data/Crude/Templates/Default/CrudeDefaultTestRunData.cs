@@ -2,15 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:52:43 PM
+  Generated Date: 10/25/2020 9:14:41 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Configuration;
 
 // Data Access Layer
 // the DataAccessLayer is the first layer that has access to data coming from
@@ -27,25 +27,25 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeDefaultTestRunData {
-
+        
         public System.Guid DefaultTestRunId { get; set; }
-
+        
         public System.Guid DefaultTestId { get; set; }
-
+        
         public string DefaultTestRunResultRcd { get; set; }
-
+        
         public string Result { get; set; }
-
+        
         public System.DateTime StartDateTime { get; set; }
-
+        
         public System.DateTime EndDateTime { get; set; }
-
+        
         public int ElapsedMilliseconds { get; set; }
-
+        
         public System.Guid UserId { get; set; }
-
+        
         public System.DateTime DateTime { get; set; }
-
+        
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -63,7 +63,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 // dirty read
@@ -72,22 +72,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_test_run_id", SqlDbType.UniqueIdentifier).Value = defaultTestRunId;
+                    command.Parameters.Add("@default_test_run_id",SqlDbType.UniqueIdentifier).Value = defaultTestRunId;
 
                     // execute and read one row, close connection
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serializable class if row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         Populate(reader);
-                    }
                 }
             }
         }
-
+        
         // fetch by Primary key into new class instance
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -102,18 +101,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             from [default_test_run]
                             where default_test_run_id = @default_test_run_id";
 
-            CrudeDefaultTestRunData ret = new CrudeDefaultTestRunData();
+            var ret = new CrudeDefaultTestRunData();
 
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_test_run_id", SqlDbType.UniqueIdentifier).Value = defaultTestRunId;
+                    command.Parameters.Add("@default_test_run_id",SqlDbType.UniqueIdentifier).Value = defaultTestRunId;
 
                     // execute query against default_test_run
                     // if the query fails in the preprocessor of sql server
@@ -121,18 +120,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serialized class if a row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         ret.Populate(reader);
-                    }
                 }
             }
 
             return ret;
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeDefaultTestRunData> FetchByDefaultTestId(System.Guid defaultTestId) {
-            List<CrudeDefaultTestRunData> dataList = new List<CrudeDefaultTestRunData>();
+            var dataList = new List<CrudeDefaultTestRunData>();
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -146,10 +144,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@default_test_id", SqlDbType.UniqueIdentifier).Value = defaultTestId;
@@ -163,19 +161,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultTestRunData data = new CrudeDefaultTestRunData();
+                        var data = new CrudeDefaultTestRunData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeDefaultTestRunData> FetchByUserId(System.Guid userId) {
-            List<CrudeDefaultTestRunData> dataList = new List<CrudeDefaultTestRunData>();
+            var dataList = new List<CrudeDefaultTestRunData>();
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -189,10 +187,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
@@ -206,19 +204,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultTestRunData data = new CrudeDefaultTestRunData();
+                        var data = new CrudeDefaultTestRunData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeDefaultTestRunData> FetchByDefaultTestRunResultRcd(string defaultTestRunResultRcd) {
-            List<CrudeDefaultTestRunData> dataList = new List<CrudeDefaultTestRunData>();
+            var dataList = new List<CrudeDefaultTestRunData>();
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -232,13 +230,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = defaultTestRunResultRcd.Replace("'", "''");
+                    command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = defaultTestRunResultRcd.Replace("'","''");
 
                     // execute query against default_test_run
                     // if the query fails in the preprocessor of sql server
@@ -249,19 +247,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultTestRunData data = new CrudeDefaultTestRunData();
+                        var data = new CrudeDefaultTestRunData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all rows from table default_test_run into new List of class instances
         public static List<CrudeDefaultTestRunData> FetchAll() {
-            List<CrudeDefaultTestRunData> dataList = new List<CrudeDefaultTestRunData>();
+            var dataList = new List<CrudeDefaultTestRunData>();
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -273,10 +271,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against default_test_run
                     // if the query fails in the preprocessor of sql server
@@ -287,19 +285,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultTestRunData data = new CrudeDefaultTestRunData();
+                        var data = new CrudeDefaultTestRunData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeDefaultTestRunData> FetchAllWithLimit(int limit) {
-            List<CrudeDefaultTestRunData> dataList = new List<CrudeDefaultTestRunData>();
+            var dataList = new List<CrudeDefaultTestRunData>();
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -311,10 +309,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against default_test_run
                     // if the query fails in the preprocessor of sql server
@@ -325,20 +323,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultTestRunData data = new CrudeDefaultTestRunData();
+                        var data = new CrudeDefaultTestRunData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, only populating specific columns,
         //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeDefaultTestRunData> FetchAllWithLimitAndOffset(int limit, int offset) {
-            List<CrudeDefaultTestRunData> dataList = new List<CrudeDefaultTestRunData>();
+            var dataList = new List<CrudeDefaultTestRunData>();
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -350,10 +348,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against default_test_run
                     // if the query fails in the preprocessor of sql server
@@ -367,21 +365,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
-                            CrudeDefaultTestRunData data = new CrudeDefaultTestRunData();
+                            var data = new CrudeDefaultTestRunData();
                             data.Populate(reader);
                             dataList.Add(data);
                         }
                         count++;
-                        if (count > limit + offset) {
-                            break;
-                        }
+                        if (count > limit + offset) break;
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // get a count of rows in table
         public static int FetchAllCount() {
             // create query against default_test_run
@@ -393,28 +389,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 int count = 0;
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // execute query against default_test_run
                     // if the query fails in the preprocessor of sql server
                     //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
-                    count = (int)reader["count"];
+                    count = (System.Int32) reader["count"];
                 }
 
                 return count;
             }
         }
-
+        
         // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeDefaultTestRunData> FetchWithFilter(System.Guid defaultTestRunId, System.Guid defaultTestId, string defaultTestRunResultRcd, string result, System.DateTime startDateTime, System.DateTime endDateTime, int elapsedMilliseconds, System.Guid userId, System.DateTime dateTime) {
-            List<CrudeDefaultTestRunData> dataList = new List<CrudeDefaultTestRunData>();
+            var dataList = new List<CrudeDefaultTestRunData>();
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -427,10 +423,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add search column(s) if they are not null or empty
                     // this search column(s) will be used together with the prepared ansi sql statement
                     if (defaultTestRunId != Guid.Empty) {
@@ -443,11 +439,11 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     if (!string.IsNullOrEmpty(defaultTestRunResultRcd)) {
                         sql += "  and default_test_run_result_rcd like '%' + @default_test_run_result_rcd + '%'";
-                        command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = defaultTestRunResultRcd.Replace("'", "''");
+                        command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = defaultTestRunResultRcd.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(result)) {
                         sql += "  and result like '%' + @result + '%'";
-                        command.Parameters.Add("@result", SqlDbType.NVarChar).Value = result.Replace("'", "''");
+                        command.Parameters.Add("@result", SqlDbType.NVarChar).Value = result.Replace("'","''");
                     }
                     if (startDateTime != DateTime.MinValue) {
                         sql += "  and start_date_time = @start_date_time";
@@ -480,61 +476,34 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeDefaultTestRunData data = new CrudeDefaultTestRunData();
+                        var data = new CrudeDefaultTestRunData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // read all columns out and populate object members
         public void Populate(IDataReader reader) {
-            if (reader["default_test_run_id"] != System.DBNull.Value) {
-                DefaultTestRunId = (System.Guid)reader["default_test_run_id"];
-            }
-
-            if (reader["default_test_id"] != System.DBNull.Value) {
-                DefaultTestId = (System.Guid)reader["default_test_id"];
-            }
-
-            if (reader["default_test_run_result_rcd"] != System.DBNull.Value) {
-                DefaultTestRunResultRcd = (string)reader["default_test_run_result_rcd"];
-            }
-
-            if (reader["result"] != System.DBNull.Value) {
-                Result = (string)reader["result"];
-            }
-
-            if (reader["start_date_time"] != System.DBNull.Value) {
-                StartDateTime = (System.DateTime)reader["start_date_time"];
-            }
-
-            if (reader["end_date_time"] != System.DBNull.Value) {
-                EndDateTime = (System.DateTime)reader["end_date_time"];
-            }
-
-            if (reader["elapsed_milliseconds"] != System.DBNull.Value) {
-                ElapsedMilliseconds = (int)reader["elapsed_milliseconds"];
-            }
-
-            if (reader["user_id"] != System.DBNull.Value) {
-                UserId = (System.Guid)reader["user_id"];
-            }
-
-            if (reader["date_time"] != System.DBNull.Value) {
-                DateTime = (System.DateTime)reader["date_time"];
-            }
+            if (reader["default_test_run_id"] != System.DBNull.Value) DefaultTestRunId = (System.Guid) reader["default_test_run_id"];
+            if (reader["default_test_id"] != System.DBNull.Value) DefaultTestId = (System.Guid) reader["default_test_id"];
+            if (reader["default_test_run_result_rcd"] != System.DBNull.Value) DefaultTestRunResultRcd = (System.String) reader["default_test_run_result_rcd"];
+            if (reader["result"] != System.DBNull.Value) Result = (System.String) reader["result"];
+            if (reader["start_date_time"] != System.DBNull.Value) StartDateTime = (System.DateTime) reader["start_date_time"];
+            if (reader["end_date_time"] != System.DBNull.Value) EndDateTime = (System.DateTime) reader["end_date_time"];
+            if (reader["elapsed_milliseconds"] != System.DBNull.Value) ElapsedMilliseconds = (System.Int32) reader["elapsed_milliseconds"];
+            if (reader["user_id"] != System.DBNull.Value) UserId = (System.Guid) reader["user_id"];
+            if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
         }
-
+        
         // insert all object members as a new row in table
         public void Insert() {
 
-            if (DefaultTestRunId == Guid.Empty) {
+            if (DefaultTestRunId == Guid.Empty)
                 DefaultTestRunId = Guid.NewGuid();
-            }
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -546,21 +515,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, connection)) {
+                using (var command = new SqlCommand(sql, connection)) {
                     // add column(s) to insert as parameter
                     // the insert column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_test_run_id", SqlDbType.UniqueIdentifier).Value = DefaultTestRunId;
-                    command.Parameters.Add("@default_test_id", SqlDbType.UniqueIdentifier).Value = DefaultTestId;
-                    command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = DefaultTestRunResultRcd;
-                    command.Parameters.Add("@result", SqlDbType.NVarChar).Value = Result;
-                    command.Parameters.Add("@start_date_time", SqlDbType.DateTime).Value = StartDateTime;
-                    command.Parameters.Add("@end_date_time", SqlDbType.DateTime).Value = EndDateTime;
-                    command.Parameters.Add("@elapsed_milliseconds", SqlDbType.Int).Value = ElapsedMilliseconds;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@default_test_run_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestRunId;
+                    command.Parameters.Add("@default_test_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestId;
+                    command.Parameters.Add("@default_test_run_result_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultTestRunResultRcd;
+                    command.Parameters.Add("@result",SqlDbType.NVarChar).Value = (System.String)Result;
+                    command.Parameters.Add("@start_date_time",SqlDbType.DateTime).Value = (System.DateTime)StartDateTime;
+                    command.Parameters.Add("@end_date_time",SqlDbType.DateTime).Value = (System.DateTime)EndDateTime;
+                    command.Parameters.Add("@elapsed_milliseconds",SqlDbType.Int).Value = (System.Int32)ElapsedMilliseconds;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against default_test_run
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -569,15 +538,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
         public void Insert(SqlConnection connection, SqlTransaction transaction) {
 
-            if (DefaultTestRunId == Guid.Empty) {
+            if (DefaultTestRunId == Guid.Empty)
                 DefaultTestRunId = Guid.NewGuid();
-            }
 
             // create query against default_test_run
             // this will be ansi sql and parameterized
@@ -592,15 +560,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to insert as parameter(s)
                 // the insert column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@default_test_run_id", SqlDbType.UniqueIdentifier).Value = DefaultTestRunId;
-                command.Parameters.Add("@default_test_id", SqlDbType.UniqueIdentifier).Value = DefaultTestId;
-                command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = DefaultTestRunResultRcd;
-                command.Parameters.Add("@result", SqlDbType.NVarChar).Value = Result;
-                command.Parameters.Add("@start_date_time", SqlDbType.DateTime).Value = StartDateTime;
-                command.Parameters.Add("@end_date_time", SqlDbType.DateTime).Value = EndDateTime;
-                command.Parameters.Add("@elapsed_milliseconds", SqlDbType.Int).Value = ElapsedMilliseconds;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@default_test_run_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestRunId;
+                command.Parameters.Add("@default_test_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestId;
+                command.Parameters.Add("@default_test_run_result_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultTestRunResultRcd;
+                command.Parameters.Add("@result",SqlDbType.NVarChar).Value = (System.String)Result;
+                command.Parameters.Add("@start_date_time",SqlDbType.DateTime).Value = (System.DateTime)StartDateTime;
+                command.Parameters.Add("@end_date_time",SqlDbType.DateTime).Value = (System.DateTime)EndDateTime;
+                command.Parameters.Add("@elapsed_milliseconds",SqlDbType.Int).Value = (System.Int32)ElapsedMilliseconds;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against default_test_run
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -608,7 +576,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // update all object members on a row in table based on primary key
         public void Update() {
             // create query against default_test_run
@@ -630,22 +598,22 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // add column(s) to update as parameter(s)
                     // the update column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_test_run_id", SqlDbType.UniqueIdentifier).Value = DefaultTestRunId;
-                    command.Parameters.Add("@default_test_id", SqlDbType.UniqueIdentifier).Value = DefaultTestId;
-                    command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = DefaultTestRunResultRcd;
-                    command.Parameters.Add("@result", SqlDbType.NVarChar).Value = Result;
-                    command.Parameters.Add("@start_date_time", SqlDbType.DateTime).Value = StartDateTime;
-                    command.Parameters.Add("@end_date_time", SqlDbType.DateTime).Value = EndDateTime;
-                    command.Parameters.Add("@elapsed_milliseconds", SqlDbType.Int).Value = ElapsedMilliseconds;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@default_test_run_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestRunId;
+                    command.Parameters.Add("@default_test_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestId;
+                    command.Parameters.Add("@default_test_run_result_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultTestRunResultRcd;
+                    command.Parameters.Add("@result",SqlDbType.NVarChar).Value = (System.String)Result;
+                    command.Parameters.Add("@start_date_time",SqlDbType.DateTime).Value = (System.DateTime)StartDateTime;
+                    command.Parameters.Add("@end_date_time",SqlDbType.DateTime).Value = (System.DateTime)EndDateTime;
+                    command.Parameters.Add("@elapsed_milliseconds",SqlDbType.Int).Value = (System.Int32)ElapsedMilliseconds;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against default_test_run
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -654,7 +622,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             // create query against default_test_run
@@ -679,15 +647,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to update as parameter
                 // the update column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@default_test_run_id", SqlDbType.UniqueIdentifier).Value = DefaultTestRunId;
-                command.Parameters.Add("@default_test_id", SqlDbType.UniqueIdentifier).Value = DefaultTestId;
-                command.Parameters.Add("@default_test_run_result_rcd", SqlDbType.NVarChar).Value = DefaultTestRunResultRcd;
-                command.Parameters.Add("@result", SqlDbType.NVarChar).Value = Result;
-                command.Parameters.Add("@start_date_time", SqlDbType.DateTime).Value = StartDateTime;
-                command.Parameters.Add("@end_date_time", SqlDbType.DateTime).Value = EndDateTime;
-                command.Parameters.Add("@elapsed_milliseconds", SqlDbType.Int).Value = ElapsedMilliseconds;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@default_test_run_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestRunId;
+                command.Parameters.Add("@default_test_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)DefaultTestId;
+                command.Parameters.Add("@default_test_run_result_rcd",SqlDbType.NVarChar).Value = (System.String)DefaultTestRunResultRcd;
+                command.Parameters.Add("@result",SqlDbType.NVarChar).Value = (System.String)Result;
+                command.Parameters.Add("@start_date_time",SqlDbType.DateTime).Value = (System.DateTime)StartDateTime;
+                command.Parameters.Add("@end_date_time",SqlDbType.DateTime).Value = (System.DateTime)EndDateTime;
+                command.Parameters.Add("@elapsed_milliseconds",SqlDbType.Int).Value = (System.Int32)ElapsedMilliseconds;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against default_test_run
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -695,7 +663,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // delete a row in table based on primary key
         public static void Delete(System.Guid defaultTestRunId) {
             // create query against default_test_run
@@ -708,13 +676,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@default_test_run_id", SqlDbType.UniqueIdentifier).Value = defaultTestRunId;
+                    command.Parameters.Add("@default_test_run_id",SqlDbType.UniqueIdentifier).Value = defaultTestRunId;
                     // execute query against default_test_run
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server

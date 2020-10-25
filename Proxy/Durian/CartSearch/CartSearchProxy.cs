@@ -2,16 +2,16 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:00:21 PM
+  Generated Date: 10/25/2020 9:23:05 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
-
-
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "ICartSearchService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICartSearchService")]
     public interface ICartSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/ICartSearchService/GetCartProductWithFilter", ReplyAction = "http://tempuri.org/ICartSearchService/GetCartProductWithFilterResponse")]
         List<GetCartProductWithFilterContract> GetCartProductWithFilter();
@@ -20,25 +20,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ICartSearchServiceChannel : ICartSearchService, System.ServiceModel.IClientChannel {
     }
-
+    
     public class CartSearchService : System.ServiceModel.ClientBase<ICartSearchService>, ICartSearchService {
-
+        
         public CartSearchService() {
         }
-
-        public CartSearchService(string endpointConfigurationName) :
+        
+        public CartSearchService(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
-
-        public CartSearchService(string endpointConfigurationName, string remoteAddress) :
+        
+        public CartSearchService(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
-
-        public CartSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
+        
+        public CartSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
-
-        public CartSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+        
+        public CartSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
 

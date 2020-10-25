@@ -2,13 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:17 PM
+  Generated Date: 10/25/2020 9:15:07 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateEditStyle3
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
@@ -18,34 +20,35 @@ namespace SolutionNorSolutionPim.UserInterface {
 
     // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeClientIdentifierEdit : Form {
-
+        
         // holds the contract, with default values if in New modus, and fetched values in Edit modus
         private CrudeClientIdentifierContract _contract;
-
-        private bool _isNew;
-
+        
+        private Boolean _isNew;
+        
         // Constructs the form with a Save button which is default on Enter
         //  and a Close button which works with the esc key
         public CrudeClientIdentifierEdit() {
             InitializeComponent();
-            AcceptButton = buttonSave;
-            CancelButton = buttonClose;
+            this.AcceptButton = buttonSave;
+            this.CancelButton = buttonClose;
         }
-
+        
         // shows the form with default values for comboboxes and pickers
         public void ShowAsAdd() {
             try {
                 _contract = new CrudeClientIdentifierContract();
                 _isNew = true;
-                Text += " - Not Savable (Client,User Missing)";
+                this.Text += " - Not Savable (Client,User Missing)";
                 Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the form with default values for comboboxes and pickers
         public void ShowAsAddByRules(System.Guid userId) {
             try {
@@ -56,13 +59,14 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dateTimePickerDateTime.Text = _contract.DateTime.ToString();
 
                 Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the form with default values for comboboxes and pickers
         public void ShowAsAdd(System.Guid clientId, string clientIdentifierTypeRcd, string clientIdentifierCode, System.Guid userId) {
             try {
@@ -70,7 +74,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 _isNew = true;
                 _contract.ClientId = clientId;
                 _contract.ClientIdentifierTypeRcd = clientIdentifierTypeRcd;
-                clientIdentifierTypeRefCombo.Text = _contract.ClientIdentifierTypeRcd != null ? _contract.ClientIdentifierTypeRcd : string.Empty;
+                clientIdentifierTypeRefCombo.Text = _contract.ClientIdentifierTypeRcd != null ? _contract.ClientIdentifierTypeRcd : String.Empty;
                 _contract.ClientIdentifierCode = clientIdentifierCode;
                 textBoxClientIdentifierCode.Text = _contract.ClientIdentifierCode;
                 _contract.UserId = userId;
@@ -78,57 +82,59 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dateTimePickerDateTime.Text = _contract.DateTime.ToString();
 
                 Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the form in edit modus
         public void ShowAsEdit(System.Guid clientIdentifierId) {
-            CrudeClientIdentifierServiceClient service = new CrudeClientIdentifierServiceClient();
+            var service = new CrudeClientIdentifierServiceClient();
             _isNew = false;
             try {
                 _contract = service.FetchByClientIdentifierId(clientIdentifierId);
-                clientIdentifierTypeRefCombo.Text = _contract.ClientIdentifierTypeRcd != null ? _contract.ClientIdentifierTypeRcd : string.Empty;
+                clientIdentifierTypeRefCombo.Text = _contract.ClientIdentifierTypeRcd != null ? _contract.ClientIdentifierTypeRcd : String.Empty;
                 textBoxClientIdentifierCode.Text = _contract.ClientIdentifierCode;
                 _contract.DateTime = DateTime.UtcNow;
                 dateTimePickerDateTime.Text = _contract.DateTime.ToString();
 
                 Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             } finally {
                 service.Close();
             }
         }
-
+        
         // saves the form
         private void buttonSave_Click(object sender, EventArgs e) {
-            CrudeClientIdentifierServiceClient service = new CrudeClientIdentifierServiceClient();
+            var service = new CrudeClientIdentifierServiceClient();
             try {
                 _contract.ClientIdentifierTypeRcd = clientIdentifierTypeRefCombo.Text;
                 _contract.ClientIdentifierCode = textBoxClientIdentifierCode.Text;
 
-                if (_isNew) {
+                if (_isNew)
                     service.Insert(_contract);
-                } else {
+                else
                     service.Update(_contract);
-                }
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             } finally {
                 service.Close();
             }
 
             Close();
         }
-
+        
         // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();

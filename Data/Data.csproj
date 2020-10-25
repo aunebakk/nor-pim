@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37A1D76F-F32B-4790-857E-6E393F1FE5BB}</ProjectGuid>
+    <ProjectGuid>{EE658144-5A47-436C-ABC3-D65176EF8ABC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Data</RootNamespace>
@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Cart\CartProductSearch.cs" />
     <Compile Include="Cart\CartSearch.cs" />
-    <Compile Include="Cart\FinancialOrderSearch.cs" />
     <Compile Include="Client\ClientSearch.cs" />
     <Compile Include="Crude\Templates\Cart\CrudeCartProductData.cs" />
     <Compile Include="Crude\Templates\Cart\CrudeCartProductPriceData.cs" />
@@ -155,7 +154,6 @@
     <Compile Include="Durian\DefaultSearch\DefaultUserListData.cs" />
     <Compile Include="Durian\DefaultSearch\DefaultUserListForDashboardData.cs" />
     <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogData.cs" />
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderData.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterData.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterData.cs" />
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterData.cs" />
@@ -270,7 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{5d96244b-4ecb-4308-bfdb-50439b775519}</Project>
+      <Project>{dbf93cbd-1423-435f-8528-100e848c94d1}</Project>
       <Name>Contract</Name>
     </ProjectReference>
   </ItemGroup>

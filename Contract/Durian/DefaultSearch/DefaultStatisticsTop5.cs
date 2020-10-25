@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:01:20 PM
+  Generated Date: 10/25/2020 9:23:38 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.ContractsGenerator.MethodNewStyle
 */
@@ -11,10 +11,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [DataContract()]
     public class DefaultStatisticsTop5Contract {
-
+        
         [DataMember()]
         public string Measurement { get; set; }
-
+        
         [DataMember()]
         public string Value { get; set; }
     }

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:19 PM
+  Generated Date: 10/25/2020 9:15:57 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeProductCategoryImageTypeRefDetails(string productCategoryImageTypeRcd) {
+        public ActionResult CrudeProductCategoryImageTypeRefDetails(System.String productCategoryImageTypeRcd) {
 
             return View(
                 "~/Views/Crude/Product/CrudeProductCategoryImageTypeRef/CrudeProductCategoryImageTypeRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeProductCategoryImageTypeRefEdit(
-            string productCategoryImageTypeRcd
+            System.String productCategoryImageTypeRcd
             ) {
 
             CrudeProductCategoryImageTypeRefContract contract = new CrudeProductCategoryImageTypeRefServiceClient().FetchByProductCategoryImageTypeRcd(productCategoryImageTypeRcd);
@@ -76,14 +76,11 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryImageTypeRefCreate(System.Guid? userId) {
-            CrudeProductCategoryImageTypeRefContract contract = new CrudeProductCategoryImageTypeRefContract();
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductCategoryImageTypeRefContract();
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -114,7 +111,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryImageTypeRefDelete(
-            string productCategoryImageTypeRcd
+            System.String productCategoryImageTypeRcd
             ) {
             new CrudeProductCategoryImageTypeRefServiceClient().Delete(productCategoryImageTypeRcd);
 

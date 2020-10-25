@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:17 PM
+  Generated Date: 10/25/2020 9:15:55 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeProductCategoryDocumentationContract contract = new CrudeProductCategoryDocumentationServiceClient().FetchByProductCategoryDocumentationId(productCategoryDocumentationId);
             ViewBag.ProductCategoryDocumentationTypeRcd =
-                new SelectList(new CrudeProductCategoryDocumentationTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductCategoryDocumentationTypeRefServiceClient().FetchAll(),
                                 "ProductCategoryDocumentationTypeRcd",
                                 "ProductCategoryDocumentationTypeName",
                                 contract.ProductCategoryDocumentationTypeRcd
                                 );
 
             ViewBag.ProductCategoryId =
-                new SelectList(new CrudeProductCategoryServiceClient().FetchAll(),
+                new SelectList( new CrudeProductCategoryServiceClient().FetchAll(),
                                 "ProductCategoryId",
                                 "ProductCategoryName",
                                 contract.ProductCategoryId
@@ -102,32 +102,26 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductCategoryDocumentationCreate(System.Guid? productCategoryId, System.Guid? userId) {
-            CrudeProductCategoryDocumentationContract contract = new CrudeProductCategoryDocumentationContract();
-            if (productCategoryId != null) {
-                contract.ProductCategoryId = (System.Guid)productCategoryId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductCategoryDocumentationContract();
+            if (productCategoryId != null) contract.ProductCategoryId = (System.Guid) productCategoryId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ProductCategoryDocumentationTypeRcd =
-                new SelectList(new CrudeProductCategoryDocumentationTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductCategoryDocumentationTypeRefServiceClient().FetchAll(),
                                 "ProductCategoryDocumentationTypeRcd",
                                 "ProductCategoryDocumentationTypeName",
                                 contract.ProductCategoryDocumentationTypeRcd
                                 );
 
             ViewBag.ProductCategoryId =
-                new SelectList(new CrudeProductCategoryServiceClient().FetchAll(),
+                new SelectList( new CrudeProductCategoryServiceClient().FetchAll(),
                                 "ProductCategoryId",
                                 "ProductCategoryName",
                                 contract.ProductCategoryId
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

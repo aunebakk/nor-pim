@@ -1,16 +1,19 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SolutionNorSolutionPim.UserInterface {
-    internal static class Program {
+    static class Program {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
-        private static void Main() {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+        [STAThread] 
+        static void Main () {
+            Application.EnableVisualStyles ();
+            Application.SetCompatibleTextRenderingDefault ( false );
+            Application.Run ( new Main () );
         }
     }
 }

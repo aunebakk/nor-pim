@@ -2,42 +2,46 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:05:08 PM
+  Generated Date: 10/25/2020 9:26:00 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.BusinessUsing
 */
+using SolutionNorSolutionPim.DataAccessLayer;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.ServiceModel;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [ServiceContract()]
     public partial interface IProductReferenceCategoryService {
-
+        
         // Gets parent and children
         [OperationContract()]
         ProductReferenceCategoryContract ProductReferenceCategoryCompleteGet(System.Guid productCategoryId, System.Guid userId);
-
+        
         // Updates parent, children are added or updated as needed
         [OperationContract()]
         System.Guid ProductReferenceCategoryCompleteUpdate(System.Guid productCategoryId, ProductReferenceCategoryContract productContract, System.Guid userId);
     }
-
+    
     public partial class ProductReferenceCategoryService : IProductReferenceCategoryService {
-
+        
         // Gets parent and children
         public ProductReferenceCategoryContract ProductReferenceCategoryCompleteGet(System.Guid productCategoryId, System.Guid userId) {
-            ProductReferenceCategoryContract productContract =
+            var productContract = 
                 new ProductReferenceCategoryContract();
 
             // open standard connection
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
                 try {
-                    productContract.ProductCategory =
+                    productContract.ProductCategory = 
                         new CrudeProductCategoryService().FetchAll();
 
                     // save checksum for comparison on update
@@ -50,23 +54,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             return productContract;
         }
-
+        
         // Updates parent, children are added or updated as needed
         public System.Guid ProductReferenceCategoryCompleteUpdate(System.Guid productCategoryId, ProductReferenceCategoryContract productContract, System.Guid userId) {
 
             // check for differences since fetch
-            if (productContract.ChecksumAfterGet.Equals(productContract.Checksum())) {
+            if (productContract.ChecksumAfterGet.Equals(productContract.Checksum()))
                 return Guid.Empty;
-            }
 
             // check for database differences since fetch
             ProductReferenceCategoryContract productContractCurrent = ProductReferenceCategoryCompleteGet(productCategoryId, userId);
-            if (!productContract.ChecksumAfterGet.Equals(productContractCurrent.Checksum())) {
+            if (!productContract.ChecksumAfterGet.Equals(productContractCurrent.Checksum())) 
                 throw new Exception("ProductReferenceCategoryCompleteUpdate, data has changed since fetch");
-            }
 
             // open standard connection
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
 

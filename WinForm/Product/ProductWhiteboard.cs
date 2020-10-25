@@ -1,11 +1,14 @@
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
+using SolutionNorSolutionPim.ProxyLayer;
 
-namespace SolutionNorSolutionPim.UserInterface {
-    public partial class ProductWhiteboard : Form {
+namespace SolutionNorSolutionPim.UserInterface
+{
+    public partial class ProductWhiteboard : Form
+    {
         private Guid _userId;
         private Guid _productCategoryId;
 
@@ -21,7 +24,6 @@ namespace SolutionNorSolutionPim.UserInterface {
 
             InitializeGridProductType1(dataGridViewProducts1);
             InitializeGridProductType2(dataGridViewProducts2);
-            //dataGridViewProducts2.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable; //DataGridViewClipboardCopyMode.EnableWithAutoHeaderText;
             dataGridViewProducts2.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithAutoHeaderText;
             InitializeGridProductType3(dataGridViewProducts3);
 
@@ -42,29 +44,23 @@ namespace SolutionNorSolutionPim.UserInterface {
             Show();
 
             // select first node
-            if (treeViewHierarchy.Nodes.Count > 0) {
+            if ( treeViewHierarchy.Nodes.Count > 0 )
                 SelectNode(treeViewHierarchy.Nodes[0]);
-            }
-
-            //treeViewHierarchy.ExpandAll();
 
             treeViewHierarchy.SelectedNode = _currentNode;
         }
 
-        private void AddCategory(List<CategoryTreeContract> productCategoryContracts,
+        void AddCategory(List<CategoryTreeContract> productCategoryContracts,
                             TreeNode node,
                             Guid productCategoryParentId
                             ) {
 
-            //Log("toolStripButtonDown_Click");
-
-            foreach (CategoryTreeContract contractChild in productCategoryContracts) {
+            foreach ( CategoryTreeContract contractChild in productCategoryContracts ) {
                 // exclude parent
-                if (contractChild.ProductCategoryId == contractChild.ProductCategoryParentId) {
+                if ( contractChild.ProductCategoryId == contractChild.ProductCategoryParentId )
                     continue;
-                }
 
-                if (contractChild.ProductCategoryParentId == productCategoryParentId) {
+                if ( contractChild.ProductCategoryParentId == productCategoryParentId ) {
                     TreeNode newNode = node.Nodes.Add(
                         contractChild.ProductCategoryId.ToString(),
                         contractChild.ProductCategoryName
@@ -79,18 +75,15 @@ namespace SolutionNorSolutionPim.UserInterface {
         }
 
         private void CategoryTreeViewRefresh() {
-            //Log("toolStripButtonDown_Click");
-
             treeViewHierarchy.Nodes.Clear();
 
-            CategorySearchService productCategoryService = new CategorySearchService();
+            var productCategoryService = new CategorySearchService();
             List<CategoryTreeContract> productCategoryContracts = productCategoryService.CategoryTree();
 
-            foreach (CategoryTreeContract productCategoryContract in productCategoryContracts) {
+            foreach ( CategoryTreeContract productCategoryContract in productCategoryContracts ) {
                 // first level is it's own parent
-                if (productCategoryContract.ProductCategoryId != productCategoryContract.ProductCategoryParentId) {
+                if ( productCategoryContract.ProductCategoryId != productCategoryContract.ProductCategoryParentId )
                     continue;
-                }
 
                 TreeNode node = treeViewHierarchy.Nodes.Add(productCategoryContract.ProductCategoryId.ToString(),
                                                             productCategoryContract.ProductCategoryName);
@@ -111,15 +104,13 @@ namespace SolutionNorSolutionPim.UserInterface {
         }
 
         private void Log(string caller, string message) {
-            if (_logEvents) {
+            if ( _logEvents )
                 Singleton.Instance.Log(caller + " : " + message);
-            }
         }
 
         private void Log(string message) {
-            if (_logEvents) {
+            if ( _logEvents )
                 Singleton.Instance.Log(message);
-            }
         }
 
         private void Error(Exception ex) {
@@ -138,12 +129,12 @@ namespace SolutionNorSolutionPim.UserInterface {
                 _currentNode = node;
                 _onParent = node.Nodes.Count != 0;
 
-                if (tabControlSplit.SelectedTab == tabPageCategory) {
+                if ( tabControlSplit.SelectedTab == tabPageCategory )
                     UpdateCategory();
-                } else if (tabControlSplit.SelectedTab == tabPageProducts) {
+                else if ( tabControlSplit.SelectedTab == tabPageProducts )
                     RefreshProductList();
-                }
-            } catch (Exception ex) {
+
+            } catch ( Exception ex ) {
                 Error("SelectNode", ex);
             }
         }
@@ -153,7 +144,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
             try {
                 SelectNode(e.Node);
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("treeViewHierarchy_NodeMouseClick", ex);
 
                 try {
@@ -163,7 +154,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             }
         }
 
-        private void RefreshProductList() {
+        void RefreshProductList() {
             Log("RefreshProductList, start");
             bool logIt = true;
 
@@ -173,8 +164,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 _refreshing = true;
 
                 // get all products for category
-                if (tabControlProductsPage.SelectedTab == tabPageProductsView1) {
-                    //InitializeGridProductType1(dataGridViewProducts1);
+                if ( tabControlProductsPage.SelectedTab == tabPageProductsView1 ) {
                     dataGridViewProducts1.AutoGenerateColumns = false;
                     dataGridViewProducts1.DataSource =
                         new ProductSearchService().ProductSearchByCategory(
@@ -184,65 +174,47 @@ namespace SolutionNorSolutionPim.UserInterface {
                     dataGridViewProducts1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dataGridViewProducts1.AutoResizeColumns();
                     dataGridViewProducts1.Refresh();
-                    //dataGridViewProducts1.Rows[0].Selected = true;
-                    //UpdateProduct((Guid) dataGridViewProducts1.Rows[0].Cells["ProductId"].Value);
 
-                } else if (tabControlProductsPage.SelectedTab == tabPageProductsView2) {
+                } else if ( tabControlProductsPage.SelectedTab == tabPageProductsView2 ) {
                     // remember selected row
                     int position = 0;
-                    if (dataGridViewProducts2.CurrentRow != null) {
+                    if ( dataGridViewProducts2.CurrentRow != null )
                         position = dataGridViewProducts2.CurrentRow.Index;
-                    }
 
                     // fetch new dataset
-                    if (logIt) {
+                    if ( logIt )
                         Log("RefreshProductList", "BindingSource");
-                    }
-
-                    BindingSource bindingSource = new BindingSource();
+                    var bindingSource = new BindingSource();
                     bindingSource.DataSource =
                         new ProductSearchService().ProductSearchByCategoryType1(
                             _productCategoryId,
                             _onParent
                             );
 
-                    if (logIt) {
+                    if ( logIt )
                         Log("RefreshProductList", "AutoGenerateColumns");
-                    }
-
                     dataGridViewProducts2.AutoGenerateColumns = true;
 
-                    if (logIt) {
+                    if ( logIt )
                         Log("RefreshProductList", "DataSource");
-                    }
-
                     try {
                         dataGridViewProducts2.DataSource = bindingSource;
                     } catch { }
 
-                    if (logIt) {
+                    if ( logIt )
                         Log("RefreshProductList", "AutoResizeColumns");
-                    }
-
                     dataGridViewProducts2.AutoResizeColumns();
 
                     // position to previous row
-                    if (logIt) {
+                    if ( logIt )
                         Log("RefreshProductList", "Position");
-                    }
-
                     try {
-                        if (dataGridViewProducts2.Rows.Count > 0) {
-                            foreach (DataGridViewCell cell in dataGridViewProducts2.Rows[position].Cells) {
-                                if (cell.Visible) {
+                        if ( dataGridViewProducts2.Rows.Count > 0 )
+                            foreach ( DataGridViewCell cell in dataGridViewProducts2.Rows[position].Cells )
+                                if ( cell.Visible )
                                     dataGridViewProducts2.CurrentCell = cell;
-                                }
-                            }
-                        }
                     } catch { }
-                    //dataGridViewProducts2.Rows[position].Selected = true;
-                } else if (tabControlProductsPage.SelectedTab == tabPageProductsView3) {
-                    //InitializeGridProductType3(dataGridViewProducts3);
+                } else if ( tabControlProductsPage.SelectedTab == tabPageProductsView3 ) {
                     dataGridViewProducts3.AutoGenerateColumns = false;
                     dataGridViewProducts3.DataSource =
                         new ProductSearchService().ProductSearchByCategoryType2(
@@ -252,11 +224,9 @@ namespace SolutionNorSolutionPim.UserInterface {
                     dataGridViewProducts3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dataGridViewProducts3.AutoResizeColumns();
                     dataGridViewProducts3.Refresh();
-                    //dataGridViewProducts3.Rows[0].Selected = true;
-                    //UpdateProduct((Guid) dataGridViewProducts3.Rows[0].Cells["ProductId"].Value);
                 }
 
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("RefreshProductList", ex);
             } finally {
                 _refreshing = false;
@@ -283,17 +253,16 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProducts.Columns.Add("ExtensionData", "");
                 dataGridViewProducts.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProducts.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProducts.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProducts.AutoResizeColumns();
                 dataGridViewProducts.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductType1", ex);
             }
         }
@@ -311,16 +280,15 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProducts.Columns.Add("ExtensionData", "");
                 dataGridViewProducts.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProducts.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProducts.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProducts.AutoResizeColumns();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductType2", ex);
             }
         }
@@ -339,16 +307,15 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProducts.Columns.Add("ExtensionData", "");
                 dataGridViewProducts.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProducts.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProducts.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProducts.AutoResizeColumns();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductType3", ex);
             }
         }
@@ -368,16 +335,15 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductAttribute.Columns.Add("ProductAttributeUnitCd", "Product Attribute Unit Cd");
                 dataGridViewProductAttribute.Columns.Add("ExtensionData", "");
                 dataGridViewProductAttribute.Columns["ExtensionData"].Visible = false;
-                foreach (DataGridViewColumn column in dataGridViewProductAttribute.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProductAttribute.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
                 dataGridViewProductAttribute.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductAttribute.AutoResizeColumns();
                 dataGridViewProductAttribute.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductAttribute", ex);
             }
         }
@@ -396,16 +362,15 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductIdentifier.Columns.Add("DateTime", "Date Time");
                 dataGridViewProductIdentifier.Columns.Add("ExtensionData", "");
                 dataGridViewProductIdentifier.Columns["ExtensionData"].Visible = false;
-                foreach (DataGridViewColumn column in dataGridViewProductIdentifier.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProductIdentifier.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
                 dataGridViewProductIdentifier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductIdentifier.AutoResizeColumns();
                 dataGridViewProductIdentifier.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductIdentifier", ex);
             }
         }
@@ -423,17 +388,16 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductInfo.Columns.Add("ExtensionData", "");
                 dataGridViewProductInfo.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProductInfo.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProductInfo.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProductInfo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductInfo.AutoResizeColumns();
                 dataGridViewProductInfo.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductInfo", ex);
             }
         }
@@ -453,17 +417,16 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductImage.Columns.Add("ExtensionData", "");
                 dataGridViewProductImage.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProductImage.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProductImage.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProductImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductImage.AutoResizeColumns();
                 dataGridViewProductImage.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductImages", ex);
             }
         }
@@ -483,17 +446,16 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductDocumentation.Columns.Add("ExtensionData", "");
                 dataGridViewProductDocumentation.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProductDocumentation.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProductDocumentation.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProductDocumentation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductDocumentation.AutoResizeColumns();
                 dataGridViewProductDocumentation.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductDocumentation", ex);
             }
         }
@@ -513,17 +475,16 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductCategoryImage.Columns.Add("ExtensionData", "");
                 dataGridViewProductCategoryImage.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProductCategoryImage.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProductCategoryImage.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProductCategoryImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductCategoryImage.AutoResizeColumns();
                 dataGridViewProductCategoryImage.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductCategoryImages", ex);
             }
         }
@@ -543,17 +504,16 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductCategoryDocumentation.Columns.Add("ExtensionData", "");
                 dataGridViewProductCategoryDocumentation.Columns["ExtensionData"].Visible = false;
 
-                foreach (DataGridViewColumn column in dataGridViewProductCategoryDocumentation.Columns) {
+                foreach ( DataGridViewColumn column in dataGridViewProductCategoryDocumentation.Columns ) {
                     column.DataPropertyName = column.Name;
-                    if (column.Name.EndsWith("Id")) {
+                    if ( column.Name.EndsWith("Id") )
                         column.Visible = false;
-                    }
                 }
 
                 dataGridViewProductCategoryDocumentation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductCategoryDocumentation.AutoResizeColumns();
                 dataGridViewProductCategoryDocumentation.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("InitializeGridProductCategoryDocumentation", ex);
             }
         }
@@ -570,11 +530,10 @@ namespace SolutionNorSolutionPim.UserInterface {
             dataGridViewProductHistory.Columns.Add("ExtensionData", "");
             dataGridViewProductHistory.Columns["ExtensionData"].Visible = false;
 
-            foreach (DataGridViewColumn column in dataGridViewProductHistory.Columns) {
+            foreach ( DataGridViewColumn column in dataGridViewProductHistory.Columns ) {
                 column.DataPropertyName = column.Name;
-                if (column.Name.EndsWith("Id")) {
+                if ( column.Name.EndsWith("Id") )
                     column.Visible = false;
-                }
             }
 
             dataGridViewProductHistory.AutoResizeColumns();
@@ -590,8 +549,8 @@ namespace SolutionNorSolutionPim.UserInterface {
                             productId
                             );
 
-                if (productId == Guid.Empty) {
-                    // big todo
+                if ( productId == Guid.Empty ) {
+                    // todo
                     // either set this to empty here, or allow combo / datetime, etc to be null/empty
                     // note 1.. not doing this now because it causes flicker in the end
                     //textBoxProductName.Text = string.Empty;
@@ -610,7 +569,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                     PopulateProductDocument(_productContract.ProductDocumentation);
                     PopulateProductHistory();
                 }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("UpdateProduct", ex);
             }
         }
@@ -618,9 +577,9 @@ namespace SolutionNorSolutionPim.UserInterface {
         private void UpdateCategory() {
             Log("UpdateCategory");
 
-            ProductCategoryServiceClient productCategoryServiceClient = new ProductCategoryServiceClient();
+            var productCategoryServiceClient = new ProductCategoryServiceClient();
             try {
-                ProductCategoryContract contract =
+                ProductCategoryContract contract = 
                     productCategoryServiceClient.ProductCategoryGetCompleteById(
                         _productCategoryId
                         );
@@ -633,7 +592,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 PopulateProductCategoryImage(contract.ProductCategoryImage);
                 PopulateProductCategoryDocument(contract.ProductCategoryDocumentation);
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("UpdateCategory", ex);
             } finally {
                 productCategoryServiceClient.Close();
@@ -651,7 +610,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductAttribute.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductAttribute.AutoResizeColumns();
                 dataGridViewProductAttribute.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("PopulateProductAttribute", ex);
             }
         }
@@ -667,7 +626,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductIdentifier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductIdentifier.AutoResizeColumns();
                 dataGridViewProductIdentifier.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("PopulateProductIdentifier", ex);
             }
         }
@@ -683,7 +642,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductInfo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductInfo.AutoResizeColumns();
                 dataGridViewProductInfo.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("PopulateProductInfo", ex);
             }
         }
@@ -699,7 +658,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductImage.AutoResizeColumns();
                 dataGridViewProductImage.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("PopulateProductImage", ex);
             }
         }
@@ -715,7 +674,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductDocumentation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductDocumentation.AutoResizeColumns();
                 dataGridViewProductDocumentation.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("PopulateProductDocument", ex);
             }
         }
@@ -733,7 +692,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductHistory.AutoResizeColumns();
                 dataGridViewProductHistory.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 MessageBox.Show(ex.Message);
             } finally {
                 productHistory.Close();
@@ -751,7 +710,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductCategoryImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductCategoryImage.AutoResizeColumns();
                 dataGridViewProductCategoryImage.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("PopulateProductCategoryImage", ex);
             }
         }
@@ -767,7 +726,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 dataGridViewProductCategoryDocumentation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewProductCategoryDocumentation.AutoResizeColumns();
                 dataGridViewProductCategoryDocumentation.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("PopulateProductCategoryDocument", ex);
             }
         }
@@ -776,12 +735,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("btnCategoryImageAdd_Click");
 
             try {
-                CrudeProductCategoryImageEdit newMDIChild = new CrudeProductCategoryImageEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductCategoryImageEdit ();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAddByProductCategory(_productCategoryId
                                       );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("btnCategoryImageAdd_Click", ex);
             }
         }
@@ -790,12 +749,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("btnCategoryImageEdit_Click");
 
             try {
-                CrudeProductCategoryImageEdit editForm = new CrudeProductCategoryImageEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeProductCategoryImageEdit ();
+                editForm.MdiParent = this.MdiParent;
                 CheckForm(editForm);
-                editForm.ShowAsEdit((System.Guid)dataGridViewProductCategoryImage.CurrentRow.Cells["ProductCategoryImageId"].Value
+                editForm.ShowAsEdit(( System.Guid ) dataGridViewProductCategoryImage.CurrentRow.Cells["ProductCategoryImageId"].Value
                                     );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("btnCategoryImageEdit_Click", ex);
             }
         }
@@ -804,12 +763,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("dataGridViewProductCategoryImage_CellDoubleClick");
 
             try {
-                CrudeProductCategoryImageEdit editForm = new CrudeProductCategoryImageEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeProductCategoryImageEdit ();
+                editForm.MdiParent = this.MdiParent;
                 CheckForm(editForm);
-                editForm.ShowAsEdit((System.Guid)dataGridViewProductCategoryImage.CurrentRow.Cells["ProductCategoryImageId"].Value
+                editForm.ShowAsEdit(( System.Guid ) dataGridViewProductCategoryImage.CurrentRow.Cells["ProductCategoryImageId"].Value
                                     );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("dataGridViewProductCategoryImage_CellDoubleClick", ex);
             }
         }
@@ -818,12 +777,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductCategoryDocumentationAdd_Click");
 
             try {
-                CrudeProductCategoryDocumentationEdit newMDIChild = new CrudeProductCategoryDocumentationEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductCategoryDocumentationEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAddByProductCategory(_productCategoryId
                                       );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductCategoryDocumentationAdd_Click", ex);
             }
         }
@@ -832,13 +791,13 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductCategoryDocumentationEdit_Click");
 
             try {
-                CrudeProductCategoryDocumentationEdit editForm = new CrudeProductCategoryDocumentationEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeProductCategoryDocumentationEdit ();
+                editForm.MdiParent = this.MdiParent;
                 CheckForm(editForm);
-                editForm.ShowAsEdit((System.Guid)dataGridViewProductCategoryDocumentation.CurrentRow.Cells["ProductCategoryDocumentationId"].Value
-
+                editForm.ShowAsEdit(( System.Guid ) dataGridViewProductCategoryDocumentation.CurrentRow.Cells["ProductCategoryDocumentationId"].Value
+                                    
                                     );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductCategoryDocumentationEdit_Click", ex);
             }
         }
@@ -847,12 +806,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("dataGridViewProductCategoryDocumentation_CellDoubleClick");
 
             try {
-                CrudeProductCategoryDocumentationEdit editForm = new CrudeProductCategoryDocumentationEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeProductCategoryDocumentationEdit();
+                editForm.MdiParent = this.MdiParent;
                 CheckForm(editForm);
-                editForm.ShowAsEdit((System.Guid)dataGridViewProductCategoryDocumentation.CurrentRow.Cells["ProductCategoryDocumentationId"].Value
+                editForm.ShowAsEdit(( System.Guid ) dataGridViewProductCategoryDocumentation.CurrentRow.Cells["ProductCategoryDocumentationId"].Value
                                     );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("dataGridViewProductCategoryDocumentation_CellDoubleClick", ex);
             }
         }
@@ -861,12 +820,12 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductCategoryEdit_Click");
 
             try {
-                CrudeProductCategoryEdit editForm = new CrudeProductCategoryEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeProductCategoryEdit();
+                editForm.MdiParent = this.MdiParent;
                 CheckForm(editForm);
                 editForm.ShowAsEdit(_productCategoryId);
                 UpdateCategory();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductCategoryEdit_Click", ex);
             }
         }
@@ -875,16 +834,16 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductEdit_Click");
 
             try {
-                ProductMaintenance editForm = new ProductMaintenance();
+                var editForm = new ProductMaintenance();
                 Guid productId = _productContract.Product.ProductId;
-                editForm.MdiParent = MdiParent;
+                editForm.MdiParent = this.MdiParent;
                 CheckForm(editForm);
                 editForm.Show(productId, _userId);
 
                 // refresh product list and view
                 UpdateProduct(productId);
                 RefreshProductList();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductEdit_Click", ex);
             }
         }
@@ -892,7 +851,7 @@ namespace SolutionNorSolutionPim.UserInterface {
         private void buttonProductSave_Click(object sender, EventArgs e) {
             Log("buttonProductSave_Click");
 
-            ProductServiceClient productServiceClient = new ProductServiceClient();
+            var productServiceClient = new ProductServiceClient();
             try {
                 _productContract.Product.ProductName = textBoxProductName.Text;
                 productServiceClient.ProductSaveCompleteById(
@@ -902,7 +861,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // update grid, product
                 RefreshProductList();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductSave_Click", ex);
             } finally {
                 productServiceClient.Close();
@@ -914,11 +873,11 @@ namespace SolutionNorSolutionPim.UserInterface {
 
             try {
                 Log("buttonProductHistory_Click: ProductId: " + _productContract.Product.ProductId);
-                ProductHistory history = new ProductHistory(_productContract.Product.ProductId);
-                history.MdiParent = MdiParent;
+                var history = new ProductHistory(_productContract.Product.ProductId);
+                history.MdiParent = this.MdiParent;
                 CheckForm(history);
                 history.Show();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductHistory_Click", ex);
             }
         }
@@ -929,20 +888,20 @@ namespace SolutionNorSolutionPim.UserInterface {
             try {
                 TreeNode parent = node.Parent;
                 TreeView view = node.TreeView;
-                if (parent != null) {
+                if ( parent != null ) {
                     int index = parent.Nodes.IndexOf(node);
-                    if (index > 0) {
+                    if ( index > 0 ) {
                         parent.Nodes.RemoveAt(index);
                         parent.Nodes.Insert(index - 1, node);
                     }
-                } else if (node.TreeView.Nodes.Contains(node)) { //root node
+                } else if ( node.TreeView.Nodes.Contains(node) ) { //root node
                     int index = view.Nodes.IndexOf(node);
-                    if (index > 0) {
+                    if ( index > 0 ) {
                         view.Nodes.RemoveAt(index);
                         view.Nodes.Insert(index - 1, node);
                     }
                 }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("TreeviewMoveUp", ex);
             }
         }
@@ -953,20 +912,20 @@ namespace SolutionNorSolutionPim.UserInterface {
             try {
                 TreeNode parent = node.Parent;
                 TreeView view = node.TreeView;
-                if (parent != null) {
+                if ( parent != null ) {
                     int index = parent.Nodes.IndexOf(node);
-                    if (index < parent.Nodes.Count - 1) {
+                    if ( index < parent.Nodes.Count - 1 ) {
                         parent.Nodes.RemoveAt(index);
                         parent.Nodes.Insert(index + 1, node);
                     }
-                } else if (view != null && view.Nodes.Contains(node)) { //root node
+                } else if ( view != null && view.Nodes.Contains(node) ) { //root node
                     int index = view.Nodes.IndexOf(node);
-                    if (index < view.Nodes.Count - 1) {
+                    if ( index < view.Nodes.Count - 1 ) {
                         view.Nodes.RemoveAt(index);
                         view.Nodes.Insert(index + 1, node);
                     }
                 }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("TreeviewMoveDown", ex);
             }
         }
@@ -974,12 +933,12 @@ namespace SolutionNorSolutionPim.UserInterface {
         private void toolStripButtonUp_Click(object sender, EventArgs e) {
             Log("toolStripButtonUp_Click");
 
-            ProductCategoryServiceClient productCategoryServiceClient = new ProductCategoryServiceClient();
+            var productCategoryServiceClient = new ProductCategoryServiceClient();
             try {
                 Log("new position" + productCategoryServiceClient.PositionUp(_productCategoryId).ToString());
                 TreeviewMoveUp(_currentNode);
                 treeViewHierarchy.SelectedNode = _currentNode;
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("toolStripButtonUp_Click", ex);
             } finally {
                 productCategoryServiceClient.Close();
@@ -987,14 +946,12 @@ namespace SolutionNorSolutionPim.UserInterface {
         }
 
         private void toolStripButtonDown_Click(object sender, EventArgs e) {
-            //Log("toolStripButtonDown_Click");
-
-            ProductCategoryServiceClient productCategoryServiceClient = new ProductCategoryServiceClient();
+            var productCategoryServiceClient = new ProductCategoryServiceClient();
             try {
                 Log("new position" + productCategoryServiceClient.PositionDown(_productCategoryId).ToString());
                 TreeviewMoveDown(_currentNode);
                 treeViewHierarchy.SelectedNode = _currentNode;
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("toolStripButtonDown_Click", ex);
             } finally {
                 productCategoryServiceClient.Close();
@@ -1005,15 +962,15 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductIdentifierAdd_Click");
 
             try {
-                CrudeProductIdentifierEdit newMDIChild = new CrudeProductIdentifierEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductIdentifierEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
                                         string.Empty,
                                         _userId
                                         );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductIdentifierAdd_Click", ex);
             }
         }
@@ -1022,11 +979,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductIdentifierEdit_Click");
 
             try {
-                CrudeProductIdentifierEdit newMDIChild = new CrudeProductIdentifierEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductIdentifierEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductIdentifier.CurrentRow.Cells["ProductIdentifierId"].Value);
-            } catch (Exception ex) {
+                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductIdentifier.CurrentRow.Cells["ProductIdentifierId"].Value);
+            } catch ( Exception ex ) {
                 Error("buttonProductIdentifierEdit_Click", ex);
             }
         }
@@ -1035,8 +992,8 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductAttributeAdd_Click");
 
             try {
-                CrudeProductAttributeEdit newMDIChild = new CrudeProductAttributeEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductAttributeEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
@@ -1044,7 +1001,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                                         string.Empty,
                                         _userId
                                         );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductAttributeAdd_Click", ex);
             }
         }
@@ -1053,11 +1010,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductAttributeEdit_Click");
 
             try {
-                CrudeProductAttributeEdit newMDIChild = new CrudeProductAttributeEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductAttributeEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductAttribute.CurrentRow.Cells["ProductAttributeId"].Value);
-            } catch (Exception ex) {
+                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductAttribute.CurrentRow.Cells["ProductAttributeId"].Value);
+            } catch ( Exception ex ) {
                 Error("buttonProductAttributeEdit_Click", ex);
             }
         }
@@ -1066,15 +1023,15 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductInfoAdd_Click");
 
             try {
-                CrudeProductInfoEdit newMDIChild = new CrudeProductInfoEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductInfoEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
                                         string.Empty,
                                         _userId
                                         );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductInfoAdd_Click", ex);
             }
         }
@@ -1083,8 +1040,8 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductImageAdd_Click");
 
             try {
-                CrudeProductImageEdit newMDIChild = new CrudeProductImageEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductImageEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
@@ -1092,7 +1049,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                                         null,
                                         _userId
                                         );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductImageAdd_Click", ex);
             }
         }
@@ -1101,15 +1058,15 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductDocumentationAdd_Click");
 
             try {
-                CrudeProductDocumentationEdit newMDIChild = new CrudeProductDocumentationEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductDocumentationEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
                 newMDIChild.ShowAsAdd(_productContract.Product.ProductId,
                                         string.Empty,
                                         string.Empty,
                                         _userId
                                         );
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("buttonProductDocumentationAdd_Click", ex);
             }
         }
@@ -1118,11 +1075,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductInfoEdit_Click");
 
             try {
-                CrudeProductInfoEdit newMDIChild = new CrudeProductInfoEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductInfoEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
-            } catch (Exception ex) {
+                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductInfo.CurrentRow.Cells["ProductInfoId"].Value);
+            } catch ( Exception ex ) {
                 Error("buttonProductInfoEdit_Click", ex);
             }
         }
@@ -1131,11 +1088,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductImageEdit_Click");
 
             try {
-                CrudeProductImageEdit newMDIChild = new CrudeProductImageEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductImageEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductImage.CurrentRow.Cells["ProductImageId"].Value);
-            } catch (Exception ex) {
+                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductImage.CurrentRow.Cells["ProductImageId"].Value);
+            } catch ( Exception ex ) {
                 Error("buttonProductImageEdit_Click", ex);
             }
         }
@@ -1144,11 +1101,11 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("buttonProductDocumentationEdit_Click");
 
             try {
-                CrudeProductDocumentationEdit newMDIChild = new CrudeProductDocumentationEdit();
-                newMDIChild.MdiParent = MdiParent;
+                var newMDIChild = new CrudeProductDocumentationEdit();
+                newMDIChild.MdiParent = this.MdiParent;
                 CheckForm(newMDIChild);
-                newMDIChild.ShowAsEdit((System.Guid)dataGridViewProductDocumentation.CurrentRow.Cells["ProductDocumentationId"].Value);
-            } catch (Exception ex) {
+                newMDIChild.ShowAsEdit(( System.Guid ) dataGridViewProductDocumentation.CurrentRow.Cells["ProductDocumentationId"].Value);
+            } catch ( Exception ex ) {
                 Error("buttonProductDocumentationEdit_Click", ex);
             }
         }
@@ -1162,31 +1119,27 @@ namespace SolutionNorSolutionPim.UserInterface {
         private void tabControlSplit_SelectedIndexChanged(object sender, EventArgs e) {
             Log("tabControlSplit_SelectedIndexChanged");
 
-            if (tabControlSplit.SelectedTab == tabPageCategory) {
+            if ( tabControlSplit.SelectedTab == tabPageCategory )
                 UpdateCategory();
-            } else if (tabControlSplit.SelectedTab == tabPageProducts) {
+            else if ( tabControlSplit.SelectedTab == tabPageProducts )
                 RefreshProductList();
-            }
         }
 
         private void dataGridViewProducts1_SelectionChanged(object sender, EventArgs e) {
             Log("dataGridViewProducts1_SelectionChanged");
 
             try {
-                if (dataGridViewProducts1.CurrentRow == null) {
+                if ( dataGridViewProducts1.CurrentRow == null )
                     return;
-                }
 
                 Guid currentProductId = Guid.Empty;
 
-                if (dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value != null) {
-                    currentProductId = (System.Guid)dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value;
-                }
+                if ( dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value != null )
+                    currentProductId = ( System.Guid ) dataGridViewProducts1.CurrentRow.Cells["ProductId"].Value;
 
-                if (_productContract == null || _productContract.Product.ProductId != currentProductId) {
+                if ( _productContract == null || _productContract.Product.ProductId != currentProductId )
                     UpdateProduct(currentProductId);
-                }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("dataGridViewProducts1_SelectionChanged", ex);
             }
         }
@@ -1195,20 +1148,17 @@ namespace SolutionNorSolutionPim.UserInterface {
             Log("dataGridViewProducts3_SelectionChanged");
 
             try {
-                if (dataGridViewProducts3.CurrentRow == null) {
+                if ( dataGridViewProducts3.CurrentRow == null )
                     return;
-                }
 
                 Guid currentProductId = Guid.Empty;
 
-                if (dataGridViewProducts3.CurrentRow.Cells["ProductId"].Value != null) {
-                    currentProductId = (System.Guid)dataGridViewProducts3.CurrentRow.Cells["ProductId"].Value;
-                }
+                if ( dataGridViewProducts3.CurrentRow.Cells["ProductId"].Value != null )
+                    currentProductId = ( System.Guid ) dataGridViewProducts3.CurrentRow.Cells["ProductId"].Value;
 
-                if (_productContract == null || _productContract.Product.ProductId != currentProductId) {
+                if ( _productContract == null || _productContract.Product.ProductId != currentProductId )
                     UpdateProduct(currentProductId);
-                }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("dataGridViewProducts3_SelectionChanged", ex);
             }
         }
@@ -1216,22 +1166,21 @@ namespace SolutionNorSolutionPim.UserInterface {
         private void toolStripTextBoxSearch_KeyPress(object sender, KeyPressEventArgs e) {
             Log("toolStripTextBoxSearch_KeyPress");
 
-            if (e.KeyChar == (char)13) {
+            if ( e.KeyChar == ( char ) 13 ) {
                 e.Handled = true;
 
                 // find category
-                CategorySearchService productCategoryService = new CategorySearchService();
+                var productCategoryService = new CategorySearchService();
                 List<CategoryFindContract> productCategoryContracts = productCategoryService.CategoryFind(toolStripTextBoxSearch.Text);
                 productCategoryService.Close();
 
-                if (productCategoryContracts.Count == 0) {
+                if ( productCategoryContracts.Count == 0 )
                     return;
-                }
 
                 Guid productCategoryId = productCategoryContracts[0].ProductCategoryId;
 
-                foreach (TreeNode node in treeViewHierarchy.Nodes) {
-                    if (new Guid(node.Name) == productCategoryId) {
+                foreach ( TreeNode node in treeViewHierarchy.Nodes ) {
+                    if ( new Guid(node.Name) == productCategoryId ) {
                         node.Expand();
                         treeViewHierarchy.SelectedNode = node;
                         SelectNode(node);
@@ -1239,72 +1188,24 @@ namespace SolutionNorSolutionPim.UserInterface {
                         treeViewHierarchy.Select();
                     }
 
-                    foreach (TreeNode subNode in node.Nodes) {
-                        if (new Guid(subNode.Name) == productCategoryId) {
+                    foreach ( TreeNode subNode in node.Nodes ) {
+                        if ( new Guid(subNode.Name) == productCategoryId ) {
                             subNode.Parent.Expand();
                             treeViewHierarchy.SelectedNode = subNode;
                             SelectNode(subNode);
                             tabControlSplit.SelectedTab = tabPageProducts;
                             treeViewHierarchy.Select();
-
-                            // select grid row
-                            // figure out how to position on a row in the grid
-                            //dataGridViewProducts1.CurrentRow = dataGridViewProducts1.Select.Cells["ProductId"].Value
-                            //dataGridViewProducts1.SelectedRows. = 
                         }
                     }
                 }
             }
         }
 
-        //private void dataGridViewProducts2_CellEndEdit(object sender, DataGridViewCellEventArgs e) {
-        //    Log("dataGridViewProducts2_CellEndEdit");
-
-        //    if (_refreshing)
-        //        return;
-
-        //    try {
-        //        DataGridViewColumn gtinColumn = dataGridViewProducts2.Columns[ProductIdentifierRef.GlobalTradeItemNumber13];
-
-        //        if (gtinColumn != null) {
-        //            if (e.ColumnIndex.Equals(gtinColumn.Index)) {
-
-        //                // update identifier value
-        //                string identifier = string.Empty;
-        //                if (dataGridViewProducts2.CurrentRow != null) {
-        //                    identifier = (string)dataGridViewProducts2.CurrentRow.Cells[ProductIdentifierRef.GlobalTradeItemNumber13].EditedFormattedValue;
-
-        //                    List<Guid> productIds = new List<Guid>();
-        //                    productIds.Add(_productContract.Product.ProductId);
-
-        //                    try {
-        //                        new ProductServiceClient().ProductChangeAttribute(
-        //                            productIds,
-        //                            ProductAttributeRef.Color,
-        //                            "Blue",
-        //                            ProductIdentifierRef.GlobalTradeItemNumber13,
-        //                            identifier,
-        //                            Singleton.Instance.UserId
-        //                            );
-
-        //                        RefreshProductList();
-        //                    } catch (Exception ex) {
-        //                        Error("dataGridViewProducts2_CellEndEdit", ex);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    } catch (Exception ex) {
-        //        Error("dataGridViewProducts2_CellEndEdit", ex);
-        //    }
-        //}
-
         private void dataGridViewProducts2_CellEndEdit(object sender, DataGridViewCellEventArgs e) {
             Log("dataGridViewProducts2_CellEndEdit");
 
-            if (_refreshing) {
+            if ( _refreshing )
                 return;
-            }
 
             try {
                 DataGridViewColumn colorColumn = dataGridViewProducts2.Columns[ProductAttributeRef.Color];
@@ -1312,46 +1213,46 @@ namespace SolutionNorSolutionPim.UserInterface {
                 DataGridViewColumn nameColumn = dataGridViewProducts2.Columns["ProductName"];
                 DataGridViewColumn productIdColumn = dataGridViewProducts2.Columns["ProductId"];
 
-                List<ProductChangeEntityContract> productEntities = new List<ProductChangeEntityContract>();
+                var productEntities = new List<ProductChangeEntityContract>();
 
                 // product
                 DataGridViewRow row = dataGridViewProducts2.CurrentRow;
-                ProductChangeEntityContract productEntitiyChange = new ProductChangeEntityContract();
-                productEntitiyChange.ProductId = (Guid)row.Cells[productIdColumn.Index].Value;
+                var productEntitiyChange = new ProductChangeEntityContract();
+                productEntitiyChange.ProductId = ( Guid ) row.Cells[productIdColumn.Index].Value;
                 productEntitiyChange.EntityChanges = new List<ProductChangeEntityDetailContract>();
 
                 // product name
-                if (nameColumn != null && e.ColumnIndex.Equals(nameColumn.Index)) {
-                    if (dataGridViewProducts2.CurrentRow != null) {
-                        ProductChangeEntityDetailContract entityDetail = new ProductChangeEntityDetailContract();
+                if ( nameColumn != null && e.ColumnIndex.Equals(nameColumn.Index) ) {
+                    if ( dataGridViewProducts2.CurrentRow != null ) {
+                        var entityDetail = new ProductChangeEntityDetailContract();
                         entityDetail.ProductEntityTypeRcd = ProductEntityTypeRef.Product;
                         entityDetail.ProductEntityRcd = string.Empty;
                         entityDetail.ProductEntityOldValue = string.Empty;
-                        entityDetail.ProductEntityNewValue = (string)row.Cells[nameColumn.Index].EditedFormattedValue;
+                        entityDetail.ProductEntityNewValue = ( string ) row.Cells[nameColumn.Index].EditedFormattedValue;
                         productEntitiyChange.EntityChanges.Add(entityDetail);
                     }
                 }
 
                 // check identifier
-                if (gtinColumn != null && e.ColumnIndex.Equals(gtinColumn.Index)) {
-                    if (dataGridViewProducts2.CurrentRow != null) {
-                        ProductChangeEntityDetailContract entityDetail = new ProductChangeEntityDetailContract();
+                if ( gtinColumn != null && e.ColumnIndex.Equals(gtinColumn.Index) ) {
+                    if ( dataGridViewProducts2.CurrentRow != null ) {
+                        var entityDetail = new ProductChangeEntityDetailContract();
                         entityDetail.ProductEntityTypeRcd = ProductEntityTypeRef.ProductIdentifier;
                         entityDetail.ProductEntityRcd = ProductIdentifierRef.GlobalTradeItemNumber13;
                         entityDetail.ProductEntityOldValue = string.Empty;
-                        entityDetail.ProductEntityNewValue = (string)row.Cells[gtinColumn.Index].EditedFormattedValue;
+                        entityDetail.ProductEntityNewValue = ( string ) row.Cells[gtinColumn.Index].EditedFormattedValue;
                         productEntitiyChange.EntityChanges.Add(entityDetail);
                     }
                 }
 
                 // color value
-                if (colorColumn != null && e.ColumnIndex.Equals(colorColumn.Index)) {
-                    if (dataGridViewProducts2.CurrentRow != null) {
-                        ProductChangeEntityDetailContract entityDetail = new ProductChangeEntityDetailContract();
+                if ( colorColumn != null && e.ColumnIndex.Equals(colorColumn.Index) ) {
+                    if ( dataGridViewProducts2.CurrentRow != null ) {
+                        var entityDetail = new ProductChangeEntityDetailContract();
                         entityDetail.ProductEntityTypeRcd = ProductEntityTypeRef.ProductAttribute;
                         entityDetail.ProductEntityRcd = ProductAttributeRef.Color;
                         entityDetail.ProductEntityOldValue = string.Empty;
-                        entityDetail.ProductEntityNewValue = (string)row.Cells[colorColumn.Index].EditedFormattedValue;
+                        entityDetail.ProductEntityNewValue = ( string ) row.Cells[colorColumn.Index].EditedFormattedValue;
                         productEntitiyChange.EntityChanges.Add(entityDetail);
                     }
                 }
@@ -1364,10 +1265,10 @@ namespace SolutionNorSolutionPim.UserInterface {
                         );
 
                     RefreshProductList();
-                } catch (Exception ex) {
+                } catch ( Exception ex ) {
                     Error("dataGridViewProducts2_CellEndEdit", ex);
                 }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("dataGridViewProducts2_CellEndEdit", ex);
             }
         }
@@ -1375,22 +1276,21 @@ namespace SolutionNorSolutionPim.UserInterface {
         private void dataGridViewProductIdentifier_CellEndEdit(object sender, DataGridViewCellEventArgs e) {
             Log("dataGridViewProductIdentifier_CellEndEdit");
 
-            if (_refreshing) {
+            if ( _refreshing )
                 return;
-            }
 
             DataGridViewColumn identifierColumn = dataGridViewProducts2.Columns["identifier"];
 
-            if (identifierColumn != null) {
-                if (e.ColumnIndex.Equals(identifierColumn.Index)) {
+            if ( identifierColumn != null ) {
+                if ( e.ColumnIndex.Equals(identifierColumn.Index) ) {
 
                     // update identifier value
-                    string identifier = (string)dataGridViewProductIdentifier.CurrentRow.Cells["identifier"].EditedFormattedValue;
+                    string identifier = ( string ) dataGridViewProductIdentifier.CurrentRow.Cells["identifier"].EditedFormattedValue;
 
                     CrudeProductIdentifierContract identifierContract =
                         new CrudeProductIdentifierServiceClient().FetchByProductId(_productContract.Product.ProductId)[0];
 
-                    if (!identifierContract.Identifier.Equals(identifier)) {
+                    if ( !identifierContract.Identifier.Equals(identifier) ) {
                         identifierContract.Identifier = identifier;
                         new CrudeProductIdentifierServiceClient().Update(identifierContract);
                     }
@@ -1401,75 +1301,30 @@ namespace SolutionNorSolutionPim.UserInterface {
         private void dataGridViewProducts2_RowEnter(object sender, DataGridViewCellEventArgs e) {
             Log("dataGridViewProducts2_RowEnter");
 
-            if (_refreshing) {
+            if ( _refreshing )
                 return;
-            }
 
             try {
-                if (dataGridViewProducts2.CurrentRow == null) {
+                if ( dataGridViewProducts2.CurrentRow == null )
                     return;
-                }
 
                 Guid currentProductId = Guid.Empty;
 
                 //if (dataGridViewProducts2.CurrentRow.Cells["ProductId"].Value != null)
-                if (dataGridViewProducts2.Rows[e.RowIndex].Cells["ProductId"].Value != null) {
-                    currentProductId = (System.Guid)dataGridViewProducts2.Rows[e.RowIndex].Cells["ProductId"].Value;
-                }
+                if ( dataGridViewProducts2.Rows[e.RowIndex].Cells["ProductId"].Value != null )
+                    currentProductId = ( System.Guid ) dataGridViewProducts2.Rows[e.RowIndex].Cells["ProductId"].Value;
 
-                if (_productContract == null || _productContract.Product.ProductId != currentProductId) {
+                if ( _productContract == null || _productContract.Product.ProductId != currentProductId )
                     UpdateProduct(currentProductId);
-                }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("dataGridViewProducts2_RowEnter", ex);
             }
         }
-
-        //private void Paste() {
-        //    List<Guid> productIds = new List<Guid>();
-
-        //    if (dataGridViewProducts2.SelectedCells.Count.Equals(0))
-        //        return;
-
-        //    // get list of unique products
-        //    try {
-        //        int productIdIndex = dataGridViewProducts2.Columns["ProductId"].Index;
-        //        foreach (DataGridViewCell cell in dataGridViewProducts2.SelectedCells) {
-
-        //            // find row and save product id
-        //            DataGridViewRow row = dataGridViewProducts2.Rows[cell.RowIndex];
-        //            productIds.Add((Guid) row.Cells[productIdIndex].Value);
-
-        //        }
-        //    } catch (Exception ex) {
-        //        Error("dataGridViewProducts2_SelectionChanged, unique products", ex);
-        //    }
-
-        //    if (productIds.Count.Equals(0))
-        //        return;
-
-        //    try {
-        //        string identifier = "6";
-
-        //        new ProductServiceClient().ProductChangeAttribute(
-        //            productIds,
-        //            ProductAttributeRef.Color,
-        //            "Blue",
-        //            ProductIdentifierRef.GlobalTradeItemNumber13,
-        //            identifier,
-        //            Singleton.Instance.UserId
-        //            );
-
-        //        RefreshProductList();
-        //    } catch (Exception ex) {
-        //        Error("dataGridViewProducts2_SelectionChanged, change products", ex);
-        //    }
-        //}
-
+        
         private IEnumerable<DataGridViewRow> SelectedRows(
             DataGridView dgv
             ) {
-            IEnumerable<DataGridViewRow> selectedRows =
+            IEnumerable<DataGridViewRow> selectedRows = 
                 dgv.SelectedCells.Cast<DataGridViewCell>()
                    .Select(cell => cell.OwningRow)
                    .OrderByDescending(cell => cell.Index)
@@ -1480,9 +1335,8 @@ namespace SolutionNorSolutionPim.UserInterface {
 
         private void Paste() {
             // bail if nothing selected
-            if (dataGridViewProducts2.SelectedCells.Count.Equals(0)) {
+            if ( dataGridViewProducts2.SelectedCells.Count.Equals(0) )
                 return;
-            }
 
             DataGridViewColumn colorColumn = dataGridViewProducts2.Columns[ProductAttributeRef.Color];
             DataGridViewColumn gtinColumn = dataGridViewProducts2.Columns[ProductIdentifierRef.GlobalTradeItemNumber13];
@@ -1499,12 +1353,10 @@ namespace SolutionNorSolutionPim.UserInterface {
 
             // get the text from clipboard
             IDataObject dataInClipboard = Clipboard.GetDataObject();
-            string stringInClipboard = (string)dataInClipboard.GetData(DataFormats.Text);
+            string stringInClipboard = ( string ) dataInClipboard.GetData(DataFormats.Text);
 
-            if (string.IsNullOrEmpty(stringInClipboard)) {
+            if ( string.IsNullOrEmpty(stringInClipboard) )
                 return;
-            }
-            //throw new Exception("Data on clipboard is not valid");
 
             // split it into lines
             string[] clipboardRows = stringInClipboard.Split(rowSplitter, StringSplitOptions.RemoveEmptyEntries);
@@ -1513,37 +1365,35 @@ namespace SolutionNorSolutionPim.UserInterface {
             // make sure row / column counts match
             int columnCount = -1;
             int rowCount = -1;
-            //clipboardRows.Reverse();
-            foreach (string row in clipboardRows) { // .Reverse()
+            foreach ( string row in clipboardRows ) { // .Reverse()
                 rowCount++;
 
                 // split row into cell values
                 clipboardColumns[rowCount] = row.Split(columnSplitter);
-                //string[] columns = row.Split( columnSplitter );
 
-                if (columnCount.Equals(-1)) {
+                if ( columnCount.Equals(-1) )
                     columnCount = clipboardColumns[rowCount].Count();
-                } else
-                    if (!columnCount.Equals(clipboardColumns[rowCount].Count())) {
-                    throw new Exception("Paste, number of columns in rows does not match");
-                }
+                else
+                    if ( !columnCount.Equals(clipboardColumns[rowCount].Count()) )
+                        throw new Exception("Paste, number of columns in rows does not match");
+
             }
 
             // get product changes
-            List<ProductChangeEntityContract> productEntities = new List<ProductChangeEntityContract>();
+            var productEntities = new List<ProductChangeEntityContract>();
             int rowIndex = 0;
             try {
                 IEnumerable<DataGridViewRow> selectedRows = SelectedRows(dataGridViewProducts2);
                 selectedRows = selectedRows.Reverse();
 
-                foreach (DataGridViewRow row in selectedRows) {
+                foreach ( var row in selectedRows ) {
                     // product
-                    ProductChangeEntityContract productEntitiyChange = new ProductChangeEntityContract();
-                    productEntitiyChange.ProductId = (Guid)row.Cells[productIdColumn.Index].Value;
+                    var productEntitiyChange = new ProductChangeEntityContract();
+                    productEntitiyChange.ProductId = ( Guid ) row.Cells[productIdColumn.Index].Value;
                     productEntitiyChange.EntityChanges = new List<ProductChangeEntityDetailContract>();
 
                     int columnIndex = -1;
-                    ProductChangeEntityDetailContract entityDetail = new ProductChangeEntityDetailContract();
+                    var entityDetail = new ProductChangeEntityDetailContract();
                     // product name
                     /*
                     entityDetail = new ProductChangeEntityDetailContract();
@@ -1554,21 +1404,21 @@ namespace SolutionNorSolutionPim.UserInterface {
                     productEntitiyChange.EntityChanges.Add(entityDetail);
                     */
                     // identifier
-                    if (row.Cells[gtinColumn.Index].Selected) {
+                    if ( row.Cells[gtinColumn.Index].Selected ) {
                         entityDetail = new ProductChangeEntityDetailContract();
                         entityDetail.ProductEntityTypeRcd = ProductEntityTypeRef.ProductIdentifier;
                         entityDetail.ProductEntityRcd = ProductIdentifierRef.GlobalTradeItemNumber13;
-                        entityDetail.ProductEntityOldValue = (string)row.Cells[gtinColumn.Index].EditedFormattedValue;
+                        entityDetail.ProductEntityOldValue = ( string ) row.Cells[gtinColumn.Index].EditedFormattedValue;
                         entityDetail.ProductEntityNewValue = GetColumn(clipboardColumns, rowIndex, ++columnIndex);
                         productEntitiyChange.EntityChanges.Add(entityDetail);
                     }
 
                     // color
-                    if (row.Cells[colorColumn.Index].Selected) {
+                    if ( row.Cells[colorColumn.Index].Selected ) {
                         entityDetail = new ProductChangeEntityDetailContract();
                         entityDetail.ProductEntityTypeRcd = ProductEntityTypeRef.ProductAttribute;
                         entityDetail.ProductEntityRcd = ProductAttributeRef.Color;
-                        entityDetail.ProductEntityOldValue = (string)row.Cells[colorColumn.Index].EditedFormattedValue;
+                        entityDetail.ProductEntityOldValue = ( string ) row.Cells[colorColumn.Index].EditedFormattedValue;
                         entityDetail.ProductEntityNewValue = GetColumn(clipboardColumns, rowIndex, ++columnIndex);
                         productEntitiyChange.EntityChanges.Add(entityDetail);
                     }
@@ -1576,7 +1426,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                     rowIndex++;
                     productEntities.Add(productEntitiyChange);
                 }
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("Paste, unique products", ex);
             }
 
@@ -1587,16 +1437,15 @@ namespace SolutionNorSolutionPim.UserInterface {
                     );
 
                 RefreshProductList();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Error("Paste", ex);
             }
         }
 
         private bool IsColumnSelected(DataGridViewColumn column) {
-            foreach (DataGridViewColumn selectedColumn in dataGridViewProducts2.SelectedColumns) {
-                if (selectedColumn.Index.Equals(column.Index)) {
+            foreach ( DataGridViewColumn selectedColumn in dataGridViewProducts2.SelectedColumns ) {
+                if ( selectedColumn.Index.Equals(column.Index) )
                     return true;
-                }
             }
             return false;
         }
@@ -1612,39 +1461,35 @@ namespace SolutionNorSolutionPim.UserInterface {
             // try to find best match
             try {
                 // first possible value
-                found = clipboardColumns[0][0];
+                found = ( string ) clipboardColumns[0][0];
                 // first row value
-                found = clipboardColumns[rowIndex][0];
+                found = ( string ) clipboardColumns[rowIndex][0];
                 // closest match
-                found = clipboardColumns[rowIndex][columnIndex];
+                found = ( string ) clipboardColumns[rowIndex][columnIndex];
             } catch { }
 
             return found;
         }
 
         private void dataGridViewProducts2_KeyUp(object sender, KeyEventArgs e) {
-            if (e.Modifiers.Equals(Keys.Control)) {
+            if ( e.Modifiers.Equals(Keys.Control) ) {
                 // copy
-                if (e.KeyCode.Equals(Keys.C)) {
+                if ( e.KeyCode.Equals(Keys.C) ) {
                     Log("dataGridViewProducts2_KeyUp", "Ctrl + C");
                     DataObject content = dataGridViewProducts2.GetClipboardContent();
-                    if (content != null) {
+                    if ( content != null )
                         Clipboard.SetDataObject(
                             content
                             );
-                    }
                 }
 
                 // paste
-                if (e.KeyCode.Equals(Keys.V)) {
+                if ( e.KeyCode.Equals(Keys.V) ) {
                     Log("dataGridViewProducts2_KeyUp", "Ctrl + V");
                     Paste();
                 }
             }
         }
 
-        private void tabControlProduct_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
     }
 }

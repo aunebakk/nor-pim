@@ -1,22 +1,24 @@
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.UserInterface {
+namespace SolutionNorSolutionPim.UserInterface
+{
 
 
-    public partial class Statistics : Form {
+    public partial class Statistics : Form
+    {
 
         public Statistics() {
             InitializeComponent();
             InitializeGridDefaultStatisticsTop5();
             InitializeGridDefaultStatistics();
-            AcceptButton = btnSearch;
-            CancelButton = btnClose;
+            this.AcceptButton = btnSearch;
+            this.CancelButton = btnClose;
         }
 
         private void btnSearch_Click(object sender, EventArgs e) {
-            DefaultSearchService productStatisticsTop5 = new DefaultSearchService();
+            var productStatisticsTop5 = new DefaultSearchService();
             BindingSource bindingSource = new BindingSource();
 
             try {
@@ -28,14 +30,14 @@ namespace SolutionNorSolutionPim.UserInterface {
                 gridDefaultStatisticsTop5.DataSource = bindingSource;
                 gridDefaultStatisticsTop5.AutoResizeColumns();
                 gridDefaultStatisticsTop5.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 MessageBox.Show(ex.Message);
             } finally {
                 productStatisticsTop5.Close();
             }
 
             // second
-            DefaultSearchService productStatistics = new DefaultSearchService();
+            var productStatistics = new DefaultSearchService();
             BindingSource bindingSource2 = new BindingSource();
 
             try {
@@ -44,7 +46,7 @@ namespace SolutionNorSolutionPim.UserInterface {
                 gridDefaultStatistics.DataSource = bindingSource2;
                 gridDefaultStatistics.AutoResizeColumns();
                 gridDefaultStatistics.Refresh();
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 MessageBox.Show(ex.Message);
             } finally {
                 productStatistics.Close();
@@ -63,11 +65,10 @@ namespace SolutionNorSolutionPim.UserInterface {
             gridDefaultStatistics.Columns.Add("ExtensionData", "");
             gridDefaultStatistics.Columns["ExtensionData"].Visible = false;
 
-            foreach (DataGridViewColumn column in gridDefaultStatistics.Columns) {
+            foreach ( DataGridViewColumn column in gridDefaultStatistics.Columns ) {
                 column.DataPropertyName = column.Name;
-                if (column.Name.EndsWith("Id")) {
+                if ( column.Name.EndsWith("Id") )
                     column.Visible = false;
-                }
             }
 
             gridDefaultStatistics.AutoResizeColumns();
@@ -81,11 +82,10 @@ namespace SolutionNorSolutionPim.UserInterface {
             gridDefaultStatisticsTop5.Columns.Add("ExtensionData", "");
             gridDefaultStatisticsTop5.Columns["ExtensionData"].Visible = false;
 
-            foreach (DataGridViewColumn column in gridDefaultStatisticsTop5.Columns) {
+            foreach ( DataGridViewColumn column in gridDefaultStatisticsTop5.Columns ) {
                 column.DataPropertyName = column.Name;
-                if (column.Name.EndsWith("Id")) {
+                if ( column.Name.EndsWith("Id") )
                     column.Visible = false;
-                }
             }
 
             gridDefaultStatisticsTop5.AutoResizeColumns();
@@ -96,20 +96,18 @@ namespace SolutionNorSolutionPim.UserInterface {
         }
 
         private void buttonPingTest_Click(object sender, EventArgs e) {
-            DiagnosticsServiceClient diagnostics = new DiagnosticsServiceClient();
+            var diagnostics = new DiagnosticsServiceClient();
             try {
                 DateTime startTime = DateTime.UtcNow;
-                for (int loop = 0; loop < 100; loop++) {
+                for ( int loop = 0; loop < 100; loop++ )
                     diagnostics.PingTest();
-                }
 
                 Log("diagnostics, ping test: " + DateTime.UtcNow.Subtract(startTime).ToString());
 
-            } catch (Exception ex) {
+            } catch ( Exception ex ) {
                 Log("exception: " + ex.Message);
-                if (ex.InnerException != null) {
+                if ( ex.InnerException != null )
                     Log("exception inner: " + ex.InnerException.Message);
-                }
             } finally {
                 Log("login, closing diagnostics");
                 diagnostics.Close();

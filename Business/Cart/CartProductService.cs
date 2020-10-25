@@ -2,42 +2,46 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:03 PM
+  Generated Date: 10/25/2020 9:25:15 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.BusinessUsing
 */
+using SolutionNorSolutionPim.DataAccessLayer;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.ServiceModel;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [ServiceContract()]
     public partial interface ICartProductService {
-
+        
         // Gets parent and children
         [OperationContract()]
         CartProductContract CartProductCompleteGet(System.Guid cartProductId, System.Guid userId);
-
+        
         // Updates parent, children are added or updated as needed
         [OperationContract()]
         System.Guid CartProductCompleteUpdate(System.Guid cartProductId, CartProductContract cartProductContract, System.Guid userId);
     }
-
+    
     public partial class CartProductService : ICartProductService {
-
+        
         // Gets parent and children
         public CartProductContract CartProductCompleteGet(System.Guid cartProductId, System.Guid userId) {
-            CartProductContract cartProductContract =
+            var cartProductContract = 
                 new CartProductContract();
 
             // open standard connection
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
                 try {
-                    cartProductContract.CartProduct =
+                    cartProductContract.CartProduct = 
                         new CrudeCartProductService().FetchAll();
 
                     // save checksum for comparison on update
@@ -50,23 +54,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             return cartProductContract;
         }
-
+        
         // Updates parent, children are added or updated as needed
         public System.Guid CartProductCompleteUpdate(System.Guid cartProductId, CartProductContract cartProductContract, System.Guid userId) {
 
             // check for differences since fetch
-            if (cartProductContract.ChecksumAfterGet.Equals(cartProductContract.Checksum())) {
+            if (cartProductContract.ChecksumAfterGet.Equals(cartProductContract.Checksum()))
                 return Guid.Empty;
-            }
 
             // check for database differences since fetch
             CartProductContract cartProductContractCurrent = CartProductCompleteGet(cartProductId, userId);
-            if (!cartProductContract.ChecksumAfterGet.Equals(cartProductContractCurrent.Checksum())) {
+            if (!cartProductContract.ChecksumAfterGet.Equals(cartProductContractCurrent.Checksum())) 
                 throw new Exception("CartProductCompleteUpdate, data has changed since fetch");
-            }
 
             // open standard connection
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
 

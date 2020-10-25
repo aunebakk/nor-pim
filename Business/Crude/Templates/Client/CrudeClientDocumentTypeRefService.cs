@@ -2,14 +2,19 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:52:50 PM
+  Generated Date: 10/25/2020 9:14:46 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateCrudeSoap.DefaultUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Runtime.Serialization;
+using System.Data;
+using System.Data.SqlClient;
+using System.ServiceModel.Activation;
+using SolutionNorSolutionPim.DataAccessLayer;
 
 // Business Logic Layer
 // the BusinessLogicLayer is where the DataAccessLayer is exposed as
@@ -24,41 +29,41 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     [ServiceContract()]
     public partial interface ICrudeClientDocumentTypeRefService {
-
+        
         [OperationContract()]
         CrudeClientDocumentTypeRefContract FetchByClientDocumentTypeRcd(string clientDocumentTypeRcd);
-
+        
         [OperationContract()]
         List<CrudeClientDocumentTypeRefContract> FetchByUserId(System.Guid userId);
-
+        
         [OperationContract()]
         CrudeClientDocumentTypeRefContract FetchByClientDocumentTypeName(string clientDocumentTypeName);
-
+        
         [OperationContract()]
         List<CrudeClientDocumentTypeRefContract> FetchWithFilter(string clientDocumentTypeRcd, string clientDocumentTypeName, string clientDocumentTypeDescription, bool activeFlag, int sortOrder, System.Guid userId, System.DateTime dateTime);
-
+        
         [OperationContract()]
         List<CrudeClientDocumentTypeRefContract> FetchAll();
-
+        
         [OperationContract()]
         List<CrudeClientDocumentTypeRefContract> FetchAllWithLimit(int limit);
-
+        
         [OperationContract()]
         List<CrudeClientDocumentTypeRefContract> FetchAllWithLimitAndOffset(int limit, int offset);
-
+        
         [OperationContract()]
         int FetchAllCount();
-
+        
         [OperationContract()]
         void Insert(CrudeClientDocumentTypeRefContract contract);
-
+        
         [OperationContract()]
         void Update(CrudeClientDocumentTypeRefContract contract);
-
+        
         [OperationContract()]
         void Delete(string clientDocumentTypeRcd);
     }
-
+    
     // this class serves as a link to the data access layer between c# and sql server
     // primarily it calls the data access layer to get to the serialized CRUDE tables data
     //and transfers that data to a SOAP Contract ready to be exposed through WCF
@@ -68,111 +73,111 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     //   https://en.wikipedia.org/wiki/SOAP: SOAP ( Simple Object Access Protocol )
     //   https://en.wikipedia.org/wiki/Windows_Communication_Foundation: WCF ( Windows Communication Foundation )
     public partial class CrudeClientDocumentTypeRefService : ICrudeClientDocumentTypeRefService {
-
+        
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
         // parameters:
         //   clientDocumentTypeRcd: primary key of table client_document_type_ref
         public CrudeClientDocumentTypeRefContract FetchByClientDocumentTypeRcd(string clientDocumentTypeRcd) {
-            CrudeClientDocumentTypeRefData dataAccessLayer = new CrudeClientDocumentTypeRefData();
-            CrudeClientDocumentTypeRefContract contract = new CrudeClientDocumentTypeRefContract();
+            var dataAccessLayer = new CrudeClientDocumentTypeRefData();
+            var contract = new CrudeClientDocumentTypeRefContract();
 
             dataAccessLayer.FetchByClientDocumentTypeRcd(clientDocumentTypeRcd);
             DataToContract(dataAccessLayer, contract);
 
             return contract;
         }
-
+        
         public CrudeClientDocumentTypeRefContract FetchByClientDocumentTypeName(string clientDocumentTypeName) {
-            CrudeClientDocumentTypeRefData dataAccessLayer = new CrudeClientDocumentTypeRefData();
-            CrudeClientDocumentTypeRefContract contract = new CrudeClientDocumentTypeRefContract();
+            var dataAccessLayer = new CrudeClientDocumentTypeRefData();
+            var contract = new CrudeClientDocumentTypeRefContract();
 
             dataAccessLayer.FetchByClientDocumentTypeName(clientDocumentTypeName);
             DataToContract(dataAccessLayer, contract);
 
             return contract;
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public List<CrudeClientDocumentTypeRefContract> FetchByUserId(System.Guid userId) {
             return DataListToContractList(CrudeClientDocumentTypeRefData.FetchByUserId(userId));
         }
-
+        
         // copy all rows from a List of serialized data objects to a List of SOAP Contracts
         public static List<CrudeClientDocumentTypeRefContract> DataListToContractList(List<CrudeClientDocumentTypeRefData> dataList) {
-            List<CrudeClientDocumentTypeRefContract> contractList = new List<CrudeClientDocumentTypeRefContract>();
+            var contractList = new List<CrudeClientDocumentTypeRefContract>();
 
             foreach (CrudeClientDocumentTypeRefData data in dataList) {
-                CrudeClientDocumentTypeRefContract contract = new CrudeClientDocumentTypeRefContract();
+                var contract = new CrudeClientDocumentTypeRefContract();
                 DataToContract(data, contract);
                 contractList.Add(contract);
             }
 
             return contractList;
         }
-
+        
         // copy all rows from a List of SOAP Contracts to a List of serialized data objects
         public static void ContractListToDataList(List<CrudeClientDocumentTypeRefContract> contractList, List<CrudeClientDocumentTypeRefData> dataList) {
             foreach (CrudeClientDocumentTypeRefContract contract in contractList) {
-                CrudeClientDocumentTypeRefData data = new CrudeClientDocumentTypeRefData();
+                var data = new CrudeClientDocumentTypeRefData();
                 CrudeClientDocumentTypeRefService.ContractToData(contract, data);
                 dataList.Add(data);
             }
         }
-
+        
         // copy all rows from a List of serialized data objects in CrudeClientDocumentTypeRefData to a List of SOAP Contracts
         public List<CrudeClientDocumentTypeRefContract> FetchAll() {
-            List<CrudeClientDocumentTypeRefContract> list = new List<CrudeClientDocumentTypeRefContract>();
+            var list = new List<CrudeClientDocumentTypeRefContract>();
             List<CrudeClientDocumentTypeRefData> dataList = CrudeClientDocumentTypeRefData.FetchAll();
 
             foreach (CrudeClientDocumentTypeRefData crudeClientDocumentTypeRef in dataList) {
-                CrudeClientDocumentTypeRefContract contract = new CrudeClientDocumentTypeRefContract();
+                var contract = new CrudeClientDocumentTypeRefContract();
                 DataToContract(crudeClientDocumentTypeRef, contract);
                 list.Add(contract);
             }
 
             return list;
         }
-
+        
         // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
         //  with a limit on number of returned rows and order by columns
         public List<CrudeClientDocumentTypeRefContract> FetchAllWithLimit(int limit) {
-            List<CrudeClientDocumentTypeRefContract> list = new List<CrudeClientDocumentTypeRefContract>();
+            var list = new List<CrudeClientDocumentTypeRefContract>();
             List<CrudeClientDocumentTypeRefData> dataList = CrudeClientDocumentTypeRefData.FetchAllWithLimit(limit);
 
             foreach (CrudeClientDocumentTypeRefData crudeClientDocumentTypeRef in dataList) {
-                CrudeClientDocumentTypeRefContract contract = new CrudeClientDocumentTypeRefContract();
+                var contract = new CrudeClientDocumentTypeRefContract();
                 DataToContract(crudeClientDocumentTypeRef, contract);
                 list.Add(contract);
             }
 
             return list;
         }
-
+        
         // copy all rows from a List of serialized data objects to a List of SOAP Contracts, 
         //  with a limit on number of returned rows and order by columns, starting at a specific row
         public List<CrudeClientDocumentTypeRefContract> FetchAllWithLimitAndOffset(int limit, int offset) {
-            List<CrudeClientDocumentTypeRefContract> list = new List<CrudeClientDocumentTypeRefContract>();
+            var list = new List<CrudeClientDocumentTypeRefContract>();
             List<CrudeClientDocumentTypeRefData> dataList = CrudeClientDocumentTypeRefData.FetchAllWithLimitAndOffset(limit, offset);
 
             foreach (CrudeClientDocumentTypeRefData crudeClientDocumentTypeRef in dataList) {
-                CrudeClientDocumentTypeRefContract contract = new CrudeClientDocumentTypeRefContract();
+                var contract = new CrudeClientDocumentTypeRefContract();
                 DataToContract(crudeClientDocumentTypeRef, contract);
                 list.Add(contract);
             }
 
             return list;
         }
-
+        
         // get a count of rows in table
         public int FetchAllCount() {
             return CrudeClientDocumentTypeRefData.FetchAllCount();
         }
-
+        
         // fetch all rows from table into new List of Contracts, filtered by any column
         public List<CrudeClientDocumentTypeRefContract> FetchWithFilter(string clientDocumentTypeRcd, string clientDocumentTypeName, string clientDocumentTypeDescription, bool activeFlag, int sortOrder, System.Guid userId, System.DateTime dateTime) {
-            List<CrudeClientDocumentTypeRefContract> list = new List<CrudeClientDocumentTypeRefContract>();
+            var list = new List<CrudeClientDocumentTypeRefContract>();
             List<CrudeClientDocumentTypeRefData> dataList = CrudeClientDocumentTypeRefData.FetchWithFilter(
                 clientDocumentTypeRcd: clientDocumentTypeRcd,
                 clientDocumentTypeName: clientDocumentTypeName,
@@ -184,51 +189,51 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 );
 
             foreach (CrudeClientDocumentTypeRefData data in dataList) {
-                CrudeClientDocumentTypeRefContract crudeClientDocumentTypeRefContract = new CrudeClientDocumentTypeRefContract();
+                var crudeClientDocumentTypeRefContract = new CrudeClientDocumentTypeRefContract();
                 DataToContract(data, crudeClientDocumentTypeRefContract);
                 list.Add(crudeClientDocumentTypeRefContract);
             }
 
             return list;
         }
-
+        
         // insert all object members as a new row in table
         public void Insert(CrudeClientDocumentTypeRefContract contract) {
-            CrudeClientDocumentTypeRefData data = new CrudeClientDocumentTypeRefData();
+            var data = new CrudeClientDocumentTypeRefData();
             ContractToData(contract, data);
             data.Insert();
         }
-
+        
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
         public void Insert(CrudeClientDocumentTypeRefContract contract, SqlConnection connection, SqlTransaction transaction) {
-            CrudeClientDocumentTypeRefData data = new CrudeClientDocumentTypeRefData();
+            var data = new CrudeClientDocumentTypeRefData();
             ContractToData(contract, data);
             data.Insert(connection, transaction);
         }
-
+        
         // update all object members on a row in table based on primary key
         public void Update(CrudeClientDocumentTypeRefContract contract) {
-            CrudeClientDocumentTypeRefData data = new CrudeClientDocumentTypeRefData();
+            var data = new CrudeClientDocumentTypeRefData();
             ContractToData(contract, data);
             data.Update();
         }
-
+        
         // update all object members on a row in table based on primary key, on a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
         public void Update(CrudeClientDocumentTypeRefContract contract, SqlConnection connection, SqlTransaction transaction) {
-            CrudeClientDocumentTypeRefData data = new CrudeClientDocumentTypeRefData();
+            var data = new CrudeClientDocumentTypeRefData();
             ContractToData(contract, data);
             data.Update(connection, transaction);
         }
-
+        
         // delete a row in table based on primary key
         public void Delete(string clientDocumentTypeRcd) {
             CrudeClientDocumentTypeRefData.Delete(clientDocumentTypeRcd);
         }
-
+        
         // copy all columns from a SOAP Contract to a serialized data object
         public static void ContractToData(CrudeClientDocumentTypeRefContract contract, CrudeClientDocumentTypeRefData data) {
             data.ClientDocumentTypeRcd = contract.ClientDocumentTypeRcd;
@@ -239,7 +244,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             data.UserId = contract.UserId;
             data.DateTime = contract.DateTime;
         }
-
+        
         // copy all columns from a serialized data object to a SOAP Contract
         public static void DataToContract(CrudeClientDocumentTypeRefData data, CrudeClientDocumentTypeRefContract contract) {
             contract.ClientDocumentTypeRcd = data.ClientDocumentTypeRcd;

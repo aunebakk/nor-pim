@@ -2,29 +2,33 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:38 PM
+  Generated Date: 10/25/2020 9:25:39 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
-using SolutionNorSolutionPim.DataAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.ServiceModel;
+using System.Runtime.Serialization;
+using System.Data;
+using SolutionNorSolutionPim.DataAccessLayer;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     public class ProductMaintenanceImageIndexWithFilter {
-
+        
         public List<ProductMaintenanceImageIndexWithFilterContract> ProductMaintenanceImageIndexWithFilterFromDal(List<ProductMaintenanceImageIndexWithFilterData> dataList) {
-            List<ProductMaintenanceImageIndexWithFilterContract> list = new List<ProductMaintenanceImageIndexWithFilterContract>();
+           var list = new List<ProductMaintenanceImageIndexWithFilterContract>();
 
-            foreach (ProductMaintenanceImageIndexWithFilterData data in dataList) {
-                ProductMaintenanceImageIndexWithFilterContract contract = new ProductMaintenanceImageIndexWithFilterContract();
-                DataToContract(data, contract);
-                list.Add(contract);
-            }
+           foreach (ProductMaintenanceImageIndexWithFilterData data in dataList) {
+               var contract = new ProductMaintenanceImageIndexWithFilterContract();
+               DataToContract(data, contract);
+               list.Add(contract);
+           }
 
-            return list;
+           return list;
         }
-
+        
         public void DataToContract(ProductMaintenanceImageIndexWithFilterData dalProductMaintenanceImageIndexWithFilter, ProductMaintenanceImageIndexWithFilterContract dataContract) {
             dataContract.ProductName = dalProductMaintenanceImageIndexWithFilter.ProductName;
             dataContract.StateRcd = dalProductMaintenanceImageIndexWithFilter.StateRcd;

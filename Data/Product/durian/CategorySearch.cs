@@ -3,17 +3,19 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer {
+namespace SolutionNorSolutionPim.DataAccessLayer
+{
     /// <summary> 
     /// Provides category search with different parameter and result sets
     /// </summary>
     /// <domain>Category</domain>
-    public partial class CategorySearch {
+    public partial class CategorySearch
+    {
         /// <summary>Get categories</summary>
         /// <cardinality>Many</cardinality>
         public List<CategoryTreeData> CategoryTree() {
 
-            List<CategoryTreeData> ret = new List<CategoryTreeData>();
+            var ret = new List<CategoryTreeData>();
 
             string sql = @" 
                 select 
@@ -28,16 +30,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                         ,pc.product_category_position
                 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    CategoryTreeDataOrdinals ordinals = new CategoryTreeDataOrdinals(reader);
+                    var ordinals = new CategoryTreeDataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        CategoryTreeData data = new CategoryTreeData();
+                    while ( reader.Read() ) {
+                        var data = new CategoryTreeData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }
@@ -53,7 +55,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         /// <cardinality>Many</cardinality>
         public List<CategoryFindData> CategoryFind(string findWhat) {
 
-            List<CategoryFindData> ret = new List<CategoryFindData>();
+            var ret = new List<CategoryFindData>();
 
             string sql = @" 
                 select 
@@ -69,18 +71,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                    or p.product_name like '%' + @find_what + '%'
                 ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@find_what", SqlDbType.VarChar, 4).Value = findWhat;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    CategoryFindDataOrdinals ordinals = new CategoryFindDataOrdinals(reader);
+                    var ordinals = new CategoryFindDataOrdinals(reader);
 
-                    while (reader.Read()) {
-                        CategoryFindData data = new CategoryFindData();
+                    while ( reader.Read() ) {
+                        var data = new CategoryFindData();
                         data.Populate(reader, ordinals);
                         ret.Add(data);
                     }

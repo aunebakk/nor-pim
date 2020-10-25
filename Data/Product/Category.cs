@@ -4,9 +4,11 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolutionNorSolutionPim.DataAccessLayer {
+namespace SolutionNorSolutionPim.DataAccessLayer
+{
     [Serializable()]
-    public class Category {
+    public class Category
+    {
         public CrudeProductCategoryData ProductCategory;
         public List<CrudeProductCategoryImageData> ProductCategoryImage { get; set; }
         public List<CrudeProductCategoryDocumentationData> ProductCategoryDocumentation { get; set; }
@@ -27,10 +29,11 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         }
     }
 
-    public partial class CrudeProductCategoryData {
+    public partial class CrudeProductCategoryData
+    {
 
         public List<CrudeProductCategoryData> FetchTopLevel() {
-            List<CrudeProductCategoryData> dataList = new List<CrudeProductCategoryData>();
+            var dataList = new List<CrudeProductCategoryData>();
 
             string sql = @" 
                             select product_category_id, product_category_became_id, product_category_parent_id, product_category_code, product_category_name, product_category_position, state_rcd, user_id, date_time
@@ -40,15 +43,15 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by pc.product_category_position
                             ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleResult);
 
-                    while (reader.Read()) {
-                        CrudeProductCategoryData data = new CrudeProductCategoryData();
+                    while ( reader.Read() ) {
+                        var data = new CrudeProductCategoryData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
@@ -71,18 +74,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by pc.product_category_position desc
                             ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_category_parent_id", SqlDbType.UniqueIdentifier).Value = productCategoryParentId;
                     command.Parameters.Add("@position", SqlDbType.Int).Value = position;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                    if (reader.Read()) {
+                    if ( reader.Read() )
                         Populate(reader);
-                    }
                 }
             }
         }
@@ -100,18 +102,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             order by pc.product_category_position
                             ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using ( var command = new SqlCommand(sql, conn) ) {
                     command.Parameters.Add("@product_category_parent_id", SqlDbType.UniqueIdentifier).Value = productCategoryParentId;
                     command.Parameters.Add("@position", SqlDbType.Int).Value = position;
 
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                    if (reader.Read()) {
+                    if ( reader.Read() )
                         Populate(reader);
-                    }
                 }
             }
         }
@@ -136,7 +137,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                               and product_category_became_id is null
                             ";
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using ( var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"]) ) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
@@ -145,9 +146,8 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                if (reader.Read()) {
+                if ( reader.Read() )
                     Populate(reader);
-                }
             }
         }
 
@@ -174,7 +174,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where cpm.product_id = @product_id_old
                             ";
 
-            using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
+            using ( SqlCommand command = new SqlCommand(sql, connection, transaction) ) {
                 command.Parameters.Add("@product_id_old", SqlDbType.UniqueIdentifier).Value = productIdOld;
                 command.Parameters.Add("@product_id_new", SqlDbType.UniqueIdentifier).Value = productIdNew;
                 command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;

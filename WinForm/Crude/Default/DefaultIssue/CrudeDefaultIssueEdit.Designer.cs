@@ -1,52 +1,52 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class CrudeDefaultIssueEdit {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonSave;
-
+        
         private DefaultIssueTypeRefCombo defaultIssueTypeRefCombo;
-
+        
         private System.Windows.Forms.Label labelDefaultIssueTypeRefCombo;
-
+        
         private DefaultIssueStatusRefCombo defaultIssueStatusRefCombo;
-
+        
         private System.Windows.Forms.Label labelDefaultIssueStatusRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxIssueName;
-
+        
         private System.Windows.Forms.Label labelIssueName;
-
+        
         private System.Windows.Forms.TextBox textBoxIssueDescription;
-
+        
         private System.Windows.Forms.Label labelIssueDescription;
-
+        
         private System.Windows.Forms.TextBox textBoxStepsToReproduce;
-
+        
         private System.Windows.Forms.Label labelStepsToReproduce;
-
+        
         private System.Windows.Forms.TextBox textBoxLink;
-
+        
         private System.Windows.Forms.Label labelLink;
-
+        
         private System.Windows.Forms.DateTimePicker dateTimePickerDateTime;
-
+        
         private System.Windows.Forms.Label labelDateTime;
-
+        
         private System.Windows.Forms.TextBox textBoxFixedNote;
-
+        
         private System.Windows.Forms.Label labelFixedNote;
-
+        
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -210,7 +210,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(298, 197);
-
+            
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 22);
             this.buttonClose.TabIndex = 1;

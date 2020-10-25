@@ -2,15 +2,15 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:52:43 PM
+  Generated Date: 10/25/2020 9:14:41 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Configuration;
 
 // Data Access Layer
 // the DataAccessLayer is the first layer that has access to data coming from
@@ -27,39 +27,39 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     //   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/: serialization
     [Serializable()]
     public partial class CrudeClientAddressData {
-
+        
         public System.Guid ClientAddressId { get; set; }
-
+        
         public System.Guid ClientId { get; set; }
-
+        
         public string ClientAddressTypeRcd { get; set; }
-
+        
         public string AddressLineOneName { get; set; }
-
+        
         public string AddressLineTwoName { get; set; }
-
+        
         public string AddressLineThreeName { get; set; }
-
+        
         public string CityName { get; set; }
-
+        
         public string StreetName { get; set; }
-
+        
         public string StateName { get; set; }
-
+        
         public string DistrictName { get; set; }
-
+        
         public string ProvinceName { get; set; }
-
+        
         public string ZipCode { get; set; }
-
+        
         public string PoBox { get; set; }
-
+        
         public string Comment { get; set; }
-
+        
         public System.Guid UserId { get; set; }
-
+        
         public System.DateTime DateTime { get; set; }
-
+        
         // fetch by Primary key into current object
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -78,7 +78,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 // dirty read
@@ -87,22 +87,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 //   as locked by another database transaction
                 conn.BeginTransaction(IsolationLevel.ReadUncommitted).Commit();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_address_id", SqlDbType.UniqueIdentifier).Value = clientAddressId;
+                    command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = clientAddressId;
 
                     // execute and read one row, close connection
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serializable class if row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         Populate(reader);
-                    }
                 }
             }
         }
-
+        
         // fetch by Primary key into new class instance
         // links:
         //   https://en.wikipedia.org/wiki/Create,_read,_update_and_delete: crud definition
@@ -118,18 +117,18 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                             where client_address_id = @client_address_id
                             order by address_line_one_name";
 
-            CrudeClientAddressData ret = new CrudeClientAddressData();
+            var ret = new CrudeClientAddressData();
 
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_address_id", SqlDbType.UniqueIdentifier).Value = clientAddressId;
+                    command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = clientAddressId;
 
                     // execute query against client_address
                     // if the query fails in the preprocessor of sql server
@@ -137,18 +136,17 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     // populate serialized class if a row was found
-                    if (reader.Read()) {
+                    if (reader.Read())
                         ret.Populate(reader);
-                    }
                 }
             }
 
             return ret;
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeClientAddressData> FetchByClientId(System.Guid clientId) {
-            List<CrudeClientAddressData> dataList = new List<CrudeClientAddressData>();
+            var dataList = new List<CrudeClientAddressData>();
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -163,10 +161,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = clientId;
@@ -180,19 +178,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeClientAddressData data = new CrudeClientAddressData();
+                        var data = new CrudeClientAddressData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeClientAddressData> FetchByUserId(System.Guid userId) {
-            List<CrudeClientAddressData> dataList = new List<CrudeClientAddressData>();
+            var dataList = new List<CrudeClientAddressData>();
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -207,10 +205,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
                     command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = userId;
@@ -224,19 +222,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeClientAddressData data = new CrudeClientAddressData();
+                        var data = new CrudeClientAddressData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Foreign key into new List of class instances
         public static List<CrudeClientAddressData> FetchByClientAddressTypeRcd(string clientAddressTypeRcd) {
-            List<CrudeClientAddressData> dataList = new List<CrudeClientAddressData>();
+            var dataList = new List<CrudeClientAddressData>();
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -251,13 +249,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add foreign key column
                     // this foreign key column will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = clientAddressTypeRcd.Replace("'", "''");
+                    command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = clientAddressTypeRcd.Replace("'","''");
 
                     // execute query against client_address
                     // if the query fails in the preprocessor of sql server
@@ -268,16 +266,16 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeClientAddressData data = new CrudeClientAddressData();
+                        var data = new CrudeClientAddressData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch by Picker Member into new class instance
         public void FetchByAddressLineOneName(string addressLineOneName) {
             // create query against client_address
@@ -292,29 +290,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(sql, conn);
 
-                // add search column
-                // this search column will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@addressLineOneName", SqlDbType.NVarChar).Value = addressLineOneName;
+                    // add search column
+                    // this search column will be used together with the prepared ansi sql statement
+                command.Parameters.Add("@addressLineOneName",SqlDbType.NVarChar).Value = addressLineOneName;
 
                 // execute query against client_address
                 // if the query fails in the preprocessor of sql server
                 //   an exception will be raised
                 IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
-                if (reader.Read()) {
+                if (reader.Read())
                     Populate(reader);
-                }
             }
         }
-
+        
         // fetch all rows from table client_address into new List of class instances
         public static List<CrudeClientAddressData> FetchAll() {
-            List<CrudeClientAddressData> dataList = new List<CrudeClientAddressData>();
+            var dataList = new List<CrudeClientAddressData>();
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -327,10 +324,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against client_address
                     // if the query fails in the preprocessor of sql server
@@ -341,19 +338,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeClientAddressData data = new CrudeClientAddressData();
+                        var data = new CrudeClientAddressData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, with a limit on number of returned rows and order by columns
         public static List<CrudeClientAddressData> FetchAllWithLimit(int limit) {
-            List<CrudeClientAddressData> dataList = new List<CrudeClientAddressData>();
+            var dataList = new List<CrudeClientAddressData>();
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -366,10 +363,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against client_address
                     // if the query fails in the preprocessor of sql server
@@ -380,20 +377,20 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeClientAddressData data = new CrudeClientAddressData();
+                        var data = new CrudeClientAddressData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // fetch all from table into new List of class instances, only populating specific columns,
         //  with a limit on number of returned rows and order by columns starting at a specific row
         public static List<CrudeClientAddressData> FetchAllWithLimitAndOffset(int limit, int offset) {
-            List<CrudeClientAddressData> dataList = new List<CrudeClientAddressData>();
+            var dataList = new List<CrudeClientAddressData>();
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -406,10 +403,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // execute query against client_address
                     // if the query fails in the preprocessor of sql server
@@ -423,21 +420,19 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
                         if ((count >= offset) && (count <= offset + limit)) {
-                            CrudeClientAddressData data = new CrudeClientAddressData();
+                            var data = new CrudeClientAddressData();
                             data.Populate(reader);
                             dataList.Add(data);
                         }
                         count++;
-                        if (count > limit + offset) {
-                            break;
-                        }
+                        if (count > limit + offset) break;
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // get a count of rows in table
         public static int FetchAllCount() {
             // create query against client_address
@@ -449,44 +444,44 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
                 int count = 0;
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // execute query against client_address
                     // if the query fails in the preprocessor of sql server
                     //   an exception will be raised
                     IDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow);
 
                     reader.Read();
-                    count = (int)reader["count"];
+                    count = (System.Int32) reader["count"];
                 }
 
                 return count;
             }
         }
-
+        
         // fetch all from table into new List of class instances, filtered by any column
         public static List<CrudeClientAddressData> FetchWithFilter(
-                    System.Guid clientAddressId,
-                    System.Guid clientId,
-                    string clientAddressTypeRcd,
-                    string addressLineOneName,
-                    string addressLineTwoName,
-                    string addressLineThreeName,
-                    string cityName,
-                    string streetName,
-                    string stateName,
-                    string districtName,
-                    string provinceName,
-                    string zipCode,
-                    string poBox,
-                    string comment,
-                    System.Guid userId,
+                    System.Guid clientAddressId, 
+                    System.Guid clientId, 
+                    string clientAddressTypeRcd, 
+                    string addressLineOneName, 
+                    string addressLineTwoName, 
+                    string addressLineThreeName, 
+                    string cityName, 
+                    string streetName, 
+                    string stateName, 
+                    string districtName, 
+                    string provinceName, 
+                    string zipCode, 
+                    string poBox, 
+                    string comment, 
+                    System.Guid userId, 
                     System.DateTime dateTime) {
-            List<CrudeClientAddressData> dataList = new List<CrudeClientAddressData>();
+            var dataList = new List<CrudeClientAddressData>();
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -499,10 +494,10 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add search column(s) if they are not null or empty
                     // this search column(s) will be used together with the prepared ansi sql statement
                     if (clientAddressId != Guid.Empty) {
@@ -515,51 +510,51 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     }
                     if (!string.IsNullOrEmpty(clientAddressTypeRcd)) {
                         sql += "  and client_address_type_rcd like '%' + @client_address_type_rcd + '%'";
-                        command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = clientAddressTypeRcd.Replace("'", "''");
+                        command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = clientAddressTypeRcd.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(addressLineOneName)) {
                         sql += "  and address_line_one_name like '%' + @address_line_one_name + '%'";
-                        command.Parameters.Add("@address_line_one_name", SqlDbType.NVarChar).Value = addressLineOneName.Replace("'", "''");
+                        command.Parameters.Add("@address_line_one_name", SqlDbType.NVarChar).Value = addressLineOneName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(addressLineTwoName)) {
                         sql += "  and address_line_two_name like '%' + @address_line_two_name + '%'";
-                        command.Parameters.Add("@address_line_two_name", SqlDbType.NVarChar).Value = addressLineTwoName.Replace("'", "''");
+                        command.Parameters.Add("@address_line_two_name", SqlDbType.NVarChar).Value = addressLineTwoName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(addressLineThreeName)) {
                         sql += "  and address_line_three_name like '%' + @address_line_three_name + '%'";
-                        command.Parameters.Add("@address_line_three_name", SqlDbType.NVarChar).Value = addressLineThreeName.Replace("'", "''");
+                        command.Parameters.Add("@address_line_three_name", SqlDbType.NVarChar).Value = addressLineThreeName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(cityName)) {
                         sql += "  and city_name like '%' + @city_name + '%'";
-                        command.Parameters.Add("@city_name", SqlDbType.NVarChar).Value = cityName.Replace("'", "''");
+                        command.Parameters.Add("@city_name", SqlDbType.NVarChar).Value = cityName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(streetName)) {
                         sql += "  and street_name like '%' + @street_name + '%'";
-                        command.Parameters.Add("@street_name", SqlDbType.NVarChar).Value = streetName.Replace("'", "''");
+                        command.Parameters.Add("@street_name", SqlDbType.NVarChar).Value = streetName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(stateName)) {
                         sql += "  and state_name like '%' + @state_name + '%'";
-                        command.Parameters.Add("@state_name", SqlDbType.NVarChar).Value = stateName.Replace("'", "''");
+                        command.Parameters.Add("@state_name", SqlDbType.NVarChar).Value = stateName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(districtName)) {
                         sql += "  and district_name like '%' + @district_name + '%'";
-                        command.Parameters.Add("@district_name", SqlDbType.NVarChar).Value = districtName.Replace("'", "''");
+                        command.Parameters.Add("@district_name", SqlDbType.NVarChar).Value = districtName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(provinceName)) {
                         sql += "  and province_name like '%' + @province_name + '%'";
-                        command.Parameters.Add("@province_name", SqlDbType.NVarChar).Value = provinceName.Replace("'", "''");
+                        command.Parameters.Add("@province_name", SqlDbType.NVarChar).Value = provinceName.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(zipCode)) {
                         sql += "  and zip_code like '%' + @zip_code + '%'";
-                        command.Parameters.Add("@zip_code", SqlDbType.NVarChar).Value = zipCode.Replace("'", "''");
+                        command.Parameters.Add("@zip_code", SqlDbType.NVarChar).Value = zipCode.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(poBox)) {
                         sql += "  and po_box like '%' + @po_box + '%'";
-                        command.Parameters.Add("@po_box", SqlDbType.NVarChar).Value = poBox.Replace("'", "''");
+                        command.Parameters.Add("@po_box", SqlDbType.NVarChar).Value = poBox.Replace("'","''");
                     }
                     if (!string.IsNullOrEmpty(comment)) {
                         sql += "  and comment like '%' + @comment + '%'";
-                        command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = comment.Replace("'", "''");
+                        command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = comment.Replace("'","''");
                     }
                     if (userId != Guid.Empty) {
                         sql += "  and user_id = @user_id";
@@ -582,89 +577,41 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                     // read all columns from the datareader and 
                     //   populate the List of C# objects with them
                     while (reader.Read()) {
-                        CrudeClientAddressData data = new CrudeClientAddressData();
+                        var data = new CrudeClientAddressData();
                         data.Populate(reader);
                         dataList.Add(data);
                     }
                 }
-
+                
                 return dataList;
             }
         }
-
+        
         // read all columns out and populate object members
         public void Populate(IDataReader reader) {
-            if (reader["client_address_id"] != System.DBNull.Value) {
-                ClientAddressId = (System.Guid)reader["client_address_id"];
-            }
-
-            if (reader["client_id"] != System.DBNull.Value) {
-                ClientId = (System.Guid)reader["client_id"];
-            }
-
-            if (reader["client_address_type_rcd"] != System.DBNull.Value) {
-                ClientAddressTypeRcd = (string)reader["client_address_type_rcd"];
-            }
-
-            if (reader["address_line_one_name"] != System.DBNull.Value) {
-                AddressLineOneName = (string)reader["address_line_one_name"];
-            }
-
-            if (reader["address_line_two_name"] != System.DBNull.Value) {
-                AddressLineTwoName = (string)reader["address_line_two_name"];
-            }
-
-            if (reader["address_line_three_name"] != System.DBNull.Value) {
-                AddressLineThreeName = (string)reader["address_line_three_name"];
-            }
-
-            if (reader["city_name"] != System.DBNull.Value) {
-                CityName = (string)reader["city_name"];
-            }
-
-            if (reader["street_name"] != System.DBNull.Value) {
-                StreetName = (string)reader["street_name"];
-            }
-
-            if (reader["state_name"] != System.DBNull.Value) {
-                StateName = (string)reader["state_name"];
-            }
-
-            if (reader["district_name"] != System.DBNull.Value) {
-                DistrictName = (string)reader["district_name"];
-            }
-
-            if (reader["province_name"] != System.DBNull.Value) {
-                ProvinceName = (string)reader["province_name"];
-            }
-
-            if (reader["zip_code"] != System.DBNull.Value) {
-                ZipCode = (string)reader["zip_code"];
-            }
-
-            if (reader["po_box"] != System.DBNull.Value) {
-                PoBox = (string)reader["po_box"];
-            }
-
-            if (reader["comment"] != System.DBNull.Value) {
-                Comment = (string)reader["comment"];
-            }
-
-            if (reader["user_id"] != System.DBNull.Value) {
-                UserId = (System.Guid)reader["user_id"];
-            }
-
-            if (reader["date_time"] != System.DBNull.Value) {
-                DateTime = (System.DateTime)reader["date_time"];
-            }
+            if (reader["client_address_id"] != System.DBNull.Value) ClientAddressId = (System.Guid) reader["client_address_id"];
+            if (reader["client_id"] != System.DBNull.Value) ClientId = (System.Guid) reader["client_id"];
+            if (reader["client_address_type_rcd"] != System.DBNull.Value) ClientAddressTypeRcd = (System.String) reader["client_address_type_rcd"];
+            if (reader["address_line_one_name"] != System.DBNull.Value) AddressLineOneName = (System.String) reader["address_line_one_name"];
+            if (reader["address_line_two_name"] != System.DBNull.Value) AddressLineTwoName = (System.String) reader["address_line_two_name"];
+            if (reader["address_line_three_name"] != System.DBNull.Value) AddressLineThreeName = (System.String) reader["address_line_three_name"];
+            if (reader["city_name"] != System.DBNull.Value) CityName = (System.String) reader["city_name"];
+            if (reader["street_name"] != System.DBNull.Value) StreetName = (System.String) reader["street_name"];
+            if (reader["state_name"] != System.DBNull.Value) StateName = (System.String) reader["state_name"];
+            if (reader["district_name"] != System.DBNull.Value) DistrictName = (System.String) reader["district_name"];
+            if (reader["province_name"] != System.DBNull.Value) ProvinceName = (System.String) reader["province_name"];
+            if (reader["zip_code"] != System.DBNull.Value) ZipCode = (System.String) reader["zip_code"];
+            if (reader["po_box"] != System.DBNull.Value) PoBox = (System.String) reader["po_box"];
+            if (reader["comment"] != System.DBNull.Value) Comment = (System.String) reader["comment"];
+            if (reader["user_id"] != System.DBNull.Value) UserId = (System.Guid) reader["user_id"];
+            if (reader["date_time"] != System.DBNull.Value) DateTime = (System.DateTime) reader["date_time"];
         }
-
+        
         // insert all object members as a new row in table
         public void Insert() {
 
-            if (ClientAddressId == Guid.Empty) {
+            if (ClientAddressId == Guid.Empty)
                 ClientAddressId = Guid.NewGuid();
-            }
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -676,28 +623,28 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var connection = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, connection)) {
+                using (var command = new SqlCommand(sql, connection)) {
                     // add column(s) to insert as parameter
                     // the insert column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_address_id", SqlDbType.UniqueIdentifier).Value = ClientAddressId;
-                    command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                    command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = ClientAddressTypeRcd;
-                    command.Parameters.Add("@address_line_one_name", SqlDbType.NVarChar).Value = AddressLineOneName;
-                    command.Parameters.Add("@address_line_two_name", SqlDbType.NVarChar).Value = AddressLineTwoName;
-                    command.Parameters.Add("@address_line_three_name", SqlDbType.NVarChar).Value = AddressLineThreeName;
-                    command.Parameters.Add("@city_name", SqlDbType.NVarChar).Value = CityName;
-                    command.Parameters.Add("@street_name", SqlDbType.NVarChar).Value = StreetName;
-                    command.Parameters.Add("@state_name", SqlDbType.NVarChar).Value = StateName;
-                    command.Parameters.Add("@district_name", SqlDbType.NVarChar).Value = DistrictName;
-                    command.Parameters.Add("@province_name", SqlDbType.NVarChar).Value = ProvinceName;
-                    command.Parameters.Add("@zip_code", SqlDbType.NVarChar).Value = ZipCode;
-                    command.Parameters.Add("@po_box", SqlDbType.NVarChar).Value = PoBox;
-                    command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = Comment;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
+                    command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                    command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
+                    command.Parameters.Add("@address_line_one_name",SqlDbType.NVarChar).Value = (System.String)AddressLineOneName;
+                    command.Parameters.Add("@address_line_two_name",SqlDbType.NVarChar).Value = (System.String)AddressLineTwoName;
+                    command.Parameters.Add("@address_line_three_name",SqlDbType.NVarChar).Value = (System.String)AddressLineThreeName;
+                    command.Parameters.Add("@city_name",SqlDbType.NVarChar).Value = (System.String)CityName;
+                    command.Parameters.Add("@street_name",SqlDbType.NVarChar).Value = (System.String)StreetName;
+                    command.Parameters.Add("@state_name",SqlDbType.NVarChar).Value = (System.String)StateName;
+                    command.Parameters.Add("@district_name",SqlDbType.NVarChar).Value = (System.String)DistrictName;
+                    command.Parameters.Add("@province_name",SqlDbType.NVarChar).Value = (System.String)ProvinceName;
+                    command.Parameters.Add("@zip_code",SqlDbType.NVarChar).Value = (System.String)ZipCode;
+                    command.Parameters.Add("@po_box",SqlDbType.NVarChar).Value = (System.String)PoBox;
+                    command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against client_address
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -706,15 +653,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // insert all object members as a new row in table, in a transaction
         // the transaction and or connection state is not changed in any way other than what SqlClient does to it.
         // it is the callers responsibility to commit or rollback the transaction
         public void Insert(SqlConnection connection, SqlTransaction transaction) {
 
-            if (ClientAddressId == Guid.Empty) {
+            if (ClientAddressId == Guid.Empty)
                 ClientAddressId = Guid.NewGuid();
-            }
 
             // create query against client_address
             // this will be ansi sql and parameterized
@@ -729,22 +675,22 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to insert as parameter(s)
                 // the insert column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@client_address_id", SqlDbType.UniqueIdentifier).Value = ClientAddressId;
-                command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = ClientAddressTypeRcd;
-                command.Parameters.Add("@address_line_one_name", SqlDbType.NVarChar).Value = AddressLineOneName;
-                command.Parameters.Add("@address_line_two_name", SqlDbType.NVarChar).Value = AddressLineTwoName;
-                command.Parameters.Add("@address_line_three_name", SqlDbType.NVarChar).Value = AddressLineThreeName;
-                command.Parameters.Add("@city_name", SqlDbType.NVarChar).Value = CityName;
-                command.Parameters.Add("@street_name", SqlDbType.NVarChar).Value = StreetName;
-                command.Parameters.Add("@state_name", SqlDbType.NVarChar).Value = StateName;
-                command.Parameters.Add("@district_name", SqlDbType.NVarChar).Value = DistrictName;
-                command.Parameters.Add("@province_name", SqlDbType.NVarChar).Value = ProvinceName;
-                command.Parameters.Add("@zip_code", SqlDbType.NVarChar).Value = ZipCode;
-                command.Parameters.Add("@po_box", SqlDbType.NVarChar).Value = PoBox;
-                command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = Comment;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
+                command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
+                command.Parameters.Add("@address_line_one_name",SqlDbType.NVarChar).Value = (System.String)AddressLineOneName;
+                command.Parameters.Add("@address_line_two_name",SqlDbType.NVarChar).Value = (System.String)AddressLineTwoName;
+                command.Parameters.Add("@address_line_three_name",SqlDbType.NVarChar).Value = (System.String)AddressLineThreeName;
+                command.Parameters.Add("@city_name",SqlDbType.NVarChar).Value = (System.String)CityName;
+                command.Parameters.Add("@street_name",SqlDbType.NVarChar).Value = (System.String)StreetName;
+                command.Parameters.Add("@state_name",SqlDbType.NVarChar).Value = (System.String)StateName;
+                command.Parameters.Add("@district_name",SqlDbType.NVarChar).Value = (System.String)DistrictName;
+                command.Parameters.Add("@province_name",SqlDbType.NVarChar).Value = (System.String)ProvinceName;
+                command.Parameters.Add("@zip_code",SqlDbType.NVarChar).Value = (System.String)ZipCode;
+                command.Parameters.Add("@po_box",SqlDbType.NVarChar).Value = (System.String)PoBox;
+                command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against client_address
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -752,7 +698,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // update all object members on a row in table based on primary key
         public void Update() {
             // create query against client_address
@@ -781,29 +727,29 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
 
                     // add column(s) to update as parameter(s)
                     // the update column(s) will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_address_id", SqlDbType.UniqueIdentifier).Value = ClientAddressId;
-                    command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                    command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = ClientAddressTypeRcd;
-                    command.Parameters.Add("@address_line_one_name", SqlDbType.NVarChar).Value = AddressLineOneName;
-                    command.Parameters.Add("@address_line_two_name", SqlDbType.NVarChar).Value = AddressLineTwoName;
-                    command.Parameters.Add("@address_line_three_name", SqlDbType.NVarChar).Value = AddressLineThreeName;
-                    command.Parameters.Add("@city_name", SqlDbType.NVarChar).Value = CityName;
-                    command.Parameters.Add("@street_name", SqlDbType.NVarChar).Value = StreetName;
-                    command.Parameters.Add("@state_name", SqlDbType.NVarChar).Value = StateName;
-                    command.Parameters.Add("@district_name", SqlDbType.NVarChar).Value = DistrictName;
-                    command.Parameters.Add("@province_name", SqlDbType.NVarChar).Value = ProvinceName;
-                    command.Parameters.Add("@zip_code", SqlDbType.NVarChar).Value = ZipCode;
-                    command.Parameters.Add("@po_box", SqlDbType.NVarChar).Value = PoBox;
-                    command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = Comment;
-                    command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                    command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                    command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
+                    command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                    command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
+                    command.Parameters.Add("@address_line_one_name",SqlDbType.NVarChar).Value = (System.String)AddressLineOneName;
+                    command.Parameters.Add("@address_line_two_name",SqlDbType.NVarChar).Value = (System.String)AddressLineTwoName;
+                    command.Parameters.Add("@address_line_three_name",SqlDbType.NVarChar).Value = (System.String)AddressLineThreeName;
+                    command.Parameters.Add("@city_name",SqlDbType.NVarChar).Value = (System.String)CityName;
+                    command.Parameters.Add("@street_name",SqlDbType.NVarChar).Value = (System.String)StreetName;
+                    command.Parameters.Add("@state_name",SqlDbType.NVarChar).Value = (System.String)StateName;
+                    command.Parameters.Add("@district_name",SqlDbType.NVarChar).Value = (System.String)DistrictName;
+                    command.Parameters.Add("@province_name",SqlDbType.NVarChar).Value = (System.String)ProvinceName;
+                    command.Parameters.Add("@zip_code",SqlDbType.NVarChar).Value = (System.String)ZipCode;
+                    command.Parameters.Add("@po_box",SqlDbType.NVarChar).Value = (System.String)PoBox;
+                    command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
+                    command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                    command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                     // execute query against client_address
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server
@@ -812,7 +758,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 }
             }
         }
-
+        
         // update all object members on a row in table based on primary key, on a transaction
         public void Update(SqlConnection connection, SqlTransaction transaction) {
             // create query against client_address
@@ -844,22 +790,22 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             using (SqlCommand command = new SqlCommand(sql, connection, transaction)) {
                 // add column(s) to update as parameter
                 // the update column(s) will be used together with the prepared ansi sql statement
-                command.Parameters.Add("@client_address_id", SqlDbType.UniqueIdentifier).Value = ClientAddressId;
-                command.Parameters.Add("@client_id", SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : ClientId);
-                command.Parameters.Add("@client_address_type_rcd", SqlDbType.NVarChar).Value = ClientAddressTypeRcd;
-                command.Parameters.Add("@address_line_one_name", SqlDbType.NVarChar).Value = AddressLineOneName;
-                command.Parameters.Add("@address_line_two_name", SqlDbType.NVarChar).Value = AddressLineTwoName;
-                command.Parameters.Add("@address_line_three_name", SqlDbType.NVarChar).Value = AddressLineThreeName;
-                command.Parameters.Add("@city_name", SqlDbType.NVarChar).Value = CityName;
-                command.Parameters.Add("@street_name", SqlDbType.NVarChar).Value = StreetName;
-                command.Parameters.Add("@state_name", SqlDbType.NVarChar).Value = StateName;
-                command.Parameters.Add("@district_name", SqlDbType.NVarChar).Value = DistrictName;
-                command.Parameters.Add("@province_name", SqlDbType.NVarChar).Value = ProvinceName;
-                command.Parameters.Add("@zip_code", SqlDbType.NVarChar).Value = ZipCode;
-                command.Parameters.Add("@po_box", SqlDbType.NVarChar).Value = PoBox;
-                command.Parameters.Add("@comment", SqlDbType.NVarChar).Value = Comment;
-                command.Parameters.Add("@user_id", SqlDbType.UniqueIdentifier).Value = UserId;
-                command.Parameters.Add("@date_time", SqlDbType.DateTime).Value = DateTime;
+                command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)ClientAddressId;
+                command.Parameters.Add("@client_id",SqlDbType.UniqueIdentifier).Value = (ClientId == Guid.Empty ? (object)DBNull.Value : (System.Guid)ClientId);
+                command.Parameters.Add("@client_address_type_rcd",SqlDbType.NVarChar).Value = (System.String)ClientAddressTypeRcd;
+                command.Parameters.Add("@address_line_one_name",SqlDbType.NVarChar).Value = (System.String)AddressLineOneName;
+                command.Parameters.Add("@address_line_two_name",SqlDbType.NVarChar).Value = (System.String)AddressLineTwoName;
+                command.Parameters.Add("@address_line_three_name",SqlDbType.NVarChar).Value = (System.String)AddressLineThreeName;
+                command.Parameters.Add("@city_name",SqlDbType.NVarChar).Value = (System.String)CityName;
+                command.Parameters.Add("@street_name",SqlDbType.NVarChar).Value = (System.String)StreetName;
+                command.Parameters.Add("@state_name",SqlDbType.NVarChar).Value = (System.String)StateName;
+                command.Parameters.Add("@district_name",SqlDbType.NVarChar).Value = (System.String)DistrictName;
+                command.Parameters.Add("@province_name",SqlDbType.NVarChar).Value = (System.String)ProvinceName;
+                command.Parameters.Add("@zip_code",SqlDbType.NVarChar).Value = (System.String)ZipCode;
+                command.Parameters.Add("@po_box",SqlDbType.NVarChar).Value = (System.String)PoBox;
+                command.Parameters.Add("@comment",SqlDbType.NVarChar).Value = (System.String)Comment;
+                command.Parameters.Add("@user_id",SqlDbType.UniqueIdentifier).Value = (System.Guid)UserId;
+                command.Parameters.Add("@date_time",SqlDbType.DateTime).Value = (System.DateTime)DateTime;
                 // execute query against client_address
                 // there is nothing returned from this action
                 // if the query fails in the preprocessor of sql server
@@ -867,7 +813,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
                 command.ExecuteNonQuery();
             }
         }
-
+        
         // delete a row in table based on primary key
         public static void Delete(System.Guid clientAddressId) {
             // create query against client_address
@@ -880,13 +826,13 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             // open standard connection
             // the connection is found in web.config
             // the connection is closed upon completion of the reader
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
+            using (var conn = new SqlConnection(ConfigurationManager.AppSettings["Conn"])) {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand(sql, conn)) {
+                using (var command = new SqlCommand(sql, conn)) {
                     // add primary key
                     // this primary key will be used together with the prepared ansi sql statement
-                    command.Parameters.Add("@client_address_id", SqlDbType.UniqueIdentifier).Value = clientAddressId;
+                    command.Parameters.Add("@client_address_id",SqlDbType.UniqueIdentifier).Value = clientAddressId;
                     // execute query against client_address
                     // there is nothing returned from this action
                     // if the query fails in the preprocessor of sql server

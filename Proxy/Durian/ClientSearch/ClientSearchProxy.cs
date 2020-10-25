@@ -2,16 +2,16 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:00:33 PM
+  Generated Date: 10/25/2020 9:23:09 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
-
-
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IClientSearchService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IClientSearchService")]
     public interface IClientSearchService {
         [System.ServiceModel.OperationContract(Action = "http://tempuri.org/IClientSearchService/GetClientWithFilter", ReplyAction = "http://tempuri.org/IClientSearchService/GetClientWithFilterResponse")]
         List<GetClientWithFilterContract> GetClientWithFilter(string lastName, string clientTypeRcd);
@@ -20,25 +20,25 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IClientSearchServiceChannel : IClientSearchService, System.ServiceModel.IClientChannel {
     }
-
+    
     public class ClientSearchService : System.ServiceModel.ClientBase<IClientSearchService>, IClientSearchService {
-
+        
         public ClientSearchService() {
         }
-
-        public ClientSearchService(string endpointConfigurationName) :
+        
+        public ClientSearchService(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
-
-        public ClientSearchService(string endpointConfigurationName, string remoteAddress) :
+        
+        public ClientSearchService(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
-
-        public ClientSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
+        
+        public ClientSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
-
-        public ClientSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+        
+        public ClientSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
 

@@ -1,18 +1,18 @@
 ﻿namespace SolutionNorSolutionPim.UserInterface {
 
     public partial class DefaultUserActivityGroupedByAddressDurian {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.DataGridView dataGridViewDefaultUserActivityGroupedByAddress;
-
+        
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+           if (disposing && (components != null)) {
+               components.Dispose();
+           }
+           base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewDefaultUserActivityGroupedByAddress = new System.Windows.Forms.DataGridView();

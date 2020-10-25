@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:31 PM
+  Generated Date: 10/25/2020 9:16:06 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -58,42 +58,42 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeProductFieldSetMappingContract contract = new CrudeProductFieldSetMappingServiceClient().FetchByProductFieldSetMappingId(productFieldSetMappingId);
             ViewBag.ProductFieldSetId =
-                new SelectList(new CrudeProductFieldSetServiceClient().FetchAll(),
+                new SelectList( new CrudeProductFieldSetServiceClient().FetchAll(),
                                 "ProductFieldSetId",
                                 "ProductFieldSetName",
                                 contract.ProductFieldSetId
                                 );
 
             ViewBag.ProductIdentifierRcd =
-                new SelectList(new CrudeProductIdentifierRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductIdentifierRefServiceClient().FetchAll(),
                                 "ProductIdentifierRcd",
                                 "ProductIdentifierName",
                                 contract.ProductIdentifierRcd
                                 );
 
             ViewBag.ProductAttributeRcd =
-                new SelectList(new CrudeProductAttributeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductAttributeRefServiceClient().FetchAll(),
                                 "ProductAttributeRcd",
                                 "ProductAttributeName",
                                 contract.ProductAttributeRcd
                                 );
 
             ViewBag.ProductInfoRcd =
-                new SelectList(new CrudeProductInfoRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductInfoRefServiceClient().FetchAll(),
                                 "ProductInfoRcd",
                                 "ProductInfoName",
                                 contract.ProductInfoRcd
                                 );
 
             ViewBag.ProductImageTypeRcd =
-                new SelectList(new CrudeProductImageTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductImageTypeRefServiceClient().FetchAll(),
                                 "ProductImageTypeRcd",
                                 "ProductImageTypeName",
                                 contract.ProductImageTypeRcd
                                 );
 
             ViewBag.ProductDocumentationTypeRcd =
-                new SelectList(new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
                                 "ProductDocumentationTypeRcd",
                                 "ProductDocumentationTypeName",
                                 contract.ProductDocumentationTypeRcd
@@ -130,60 +130,54 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductFieldSetMappingCreate(System.Guid? productFieldSetId, System.Guid? userId) {
-            CrudeProductFieldSetMappingContract contract = new CrudeProductFieldSetMappingContract();
-            if (productFieldSetId != null) {
-                contract.ProductFieldSetId = (System.Guid)productFieldSetId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductFieldSetMappingContract();
+            if (productFieldSetId != null) contract.ProductFieldSetId = (System.Guid) productFieldSetId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ProductFieldSetId =
-                new SelectList(new CrudeProductFieldSetServiceClient().FetchAll(),
+                new SelectList( new CrudeProductFieldSetServiceClient().FetchAll(),
                                 "ProductFieldSetId",
                                 "ProductFieldSetName",
                                 contract.ProductFieldSetId
                                 );
 
             ViewBag.ProductIdentifierRcd =
-                new SelectList(new CrudeProductIdentifierRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductIdentifierRefServiceClient().FetchAll(),
                                 "ProductIdentifierRcd",
                                 "ProductIdentifierName",
                                 contract.ProductIdentifierRcd
                                 );
 
             ViewBag.ProductAttributeRcd =
-                new SelectList(new CrudeProductAttributeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductAttributeRefServiceClient().FetchAll(),
                                 "ProductAttributeRcd",
                                 "ProductAttributeName",
                                 contract.ProductAttributeRcd
                                 );
 
             ViewBag.ProductInfoRcd =
-                new SelectList(new CrudeProductInfoRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductInfoRefServiceClient().FetchAll(),
                                 "ProductInfoRcd",
                                 "ProductInfoName",
                                 contract.ProductInfoRcd
                                 );
 
             ViewBag.ProductImageTypeRcd =
-                new SelectList(new CrudeProductImageTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductImageTypeRefServiceClient().FetchAll(),
                                 "ProductImageTypeRcd",
                                 "ProductImageTypeName",
                                 contract.ProductImageTypeRcd
                                 );
 
             ViewBag.ProductDocumentationTypeRcd =
-                new SelectList(new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
                                 "ProductDocumentationTypeRcd",
                                 "ProductDocumentationTypeName",
                                 contract.ProductDocumentationTypeRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

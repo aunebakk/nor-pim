@@ -1,5 +1,7 @@
-namespace SolutionNorSolutionPim.UserInterface {
-    partial class Login {
+namespace SolutionNorSolutionPim.UserInterface
+{
+    partial class Login
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,7 +11,7 @@ namespace SolutionNorSolutionPim.UserInterface {
         /// Clean up any resources being used.
         /// </summary>
         protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+            if ( disposing && ( components != null ) ) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -79,9 +81,9 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // textBoxLog
             // 
-            this.textBoxLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLog.Anchor = ( ( System.Windows.Forms.AnchorStyles ) ( ( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom )
+            | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.textBoxLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLog.Location = new System.Drawing.Point(12, 93);
             this.textBoxLog.Multiline = true;

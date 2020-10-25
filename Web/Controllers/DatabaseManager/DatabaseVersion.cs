@@ -10,7 +10,11 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
         // convert database version to dotNetVersion
         // Source: https://stackoverflow.com/questions/7568147/compare-version-numbers-without-using-split-function 
-        private Version DotNetVersion => new Version(major: MajorNumber, minor: MinorNumber, build: SequenceNumber);
+        Version DotNetVersion {
+            get {
+                return new Version(major: MajorNumber, minor: MinorNumber, build: SequenceNumber);
+            }
+        }
 
         public static DatabaseVersion FetchVersion(
             string connectionManager
@@ -19,30 +23,34 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         }
 
         // return new object with sequence number increased
-        internal DatabaseVersion SequenceIncrease => new DatabaseVersion { MajorNumber = MajorNumber, MinorNumber = MinorNumber, SequenceNumber = SequenceNumber++, DateTime = DateTime };
+        internal DatabaseVersion SequenceIncrease {
+            get {
+                return new DatabaseVersion { MajorNumber = this.MajorNumber, MinorNumber = this.MinorNumber, SequenceNumber = this.SequenceNumber++, DateTime = this.DateTime };
+            }
+        }
 
-        public static bool operator ==(DatabaseVersion obj1, DatabaseVersion obj2) {
+        public static bool operator == (DatabaseVersion obj1, DatabaseVersion obj2) {
             return (obj1.DotNetVersion == obj2.DotNetVersion);
         }
 
         // this is second one '!='
-        public static bool operator !=(DatabaseVersion obj1, DatabaseVersion obj2) {
+        public static bool operator != (DatabaseVersion obj1, DatabaseVersion obj2) {
             return !(obj1.DotNetVersion == obj2.DotNetVersion);
         }
 
-        public static bool operator <(DatabaseVersion obj1, DatabaseVersion obj2) {
+        public static bool operator < (DatabaseVersion obj1, DatabaseVersion obj2) {
             return obj1.DotNetVersion < obj2.DotNetVersion;
         }
 
-        public static bool operator >(DatabaseVersion obj1, DatabaseVersion obj2) {
+        public static bool operator > (DatabaseVersion obj1, DatabaseVersion obj2) {
             return obj1.DotNetVersion > obj2.DotNetVersion;
         }
 
-        public static bool operator >=(DatabaseVersion obj1, DatabaseVersion obj2) {
+        public static bool operator >= (DatabaseVersion obj1, DatabaseVersion obj2) {
             return obj1.DotNetVersion >= obj2.DotNetVersion;
         }
 
-        public static bool operator <=(DatabaseVersion obj1, DatabaseVersion obj2) {
+        public static bool operator <= (DatabaseVersion obj1, DatabaseVersion obj2) {
             return obj1.DotNetVersion <= obj2.DotNetVersion;
         }
 
@@ -85,7 +93,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     }
 
     public partial class DatabaseManager {
-        private void InitVersioning(
+        void InitVersioning(
             int majorNumber,
             int minorNumber
             ) {
@@ -93,7 +101,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = defaultVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2018, 01, 21) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "Versioning",
                 Description = "Database Versioning",
                 #region script ( default_version )
@@ -120,7 +128,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
             scripts.Add(lastScript = new DatabaseScript {
                 DatabaseVersion = new DatabaseVersion { MajorNumber = majorNumber, MinorNumber = minorNumber, SequenceNumber = sequence++, DateTime = new DateTime(2016, 01, 01) },
-                ScriptNumber = scriptNumber++,
+                ScriptNumber = this.scriptNumber++,
                 Name = "Default",
                 Description = "Part of Default sql2x Tables",
                 #region script ( default_user, default_state_ref )

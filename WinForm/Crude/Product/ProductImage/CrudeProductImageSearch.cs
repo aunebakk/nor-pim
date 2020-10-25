@@ -2,13 +2,13 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:20 PM
+  Generated Date: 10/25/2020 9:15:10 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
@@ -18,23 +18,23 @@ namespace SolutionNorSolutionPim.UserInterface {
 
     // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
     public partial class CrudeProductImageSearch : Form {
-
+        
         // the following fields holds initial state for foreign key's
         private string _productImageTypeRcd;
-
+        
         private System.Guid _productId;
-
+        
         private System.Guid _userId;
-
+        
         // Constructs the form with a Grid and Search button which is default on Enter
         //  and a Close button which works with the esc key
         public CrudeProductImageSearch() {
             InitializeComponent();
             InitializeGridCrudeProductImage();
-            AcceptButton = buttonCrudeProductImageSearch;
-            CancelButton = buttonClose;
+            this.AcceptButton = buttonCrudeProductImageSearch;
+            this.CancelButton = buttonClose;
         }
-
+        
         // shows the form with initial values for comboboxes and pickers
         //  an search is done with these initial values
         public void Show(string productImageTypeRcd, System.Guid productId, System.Guid userId) {
@@ -46,114 +46,120 @@ namespace SolutionNorSolutionPim.UserInterface {
                 RefreshCrudeProductImage();
 
                 base.Show();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void buttonCrudeProductImageEdit_Click(object sender, EventArgs e) {
             try {
-                CrudeProductImageEdit editForm = new CrudeProductImageEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeProductImage.CurrentRow.Cells["ProductImageId"].Value);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeProductImageEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeProductImage.CurrentRow.Cells["ProductImageId"].Value);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows a form for adding more rows
         private void buttonCrudeProductImageAdd_Click(object sender, EventArgs e) {
             try {
-                CrudeProductImageEdit editForm = new CrudeProductImageEdit();
-                editForm.MdiParent = MdiParent;
+                var editForm = new CrudeProductImageEdit();
+                editForm.MdiParent = this.MdiParent;
                 editForm.ShowAsAddByRules(_userId);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // shows the detailed version of the selected grid row, in edit modus
         private void dataGridViewCrudeProductImage_DoubleClick(object sender, EventArgs e) {
             try {
-                CrudeProductImageEdit editForm = new CrudeProductImageEdit();
-                editForm.MdiParent = MdiParent;
-                editForm.ShowAsEdit((System.Guid)dataGridViewCrudeProductImage.CurrentRow.Cells["ProductImageId"].Value);
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+                var editForm = new CrudeProductImageEdit();
+                editForm.MdiParent = this.MdiParent;
+                editForm.ShowAsEdit((System.Guid) dataGridViewCrudeProductImage.CurrentRow.Cells["ProductImageId"].Value);
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // does a search based on the filter and populates the grid
         private void buttonCrudeProductImageSearch_Click(object sender, EventArgs e) {
             try {
                 RefreshCrudeProductImage();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
-
+        
         // closes the form
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
-
+        
         // refresh the grid
         public void RefreshCrudeProductImage() {
-            CrudeProductImageServiceClient productImage = new CrudeProductImageServiceClient();
+            var productImage = new CrudeProductImageServiceClient();
 
             try {
-                BindingSource bindingSource = new BindingSource();
+                var bindingSource = new BindingSource();
                 bindingSource.DataSource = productImage.FetchWithFilter(
                              Guid.Empty
-                            , Guid.Empty
-                            , productImageTypeRefCombo.Text
-                            , textBoxImageFileName.Text
-                            , null
-                            , Guid.Empty
-                            , DateTime.MinValue
+                            ,Guid.Empty
+                            ,productImageTypeRefCombo.Text
+                            ,textBoxImageFileName.Text
+                            ,null
+                            ,Guid.Empty
+                            ,DateTime.MinValue
                             );
                 dataGridViewCrudeProductImage.AutoGenerateColumns = false;
                 dataGridViewCrudeProductImage.DataSource = bindingSource;
                 dataGridViewCrudeProductImage.AutoResizeColumns();
                 dataGridViewCrudeProductImage.Refresh();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             } finally {
                 productImage.Close();
             }
         }
-
+        
         // initialize the grid, hiding fields like guids and images
         private void InitializeGridCrudeProductImage() {
             try {
                 dataGridViewCrudeProductImage.Columns.Clear();
                 dataGridViewCrudeProductImage.AutoGenerateColumns = false;
-                dataGridViewCrudeProductImage.Columns.Add("ImageFileName", "Image File Name");
+                dataGridViewCrudeProductImage.Columns.Add("ImageFileName","Image File Name");
                 dataGridViewCrudeProductImage.Columns["ImageFileName"].DataPropertyName = "ImageFileName";
-                dataGridViewCrudeProductImage.Columns.Add("ProductImageTypeRcd", "Product Image Type");
+                dataGridViewCrudeProductImage.Columns.Add("ProductImageTypeRcd","Product Image Type");
                 dataGridViewCrudeProductImage.Columns["ProductImageTypeRcd"].DataPropertyName = "ProductImageTypeRcd";
-                dataGridViewCrudeProductImage.Columns.Add("Image", "Image");
+                dataGridViewCrudeProductImage.Columns.Add("Image","Image");
                 dataGridViewCrudeProductImage.Columns["Image"].DataPropertyName = "Image";
                 dataGridViewCrudeProductImage.Columns["Image"].Visible = false;
-                dataGridViewCrudeProductImage.Columns.Add("DateTime", "Date Time");
+                dataGridViewCrudeProductImage.Columns.Add("DateTime","Date Time");
                 dataGridViewCrudeProductImage.Columns["DateTime"].DataPropertyName = "DateTime";
-                dataGridViewCrudeProductImage.Columns.Add("ProductImageId", "Product Image");
+                dataGridViewCrudeProductImage.Columns.Add("ProductImageId","Product Image");
                 dataGridViewCrudeProductImage.Columns["ProductImageId"].DataPropertyName = "ProductImageId";
                 dataGridViewCrudeProductImage.Columns["ProductImageId"].Visible = false;
-                dataGridViewCrudeProductImage.Columns.Add("ProductId", "Product");
+                dataGridViewCrudeProductImage.Columns.Add("ProductId","Product");
                 dataGridViewCrudeProductImage.Columns["ProductId"].DataPropertyName = "ProductId";
                 dataGridViewCrudeProductImage.Columns["ProductId"].Visible = false;
                 dataGridViewCrudeProductImage.Columns.Add("ExtensionData", "");
@@ -161,10 +167,11 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 dataGridViewCrudeProductImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewCrudeProductImage.AutoResizeColumns();
-            } catch (Exception ex) {
-                if (ex == null) { } else {
-                    System.Diagnostics.Debugger.Break();
-                }
+            } catch ( Exception ex ) {
+                if ( ex == null )
+                    { }
+                else
+                    System.Diagnostics.Debugger.Break ();
             }
         }
     }

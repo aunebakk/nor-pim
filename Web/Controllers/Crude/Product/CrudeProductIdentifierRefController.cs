@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:54:40 PM
+  Generated Date: 10/25/2020 9:16:12 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -31,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         // fetch detail page for editing
         [HttpGet]
-        public ActionResult CrudeProductIdentifierRefDetails(string productIdentifierRcd) {
+        public ActionResult CrudeProductIdentifierRefDetails(System.String productIdentifierRcd) {
 
             return View(
                 "~/Views/Crude/Product/CrudeProductIdentifierRef/CrudeProductIdentifierRefDetails.cshtml",
@@ -42,7 +42,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // edit details page
         [HttpGet]
         public ActionResult CrudeProductIdentifierRefEdit(
-            string productIdentifierRcd
+            System.String productIdentifierRcd
             ) {
 
             CrudeProductIdentifierRefContract contract = new CrudeProductIdentifierRefServiceClient().FetchByProductIdentifierRcd(productIdentifierRcd);
@@ -76,14 +76,11 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeProductIdentifierRefCreate(System.Guid? userId) {
-            CrudeProductIdentifierRefContract contract = new CrudeProductIdentifierRefContract();
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeProductIdentifierRefContract();
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             contract.DateTime = DateTime.UtcNow;
 
@@ -114,7 +111,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // delete entity page
         [HttpGet]
         public ActionResult CrudeProductIdentifierRefDelete(
-            string productIdentifierRcd
+            System.String productIdentifierRcd
             ) {
             new CrudeProductIdentifierRefServiceClient().Delete(productIdentifierRcd);
 

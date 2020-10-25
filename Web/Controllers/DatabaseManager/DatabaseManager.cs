@@ -82,11 +82,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 }
 
                 int minorNumber = 0;
+                int sequence = 0;
                 InitDatabaseClean(majorNumber: 0, minorNumber: minorNumber++);
                 InitVersioning(majorNumber: 0, minorNumber: minorNumber++);
                 InitJSONClient(majorNumber: 0, minorNumber: minorNumber++);
                 InitSystemReferenceErrorAndIssue(majorNumber: 0, minorNumber: minorNumber++);
-                InitDefaultUserActivity(majorNumber: 0, minorNumber: minorNumber++, sequence: out int sequence);
+                InitDefaultUserActivity(majorNumber: 0, minorNumber: minorNumber++, sequence: out sequence);
                 InitDefaultSystemSetting(majorNumber: 0, minorNumber: minorNumber++, sequence: ref sequence);
                 InitDefaultChangeLog(majorNumber: 0, minorNumber: minorNumber++, sequence: ref sequence);
                 InitDefaultRule(majorNumber: 0, minorNumber: minorNumber++, sequence: ref sequence);
@@ -205,8 +206,8 @@ select 'Created database: " + databaseName + @"'
                                 connectionStringLocal: connectionStringLocal,
                                 sql: sql
                             );
-
-                int.TryParse(result[0], out int dbid);
+                int dbid;
+                int.TryParse(result[0], out dbid);
 
                 return dbid > 0;
             } catch (Exception ex) {

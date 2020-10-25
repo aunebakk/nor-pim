@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 5:53:41 PM
+  Generated Date: 10/25/2020 9:15:29 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
@@ -58,14 +58,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             CrudeClientLinkContract contract = new CrudeClientLinkServiceClient().FetchByClientLinkId(clientLinkId);
             ViewBag.ClientId =
-                new SelectList(new CrudeClientServiceClient().FetchAll(),
+                new SelectList( new CrudeClientServiceClient().FetchAll(),
                                 "ClientId",
                                 "FirstName",
                                 contract.ClientId
                                 );
 
             ViewBag.ClientLinkTypeRcd =
-                new SelectList(new CrudeClientLinkTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeClientLinkTypeRefServiceClient().FetchAll(),
                                 "ClientLinkTypeRcd",
                                 "ClientLinkTypeName",
                                 contract.ClientLinkTypeRcd
@@ -102,32 +102,26 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
         // add new entity page
         [HttpGet]
         public ActionResult CrudeClientLinkCreate(System.Guid? clientId, System.Guid? userId) {
-            CrudeClientLinkContract contract = new CrudeClientLinkContract();
-            if (clientId != null) {
-                contract.ClientId = (System.Guid)clientId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeClientLinkContract();
+            if (clientId != null) contract.ClientId = (System.Guid) clientId;
+            if (userId != null) contract.UserId = (System.Guid) userId;
 
             ViewBag.ClientId =
-                new SelectList(new CrudeClientServiceClient().FetchAll(),
+                new SelectList( new CrudeClientServiceClient().FetchAll(),
                                 "ClientId",
                                 "FirstName",
                                 contract.ClientId
                                 );
 
             ViewBag.ClientLinkTypeRcd =
-                new SelectList(new CrudeClientLinkTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeClientLinkTypeRefServiceClient().FetchAll(),
                                 "ClientLinkTypeRcd",
                                 "ClientLinkTypeName",
                                 contract.ClientLinkTypeRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;

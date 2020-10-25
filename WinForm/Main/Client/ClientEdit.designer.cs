@@ -1,61 +1,61 @@
 namespace SolutionNorSolutionPim.UserInterface {
-
-
+    
+    
     public partial class ClientEdit {
-
+        
         private System.ComponentModel.IContainer components = null;
-
+        
         private System.Windows.Forms.Button buttonClose;
-
+        
         private System.Windows.Forms.Button buttonSave;
-
+        
         private ClientTypeRefCombo clientTypeRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientTypeRefCombo;
-
+        
         private ClientNationalityRefCombo clientNationalityRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientNationalityRefCombo;
-
+        
         private ClientGenderRefCombo clientGenderRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientGenderRefCombo;
-
+        
         private ClientTitleRefCombo clientTitleRefCombo;
-
+        
         private System.Windows.Forms.Label labelClientTitleRefCombo;
-
+        
         private System.Windows.Forms.TextBox textBoxFirstName;
-
+        
         private System.Windows.Forms.Label labelFirstName;
-
+        
         private System.Windows.Forms.TextBox textBoxMiddleName;
-
+        
         private System.Windows.Forms.Label labelMiddleName;
-
+        
         private System.Windows.Forms.TextBox textBoxLastName;
-
+        
         private System.Windows.Forms.Label labelLastName;
-
+        
         private System.Windows.Forms.PictureBox pictureBoxImage;
-
+        
         private System.Windows.Forms.Label labelImage;
-
+        
         private System.Windows.Forms.TextBox textBoxImageBlobFilename;
-
+        
         private System.Windows.Forms.Label labelImageBlobFilename;
-
+        
         private System.Windows.Forms.TextBox dateTimePickerDateTime;
-
+        
         private System.Windows.Forms.Label labelDateTime;
-
+        
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
         }
-
+        
         private void InitializeComponent() {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -119,7 +119,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientTypeRefCombo
             // 
-            this.clientTypeRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientTypeRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientTypeRefCombo.Location = new System.Drawing.Point(855, 9);
             this.clientTypeRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -139,7 +139,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientNationalityRefCombo
             // 
-            this.clientNationalityRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientNationalityRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientNationalityRefCombo.Location = new System.Drawing.Point(855, 44);
             this.clientNationalityRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -159,7 +159,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientGenderRefCombo
             // 
-            this.clientGenderRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientGenderRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientGenderRefCombo.Location = new System.Drawing.Point(855, 80);
             this.clientGenderRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -179,7 +179,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // clientTitleRefCombo
             // 
-            this.clientTitleRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.clientTitleRefCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientTitleRefCombo.Location = new System.Drawing.Point(855, 115);
             this.clientTitleRefCombo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -253,8 +253,8 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // pictureBoxImage
             // 
-            this.pictureBoxImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pictureBoxImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxImage.Location = new System.Drawing.Point(210, 187);
             this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -275,7 +275,7 @@ namespace SolutionNorSolutionPim.UserInterface {
             // 
             // textBoxImageBlobFilename
             // 
-            this.textBoxImageBlobFilename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.textBoxImageBlobFilename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxImageBlobFilename.Location = new System.Drawing.Point(209, 151);
             this.textBoxImageBlobFilename.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:05:42 PM
+  Generated Date: 10/25/2020 9:26:25 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateByServiceTableCrudGenerator.ContractUsing
 */
@@ -12,28 +12,27 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [DataContract()]
     public partial class ProductReferenceImageTypeContract {
-
+        
         [DataMember()]
         public List<CrudeProductInfoRefContract> ProductInfoRef { get; set; }
-
+        
         [DataMember()]
         public CrudeProductInfoRefContract ProductInfoRefNew { get; set; }
-
+        
         [DataMember()]
         public int ChecksumAfterGet { get; set; }
-
+        
         // Gets checksum from parent and children
         public int Checksum() {
             // check parent
             int hash = new {
             }.GetHashCode();
 
-            foreach (CrudeProductInfoRefContract productInfoRef in ProductInfoRef) {
-                hash += new {
-                    productInfoRef.ProductInfoRcd,
-                    productInfoRef.ProductInfoName
-                }.GetHashCode();
-            }
+              foreach (CrudeProductInfoRefContract productInfoRef in ProductInfoRef)
+                  hash += new {
+                      productInfoRef.ProductInfoRcd,
+                      productInfoRef.ProductInfoName                  
+                  }.GetHashCode();
 
             return hash;
         }

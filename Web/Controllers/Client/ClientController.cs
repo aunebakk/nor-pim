@@ -1,6 +1,6 @@
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
 namespace SolutionNorSolutionPim.mvc.Controllers {
     public class ClientController : Controller {
@@ -74,18 +74,13 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
 
         [HttpGet]
         public ActionResult ClientCreate(System.Guid? addressId, System.Guid? defaultUserId, System.Guid? userId) {
-            CrudeClientContract contract = new CrudeClientContract();
-            if (addressId != null) {
+            var contract = new CrudeClientContract();
+            if (addressId != null)
                 contract.ClientAddressId = (System.Guid)addressId;
-            }
-
-            if (defaultUserId != null) {
+            if (defaultUserId != null)
                 contract.UserId = (System.Guid)defaultUserId;
-            }
-
-            if (userId != null) {
+            if (userId != null)
                 contract.UserId = (System.Guid)userId;
-            }
 
             ViewBag.ClientTypeRcd =
                 new SelectList(new CrudeClientTypeRefServiceClient().FetchAll(),
@@ -122,9 +117,8 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
                                 contract.ClientTypeRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;
@@ -161,11 +155,10 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
             CrudeClientContract clientContract = new CrudeClientServiceClient().FetchByClientId(clientId);
 
             CrudeClientAddressContract addressContract;
-            if (clientContract.ClientAddressId != Guid.Empty) {
+            if (clientContract.ClientAddressId != Guid.Empty)
                 addressContract = new CrudeClientAddressServiceClient().FetchByClientAddressId(clientContract.ClientAddressId);
-            } else {
+            else
                 addressContract = new CrudeClientAddressContract();
-            }
 
             ViewBag.ClientAddressTypeRcd =
                 new SelectList(new CrudeClientAddressTypeRefServiceClient().FetchAll(),

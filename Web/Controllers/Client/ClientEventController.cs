@@ -1,9 +1,11 @@
-using SolutionNorSolutionPim.BusinessLogicLayer;
 using System;
 using System.Web.Mvc;
+using SolutionNorSolutionPim.BusinessLogicLayer;
 
-namespace SolutionNorSolutionPim.mvc.Controllers {
-    public class ClientEventController : Controller {
+namespace SolutionNorSolutionPim.mvc.Controllers
+{
+    public class ClientEventController : Controller
+    {
 
         [HttpGet]
         public ActionResult ClientEventByClientIndex(System.Guid clientId) {
@@ -45,7 +47,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ClientEventEdit([Bind()] CrudeClientEventContract contract) {
-            if (ModelState.IsValid) {
+            if ( ModelState.IsValid ) {
                 new CrudeClientEventServiceClient().Update(contract);
 
                 return RedirectToAction("ClientEventByClientIndex", new { clientId = contract.ClientId });
@@ -59,14 +61,11 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
 
         [HttpGet]
         public ActionResult ClientEventCreate(System.Guid? clientId, System.Guid? userId) {
-            CrudeClientEventContract contract = new CrudeClientEventContract();
-            if (clientId != null) {
-                contract.ClientId = (System.Guid)clientId;
-            }
-
-            if (userId != null) {
-                contract.UserId = (System.Guid)userId;
-            }
+            var contract = new CrudeClientEventContract();
+            if ( clientId != null )
+                contract.ClientId = ( System.Guid ) clientId;
+            if ( userId != null )
+                contract.UserId = ( System.Guid ) userId;
 
             ViewBag.ClientEventTypeRcd =
                 new SelectList(new CrudeClientEventTypeRefServiceClient().FetchAll(),
@@ -75,9 +74,8 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
                                 contract.ClientEventTypeRcd
                                 );
 
-            if (userId == null) {
+            if ( userId == null )
                 contract.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(contract.UserId).DefaultUserName;
@@ -93,7 +91,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ClientEventCreate([Bind()] CrudeClientEventContract contract) {
-            if (ModelState.IsValid) {
+            if ( ModelState.IsValid ) {
 
                 new CrudeClientEventServiceClient().Insert(contract);
 

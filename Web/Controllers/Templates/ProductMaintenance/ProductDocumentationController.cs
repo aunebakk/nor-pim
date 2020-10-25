@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/16/2020 6:04:25 PM
+  Generated Date: 10/25/2020 9:25:30 AM
   From Machine: DESKTOP-742U247
   Template: sql2x.TemplateWithDurianGenerator.ControllerBeginning
 */
@@ -30,20 +30,20 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             ViewBag.ProductDocumentationId = productDocumentationId;
 
-            ProductDocumentationContract productDocumentationContract = new ProductDocumentationContract {
-                ProductDocumentation =
-                new CrudeProductDocumentationServiceClient().FetchByProductDocumentationId(productDocumentationId)
-            };
+            var productDocumentationContract = new ProductDocumentationContract();
+
+            productDocumentationContract.ProductDocumentation =
+                new CrudeProductDocumentationServiceClient().FetchByProductDocumentationId(productDocumentationId);
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productDocumentationContract.ProductDocumentation.ProductId
                                 );
 
             ViewBag.ProductDocumentationTypeRcd =
-                new SelectList(new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
                                 "ProductDocumentationTypeRcd",
                                 "ProductDocumentationTypeName",
                                 productDocumentationContract.ProductDocumentation.ProductDocumentationTypeRcd
@@ -60,7 +60,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductDocumentationEdit([Bind()] ProductDocumentationContract productDocumentationContract, System.Guid productId, string productDocumentationTypeRcd) {
+        public ActionResult ProductDocumentationEdit([Bind()] ProductDocumentationContract productDocumentationContract, System.Guid productId,System.String productDocumentationTypeRcd) {
             if (ModelState.IsValid) {
 
                 productDocumentationContract.ProductDocumentation.ProductId = productId;
@@ -69,7 +69,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
                 new CrudeProductDocumentationServiceClient().Update(productDocumentationContract.ProductDocumentation);
 
-                return RedirectToAction("ProductDocumentationIndex", new { productId = productDocumentationContract.ProductDocumentation.ProductId });
+                return RedirectToAction("ProductDocumentationIndex", new { productId = productDocumentationContract.ProductDocumentation.ProductId} );
             }
 
             return View(
@@ -80,34 +80,27 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpGet]
         public ActionResult ProductDocumentationCreate(System.Guid? productId, System.Guid? userId) {
-            ProductDocumentationContract productDocumentationContract = new ProductDocumentationContract {
-                ProductDocumentation = new CrudeProductDocumentationContract()
-            };
-            if (productId != null) {
-                productDocumentationContract.ProductDocumentation.ProductId = (System.Guid)productId;
-            }
-
-            if (userId != null) {
-                productDocumentationContract.ProductDocumentation.UserId = (System.Guid)userId;
-            }
+            var productDocumentationContract = new ProductDocumentationContract();
+            productDocumentationContract.ProductDocumentation = new CrudeProductDocumentationContract();
+            if (productId != null) productDocumentationContract.ProductDocumentation.ProductId = (System.Guid) productId;
+            if (userId != null) productDocumentationContract.ProductDocumentation.UserId = (System.Guid) userId;
 
             ViewBag.ProductId =
-                new SelectList(new CrudeProductServiceClient().FetchAll(),
+                new SelectList( new CrudeProductServiceClient().FetchAll(),
                                 "ProductId",
                                 "ProductName",
                                 productDocumentationContract.ProductDocumentation.ProductId
                                 );
 
             ViewBag.ProductDocumentationTypeRcd =
-                new SelectList(new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
+                new SelectList( new CrudeProductDocumentationTypeRefServiceClient().FetchAll(),
                                 "ProductDocumentationTypeRcd",
                                 "ProductDocumentationTypeName",
                                 productDocumentationContract.ProductDocumentation.ProductDocumentationTypeRcd
                                 );
 
-            if (userId == null) {
+            if (userId == null)
                 productDocumentationContract.ProductDocumentation.UserId = new System.Guid("{FFFFFFFF-5555-5555-5555-FFFFFFFFFFFF}");
-            }
 
             ViewBag.DefaultUserName =
                 new CrudeDefaultUserServiceClient().FetchByDefaultUserId(productDocumentationContract.ProductDocumentation.UserId).DefaultUserName;
@@ -123,14 +116,14 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductDocumentationCreate([Bind()] ProductDocumentationContract productDocumentationContract, System.Guid productId, string productDocumentationTypeRcd) {
+        public ActionResult ProductDocumentationCreate([Bind()] ProductDocumentationContract productDocumentationContract, System.Guid productId,System.String productDocumentationTypeRcd) {
             if (ModelState.IsValid) {
 
                 productDocumentationContract.ProductDocumentation.ProductId = productId;
                 productDocumentationContract.ProductDocumentation.ProductDocumentationTypeRcd = productDocumentationTypeRcd;
                 new CrudeProductDocumentationServiceClient().Insert(productDocumentationContract.ProductDocumentation);
 
-                return RedirectToAction("ProductDocumentationIndex", new { productId = productDocumentationContract.ProductDocumentation.ProductId });
+                return RedirectToAction("ProductDocumentationIndex", new { productId = productDocumentationContract.ProductDocumentation.ProductId} );
             }
 
             return View(

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CC5CF26-9A3A-4BB3-A844-CDA9900196FE}</ProjectGuid>
+    <ProjectGuid>{5DFF40A1-C448-4DA5-9636-CDE9F68602FE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinForm</RootNamespace>
@@ -1563,18 +1563,6 @@
     <Compile Include="Durian\DefaultSearch\GetDefaultChangeLogSearch.designer.cs">
       <DependentUpon>GetDefaultChangeLogSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderDurian.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderDurian.designer.cs">
-      <DependentUpon>GetFinancialOrderDurian.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Durian\FinancialOrderSearch\GetFinancialOrderSearch.designer.cs">
-      <DependentUpon>GetFinancialOrderSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterDurian.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2050,11 +2038,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{5d96244b-4ecb-4308-bfdb-50439b775519}</Project>
+      <Project>{dbf93cbd-1423-435f-8528-100e848c94d1}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{823fd7fa-a416-443e-bc00-5ce8f573a97e}</Project>
+      <Project>{9e8b1640-52a0-4b0e-bcab-ed98e7ecc277}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
