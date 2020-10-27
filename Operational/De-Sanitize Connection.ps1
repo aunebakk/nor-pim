@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/25/2020 9:32:09 AM
+# Generated Date: 10/27/2020 8:43:28 PM
 # From Machine: DESKTOP-742U247
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -27,7 +27,7 @@ param(
     [string]$azureSQLServerName = '',
     [string]$azureSQLServerPassword = '',
     [string]$azureSQLUserName = '',
-    [string]$connectionStringSQLServerLocal = '',
+    [string]$connectionStringSQLServer = '',
 
     [string]$azureClientId = '',
     [string]$azureClientSecret = '',
@@ -58,14 +58,18 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 
     # replace ado data sources ( not using REGEX )
-    [string] $find = 'Data Source=(localdb)\MSSQLLocalDB;";'
-    [string] $replace = $connectionStringSQLServerLocal + '";'
-    $fileContent = $fileContent | ForEach-Object { $_.Replace($find, $replace) }
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+        [string] $find = 'Data Source=(localdb)\MSSQLLocalDB;";'
+        [string] $replace = $connectionStringSQLServer + '";'
+        $fileContent = $fileContent | ForEach-Object { $_.Replace($find, $replace) }
+    }
 
     # replace azure storage data sources
-    [string] $find = 'DefaultEndpointsProtocol.+'
-    [string] $replace = $connectionStringAzureTable + '";'
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('connectionStringAzureTable')) {
+        [string] $find = 'DefaultEndpointsProtocol.+'
+        [string] $replace = $connectionStringAzureTable + '";'
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # show filename if changed
     if ($fileContentOriginal -ne $fileContent) {
@@ -96,9 +100,11 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace azure storage data sources
-    [string] $find = 'DefaultEndpointsProtocol.+'
-    [string] $replace = $connectionStringAzureTable
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('connectionStringAzureTable')) {
+        [string] $find = 'DefaultEndpointsProtocol.+'
+        [string] $replace = $connectionStringAzureTable
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # replace sql2x path with git clone path
     $fileContent = $fileContent | ForEach-Object { $_ -Replace $sql2xParent, $parent } 
@@ -117,29 +123,39 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace ado data sources
-    [string] $find = 'Data Source.+' 
-    [string] $replace = $connectionStringSQLServerLocal.Replace('\', '\\') + '",'
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+        [string] $find = 'Data Source.+' 
+        [string] $replace = $connectionStringSQLServer.Replace('\', '\\') + '",'
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # replace azure storage data sources
-    [string] $find = 'DefaultEndpointsProtocol.+'
-    [string] $replace = $connectionStringAzureTable + '",'
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('connectionStringAzureTable')) {
+        [string] $find = 'DefaultEndpointsProtocol.+'
+        [string] $replace = $connectionStringAzureTable + '",'
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # deploylink ( has no comma after parameter )
-    [string] $find = '"deploylink": "Data Source.+' 
-    [string] $replace = '"deploylink": "' + $connectionStringSQLServerLocal.Replace('\', '\\') + '"'
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+        [string] $find = '"deploylink": "Data Source.+' 
+        [string] $replace = '"deploylink": "' + $connectionStringSQLServer.Replace('\', '\\') + '"'
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # you
-    [string] $find = 'developerName'
-    [string] $replace = $developerName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('developerName')) {
+        [string] $find = 'developerName'
+        [string] $replace = $developerName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # password
-    [string] $find = 'passwordPersonalStyleLargeEnding'
-    [string] $replace = $passwordPersonalStyleLargeEnding
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('passwordPersonalStyleLargeEnding')) {
+        [string] $find = 'passwordPersonalStyleLargeEnding'
+        [string] $replace = $passwordPersonalStyleLargeEnding
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # show filename if changed
     if ($fileContentOriginal -ne $fileContent) {
@@ -155,24 +171,25 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace ado data sources ( 'Data Source="' +  )
-    [string] $find = 'Data Source.+' 
-    [string] $replace = $connectionStringSQLServerLocal + '"/>'
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+        [string] $find = 'Data Source.+' 
+        [string] $replace = $connectionStringSQLServer + '"/>'
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # replace azure storage data sources
-    [string] $find = 'DefaultEndpointsProtocol.+'
-    [string] $replace = 'DefaultEndpointsProtocol="' + $connectionStringAzureTable + '"/>' 
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('connectionStringAzureTable')) {
+        [string] $find = 'DefaultEndpointsProtocol.+'
+        [string] $replace = 'DefaultEndpointsProtocol="' + $connectionStringAzureTable + '"/>' 
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # replace sql server connection strings
-    [string] $find = 'connectionString=.+'
-    [string] $replace = 'connectionString="' + $connectionStringSQLServerLocal + '"/>'
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
-
-    # replace endpoints
-    [string] $find = 'NorSolutionPimBusiness\.azurewebsites\.net'
-    [string] $replace = 'localhost:64804'
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+        [string] $find = 'connectionString=.+'
+        [string] $replace = 'connectionString="' + $connectionStringSQLServer + '"/>'
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # show filename if changed
     if ($fileContentOriginal -ne $fileContent) {
@@ -188,43 +205,61 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace client secrets
-    [string] $find = 'string clientId = .+(?-i)' 
-    [string] $replace = 'string clientId = ' + ('"' + $azureClientId + '";')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientId')) {
+        [string] $find = 'string clientId = .+(?-i)' 
+        [string] $replace = 'string clientId = ' + ('"' + $azureClientId + '";')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
-    [string] $find = 'string secret = .+' 
-    [string] $replace = 'string secret = ' + ('"' + $azureClientSecret + '";')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientSecret')) {
+        [string] $find = 'string secret = .+' 
+        [string] $replace = 'string secret = ' + ('"' + $azureClientSecret + '";')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
-    [string] $find = 'string tenantId = .+' 
-    [string] $replace = 'string tenantId = ' + ('"' + $azureClientTenantId + '";')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientTenantId')) {
+        [string] $find = 'string tenantId = .+' 
+        [string] $replace = 'string tenantId = ' + ('"' + $azureClientTenantId + '";')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
-    [string] $find = 'string subscriptionId = .+' 
-    [string] $replace = 'string subscriptionId = ' + ('"' + $azureClientSubscriptionId + '";')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientSubscriptionId')) {
+        [string] $find = 'string subscriptionId = .+' 
+        [string] $replace = 'string subscriptionId = ' + ('"' + $azureClientSubscriptionId + '";')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # replace client secrets in javascript cshtml files?
-    [string] $find = 'var clientId = .+' 
-    [string] $replace = 'var clientId = ' + ('"' + $azureClientId + '"')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientId')) {
+        [string] $find = 'var clientId = .+' 
+        [string] $replace = 'var clientId = ' + ('"' + $azureClientId + '"')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
-    [string] $find = 'var secret = .+' 
-    [string] $replace = 'var secret = ' + ('"' + $azureClientSecret + '"')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientSecret')) {
+        [string] $find = 'var secret = .+' 
+        [string] $replace = 'var secret = ' + ('"' + $azureClientSecret + '"')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
-    [string] $find = 'var tenantId = .+' 
-    [string] $replace = 'var tenantId = ' + ('"' + $azureClientTenantId + '"')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientTenantId')) {
+        [string] $find = 'var tenantId = .+' 
+        [string] $replace = 'var tenantId = ' + ('"' + $azureClientTenantId + '"')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
-    [string] $find = 'var subscriptionId = .+' 
-    [string] $replace = 'var subscriptionId = ' + ('"' + $azureClientSubscriptionId + '"')
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureClientSubscriptionId')) {
+        [string] $find = 'var subscriptionId = .+' 
+        [string] $replace = 'var subscriptionId = ' + ('"' + $azureClientSubscriptionId + '"')
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # server name
-    [string] $find = 'azureSQLServerName'
-    [string] $replace = $azureSQLServerName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    if ($PSBoundParameters.ContainsKey('azureSQLServerName')) {
+        [string] $find = 'azureSQLServerName'
+        [string] $replace = $azureSQLServerName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
+    }
 
     # show filename if changed
     if ($fileContentOriginal -ne $fileContent) {
@@ -240,39 +275,41 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace password
-    [string] $find = "Password="
-    [string] $replace = 'Password=' + ("'" + $somePassword + "'")
+    if ($PSBoundParameters.ContainsKey('somePassword')) {
+        [string] $find = "Password="
+        [string] $replace = 'Password=' + ("'" + $somePassword + "'")
 
-    if ($fileContent.indexof($find) -ge 0 ) {
+        if ($fileContent.indexof($find) -ge 0 ) {
 
-        # position of password
-        # start of password value
-        # password starts after tick        
-        if ($fileContent.substring( `
-                  $fileContent.indexof($find)  `
-                + $find.length `
-                + 1 `
-                ).indexof("'") -ge 0) {
+            # position of password
+            # start of password value
+            # password starts after tick        
+            if ($fileContent.substring( `
+                      $fileContent.indexof($find)  `
+                    + $find.length `
+                    + 1 `
+                    ).indexof("'") -ge 0) {
 
-            # start of password including tick
-            # start looking after tick
-            # end of password
-            # remainder after password and tick            
-            $fileContent = ( `
-                  $fileContent.substring( 0, `
-                                          $fileContent.indexof($find) `
-                                          ) `
-                + $replace `
-                + $fileContent.substring( `
-                    $fileContent.indexof($find) + $find.length `
-                        + 1 `
-                        + $fileContent.substring( `
-                                $fileContent.indexof($find) + $find.length `
+                # start of password including tick
+                # start looking after tick
+                # end of password
+                # remainder after password and tick            
+                $fileContent = ( `
+                      $fileContent.substring( 0, `
+                                              $fileContent.indexof($find) `
+                                              ) `
+                    + $replace `
+                    + $fileContent.substring( `
+                        $fileContent.indexof($find) + $find.length `
                             + 1 `
-                            ).indexof("'") `
-                            + 1 `
+                            + $fileContent.substring( `
+                                    $fileContent.indexof($find) + $find.length `
+                                + 1 `
+                                ).indexof("'") `
+                                + 1 `
+                    )
                 )
-            )
+            }
         }
     }
 
@@ -308,76 +345,110 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace email address's
-    [string] $find = 'emailLog'
-    [string] $replace = $emailLog
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('emailLog')) {
+        [string] $find = 'emailLog'
+        [string] $replace = $emailLog
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'emailPersonal@first.com'
-    [string] $replace = $emailPersonalFirst
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('emailPersonalFirst')) {
+        [string] $find = 'emailPersonal@first.com'
+        [string] $replace = $emailPersonalFirst
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'emailPersonal@Second.com'
-    [string] $replace = $emailPersonalSecond
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('emailPersonalSecond')) {
+        [string] $find = 'emailPersonal@Second.com'
+        [string] $replace = $emailPersonalSecond
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'email@Tiney.com'
-    [string] $replace = $emailTiney
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('emailTiney')) {
+        [string] $find = 'email@Tiney.com'
+        [string] $replace = $emailTiney
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'azureUserName'
-    [string] $replace = $azureUserName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureUserName')) {
+        [string] $find = 'azureUserName'
+        [string] $replace = $azureUserName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'azureSQLUserName'
-    [string] $replace = $azureSQLUserName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureSQLUserName')) {
+        [string] $find = 'azureSQLUserName'
+        [string] $replace = $azureSQLUserName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'gitHubUserTiney'
-    [string] $replace = $gitHubUserTiney
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('gitHubUserTiney')) {
+        [string] $find = 'gitHubUserTiney'
+        [string] $replace = $gitHubUserTiney
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'developerName'
-    [string] $replace = $developerName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('developerName')) {
+        [string] $find = 'developerName'
+        [string] $replace = $developerName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # replace password's
-    [string] $find = 'passwordPersonalStyleLargeEndingTwo'
-    [string] $replace = $passwordPersonalStyleLargeEndingTwo
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
-    
-    [string] $find = 'passwordPersonalStyle'
-    [string] $replace = $passwordPersonalStyle
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('passwordPersonalStyleLargeEndingTwo')) {
+        [string] $find = 'passwordPersonalStyleLargeEndingTwo'
+        [string] $replace = $passwordPersonalStyleLargeEndingTwo
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'developerName'
-    [string] $replace = $developerName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('passwordPersonalStyle')) {
+        [string] $find = 'passwordPersonalStyle'
+        [string] $replace = $passwordPersonalStyle
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'azureSQLServerPassword'
-    [string] $replace = $azureSQLServerPassword
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
-    
+    if ($PSBoundParameters.ContainsKey('XXX')) {
+        [string] $find = 'developerName'
+        [string] $replace = $developerName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
+
+    if ($PSBoundParameters.ContainsKey('azureSQLServerPassword')) {
+        [string] $find = 'azureSQLServerPassword'
+        [string] $replace = $azureSQLServerPassword
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
+
     # azure sql server
-    [string] $find = 'azureSQLServerName'
-    [string] $replace = $azureSQLServerName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureSQLServerName')) {
+        [string] $find = 'azureSQLServerName'
+        [string] $replace = $azureSQLServerName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # clientId, secret, tenantId and subscriptionId
-    [string] $find = 'azureClientId'
-    [string] $replace = $azureClientId
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureClientId')) {
+        [string] $find = 'azureClientId'
+        [string] $replace = $azureClientId
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'azureClientSecret'
-    [string] $replace = $azureSecretId
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureSecretId')) {
+        [string] $find = 'azureClientSecret'
+        [string] $replace = $azureSecretId
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'azureClientTenantId'
-    [string] $replace = $azureClientTenantId
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureClientTenantId')) {
+        [string] $find = 'azureClientTenantId'
+        [string] $replace = $azureClientTenantId
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
-    [string] $find = 'azureClientSubscriptionId'
-    [string] $replace = $azureSubscriptionId
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureSubscriptionId')) {
+        [string] $find = 'azureClientSubscriptionId'
+        [string] $replace = $azureSubscriptionId
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # show filename if changed
     if ($fileContentOriginal -ne $fileContent) {
@@ -394,27 +465,29 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace userPWD 
-    [string] $find = 'azureWebAppProfileUserPassword'
-    [string] $replace = $azureWebAppProfileUserPassword
+    if ($PSBoundParameters.ContainsKey('azureWebAppProfileUserPassword')) {
+        [string] $find = 'azureWebAppProfileUserPassword'
+        [string] $replace = $azureWebAppProfileUserPassword
 
-    [int] $findPos = $fileContent.IndexOf($find)
+        [int] $findPos = $fileContent.IndexOf($find)
 
-    while ($findPos -gt 0) {
-        # find node
-        [string] $remainder = $fileContent.SubString($findPos)
+        while ($findPos -gt 0) {
+            # find node
+            [string] $remainder = $fileContent.SubString($findPos)
 
-        # get next quotes
-        $remainder = $remainder.SubString($remainder.IndexOf('"') + 1)
+            # get next quotes
+            $remainder = $remainder.SubString($remainder.IndexOf('"') + 1)
 
-        # and the next quotes, should be the end of the node
-        $remainder = $remainder.SubString($remainder.IndexOf('"') + 1)
+            # and the next quotes, should be the end of the node
+            $remainder = $remainder.SubString($remainder.IndexOf('"') + 1)
 
-        # construct replacement node
-        [string] $newNode = $find + '"' + $replace + '"'
-        $fileContent = $fileContent.SubString(0, $findPos) + $newNode + $remainder
+            # construct replacement node
+            [string] $newNode = $find + '"' + $replace + '"'
+            $fileContent = $fileContent.SubString(0, $findPos) + $newNode + $remainder
 
-        # next node
-        $findPos = $fileContent.IndexOf($find, $findPos + 1)
+            # next node
+            $findPos = $fileContent.IndexOf($find, $findPos + 1)
+        }
     }
 
     # show filename if changed
@@ -432,19 +505,25 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace sql server name
-    [string] $find = 'azureSQLServerName'
-    [string] $replace = $azureSQLServerName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('XXX')) {
+        [string] $find = 'azureSQLServerName'
+        [string] $replace = $azureSQLServerName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # replace sql server password
-    [string] $find = 'azureSQLServerPassword'
-    [string] $replace = $azureSQLServerPassword
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureSQLServerPassword')) {
+        [string] $find = 'azureSQLServerPassword'
+        [string] $replace = $azureSQLServerPassword
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # replace sql server user
-    [string] $find = 'azureSQLUserName'
-    [string] $replace = $azureSQLUserName
-    $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    if ($PSBoundParameters.ContainsKey('azureSQLUserName')) {
+        [string] $find = 'azureSQLUserName'
+        [string] $replace = $azureSQLUserName
+        $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
+    }
 
     # show filename if changed
     if ($fileContentOriginal -ne $fileContent) {
