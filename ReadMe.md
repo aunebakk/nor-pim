@@ -70,12 +70,12 @@ Use PowerShell to rename the sql server connection string for the various projec
 
 | Parameter                             | Comment                                           |
 |---------------------------------------|---------------------------------------------------|
-| connectionStringSQLServerLocal        | ADO connection string to a SQL Server
+| connectionStringSQLServer             | ADO connection string to a SQL Server
 
 **From PowerShell**
 ```
  & '.\Operational\De-Sanitize Connection.ps1' `
-   -connectionStringSQLServerLocal:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+   -connectionStringSQLServer:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
  ```
  **From Visual Studio 2017**
  - Clean build
@@ -90,14 +90,14 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 
 | Parameter                             | Comment                                           |
 |---------------------------------------|---------------------------------------------------|
-| connectionStringSQLServerLocal        | ADO connection string to a SQL Server
+| connectionStringSQLServer             | ADO connection string to a SQL Server
 | emailPersonalSecond                   | Azure Active Directory Login eMail
 | passwordPersonalStyleLargeEndingTwo   | Azure Active Directory Login password
 
 **From PowerShell**
 ```
 & '.\Operational\De-Sanitize Connection.ps1' `
-  -connectionStringSQLServerLocal:"Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;" `
+  -connectionStringSQLServer:"Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;" `
   -emailPersonalSecond:'roger@aunebakk.com' `
   -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2'
  ```
