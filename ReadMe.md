@@ -74,9 +74,12 @@ Use PowerShell to rename the sql server connection string for the various projec
 
 **From PowerShell**
 ```
- & '.\Operational\De-Sanitize Connection.ps1' `
+& '.\Operational\De-Sanitize Connection.ps1' `
    -connectionStringSQLServer:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
- ```
+
+& '.\Operational\Environment Switch.ps1' `
+   -toRemote:$false
+```
  **From Visual Studio 2017**
  - Clean build
  - Run DatabaseManager to create the Database and populate it's tables
@@ -100,8 +103,11 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
   -connectionStringSQLServer:"Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;" `
   -emailPersonalSecond:'roger@aunebakk.com' `
   -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2'
- ```
- **The Web and Window FrontEnd's**
+
+& '.\Operational\Environment Switch.ps1' `
+   -toRemote:$true
+```
+**The Web and Window FrontEnd's**
 ```
  - NuGet.exe restore .\SolutionNorSolutionPim.sln ( Download NuGet here: https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.9-rtm )
  - & '.\Operational\Restore packages.bat'
