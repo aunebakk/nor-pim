@@ -1,8 +1,8 @@
 # SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/29/2020 7:59:01 PM
-# From Machine: DESKTOP-9A2DH39
+# Generated Date: 10/29/2020 9:22:11 PM
+# From Machine: DESKTOP-742U247
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_EnvironmentSwitch
 param (
     [Parameter(Mandatory=$true)]
@@ -295,7 +295,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 }
 
-[string[]] $match = '*.*','*.*'
+[string[]] $match = '*.config','*.cs','*.ts','*.cshtml'
 foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.FullName -PathType leaf} ) {
     # exclude this script
     if ($file.FullName -eq $MyInvocation.MyCommand.Path) {
@@ -326,7 +326,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 }
 
-[string[]] $match = '*.*','*.*'
+[string[]] $match = '*.config','*.cs','*.ts','*.cshtml'
 foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.FullName -PathType leaf} ) {
     # exclude this script
     if ($file.FullName -eq $MyInvocation.MyCommand.Path) {
@@ -357,7 +357,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 }
 
-[string[]] $match = '*.*','*.*'
+[string[]] $match = '*.config','*.cs','*.ts','*.cshtml'
 foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.FullName -PathType leaf} ) {
     # exclude this script
     if ($file.FullName -eq $MyInvocation.MyCommand.Path) {
