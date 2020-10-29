@@ -71,11 +71,14 @@ Use PowerShell to rename the sql server connection string for the various projec
 | Parameter                             | Comment                                           |
 |---------------------------------------|---------------------------------------------------|
 | connectionStringSQLServer             | ADO connection string to a SQL Server
+| toAzure                               | $false for local server
+| toSQLServerLocalTrusted               | Create ADO connection string to a local SQL Server
 
 **From PowerShell**
 ```
 & '.\Operational\De-Sanitize Connection.ps1' `
-   -connectionStringSQLServer:"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+   -toAzure:$false `
+   -toSQLServerLocalTrusted:$true
 
 & '.\Operational\Environment Switch.ps1' `
    -toRemote:$false
@@ -93,16 +96,20 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 
 | Parameter                             | Comment                                           |
 |---------------------------------------|---------------------------------------------------|
-| connectionStringSQLServer             | ADO connection string to a SQL Server
-| emailPersonalSecond                   | Azure Active Directory Login eMail
-| passwordPersonalStyleLargeEndingTwo   | Azure Active Directory Login password
+| toAzure                               | Create ADO connection string to a SQL Server
+| azureActiveDirectoryLogin             | Azure Active Directory Login eMail
+| azureActiveDirectoryPassword          | Azure Active Directory Login password
+| connectionStringSQLServer             | ADO connection string to SQL Server
+| sqlServerName                         | SQL server name
+| sqlServerUserName                     | SQL server user name
+| sqlServerPassword                     | SQL server password
 
 **From PowerShell**
 ```
 & '.\Operational\De-Sanitize Connection.ps1' `
-  -connectionStringSQLServer:"Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;" `
-  -emailPersonalSecond:'roger@aunebakk.com' `
-  -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2' `
+  -toAzure:$true `
+  -azureActiveDirectoryLogin:'roger@aunebakk.com' `
+  -azureActiveDirectoryPassword:'en8to3FIRE2' `
   -sqlServerName:'hri0nhlzkl' `
   -sqlServerUserName:'norgate' `
   -sqlServerPassword:'njas42379HGI'

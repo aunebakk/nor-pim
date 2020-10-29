@@ -314,7 +314,7 @@ try {
 
         $SMTPClient.Credentials = New-Object System.Net.NetworkCredential( `
             'emailLog' , `
-            'passwordPersonalStyleLargeEndingTwo' `
+            'azureActiveDirectoryPassword' `
             );
 
         $emailMessage = New-Object System.Net.Mail.MailMessage

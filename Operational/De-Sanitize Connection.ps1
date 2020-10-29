@@ -1,41 +1,40 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/29/2020 4:34:14 PM
+# Generated Date: 10/29/2020 5:12:28 PM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
 param(
     [string]$gitHubUserTiney = '',
+    [string]$emailTiney = '',
+    [string]$developerName = '',
 
     [string]$emailLog = '',
     [string]$emailPersonalFirst = '',
-    [string]$emailPersonalSecond = '',
-    [string]$emailTiney = '',
-
-    [string]$developerName = '',
-
     [string]$somePassword = '',
     [string]$passwordPersonalStyle = '',
     [string]$passwordPersonalStyleLargeEnding = '',
-    [string]$passwordPersonalStyleLargeEndingTwo = '',
 
-    [string]$azureUserName = '',
-    [string]$azureWebAppProfileUserPassword = '',
-    [string]$connectionStringAzureTable = '',
-
+    [string]$connectionStringSQLServer = '',
     [string]$sqlServerName = '',
     [string]$sqlServerPassword = '',
     [string]$sqlServerUserName = '',
-    [string]$connectionStringSQLServer = '',
 
+    [Parameter(Mandatory=$true)]
+    [switch]$toAzure,
+
+    [string]$azureWebAppProfileUserPassword = '',
+    [string]$azureActiveDirectoryLogin = '',
+    [string]$azureActiveDirectoryPassword = '',
+    [string]$azureUserName = '',
+
+    [string]$connectionStringAzureTable = '',
     [string]$azureClientId = '',
     [string]$azureClientSecret = '',
     [string]$azureClientTenantId = '',
     [string]$azureClientSubscriptionId = '',
     
-    [Parameter(Mandatory=$true)]
-    [switch]$toAzure,
     [switch]$toSQLServerLocalTrusted
 )
 
@@ -60,11 +59,11 @@ if (-Not $PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
             exit
     } else {
         if ($toAzure) {
-            $connectionStringSQLServer = "Data Source=$sqlServerName.database.windows.net;Persist Security Info=True;User ID=$sqlServerUserName;Password=$sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;"
+            $connectionStringSQLServer = "Data Source=$sqlServerName.database.windows.net;Persist Security Info=True;User ID=$sqlServerUserName;Password=$sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;"
         } elseif ($toSQLServerLocalTrusted) {
-            $connectionStringSQLServer = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;"
+            $connectionStringSQLServer = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
         } else {
-            $connectionStringSQLServer = "Server =$sqlServerName;User Id=$sqlServerUserName;Password=$sqlServerPassword;" # Database=myDataBase;?
+            $connectionStringSQLServer = "Server=$sqlServerName;User Id=$sqlServerUserName;Password=$sqlServerPassword;Initial Catalog=NorSolutionPim;"
         }
     }
     Write-Host "Connection string to SQL server is now: $connectionStringSQLServer"
@@ -382,9 +381,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
-    if ($PSBoundParameters.ContainsKey('emailPersonalSecond')) {
+    if ($PSBoundParameters.ContainsKey('azureActiveDirectoryLogin')) {
         [string] $find = 'emailPersonal@Second.com'
-        [string] $replace = $emailPersonalSecond
+        [string] $replace = $azureActiveDirectoryLogin
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
@@ -419,9 +418,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 
     # replace password's
-    if ($PSBoundParameters.ContainsKey('passwordPersonalStyleLargeEndingTwo')) {
-        [string] $find = 'passwordPersonalStyleLargeEndingTwo'
-        [string] $replace = $passwordPersonalStyleLargeEndingTwo
+    if ($PSBoundParameters.ContainsKey('azureActiveDirectoryPassword')) {
+        [string] $find = 'azureActiveDirectoryPassword'
+        [string] $replace = $azureActiveDirectoryPassword
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
