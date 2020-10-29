@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A1A5D7EB-49A6-4DAD-B6A1-6CED59A6A5DF}</ProjectGuid>
+    <ProjectGuid>{1BF10489-7704-404C-8932-4E4750636CD0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinForm</RootNamespace>
@@ -2038,11 +2038,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{b472b64b-9137-42dc-b7e6-a252ef8d4730}</Project>
+      <Project>{e74295ab-6872-45d9-b5da-288569f03c72}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{30415ad4-a167-4593-93dd-584ad72601a9}</Project>
+      <Project>{db41605e-9839-4ac7-afc4-60f142ecabd3}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>

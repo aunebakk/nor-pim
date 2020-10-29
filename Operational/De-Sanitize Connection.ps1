@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/29/2020 6:59:33 PM
+# Generated Date: 10/29/2020 7:59:01 PM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -50,7 +50,7 @@ Set-Location $parent
 # if no connection string, but username/password/server, construct string
 if (-Not $PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
     if ($toSQLServerLocalTrusted) {
-        $connectionStringSQLServer = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+        $connectionStringSQLServer = "Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
     } elseif (-Not $PSBoundParameters.ContainsKey('sqlServerName') `
         -Or -Not $PSBoundParameters.ContainsKey('sqlServerPassword') `
         -Or -Not $PSBoundParameters.ContainsKey('sqlServerUserName')) {
