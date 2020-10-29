@@ -1,7 +1,7 @@
 # SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/28/2020 10:24:45 PM
+# Generated Date: 10/29/2020 6:21:38 AM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_EnvironmentSwitch
 param (
@@ -35,9 +35,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
 
     # replace
     if ($toRemote) {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
     } else {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
     }
 
     # save file and show filename if changed
@@ -66,9 +66,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
 
     # replace
     if ($toRemote) {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
     } else {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
     }
 
     # save file and show filename if changed
@@ -190,9 +190,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
 
     # replace
     if ($toRemote) {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
     } else {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
     }
 
     # save file and show filename if changed
@@ -221,9 +221,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
 
     # replace
     if ($toRemote) {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
     } else {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=azureSQLServerName.database.windows.net;Persist Security Info=True;User ID=azureSQLUserName;Password=azureSQLServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
+        $fileContent = $fileContent | ForEach-Object { $_.Replace('Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
     }
 
     # save file and show filename if changed

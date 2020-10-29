@@ -196,7 +196,7 @@ select 'Created database: " + databaseName + @"'
 
                 sqlClient.Databases.CreateOrUpdate(
                     resourceGroupName: "Default-SQL-EastUS2",
-                    serverName: "azureSQLServerName",
+                    serverName: "sqlServerName",
                     databaseName: "NorSolutionPim",
                     parameters: newDb
                     );
@@ -222,7 +222,7 @@ select 'Created database: " + databaseName + @"'
 
                 sqlClient.Databases.Delete(
                     resourceGroupName: "Default-SQL-EastUS2",
-                    serverName: "azureSQLServerName",
+                    serverName: "sqlServerName",
                     databaseName: "NorSolutionPim"
                     );
             }

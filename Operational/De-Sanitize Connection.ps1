@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/28/2020 10:24:45 PM
+# Generated Date: 10/29/2020 6:21:38 AM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -24,9 +24,9 @@ param(
     [string]$azureWebAppProfileUserPassword = '',
     [string]$connectionStringAzureTable = '',
 
-    [string]$azureSQLServerName = '',
-    [string]$azureSQLServerPassword = '',
-    [string]$azureSQLUserName = '',
+    [string]$sqlServerName = '',
+    [string]$sqlServerPassword = '',
+    [string]$sqlServerUserName = '',
     [string]$connectionStringSQLServer = '',
 
     [string]$azureClientId = '',
@@ -255,9 +255,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 
     # server name
-    if ($PSBoundParameters.ContainsKey('azureSQLServerName')) {
-        [string] $find = 'azureSQLServerName'
-        [string] $replace = $azureSQLServerName
+    if ($PSBoundParameters.ContainsKey('sqlServerName')) {
+        [string] $find = 'sqlServerName'
+        [string] $replace = $sqlServerName
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
     }
 
@@ -375,9 +375,9 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
-    if ($PSBoundParameters.ContainsKey('azureSQLUserName')) {
-        [string] $find = 'azureSQLUserName'
-        [string] $replace = $azureSQLUserName
+    if ($PSBoundParameters.ContainsKey('sqlServerUserName')) {
+        [string] $find = 'sqlServerUserName'
+        [string] $replace = $sqlServerUserName
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
@@ -412,16 +412,16 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
-    if ($PSBoundParameters.ContainsKey('azureSQLServerPassword')) {
-        [string] $find = 'azureSQLServerPassword'
-        [string] $replace = $azureSQLServerPassword
+    if ($PSBoundParameters.ContainsKey('sqlServerPassword')) {
+        [string] $find = 'sqlServerPassword'
+        [string] $replace = $sqlServerPassword
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
     # azure sql server
-    if ($PSBoundParameters.ContainsKey('azureSQLServerName')) {
-        [string] $find = 'azureSQLServerName'
-        [string] $replace = $azureSQLServerName
+    if ($PSBoundParameters.ContainsKey('sqlServerName')) {
+        [string] $find = 'sqlServerName'
+        [string] $replace = $sqlServerName
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
@@ -506,22 +506,22 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
 
     # replace sql server name
     if ($PSBoundParameters.ContainsKey('XXX')) {
-        [string] $find = 'azureSQLServerName'
-        [string] $replace = $azureSQLServerName
+        [string] $find = 'sqlServerName'
+        [string] $replace = $sqlServerName
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
     # replace sql server password
-    if ($PSBoundParameters.ContainsKey('azureSQLServerPassword')) {
-        [string] $find = 'azureSQLServerPassword'
-        [string] $replace = $azureSQLServerPassword
+    if ($PSBoundParameters.ContainsKey('sqlServerPassword')) {
+        [string] $find = 'sqlServerPassword'
+        [string] $replace = $sqlServerPassword
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 
     # replace sql server user
-    if ($PSBoundParameters.ContainsKey('azureSQLUserName')) {
-        [string] $find = 'azureSQLUserName'
-        [string] $replace = $azureSQLUserName
+    if ($PSBoundParameters.ContainsKey('sqlServerUserName')) {
+        [string] $find = 'sqlServerUserName'
+        [string] $replace = $sqlServerUserName
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
     }
 

@@ -102,7 +102,10 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 & '.\Operational\De-Sanitize Connection.ps1' `
   -connectionStringSQLServer:"Data Source=hri0nhlzkl.database.windows.net;Persist Security Info=True;User ID=norgate;Password=njas42379HGI;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;" `
   -emailPersonalSecond:'roger@aunebakk.com' `
-  -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2'
+  -passwordPersonalStyleLargeEndingTwo:'en8to3FIRE2' `
+  -sqlServerName:'hri0nhlzkl' `
+  -sqlServerUserName:'norgate' `
+  -sqlServerPassword:'njas42379HGI'
 
 & '.\Operational\Environment Switch.ps1' `
    -toRemote:$true

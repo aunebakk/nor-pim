@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/28/2020 10:08:03 PM
+  Generated Date: 10/29/2020 6:04:47 AM
   From Machine: DESKTOP-9A2DH39
   Template: SQL2XExtension.SQL2XExtensionCreatorCoreV0.Content_ConnectionStringDOTcs
 */
