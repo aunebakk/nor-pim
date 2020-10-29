@@ -71,13 +71,13 @@ Use PowerShell to rename the sql server connection string for the various projec
 | Parameter                             | Comment                                           |
 |---------------------------------------|---------------------------------------------------|
 | connectionStringSQLServer             | ADO connection string to a SQL Server
-| toAzure                               | $false for local server
-| toSQLServerLocalTrusted               | Create ADO connection string to a local SQL Server
+| **or**                                | 
+| toSQLServerLocalTrusted               | Create a trusted ADO connection string to a local SQL Server
 
 **From PowerShell**
 ```
+# this will insert ADO connection strings to a local trusted sql server, typical for a development environment
 & '.\Operational\De-Sanitize Connection.ps1' `
-   -toAzure:$false `
    -toSQLServerLocalTrusted:$true
 
 & '.\Operational\Environment Switch.ps1' `
@@ -96,16 +96,18 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 
 | Parameter                             | Comment                                           |
 |---------------------------------------|---------------------------------------------------|
-| toAzure                               | Create ADO connection string to a SQL Server
 | azureActiveDirectoryLogin             | Azure Active Directory Login eMail
 | azureActiveDirectoryPassword          | Azure Active Directory Login password
 | connectionStringSQLServer             | ADO connection string to SQL Server
+| **or**                                | 
+| toAzure                               | Create ADO connection string to a SQL Server
 | sqlServerName                         | SQL server name
 | sqlServerUserName                     | SQL server user name
 | sqlServerPassword                     | SQL server password
 
 **From PowerShell**
 ```
+# this will insert ADO connection strings to an Azure sql server and Azure Web Apps
 & '.\Operational\De-Sanitize Connection.ps1' `
   -toAzure:$true `
   -azureActiveDirectoryLogin:'roger@aunebakk.com' `

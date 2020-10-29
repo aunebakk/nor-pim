@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/29/2020 5:12:28 PM
+# Generated Date: 10/29/2020 6:04:21 PM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -21,7 +21,6 @@ param(
     [string]$sqlServerPassword = '',
     [string]$sqlServerUserName = '',
 
-    [Parameter(Mandatory=$true)]
     [switch]$toAzure,
 
     [string]$azureWebAppProfileUserPassword = '',
@@ -50,7 +49,9 @@ Set-Location $parent
 
 # if no connection string, but username/password/server, construct string
 if (-Not $PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
-    if (-Not $PSBoundParameters.ContainsKey('sqlServerName') `
+    if ($toSQLServerLocalTrusted) {
+        $connectionStringSQLServer = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
+    } elseif (-Not $PSBoundParameters.ContainsKey('sqlServerName') `
         -Or -Not $PSBoundParameters.ContainsKey('sqlServerPassword') `
         -Or -Not $PSBoundParameters.ContainsKey('sqlServerUserName')) {
             Write-Host 'Since -connectionStringSQLServer is not specified, -sqlServerName and -sqlServerPassword and -sqlServerUserName is needed instead in order to create the connection string'
@@ -60,8 +61,6 @@ if (-Not $PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
     } else {
         if ($toAzure) {
             $connectionStringSQLServer = "Data Source=$sqlServerName.database.windows.net;Persist Security Info=True;User ID=$sqlServerUserName;Password=$sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;"
-        } elseif ($toSQLServerLocalTrusted) {
-            $connectionStringSQLServer = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;"
         } else {
             $connectionStringSQLServer = "Server=$sqlServerName;User Id=$sqlServerUserName;Password=$sqlServerPassword;Initial Catalog=NorSolutionPim;"
         }
