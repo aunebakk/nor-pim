@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/29/2020 1:47:14 PM
+# Generated Date: 10/29/2020 4:34:14 PM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -32,7 +32,11 @@ param(
     [string]$azureClientId = '',
     [string]$azureClientSecret = '',
     [string]$azureClientTenantId = '',
-    [string]$azureClientSubscriptionId = ''
+    [string]$azureClientSubscriptionId = '',
+    
+    [Parameter(Mandatory=$true)]
+    [switch]$toAzure,
+    [switch]$toSQLServerLocalTrusted
 )
 
 [string] $startFolder = $pwd
@@ -44,6 +48,27 @@ param(
 [string] $sql2xParent = 'C:\\SQL2XProjects\\SolutionNorSolutionPim'
 
 Set-Location $parent
+
+# if no connection string, but username/password/server, construct string
+if (-Not $PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+    if (-Not $PSBoundParameters.ContainsKey('sqlServerName') `
+        -Or -Not $PSBoundParameters.ContainsKey('sqlServerPassword') `
+        -Or -Not $PSBoundParameters.ContainsKey('sqlServerUserName')) {
+            Write-Host 'Since -connectionStringSQLServer is not specified, -sqlServerName and -sqlServerPassword and -sqlServerUserName is needed instead in order to create the connection string'
+
+            set-Location $startFolder
+            exit
+    } else {
+        if ($toAzure) {
+            $connectionStringSQLServer = "Data Source=$sqlServerName.database.windows.net;Persist Security Info=True;User ID=$sqlServerUserName;Password=$sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;"
+        } elseif ($toSQLServerLocalTrusted) {
+            $connectionStringSQLServer = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;"
+        } else {
+            $connectionStringSQLServer = "Server =$sqlServerName;User Id=$sqlServerUserName;Password=$sqlServerPassword;" # Database=myDataBase;?
+        }
+    }
+    Write-Host "Connection string to SQL server is now: $connectionStringSQLServer"
+}
 
 # CSharp files
 $match = '*.cs' #, '*.cshtml' , '*.cs', '*.svc', '*.ps1' # , '*.json'
