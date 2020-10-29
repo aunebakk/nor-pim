@@ -77,6 +77,7 @@ Use PowerShell to rename the sql server connection string for the various projec
 **From PowerShell**
 ```
 # this will insert ADO connection strings to a local trusted sql server, typical for a development environment
+
 & '.\Operational\De-Sanitize Connection.ps1' `
    -toSQLServerLocalTrusted:$true
 
@@ -108,6 +109,7 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 **From PowerShell**
 ```
 # this will insert ADO connection strings to an Azure sql server and Azure Web Apps
+
 & '.\Operational\De-Sanitize Connection.ps1' `
   -toAzure:$true `
   -azureActiveDirectoryLogin:'roger@aunebakk.com' `

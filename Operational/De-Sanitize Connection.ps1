@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/29/2020 6:04:21 PM
+# Generated Date: 10/29/2020 6:59:33 PM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_SanitizeConnectionUndo
 
@@ -69,7 +69,7 @@ if (-Not $PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
 }
 
 # CSharp files
-$match = '*.cs' #, '*.cshtml' , '*.cs', '*.svc', '*.ps1' # , '*.json'
+$match = '*.cs'
 foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.fullname -PathType leaf} ) {
     [string] $fileContent = Get-Content $file -Raw
     [string] $fileContentOriginal = $fileContent
@@ -81,7 +81,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 
     # replace ado data sources ( not using REGEX )
-    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer') -or $connectionStringSQLServer.length -gt 0 ) {
         [string] $find = 'Data Source=(localdb)\MSSQLLocalDB;";'
         [string] $replace = $connectionStringSQLServer + '";'
         $fileContent = $fileContent | ForEach-Object { $_.Replace($find, $replace) }
@@ -146,7 +146,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace ado data sources
-    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer') -or $connectionStringSQLServer.length -gt 0 ) {
         [string] $find = 'Data Source.+' 
         [string] $replace = $connectionStringSQLServer.Replace('\', '\\') + '",'
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
@@ -160,7 +160,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 
     # deploylink ( has no comma after parameter )
-    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer') -or $connectionStringSQLServer.length -gt 0 ) {
         [string] $find = '"deploylink": "Data Source.+' 
         [string] $replace = '"deploylink": "' + $connectionStringSQLServer.Replace('\', '\\') + '"'
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
@@ -194,7 +194,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     [string] $fileContentOriginal = $fileContent
 
     # replace ado data sources ( 'Data Source="' +  )
-    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer') -or $connectionStringSQLServer.length -gt 0 ) {
         [string] $find = 'Data Source.+' 
         [string] $replace = $connectionStringSQLServer + '"/>'
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace }
@@ -208,7 +208,7 @@ foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-P
     }
 
     # replace sql server connection strings
-    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer')) {
+    if ($PSBoundParameters.ContainsKey('connectionStringSQLServer') -or $connectionStringSQLServer.length -gt 0 ) {
         [string] $find = 'connectionString=.+'
         [string] $replace = 'connectionString="' + $connectionStringSQLServer + '"/>'
         $fileContent = $fileContent | ForEach-Object { $_ -Replace $find, $replace } 
