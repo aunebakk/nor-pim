@@ -46,7 +46,7 @@ You will need the following WorkLoad:
  - [GitHub](https://github.com/aunebakk/nor-pim)
    - **GitHub CLI**: ```gh repo clone aunebakk/nor-pim```
    - **Git**: ```git clone https://github.com/aunebakk/nor-pim.git```
-   - Compressed [zip](https://github.com/aunebakk/nor-pim/archive/master.zip) file
+   - Compressed [zip](https://github.com/aunebakk/nor-pim/archive/master.zip) file ( to unblock: ```Get-ChildItem -Path nor-pim -Recurse | Unblock-File```
 
 ## Folder structure ( first level )
 | Parameter                             | Comment                                                                           |
@@ -123,20 +123,20 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 ```
 **The Web and Window FrontEnd's**
 ```
- - NuGet.exe restore .\SolutionNorSolutionPim.sln ( Download NuGet here: https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.9-rtm )
- - & '.\Operational\Restore packages.bat'
- - & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'
- - & '.\Web\Operational\Get-Web-App-PublishingProfile.ps1'
- - & '.\Web\Operational\Build package to disk.bat'
- - & '.\Web\Operational\Publish To Azure.bat'
+NuGet.exe restore .\SolutionNorSolutionPim.sln ( Download NuGet here: https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.9-rtm )
+& '.\Operational\Restore packages.bat'
+& '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'
+& '.\Web\Operational\Get-Web-App-PublishingProfile.ps1'
+& '.\Web\Operational\Build package to disk.bat'
+& '.\Web\Operational\Publish To Azure.bat'
 ```
 At this point the FrontEnd can only be used to bring up the start page and the about box.
 
 **The Business Layer**
 ```
- - & '.\Business\Operational\Get-Web-App-PublishingProfile.ps1'
- - & '.\Business\Operational\Build package to disk.bat'
- - & '.\Business\Operational\Publish To Azure.bat'
+& '.\Business\Operational\Get-Web-App-PublishingProfile.ps1'
+& '.\Business\Operational\Build package to disk.bat'
+& '.\Business\Operational\Publish To Azure.bat'
 ```
 **The Database**
 
