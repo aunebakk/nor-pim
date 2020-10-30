@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/30/2020 11:07:46 AM
+  Generated Date: 10/30/2020 9:58:34 PM
   From Machine: DESKTOP-9A2DH39
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
@@ -16,20 +16,6 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
     [Serializable()]
     public partial class GetCartProductData {
-        
-        public string FirstName { get; set; }
-        
-        public string MiddleName { get; set; }
-        
-        public string LastName { get; set; }
-        
-        public string ClientNationalityRcd { get; set; }
-        
-        public string ClientGenderRcd { get; set; }
-        
-        public string ClientTitleRcd { get; set; }
-        
-        public string ClientTypeRcd { get; set; }
         
         public System.Guid ClientId { get; set; }
         
@@ -66,13 +52,6 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public string SessionIdentificator { get; set; }
         
         public void Populate(IDataReader reader, GetCartProductDataOrdinals ordinals) {
-            if (!reader.IsDBNull(ordinals.FirstName)) FirstName = reader.GetString(ordinals.FirstName);
-            if (!reader.IsDBNull(ordinals.MiddleName)) MiddleName = reader.GetString(ordinals.MiddleName);
-            if (!reader.IsDBNull(ordinals.LastName)) LastName = reader.GetString(ordinals.LastName);
-            if (!reader.IsDBNull(ordinals.ClientNationalityRcd)) ClientNationalityRcd = reader.GetString(ordinals.ClientNationalityRcd);
-            if (!reader.IsDBNull(ordinals.ClientGenderRcd)) ClientGenderRcd = reader.GetString(ordinals.ClientGenderRcd);
-            if (!reader.IsDBNull(ordinals.ClientTitleRcd)) ClientTitleRcd = reader.GetString(ordinals.ClientTitleRcd);
-            if (!reader.IsDBNull(ordinals.ClientTypeRcd)) ClientTypeRcd = reader.GetString(ordinals.ClientTypeRcd);
             if (!reader.IsDBNull(ordinals.ClientId)) ClientId = reader.GetGuid(ordinals.ClientId);
             if (!reader.IsDBNull(ordinals.ProductName)) ProductName = reader.GetString(ordinals.ProductName);
             if (!reader.IsDBNull(ordinals.ProductStateRcd)) ProductStateRcd = reader.GetString(ordinals.ProductStateRcd);
@@ -94,20 +73,6 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     }
     
     public partial class GetCartProductDataOrdinals {
-        
-        public int FirstName;
-        
-        public int MiddleName;
-        
-        public int LastName;
-        
-        public int ClientNationalityRcd;
-        
-        public int ClientGenderRcd;
-        
-        public int ClientTitleRcd;
-        
-        public int ClientTypeRcd;
         
         public int ClientId;
         
@@ -144,13 +109,6 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
         public int SessionIdentificator;
         
         public GetCartProductDataOrdinals(IDataReader reader) {
-            FirstName = reader.GetOrdinal("first_name");
-            MiddleName = reader.GetOrdinal("middle_name");
-            LastName = reader.GetOrdinal("last_name");
-            ClientNationalityRcd = reader.GetOrdinal("client_nationality_rcd");
-            ClientGenderRcd = reader.GetOrdinal("client_gender_rcd");
-            ClientTitleRcd = reader.GetOrdinal("client_title_rcd");
-            ClientTypeRcd = reader.GetOrdinal("client_type_rcd");
             ClientId = reader.GetOrdinal("client_id");
             ProductName = reader.GetOrdinal("product_name");
             ProductStateRcd = reader.GetOrdinal("product_state_rcd");

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/30/2020 11:07:46 AM
+  Generated Date: 10/30/2020 9:58:35 PM
   From Machine: DESKTOP-9A2DH39
   Template: sql2x.ContractsGenerator.MethodNewStyle
 */
@@ -11,27 +11,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
     [DataContract()]
     public class GetCartProductContract {
-        
-        [DataMember()]
-        public string FirstName { get; set; }
-        
-        [DataMember()]
-        public string MiddleName { get; set; }
-        
-        [DataMember()]
-        public string LastName { get; set; }
-        
-        [DataMember()]
-        public string ClientNationalityRcd { get; set; }
-        
-        [DataMember()]
-        public string ClientGenderRcd { get; set; }
-        
-        [DataMember()]
-        public string ClientTitleRcd { get; set; }
-        
-        [DataMember()]
-        public string ClientTypeRcd { get; set; }
         
         [DataMember()]
         public System.Guid ClientId { get; set; }

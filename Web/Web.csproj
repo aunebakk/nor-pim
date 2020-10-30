@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5E048DD0-2593-422C-BF9F-FA6EF60AB32A}</ProjectGuid>
+    <ProjectGuid>{85F45873-614F-42D1-A327-2424261A817F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -1145,11 +1145,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{dd1fbe65-f7ae-4b8b-8975-c772c5d089f2}</Project>
+      <Project>{2bde24a6-6522-46c3-8e18-2e1d0c24eebf}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{360312e1-1112-4173-ad6f-97492935e685}</Project>
+      <Project>{ecdf22c3-88a1-4e56-8989-d747bb004379}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1160,7 +1160,6 @@
     <TypeScriptCompile Include="Scripts\Dashboard\dashboardWhiteboard.ts" />
     <TypeScriptCompile Include="Scripts\Dashboard\splash.ts" />
     <TypeScriptCompile Include="Scripts\Templates\Cart\CartProduct.ts" />
-    <TypeScriptCompile Include="Scripts\Templates\ProductSearch\ProductSearch.ts" />
     <TypeScriptCompile Include="Scripts\Templates\Product\ProductSearch.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -1183,7 +1182,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57986</DevelopmentServerPort>
+          <DevelopmentServerPort>58374</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

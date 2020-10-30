@@ -1,7 +1,7 @@
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 10/30/2020 11:09:44 AM
+// Generated Date: 10/30/2020 10:00:35 PM
 // From Machine: DESKTOP-9A2DH39
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian
@@ -48,7 +48,7 @@ var DesignVestreVikenDurian;
             document.body.style.transform = scale; // general
             // resize canvas to hold all cartProductList
             GetCartProductTileList.resizeCanvas();
-            GetCartProductTileList.clearCanvas("rgb(255, 255, 255)"); // overallColors.backGround
+            GetCartProductTileList.clearCanvas("white"); // overallColors.backGround
             // get client elements
             var canvas = document.getElementById("myCanvas");
             // header tile
@@ -71,60 +71,45 @@ var DesignVestreVikenDurian;
             GetCartProductTileList.tiles.push(GetCartProductTileList.header);
             // calc column widths 
             var context = canvas.getContext("2d");
-            context.font = "bold 16px Arial"; // tileFontSize
-            var cartProductListWidths = new Array(24);
-            cartProductListWidths[0] = context.measureText("First Name").width;
-            cartProductListWidths[1] = context.measureText("Middle Name").width;
-            cartProductListWidths[2] = context.measureText("Last Name").width;
-            cartProductListWidths[3] = context.measureText("Product Name").width;
-            cartProductListWidths[4] = context.measureText("Financial Currency Type Code").width;
-            cartProductListWidths[5] = context.measureText("Financial Currency Type Name").width;
-            cartProductListWidths[6] = context.measureText("Image Blob Filename").width;
-            cartProductListWidths[7] = context.measureText("Default User Name").width;
-            cartProductListWidths[8] = context.measureText("Date Time").width;
-            cartProductListWidths[9] = context.measureText("Session Identificator").width;
-            cartProductListWidths[10] = 0;
+            context.font = "14px Arial"; // tileFontSize
+            var cartProductListWidths = new Array(17);
+            cartProductListWidths[0] = context.measureText("Product Name").width;
+            cartProductListWidths[1] = context.measureText("Financial Currency Type Code").width;
+            cartProductListWidths[2] = context.measureText("Financial Currency Type Name").width;
+            cartProductListWidths[3] = context.measureText("Image Blob Filename").width;
+            cartProductListWidths[4] = context.measureText("Default User Name").width;
+            cartProductListWidths[5] = context.measureText("Date Time").width;
+            cartProductListWidths[6] = context.measureText("Session Identificator").width;
+            cartProductListWidths[7] = 0;
             for (var i = 0; i < cartProductList.length; i++) {
-                // First Name
-                if ((context.measureText(cartProductList[i].FirstName).width > cartProductListWidths[0])
-                    && (context.measureText(cartProductList[i].FirstName).width < window.innerWidth * 0.9))
-                    cartProductListWidths[0] = context.measureText(cartProductList[i].FirstName).width;
-                // Middle Name
-                if ((context.measureText(cartProductList[i].MiddleName).width > cartProductListWidths[1])
-                    && (context.measureText(cartProductList[i].MiddleName).width < window.innerWidth * 0.9))
-                    cartProductListWidths[1] = context.measureText(cartProductList[i].MiddleName).width;
-                // Last Name
-                if ((context.measureText(cartProductList[i].LastName).width > cartProductListWidths[2])
-                    && (context.measureText(cartProductList[i].LastName).width < window.innerWidth * 0.9))
-                    cartProductListWidths[2] = context.measureText(cartProductList[i].LastName).width;
                 // Product Name
-                if ((context.measureText(cartProductList[i].ProductName).width > cartProductListWidths[3])
+                if ((context.measureText(cartProductList[i].ProductName).width > cartProductListWidths[0])
                     && (context.measureText(cartProductList[i].ProductName).width < window.innerWidth * 0.9))
-                    cartProductListWidths[3] = context.measureText(cartProductList[i].ProductName).width;
+                    cartProductListWidths[0] = context.measureText(cartProductList[i].ProductName).width;
                 // Financial Currency Type Code
-                if ((context.measureText(cartProductList[i].FinancialCurrencyTypeCode).width > cartProductListWidths[4])
+                if ((context.measureText(cartProductList[i].FinancialCurrencyTypeCode).width > cartProductListWidths[1])
                     && (context.measureText(cartProductList[i].FinancialCurrencyTypeCode).width < window.innerWidth * 0.9))
-                    cartProductListWidths[4] = context.measureText(cartProductList[i].FinancialCurrencyTypeCode).width;
+                    cartProductListWidths[1] = context.measureText(cartProductList[i].FinancialCurrencyTypeCode).width;
                 // Financial Currency Type Name
-                if ((context.measureText(cartProductList[i].FinancialCurrencyTypeName).width > cartProductListWidths[5])
+                if ((context.measureText(cartProductList[i].FinancialCurrencyTypeName).width > cartProductListWidths[2])
                     && (context.measureText(cartProductList[i].FinancialCurrencyTypeName).width < window.innerWidth * 0.9))
-                    cartProductListWidths[5] = context.measureText(cartProductList[i].FinancialCurrencyTypeName).width;
+                    cartProductListWidths[2] = context.measureText(cartProductList[i].FinancialCurrencyTypeName).width;
                 // Image Blob Filename
-                if ((context.measureText(cartProductList[i].ImageBlobFilename).width > cartProductListWidths[6])
+                if ((context.measureText(cartProductList[i].ImageBlobFilename).width > cartProductListWidths[3])
                     && (context.measureText(cartProductList[i].ImageBlobFilename).width < window.innerWidth * 0.9))
-                    cartProductListWidths[6] = context.measureText(cartProductList[i].ImageBlobFilename).width;
+                    cartProductListWidths[3] = context.measureText(cartProductList[i].ImageBlobFilename).width;
                 // Default User Name
-                if ((context.measureText(cartProductList[i].DefaultUserName).width > cartProductListWidths[7])
+                if ((context.measureText(cartProductList[i].DefaultUserName).width > cartProductListWidths[4])
                     && (context.measureText(cartProductList[i].DefaultUserName).width < window.innerWidth * 0.9))
-                    cartProductListWidths[7] = context.measureText(cartProductList[i].DefaultUserName).width;
+                    cartProductListWidths[4] = context.measureText(cartProductList[i].DefaultUserName).width;
                 // Date Time
-                if ((context.measureText(cartProductList[i].DateTime).width > cartProductListWidths[8])
+                if ((context.measureText(cartProductList[i].DateTime).width > cartProductListWidths[5])
                     && (context.measureText(cartProductList[i].DateTime).width < window.innerWidth * 0.9))
-                    cartProductListWidths[8] = context.measureText(cartProductList[i].DateTime).width;
+                    cartProductListWidths[5] = context.measureText(cartProductList[i].DateTime).width;
                 // Session Identificator
-                if ((context.measureText(cartProductList[i].SessionIdentificator).width > cartProductListWidths[9])
+                if ((context.measureText(cartProductList[i].SessionIdentificator).width > cartProductListWidths[6])
                     && (context.measureText(cartProductList[i].SessionIdentificator).width < window.innerWidth * 0.9))
-                    cartProductListWidths[9] = context.measureText(cartProductList[i].SessionIdentificator).width;
+                    cartProductListWidths[6] = context.measureText(cartProductList[i].SessionIdentificator).width;
             }
             // grid rows for GetCartProduct
             var lastTile;
@@ -337,7 +322,8 @@ var DesignVestreVikenDurian;
                 canvas.height = GetCartProductTileList.tileListHeight;
             }
             // clear canvas
-            GetCartProductTileList.clearCanvas("rgb(255, 255, 255)"); // overallColors.backGround
+            // this means we are drawing on a "clear" canvas, and background colors will shine through
+            // GetCartProductTileList.clearCanvas("white");  // overallColors.backGround
             // draw tiles
             for (var _i = 0, _a = GetCartProductTileList.tiles; _i < _a.length; _i++) {
                 var tile = _a[_i];
@@ -368,14 +354,14 @@ var DesignVestreVikenDurian;
         Link.prototype.draw = function (context, font, text, top) {
             context.beginPath();
             context.lineWidth = 2;
-            context.strokeStyle = "rgb(255, 255, 255)"; // overallColors.text
+            context.strokeStyle = "white"; // overallColors.text
             context.fillStyle = "rgb(0, 128, 0)"; // overallColors.link
             context.shadowColor = "rgb(128, 128, 128)"; // overallColors.shadow
             context.shadowBlur = 0;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
             context.fillRect(this.linkLeft, this.linkTop, this.linkWidth, this.linkHeight);
-            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.linkText
+            context.fillStyle = "white"; // overallColors.linkText
             context.font = font;
             // cap text of last column until it fits inside the tile
             while (context.measureText(text).width > this.linkWidth
@@ -389,9 +375,9 @@ var DesignVestreVikenDurian;
             var dashList = [5]; // create a dot/dash sequence
             context.beginPath();
             context.lineWidth = lineWidth;
-            context.strokeStyle = showDash ? "rgb(255, 255, 255)" : "rgb(128, 128, 128)"; // overallColors.backGround / overallColors.shadow
-            context.fillStyle = showDash ? "rgb(255, 255, 255)" : "rgb(128, 128, 128))"; // overallColors.backGround / overallColors.shadow
-            context.shadowColor = showDash ? "rgb(255, 255, 255)" : "rgb(128, 128, 128))"; // overallColors.backGround / overallColors.shadow
+            context.strokeStyle = showDash ? "white" : "rgb(128, 128, 128)"; // overallColors.backGround / overallColors.shadow
+            context.fillStyle = showDash ? "white" : "rgb(128, 128, 128))"; // overallColors.backGround / overallColors.shadow
+            context.shadowColor = showDash ? "white" : "rgb(128, 128, 128))"; // overallColors.backGround / overallColors.shadow
             context.shadowBlur = 0;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
@@ -422,8 +408,8 @@ var DesignVestreVikenDurian;
             this.fillStyle = fillStyle;
             this.getCartProduct = getCartProduct;
             this.cartProductListWidths = cartProductListWidths;
-            this.backgroundColor = "rgb(255, 255, 255)"; // overallColors.backGround
-            this.textColor = "rgb(255, 255, 255)"; // overallColors.linkText
+            this.backgroundColor = "white"; // overallColors.backGround
+            this.textColor = "white"; // overallColors.linkText
             this.lineWidth = 1;
             this.textLeft = 0;
             // action links
@@ -492,116 +478,52 @@ var DesignVestreVikenDurian;
                 context.stroke();
                 return;
             }
-            // First Name
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[0]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "First Name" : this.getCartProduct.FirstName;
-                while (context.measureText(text).width > this.cartProductListWidths[0]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
-                context.fillText(text, leftPos, this.textTop(name));
-            }
-            leftPos += this.cartProductListWidths[0];
-            // Middle Name
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[1]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Middle Name" : this.getCartProduct.MiddleName;
-                while (context.measureText(text).width > this.cartProductListWidths[1]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
-                context.fillText(text, leftPos, this.textTop(name));
-            }
-            leftPos += this.cartProductListWidths[1];
-            // Last Name
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[2]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Last Name" : this.getCartProduct.LastName;
-                while (context.measureText(text).width > this.cartProductListWidths[2]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
-                context.fillText(text, leftPos, this.textTop(name));
-            }
-            leftPos += this.cartProductListWidths[2];
+            var text;
             // Product Name
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[3]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Product Name" : this.getCartProduct.ProductName;
-                while (context.measureText(text).width > this.cartProductListWidths[3]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
-                context.fillText(text, leftPos, this.textTop(name));
+            // cap text of last column until it fits inside the tile
+            text = this.getCartProduct == null ? "Product Name" : this.getCartProduct.ProductName;
+            while (context.measureText(text).width > lastActionLinkLeft - leftPos
+                && text.length > 2) {
+                text = text.substr(0, text.length - 1);
             }
-            leftPos += this.cartProductListWidths[3];
+            context.fillText(text, leftPos, this.textTop(name));
+            leftPos += this.cartProductListWidths[0] + 10;
             // Financial Currency Type Code
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[4]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Financial Currency Type Code" : this.getCartProduct.FinancialCurrencyTypeCode;
-                while (context.measureText(text).width > this.cartProductListWidths[4]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
+            text = this.getCartProduct == null ? "Financial Currency Type Code" : this.getCartProduct.FinancialCurrencyTypeCode;
+            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[1]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[4];
+            leftPos += this.cartProductListWidths[1] + 10;
             // Financial Currency Type Name
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[5]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Financial Currency Type Name" : this.getCartProduct.FinancialCurrencyTypeName;
-                while (context.measureText(text).width > this.cartProductListWidths[5]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
+            text = this.getCartProduct == null ? "Financial Currency Type Name" : this.getCartProduct.FinancialCurrencyTypeName;
+            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[2]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[5];
+            leftPos += this.cartProductListWidths[2] + 10;
             // Image Blob Filename
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[6]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Image Blob Filename" : this.getCartProduct.ImageBlobFilename;
-                while (context.measureText(text).width > this.cartProductListWidths[6]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
+            text = this.getCartProduct == null ? "Image Blob Filename" : this.getCartProduct.ImageBlobFilename;
+            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[3]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[6];
+            leftPos += this.cartProductListWidths[3] + 10;
             // Default User Name
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[7]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Default User Name" : this.getCartProduct.DefaultUserName;
-                while (context.measureText(text).width > this.cartProductListWidths[7]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
+            text = this.getCartProduct == null ? "Default User Name" : this.getCartProduct.DefaultUserName;
+            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[4]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[7];
+            leftPos += this.cartProductListWidths[4] + 10;
             // Date Time
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[8]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Date Time" : this.getCartProduct.DateTime;
-                while (context.measureText(text).width > this.cartProductListWidths[8]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
+            text = this.getCartProduct == null ? "Date Time" : this.getCartProduct.DateTime;
+            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[5]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[8];
+            leftPos += this.cartProductListWidths[5] + 10;
             // Session Identificator
-            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[9]) {
-                // cap text of last column until it fits inside the tile
-                var text = this.getCartProduct == null ? "Session Identificator" : this.getCartProduct.SessionIdentificator;
-                while (context.measureText(text).width > this.cartProductListWidths[9]
-                    && text.length > 2) {
-                    text = text.substr(0, text.length - 1);
-                }
+            text = this.getCartProduct == null ? "Session Identificator" : this.getCartProduct.SessionIdentificator;
+            if (leftPos < lastActionLinkLeft - this.cartProductListWidths[6]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[9];
+            leftPos += this.cartProductListWidths[6] + 10;
             context.stroke();
         };
         // frame
@@ -658,7 +580,7 @@ var DesignVestreVikenDurian;
             GetCartProductTileList.resizeCanvas();
             GetCartProductTileList.header.draw(context);
             // resize canvas to fit all columns 
-            canvas.height = 390 + 15;
+            canvas.height = 300 + 15;
             // clear background
             context.beginPath();
             context.fillStyle = "rgb(24, 101, 29)"; // overallColors.foreGround
@@ -667,66 +589,18 @@ var DesignVestreVikenDurian;
             // first line ( from main tile )
             context.beginPath();
             context.font = this.tileFontSize * 1.2 + "px Arial";
-            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.text
+            context.fillStyle = "white"; // overallColors.text
             context.fillText("Get Cart Product", 10, window.scrollY + 30);
             // all displayable columns from table
             context.font = this.tileFontSize * 1.1 + "px Arial";
-            // First Name ( column name first, then value )
-            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
-            var textFirstName = "First Name: ";
-            while (context.measureText(textFirstName).width > this.tileWidth() - 40
-                && textFirstName.length > 2) {
-                textFirstName = textFirstName.substr(0, textFirstName.length - 1);
-            }
-            context.fillText(textFirstName, 20, window.scrollY + 66);
-            // column value
-            context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
-            var textFirstNameValue = this.getCartProduct.FirstName.toString();
-            while (context.measureText(textFirstName).width + context.measureText(textFirstNameValue).width > this.tileWidth() - 40
-                && textFirstNameValue.length > 2) {
-                textFirstNameValue = textFirstNameValue.substr(0, textFirstNameValue.length - 1);
-            }
-            context.fillText(textFirstNameValue, context.measureText(textFirstName).width + 20, window.scrollY + 66);
-            // Middle Name ( column name first, then value )
-            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.text 
-            var textMiddleName = "Middle Name: ";
-            while (context.measureText(textMiddleName).width > this.tileWidth() - 40
-                && textMiddleName.length > 2) {
-                textMiddleName = textMiddleName.substr(0, textMiddleName.length - 1);
-            }
-            context.fillText(textMiddleName, 20, window.scrollY + 96);
-            // column value
-            context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
-            var textMiddleNameValue = this.getCartProduct.MiddleName.toString();
-            while (context.measureText(textMiddleName).width + context.measureText(textMiddleNameValue).width > this.tileWidth() - 40
-                && textMiddleNameValue.length > 2) {
-                textMiddleNameValue = textMiddleNameValue.substr(0, textMiddleNameValue.length - 1);
-            }
-            context.fillText(textMiddleNameValue, context.measureText(textMiddleName).width + 20, window.scrollY + 96);
-            // Last Name ( column name first, then value )
-            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
-            var textLastName = "Last Name: ";
-            while (context.measureText(textLastName).width > this.tileWidth() - 40
-                && textLastName.length > 2) {
-                textLastName = textLastName.substr(0, textLastName.length - 1);
-            }
-            context.fillText(textLastName, 20, window.scrollY + 126);
-            // column value
-            context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
-            var textLastNameValue = this.getCartProduct.LastName.toString();
-            while (context.measureText(textLastName).width + context.measureText(textLastNameValue).width > this.tileWidth() - 40
-                && textLastNameValue.length > 2) {
-                textLastNameValue = textLastNameValue.substr(0, textLastNameValue.length - 1);
-            }
-            context.fillText(textLastNameValue, context.measureText(textLastName).width + 20, window.scrollY + 126);
             // Product Name ( column name first, then value )
-            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.text 
+            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
             var textProductName = "Product Name: ";
             while (context.measureText(textProductName).width > this.tileWidth() - 40
                 && textProductName.length > 2) {
                 textProductName = textProductName.substr(0, textProductName.length - 1);
             }
-            context.fillText(textProductName, 20, window.scrollY + 156);
+            context.fillText(textProductName, 20, window.scrollY + 66);
             // column value
             context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
             var textProductNameValue = this.getCartProduct.ProductName.toString();
@@ -734,15 +608,15 @@ var DesignVestreVikenDurian;
                 && textProductNameValue.length > 2) {
                 textProductNameValue = textProductNameValue.substr(0, textProductNameValue.length - 1);
             }
-            context.fillText(textProductNameValue, context.measureText(textProductName).width + 20, window.scrollY + 156);
+            context.fillText(textProductNameValue, context.measureText(textProductName).width + 20, window.scrollY + 66);
             // Financial Currency Type Code ( column name first, then value )
-            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
+            context.fillStyle = "white"; // overallColors.text 
             var textFinancialCurrencyTypeCode = "Financial Currency Type Code: ";
             while (context.measureText(textFinancialCurrencyTypeCode).width > this.tileWidth() - 40
                 && textFinancialCurrencyTypeCode.length > 2) {
                 textFinancialCurrencyTypeCode = textFinancialCurrencyTypeCode.substr(0, textFinancialCurrencyTypeCode.length - 1);
             }
-            context.fillText(textFinancialCurrencyTypeCode, 20, window.scrollY + 186);
+            context.fillText(textFinancialCurrencyTypeCode, 20, window.scrollY + 96);
             // column value
             context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
             var textFinancialCurrencyTypeCodeValue = this.getCartProduct.FinancialCurrencyTypeCode.toString();
@@ -750,15 +624,15 @@ var DesignVestreVikenDurian;
                 && textFinancialCurrencyTypeCodeValue.length > 2) {
                 textFinancialCurrencyTypeCodeValue = textFinancialCurrencyTypeCodeValue.substr(0, textFinancialCurrencyTypeCodeValue.length - 1);
             }
-            context.fillText(textFinancialCurrencyTypeCodeValue, context.measureText(textFinancialCurrencyTypeCode).width + 20, window.scrollY + 186);
+            context.fillText(textFinancialCurrencyTypeCodeValue, context.measureText(textFinancialCurrencyTypeCode).width + 20, window.scrollY + 96);
             // Financial Currency Type Name ( column name first, then value )
-            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.text 
+            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
             var textFinancialCurrencyTypeName = "Financial Currency Type Name: ";
             while (context.measureText(textFinancialCurrencyTypeName).width > this.tileWidth() - 40
                 && textFinancialCurrencyTypeName.length > 2) {
                 textFinancialCurrencyTypeName = textFinancialCurrencyTypeName.substr(0, textFinancialCurrencyTypeName.length - 1);
             }
-            context.fillText(textFinancialCurrencyTypeName, 20, window.scrollY + 216);
+            context.fillText(textFinancialCurrencyTypeName, 20, window.scrollY + 126);
             // column value
             context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
             var textFinancialCurrencyTypeNameValue = this.getCartProduct.FinancialCurrencyTypeName.toString();
@@ -766,15 +640,15 @@ var DesignVestreVikenDurian;
                 && textFinancialCurrencyTypeNameValue.length > 2) {
                 textFinancialCurrencyTypeNameValue = textFinancialCurrencyTypeNameValue.substr(0, textFinancialCurrencyTypeNameValue.length - 1);
             }
-            context.fillText(textFinancialCurrencyTypeNameValue, context.measureText(textFinancialCurrencyTypeName).width + 20, window.scrollY + 216);
+            context.fillText(textFinancialCurrencyTypeNameValue, context.measureText(textFinancialCurrencyTypeName).width + 20, window.scrollY + 126);
             // Image Blob Filename ( column name first, then value )
-            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
+            context.fillStyle = "white"; // overallColors.text 
             var textImageBlobFilename = "Image Blob Filename: ";
             while (context.measureText(textImageBlobFilename).width > this.tileWidth() - 40
                 && textImageBlobFilename.length > 2) {
                 textImageBlobFilename = textImageBlobFilename.substr(0, textImageBlobFilename.length - 1);
             }
-            context.fillText(textImageBlobFilename, 20, window.scrollY + 246);
+            context.fillText(textImageBlobFilename, 20, window.scrollY + 156);
             // column value
             context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
             var textImageBlobFilenameValue = this.getCartProduct.ImageBlobFilename.toString();
@@ -782,15 +656,15 @@ var DesignVestreVikenDurian;
                 && textImageBlobFilenameValue.length > 2) {
                 textImageBlobFilenameValue = textImageBlobFilenameValue.substr(0, textImageBlobFilenameValue.length - 1);
             }
-            context.fillText(textImageBlobFilenameValue, context.measureText(textImageBlobFilename).width + 20, window.scrollY + 246);
+            context.fillText(textImageBlobFilenameValue, context.measureText(textImageBlobFilename).width + 20, window.scrollY + 156);
             // Default User Name ( column name first, then value )
-            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.text 
+            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
             var textDefaultUserName = "Default User Name: ";
             while (context.measureText(textDefaultUserName).width > this.tileWidth() - 40
                 && textDefaultUserName.length > 2) {
                 textDefaultUserName = textDefaultUserName.substr(0, textDefaultUserName.length - 1);
             }
-            context.fillText(textDefaultUserName, 20, window.scrollY + 276);
+            context.fillText(textDefaultUserName, 20, window.scrollY + 186);
             // column value
             context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
             var textDefaultUserNameValue = this.getCartProduct.DefaultUserName.toString();
@@ -798,15 +672,15 @@ var DesignVestreVikenDurian;
                 && textDefaultUserNameValue.length > 2) {
                 textDefaultUserNameValue = textDefaultUserNameValue.substr(0, textDefaultUserNameValue.length - 1);
             }
-            context.fillText(textDefaultUserNameValue, context.measureText(textDefaultUserName).width + 20, window.scrollY + 276);
+            context.fillText(textDefaultUserNameValue, context.measureText(textDefaultUserName).width + 20, window.scrollY + 186);
             // Date Time ( column name first, then value )
-            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
+            context.fillStyle = "white"; // overallColors.text 
             var textDateTime = "Date Time: ";
             while (context.measureText(textDateTime).width > this.tileWidth() - 40
                 && textDateTime.length > 2) {
                 textDateTime = textDateTime.substr(0, textDateTime.length - 1);
             }
-            context.fillText(textDateTime, 20, window.scrollY + 306);
+            context.fillText(textDateTime, 20, window.scrollY + 216);
             // column value
             context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
             var textDateTimeValue = this.getCartProduct.DateTime.toString();
@@ -814,15 +688,15 @@ var DesignVestreVikenDurian;
                 && textDateTimeValue.length > 2) {
                 textDateTimeValue = textDateTimeValue.substr(0, textDateTimeValue.length - 1);
             }
-            context.fillText(textDateTimeValue, context.measureText(textDateTime).width + 20, window.scrollY + 306);
+            context.fillText(textDateTimeValue, context.measureText(textDateTime).width + 20, window.scrollY + 216);
             // Session Identificator ( column name first, then value )
-            context.fillStyle = "rgb(255, 255, 255)"; // overallColors.text 
+            context.fillStyle = "rgb(211, 211, 211)"; // overallColors.textAlternate 
             var textSessionIdentificator = "Session Identificator: ";
             while (context.measureText(textSessionIdentificator).width > this.tileWidth() - 40
                 && textSessionIdentificator.length > 2) {
                 textSessionIdentificator = textSessionIdentificator.substr(0, textSessionIdentificator.length - 1);
             }
-            context.fillText(textSessionIdentificator, 20, window.scrollY + 336);
+            context.fillText(textSessionIdentificator, 20, window.scrollY + 246);
             // column value
             context.fillStyle = "rgb(240, 240, 0)"; // overallColors.textColumnValue 
             var textSessionIdentificatorValue = this.getCartProduct.SessionIdentificator.toString();
@@ -830,7 +704,7 @@ var DesignVestreVikenDurian;
                 && textSessionIdentificatorValue.length > 2) {
                 textSessionIdentificatorValue = textSessionIdentificatorValue.substr(0, textSessionIdentificatorValue.length - 1);
             }
-            context.fillText(textSessionIdentificatorValue, context.measureText(textSessionIdentificator).width + 20, window.scrollY + 336);
+            context.fillText(textSessionIdentificatorValue, context.measureText(textSessionIdentificator).width + 20, window.scrollY + 246);
             context.stroke();
         };
         return Tile;

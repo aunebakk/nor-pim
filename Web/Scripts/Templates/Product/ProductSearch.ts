@@ -1,7 +1,7 @@
 ﻿// SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 10/30/2020 11:11:06 AM
+// Generated Date: 10/30/2020 10:01:59 PM
 // From Machine: DESKTOP-9A2DH39
 // Template: sql2x.CrudeTypeScriptGenerator.OverallDesignTypeScriptTine
 module SQL2XTemplateCrudeTableDurian {
@@ -298,7 +298,7 @@ module SQL2XTemplateCrudeTableDurian {
             context.strokeStyle = 'black';
             context.fillStyle = 'darkgreen';
             context.shadowColor = 'darkgray';
-            context.shadowBlur = 20;
+            context.shadowBlur = 0;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
             context.fillStyle = 'darkgreen';
@@ -367,7 +367,7 @@ module SQL2XTemplateCrudeTableDurian {
             context.strokeStyle = 'black';
             context.fillStyle = 'darkgray';
             context.shadowColor = 'darkgray';
-            context.shadowBlur = 20;
+            context.shadowBlur = 0;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
             context.fillStyle = 'darkgray';
@@ -473,8 +473,8 @@ module SQL2XTemplateCrudeTableDurian {
             }
 
             context.shadowColor = 'gray';
-            context.shadowBlur = 10;
-            context.shadowOffsetX = 3;
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
             context.fillRect(
                 boxLeft,
                 boxTop,
@@ -507,8 +507,8 @@ module SQL2XTemplateCrudeTableDurian {
             context.font = this.tileFont();
             context.strokeStyle = this.backgroundColor;
             context.fillStyle = this.backgroundColor;
-            context.shadowBlur = 10;
-            context.shadowOffsetX = 3;
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
 
             // cap text until it fits inside the tile
             let name = this.name;
@@ -568,8 +568,8 @@ module SQL2XTemplateCrudeTableDurian {
             context.strokeStyle = this.backgroundColor;
             context.fillStyle = this.backgroundColor;
             context.shadowColor = 'gray';
-            context.shadowBlur = 10;
-            context.shadowOffsetX = 3;
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
             context.fillRect(
                 this.tileLeft,
                 this.tileTop,

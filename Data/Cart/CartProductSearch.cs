@@ -29,14 +29,14 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
             var ret = new List<GetCartProductData>();
             string sql = @"
 select 
-     c.first_name
-    ,c.middle_name
-    ,c.last_name
-    ,c.client_nationality_rcd
-    ,c.client_gender_rcd
-    ,c.client_title_rcd
-    ,c.client_type_rcd
-    ,cp.client_id
+    -- c.first_name
+    --,c.middle_name
+    --,c.last_name
+    --,c.client_nationality_rcd
+    --,c.client_gender_rcd
+    --,c.client_title_rcd
+    --,c.client_type_rcd
+     cp.client_id
     ,p.product_name
     ,p.state_rcd as product_state_rcd
     ,cp.product_id

@@ -16,48 +16,6 @@ namespace SolutionNorSolutionPim.UserInterface {
            InitializeGridGetCartProduct();
         }
         
-        public virtual string FirstName {
-            get {
-                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["FirstName"].Value; else return String.Empty;;
-            }
-        }
-        
-        public virtual string MiddleName {
-            get {
-                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["MiddleName"].Value; else return String.Empty;;
-            }
-        }
-        
-        public virtual string LastName {
-            get {
-                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["LastName"].Value; else return String.Empty;;
-            }
-        }
-        
-        public virtual string ClientNationalityRcd {
-            get {
-                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["ClientNationalityRcd"].Value; else return String.Empty;;
-            }
-        }
-        
-        public virtual string ClientGenderRcd {
-            get {
-                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["ClientGenderRcd"].Value; else return String.Empty;;
-            }
-        }
-        
-        public virtual string ClientTitleRcd {
-            get {
-                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["ClientTitleRcd"].Value; else return String.Empty;;
-            }
-        }
-        
-        public virtual string ClientTypeRcd {
-            get {
-                if (!DesignMode) return (System.String) dataGridViewGetCartProduct.CurrentRow.Cells["ClientTypeRcd"].Value; else return String.Empty;;
-            }
-        }
-        
         public virtual System.Guid ClientId {
             get {
                 if (!DesignMode) return (System.Guid) dataGridViewGetCartProduct.CurrentRow.Cells["ClientId"].Value; else return Guid.Empty;;
@@ -201,13 +159,6 @@ namespace SolutionNorSolutionPim.UserInterface {
         public void InitializeGridGetCartProduct() {
             dataGridViewGetCartProduct.Columns.Clear();
             dataGridViewGetCartProduct.AutoGenerateColumns = false;
-            dataGridViewGetCartProduct.Columns.Add("FirstName","First Name");
-            dataGridViewGetCartProduct.Columns.Add("MiddleName","Middle Name");
-            dataGridViewGetCartProduct.Columns.Add("LastName","Last Name");
-            dataGridViewGetCartProduct.Columns.Add("ClientNationalityRcd","Client Nationality");
-            dataGridViewGetCartProduct.Columns.Add("ClientGenderRcd","Client Gender");
-            dataGridViewGetCartProduct.Columns.Add("ClientTitleRcd","Client Title");
-            dataGridViewGetCartProduct.Columns.Add("ClientTypeRcd","Client Type");
             dataGridViewGetCartProduct.Columns.Add("ClientId","Client Id");
             dataGridViewGetCartProduct.Columns.Add("ProductName","Product Name");
             dataGridViewGetCartProduct.Columns.Add("ProductStateRcd","Product State");

@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 10/30/2020 11:11:06 AM
+// Generated Date: 10/30/2020 10:01:59 PM
 // From Machine: DESKTOP-9A2DH39
 // Template: sql2x.CrudeTypeScriptGenerator.OverallDesignTypeScriptTine
 var SQL2XTemplateCrudeTableDurian;
@@ -220,7 +220,7 @@ var SQL2XTemplateCrudeTableDurian;
             context.strokeStyle = 'black';
             context.fillStyle = 'darkgreen';
             context.shadowColor = 'darkgray';
-            context.shadowBlur = 20;
+            context.shadowBlur = 0;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
             context.fillStyle = 'darkgreen';
@@ -265,7 +265,7 @@ var SQL2XTemplateCrudeTableDurian;
             context.strokeStyle = 'black';
             context.fillStyle = 'darkgray';
             context.shadowColor = 'darkgray';
-            context.shadowBlur = 20;
+            context.shadowBlur = 0;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
             context.fillStyle = 'darkgray';
@@ -343,8 +343,8 @@ var SQL2XTemplateCrudeTableDurian;
                 context.fillStyle = 'rgb(23, 141, 39)';
             }
             context.shadowColor = 'gray';
-            context.shadowBlur = 10;
-            context.shadowOffsetX = 3;
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
             context.fillRect(boxLeft, boxTop, boxWidth, boxHeight);
             context.stroke();
             if (this.url != '') {
@@ -368,8 +368,8 @@ var SQL2XTemplateCrudeTableDurian;
             context.font = this.tileFont();
             context.strokeStyle = this.backgroundColor;
             context.fillStyle = this.backgroundColor;
-            context.shadowBlur = 10;
-            context.shadowOffsetX = 3;
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
             // cap text until it fits inside the tile
             var name = this.name;
             while (context.measureText(name).width > (this.detailLink.linkLeft - this.textLeft - this.tileBorder) &&
@@ -404,8 +404,8 @@ var SQL2XTemplateCrudeTableDurian;
             context.strokeStyle = this.backgroundColor;
             context.fillStyle = this.backgroundColor;
             context.shadowColor = 'gray';
-            context.shadowBlur = 10;
-            context.shadowOffsetX = 3;
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
             context.fillRect(this.tileLeft, this.tileTop, this.tileWidth(), this.tileHeight);
             context.stroke();
         };

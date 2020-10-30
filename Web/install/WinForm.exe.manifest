@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="132096">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="131584">
       <assemblyIdentity name="Contract" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6HYdUhq1s04q1M8RBlQkQk3X36nGJPahzRzL+Awcwdw=</dsig:DigestValue>
+        <dsig:DigestValue>1u4UFnUR/8K21NYmEaSNkbLeh5v7KeZxuOpCm1kOkYw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gy2jmUuGSGazho0b76sWXiCFNJ2BKM93hdcgyaihxlY=</dsig:DigestValue>
+        <dsig:DigestValue>KNjsSfkFFeB99Rv/gnUq+U2gXGYWgRoWXLS1kxABAaQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForm.exe" size="1377280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForm.exe" size="1376768">
       <assemblyIdentity name="WinForm" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TDGp2ivbkandlX/ECYgckqpy8tE4ojDvLxFoQtar83M=</dsig:DigestValue>
+        <dsig:DigestValue>R/hS40xrzZmKbo5IiHzrP42A/k76PzfmqGjeL0If+mU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -95,13 +95,13 @@
       <dsig:DigestValue>aXwkIrKiZfDaua3eg28Sd8Pc4KPUHDHuyUbQHV0zd2g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WinForm.exe.config" size="31362">
+  <file name="WinForm.exe.config" size="31361">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>fMfZwZVAn+kJwZ9M9aZMjd2ssq/jNKO7rN+NPYdWdeA=</dsig:DigestValue>
+      <dsig:DigestValue>fCLjBZ2J4C0t+7WZghSbxyFgK4ZhyEA/V62/X8sGxuE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 10/30/2020 11:07:46 AM
+  Generated Date: 10/30/2020 9:58:35 PM
   From Machine: DESKTOP-9A2DH39
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
@@ -30,13 +30,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         }
         
         public void DataToContract(GetCartProductData dalGetCartProduct, GetCartProductContract dataContract) {
-            dataContract.FirstName = dalGetCartProduct.FirstName;
-            dataContract.MiddleName = dalGetCartProduct.MiddleName;
-            dataContract.LastName = dalGetCartProduct.LastName;
-            dataContract.ClientNationalityRcd = dalGetCartProduct.ClientNationalityRcd;
-            dataContract.ClientGenderRcd = dalGetCartProduct.ClientGenderRcd;
-            dataContract.ClientTitleRcd = dalGetCartProduct.ClientTitleRcd;
-            dataContract.ClientTypeRcd = dalGetCartProduct.ClientTypeRcd;
             dataContract.ClientId = dalGetCartProduct.ClientId;
             dataContract.ProductName = dalGetCartProduct.ProductName;
             dataContract.ProductStateRcd = dalGetCartProduct.ProductStateRcd;
