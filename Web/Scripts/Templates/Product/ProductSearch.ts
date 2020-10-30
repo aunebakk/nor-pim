@@ -1,7 +1,7 @@
 ﻿// SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 10/29/2020 9:59:12 PM
+// Generated Date: 10/30/2020 4:48:38 AM
 // From Machine: DESKTOP-9A2DH39
 // Template: sql2x.CrudeTypeScriptGenerator.OverallDesignTypeScriptTine
 module SQL2XTemplateCrudeTableDurian {

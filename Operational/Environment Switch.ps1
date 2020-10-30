@@ -1,7 +1,7 @@
 # SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/29/2020 10:04:11 PM
+# Generated Date: 10/30/2020 4:53:33 AM
 # From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_EnvironmentSwitch
 param (
@@ -16,100 +16,7 @@ param (
 
 Set-Location $parent
 
-[string[]] $match = 'ConnectionString.cs'
-foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.FullName -PathType leaf} ) {
-    # exclude this script
-    if ($file.FullName -eq $MyInvocation.MyCommand.Path) {
-        continue
-    }
-
-    # get file content
-    [string] $fileContent = Get-Content $file -Raw
-    [string] $fileContentOriginal = $fileContent
-
-    # validate file ( exclude files of 0 length )
-    if ($fileContent.Length -eq 0) {
-        # Write-Host $file.FullName
-        continue
-    }
-
-    # replace
-    if ($toRemote) {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
-    } else {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionString = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
-    }
-
-    # save file and show filename if changed
-    if ($fileContentOriginal -ne $fileContent) {
-        'de-sanitizing ' + $match + ' : ' + $file
-        $fileContent | Set-Content ( $file )
-    }
-}
-
-[string[]] $match = 'ConnectionString.cs'
-foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.FullName -PathType leaf} ) {
-    # exclude this script
-    if ($file.FullName -eq $MyInvocation.MyCommand.Path) {
-        continue
-    }
-
-    # get file content
-    [string] $fileContent = Get-Content $file -Raw
-    [string] $fileContentOriginal = $fileContent
-
-    # validate file ( exclude files of 0 length )
-    if ($fileContent.Length -eq 0) {
-        # Write-Host $file.FullName
-        continue
-    }
-
-    # replace
-    if ($toRemote) {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionStringLocal = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'ConnectionStringLocal = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
-    } else {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionStringLocal = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'ConnectionStringLocal = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
-    }
-
-    # save file and show filename if changed
-    if ($fileContentOriginal -ne $fileContent) {
-        'de-sanitizing ' + $match + ' : ' + $file
-        $fileContent | Set-Content ( $file )
-    }
-}
-
-[string[]] $match = 'ConnectionString.cs'
-foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.FullName -PathType leaf} ) {
-    # exclude this script
-    if ($file.FullName -eq $MyInvocation.MyCommand.Path) {
-        continue
-    }
-
-    # get file content
-    [string] $fileContent = Get-Content $file -Raw
-    [string] $fileContentOriginal = $fileContent
-
-    # validate file ( exclude files of 0 length )
-    if ($fileContent.Length -eq 0) {
-        # Write-Host $file.FullName
-        continue
-    }
-
-    # replace
-    if ($toRemote) {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionStringRemote = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;', 'ConnectionStringRemote = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;') }
-    } else {
-        $fileContent = $fileContent | ForEach-Object { $_.Replace('ConnectionStringRemote = @"Data Source=sqlServerName.database.windows.net;Persist Security Info=True;User ID=sqlServerUserName;Password=sqlServerPassword;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;Initial Catalog=NorSolutionPim;', 'ConnectionStringRemote = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=NorSolutionPim;') }
-    }
-
-    # save file and show filename if changed
-    if ($fileContentOriginal -ne $fileContent) {
-        'de-sanitizing ' + $match + ' : ' + $file
-        $fileContent | Set-Content ( $file )
-    }
-}
-
-[string[]] $match = 'connection.config','Web.config'
+[string[]] $match = 'connection.config','Web.config,ConnectionString.cs'
 foreach ($file in Get-ChildItem -recurse -include $match | Where-Object { Test-Path $_.FullName -PathType leaf} ) {
     # exclude this script
     if ($file.FullName -eq $MyInvocation.MyCommand.Path) {
