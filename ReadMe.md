@@ -112,11 +112,11 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 
 & '.\Operational\De-Sanitize Connection.ps1' `
   -toAzure:$true `
-  -azureActiveDirectoryLogin:'roger@aunebakk.com' `
-  -azureActiveDirectoryPassword:'en8to3FIRE2' `
-  -sqlServerName:'hri0nhlzkl' `
-  -sqlServerUserName:'norgate' `
-  -sqlServerPassword:'njas42379HGI'
+  -azureActiveDirectoryLogin:'**email**' `
+  -azureActiveDirectoryPassword:'**password**' `
+  -sqlServerName:'**name**' `
+  -sqlServerUserName:'''username' `
+  -sqlServerPassword:'**password**'
 
 & '.\Operational\Environment Switch.ps1' `
    -toRemote:$true
