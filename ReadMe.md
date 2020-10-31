@@ -12,10 +12,10 @@ The goal of Open Sourcing Nor-Pim is to attract organizations/developers to make
 
 Currently Nor-Pim runs on SQL Server using only Tables, Columns and Relations, no Stored Procedures or Functions. This makes Nor-Pim easily adaptable to other databases. Same with the business layer where dotNetCore under Linux is in the [pipeline](#pipeline). The business logic in the tailored code of Nor-Pim is not expected to change at all during this transition from WCF/SOAP to REST. And the tailored user interface code should stay the same as SQL2X provides the same client side proxy for REST interfaces as SOAP did.
 
-Live [Nor-Pim running under Azure](http://www.Nor-Pim.com). In this configuration all 3 FrontEnds runs under one Azure App, the WCF/SOAP layer in another one and finally Azure SQL Database on a third server.
+Live [Nor-Pim running under Azure](http://www.NorPim.com). In this configuration all 3 FrontEnds runs under one Azure App, the WCF/SOAP layer in another one and finally Azure SQL Database on a third server.
 
 # Nor-Pim
-[Nor-Pim](http://www.Nor-Pim.com) Product Information Management - Structured product specific attributes for Windows / Web and Mobile platform.
+[Nor-Pim](http://www.NorPim.com) Product Information Management - Structured product specific attributes for Windows / Web and Mobile platform.
 
 Nor-Pim is a Product Information Management System written for enterprise cloud environments with user interfaces tailored for PC, Web and Mobile.
 
@@ -158,7 +158,7 @@ The web FrontEnd is responsible for creating and updating the database, so the F
 Is an top-down view of Nor-Pim, starting with all user visible aspects, going through the architecture from client proxies to business layer and the database.
 
 ## The Repository
-This repository ("`Nor-Pim`") is where we ( NorGate ) develop the [Nor-Pim](http://Nor-Pim.com) product. This source code is available to everyone under the standard [MIT](https://github.com/aunebakk/nor-pim/blob/master/Documentation/license.txt) license.
+This repository ("`Nor-Pim`") is where we ( NorGate ) develop the [Nor-Pim](http://NorPim.com) product. This source code is available to everyone under the standard [MIT](https://github.com/aunebakk/nor-pim/blob/master/Documentation/license.txt) license.
 
 ## DashBoard
 This is the starting page for the Hybrid Mobile/Web side of Nor-Pim. It supports portrait and landscape mode, so rotating a mobile device will change layout of tiles.
