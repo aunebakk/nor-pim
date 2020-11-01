@@ -1,1 +1,0 @@
-msbuild XXPrototypeDotNetFrameworkWebAppCrudeBusiness.sln /p:DeployOnBuild=true /p:PublishProfile=XXPrototypeDotNetFrameworkWebAppCrudeBusiness - Web Deploy.pubxml

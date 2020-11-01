@@ -1,7 +1,7 @@
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 11/1/2020 7:11:23 AM
+// Generated Date: 11/1/2020 10:01:07 AM
 // From Machine: DESKTOP-9A2DH39
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian

@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5C225A11-425E-4F82-A7E3-B264682BC939}</ProjectGuid>
+    <ProjectGuid>{5C282DD6-356D-41E7-8B45-AE9BA4BC8C98}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -176,7 +176,6 @@
     <Content Include="Product\ProductCategoryService.svc" />
     <Content Include="Product\ProductSearchService.svc" />
     <Content Include="Product\ProductService.svc" />
-    <Content Include="Properties\PublishProfiles\XXPrototypeDotNetFrameworkWebAppCrudeBusiness - Web Deploy.pubxml.user" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -333,9 +332,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cart\json\Cart.json" />
-    <Content Include="Cart\json\TemplateCartProduct.json" />
-    <Content Include="Cart\json\TemplateFinancialOrder.json" />
     <Content Include="Client\__client.json" />
     <Content Include="CustomTemplates\Cart\Cart.json" />
     <Content Include="CustomTemplates\Cart\TemplateCartProduct.json" />
@@ -356,21 +352,6 @@
     <Content Include="CustomTemplates\ProductReference\ProductReferenceInfo.json" />
     <None Include="Information\architecture.txt" />
     <None Include="Information\description.txt" />
-    <Content Include="ProductMaintenance\json\_product.json" />
-    <Content Include="ProductMaintenance\json\_productattribute.json" />
-    <Content Include="ProductMaintenance\json\_productdocumentation.json" />
-    <Content Include="ProductMaintenance\json\_productidentifier.json" />
-    <Content Include="ProductMaintenance\json\_productimage.json" />
-    <Content Include="ProductMaintenance\json\_productinfo.json" />
-    <Content Include="ProductReference\json\ProductReferenceAttribute - Copy.json.bak2" />
-    <Content Include="ProductReference\json\ProductReferenceAttribute.json" />
-    <Content Include="ProductReference\json\ProductReferenceAttributeUnit.json" />
-    <Content Include="ProductReference\json\ProductReferenceCategory.json" />
-    <Content Include="ProductReference\json\ProductReferenceCategoryDocumentationType.json" />
-    <Content Include="ProductReference\json\ProductReferenceDocumentationType.json" />
-    <Content Include="ProductReference\json\ProductReferenceIdentifier.json" />
-    <Content Include="ProductReference\json\ProductReferenceImageType.json" />
-    <Content Include="ProductReference\json\ProductReferenceInfo.json" />
     <Content Include="SchemaTemplates\Cart\CartProduct.json" />
     <Content Include="SchemaTemplates\Cart\CartProductPrice.json" />
     <Content Include="SchemaTemplates\Client\Client.json" />
@@ -452,15 +433,14 @@
     <Content Include="SchemaTemplates\Product\ProductInfoRef.json" />
     <Content Include="SchemaTemplates\Product\ProductSupplier.json" />
     <Content Include="Operational\Build package to disk.bat" />
-    <None Include="Properties\PublishProfiles\XXPrototypeDotNetFrameworkWebAppCrudeBusiness - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{e5ba102f-d32f-42f7-98bc-fbad02dfb649}</Project>
+      <Project>{4b6915f1-8fa5-4600-a833-fd5c9b3c7eb2}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{69e55f07-5230-4abc-9ef5-bc8f0f982779}</Project>
+      <Project>{226806eb-950a-4827-ad91-bdb6c1783ef2}</Project>
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>

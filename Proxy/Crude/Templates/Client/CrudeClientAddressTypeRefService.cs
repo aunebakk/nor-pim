@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 11/1/2020 7:03:16 AM
+  Generated Date: 11/1/2020 9:52:59 AM
   From Machine: DESKTOP-9A2DH39
   Filename: ClientAddressTypeRef.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
