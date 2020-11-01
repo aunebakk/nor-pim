@@ -16,12 +16,31 @@
   "Style": {
     "TemplateStyle": "WithDurianByTypeScript",
     "Name": "WithDurianByTypeScript",
-    "DesignTypeScript": "TypeScriptTine",
-    "PrimaryKey": "",
+    "DesignTypeScript": "TypeScriptVestreVikenDurian",
+    "PrimaryKey": "product_id",
     "AzureAppName": "NorSolutionPim",
     "OverrideDisplayableName": null,
     "WebStyle": "None",
-    "Actions": [],
+    "Actions": [
+      {
+        "Name": "details",
+        "Text": "D",
+        "Controller": "Product",
+        "Action": "PIMDetails"
+      },
+      {
+        "Name": "edit",
+        "Text": "E",
+        "Controller": "ProductMaintenance",
+        "Action": "ProductMaintenanceEdit"
+      },
+      {
+        "Name": "select",
+        "Text": "S",
+        "Controller": "Product",
+        "Action": "Order"
+      }
+    ],
     "ShowPrimary": false
   },
   "Durian": {
