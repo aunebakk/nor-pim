@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "WithDurianByTypeScript",
-    "OverallStyleName": "WithDurianByTypeScript",
-    "OverallStyleDesign": "TypeScriptHagtorn",
-    "OverallStylePrimaryKey": "financial_order_id",
-    "OverallStyleAzureAppName": "NorSolutionPim",
+    "Name": "WithDurianByTypeScript",
+    "DesignTypeScript": "TypeScriptHagtorn",
+    "PrimaryKey": "financial_order_id",
+    "AzureAppName": "NorSolutionPim",
+    "OverrideDisplayableName": null,
     "WebStyle": "None",
     "Actions": [],
     "ShowPrimary": false

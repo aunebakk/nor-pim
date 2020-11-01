@@ -1,7 +1,7 @@
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 11/1/2020 1:02:12 PM
+// Generated Date: 11/1/2020 4:21:16 PM
 // From Machine: DESKTOP-9A2DH39
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian
@@ -51,10 +51,12 @@ var DesignVestreVikenDurian;
             GetCartProductTileList.clearCanvas("white"); // overallColors.backGround
             // get client elements
             var canvas = document.getElementById("myCanvas");
+            // header text
+            var headerText = "Selected";
             // header tile
             var line = 0;
             GetCartProductTileList.header =
-                new Tile("Cart Product", // name
+                new Tile(headerText, // name
                 2, // tileLeft
                 line, // tileTop
                 "", // suffix of url

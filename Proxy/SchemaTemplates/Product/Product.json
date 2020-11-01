@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "CrudeProxy",
-    "OverallStyleName": "CrudeProxy",
-    "OverallStyleDesign": "TypeScriptHagtorn",
-    "OverallStylePrimaryKey": null,
-    "OverallStyleAzureAppName": null,
+    "Name": "CrudeProxy",
+    "DesignTypeScript": "TypeScriptHagtorn",
+    "PrimaryKey": null,
+    "AzureAppName": null,
+    "OverrideDisplayableName": null,
     "WebStyle": "None",
     "Actions": [],
     "ShowPrimary": false

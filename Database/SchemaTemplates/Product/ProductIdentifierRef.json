@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "None",
-    "OverallStyleName": "None",
-    "OverallStyleDesign": "TypeScriptHagtorn",
-    "OverallStylePrimaryKey": null,
-    "OverallStyleAzureAppName": null,
+    "Name": "None",
+    "DesignTypeScript": "TypeScriptHagtorn",
+    "PrimaryKey": null,
+    "AzureAppName": null,
+    "OverrideDisplayableName": null,
     "WebStyle": "None",
     "Actions": [],
     "ShowPrimary": false

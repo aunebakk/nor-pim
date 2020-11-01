@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "WithDurianByTypeScript",
-    "OverallStyleName": "WithDurianByTypeScript",
-    "OverallStyleDesign": "TypeScriptVestreVikenDurian",
-    "OverallStylePrimaryKey": "cart_product_id",
-    "OverallStyleAzureAppName": "NorSolutionPim",
+    "Name": "WithDurianByTypeScript",
+    "DesignTypeScript": "TypeScriptVestreVikenDurian",
+    "PrimaryKey": "cart_product_id",
+    "AzureAppName": "NorSolutionPim",
+    "OverrideDisplayableName": "Selected",
     "WebStyle": "None",
     "Actions": [
       {

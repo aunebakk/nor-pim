@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "WithDurianByTypeScript",
-    "OverallStyleName": "WithDurianByTypeScript",
-    "OverallStyleDesign": "TypeScriptTine",
-    "OverallStylePrimaryKey": "",
-    "OverallStyleAzureAppName": "NorSolutionPim",
+    "Name": "WithDurianByTypeScript",
+    "DesignTypeScript": "TypeScriptTine",
+    "PrimaryKey": "",
+    "AzureAppName": "NorSolutionPim",
+    "OverrideDisplayableName": null,
     "WebStyle": "None",
     "Actions": [],
     "ShowPrimary": false

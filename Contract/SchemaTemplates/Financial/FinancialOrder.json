@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "CrudeContract",
-    "OverallStyleName": "CrudeContract",
-    "OverallStyleDesign": "TypeScriptHagtorn",
-    "OverallStylePrimaryKey": null,
-    "OverallStyleAzureAppName": null,
+    "Name": "CrudeContract",
+    "DesignTypeScript": "TypeScriptHagtorn",
+    "PrimaryKey": null,
+    "AzureAppName": null,
+    "OverrideDisplayableName": null,
     "WebStyle": "None",
     "Actions": [],
     "ShowPrimary": false

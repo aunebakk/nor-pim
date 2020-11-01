@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "ByServiceTableCrud",
-    "OverallStyleName": "ByServiceTableCrud",
-    "OverallStyleDesign": "",
-    "OverallStylePrimaryKey": "",
-    "OverallStyleAzureAppName": "",
+    "Name": "ByServiceTableCrud",
+    "DesignTypeScript": "",
+    "PrimaryKey": "",
+    "AzureAppName": "",
+    "OverrideDisplayableName": null,
     "WebStyle": "TabularOnEditCreate",
     "Actions": [
       {

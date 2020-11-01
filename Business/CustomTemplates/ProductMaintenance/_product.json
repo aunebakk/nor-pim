@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "WithDurian",
-    "OverallStyleName": "WithDurian",
-    "OverallStyleDesign": "",
-    "OverallStylePrimaryKey": "",
-    "OverallStyleAzureAppName": "",
+    "Name": "WithDurian",
+    "DesignTypeScript": "",
+    "PrimaryKey": "",
+    "AzureAppName": "",
+    "OverrideDisplayableName": null,
     "WebStyle": "TabularOnEditCreate",
     "Actions": [],
     "ShowPrimary": false

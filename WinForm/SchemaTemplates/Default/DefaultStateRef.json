@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "CrudeWinForm",
-    "OverallStyleName": "CrudeWinForm",
-    "OverallStyleDesign": "TypeScriptHagtorn",
-    "OverallStylePrimaryKey": null,
-    "OverallStyleAzureAppName": null,
+    "Name": "CrudeWinForm",
+    "DesignTypeScript": "TypeScriptHagtorn",
+    "PrimaryKey": null,
+    "AzureAppName": null,
+    "OverrideDisplayableName": null,
     "WebStyle": "None",
     "Actions": [],
     "ShowPrimary": false

@@ -15,10 +15,11 @@
   },
   "Style": {
     "TemplateStyle": "CrudeSoap",
-    "OverallStyleName": "CrudeSoap",
-    "OverallStyleDesign": "TypeScriptHagtorn",
-    "OverallStylePrimaryKey": null,
-    "OverallStyleAzureAppName": null,
+    "Name": "CrudeSoap",
+    "DesignTypeScript": "TypeScriptHagtorn",
+    "PrimaryKey": null,
+    "AzureAppName": null,
+    "OverrideDisplayableName": null,
     "WebStyle": "None",
     "Actions": [],
     "ShowPrimary": false

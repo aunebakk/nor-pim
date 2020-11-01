@@ -1,7 +1,7 @@
 ﻿// SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 11/1/2020 1:02:12 PM
+// Generated Date: 11/1/2020 4:21:16 PM
 // From Machine: DESKTOP-9A2DH39
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian
@@ -103,11 +103,14 @@ module DesignVestreVikenDurian {
             // get client elements
             let canvas: HTMLCanvasElement = (<HTMLCanvasElement>document.getElementById("myCanvas"));
 
+            // header text
+            let headerText: string = "Selected";
+
             // header tile
             let line: number = 0;
             GetCartProductTileList.header = 
                 new Tile(
-                    "Cart Product",    // name
+                    headerText,        // name
                     2,                 // tileLeft
                     line,              // tileTop
                     "",                // suffix of url
