@@ -15,23 +15,22 @@ var ChapterIndex;
     // scale name from HTML (htmlScale(1.0))
     var htmlScale = "scale(1.0)";
     var htmlZoom = "1.0";
-    var tileFillStyleMain = 'rgb(4, 115, 8)';
-    var tileFillStyle = 'rgb(23, 141, 39)';
+    var tileFillStyleMain = 'rgb(24, 101, 29)';
+    var tileFillStyle = 'rgb(4, 115, 8)';
     var tileStrokeStyle = 'black';
     var tileFont = 'px Arial';
     var tileLineWidth = 2;
     var tileFontSize = 14;
     var tileBorder = 15;
     var tileHeight = 44;
-    //var tileLink: string = '../ProductSearch/ProductSearchIndex?onParent=true&productCategoryId=';  // http
-    var tileLink = '../ProductSearchByCategoryLive/ProductSearchByCategoryIndex?onParent=true&productCategoryId='; // http
+    var tileLink = '../ProductSearchByCategoryLive/ProductSearchByCategoryIndex?onParent=true&productCategoryId=';
     var tileClickTimeout = 100;
     var tileTextReposLeft = 2;
     var tileSpaceVertical = 7;
     var tileIndent = 40;
     var shadowColor = 'gray';
-    var shadowBlur = 10;
-    var shadowOffsetX = 3;
+    var shadowBlur = 0;
+    var shadowOffsetX = 0;
     // client on load
     window.onload = function () {
         var dashboard = new TemplateChapterIndex();
@@ -153,7 +152,7 @@ var ChapterIndex;
             this.tiles = new Array();
             var line = 0;
             var lastTileBottom = 0;
-            var headTile = new Tile(mainChapterText + (TemplateChapterIndex.isMobile() ? "Phone" : "Web"), 0, line, "", "", productCategories.length, '');
+            var headTile = new Tile(mainChapterText + (TemplateChapterIndex.isMobile() ? "Phone" : "Web"), 0, line, "", "", productCategories.length, '', tileFillStyleMain);
             // header
             lastTileBottom = headTile.tileTop + tileHeight;
             this.tiles.push(headTile);
@@ -182,7 +181,7 @@ var ChapterIndex;
                         continue;
                 }
                 line++;
-                var tile = new Tile(productCategories[i].ProductCategoryName, tileIndent, line, categoryFilter.length === 0 ? categoryCodeFirstTwo : categoryFilter.length === 2 ? categoryCodeFirstFour : categoryFilter.length === 4 ? categoryCode : '', productCategoryId, productCategories.length, categoryFilter.length === 4 ? tileLink + productCategoryId : '');
+                var tile = new Tile(productCategories[i].ProductCategoryName, tileIndent, line, categoryFilter.length === 0 ? categoryCodeFirstTwo : categoryFilter.length === 2 ? categoryCodeFirstFour : categoryFilter.length === 4 ? categoryCode : '', productCategoryId, productCategories.length, categoryFilter.length === 4 ? tileLink + productCategoryId : '', (line % 2 === 0) ? tileFillStyleMain : tileFillStyle);
                 lastTileBottom = tile.tileTop + tileHeight;
                 this.tiles.push(tile);
             }
@@ -198,7 +197,7 @@ var ChapterIndex;
     }());
     // represents everything needed inside one tile
     var Tile = /** @class */ (function () {
-        function Tile(name, tileLeft, tileTop, categoryFilter, productCategoryParentId, tileCount, clickURL) {
+        function Tile(name, tileLeft, tileTop, categoryFilter, productCategoryParentId, tileCount, clickURL, tileColor) {
             this.name = name;
             this.tileLeft = tileLeft;
             this.tileTop = tileTop;
@@ -206,6 +205,7 @@ var ChapterIndex;
             this.productCategoryParentId = productCategoryParentId;
             this.tileCount = tileCount;
             this.clickURL = clickURL;
+            this.tileColor = tileColor;
             this.textLeft = 0;
             this.tileTop = tileSpaceVertical + ((tileHeight + tileSpaceVertical) * this.tileTop);
             this.textLeft = this.tileLeft + tileTextReposLeft + (tileBorder * 1.5);
@@ -219,11 +219,15 @@ var ChapterIndex;
         Tile.prototype.draw = function () {
             // get client elements
             var canvas = document.getElementById(htmlCanvasName);
-            // clear canvas
             var context = canvas.getContext("2d");
-            // fixed stuff
-            this.frame(htmlBackgroundColor, tileLineWidth, false);
-            // gradient box
+            // tile frame based on background color of canvas's parent
+            var getBody = document.getElementsByTagName("body")[0];
+            var property = window.getComputedStyle(getBody).getPropertyValue("background-color");
+            if (property === "rgb(255, 255, 255)")
+                this.frame("black", tileLineWidth, false);
+            else
+                this.frame(htmlBackgroundColor, tileLineWidth, false);
+            // calc box position and size
             var boxLeft = this.tileLeft + 1;
             var boxTop = this.tileTop;
             var boxWidth = this.tileWidth() - 2;
@@ -231,12 +235,7 @@ var ChapterIndex;
             context.beginPath();
             context.lineWidth = tileLineWidth;
             context.strokeStyle = htmlBackgroundColor;
-            if (this.categoryFilter === "") {
-                context.fillStyle = tileFillStyleMain;
-            }
-            else {
-                context.fillStyle = tileFillStyle;
-            }
+            context.fillStyle = this.tileColor;
             context.shadowColor = shadowColor;
             context.shadowBlur = shadowBlur;
             context.shadowOffsetX = shadowOffsetX;

@@ -1,7 +1,7 @@
 ﻿# SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 10/31/2020 7:08:05 AM
+# Generated Date: 11/1/2020 4:30:02 AM
 # Template: sql2x.AzureBase.ExecutePowerShell
 # From: sql2x.AzureBase.DownLoadAndUnzip
 

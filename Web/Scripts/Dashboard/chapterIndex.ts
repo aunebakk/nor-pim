@@ -33,23 +33,22 @@ module ChapterIndex {
     var htmlScale: string = "scale(1.0)";
 
     var htmlZoom: string = "1.0";
-    var tileFillStyleMain: string = 'rgb(4, 115, 8)'; 
-    var tileFillStyle: string = 'rgb(23, 141, 39)';
+    var tileFillStyleMain: string = 'rgb(24, 101, 29)'; 
+    var tileFillStyle: string = 'rgb(4, 115, 8)';
     var tileStrokeStyle: string = 'black';
     var tileFont: string = 'px Arial';
     var tileLineWidth: number = 2;
     var tileFontSize: number = 14;
     var tileBorder: number = 15;
     var tileHeight: number = 44;
-    //var tileLink: string = '../ProductSearch/ProductSearchIndex?onParent=true&productCategoryId=';  // http
-    var tileLink: string = '../ProductSearchByCategoryLive/ProductSearchByCategoryIndex?onParent=true&productCategoryId='   // http
+    var tileLink: string = '../ProductSearchByCategoryLive/ProductSearchByCategoryIndex?onParent=true&productCategoryId='
     var tileClickTimeout: number = 100;
     var tileTextReposLeft: number = 2;
     var tileSpaceVertical: number = 7;
     var tileIndent: number = 40;
     var shadowColor: string = 'gray';
-    var shadowBlur: number = 10;
-    var shadowOffsetX: number = 3;
+    var shadowBlur: number = 0;
+    var shadowOffsetX: number = 0;
 
     declare var productCategories: ProductCategoriesType[];
 
@@ -203,7 +202,8 @@ module ChapterIndex {
                     "",
                     "",
                     productCategories.length,
-                    ''
+                    '',
+                    tileFillStyleMain
                 );
 
             // header
@@ -250,7 +250,8 @@ module ChapterIndex {
                     categoryFilter.length === 0 ? categoryCodeFirstTwo : categoryFilter.length === 2 ? categoryCodeFirstFour : categoryFilter.length === 4 ? categoryCode : '',
                     productCategoryId,
                     productCategories.length,
-                    categoryFilter.length === 4 ? tileLink + productCategoryId : ''
+                    categoryFilter.length === 4 ? tileLink + productCategoryId : '',
+                    (line % 2 === 0) ? tileFillStyleMain : tileFillStyle
                 );
 
                 lastTileBottom = tile.tileTop + tileHeight;
@@ -278,7 +279,8 @@ module ChapterIndex {
             public categoryFilter: string,
             public productCategoryParentId: string,
             public tileCount: number,
-            public clickURL: string
+            public clickURL: string,
+            public tileColor: string
         ) {
             this.tileTop = tileSpaceVertical + ((tileHeight + tileSpaceVertical) * this.tileTop);
             this.textLeft = this.tileLeft + tileTextReposLeft + (tileBorder * 1.5);
@@ -294,26 +296,27 @@ module ChapterIndex {
         draw(): void {
             // get client elements
             const canvas = (document.getElementById(htmlCanvasName) as HTMLCanvasElement);
-
-            // clear canvas
             const context = canvas.getContext("2d");
 
-            // fixed stuff
-            this.frame(htmlBackgroundColor, tileLineWidth, false);
+            // tile frame based on background color of canvas's parent
+            var getBody = document.getElementsByTagName("body")[0]
+            var property = window.getComputedStyle(getBody).getPropertyValue("background-color");
 
-            // gradient box
+            if (property === "rgb(255, 255, 255)")
+                this.frame("black", tileLineWidth, false);
+            else
+                this.frame(htmlBackgroundColor, tileLineWidth, false);
+
+            // calc box position and size
             const boxLeft = this.tileLeft + 1;
             const boxTop = this.tileTop;
             const boxWidth = this.tileWidth() - 2;
             const boxHeight = tileHeight - 1;
+
             context.beginPath();
             context.lineWidth = tileLineWidth;
             context.strokeStyle = htmlBackgroundColor;
-            if (this.categoryFilter === "") {
-                context.fillStyle = tileFillStyleMain;
-            } else {
-                context.fillStyle = tileFillStyle;
-            }
+            context.fillStyle = this.tileColor;
 
             context.shadowColor = shadowColor;
             context.shadowBlur = shadowBlur;

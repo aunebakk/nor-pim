@@ -1,7 +1,7 @@
 // SQL2X Generated code based on a SQL Server Schema
 // SQL2X Version: 1.0
 // http://sql2x.org/
-// Generated Date: 10/31/2020 7:15:29 AM
+// Generated Date: 11/1/2020 4:37:22 AM
 // From Machine: DESKTOP-9A2DH39
 // Filename: TemplateCartProduct.json
 // MethodName: sql2x.CrudeTypeScriptGenerator.DesignVestreVikenDurian
@@ -113,6 +113,7 @@ var DesignVestreVikenDurian;
             }
             // grid rows for GetCartProduct
             var lastTile;
+            line++;
             // header columns
             lastTile =
                 new Tile("", // name
@@ -429,8 +430,13 @@ var DesignVestreVikenDurian;
         };
         // draws the tile
         Tile.prototype.draw = function (context) {
-            // fixed elements
-            this.tileFrame(context);
+            // tile frame based on background color of canvas"s parent
+            var getBody = document.getElementsByTagName("body")[0];
+            var property = window.getComputedStyle(getBody).getPropertyValue("background-color");
+            if (property === "rgb(255, 255, 255)")
+                this.tileFrame(context, "black");
+            else
+                this.tileFrame(context, "white");
             // save box measurements
             var boxLeft = this.tileLeft;
             var boxTop = this.tileTop;
@@ -450,14 +456,15 @@ var DesignVestreVikenDurian;
             context.stroke();
             // action links
             var lastActionLinkLeft = boxWidth - boxLeft;
-            if (this.getCartProduct != null) {
-                // Un Order
-                this.unOrderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 1);
-                this.unOrderLink.linkUrl = "../Product/UnOrder?cartProductId=";
+            var onlyCalc = this.getCartProduct == null;
+            // Un Order
+            this.unOrderLink.measure(boxLeft, boxTop, boxWidth, boxHeight, 1);
+            this.unOrderLink.linkUrl = "../Product/UnOrder?cartProductId=";
+            if (!onlyCalc)
                 this.unOrderLink.draw(context, this.tileFontSize + "px Arial", "U", this.textTop(this.name));
-                lastActionLinkLeft = this.unOrderLink.linkLeft;
+            lastActionLinkLeft = this.unOrderLink.linkLeft;
+            if (!onlyCalc)
                 context.stroke();
-            }
             // tile text
             context.beginPath();
             if (this.getCartProduct == null)
@@ -473,12 +480,19 @@ var DesignVestreVikenDurian;
             context.shadowOffsetY = 0;
             // row columns
             var leftPos = this.textLeft;
+            var text;
             // no widths means this is the header, exit
             if (this.cartProductListWidths == null) {
+                // cap text of last column until it fits inside the tile
+                text = this.name;
+                while (context.measureText(text).width > lastActionLinkLeft - leftPos
+                    && text.length > 2) {
+                    text = text.substr(0, text.length - 1);
+                }
+                context.fillText(text, leftPos, this.textTop(name));
                 context.stroke();
                 return;
             }
-            var text;
             // Product Name
             // cap text of last column until it fits inside the tile
             text = this.getCartProduct == null ? "Product Name" : this.getCartProduct.ProductName;
@@ -487,43 +501,43 @@ var DesignVestreVikenDurian;
                 text = text.substr(0, text.length - 1);
             }
             context.fillText(text, leftPos, this.textTop(name));
-            leftPos += this.cartProductListWidths[0] + 10;
+            leftPos += this.cartProductListWidths[0] + 20;
             // Financial Currency Type Code
-            text = this.getCartProduct == null ? "Financial Currency Type Code" : this.getCartProduct.FinancialCurrencyTypeCode;
+            text = this.getCartProduct == null ? "Financial Currency Type Code" : (this.getCartProduct.FinancialCurrencyTypeCode === null ? "" : this.getCartProduct.FinancialCurrencyTypeCode);
             if (leftPos < lastActionLinkLeft - this.cartProductListWidths[1]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[1] + 10;
+            leftPos += this.cartProductListWidths[1] + 20;
             // Financial Currency Type Name
-            text = this.getCartProduct == null ? "Financial Currency Type Name" : this.getCartProduct.FinancialCurrencyTypeName;
+            text = this.getCartProduct == null ? "Financial Currency Type Name" : (this.getCartProduct.FinancialCurrencyTypeName === null ? "" : this.getCartProduct.FinancialCurrencyTypeName);
             if (leftPos < lastActionLinkLeft - this.cartProductListWidths[2]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[2] + 10;
+            leftPos += this.cartProductListWidths[2] + 20;
             // Image Blob Filename
-            text = this.getCartProduct == null ? "Image Blob Filename" : this.getCartProduct.ImageBlobFilename;
+            text = this.getCartProduct == null ? "Image Blob Filename" : (this.getCartProduct.ImageBlobFilename === null ? "" : this.getCartProduct.ImageBlobFilename);
             if (leftPos < lastActionLinkLeft - this.cartProductListWidths[3]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[3] + 10;
+            leftPos += this.cartProductListWidths[3] + 20;
             // Default User Name
-            text = this.getCartProduct == null ? "Default User Name" : this.getCartProduct.DefaultUserName;
+            text = this.getCartProduct == null ? "Default User Name" : (this.getCartProduct.DefaultUserName === null ? "" : this.getCartProduct.DefaultUserName);
             if (leftPos < lastActionLinkLeft - this.cartProductListWidths[4]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[4] + 10;
+            leftPos += this.cartProductListWidths[4] + 20;
             // Date Time
-            text = this.getCartProduct == null ? "Date Time" : this.getCartProduct.DateTime;
+            text = this.getCartProduct == null ? "Date Time" : (this.getCartProduct.DateTime === null ? "" : this.getCartProduct.DateTime);
             if (leftPos < lastActionLinkLeft - this.cartProductListWidths[5]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[5] + 10;
+            leftPos += this.cartProductListWidths[5] + 20;
             // Session Identificator
-            text = this.getCartProduct == null ? "Session Identificator" : this.getCartProduct.SessionIdentificator;
+            text = this.getCartProduct == null ? "Session Identificator" : (this.getCartProduct.SessionIdentificator === null ? "" : this.getCartProduct.SessionIdentificator);
             if (leftPos < lastActionLinkLeft - this.cartProductListWidths[6]) {
                 context.fillText(text, leftPos, this.textTop(name));
             }
-            leftPos += this.cartProductListWidths[6] + 10;
+            leftPos += this.cartProductListWidths[6] + 20;
             context.stroke();
         };
         // frame
@@ -546,16 +560,16 @@ var DesignVestreVikenDurian;
             context.rect(this.tileLeft, this.tileTop, this.tileWidth(), this.tileHeight);
             context.stroke();
         };
-        Tile.prototype.tileFrame = function (context) {
+        Tile.prototype.tileFrame = function (context, color) {
             context.beginPath();
             context.lineWidth = this.lineWidth;
-            context.strokeStyle = this.backgroundColor;
-            context.fillStyle = this.backgroundColor;
+            context.strokeStyle = color;
+            context.fillStyle = color;
             context.shadowColor = "rgb(128, 128, 128)"; // overallColors.shadow
             context.shadowBlur = 0;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
-            context.fillRect(this.tileLeft, this.tileTop, this.tileWidth(), this.tileHeight);
+            context.fillRect(this.tileLeft - 1, this.tileTop - 1, this.tileWidth() + 2, this.tileHeight + 2);
             context.stroke();
         };
         // check if coordinates are inside tile boundaries
