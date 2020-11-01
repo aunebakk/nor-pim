@@ -4,15 +4,13 @@
   "Filename": "ProductAttributeUnitRef.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_attribute_unit_ref",
-    "ParentNameOverrideNice": "CrudeProductAttributeUnitRef",
-    "ParentNameOverrideCamel": "productAttributeUnitRef",
-    "ParentNice": "CrudeProductAttributeUnitRef",
-    "ParentCamel": "productAttributeUnitRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_attribute_unit_ref",
+    "ClassNamePascalCase": "CrudeProductAttributeUnitRef",
+    "VariableNameCamelCase": "productAttributeUnitRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

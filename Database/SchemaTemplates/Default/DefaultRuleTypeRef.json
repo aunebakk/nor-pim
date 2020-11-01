@@ -4,15 +4,13 @@
   "Filename": "DefaultRuleTypeRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_rule_type_ref",
-    "ParentNameOverrideNice": "CrudeDefaultRuleTypeRef",
-    "ParentNameOverrideCamel": "defaultRuleTypeRef",
-    "ParentNice": "CrudeDefaultRuleTypeRef",
-    "ParentCamel": "defaultRuleTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_rule_type_ref",
+    "ClassNamePascalCase": "CrudeDefaultRuleTypeRef",
+    "VariableNameCamelCase": "defaultRuleTypeRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

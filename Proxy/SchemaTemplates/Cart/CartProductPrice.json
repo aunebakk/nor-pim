@@ -4,15 +4,13 @@
   "Filename": "CartProductPrice.json",
   "Table": {
     "DomainName": "Cart",
-    "ParentTableName": "cart_product_price",
-    "ParentNameOverrideNice": "CrudeCartProductPrice",
-    "ParentNameOverrideCamel": "cartProductPrice",
-    "ParentNice": "CrudeCartProductPrice",
-    "ParentCamel": "cartProductPrice",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "cart_product_price",
+    "ClassNamePascalCase": "CrudeCartProductPrice",
+    "VariableNameCamelCase": "cartProductPrice",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

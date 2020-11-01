@@ -4,15 +4,13 @@
   "Filename": "DefaultPerformanceTimeRollup.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_performance_time_rollup",
-    "ParentNameOverrideNice": "CrudeDefaultPerformanceTimeRollup",
-    "ParentNameOverrideCamel": "defaultPerformanceTimeRollup",
-    "ParentNice": "CrudeDefaultPerformanceTimeRollup",
-    "ParentCamel": "defaultPerformanceTimeRollup",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_performance_time_rollup",
+    "ClassNamePascalCase": "CrudeDefaultPerformanceTimeRollup",
+    "VariableNameCamelCase": "defaultPerformanceTimeRollup",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

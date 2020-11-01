@@ -4,15 +4,13 @@
   "Filename": "ProductSearch.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product",
-    "ParentNameOverrideNice": "ProductSearch",
-    "ParentNameOverrideCamel": "productSearch",
-    "ParentNice": "ProductSearch",
-    "ParentCamel": "productSearch",
-    "ParentAutoUpdateScheme": "",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": "",
+    "TableName": "product",
+    "ClassNamePascalCase": "ProductSearch",
+    "VariableNameCamelCase": "productSearch",
+    "AutoUpdateScheme": "",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": "",
     "Children": []
   },
   "Style": {

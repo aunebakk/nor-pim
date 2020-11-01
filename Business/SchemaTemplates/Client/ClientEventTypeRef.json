@@ -4,15 +4,13 @@
   "Filename": "ClientEventTypeRef.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_event_type_ref",
-    "ParentNameOverrideNice": "CrudeClientEventTypeRef",
-    "ParentNameOverrideCamel": "clientEventTypeRef",
-    "ParentNice": "CrudeClientEventTypeRef",
-    "ParentCamel": "clientEventTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_event_type_ref",
+    "ClassNamePascalCase": "CrudeClientEventTypeRef",
+    "VariableNameCamelCase": "clientEventTypeRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

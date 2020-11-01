@@ -4,15 +4,13 @@
   "Filename": "ClientGenderRef.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_gender_ref",
-    "ParentNameOverrideNice": "CrudeClientGenderRef",
-    "ParentNameOverrideCamel": "clientGenderRef",
-    "ParentNice": "CrudeClientGenderRef",
-    "ParentCamel": "clientGenderRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_gender_ref",
+    "ClassNamePascalCase": "CrudeClientGenderRef",
+    "VariableNameCamelCase": "clientGenderRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

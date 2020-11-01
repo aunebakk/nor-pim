@@ -4,15 +4,13 @@
   "Filename": "_productinfo.json",
   "Table": {
     "DomainName": "ProductMaintenance",
-    "ParentTableName": "product_info",
-    "ParentNameOverrideNice": "ProductInfo",
-    "ParentNameOverrideCamel": "productInfo",
-    "ParentNice": "ProductInfo",
-    "ParentCamel": "productInfo",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": "product",
+    "TableName": "product_info",
+    "ClassNamePascalCase": "ProductInfo",
+    "VariableNameCamelCase": "productInfo",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": "product",
     "Children": []
   },
   "Style": {

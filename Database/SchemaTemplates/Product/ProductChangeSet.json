@@ -4,15 +4,13 @@
   "Filename": "ProductChangeSet.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_change_set",
-    "ParentNameOverrideNice": "CrudeProductChangeSet",
-    "ParentNameOverrideCamel": "productChangeSet",
-    "ParentNice": "CrudeProductChangeSet",
-    "ParentCamel": "productChangeSet",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_change_set",
+    "ClassNamePascalCase": "CrudeProductChangeSet",
+    "VariableNameCamelCase": "productChangeSet",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

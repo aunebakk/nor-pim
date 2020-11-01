@@ -4,15 +4,13 @@
   "Filename": "DefaultIssueTypeRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_issue_type_ref",
-    "ParentNameOverrideNice": "CrudeDefaultIssueTypeRef",
-    "ParentNameOverrideCamel": "defaultIssueTypeRef",
-    "ParentNice": "CrudeDefaultIssueTypeRef",
-    "ParentCamel": "defaultIssueTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_issue_type_ref",
+    "ClassNamePascalCase": "CrudeDefaultIssueTypeRef",
+    "VariableNameCamelCase": "defaultIssueTypeRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

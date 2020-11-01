@@ -4,15 +4,13 @@
   "Filename": "ProductExposeSet.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_expose_set",
-    "ParentNameOverrideNice": "CrudeProductExposeSet",
-    "ParentNameOverrideCamel": "productExposeSet",
-    "ParentNice": "CrudeProductExposeSet",
-    "ParentCamel": "productExposeSet",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_expose_set",
+    "ClassNamePascalCase": "CrudeProductExposeSet",
+    "VariableNameCamelCase": "productExposeSet",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

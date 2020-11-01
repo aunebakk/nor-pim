@@ -4,15 +4,13 @@
   "Filename": "DefaultUser.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_user",
-    "ParentNameOverrideNice": "CrudeDefaultUser",
-    "ParentNameOverrideCamel": "defaultUser",
-    "ParentNice": "CrudeDefaultUser",
-    "ParentCamel": "defaultUser",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_user",
+    "ClassNamePascalCase": "CrudeDefaultUser",
+    "VariableNameCamelCase": "defaultUser",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

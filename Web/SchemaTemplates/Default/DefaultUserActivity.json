@@ -4,15 +4,13 @@
   "Filename": "DefaultUserActivity.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_user_activity",
-    "ParentNameOverrideNice": "CrudeDefaultUserActivity",
-    "ParentNameOverrideCamel": "defaultUserActivity",
-    "ParentNice": "CrudeDefaultUserActivity",
-    "ParentCamel": "defaultUserActivity",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_user_activity",
+    "ClassNamePascalCase": "CrudeDefaultUserActivity",
+    "VariableNameCamelCase": "defaultUserActivity",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ProductDocumentationTypeRef.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_documentation_type_ref",
-    "ParentNameOverrideNice": "CrudeProductDocumentationTypeRef",
-    "ParentNameOverrideCamel": "productDocumentationTypeRef",
-    "ParentNice": "CrudeProductDocumentationTypeRef",
-    "ParentCamel": "productDocumentationTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_documentation_type_ref",
+    "ClassNamePascalCase": "CrudeProductDocumentationTypeRef",
+    "VariableNameCamelCase": "productDocumentationTypeRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

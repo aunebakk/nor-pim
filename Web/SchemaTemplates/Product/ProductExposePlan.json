@@ -4,15 +4,13 @@
   "Filename": "ProductExposePlan.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_expose_plan",
-    "ParentNameOverrideNice": "CrudeProductExposePlan",
-    "ParentNameOverrideCamel": "productExposePlan",
-    "ParentNice": "CrudeProductExposePlan",
-    "ParentCamel": "productExposePlan",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_expose_plan",
+    "ClassNamePascalCase": "CrudeProductExposePlan",
+    "VariableNameCamelCase": "productExposePlan",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ClientEvent.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_event",
-    "ParentNameOverrideNice": "CrudeClientEvent",
-    "ParentNameOverrideCamel": "clientEvent",
-    "ParentNice": "CrudeClientEvent",
-    "ParentCamel": "clientEvent",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_event",
+    "ClassNamePascalCase": "CrudeClientEvent",
+    "VariableNameCamelCase": "clientEvent",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

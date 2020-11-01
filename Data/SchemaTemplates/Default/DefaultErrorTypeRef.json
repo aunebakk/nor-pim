@@ -4,15 +4,13 @@
   "Filename": "DefaultErrorTypeRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_error_type_ref",
-    "ParentNameOverrideNice": "CrudeDefaultErrorTypeRef",
-    "ParentNameOverrideCamel": "defaultErrorTypeRef",
-    "ParentNice": "CrudeDefaultErrorTypeRef",
-    "ParentCamel": "defaultErrorTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_error_type_ref",
+    "ClassNamePascalCase": "CrudeDefaultErrorTypeRef",
+    "VariableNameCamelCase": "defaultErrorTypeRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

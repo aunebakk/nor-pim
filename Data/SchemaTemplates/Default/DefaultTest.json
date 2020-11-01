@@ -4,15 +4,13 @@
   "Filename": "DefaultTest.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_test",
-    "ParentNameOverrideNice": "CrudeDefaultTest",
-    "ParentNameOverrideCamel": "defaultTest",
-    "ParentNice": "CrudeDefaultTest",
-    "ParentCamel": "defaultTest",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_test",
+    "ClassNamePascalCase": "CrudeDefaultTest",
+    "VariableNameCamelCase": "defaultTest",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

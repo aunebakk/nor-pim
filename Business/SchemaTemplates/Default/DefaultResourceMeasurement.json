@@ -4,15 +4,13 @@
   "Filename": "DefaultResourceMeasurement.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_resource_measurement",
-    "ParentNameOverrideNice": "CrudeDefaultResourceMeasurement",
-    "ParentNameOverrideCamel": "defaultResourceMeasurement",
-    "ParentNice": "CrudeDefaultResourceMeasurement",
-    "ParentCamel": "defaultResourceMeasurement",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_resource_measurement",
+    "ClassNamePascalCase": "CrudeDefaultResourceMeasurement",
+    "VariableNameCamelCase": "defaultResourceMeasurement",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

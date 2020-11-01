@@ -4,15 +4,13 @@
   "Filename": "DefaultChangeLogTypeRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_change_log_type_ref",
-    "ParentNameOverrideNice": "CrudeDefaultChangeLogTypeRef",
-    "ParentNameOverrideCamel": "defaultChangeLogTypeRef",
-    "ParentNice": "CrudeDefaultChangeLogTypeRef",
-    "ParentCamel": "defaultChangeLogTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_change_log_type_ref",
+    "ClassNamePascalCase": "CrudeDefaultChangeLogTypeRef",
+    "VariableNameCamelCase": "defaultChangeLogTypeRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

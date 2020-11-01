@@ -4,15 +4,13 @@
   "Filename": "ProductCategoryMapping.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_category_mapping",
-    "ParentNameOverrideNice": "CrudeProductCategoryMapping",
-    "ParentNameOverrideCamel": "productCategoryMapping",
-    "ParentNice": "CrudeProductCategoryMapping",
-    "ParentCamel": "productCategoryMapping",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_category_mapping",
+    "ClassNamePascalCase": "CrudeProductCategoryMapping",
+    "VariableNameCamelCase": "productCategoryMapping",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

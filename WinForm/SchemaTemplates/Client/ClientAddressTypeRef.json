@@ -4,15 +4,13 @@
   "Filename": "ClientAddressTypeRef.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_address_type_ref",
-    "ParentNameOverrideNice": "CrudeClientAddressTypeRef",
-    "ParentNameOverrideCamel": "clientAddressTypeRef",
-    "ParentNice": "CrudeClientAddressTypeRef",
-    "ParentCamel": "clientAddressTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_address_type_ref",
+    "ClassNamePascalCase": "CrudeClientAddressTypeRef",
+    "VariableNameCamelCase": "clientAddressTypeRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

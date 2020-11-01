@@ -4,15 +4,13 @@
   "Filename": "DefaultPerformanceIssue.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_performance_issue",
-    "ParentNameOverrideNice": "CrudeDefaultPerformanceIssue",
-    "ParentNameOverrideCamel": "defaultPerformanceIssue",
-    "ParentNice": "CrudeDefaultPerformanceIssue",
-    "ParentCamel": "defaultPerformanceIssue",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_performance_issue",
+    "ClassNamePascalCase": "CrudeDefaultPerformanceIssue",
+    "VariableNameCamelCase": "defaultPerformanceIssue",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ProductGatherSource.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_gather_source",
-    "ParentNameOverrideNice": "CrudeProductGatherSource",
-    "ParentNameOverrideCamel": "productGatherSource",
-    "ParentNice": "CrudeProductGatherSource",
-    "ParentCamel": "productGatherSource",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_gather_source",
+    "ClassNamePascalCase": "CrudeProductGatherSource",
+    "VariableNameCamelCase": "productGatherSource",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

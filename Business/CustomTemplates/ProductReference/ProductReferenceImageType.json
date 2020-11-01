@@ -4,15 +4,13 @@
   "Filename": "ProductReferenceImageType.json",
   "Table": {
     "DomainName": "ProductReference",
-    "ParentTableName": "product_image_type_ref",
-    "ParentNameOverrideNice": "ProductReferenceImageType",
-    "ParentNameOverrideCamel": "product",
-    "ParentNice": "ProductReferenceImageType",
-    "ParentCamel": "product",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": "",
+    "TableName": "product_image_type_ref",
+    "ClassNamePascalCase": "ProductReferenceImageType",
+    "VariableNameCamelCase": "product",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": "",
     "Children": []
   },
   "Style": {

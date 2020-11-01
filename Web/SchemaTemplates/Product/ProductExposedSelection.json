@@ -4,15 +4,13 @@
   "Filename": "ProductExposedSelection.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_exposed_selection",
-    "ParentNameOverrideNice": "CrudeProductExposedSelection",
-    "ParentNameOverrideCamel": "productExposedSelection",
-    "ParentNice": "CrudeProductExposedSelection",
-    "ParentCamel": "productExposedSelection",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_exposed_selection",
+    "ClassNamePascalCase": "CrudeProductExposedSelection",
+    "VariableNameCamelCase": "productExposedSelection",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

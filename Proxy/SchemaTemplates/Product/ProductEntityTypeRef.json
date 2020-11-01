@@ -4,15 +4,13 @@
   "Filename": "ProductEntityTypeRef.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_entity_type_ref",
-    "ParentNameOverrideNice": "CrudeProductEntityTypeRef",
-    "ParentNameOverrideCamel": "productEntityTypeRef",
-    "ParentNice": "CrudeProductEntityTypeRef",
-    "ParentCamel": "productEntityTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_entity_type_ref",
+    "ClassNamePascalCase": "CrudeProductEntityTypeRef",
+    "VariableNameCamelCase": "productEntityTypeRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

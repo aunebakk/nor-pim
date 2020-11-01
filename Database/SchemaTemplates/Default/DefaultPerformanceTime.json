@@ -4,15 +4,13 @@
   "Filename": "DefaultPerformanceTime.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_performance_time",
-    "ParentNameOverrideNice": "CrudeDefaultPerformanceTime",
-    "ParentNameOverrideCamel": "defaultPerformanceTime",
-    "ParentNice": "CrudeDefaultPerformanceTime",
-    "ParentCamel": "defaultPerformanceTime",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_performance_time",
+    "ClassNamePascalCase": "CrudeDefaultPerformanceTime",
+    "VariableNameCamelCase": "defaultPerformanceTime",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ClientAddress.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_address",
-    "ParentNameOverrideNice": "CrudeClientAddress",
-    "ParentNameOverrideCamel": "clientAddress",
-    "ParentNice": "CrudeClientAddress",
-    "ParentCamel": "clientAddress",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_address",
+    "ClassNamePascalCase": "CrudeClientAddress",
+    "VariableNameCamelCase": "clientAddress",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

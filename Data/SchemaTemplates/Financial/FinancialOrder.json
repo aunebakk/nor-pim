@@ -4,15 +4,13 @@
   "Filename": "FinancialOrder.json",
   "Table": {
     "DomainName": "Financial",
-    "ParentTableName": "financial_order",
-    "ParentNameOverrideNice": "CrudeFinancialOrder",
-    "ParentNameOverrideCamel": "financialOrder",
-    "ParentNice": "CrudeFinancialOrder",
-    "ParentCamel": "financialOrder",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "financial_order",
+    "ClassNamePascalCase": "CrudeFinancialOrder",
+    "VariableNameCamelCase": "financialOrder",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

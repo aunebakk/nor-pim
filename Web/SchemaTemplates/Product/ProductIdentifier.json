@@ -4,15 +4,13 @@
   "Filename": "ProductIdentifier.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_identifier",
-    "ParentNameOverrideNice": "CrudeProductIdentifier",
-    "ParentNameOverrideCamel": "productIdentifier",
-    "ParentNice": "CrudeProductIdentifier",
-    "ParentCamel": "productIdentifier",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_identifier",
+    "ClassNamePascalCase": "CrudeProductIdentifier",
+    "VariableNameCamelCase": "productIdentifier",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

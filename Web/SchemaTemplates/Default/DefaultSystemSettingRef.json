@@ -4,15 +4,13 @@
   "Filename": "DefaultSystemSettingRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_system_setting_ref",
-    "ParentNameOverrideNice": "CrudeDefaultSystemSettingRef",
-    "ParentNameOverrideCamel": "defaultSystemSettingRef",
-    "ParentNice": "CrudeDefaultSystemSettingRef",
-    "ParentCamel": "defaultSystemSettingRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_system_setting_ref",
+    "ClassNamePascalCase": "CrudeDefaultSystemSettingRef",
+    "VariableNameCamelCase": "defaultSystemSettingRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

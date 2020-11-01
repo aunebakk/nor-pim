@@ -4,15 +4,13 @@
   "Filename": "ProductCategoryImageTypeRef.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_category_image_type_ref",
-    "ParentNameOverrideNice": "CrudeProductCategoryImageTypeRef",
-    "ParentNameOverrideCamel": "productCategoryImageTypeRef",
-    "ParentNice": "CrudeProductCategoryImageTypeRef",
-    "ParentCamel": "productCategoryImageTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_category_image_type_ref",
+    "ClassNamePascalCase": "CrudeProductCategoryImageTypeRef",
+    "VariableNameCamelCase": "productCategoryImageTypeRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

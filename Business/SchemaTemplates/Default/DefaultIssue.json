@@ -4,15 +4,13 @@
   "Filename": "DefaultIssue.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_issue",
-    "ParentNameOverrideNice": "CrudeDefaultIssue",
-    "ParentNameOverrideCamel": "defaultIssue",
-    "ParentNice": "CrudeDefaultIssue",
-    "ParentCamel": "defaultIssue",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_issue",
+    "ClassNamePascalCase": "CrudeDefaultIssue",
+    "VariableNameCamelCase": "defaultIssue",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

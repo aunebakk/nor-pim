@@ -4,15 +4,13 @@
   "Filename": "ClientNationalityRef.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_nationality_ref",
-    "ParentNameOverrideNice": "CrudeClientNationalityRef",
-    "ParentNameOverrideCamel": "clientNationalityRef",
-    "ParentNice": "CrudeClientNationalityRef",
-    "ParentCamel": "clientNationalityRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_nationality_ref",
+    "ClassNamePascalCase": "CrudeClientNationalityRef",
+    "VariableNameCamelCase": "clientNationalityRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

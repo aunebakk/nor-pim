@@ -4,15 +4,13 @@
   "Filename": "DefaultChangeLog.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_change_log",
-    "ParentNameOverrideNice": "CrudeDefaultChangeLog",
-    "ParentNameOverrideCamel": "defaultChangeLog",
-    "ParentNice": "CrudeDefaultChangeLog",
-    "ParentCamel": "defaultChangeLog",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_change_log",
+    "ClassNamePascalCase": "CrudeDefaultChangeLog",
+    "VariableNameCamelCase": "defaultChangeLog",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

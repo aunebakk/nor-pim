@@ -4,15 +4,13 @@
   "Filename": "DefaultUserActivityTypeRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_user_activity_type_ref",
-    "ParentNameOverrideNice": "CrudeDefaultUserActivityTypeRef",
-    "ParentNameOverrideCamel": "defaultUserActivityTypeRef",
-    "ParentNice": "CrudeDefaultUserActivityTypeRef",
-    "ParentCamel": "defaultUserActivityTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_user_activity_type_ref",
+    "ClassNamePascalCase": "CrudeDefaultUserActivityTypeRef",
+    "VariableNameCamelCase": "defaultUserActivityTypeRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ClientDocument.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_document",
-    "ParentNameOverrideNice": "CrudeClientDocument",
-    "ParentNameOverrideCamel": "clientDocument",
-    "ParentNice": "CrudeClientDocument",
-    "ParentCamel": "clientDocument",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_document",
+    "ClassNamePascalCase": "CrudeClientDocument",
+    "VariableNameCamelCase": "clientDocument",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

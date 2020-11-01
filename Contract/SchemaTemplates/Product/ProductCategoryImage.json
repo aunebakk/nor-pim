@@ -4,15 +4,13 @@
   "Filename": "ProductCategoryImage.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_category_image",
-    "ParentNameOverrideNice": "CrudeProductCategoryImage",
-    "ParentNameOverrideCamel": "productCategoryImage",
-    "ParentNice": "CrudeProductCategoryImage",
-    "ParentCamel": "productCategoryImage",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_category_image",
+    "ClassNamePascalCase": "CrudeProductCategoryImage",
+    "VariableNameCamelCase": "productCategoryImage",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

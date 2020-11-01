@@ -4,15 +4,13 @@
   "Filename": "DefaultErrorLayerRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_error_layer_ref",
-    "ParentNameOverrideNice": "CrudeDefaultErrorLayerRef",
-    "ParentNameOverrideCamel": "defaultErrorLayerRef",
-    "ParentNice": "CrudeDefaultErrorLayerRef",
-    "ParentCamel": "defaultErrorLayerRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_error_layer_ref",
+    "ClassNamePascalCase": "CrudeDefaultErrorLayerRef",
+    "VariableNameCamelCase": "defaultErrorLayerRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

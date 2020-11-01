@@ -4,15 +4,13 @@
   "Filename": "ClientIdentifier.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_identifier",
-    "ParentNameOverrideNice": "CrudeClientIdentifier",
-    "ParentNameOverrideCamel": "clientIdentifier",
-    "ParentNice": "CrudeClientIdentifier",
-    "ParentCamel": "clientIdentifier",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_identifier",
+    "ClassNamePascalCase": "CrudeClientIdentifier",
+    "VariableNameCamelCase": "clientIdentifier",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

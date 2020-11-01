@@ -4,15 +4,13 @@
   "Filename": "ClientTypeRef.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_type_ref",
-    "ParentNameOverrideNice": "CrudeClientTypeRef",
-    "ParentNameOverrideCamel": "clientTypeRef",
-    "ParentNice": "CrudeClientTypeRef",
-    "ParentCamel": "clientTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_type_ref",
+    "ClassNamePascalCase": "CrudeClientTypeRef",
+    "VariableNameCamelCase": "clientTypeRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

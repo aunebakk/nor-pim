@@ -4,15 +4,13 @@
   "Filename": "DefaultStateRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_state_ref",
-    "ParentNameOverrideNice": "CrudeDefaultStateRef",
-    "ParentNameOverrideCamel": "defaultStateRef",
-    "ParentNice": "CrudeDefaultStateRef",
-    "ParentCamel": "defaultStateRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_state_ref",
+    "ClassNamePascalCase": "CrudeDefaultStateRef",
+    "VariableNameCamelCase": "defaultStateRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ClientContactMethodRef.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_contact_method_ref",
-    "ParentNameOverrideNice": "CrudeClientContactMethodRef",
-    "ParentNameOverrideCamel": "clientContactMethodRef",
-    "ParentNice": "CrudeClientContactMethodRef",
-    "ParentCamel": "clientContactMethodRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_contact_method_ref",
+    "ClassNamePascalCase": "CrudeClientContactMethodRef",
+    "VariableNameCamelCase": "clientContactMethodRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

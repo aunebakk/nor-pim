@@ -4,15 +4,13 @@
   "Filename": "DefaultSystemReferenceTable.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_system_reference_table",
-    "ParentNameOverrideNice": "CrudeDefaultSystemReferenceTable",
-    "ParentNameOverrideCamel": "defaultSystemReferenceTable",
-    "ParentNice": "CrudeDefaultSystemReferenceTable",
-    "ParentCamel": "defaultSystemReferenceTable",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_system_reference_table",
+    "ClassNamePascalCase": "CrudeDefaultSystemReferenceTable",
+    "VariableNameCamelCase": "defaultSystemReferenceTable",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ProductSupplier.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_supplier",
-    "ParentNameOverrideNice": "CrudeProductSupplier",
-    "ParentNameOverrideCamel": "productSupplier",
-    "ParentNice": "CrudeProductSupplier",
-    "ParentCamel": "productSupplier",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_supplier",
+    "ClassNamePascalCase": "CrudeProductSupplier",
+    "VariableNameCamelCase": "productSupplier",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

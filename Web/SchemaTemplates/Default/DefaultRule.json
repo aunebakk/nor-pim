@@ -4,15 +4,13 @@
   "Filename": "DefaultRule.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_rule",
-    "ParentNameOverrideNice": "CrudeDefaultRule",
-    "ParentNameOverrideCamel": "defaultRule",
-    "ParentNice": "CrudeDefaultRule",
-    "ParentCamel": "defaultRule",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_rule",
+    "ClassNamePascalCase": "CrudeDefaultRule",
+    "VariableNameCamelCase": "defaultRule",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

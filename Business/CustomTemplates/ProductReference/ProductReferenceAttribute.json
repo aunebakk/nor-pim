@@ -4,15 +4,13 @@
   "Filename": "ProductReferenceAttribute.json",
   "Table": {
     "DomainName": "ProductReference",
-    "ParentTableName": "product_attribute_ref",
-    "ParentNameOverrideNice": "ProductReferenceAttribute",
-    "ParentNameOverrideCamel": "product",
-    "ParentNice": "ProductReferenceAttribute",
-    "ParentCamel": "product",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": "",
+    "TableName": "product_attribute_ref",
+    "ClassNamePascalCase": "ProductReferenceAttribute",
+    "VariableNameCamelCase": "product",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": "",
     "Children": []
   },
   "Style": {

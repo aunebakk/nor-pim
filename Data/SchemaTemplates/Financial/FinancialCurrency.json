@@ -4,15 +4,13 @@
   "Filename": "FinancialCurrency.json",
   "Table": {
     "DomainName": "Financial",
-    "ParentTableName": "financial_currency",
-    "ParentNameOverrideNice": "CrudeFinancialCurrency",
-    "ParentNameOverrideCamel": "financialCurrency",
-    "ParentNice": "CrudeFinancialCurrency",
-    "ParentCamel": "financialCurrency",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "financial_currency",
+    "ClassNamePascalCase": "CrudeFinancialCurrency",
+    "VariableNameCamelCase": "financialCurrency",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ProductFieldSet.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_field_set",
-    "ParentNameOverrideNice": "CrudeProductFieldSet",
-    "ParentNameOverrideCamel": "productFieldSet",
-    "ParentNice": "CrudeProductFieldSet",
-    "ParentCamel": "productFieldSet",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_field_set",
+    "ClassNamePascalCase": "CrudeProductFieldSet",
+    "VariableNameCamelCase": "productFieldSet",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

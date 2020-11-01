@@ -4,15 +4,13 @@
   "Filename": "DefaultError.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_error",
-    "ParentNameOverrideNice": "CrudeDefaultError",
-    "ParentNameOverrideCamel": "defaultError",
-    "ParentNice": "CrudeDefaultError",
-    "ParentCamel": "defaultError",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_error",
+    "ClassNamePascalCase": "CrudeDefaultError",
+    "VariableNameCamelCase": "defaultError",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "ClientLink.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_link",
-    "ParentNameOverrideNice": "CrudeClientLink",
-    "ParentNameOverrideCamel": "clientLink",
-    "ParentNice": "CrudeClientLink",
-    "ParentCamel": "clientLink",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_link",
+    "ClassNamePascalCase": "CrudeClientLink",
+    "VariableNameCamelCase": "clientLink",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

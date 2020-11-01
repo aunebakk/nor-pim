@@ -4,15 +4,13 @@
   "Filename": "ProductGatherAttributeTypeRef.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_gather_attribute_type_ref",
-    "ParentNameOverrideNice": "CrudeProductGatherAttributeTypeRef",
-    "ParentNameOverrideCamel": "productGatherAttributeTypeRef",
-    "ParentNice": "CrudeProductGatherAttributeTypeRef",
-    "ParentCamel": "productGatherAttributeTypeRef",
-    "ParentAutoUpdateScheme": "autoupdatereference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_gather_attribute_type_ref",
+    "ClassNamePascalCase": "CrudeProductGatherAttributeTypeRef",
+    "VariableNameCamelCase": "productGatherAttributeTypeRef",
+    "AutoUpdateScheme": "autoupdatereference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

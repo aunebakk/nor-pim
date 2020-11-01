@@ -4,15 +4,13 @@
   "Filename": "ClientContactMethod.json",
   "Table": {
     "DomainName": "Client",
-    "ParentTableName": "client_contact_method",
-    "ParentNameOverrideNice": "CrudeClientContactMethod",
-    "ParentNameOverrideCamel": "clientContactMethod",
-    "ParentNice": "CrudeClientContactMethod",
-    "ParentCamel": "clientContactMethod",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "client_contact_method",
+    "ClassNamePascalCase": "CrudeClientContactMethod",
+    "VariableNameCamelCase": "clientContactMethod",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

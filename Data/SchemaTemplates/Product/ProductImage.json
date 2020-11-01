@@ -4,15 +4,13 @@
   "Filename": "ProductImage.json",
   "Table": {
     "DomainName": "Product",
-    "ParentTableName": "product_image",
-    "ParentNameOverrideNice": "CrudeProductImage",
-    "ParentNameOverrideCamel": "productImage",
-    "ParentNice": "CrudeProductImage",
-    "ParentCamel": "productImage",
-    "ParentAutoUpdateScheme": "autoupdatenormal",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "product_image",
+    "ClassNamePascalCase": "CrudeProductImage",
+    "VariableNameCamelCase": "productImage",
+    "AutoUpdateScheme": "autoupdatenormal",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

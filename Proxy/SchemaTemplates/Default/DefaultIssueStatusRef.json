@@ -4,15 +4,13 @@
   "Filename": "DefaultIssueStatusRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_issue_status_ref",
-    "ParentNameOverrideNice": "CrudeDefaultIssueStatusRef",
-    "ParentNameOverrideCamel": "defaultIssueStatusRef",
-    "ParentNice": "CrudeDefaultIssueStatusRef",
-    "ParentCamel": "defaultIssueStatusRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_issue_status_ref",
+    "ClassNamePascalCase": "CrudeDefaultIssueStatusRef",
+    "VariableNameCamelCase": "defaultIssueStatusRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "DefaultTestRunResultRef.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_test_run_result_ref",
-    "ParentNameOverrideNice": "CrudeDefaultTestRunResultRef",
-    "ParentNameOverrideCamel": "defaultTestRunResultRef",
-    "ParentNice": "CrudeDefaultTestRunResultRef",
-    "ParentCamel": "defaultTestRunResultRef",
-    "ParentAutoUpdateScheme": "autoupdatedefaultreference",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_test_run_result_ref",
+    "ClassNamePascalCase": "CrudeDefaultTestRunResultRef",
+    "VariableNameCamelCase": "defaultTestRunResultRef",
+    "AutoUpdateScheme": "autoupdatedefaultreference",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {

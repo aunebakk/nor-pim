@@ -4,15 +4,13 @@
   "Filename": "TemplateCartProduct.json",
   "Table": {
     "DomainName": "Cart",
-    "ParentTableName": "cart_product",
-    "ParentNameOverrideNice": "CartProduct",
-    "ParentNameOverrideCamel": "cart_product",
-    "ParentNice": "CartProduct",
-    "ParentCamel": "cart_product",
-    "ParentAutoUpdateScheme": "",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": "",
+    "TableName": "cart_product",
+    "ClassNamePascalCase": "CartProduct",
+    "VariableNameCamelCase": "cart_product",
+    "AutoUpdateScheme": "",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": "",
     "Children": []
   },
   "Style": {

@@ -4,15 +4,13 @@
   "Filename": "DefaultVersion.json",
   "Table": {
     "DomainName": "Default",
-    "ParentTableName": "default_version",
-    "ParentNameOverrideNice": "CrudeDefaultVersion",
-    "ParentNameOverrideCamel": "defaultVersion",
-    "ParentNice": "CrudeDefaultVersion",
-    "ParentCamel": "defaultVersion",
-    "ParentAutoUpdateScheme": "autoupdatedefault",
-    "AutoFillName": "user_id",
-    "AutoFillType": "uniqueidentifier",
-    "ParentOwnerTable": null,
+    "TableName": "default_version",
+    "ClassNamePascalCase": "CrudeDefaultVersion",
+    "VariableNameCamelCase": "defaultVersion",
+    "AutoUpdateScheme": "autoupdatedefault",
+    "AutoFillColumnName": "user_id",
+    "AutoFillSQLType": "uniqueidentifier",
+    "ParentTableName": null,
     "Children": []
   },
   "Style": {
