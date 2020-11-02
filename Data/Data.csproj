@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{65C42F73-42FA-4BD7-B924-F8734622FDDF}</ProjectGuid>
+    <ProjectGuid>{3E3DA219-310C-4384-83A2-478079FD12F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Data</RootNamespace>
@@ -268,7 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{5e34ee05-166b-4d69-82e6-4b9d6e697431}</Project>
+      <Project>{7f6ce7b4-45c9-414a-ba54-6bdd5d59f5db}</Project>
       <Name>Contract</Name>
     </ProjectReference>
   </ItemGroup>
