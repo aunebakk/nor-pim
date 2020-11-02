@@ -100,4 +100,5 @@
 2020.11.02 02:24:04  , DotNetFrameworkWebAppMakePackage                           , 74 , 02:24:04 , 02:24:08 , True , True , False, False,         5,      ,  953,      0,          1, C:\Windows\System32\notepad.exe@'C:\SQL2XProjects\SolutionNorSolutionPim\Web\Operational\Build package to disk.bat', C:\SQL2XProjects\SolutionNorSolutionPim\Web\Operational
 2020.11.02 02:24:23  , PublishDotNetFrameworkWebAppToAzure                        , 75 , 02:24:23 , 02:24:40 , True , True , False, False,        17,      ,   29,      0,          0, https://NorSolutionPim.AzureWebSites.net/, 
 2020.11.02 03:02:47  , DistributeCreation                                         , 89 , 03:02:46 , 03:10:16 , True , False, False, False,       450,      , 6898,      2,         -1, , 
-2020.11.02 05:53:14  , DistributeCreation                                         , 89 , 05:53:13 
+2020.11.02 05:53:14  , DistributeCreation                                         , 89 , 05:53:13 , 05:57:06 , True , False, False, False,       232,      , 5921,      2,         -1, , 
+2020.11.02 06:12:29  , DistributeCreation                                         , 89 , 06:12:29 
