@@ -102,4 +102,4 @@
 2020.11.02 03:02:47  , DistributeCreation                                         , 89 , 03:02:46 , 03:10:16 , True , False, False, False,       450,      , 6898,      2,         -1, , 
 2020.11.02 05:53:14  , DistributeCreation                                         , 89 , 05:53:13 , 05:57:06 , True , False, False, False,       232,      , 5921,      2,         -1, , 
 2020.11.02 06:12:29  , DistributeCreation                                         , 89 , 06:12:29 , 06:14:32 , True , False, False, False,       123,      , 5908,      2,         -1, , 
-2020.11.02 06:15:30  , DistributeCreation                                         , 89 , 06:15:29 
+2020.11.02 06:15:30  , DistributeCreation                                         , 89 , 06:15:29 , 06:17:30 , True , False, False, False,       121,      , 5908,      2,         -1, , 
