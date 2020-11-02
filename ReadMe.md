@@ -34,6 +34,8 @@ Nor-Pim also acts as a proof of concept for a three tiered cloud based "Line-of-
 
 Nor-Pim uses no special frameworks outside of the dotNetFramework ecosystem in an effort to make it as scalable and maintainable as possible, this is made possible by using a tool to generate boiler plate code for efficient communication between layers ( SQL2X ). Since the code is bare bone C# and TypeScript it is easier to find developers to maintain / enhance the code.
 
+# Instructions for running Nor-Pim
+
 ## Visual Studio 2017
 Nor-Pim requires Visual Studio 2017 which can be downloaded [here](https://visualstudio.microsoft.com/vs/older-downloads/)
 
@@ -41,6 +43,14 @@ You will need the following WorkLoad:
  - Azure
  - ManagedDesktop
  - NetWeb
+
+## PowerShell 5.1
+Nor-Pim uses PowerShell to switch environment between local development and publishing to Azure, download [here](https://docs.microsoft.com/en-us/skypeforbusiness/set-up-your-computer-for-windows-powershell/download-and-install-windows-powershell-5-1)
+
+## Git ( Source control system used by NorPim )
+Download Git [here](https://git-scm.com/downloads)
+
+Download GitHub Command Line interface for Windows [here](https://cli.github.com/)
 
 ## Code
  - [GitHub](https://github.com/aunebakk/nor-pim)
@@ -91,12 +101,21 @@ Use PowerShell to rename the sql server connection string for the various projec
  - Run
 
 ## How to publish to azure
+
+Prerequisites:
+
+| Name                                  | Comment                                               |
+|---------------------------------------|-------------------------------------------------------|
+| AzureRM                               | PowerShell module needed for fetching publish profile
+| Azure SQL Server                      | Minimal configuration
+| NorSolutionPimBusiness                | Azure Web App
+| NorSolutionPim                        | Azure Web App
+| Active Directory User                 | Guest User
+
 Use PowerShell to rename the sql server connection string and login information for the various projects:
 
-Note, the user here is not the owner of the Azure account, but rather an Azure Active Directory Guest user.
-
-| Parameter                             | Comment                                           |
-|---------------------------------------|---------------------------------------------------|
+| Parameter                             | Comment                                               |
+|---------------------------------------|-------------------------------------------------------|
 | azureActiveDirectoryLogin             | Azure Active Directory Login eMail
 | azureActiveDirectoryPassword          | Azure Active Directory Login password
 | connectionStringSQLServer             | ADO connection string to SQL Server
@@ -126,7 +145,7 @@ Note, the user here is not the owner of the Azure account, but rather an Azure A
 NuGet.exe restore .\SolutionNorSolutionPim.sln ( Download NuGet here: https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.9-rtm )
 & '.\Operational\Restore packages.bat'
 & '.\WinForm\Operational\Publish WinForm layer to ASP site install directory.bat'
-& '.\Web\Operational\Get-Web-App-PublishingProfile.ps1'
+& '.\Web\Operational\Get-Web-App-PublishingProfile.ps1' 
 & '.\Web\Operational\Build package to disk.bat'
 & '.\Web\Operational\Publish To Azure.bat'
 ```
