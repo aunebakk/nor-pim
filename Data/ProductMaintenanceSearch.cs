@@ -13,7 +13,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
 
         /// <summary>Get Product Info</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>WithDurian</template>
+        /// <template>DotNetFrameworkWithDurian</template>
         public List<ProductMaintenanceInfoIndexWithFilterData> ProductMaintenanceInfoIndexWithFilter(
              System.Guid productId
             ) {
@@ -70,7 +70,7 @@ where 1 = 1
 
         /// <summary>Get Product Image</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>WithDurian</template>
+        /// <template>DotNetFrameworkWithDurian</template>
         public List<ProductMaintenanceImageIndexWithFilterData> ProductMaintenanceImageIndexWithFilter(
              System.Guid productId
             ) {
@@ -128,7 +128,7 @@ where 1 = 1
 
         /// <summary>Get Product Identifier</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>WithDurian</template>
+        /// <template>DotNetFrameworkWithDurian</template>
         public List<ProductMaintenanceIdentifierIndexWithFilterData> ProductMaintenanceIdentifierIndexWithFilter(
              System.Guid productId
             ) {
@@ -185,7 +185,7 @@ where 1 = 1
 
         /// <summary>Get Product Documentation</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>WithDurian</template>
+        /// <template>DotNetFrameworkWithDurian</template>
         public List<ProductMaintenanceDocumentationIndexWithFilterData> ProductMaintenanceDocumentationIndexWithFilter(
              System.Guid productId
             ) {
@@ -242,7 +242,7 @@ where 1 = 1
 
         /// <summary>Get Product Attribute</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>WithDurian</template>
+        /// <template>DotNetFrameworkWithDurian</template>
         public List<ProductMaintenanceAttributeIndexWithFilterData> ProductMaintenanceAttributeIndexWithFilter(
              System.Guid productId
             ) {
@@ -302,7 +302,7 @@ where 1 = 1
 
         /// <summary>Get Product</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>WithDurian</template>
+        /// <template>DotNetFrameworkWithDurian</template>
         public List<ProductMaintenanceIndexData> ProductMaintenanceIndex() {
             var ret = new List<ProductMaintenanceIndexData>();
             string sql = @"

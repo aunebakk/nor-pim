@@ -14,8 +14,8 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "CrudeProxy",
-    "Name": "CrudeProxy",
+    "TemplateStyle": "DotNetFrameworkCrudeProxy",
+    "Name": "DotNetFrameworkCrudeProxy",
     "DesignTypeScript": "TypeScriptHagtorn",
     "PrimaryKey": null,
     "AzureAppName": null,

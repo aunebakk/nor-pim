@@ -10,8 +10,8 @@
   },
   "Overall": {
     "Name": "Database",
-    "Style": 10,
-    "StyleText": "PrototypeDatabaseTemplateEmpty",
+    "Style": 1,
+    "StyleText": "Database",
     "Path": null,
     "TemplateStyle": null,
     "AuthenticationMethod": null,
@@ -26,7 +26,7 @@
     "TargetDatabase": null
   },
   "Azure": {
-    "AppName": "PrototypeDatabaseTemplateEmpty",
+    "AppName": "Database",
     "SubscriptionName": "Free Trial",
     "OverridePassword": null,
     "InitialSchema": null,

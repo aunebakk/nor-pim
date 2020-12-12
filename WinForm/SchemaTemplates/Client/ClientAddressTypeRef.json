@@ -14,8 +14,8 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "CrudeWinForm",
-    "Name": "CrudeWinForm",
+    "TemplateStyle": "DotNetFrameworkCrudeWinForm",
+    "Name": "DotNetFrameworkCrudeWinForm",
     "DesignTypeScript": "TypeScriptHagtorn",
     "PrimaryKey": null,
     "AzureAppName": null,

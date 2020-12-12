@@ -14,8 +14,8 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "CrudeContract",
-    "Name": "CrudeContract",
+    "TemplateStyle": "DotNetFrameworkCrudeContract",
+    "Name": "DotNetFrameworkCrudeContract",
     "DesignTypeScript": "TypeScriptHagtorn",
     "PrimaryKey": null,
     "AzureAppName": null,

@@ -2,11 +2,11 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 11/3/2020 1:25:38 PM
-  From Machine: DESKTOP-9A2DH39
+  Generated Date: 12/12/2020 5:03:30 AM
+  From Machine: DESKTOP-LSRVP12
   Filename: ClientAddressTypeRef.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
-  Template Style: CrudeProxy
+  Template Style: DotNetFrameworkCrudeProxy
   Documentation:
     WCF Client Proxy layer for accessing Azure Storage Tables through
       CIFUDE ( Create Insert Fetch Update Delete and Extra Operations )

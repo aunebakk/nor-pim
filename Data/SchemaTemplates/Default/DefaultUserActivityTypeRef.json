@@ -14,8 +14,8 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "CrudeData",
-    "Name": "CrudeData",
+    "TemplateStyle": "DotNetFrameworkCrudeData",
+    "Name": "DotNetFrameworkCrudeData",
     "DesignTypeScript": "TypeScriptHagtorn",
     "PrimaryKey": null,
     "AzureAppName": null,

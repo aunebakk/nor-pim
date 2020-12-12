@@ -14,7 +14,7 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "WithDurian",
+    "TemplateStyle": "DotNetFrameworkWithDurian",
     "Name": "WithDurian",
     "DesignTypeScript": "",
     "PrimaryKey": "",

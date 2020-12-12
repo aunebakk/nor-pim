@@ -14,7 +14,7 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "WithDurianByTypeScript",
+    "TemplateStyle": "DotNetFrameworkWithDurianByTypeScript",
     "Name": "WithDurianByTypeScript",
     "DesignTypeScript": "TypeScriptVestreVikenDurian",
     "PrimaryKey": "product_id",

@@ -14,8 +14,8 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "CrudeAspMvc",
-    "Name": "CrudeAspMvc",
+    "TemplateStyle": "DotNetFrameworkCrudeAspMvc",
+    "Name": "DotNetFrameworkCrudeAspMvc",
     "DesignTypeScript": "TypeScriptHagtorn",
     "PrimaryKey": null,
     "AzureAppName": null,

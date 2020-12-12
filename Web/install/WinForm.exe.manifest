@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jzhUgVHX6SIhLWpxNL/VMegu7vwfXcyAQgl5iEijI6k=</dsig:DigestValue>
+        <dsig:DigestValue>2ihZILOfAoVuawL16VFwgE0YIjKjKA+UxTOBTAhY4rA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>z8xjAu2iXNLn9T/CgIMr4WkE+PwAEiiSuXbrhDmTgbo=</dsig:DigestValue>
+        <dsig:DigestValue>W9jbBORYB2OysdBerwF4C4C52p6y5MD4QKnDM2UjbyM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iQ0eIJ5TYsIJkswB2OmoFg9gWnmdpuwr5YMe4EMG8ZE=</dsig:DigestValue>
+        <dsig:DigestValue>wZ+bcFJ6yNep56jDXa4jPAcnJ8ieUCyTyxt2uH7eWUk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -95,13 +95,13 @@
       <dsig:DigestValue>aXwkIrKiZfDaua3eg28Sd8Pc4KPUHDHuyUbQHV0zd2g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WinForm.exe.config" size="31360">
+  <file name="WinForm.exe.config" size="31361">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cCTkQVer/bB/yEbh1SNyssnRKVpdGl/1897oqYt/ngk=</dsig:DigestValue>
+      <dsig:DigestValue>YL7G4Z9MSu9ZLAaXzYb+iawTRzliGl/FBFLgd4dRzU0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

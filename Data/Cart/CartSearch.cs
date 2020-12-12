@@ -14,7 +14,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
         /// <summary>Get Cart Product</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>ByServiceTableCrud</template>
+        /// <template>DotNetFrameworkByServiceTableCrud</template>
         public List<GetCartProductWithFilterData> GetCartProductWithFilter() {
             var ret = new List<GetCartProductWithFilterData>();
             string sql = @"

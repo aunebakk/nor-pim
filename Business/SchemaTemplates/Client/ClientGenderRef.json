@@ -14,8 +14,8 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "CrudeSoap",
-    "Name": "CrudeSoap",
+    "TemplateStyle": "DotNetFrameworkCrudeSoap",
+    "Name": "DotNetFrameworkCrudeSoap",
     "DesignTypeScript": "TypeScriptHagtorn",
     "PrimaryKey": null,
     "AzureAppName": null,

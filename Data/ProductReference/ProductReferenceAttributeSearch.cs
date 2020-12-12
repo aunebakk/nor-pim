@@ -14,7 +14,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer
 
         /// <summary>Get Product Attribute Ref</summary>
         /// <cardinality>Many</cardinality>
-        /// <template>ByServiceTableCrud</template>
+        /// <template>DotNetFrameworkByServiceTableCrud</template>
         public List<ProductReferenceAttributeSearchWithFilterData> ProductReferenceAttributeSearchWithFilter() {
             var ret = new List<ProductReferenceAttributeSearchWithFilterData>();
             string sql = @"

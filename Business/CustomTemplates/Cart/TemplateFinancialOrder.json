@@ -14,7 +14,7 @@
     "Children": []
   },
   "Style": {
-    "TemplateStyle": "WithDurianByTypeScript",
+    "TemplateStyle": "DotNetFrameworkWithDurianByTypeScript",
     "Name": "WithDurianByTypeScript",
     "DesignTypeScript": "TypeScriptHagtorn",
     "PrimaryKey": "financial_order_id",
