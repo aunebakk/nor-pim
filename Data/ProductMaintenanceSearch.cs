@@ -68,6 +68,7 @@ where 1 = 1
             }
         }
 
+
         /// <summary>Get Product Image</summary>
         /// <cardinality>Many</cardinality>
         /// <template>DotNetFrameworkWithDurian</template>
@@ -126,6 +127,7 @@ where 1 = 1
             }
         }
 
+
         /// <summary>Get Product Identifier</summary>
         /// <cardinality>Many</cardinality>
         /// <template>DotNetFrameworkWithDurian</template>
@@ -183,6 +185,7 @@ where 1 = 1
             }
         }
 
+
         /// <summary>Get Product Documentation</summary>
         /// <cardinality>Many</cardinality>
         /// <template>DotNetFrameworkWithDurian</template>
@@ -239,6 +242,7 @@ where 1 = 1
                 return ret;
             }
         }
+
 
         /// <summary>Get Product Attribute</summary>
         /// <cardinality>Many</cardinality>
@@ -299,6 +303,7 @@ where 1 = 1
                 return ret;
             }
         }
+
 
         /// <summary>Get Product</summary>
         /// <cardinality>Many</cardinality>

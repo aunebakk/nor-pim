@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{961EA336-10D4-4F55-B13D-AE4CFC86AFCE}</ProjectGuid>
+    <ProjectGuid>{89CD1733-25EF-4EB5-BF75-AF57C37DBECF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -27,7 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -511,8 +511,6 @@
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.Authentication.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.Azure.dll" />
     <Content Include="Pack\Microsoft.Rest.ClientRuntime.dll" />
-    <Content Include="Scripts\Frameworks\bootstrap.js" />
-    <Content Include="Scripts\Frameworks\bootstrap.min.js" />
     <Content Include="install\WinForm.application" />
     <Content Include="install\WinForm.exe.config" />
     <Content Include="install\WinForm.exe.manifest" />
@@ -540,15 +538,15 @@
     <Content Include="Scripts\Frameworks\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\Frameworks\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\Frameworks\respond.min.js" />
-    <None Include="Scripts\Frameworks\_references.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\Frameworks\bootstrap.js" />
+    <Content Include="Scripts\Frameworks\bootstrap.min.js" />
+    <Content Include="Scripts\Frameworks\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -576,53 +574,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Client\ClientAddress\ClientAddressEdit.cshtml" />
-    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodCreate.cshtml" />
-    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodDetails.cshtml" />
-    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodEdit.cshtml" />
-    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodIndex.cshtml" />
-    <Content Include="Views\Client\ClientCreate.cshtml" />
-    <Content Include="Views\Client\ClientEdit.cshtml" />
-    <Content Include="Views\Client\ClientEvent\ClientEventCreate.cshtml" />
-    <Content Include="Views\Client\ClientEvent\ClientEventDetails.cshtml" />
-    <Content Include="Views\Client\ClientEvent\ClientEventEdit.cshtml" />
-    <Content Include="Views\Client\ClientEvent\ClientEventIndex.cshtml" />
-    <Content Include="Views\Client\ClientIndex.cshtml" />
-    <Content Include="Views\Client\ClientLink\ClientLinkCreate.cshtml" />
-    <Content Include="Views\Client\ClientLink\ClientLinkDetails.cshtml" />
-    <Content Include="Views\Client\ClientLink\ClientLinkEdit.cshtml" />
-    <Content Include="Views\Client\ClientLink\ClientLinkIndex.cshtml" />
-    <Content Include="Views\Client\_tab.cshtml" />
-    <Content Include="Views\Dashboard\DashboardInfo.cshtml" />
-    <Content Include="Views\Dashboard\DashboardWhiteboard.cshtml" />
-    <Content Include="Views\Dashboard\Splash.cshtml" />
-    <Content Include="Views\Dashboard\TemplateChapterIndex.cshtml" />
-    <Content Include="Views\Dashboard\TemplateChapterIndex.Phone.cshtml" />
-    <Content Include="Views\Dashboard\TemplateChapterIndex.Tablet.cshtml" />
-    <Content Include="Views\Database\CopyConnectionStringToClipboard.cshtml" />
-    <Content Include="Views\Database\CreateDatabase.cshtml" />
-    <Content Include="Views\Database\IncreaseVersion.cshtml" />
-    <Content Include="Views\Database\IncreaseVersionToLatest.cshtml" />
-    <Content Include="Views\Database\Index.cshtml" />
-    <Content Include="Views\Database\RemoveDatabase.cshtml" />
-    <Content Include="Views\Database\SetVersionZero.cshtml" />
-    <Content Include="Views\Database\VersionToLatest.cshtml" />
-    <Content Include="Views\Default\DefaultIssueWithFilterLive\DefaultIssueWithFilterLiveIndex.cshtml" />
-    <Content Include="Views\Default\DefaultIssue\DefaultIssueCreate.cshtml" />
-    <Content Include="Views\Default\DefaultIssue\DefaultIssueDetails.cshtml" />
-    <Content Include="Views\Default\DefaultIssue\DefaultIssueEdit.cshtml" />
-    <Content Include="Views\Default\DefaultIssue\DefaultIssueIndex.cshtml" />
-    <Content Include="Views\Div\SystemReferenceTable\Index.cshtml" />
-    <Content Include="Views\Durian\DefaultSearch\DefaultUserActivityGroupedByAddressLiveIndex.cshtml" />
-    <Content Include="Views\Durian\DefaultSearch\DefaultUserActivityGroupedLiveIndex.cshtml" />
-    <Content Include="Views\Durian\ProductMaintenanceSearch\PIMDetailsLiveAttributes.cshtml" />
-    <Content Include="Views\Durian\ProductMaintenanceSearch\PIMDetailsLiveMobileAttributes.cshtml" />
-    <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryCodeIndex.cshtml" />
-    <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryIndex.cshtml" />
-    <Content Include="Views\DurianLive\ProductSearch\ProductSearchByCategoryCodeIndex.cshtml" />
-    <Content Include="Views\DurianLive\ProductSearch\ProductSearchByCategoryIndex.cshtml" />
-    <Content Include="Views\Financial\NeedToLogin.cshtml" />
-    <Content Include="Views\Templates\ProductMaintenance\_tab.cshtml" />
     <Content Include="Views\Home\API.cshtml" />
     <Content Include="Views\Home\Applications.cshtml" />
     <Content Include="Views\Shared\_Layout.Phone.cshtml" />
@@ -1139,17 +1090,61 @@
     <Content Include="SchemaTemplates\Product\ProductInfo.json" />
     <Content Include="SchemaTemplates\Product\ProductInfoRef.json" />
     <Content Include="SchemaTemplates\Product\ProductSupplier.json" />
-    <Content Include="Scripts\Frameworks\jquery-1.10.2.min.map" />
-    <Content Include="Scripts\Frameworks\jquery-3.2.1.min.map" />
-    <Content Include="Scripts\Frameworks\jquery-3.2.1.slim.min.map" />
+    <Content Include="Views\Client\ClientAddress\ClientAddressEdit.cshtml" />
+    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodCreate.cshtml" />
+    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodDetails.cshtml" />
+    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodEdit.cshtml" />
+    <Content Include="Views\Client\ClientContactMethod\ClientContactMethodIndex.cshtml" />
+    <Content Include="Views\Client\ClientCreate.cshtml" />
+    <Content Include="Views\Client\ClientEdit.cshtml" />
+    <Content Include="Views\Client\ClientEvent\ClientEventCreate.cshtml" />
+    <Content Include="Views\Client\ClientEvent\ClientEventDetails.cshtml" />
+    <Content Include="Views\Client\ClientEvent\ClientEventEdit.cshtml" />
+    <Content Include="Views\Client\ClientEvent\ClientEventIndex.cshtml" />
+    <Content Include="Views\Client\ClientIndex.cshtml" />
+    <Content Include="Views\Client\ClientLink\ClientLinkCreate.cshtml" />
+    <Content Include="Views\Client\ClientLink\ClientLinkDetails.cshtml" />
+    <Content Include="Views\Client\ClientLink\ClientLinkEdit.cshtml" />
+    <Content Include="Views\Client\ClientLink\ClientLinkIndex.cshtml" />
+    <Content Include="Views\Client\_tab.cshtml" />
+    <Content Include="Views\Dashboard\DashboardInfo.cshtml" />
+    <Content Include="Views\Dashboard\DashboardWhiteboard.cshtml" />
+    <Content Include="Views\Dashboard\Splash.cshtml" />
+    <Content Include="Views\Dashboard\TemplateChapterIndex.cshtml" />
+    <Content Include="Views\Dashboard\TemplateChapterIndex.Phone.cshtml" />
+    <Content Include="Views\Dashboard\TemplateChapterIndex.Tablet.cshtml" />
+    <Content Include="Views\Database\CopyConnectionStringToClipboard.cshtml" />
+    <Content Include="Views\Database\CreateDatabase.cshtml" />
+    <Content Include="Views\Database\IncreaseVersion.cshtml" />
+    <Content Include="Views\Database\IncreaseVersionToLatest.cshtml" />
+    <Content Include="Views\Database\Index.cshtml" />
+    <Content Include="Views\Database\RemoveDatabase.cshtml" />
+    <Content Include="Views\Database\SetVersionZero.cshtml" />
+    <Content Include="Views\Database\VersionToLatest.cshtml" />
+    <Content Include="Views\Default\DefaultIssueWithFilterLive\DefaultIssueWithFilterLiveIndex.cshtml" />
+    <Content Include="Views\Default\DefaultIssue\DefaultIssueCreate.cshtml" />
+    <Content Include="Views\Default\DefaultIssue\DefaultIssueDetails.cshtml" />
+    <Content Include="Views\Default\DefaultIssue\DefaultIssueEdit.cshtml" />
+    <Content Include="Views\Default\DefaultIssue\DefaultIssueIndex.cshtml" />
+    <Content Include="Views\Div\SystemReferenceTable\Index.cshtml" />
+    <Content Include="Views\Durian\DefaultSearch\DefaultUserActivityGroupedByAddressLiveIndex.cshtml" />
+    <Content Include="Views\Durian\DefaultSearch\DefaultUserActivityGroupedLiveIndex.cshtml" />
+    <Content Include="Views\Durian\ProductMaintenanceSearch\PIMDetailsLiveAttributes.cshtml" />
+    <Content Include="Views\Durian\ProductMaintenanceSearch\PIMDetailsLiveMobileAttributes.cshtml" />
+    <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryCodeIndex.cshtml" />
+    <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryIndex.cshtml" />
+    <Content Include="Views\DurianLive\ProductSearch\ProductSearchByCategoryCodeIndex.cshtml" />
+    <Content Include="Views\DurianLive\ProductSearch\ProductSearchByCategoryIndex.cshtml" />
+    <Content Include="Views\Financial\NeedToLogin.cshtml" />
+    <Content Include="Views\Templates\ProductMaintenance\_tab.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{7972f7b0-0319-429c-919d-d9c1e800f1c2}</Project>
+      <Project>{b3a9492c-b2e0-48cc-ae92-2eccedde04b2}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{0043d4b0-2cfc-4124-bf9f-bef3c5cbe929}</Project>
+      <Project>{a24207f9-5c62-438e-b833-cc446a0d0280}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1182,7 +1177,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54059</DevelopmentServerPort>
+          <DevelopmentServerPort>50099</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

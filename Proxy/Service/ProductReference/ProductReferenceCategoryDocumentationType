@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/12/2020 5:13:43 AM
+  Generated Date: 12/19/2020 5:39:56 PM
   Template: sql2x.TemplateReturnInstruction.ProxyUsing
 */
 using System;
@@ -12,16 +12,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductReferenceCategoryDocumentationTypeService")]
     public partial interface IProductReferenceCategoryDocumentationTypeService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductReferenceCategoryDocumentationTypeService/ProductRefer" +
-            "enceCategoryDocumentationTypeCompleteGet", ReplyAction="http://tempuri.org/IProductReferenceCategoryDocumentationTypeService/ProductRefer" +
-            "enceCategoryDocumentationTypeCompleteGetResponse")]
-        SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceCategoryDocumentationTypeContract ProductReferenceCategoryDocumentationTypeCompleteGet(string productCategoryDocumentationTypeRcd, System.Guid userId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductReferenceCategoryDocumentationTypeService/ProductRefer" +
-            "enceCategoryDocumentationTypeCompleteUpdate", ReplyAction="http://tempuri.org/IProductReferenceCategoryDocumentationTypeService/ProductRefer" +
-            "enceCategoryDocumentationTypeCompleteUpdateResponse")]
-        string ProductReferenceCategoryDocumentationTypeCompleteUpdate(string productCategoryDocumentationTypeRcd, SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceCategoryDocumentationTypeContract productContract, System.Guid userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -47,14 +37,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         public ProductReferenceCategoryDocumentationTypeServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceCategoryDocumentationTypeContract ProductReferenceCategoryDocumentationTypeCompleteGet(string productCategoryDocumentationTypeRcd, System.Guid userId) {
-            return base.Channel.ProductReferenceCategoryDocumentationTypeCompleteGet(productCategoryDocumentationTypeRcd, userId);
-        }
-        
-        public string ProductReferenceCategoryDocumentationTypeCompleteUpdate(string productCategoryDocumentationTypeRcd, SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceCategoryDocumentationTypeContract productContract, System.Guid userId) {
-            return base.Channel.ProductReferenceCategoryDocumentationTypeCompleteUpdate(productCategoryDocumentationTypeRcd, productContract, userId);
         }
     }
 }

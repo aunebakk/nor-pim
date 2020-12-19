@@ -1,9 +1,9 @@
-﻿/*
+/*
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/12/2020 5:09:27 AM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 12/19/2020 5:29:52 PM
+  From Machine: DESKTOP-KE5CSN3
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -18,55 +18,49 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [ServiceContract()]
     public partial interface IProductMaintenanceSearchService {
         [OperationContract()]
-        List<ProductMaintenanceIndexContract> ProductMaintenanceIndex();
+        List<ProductMaintenanceInfoIndexWithFilterContract> ProductMaintenanceInfoIndexWithFilter (System.Guid productId);
         [OperationContract()]
-        List<ProductMaintenanceAttributeIndexWithFilterContract> ProductMaintenanceAttributeIndexWithFilter(Guid productId);
+        List<ProductMaintenanceImageIndexWithFilterContract> ProductMaintenanceImageIndexWithFilter (System.Guid productId);
         [OperationContract()]
-        List<ProductMaintenanceDocumentationIndexWithFilterContract> ProductMaintenanceDocumentationIndexWithFilter(Guid productId);
+        List<ProductMaintenanceIdentifierIndexWithFilterContract> ProductMaintenanceIdentifierIndexWithFilter (System.Guid productId);
         [OperationContract()]
-        List<ProductMaintenanceIdentifierIndexWithFilterContract> ProductMaintenanceIdentifierIndexWithFilter(Guid productId);
+        List<ProductMaintenanceDocumentationIndexWithFilterContract> ProductMaintenanceDocumentationIndexWithFilter (System.Guid productId);
         [OperationContract()]
-        List<ProductMaintenanceImageIndexWithFilterContract> ProductMaintenanceImageIndexWithFilter(Guid productId);
+        List<ProductMaintenanceAttributeIndexWithFilterContract> ProductMaintenanceAttributeIndexWithFilter (System.Guid productId);
         [OperationContract()]
-        List<ProductMaintenanceInfoIndexWithFilterContract> ProductMaintenanceInfoIndexWithFilter(Guid productId);
+        List<ProductMaintenanceIndexContract> ProductMaintenanceIndex ();
     }
-
+    
     public partial class ProductMaintenanceSearchService : IProductMaintenanceSearchService {
-
-        public List<ProductMaintenanceIndexContract> ProductMaintenanceIndex() {
+        public List<ProductMaintenanceInfoIndexWithFilterContract> ProductMaintenanceInfoIndexWithFilter (System.Guid productId) {
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
-            var businessLogicLayer = new ProductMaintenanceIndex();
-            return businessLogicLayer.ProductMaintenanceIndexFromDal(dataAccessLayer.ProductMaintenanceIndex());
+            var businessLogicLayer = new ProductMaintenanceInfoIndexWithFilter();
+            return businessLogicLayer.ProductMaintenanceInfoIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceInfoIndexWithFilter(productId));
         }
-
-        public List<ProductMaintenanceAttributeIndexWithFilterContract> ProductMaintenanceAttributeIndexWithFilter(Guid productId) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
-            var businessLogicLayer = new ProductMaintenanceAttributeIndexWithFilter();
-            return businessLogicLayer.ProductMaintenanceAttributeIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceAttributeIndexWithFilter(productId));
-        }
-
-        public List<ProductMaintenanceDocumentationIndexWithFilterContract> ProductMaintenanceDocumentationIndexWithFilter(Guid productId) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
-            var businessLogicLayer = new ProductMaintenanceDocumentationIndexWithFilter();
-            return businessLogicLayer.ProductMaintenanceDocumentationIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceDocumentationIndexWithFilter(productId));
-        }
-
-        public List<ProductMaintenanceIdentifierIndexWithFilterContract> ProductMaintenanceIdentifierIndexWithFilter(Guid productId) {
-            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
-            var businessLogicLayer = new ProductMaintenanceIdentifierIndexWithFilter();
-            return businessLogicLayer.ProductMaintenanceIdentifierIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceIdentifierIndexWithFilter(productId));
-        }
-
-        public List<ProductMaintenanceImageIndexWithFilterContract> ProductMaintenanceImageIndexWithFilter(Guid productId) {
+        public List<ProductMaintenanceImageIndexWithFilterContract> ProductMaintenanceImageIndexWithFilter (System.Guid productId) {
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
             var businessLogicLayer = new ProductMaintenanceImageIndexWithFilter();
             return businessLogicLayer.ProductMaintenanceImageIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceImageIndexWithFilter(productId));
         }
-
-        public List<ProductMaintenanceInfoIndexWithFilterContract> ProductMaintenanceInfoIndexWithFilter(Guid productId) {
+        public List<ProductMaintenanceIdentifierIndexWithFilterContract> ProductMaintenanceIdentifierIndexWithFilter (System.Guid productId) {
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
-            var businessLogicLayer = new ProductMaintenanceInfoIndexWithFilter();
-            return businessLogicLayer.ProductMaintenanceInfoIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceInfoIndexWithFilter(productId));
+            var businessLogicLayer = new ProductMaintenanceIdentifierIndexWithFilter();
+            return businessLogicLayer.ProductMaintenanceIdentifierIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceIdentifierIndexWithFilter(productId));
+        }
+        public List<ProductMaintenanceDocumentationIndexWithFilterContract> ProductMaintenanceDocumentationIndexWithFilter (System.Guid productId) {
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
+            var businessLogicLayer = new ProductMaintenanceDocumentationIndexWithFilter();
+            return businessLogicLayer.ProductMaintenanceDocumentationIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceDocumentationIndexWithFilter(productId));
+        }
+        public List<ProductMaintenanceAttributeIndexWithFilterContract> ProductMaintenanceAttributeIndexWithFilter (System.Guid productId) {
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
+            var businessLogicLayer = new ProductMaintenanceAttributeIndexWithFilter();
+            return businessLogicLayer.ProductMaintenanceAttributeIndexWithFilterFromDal(dataAccessLayer.ProductMaintenanceAttributeIndexWithFilter(productId));
+        }
+        public List<ProductMaintenanceIndexContract> ProductMaintenanceIndex () {
+            var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.ProductMaintenanceSearch();
+            var businessLogicLayer = new ProductMaintenanceIndex();
+            return businessLogicLayer.ProductMaintenanceIndexFromDal(dataAccessLayer.ProductMaintenanceIndex());
         }
     }
 }

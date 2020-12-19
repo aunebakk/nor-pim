@@ -53,12 +53,12 @@ namespace WebApplicationOAuth
             // Uncomment the following lines to enable logging in with third party login providers
             // https://apps.dev.microsoft.com/?mkt=nb-no&referrer=https%3a%2f%2fdocs.microsoft.com%2fen-us%2faspnet%2fweb-api%2foverview%2fsecurity%2fexternal-authentication-services#/appList
             //app.UseMicrosoftAccountAuthentication (
-            //    clientId: "000000004820504D" ,
-            //    clientSecret: "uxhCQ836|~fjvmXBONL64%#" );
+            //    clientId: "XXX" ,
+            //    clientSecret: "XXX" );
             //String XmlSchemaString = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims";
             //var msaccountOptions = new Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticationOptions ( ) {
-            //    ClientId = "000000004820504D",
-            //    ClientSecret = "uxhCQ836|~fjvmXBONL64%#",
+            //    ClientId = "XXX",
+            //    ClientSecret = "XXX",
             //    Provider = new Microsoft.Owin.Security.MicrosoftAccount.MicrosoftAccountAuthenticationProvider ( ) {
             //        OnAuthenticated = ( context ) =>
             //        {
@@ -72,13 +72,13 @@ namespace WebApplicationOAuth
 
             // http://developer.linkedin.com 
             //app.UseLinkedInAuthentication (
-            //    clientId: "77lyvtup2tnq0m" ,
-            //    clientSecret: "vcIUnWzcTNNBy9xb" );
+            //    clientId: "XXX" ,
+            //    clientSecret: "XXX" );
 
             // https://apps.twitter.com/
             app.UseTwitterAuthentication ( new TwitterAuthenticationOptions {
-                ConsumerKey = "Neo2jvuVMVoara5DB3B3VSLK9",
-                ConsumerSecret = "jCWHGcVNziYX0W31FJOaLOB2erYe1N2e0Y61ojT8kG7K0IdEjK",
+                ConsumerKey = "XXX",
+                ConsumerSecret = "XXX",
                 BackchannelCertificateValidator = new CertificateSubjectKeyIdentifierValidator ( new[]
                 {
         "A5EF0B11CEC04103A34A659048B21CE0572D7D47", // VeriSign Class 3 Secure Server CA - G2
@@ -91,17 +91,17 @@ namespace WebApplicationOAuth
             } );
 
             //app.UseTwitterAuthentication (
-            //   consumerKey: "Neo2jvuVMVoara5DB3B3VSLK9",
-            //   consumerSecret: "jCWHGcVNziYX0W31FJOaLOB2erYe1N2e0Y61ojT8kG7K0IdEjK" );
+            //   consumerKey: "XXX",
+            //   consumerSecret: "XXX" );
 
             // https://developers.facebook.com/apps
             //app.UseFacebookAuthentication (
-            //   appId: "1715967025142143" ,
-            //   appSecret: "c059e5f11cfa2904ad3c9b1e1785bde7" );
+            //   appId: "XXX" ,
+            //   appSecret: "XXX" );
             //String XmlSchemaString = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims";
             //var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions ( ) {
-            //    AppId = "1715967025142143",
-            //    AppSecret = "c059e5f11cfa2904ad3c9b1e1785bde7",
+            //    AppId = "XXX",
+            //    AppSecret = "XXX",
             //    Provider = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider ( ) {
             //        OnAuthenticated = ( context ) =>
             //        {
@@ -117,8 +117,8 @@ namespace WebApplicationOAuth
             //app.UseFacebookAuthentication ( facebookOptions );
             // https://console.developers.google.com/apis/credentials?project=vibrant-catbird-91318
             app.UseGoogleAuthentication ( new GoogleOAuth2AuthenticationOptions () {
-                ClientId = "770255532133-cq5egbdea1u75hc42h5mg8qkhnjurao8.apps.googleusercontent.com" ,
-                ClientSecret = "jln1tlWwtjPGsLt5Ox27WxDo" } );
+                ClientId = "XXX.apps.googleusercontent.com" ,
+                ClientSecret = "XXX" } );
         }
     }
 }

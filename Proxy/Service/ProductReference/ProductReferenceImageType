@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/12/2020 5:14:06 AM
+  Generated Date: 12/19/2020 5:40:40 PM
   Template: sql2x.TemplateReturnInstruction.ProxyUsing
 */
 using System;
@@ -12,16 +12,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductReferenceImageTypeService")]
     public partial interface IProductReferenceImageTypeService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductReferenceImageTypeService/ProductReferenceImageTypeCom" +
-            "pleteGet", ReplyAction="http://tempuri.org/IProductReferenceImageTypeService/ProductReferenceImageTypeCom" +
-            "pleteGetResponse")]
-        SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceImageTypeContract ProductReferenceImageTypeCompleteGet(string productImageTypeRcd, System.Guid userId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductReferenceImageTypeService/ProductReferenceImageTypeCom" +
-            "pleteUpdate", ReplyAction="http://tempuri.org/IProductReferenceImageTypeService/ProductReferenceImageTypeCom" +
-            "pleteUpdateResponse")]
-        string ProductReferenceImageTypeCompleteUpdate(string productImageTypeRcd, SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceImageTypeContract productContract, System.Guid userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -47,14 +37,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         public ProductReferenceImageTypeServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceImageTypeContract ProductReferenceImageTypeCompleteGet(string productImageTypeRcd, System.Guid userId) {
-            return base.Channel.ProductReferenceImageTypeCompleteGet(productImageTypeRcd, userId);
-        }
-        
-        public string ProductReferenceImageTypeCompleteUpdate(string productImageTypeRcd, SolutionNorSolutionPim.BusinessLogicLayer.ProductReferenceImageTypeContract productContract, System.Guid userId) {
-            return base.Channel.ProductReferenceImageTypeCompleteUpdate(productImageTypeRcd, productContract, userId);
         }
     }
 }

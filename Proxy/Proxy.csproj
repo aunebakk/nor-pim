@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0043D4B0-2CFC-4124-BF9F-BEF3C5CBE929}</ProjectGuid>
+    <ProjectGuid>{A24207F9-5C62-438E-B833-CC446A0D0280}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Proxy</RootNamespace>
@@ -121,8 +121,6 @@
     <Compile Include="Crude\Templates\Product\CrudeProductInfoService.cs" />
     <Compile Include="Crude\Templates\Product\CrudeProductService.cs" />
     <Compile Include="Crude\Templates\Product\CrudeProductSupplierService.cs" />
-    <Compile Include="DefaultUserActivityProxy.cs" />
-    <Compile Include="DiagnosticsProxy.cs" />
     <Compile Include="Durian\CartProductSearch\CartProductSearchProxy.cs" />
     <Compile Include="Durian\CartSearch\CartSearchProxy.cs" />
     <Compile Include="Durian\CategorySearch\CategorySearchProxy.cs" />
@@ -132,12 +130,14 @@
     <Compile Include="Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchProxy.cs" />
     <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchProxy.cs" />
     <Compile Include="Durian\ProductSearch\ProductSearchProxy.cs" />
-    <Compile Include="ProductCategoryProxy.cs" />
-    <Compile Include="ProductProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DefaultUserActivityProxy.cs" />
     <Compile Include="Service\DefaultUserActivityService.cs" />
+    <Compile Include="Service\DiagnosticsProxy.cs" />
     <Compile Include="Service\DiagnosticsService.cs" />
+    <Compile Include="Service\ProductCategoryProxy.cs" />
     <Compile Include="Service\ProductCategoryService.cs" />
+    <Compile Include="Service\ProductProxy.cs" />
     <Compile Include="Service\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -235,7 +235,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{7972f7b0-0319-429c-919d-d9c1e800f1c2}</Project>
+      <Project>{b3a9492c-b2e0-48cc-ae92-2eccedde04b2}</Project>
       <Name>Contract</Name>
     </ProjectReference>
   </ItemGroup>
