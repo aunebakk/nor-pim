@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/19/2020 5:38:15 PM
-  From Machine: DESKTOP-KE5CSN3
+  Generated Date: 12/30/2020 12:15:45 PM
+  From Machine: DESKTOP-LSRVP12
   Template: sql2x.TemplateWithDurianGenerator.ParentViewIndex
 -->
 @model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceAttributeIndexWithFilterContract>
@@ -25,10 +25,10 @@
 <table class="table">
     <tr>
         <th>Product Name</th>
-        <th>State</th>
         <th>Product Attribute Name</th>
         <th>Product Attribute Unit Name</th>
         <th>Default User Name</th>
+        <th>State</th>
         <th>Product Attribute</th>
         <th>Product Attribute Unit</th>
         <th>Value</th>
@@ -39,10 +39,10 @@
     @foreach (var item in Model) {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
-            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductAttributeName) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductAttributeUnitName) </td>
             <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductAttributeRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductAttributeUnitRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.Value) </td>

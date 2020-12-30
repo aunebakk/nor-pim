@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/19/2020 5:37:53 PM
+  Generated Date: 12/30/2020 12:15:38 PM
   Template: sql2x.TemplateReturnInstruction.ProxyUsing
 */
 using System;
@@ -12,6 +12,12 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICartProductService")]
     public partial interface ICartProductService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartProductService/CartProductCompleteGet", ReplyAction="http://tempuri.org/ICartProductService/CartProductCompleteGetResponse")]
+        SolutionNorSolutionPim.BusinessLogicLayer.CartProductContract CartProductCompleteGet(System.Guid cartProductId, System.Guid userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartProductService/CartProductCompleteUpdate", ReplyAction="http://tempuri.org/ICartProductService/CartProductCompleteUpdateResponse")]
+        System.Guid CartProductCompleteUpdate(System.Guid cartProductId, SolutionNorSolutionPim.BusinessLogicLayer.CartProductContract cartProductContract, System.Guid userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -37,6 +43,14 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         
         public CartProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public SolutionNorSolutionPim.BusinessLogicLayer.CartProductContract CartProductCompleteGet(System.Guid cartProductId, System.Guid userId) {
+            return base.Channel.CartProductCompleteGet(cartProductId, userId);
+        }
+        
+        public System.Guid CartProductCompleteUpdate(System.Guid cartProductId, SolutionNorSolutionPim.BusinessLogicLayer.CartProductContract cartProductContract, System.Guid userId) {
+            return base.Channel.CartProductCompleteUpdate(cartProductId, cartProductContract, userId);
         }
     }
 }

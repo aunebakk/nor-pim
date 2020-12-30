@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{89CD1733-25EF-4EB5-BF75-AF57C37DBECF}</ProjectGuid>
+    <ProjectGuid>{B2F0FAE9-6342-492A-AFB4-BBCA94AE4605}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -27,7 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -580,26 +580,27 @@
     <Content Include="Views\Shared\_Layout.Tablet.cshtml" />
     <Content Include="Views\Shared\_Layout.TypeScript.Phone.cshtml" />
     <Content Include="Views\Shared\_LayoutWithCrud.cshtml" />
+    <Content Include="Views\Durian\ProductMaintenanceSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceInfoIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceSearch.cshtml" />
-    <Content Include="Views\Home\Durian\ProductMaintenanceSearch\ProductMaintenanceSearchDurians.cshtml" />
+    <Content Include="Views\Home\Durians.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceImageIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceIdentifierIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceDocumentationIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceAttributeIndexWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductMaintenanceSearch\ProductMaintenanceIndexIndex.cshtml" />
+    <Content Include="Views\Durian\CartProductSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\CartProductSearch\GetCartProductIndex.cshtml" />
     <Content Include="Views\Durian\CartProductSearch\CartProductSearch.cshtml" />
-    <Content Include="Views\Home\Durian\CartProductSearch\CartProductSearchDurians.cshtml" />
+    <Content Include="Views\Durian\CartSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\CartSearch\GetCartProductWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\CartSearch\CartSearch.cshtml" />
-    <Content Include="Views\Home\Durian\CartSearch\CartSearchDurians.cshtml" />
+    <Content Include="Views\Durian\ClientSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ClientSearch\GetClientWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ClientSearch\ClientSearch.cshtml" />
-    <Content Include="Views\Home\Durian\ClientSearch\ClientSearchDurians.cshtml" />
+    <Content Include="Views\Durian\DefaultSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultTestOverviewIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultSearch.cshtml" />
-    <Content Include="Views\Home\Durian\DefaultSearch\DefaultSearchDurians.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DashboardCountsIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultPerformanceIssueFetchWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultIssueWithFilterIndex.cshtml" />
@@ -620,25 +621,25 @@
     <Content Include="Views\Durian\DefaultSearch\GetDefaultChangeLogIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultResourceStatisticsIndex.cshtml" />
     <Content Include="Views\Durian\DefaultSearch\DefaultResourceDatabaseStatisticsIndex.cshtml" />
+    <Content Include="Views\Durian\CategorySearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\CategorySearch\CategoryTreeIndex.cshtml" />
     <Content Include="Views\Durian\CategorySearch\CategorySearch.cshtml" />
-    <Content Include="Views\Home\Durian\CategorySearch\CategorySearchDurians.cshtml" />
     <Content Include="Views\Durian\CategorySearch\CategoryFindIndex.cshtml" />
+    <Content Include="Views\Durian\ProductSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductHistoryIndex.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearch.cshtml" />
-    <Content Include="Views\Home\Durian\ProductSearch\ProductSearchDurians.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByNameIndex.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByIdIndex.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryType1Index.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryType2Index.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryType3Index.cshtml" />
     <Content Include="Views\Durian\ProductSearch\ProductSearchByCategoryType4Index.cshtml" />
+    <Content Include="Views\Durian\ProductReferenceAttributeSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearch.cshtml" />
-    <Content Include="Views\Home\Durian\ProductReferenceAttributeSearch\ProductReferenceAttributeSearchDurians.cshtml" />
+    <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ActionLinkSnippets.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchWithFilterIndex.cshtml" />
     <Content Include="Views\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearch.cshtml" />
-    <Content Include="Views\Home\Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchDurians.cshtml" />
     <Content Include="Views\Templates\Cart\CartProduct\CartProductIndex.cshtml" />
     <Content Include="Views\Templates\Cart\CartProduct\CartProductCreate.cshtml" />
     <Content Include="Views\Templates\Cart\CartProduct\CartProductEdit.cshtml" />
@@ -1140,11 +1141,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{b3a9492c-b2e0-48cc-ae92-2eccedde04b2}</Project>
+      <Project>{ed5366e6-cc30-47c4-bc04-e2ff3a086c12}</Project>
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Proxy\Proxy.csproj">
-      <Project>{a24207f9-5c62-438e-b833-cc446a0d0280}</Project>
+      <Project>{2f3c0eaf-e883-4735-b196-6db4e36ba80b}</Project>
       <Name>Proxy</Name>
     </ProjectReference>
   </ItemGroup>
@@ -1177,7 +1178,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50099</DevelopmentServerPort>
+          <DevelopmentServerPort>59837</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/19/2020 5:39:16 PM
-  From Machine: DESKTOP-KE5CSN3
+  Generated Date: 12/30/2020 12:16:04 PM
+  From Machine: DESKTOP-LSRVP12
   Template: sql2x.TemplateByServiceTableCrudGenerator.BusinessUsing
 */
 using SolutionNorSolutionPim.DataAccessLayer;
@@ -17,14 +17,28 @@ using System.ServiceModel;
 
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
+    // Interface class for an WCF Service contract
+    // this interface is used to expose C# objects as SOAP services using WCF
+    // interface is a common means for discrete objects to communicate with each other
+    // links:
+    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
+    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
+    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
+    //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
     [ServiceContract()]
     public partial interface IProductReferenceAttributeService {
         
         // Gets parent and children
+        // getter for service
+        // links:
+        //  docLink: http://sql2x.org/documentationLink/28672bb5-d65f-4daa-84f5-56d7bfad4b22
         [OperationContract()]
         ProductReferenceAttributeContract ProductReferenceAttributeCompleteGet(string productAttributeRcd, System.Guid userId);
         
         // Updates parent, children are added or updated as needed
+        // updater for service
+        // links:
+        //  docLink: http://sql2x.org/documentationLink/b1aacc4e-64a1-4147-8b95-3a76ab53cf0c
         [OperationContract()]
         string ProductReferenceAttributeCompleteUpdate(string productAttributeRcd, ProductReferenceAttributeContract productContract, System.Guid userId);
     }
@@ -32,6 +46,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     public partial class ProductReferenceAttributeService : IProductReferenceAttributeService {
         
         // Gets parent and children
+        // getter for service
+        // links:
+        //  docLink: http://sql2x.org/documentationLink/28672bb5-d65f-4daa-84f5-56d7bfad4b22
         public ProductReferenceAttributeContract ProductReferenceAttributeCompleteGet(string productAttributeRcd, System.Guid userId) {
             var productContract = 
                 new ProductReferenceAttributeContract();
@@ -56,6 +73,9 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         }
         
         // Updates parent, children are added or updated as needed
+        // updater for service
+        // links:
+        //  docLink: http://sql2x.org/documentationLink/b1aacc4e-64a1-4147-8b95-3a76ab53cf0c
         public string ProductReferenceAttributeCompleteUpdate(string productAttributeRcd, ProductReferenceAttributeContract productContract, System.Guid userId) {
 
             // check for differences since fetch

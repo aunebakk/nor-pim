@@ -15,14 +15,14 @@
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
           UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the
+          If you want to change the Windows User Account Control level replace the 
           requestedExecutionLevel node with one of the following.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward
+         If you want to utilize File and Registry Virtualization for backward 
          compatibility then delete the requestedExecutionLevel node.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="131072">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Contract.dll" size="131584">
       <assemblyIdentity name="Contract" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bQ1Sd/L0JbmXmQJWtqV6d/ePq+Gwj53FEX+ySFe9Iq8=</dsig:DigestValue>
+        <dsig:DigestValue>d6j8E65iXfVYD2vktIf2KZ3B0YlSJ87kDlqtYGUe7gk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dYOXzVtuz0XocBk3zKM+4QTIUNIIHb/OJHm12pwu70w=</dsig:DigestValue>
+        <dsig:DigestValue>TizO1cX9gRyxxhvKHkrNDGO8hC2zyTp8HhadQ/CmW8E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Y0LrH7QNKLWb86viKO3nP8OxGrko3coxpO8l+zhqIhQ=</dsig:DigestValue>
+        <dsig:DigestValue>K/CofhxE3DRroYRUnG086pwqmOhH3uhvWz9gabbQNsY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -95,13 +95,13 @@
       <dsig:DigestValue>aXwkIrKiZfDaua3eg28Sd8Pc4KPUHDHuyUbQHV0zd2g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WinForm.exe.config" size="31361">
+  <file name="WinForm.exe.config" size="31362">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NVinojewZ9AfjBRsD1dPTY+zIYN1ycUfdVQFf1ezJVk=</dsig:DigestValue>
+      <dsig:DigestValue>xv1vboGF0KV0MPCIzqdknh5zfX8mKimm+n9w/ZHTTSo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

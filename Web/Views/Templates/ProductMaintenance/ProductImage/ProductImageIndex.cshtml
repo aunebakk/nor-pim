@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/19/2020 5:38:52 PM
-  From Machine: DESKTOP-KE5CSN3
+  Generated Date: 12/30/2020 12:15:57 PM
+  From Machine: DESKTOP-LSRVP12
   Template: sql2x.TemplateWithDurianGenerator.ParentViewIndex
 -->
 @model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceImageIndexWithFilterContract>
@@ -25,10 +25,10 @@
 <table class="table">
     <tr>
         <th>Product Name</th>
-        <th>State</th>
         <th>Product Image Type Name</th>
         <th>Image File Name</th>
         <th>Default User Name</th>
+        <th>State</th>
         <th>Product Image Type</th>
         <th>Image</th>
         <th>Date Time</th>
@@ -38,10 +38,10 @@
     @foreach (var item in Model) {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
-            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductImageTypeName) </td>
             <td>@Html.DisplayFor(modelItem => item.ImageFileName) </td>
             <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductImageTypeRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.Image) </td>
             <td>@Html.DisplayFor(modelItem => item.DateTime) </td>

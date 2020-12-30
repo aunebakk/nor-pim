@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/19/2020 5:39:04 PM
-  From Machine: DESKTOP-KE5CSN3
+  Generated Date: 12/30/2020 12:16:00 PM
+  From Machine: DESKTOP-LSRVP12
   Template: sql2x.TemplateWithDurianGenerator.ParentViewIndex
 -->
 @model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductMaintenanceInfoIndexWithFilterContract>
@@ -25,9 +25,9 @@
 <table class="table">
     <tr>
         <th>Product Name</th>
-        <th>State</th>
         <th>Product Info Name</th>
         <th>Default User Name</th>
+        <th>State</th>
         <th>Product Info</th>
         <th>Product Info Value</th>
         <th>Date Time</th>
@@ -37,9 +37,9 @@
     @foreach (var item in Model) {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.ProductName) </td>
-            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductInfoName) </td>
             <td>@Html.DisplayFor(modelItem => item.DefaultUserName) </td>
+            <td>@Html.DisplayFor(modelItem => item.StateRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductInfoRcd) </td>
             <td>@Html.DisplayFor(modelItem => item.ProductInfoValue) </td>
             <td>@Html.DisplayFor(modelItem => item.DateTime) </td>

@@ -11,18 +11,21 @@ namespace SolutionNorSolutionPim.DataAccessLayer
     /// <domain>ProductReference</domain>
     public class ProductReferenceAttributeSearch
     {
-
-        /// <summary>Get Product Attribute Ref</summary>
-        /// <cardinality>Many</cardinality>
+        /// <summary>
+        /// Get Product Attribute Ref
+        /// links:
+        ///  docLink: http://sql2x.org/documentationLink/06760f02-f3ec-45ad-bbfe-db43d7a0378f
+        /// </summary>
         /// <template>DotNetFrameworkByServiceTableCrud</template>
+        /// <cardinality>Many</cardinality>
         public List<ProductReferenceAttributeSearchWithFilterData> ProductReferenceAttributeSearchWithFilter() {
             var ret = new List<ProductReferenceAttributeSearchWithFilterData>();
             string sql = @"
 select 
-     par.product_attribute_name
-    ,par.product_attribute_rcd
-    ,par.date_time
-from product_attribute_ref as par
+     [par].product_attribute_name
+    ,[par].product_attribute_rcd
+    ,[par].date_time
+from product_attribute_ref as [par]
 
 where 1 = 1
 ";

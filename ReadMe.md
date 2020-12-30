@@ -59,7 +59,7 @@ Download GitHub Command Line interface for Windows [here](https://cli.github.com
    - Compressed [zip](https://github.com/aunebakk/nor-pim/archive/master.zip) file ( to unblock: ```Get-ChildItem -Path nor-pim -Recurse | Unblock-File``` )
 
 ## Folder structure ( first level )
-| Parameter                             | Comment                                                                           |
+| Folder Name                           | Comment                                                                           |
 |---------------------------------------|-----------------------------------------------------------------------------------|
 | Business                              | WCF / SOAP Business layer ( C# )
 | Contract                              | Contracts used by the Data, Business, Web and WinForm Layers ( C# )
@@ -175,7 +175,7 @@ The web FrontEnd is responsible for creating and updating the database, so the F
 Is an top-down view of Nor-Pim, starting with all user visible aspects, going through the architecture from client proxies to business layer and the database.
 
 ## The Repository
-This repository ("`Nor-Pim`") is where we ( NorGate ) develop the [Nor-Pim](http://NorPim.com) product. This source code is available to everyone under the standard [MIT](https://github.com/aunebakk/nor-pim/blob/master/Documentation/license.txt) license.
+This repository ("`Nor-Pim`") is where we ( NorGate ) develop the [Nor-Pim](http://www.NorPim.com) product. This source code is available to everyone under the standard [MIT](https://github.com/aunebakk/nor-pim/blob/master/Documentation/license.txt) license.
 
 ## DashBoard
 This is the starting page for the Hybrid Mobile/Web side of Nor-Pim. It supports portrait and landscape mode, so rotating a mobile device will change layout of tiles.
@@ -249,7 +249,7 @@ For editing all product data, including an all inclusive history of all changes 
 ## Database
 Following is parts of Nor-Pim's Database schema, there are more tables dealing with import and export, catalog structure, security and users.
 
-Nor-Pim uses a database handler that takes care of upgrading database schemas from one version to another, making having multiple databases at different versions manageable.
+Nor-Pim uses a database handler that takes care of upgrading the database schema from one version to another, making having multiple databases at different versions manageable.
 <p align="center">
   <img alt="Nor-Pim DB Schema" src=".\Documentation\schema.png">
 </p>
