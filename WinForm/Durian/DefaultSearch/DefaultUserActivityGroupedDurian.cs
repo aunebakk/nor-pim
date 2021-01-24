@@ -62,7 +62,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().DefaultUserActivityGrouped();
+                bindingSource.DataSource =  new DefaultSearchServiceClient().DefaultUserActivityGrouped();
                 dataGridViewDefaultUserActivityGrouped.AutoGenerateColumns = true;
                 dataGridViewDefaultUserActivityGrouped.DataSource = bindingSource;
                 dataGridViewDefaultUserActivityGrouped.AutoResizeColumns();

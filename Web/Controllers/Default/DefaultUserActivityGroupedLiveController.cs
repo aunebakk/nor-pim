@@ -10,7 +10,7 @@ namespace SolutionNorSolutionPim.Controllers
         {
             return View(
                 "~/Views/Durian/" + "DefaultSearch" + "/" + "DefaultUserActivityGroupedLiveIndex" + ".cshtml",
-                new DefaultSearchService().DefaultUserActivityGrouped()
+                new DefaultSearchServiceClient().DefaultUserActivityGrouped()
                 );
         }
     }

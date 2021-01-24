@@ -50,7 +50,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().DefaultUserActivityByHour();
+                bindingSource.DataSource =  new DefaultSearchServiceClient().DefaultUserActivityByHour();
                 dataGridViewDefaultUserActivityByHour.AutoGenerateColumns = true;
                 dataGridViewDefaultUserActivityByHour.DataSource = bindingSource;
                 dataGridViewDefaultUserActivityByHour.AutoResizeColumns();

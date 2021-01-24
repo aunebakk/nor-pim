@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:13:42 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:45:44 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
@@ -14,8 +14,6 @@ using System.Collections.Generic;
 // the BusinessLogicLayer is where the DataAccessLayer is exposed as
 //  REST http services
 // links:
-//  business logic layer: https://en.wikipedia.org/wiki/Business_logic
-// application programming interface: https://en.wikipedia.org/wiki/API
 //  docLink: http://sql2x.org/documentationLink/2595ba81-a5dc-4b5a-8bc8-2f7ca6630d9b
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
@@ -24,13 +22,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this interface is used to expose C# objects as SOAP services using WCF
     // interface is a common means for discrete objects to communicate with each other
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
-    //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
+    //  docLink: http://sql2x.org/documentationLink/179373dc-6fcc-4fc3-a7aa-e57c35d4d1d4
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IClientSearchService")]
-    public interface IClientSearchService {
+    public interface IClientSearchServiceClient {
         // returns a list of GetClientWithFilter contracts from ClientSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/ca70bf3f-58a1-476b-8441-3946d79cbe03
@@ -42,10 +37,10 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IClientSearchServiceChannel : IClientSearchService, System.ServiceModel.IClientChannel {
+    public interface IClientSearchServiceChannel : IClientSearchServiceClient, System.ServiceModel.IClientChannel {
     }
     
-    public class ClientSearchService : System.ServiceModel.ClientBase<IClientSearchService>, IClientSearchService {
+    public class ClientSearchServiceClient : System.ServiceModel.ClientBase<IClientSearchServiceClient>, IClientSearchServiceClient {
         // returns a list of GetClientWithFilter contracts from ClientSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/ca70bf3f-58a1-476b-8441-3946d79cbe03
@@ -56,22 +51,22 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
             return base.Channel.GetClientWithFilter(lastName, clientTypeRcd);
         }
         
-        public ClientSearchService() {
+        public ClientSearchServiceClient() {
         }
         
-        public ClientSearchService(string endpointConfigurationName) : 
+        public ClientSearchServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ClientSearchService(string endpointConfigurationName, string remoteAddress) : 
+        public ClientSearchServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ClientSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ClientSearchServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ClientSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ClientSearchServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
     }

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:05:50 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:31:28 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.TemplateFromCrudeMvcGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -13,19 +13,15 @@ using System.Web.Mvc;
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
 // links:
-//  client winform layer: https://docs.microsoft.com/en-us/dotnet/framework/winforms/
 //  docLink: http://sql2x.org/documentationLink/f4564569-78eb-4ce4-99f3-6ace286090c3
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
     // this class serves as Controller to the data access layer between c# and sql server
-    //  primarily it calls the data access layer to get to the serialized CRUDE tables data
-    //   and transfers that data with an to REST API Contract through the JSON string format
-    //  this contract is an identical representation of a Durian's columns
+    // primarily it calls the data access layer to get to the serialized CRUDE tables data
+    //   and transfers that data with a REST API Contract using JSON string format
+    // this contract is an identical representation of a Durian's columns
     //   formatted to follow C# casing guidelines ( Pascal casing )
     // links:
-    //  MVC ( Model View Controller): https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
-    //  REST ( REpresentational State Transfer ): https://en.wikipedia.org/wiki/REST
-    //  JSON ( JavaScript Object Notation ): https://en.wikipedia.org/wiki/JSON
     //  docLink: http://sql2x.org/documentationLink/c30e2417-f529-43cb-9bc0-9d58745aa64f
     public class CrudeProductInfoController : Controller {
 

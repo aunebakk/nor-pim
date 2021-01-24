@@ -104,7 +104,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new ProductMaintenanceSearchService().ProductMaintenanceImageIndexWithFilter(productId);
+                bindingSource.DataSource =  new ProductMaintenanceSearchServiceClient().ProductMaintenanceImageIndexWithFilter(productId);
                 dataGridViewProductMaintenanceImageIndexWithFilter.AutoGenerateColumns = true;
                 dataGridViewProductMaintenanceImageIndexWithFilter.DataSource = bindingSource;
                 dataGridViewProductMaintenanceImageIndexWithFilter.AutoResizeColumns();

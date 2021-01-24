@@ -17,7 +17,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             return View(
                 "~/Views/DurianLive/ProductSearch/ProductSearchByCategoryIndex.cshtml",
-                new ProductSearchService().ProductSearchByCategory(productCategoryId,onParent)
+                new ProductSearchServiceClient().ProductSearchByCategory(productCategoryId,onParent)
                 );
         }
 

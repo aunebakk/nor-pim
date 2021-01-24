@@ -30,7 +30,7 @@ namespace SolutionNorSolutionPim.Controllers.Default
 
             return View(
                 "~/Views/Default/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex.cshtml",
-                new DefaultSearchService().DefaultIssueWithFilter(defaultIssueTypeRcd, defaultIssueStatusRcd)
+                new DefaultSearchServiceClient().DefaultIssueWithFilter(defaultIssueTypeRcd, defaultIssueStatusRcd)
                 );
         }
 
@@ -51,7 +51,7 @@ namespace SolutionNorSolutionPim.Controllers.Default
 
             return View(
                 "~/Views/Default/DefaultIssueWithFilterLive/DefaultIssueWithFilterLiveIndex.cshtml",
-                new DefaultSearchService().DefaultIssueWithFilter(defaultIssueTypeRcd, defaultIssueStatusRcd)
+                new DefaultSearchServiceClient().DefaultIssueWithFilter(defaultIssueTypeRcd, defaultIssueStatusRcd)
                 );
         }
     }

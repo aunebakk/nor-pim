@@ -98,7 +98,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new CartSearchService().GetCartProductWithFilter();
+                bindingSource.DataSource =  new CartSearchServiceClient().GetCartProductWithFilter();
                 dataGridViewGetCartProductWithFilter.AutoGenerateColumns = true;
                 dataGridViewGetCartProductWithFilter.DataSource = bindingSource;
                 dataGridViewGetCartProductWithFilter.AutoResizeColumns();

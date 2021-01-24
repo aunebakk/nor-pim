@@ -68,7 +68,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new ProductReferenceAttributeUnitSearchService().ProductReferenceAttributeUnitSearchWithFilter();
+                bindingSource.DataSource =  new ProductReferenceAttributeUnitSearchServiceClient().ProductReferenceAttributeUnitSearchWithFilter();
                 dataGridViewProductReferenceAttributeUnitSearchWithFilter.AutoGenerateColumns = true;
                 dataGridViewProductReferenceAttributeUnitSearchWithFilter.DataSource = bindingSource;
                 dataGridViewProductReferenceAttributeUnitSearchWithFilter.AutoResizeColumns();

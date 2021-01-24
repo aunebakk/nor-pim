@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:14:53 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:51:05 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.MVCDurianGenerator.MethodViewIndexCode
 -->
 @model IEnumerable<SolutionNorSolutionPim.BusinessLogicLayer.ProductSearchByNameContract>
@@ -35,7 +35,7 @@
             <td>@Html.DisplayFor(modelItem => item.ProductImageTypeName) </td>
             <td>
                 @if (item.Image != null) {
-                    <img src="data:image/png;base64,@Convert.ToBase64String(item.Image)" alt="html_inline_image.png" title="html_inline_image.png">
+                    <img src="data:image/png;base64,@Convert.ToBase64String(item.Image)" style="background-color: rgba(255, 255, 255, 1); border: 3px solid #555;" alt="html_inline_image.png" title="html_inline_image.png">
                 }
             </td>
         </tr>

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:15:42 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:53:53 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.TemplateWithDurianGenerator.UsingWinForm
 */
 using System;
@@ -12,6 +12,10 @@ using System.IO;
 using System.Drawing;
 using SolutionNorSolutionPim.BusinessLogicLayer;
 
+// Client WinForm Layer
+// the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
+// links:
+//  docLink: http://sql2x.org/documentationLink/c4e2b5ff-4b03-4e33-b63a-7c9899829434
 namespace SolutionNorSolutionPim.UserInterface {
 
     // this form class is used to consume Crude SOAP Services through a WCF Proxy Client
@@ -92,7 +96,7 @@ namespace SolutionNorSolutionPim.UserInterface {
         // links:
         //  docLink: http://sql2x.org/documentationLink/75fb8ca9-978e-42eb-b15f-4a9f56dc6454
         public void RefreshProductMaintenance() {
-            var product = new ProductMaintenanceSearchService();
+            var product = new ProductMaintenanceSearchServiceClient();
             var bindingSource = new BindingSource();
 
             try {

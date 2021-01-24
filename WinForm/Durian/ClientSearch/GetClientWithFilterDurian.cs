@@ -134,7 +134,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new ClientSearchService().GetClientWithFilter(lastName,clientTypeRcd);
+                bindingSource.DataSource =  new ClientSearchServiceClient().GetClientWithFilter(lastName,clientTypeRcd);
                 dataGridViewGetClientWithFilter.AutoGenerateColumns = true;
                 dataGridViewGetClientWithFilter.DataSource = bindingSource;
                 dataGridViewGetClientWithFilter.AutoResizeColumns();

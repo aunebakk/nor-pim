@@ -86,7 +86,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().GetDefaultChangeLog(defaultChangeName,defaultChangeLogTypeRcd,defaultIssueId,defaultChangeLogId);
+                bindingSource.DataSource =  new DefaultSearchServiceClient().GetDefaultChangeLog(defaultChangeName,defaultChangeLogTypeRcd,defaultIssueId,defaultChangeLogId);
                 dataGridViewGetDefaultChangeLog.AutoGenerateColumns = true;
                 dataGridViewGetDefaultChangeLog.DataSource = bindingSource;
                 dataGridViewGetDefaultChangeLog.AutoResizeColumns();

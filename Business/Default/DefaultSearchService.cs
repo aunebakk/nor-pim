@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:13:46 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:45:57 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.GenerateBusinessLogicLayer.DefaultUsing
 */
 using System;
@@ -20,8 +20,6 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 // the BusinessLogicLayer is where the DataAccessLayer is exposed as
 //  SOAP http services, using Windows Communication Framework
 // links:
-//  business logic layer: https://en.wikipedia.org/wiki/Business_logic
-// application programming interface: https://en.wikipedia.org/wiki/API
 //  docLink: http://sql2x.org/documentationLink/0f3a62ca-e301-4d44-8e1a-de9198ba8967
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
@@ -29,24 +27,17 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this interface is used to expose C# objects as SOAP services using WCF
     // interface is a common means for discrete objects to communicate with each other
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
-    //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
+    //  docLink: http://sql2x.org/documentationLink/c8b78807-5be0-4da9-89f2-2d7f8dac1c12
     [ServiceContract()]
     public partial interface IDefaultSearchService {
         // returns a list of DefaultResourceDatabaseStatistics contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultResourceDatabaseStatisticsContract> DefaultResourceDatabaseStatistics ();
         // returns a list of DefaultResourceStatistics contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultResourceStatisticsContract> DefaultResourceStatistics ();
         // returns a list of GetDefaultChangeLog contracts from DefaultSearchService
@@ -62,29 +53,21 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultUserListForDashboard contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultUserListForDashboardContract> DefaultUserListForDashboard ();
         // returns a list of DefaultUserList contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultUserListContract> DefaultUserList ();
         // returns a list of DefaultUserActivityGroupedByAddress contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultUserActivityGroupedByAddressContract> DefaultUserActivityGroupedByAddress ();
         // returns a list of DefaultUserActivityGrouped contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultUserActivityGroupedContract> DefaultUserActivityGrouped ();
         // returns a list of DefaultUserActivityOnAddress contracts from DefaultSearchService
@@ -104,8 +87,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultPerformanceTimeCommands contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultPerformanceTimeCommandsContract> DefaultPerformanceTimeCommands ();
         // returns a list of DefaultPerformanceTimes contracts from DefaultSearchService
@@ -118,43 +99,31 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultStatisticsTop5 contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultStatisticsTop5Contract> DefaultStatisticsTop5 ();
         // returns a list of DefaultStatisticsByMonth contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultStatisticsByMonthContract> DefaultStatisticsByMonth ();
         // returns a list of DefaultUserActivityByHour contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultUserActivityByHourContract> DefaultUserActivityByHour ();
         // returns a list of DefaultStatistics contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultStatisticsContract> DefaultStatistics ();
         // returns a list of DefaultPerformanceIndicators contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultPerformanceIndicatorsContract> DefaultPerformanceIndicators ();
         // returns a list of DefaultErrorOverview contracts from DefaultSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/5fe72920-1923-416a-93bb-a2396990ec67
-        // parameters:
-        //
         [OperationContract()]
         List<DefaultErrorOverviewContract> DefaultErrorOverview ();
         // returns a list of DefaultIssueWithFilter contracts from DefaultSearchService
@@ -198,8 +167,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultResourceDatabaseStatistics contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultResourceDatabaseStatisticsContract> DefaultResourceDatabaseStatistics () {
             // transfer all DefaultResourceDatabaseStatistics serialized objects from DefaultSearch as DefaultResourceDatabaseStatistics contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -209,8 +176,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultResourceStatistics contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultResourceStatisticsContract> DefaultResourceStatistics () {
             // transfer all DefaultResourceStatistics serialized objects from DefaultSearch as DefaultResourceStatistics contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -234,8 +199,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultUserListForDashboard contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultUserListForDashboardContract> DefaultUserListForDashboard () {
             // transfer all DefaultUserListForDashboard serialized objects from DefaultSearch as DefaultUserListForDashboard contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -245,8 +208,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultUserList contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultUserListContract> DefaultUserList () {
             // transfer all DefaultUserList serialized objects from DefaultSearch as DefaultUserList contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -256,8 +217,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultUserActivityGroupedByAddress contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultUserActivityGroupedByAddressContract> DefaultUserActivityGroupedByAddress () {
             // transfer all DefaultUserActivityGroupedByAddress serialized objects from DefaultSearch as DefaultUserActivityGroupedByAddress contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -267,8 +226,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultUserActivityGrouped contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultUserActivityGroupedContract> DefaultUserActivityGrouped () {
             // transfer all DefaultUserActivityGrouped serialized objects from DefaultSearch as DefaultUserActivityGrouped contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -300,8 +257,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultPerformanceTimeCommands contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultPerformanceTimeCommandsContract> DefaultPerformanceTimeCommands () {
             // transfer all DefaultPerformanceTimeCommands serialized objects from DefaultSearch as DefaultPerformanceTimeCommands contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -322,8 +277,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultStatisticsTop5 contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultStatisticsTop5Contract> DefaultStatisticsTop5 () {
             // transfer all DefaultStatisticsTop5 serialized objects from DefaultSearch as DefaultStatisticsTop5 contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -333,8 +286,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultStatisticsByMonth contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultStatisticsByMonthContract> DefaultStatisticsByMonth () {
             // transfer all DefaultStatisticsByMonth serialized objects from DefaultSearch as DefaultStatisticsByMonth contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -344,8 +295,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultUserActivityByHour contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultUserActivityByHourContract> DefaultUserActivityByHour () {
             // transfer all DefaultUserActivityByHour serialized objects from DefaultSearch as DefaultUserActivityByHour contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -355,8 +304,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultStatistics contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultStatisticsContract> DefaultStatistics () {
             // transfer all DefaultStatistics serialized objects from DefaultSearch as DefaultStatistics contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -366,8 +313,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultPerformanceIndicators contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultPerformanceIndicatorsContract> DefaultPerformanceIndicators () {
             // transfer all DefaultPerformanceIndicators serialized objects from DefaultSearch as DefaultPerformanceIndicators contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();
@@ -377,8 +322,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
         // returns a list of DefaultErrorOverview contracts
         // links:
         //  docLink: http://sql2x.org/documentationLink/eb26aecd-6edc-44ae-938f-42f53929062d
-        // parameters:
-        //
         public List<DefaultErrorOverviewContract> DefaultErrorOverview () {
             // transfer all DefaultErrorOverview serialized objects from DefaultSearch as DefaultErrorOverview contracts
             var dataAccessLayer = new SolutionNorSolutionPim.DataAccessLayer.DefaultSearch();

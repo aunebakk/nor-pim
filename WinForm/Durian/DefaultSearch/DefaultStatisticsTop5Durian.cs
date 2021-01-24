@@ -50,7 +50,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().DefaultStatisticsTop5();
+                bindingSource.DataSource =  new DefaultSearchServiceClient().DefaultStatisticsTop5();
                 dataGridViewDefaultStatisticsTop5.AutoGenerateColumns = true;
                 dataGridViewDefaultStatisticsTop5.DataSource = bindingSource;
                 dataGridViewDefaultStatisticsTop5.AutoResizeColumns();

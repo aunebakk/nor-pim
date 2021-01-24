@@ -62,7 +62,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new CategorySearchService().CategoryTree();
+                bindingSource.DataSource =  new CategorySearchServiceClient().CategoryTree();
                 dataGridViewCategoryTree.AutoGenerateColumns = true;
                 dataGridViewCategoryTree.DataSource = bindingSource;
                 dataGridViewCategoryTree.AutoResizeColumns();

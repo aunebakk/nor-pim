@@ -74,7 +74,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new ProductSearchService().ProductHistory(productId);
+                bindingSource.DataSource =  new ProductSearchServiceClient().ProductHistory(productId);
                 dataGridViewProductHistory.AutoGenerateColumns = true;
                 dataGridViewProductHistory.DataSource = bindingSource;
                 dataGridViewProductHistory.AutoResizeColumns();

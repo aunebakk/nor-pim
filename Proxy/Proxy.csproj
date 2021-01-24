@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F3C0EAF-E883-4735-B196-6DB4E36BA80B}</ProjectGuid>
+    <ProjectGuid>{4AFD3AE7-A448-479E-B132-CC88D39D4E4B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Proxy</RootNamespace>
@@ -131,6 +131,7 @@
     <Compile Include="Durian\ProductReferenceAttributeUnitSearch\ProductReferenceAttributeUnitSearchProxy.cs" />
     <Compile Include="Durian\ProductSearch\ProductSearchProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Cart\CartProduct.cs" />
     <Compile Include="Service\DefaultUserActivityProxy.cs" />
     <Compile Include="Service\DefaultUserActivityService.cs" />
     <Compile Include="Service\DiagnosticsProxy.cs" />
@@ -138,6 +139,13 @@
     <Compile Include="Service\ProductCategoryProxy.cs" />
     <Compile Include="Service\ProductCategoryService.cs" />
     <Compile Include="Service\ProductProxy.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttribute.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceAttributeUnit.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategory.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceCategoryDocumentationType.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceDocumentationType.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceIdentifier.cs" />
+    <Compile Include="Service\ProductReference\ProductReferenceImageType.cs" />
     <Compile Include="Service\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -224,18 +232,10 @@
     <None Include="SchemaTemplates\Product\ProductInfoRef.json" />
     <None Include="SchemaTemplates\Product\ProductSupplier.json" />
     <None Include="Service\all.bat" />
-    <None Include="Service\Cart\CartProduct" />
-    <None Include="Service\ProductReference\ProductReferenceAttribute" />
-    <None Include="Service\ProductReference\ProductReferenceAttributeUnit" />
-    <None Include="Service\ProductReference\ProductReferenceCategory" />
-    <None Include="Service\ProductReference\ProductReferenceCategoryDocumentationType" />
-    <None Include="Service\ProductReference\ProductReferenceDocumentationType" />
-    <None Include="Service\ProductReference\ProductReferenceIdentifier" />
-    <None Include="Service\ProductReference\ProductReferenceImageType" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj">
-      <Project>{ed5366e6-cc30-47c4-bc04-e2ff3a086c12}</Project>
+      <Project>{9d4cd0a3-7849-4a2d-a66e-8ca910738ab3}</Project>
       <Name>Contract</Name>
     </ProjectReference>
   </ItemGroup>

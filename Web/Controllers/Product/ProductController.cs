@@ -70,15 +70,15 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
 
             productContract.Product = new CrudeProductServiceClient().FetchByProductId(productId);
             productContract.ProductMaintenanceAttributeIndexWithFilter =
-                new ProductMaintenanceSearchService().ProductMaintenanceAttributeIndexWithFilter(productId);
+                new ProductMaintenanceSearchServiceClient().ProductMaintenanceAttributeIndexWithFilter(productId);
             productContract.ProductMaintenanceDocumentationIndexWithFilter =
-                new ProductMaintenanceSearchService().ProductMaintenanceDocumentationIndexWithFilter(productId);
+                new ProductMaintenanceSearchServiceClient().ProductMaintenanceDocumentationIndexWithFilter(productId);
             productContract.ProductMaintenanceIdentifierIndexWithFilter =
-                new ProductMaintenanceSearchService().ProductMaintenanceIdentifierIndexWithFilter(productId);
+                new ProductMaintenanceSearchServiceClient().ProductMaintenanceIdentifierIndexWithFilter(productId);
             productContract.ProductMaintenanceImageIndexWithFilter =
-                new ProductMaintenanceSearchService().ProductMaintenanceImageIndexWithFilter(productId);
+                new ProductMaintenanceSearchServiceClient().ProductMaintenanceImageIndexWithFilter(productId);
             productContract.ProductMaintenanceInfoIndexWithFilter =
-                new ProductMaintenanceSearchService().ProductMaintenanceInfoIndexWithFilter(productId);
+                new ProductMaintenanceSearchServiceClient().ProductMaintenanceInfoIndexWithFilter(productId);
 
             if (MVCHelper.IsMobile(Request)) {
                 return View(

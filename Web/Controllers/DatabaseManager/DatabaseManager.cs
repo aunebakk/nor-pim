@@ -100,9 +100,11 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
                 // creation checkmark, do not process scripts after this until creation is created
                 scripts.Add(lastScript = new DatabaseScript {
                     DatabaseVersion = new DatabaseVersion { MajorNumber = 0, MinorNumber = minorNumber++, SequenceNumber = sequence++, DateTime = new DateTime(2019, 02, 05) },
-                    ScriptNumber = scriptNumber++,
+                    ScriptNumber = this.scriptNumber++,
                     Name = "CreationCheckmark"
                 });
+
+                //InitReferenceLanguageSwitch(majorNumber: 0, minorNumber: minorNumber++);
 
                 // intentionally left blank to serve as a template and to get the last version number
                 maximumVersion = InitBlank(majorNumber: 0, minorNumber: minorNumber++);
@@ -229,8 +231,7 @@ select 'Created database: " + databaseName + @"'
                 if (nextScript != null) {
                     returnMessage += DateTime.UtcNow + " " + "Script Executed" + " " + "( " + Execute(nextScript, haltOnException: true) + " )" + "\r\n";
 
-                    if (IsVersionTableGood())   // make sure table exists
-{
+                    if (IsVersionTableGood()) { // make sure table exists
                         returnMessage += DateTime.UtcNow + " " + DefaultVersion(nextScript.DatabaseVersion) + "\r\n";
                     }
                 } else {
@@ -545,8 +546,7 @@ select 'Created database: " + databaseName + @"'
                         returnMessage += "Script Executed" + " " + "( " + Execute(script) + " )" + "\r\n";
 
                         try {
-                            if (IsVersionTableGood())   // make sure table exists
-{
+                            if (IsVersionTableGood()) {  // make sure table exists
                                 returnMessage += DefaultVersion(script.DatabaseVersion) + "\r\n";
                             }
                         } catch (Exception ex) {

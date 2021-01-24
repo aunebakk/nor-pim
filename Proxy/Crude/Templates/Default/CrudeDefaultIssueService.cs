@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:04:09 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:26:06 AM
+  From Machine: DESKTOP-9A2DH39
   Filename: DefaultIssue.json
   MethodName: sql2x.TemplateCrudeProxy.CrudeProxy
   Template Style: DotNetFrameworkCrudeProxy
@@ -20,8 +20,6 @@ using System.Collections.Generic;
 //  this layer is used for, among other technologies, dotNetFramework WinForm,
 //  ASP and TypeScript User Interfaces or from one business layer to another
 // links:
-//  business logic layer: https://en.wikipedia.org/wiki/Business_logic
-// client Proxy: https://www.c-sharpcorner.com/UploadFile/8a67c0/proxy-class-for-the-wcf-service/
 //  docLink: http://sql2x.org/documentationLink/a58883c6-e6e2-4265-98ad-0268dbbdb1b1
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
@@ -29,10 +27,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this interface is used to expose C# objects as SOAP services using WCF
     // interface is a common means for discrete objects to communicate with each other
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
-    //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
+    //  docLink: http://sql2x.org/documentationLink/8638d459-df50-43f0-9fb3-f120e7937ccb
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICrudeDefaultIssueService")]
     public partial interface ICrudeDefaultIssueService {
@@ -128,10 +123,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this interface is used to expose C# objects as SOAP services using WCF
     // interface is a common means for discrete objects to communicate with each other
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
-    //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
+    //  docLink: http://sql2x.org/documentationLink/ccc2e33d-a5a7-4751-a433-07dd3f2b90a4
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ICrudeDefaultIssueServiceChannel : ICrudeDefaultIssueService, System.ServiceModel.IClientChannel {
     }
@@ -140,10 +132,7 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this interface is used to expose C# objects as SOAP services using WCF
     // interface is a common means for discrete objects to communicate with each other
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
-    //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
+    //  docLink: http://sql2x.org/documentationLink/2ec85c1f-4aad-46ef-a4d4-179312974bf1
     public class CrudeDefaultIssueServiceClient : System.ServiceModel.ClientBase<ICrudeDefaultIssueService>, ICrudeDefaultIssueService {
         
         public CrudeDefaultIssueServiceClient() {

@@ -2,7 +2,7 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:18:15 PM
+  Generated Date: 1/24/2021 9:03:25 AM
   Template: SQL2XExtensionV3.SQL2XExtensionCreatorCoreV3.ProxyClient
 */
 using System;
@@ -13,8 +13,6 @@ using System;
 // the BusinessLogicLayer is where the DataAccessLayer is exposed as
 //  SOAP http services, using Windows Communication Framework
 // links:
-//  business logic layer: https://en.wikipedia.org/wiki/Business_logic
-// application programming interface: https://en.wikipedia.org/wiki/API
 //  docLink: http://sql2x.org/documentationLink/0f3a62ca-e301-4d44-8e1a-de9198ba8967
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
 
@@ -24,8 +22,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this contract is an identical representation of DefaultUserActivity's columns
     //  formatted to follow C# casing guidelines ( Pascal casing )
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
     //  docLink: http://sql2x.org/documentationLink/4067ab7d-fb64-496a-b5d1-0ef69e142b57
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IDefaultUserActivityService")]

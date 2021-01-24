@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>d6j8E65iXfVYD2vktIf2KZ3B0YlSJ87kDlqtYGUe7gk=</dsig:DigestValue>
+        <dsig:DigestValue>NKwzAtkBtcRbMXlq9LKmWCmxm0K9dG+TRP+ISQ6n6fw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proxy.dll" size="331264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Proxy.dll" size="341504">
       <assemblyIdentity name="Proxy" version="0.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TizO1cX9gRyxxhvKHkrNDGO8hC2zyTp8HhadQ/CmW8E=</dsig:DigestValue>
+        <dsig:DigestValue>+RZkZlma3Bu+QNwnnVImG1lDtFhssXolPSqFYYCcj38=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>K/CofhxE3DRroYRUnG086pwqmOhH3uhvWz9gabbQNsY=</dsig:DigestValue>
+        <dsig:DigestValue>B4ZwWiwTPc4j7BpsUUGWDSD6D2jSIqM3Xj1Gl6LJ2Gk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -95,13 +95,13 @@
       <dsig:DigestValue>aXwkIrKiZfDaua3eg28Sd8Pc4KPUHDHuyUbQHV0zd2g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WinForm.exe.config" size="31362">
+  <file name="WinForm.exe.config" size="31360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xv1vboGF0KV0MPCIzqdknh5zfX8mKimm+n9w/ZHTTSo=</dsig:DigestValue>
+      <dsig:DigestValue>OShDlMufLh5rwe/lVaOtS9tfXbsOOkLP4Je3gDevg6Y=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

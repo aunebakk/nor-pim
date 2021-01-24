@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:16:19 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:55:44 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.TemplateByServiceTableCrudGenerator.BusinessUsing
 */
 using SolutionNorSolutionPim.DataAccessLayer;
@@ -21,9 +21,6 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this interface is used to expose C# objects as SOAP services using WCF
     // interface is a common means for discrete objects to communicate with each other
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
     //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
     [ServiceContract()]
     public partial interface IProductReferenceCategoryDocumentationTypeService {

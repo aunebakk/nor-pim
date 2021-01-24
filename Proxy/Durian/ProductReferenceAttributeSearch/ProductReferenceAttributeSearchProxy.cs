@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:15:13 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:52:41 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.ProxyGenerator.ProxyForMethodNewStyle
 */
 using System.Collections.Generic;
@@ -14,8 +14,6 @@ using System.Collections.Generic;
 // the BusinessLogicLayer is where the DataAccessLayer is exposed as
 //  REST http services
 // links:
-//  business logic layer: https://en.wikipedia.org/wiki/Business_logic
-// application programming interface: https://en.wikipedia.org/wiki/API
 //  docLink: http://sql2x.org/documentationLink/2595ba81-a5dc-4b5a-8bc8-2f7ca6630d9b
 namespace SolutionNorSolutionPim.BusinessLogicLayer {
     
@@ -24,52 +22,45 @@ namespace SolutionNorSolutionPim.BusinessLogicLayer {
     // this interface is used to expose C# objects as SOAP services using WCF
     // interface is a common means for discrete objects to communicate with each other
     // links:
-    //  SOAP ( Simple Object Access Protocol ): https://en.wikipedia.org/wiki/SOAP
-    // Interface/Protocol (object-oriented programming): https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)
-    // WCF ( Windows Communication Foundation ): https://en.wikipedia.org/wiki/Windows_Communication_Foundation
-    //  docLink: http://sql2x.org/documentationLink/54dd6dfa-2ac2-4032-a68d-47e4f658ece7
+    //  docLink: http://sql2x.org/documentationLink/179373dc-6fcc-4fc3-a7aa-e57c35d4d1d4
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IProductReferenceAttributeSearchService")]
-    public interface IProductReferenceAttributeSearchService {
+    public interface IProductReferenceAttributeSearchServiceClient {
         // returns a list of ProductReferenceAttributeSearchWithFilter contracts from ProductReferenceAttributeSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/ca70bf3f-58a1-476b-8441-3946d79cbe03
-        // parameters:
-        //
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductReferenceAttributeSearchService/ProductReferenceAttributeSearchWithFilter", ReplyAction="http://tempuri.org/IProductReferenceAttributeSearchService/ProductReferenceAttributeSearchWithFilterResponse")]
         List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter ();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IProductReferenceAttributeSearchServiceChannel : IProductReferenceAttributeSearchService, System.ServiceModel.IClientChannel {
+    public interface IProductReferenceAttributeSearchServiceChannel : IProductReferenceAttributeSearchServiceClient, System.ServiceModel.IClientChannel {
     }
     
-    public class ProductReferenceAttributeSearchService : System.ServiceModel.ClientBase<IProductReferenceAttributeSearchService>, IProductReferenceAttributeSearchService {
+    public class ProductReferenceAttributeSearchServiceClient : System.ServiceModel.ClientBase<IProductReferenceAttributeSearchServiceClient>, IProductReferenceAttributeSearchServiceClient {
         // returns a list of ProductReferenceAttributeSearchWithFilter contracts from ProductReferenceAttributeSearchService
         // links:
         //  docLink: http://sql2x.org/documentationLink/ca70bf3f-58a1-476b-8441-3946d79cbe03
-        // parameters:
-        //
         public List<ProductReferenceAttributeSearchWithFilterContract> ProductReferenceAttributeSearchWithFilter () {
             return base.Channel.ProductReferenceAttributeSearchWithFilter();
         }
         
-        public ProductReferenceAttributeSearchService() {
+        public ProductReferenceAttributeSearchServiceClient() {
         }
         
-        public ProductReferenceAttributeSearchService(string endpointConfigurationName) : 
+        public ProductReferenceAttributeSearchServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ProductReferenceAttributeSearchService(string endpointConfigurationName, string remoteAddress) : 
+        public ProductReferenceAttributeSearchServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProductReferenceAttributeSearchService(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProductReferenceAttributeSearchServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProductReferenceAttributeSearchService(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProductReferenceAttributeSearchServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
     }

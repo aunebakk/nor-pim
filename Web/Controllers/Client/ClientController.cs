@@ -12,7 +12,7 @@ namespace SolutionNorSolutionPim.mvc.Controllers {
                     Request,
                     "Client",
                     "ClientIndex"),
-                new ClientSearchService().GetClientWithFilter(string.Empty, string.Empty)
+                new ClientSearchServiceClient().GetClientWithFilter(string.Empty, string.Empty)
                 );
         }
 

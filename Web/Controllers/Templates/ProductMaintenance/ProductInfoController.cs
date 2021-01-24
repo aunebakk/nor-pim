@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:16:00 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:54:48 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.TemplateWithDurianGenerator.ControllerBeginning
 */
 using SolutionNorSolutionPim.BusinessLogicLayer;
@@ -13,20 +13,17 @@ using System.Web.Mvc;
 // Client ASP Controller
 // the Client ASP Controller Layer uses the Proxy Layer to tie into SOAP services
 // links:
-//  client controller layer: https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 //  docLink: http://sql2x.org/documentationLink/4fbcc19b-c130-4190-b31b-e28bc3aaf29f
 namespace SolutionNorSolutionPim.AspMvc.Controllers {
     // ProductInfo Controller
     // the ProductInfo Controller contains pages for adding, editing and listing ProductInfo's
     // links:
-    //  client controller layer: https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
     //  docLink: http://sql2x.org/documentationLink/1d284965-6123-4b40-9d9b-e5f19f1e50c2
     public class ProductInfoController : Controller {
 
         // Index page
         // Index page grid shows all displayable columns and includes methods for adding new, editing and deleting rows
         // links:
-        //  Adding a view: https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/adding-a-view
         //  docLink: http://sql2x.org/documentationLink/0b59e863-a1c1-4fc9-ab6e-ad60cbcc6a78
         [HttpGet]
         public ActionResult ProductInfoIndex(System.Guid productId) {
@@ -34,7 +31,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             return View(
                 "~/Views/Templates/ProductMaintenance/ProductInfo/ProductInfoIndex.cshtml",
-                new ProductMaintenanceSearchService().ProductMaintenanceInfoIndexWithFilter(productId)
+                new ProductMaintenanceSearchServiceClient().ProductMaintenanceInfoIndexWithFilter(productId)
                 );
         }
 

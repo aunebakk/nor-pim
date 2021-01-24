@@ -1,4 +1,4 @@
-﻿rem PrototypeDotNetCoreTemplateEmpty
+rem PrototypeDotNetCoreTemplateEmpty
 dotnet new
 dotnet restore  Database.csproj
 dotnet build  Database.csproj

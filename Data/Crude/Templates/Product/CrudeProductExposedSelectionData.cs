@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:03:38 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:24:21 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.TemplateChildCrudeData.UsingDotNetFramework
 */
 using System;
@@ -16,7 +16,6 @@ using System.Configuration;
 // the DataAccessLayer is the first layer that has access to data coming from
 //  sql server after being streamed over a net or internal process
 // links:
-//  data access layer: https://en.wikipedia.org/wiki/Data_access_layer
 //  docLink: http://sql2x.org/documentationLink/e4965a5f-c9fd-4584-85f0-b4d308f48f29
 namespace SolutionNorSolutionPim.DataAccessLayer {
 
@@ -24,8 +23,6 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     // this class start with an identical representation of product_exposed_selection's columns
     //  formatted to follow C# casing guidelines ( Pascal casing )
     // links:
-    //  POCO ( Plain old CLR object ): https://en.wikipedia.org/wiki/Plain_old_CLR_object
-    // crud definition: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
     //  docLink: http://sql2x.org/documentationLink/e32ed6d4-57c7-43b1-8f2e-918c702e730a
     public partial class CrudeProductExposedSelectionData {
         

@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:16:09 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:55:15 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.GenerateDataAccessLayerV0.UsingDotNetFramework
 */
 using System;
@@ -16,7 +16,6 @@ using System.Configuration;
 // the DataAccessLayer is the first layer that has access to data coming from
 //  sql server after being streamed over a net or internal process
 // links:
-//  data access layer: https://en.wikipedia.org/wiki/Data_access_layer
 //  docLink: http://sql2x.org/documentationLink/42e5ad27-4aa5-4a5b-a42d-59f1659fcdf6
 namespace SolutionNorSolutionPim.DataAccessLayer {
 
@@ -25,7 +24,6 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     // this class start with an identical representation of a ansi sql select statement in ProductReferenceAttributeUnitSearchWithFilterData's columns
     //  formatted to follow C# casing guidelines ( Pascal casing )
     // links:
-    //  serialization: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/
     //  docLink: http://sql2x.org/documentationLink/d360d55c-efab-4b5b-99be-9425d91ebd59
     [Serializable()]
     public partial class ProductReferenceAttributeUnitSearchWithFilterData {
@@ -49,7 +47,7 @@ namespace SolutionNorSolutionPim.DataAccessLayer {
     }
     
     // this class holds ordinals used to data access the DataReader between c# and sql server
-    //  this class start with an identical representation of the method in ProductReferenceAttributeUnitSearchWithFilterData's columns
+    // this class start with an identical representation of the method in ProductReferenceAttributeUnitSearchWithFilterData's columns
     //  formatted to follow C# casing guidelines ( Pascal casing )  with a number indicating the columns position in the original ansi sql select statement
     // links:
     //  docLink: http://sql2x.org/documentationLink/0d935f44-0309-4dca-a8f2-a4e8eafd2201

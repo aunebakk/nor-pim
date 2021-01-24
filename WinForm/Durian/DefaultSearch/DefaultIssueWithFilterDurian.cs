@@ -110,7 +110,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().DefaultIssueWithFilter(defaultIssueTypeRcd,defaultIssueStatusRcd);
+                bindingSource.DataSource =  new DefaultSearchServiceClient().DefaultIssueWithFilter(defaultIssueTypeRcd,defaultIssueStatusRcd);
                 dataGridViewDefaultIssueWithFilter.AutoGenerateColumns = true;
                 dataGridViewDefaultIssueWithFilter.DataSource = bindingSource;
                 dataGridViewDefaultIssueWithFilter.AutoResizeColumns();

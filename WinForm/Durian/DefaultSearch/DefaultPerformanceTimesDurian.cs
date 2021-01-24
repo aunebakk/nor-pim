@@ -50,7 +50,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().DefaultPerformanceTimes(commandName);
+                bindingSource.DataSource =  new DefaultSearchServiceClient().DefaultPerformanceTimes(commandName);
                 dataGridViewDefaultPerformanceTimes.AutoGenerateColumns = true;
                 dataGridViewDefaultPerformanceTimes.DataSource = bindingSource;
                 dataGridViewDefaultPerformanceTimes.AutoResizeColumns();

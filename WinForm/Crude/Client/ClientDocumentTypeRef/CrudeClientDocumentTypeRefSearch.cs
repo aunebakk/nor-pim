@@ -2,8 +2,8 @@
   SQL2X Generated code based on a SQL Server Schema
   SQL2X Version: 1.0
   http://sql2x.org/
-  Generated Date: 12/30/2020 12:04:16 PM
-  From Machine: DESKTOP-LSRVP12
+  Generated Date: 1/24/2021 8:26:24 AM
+  From Machine: DESKTOP-9A2DH39
   Template: sql2x.TemplateCrudeWinForm.WinFormGenerateSearchStyle3
 */
 using System;
@@ -13,7 +13,6 @@ using SolutionNorSolutionPim.BusinessLogicLayer;
 // Client WinForm Layer
 // the Client WinForm Layer uses the Proxy Layer to tie into SOAP services
 // links:
-//  client winform layer: https://docs.microsoft.com/en-us/dotnet/framework/winforms/
 //  docLink: http://sql2x.org/documentationLink/d8f07424-3438-4ff9-8853-3976c1227bad
 namespace SolutionNorSolutionPim.UserInterface {
 

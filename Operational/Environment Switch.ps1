@@ -1,8 +1,8 @@
 # SQL2X Generated code based on a SQL Server Schema
 # SQL2X Version: 1.0
 # http://sql2x.org/
-# Generated Date: 12/30/2020 12:21:51 PM
-# From Machine: DESKTOP-LSRVP12
+# Generated Date: 1/24/2021 9:21:12 AM
+# From Machine: DESKTOP-9A2DH39
 # Template: SQL2XExtensionV3.SQL2XExtensionCreatorNorSolution.Content_EnvironmentSwitch
 param (
     [Parameter(Mandatory=$true)]

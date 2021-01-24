@@ -68,7 +68,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().DefaultUserActivityRecent(defaultUserId);
+                bindingSource.DataSource =  new DefaultSearchServiceClient().DefaultUserActivityRecent(defaultUserId);
                 dataGridViewDefaultUserActivityRecent.AutoGenerateColumns = true;
                 dataGridViewDefaultUserActivityRecent.DataSource = bindingSource;
                 dataGridViewDefaultUserActivityRecent.AutoResizeColumns();

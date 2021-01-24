@@ -77,7 +77,7 @@ namespace SolutionNorSolutionPim.UserInterface
         private void CategoryTreeViewRefresh() {
             treeViewHierarchy.Nodes.Clear();
 
-            var productCategoryService = new CategorySearchService();
+            var productCategoryService = new CategorySearchServiceClient();
             List<CategoryTreeContract> productCategoryContracts = productCategoryService.CategoryTree();
 
             foreach ( CategoryTreeContract productCategoryContract in productCategoryContracts ) {
@@ -167,7 +167,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 if ( tabControlProductsPage.SelectedTab == tabPageProductsView1 ) {
                     dataGridViewProducts1.AutoGenerateColumns = false;
                     dataGridViewProducts1.DataSource =
-                        new ProductSearchService().ProductSearchByCategory(
+                        new ProductSearchServiceClient().ProductSearchByCategory(
                             _productCategoryId,
                             _onParent
                             );
@@ -186,7 +186,7 @@ namespace SolutionNorSolutionPim.UserInterface
                         Log("RefreshProductList", "BindingSource");
                     var bindingSource = new BindingSource();
                     bindingSource.DataSource =
-                        new ProductSearchService().ProductSearchByCategoryType1(
+                        new ProductSearchServiceClient().ProductSearchByCategoryType1(
                             _productCategoryId,
                             _onParent
                             );
@@ -217,7 +217,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 } else if ( tabControlProductsPage.SelectedTab == tabPageProductsView3 ) {
                     dataGridViewProducts3.AutoGenerateColumns = false;
                     dataGridViewProducts3.DataSource =
-                        new ProductSearchService().ProductSearchByCategoryType2(
+                        new ProductSearchServiceClient().ProductSearchByCategoryType2(
                             _productCategoryId,
                             _onParent
                             );
@@ -1170,7 +1170,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 e.Handled = true;
 
                 // find category
-                var productCategoryService = new CategorySearchService();
+                var productCategoryService = new CategorySearchServiceClient();
                 List<CategoryFindContract> productCategoryContracts = productCategoryService.CategoryFind(toolStripTextBoxSearch.Text);
                 productCategoryService.Close();
 

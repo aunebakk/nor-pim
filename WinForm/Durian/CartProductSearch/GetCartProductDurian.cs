@@ -140,7 +140,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new CartProductSearchService().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId,sessionIdentificator);
+                bindingSource.DataSource =  new CartProductSearchServiceClient().GetCartProduct(clientId,productId,financialCurrencyId,userId,cartProductId,sessionIdentificator);
                 dataGridViewGetCartProduct.AutoGenerateColumns = true;
                 dataGridViewGetCartProduct.DataSource = bindingSource;
                 dataGridViewGetCartProduct.AutoResizeColumns();

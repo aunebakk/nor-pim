@@ -56,7 +56,7 @@ namespace SolutionNorSolutionPim.UserInterface {
 
                 // fetch new dataset
                 var bindingSource = new BindingSource();
-                bindingSource.DataSource =  new DefaultSearchService().DefaultTestOverview(commandName);
+                bindingSource.DataSource =  new DefaultSearchServiceClient().DefaultTestOverview(commandName);
                 dataGridViewDefaultTestOverview.AutoGenerateColumns = true;
                 dataGridViewDefaultTestOverview.DataSource = bindingSource;
                 dataGridViewDefaultTestOverview.AutoResizeColumns();

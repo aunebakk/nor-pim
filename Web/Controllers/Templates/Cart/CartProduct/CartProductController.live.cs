@@ -24,7 +24,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
 
             if (!string.IsNullOrEmpty(User.Identity.GetUserId())) 
                 cart_product = 
-                    new CartProductSearchService().GetCartProduct(
+                    new CartProductSearchServiceClient().GetCartProduct(
                             clientId : userId, 
                             productId : Guid.Empty, 
                             financialCurrencyId: Guid.Empty, 
@@ -34,7 +34,7 @@ namespace SolutionNorSolutionPim.AspMvc.Controllers {
                         );
             else
                 cart_product = 
-                    new CartProductSearchService().GetCartProduct(
+                    new CartProductSearchServiceClient().GetCartProduct(
                             clientId : Guid.Empty,
                             productId : Guid.Empty, 
                             financialCurrencyId: Guid.Empty, 

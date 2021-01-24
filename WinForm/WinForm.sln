@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm", "WinForm.csproj", "{DA477892-76D5-466C-BE42-8CDA47715F96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm", "WinForm.csproj", "{D9FAEB29-E69E-4F43-AC0C-A51DFBB3D800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DA477892-76D5-466C-BE42-8CDA47715F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA477892-76D5-466C-BE42-8CDA47715F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA477892-76D5-466C-BE42-8CDA47715F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA477892-76D5-466C-BE42-8CDA47715F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9FAEB29-E69E-4F43-AC0C-A51DFBB3D800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FAEB29-E69E-4F43-AC0C-A51DFBB3D800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FAEB29-E69E-4F43-AC0C-A51DFBB3D800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FAEB29-E69E-4F43-AC0C-A51DFBB3D800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {878EA13A-BE71-4304-A5D0-4C7F92939564}
+		SolutionGuid = {46721056-C704-4EF0-AD09-034DB259044A}
 	EndGlobalSection
 EndGlobal

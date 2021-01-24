@@ -69,7 +69,7 @@ namespace SolutionNorSolutionPim.UserInterface
         private void CategoryTreeviewRefresh() {
             treeViewHierarchy.Nodes.Clear();
 
-            var productCategoryService = new CategorySearchService();
+            var productCategoryService = new CategorySearchServiceClient();
             List<CategoryTreeContract> productCategoryContracts = productCategoryService.CategoryTree();
 
             foreach ( CategoryTreeContract productCategoryContract in productCategoryContracts ) {
@@ -126,7 +126,7 @@ namespace SolutionNorSolutionPim.UserInterface
         }
 
         void UpdateProducts() {
-            var productSearchService = new ProductSearchService();
+            var productSearchService = new ProductSearchServiceClient();
 
             Cursor.Current = Cursors.WaitCursor;
 
@@ -500,7 +500,7 @@ namespace SolutionNorSolutionPim.UserInterface
                 e.Handled = true;
 
                 // find category
-                var productCategoryService = new CategorySearchService();
+                var productCategoryService = new CategorySearchServiceClient();
                 List<CategoryFindContract> productCategoryContracts = productCategoryService.CategoryFind(toolStripTextBoxSearch.Text);
                 productCategoryService.Close();
 

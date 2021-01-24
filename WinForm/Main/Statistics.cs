@@ -18,7 +18,7 @@ namespace SolutionNorSolutionPim.UserInterface
         }
 
         private void btnSearch_Click(object sender, EventArgs e) {
-            var productStatisticsTop5 = new DefaultSearchService();
+            var productStatisticsTop5 = new DefaultSearchServiceClient();
             BindingSource bindingSource = new BindingSource();
 
             try {
@@ -37,7 +37,7 @@ namespace SolutionNorSolutionPim.UserInterface
             }
 
             // second
-            var productStatistics = new DefaultSearchService();
+            var productStatistics = new DefaultSearchServiceClient();
             BindingSource bindingSource2 = new BindingSource();
 
             try {
